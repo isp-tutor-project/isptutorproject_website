@@ -1,0 +1,19 @@
+{
+    "private": true,
+    "workspaces": ["common/*", "apps/*"],
+    "scripts": {
+        "build:all": "rimraf wwwroot && yarn run build:data && yarn run build:homepage && yarn run build:di-instruction && yarn run build:di-pretest && yarn run build:hypo-defs && yarn run build:isp-static",
+        "build:data":           "yarn workspace @isptutorproject/isp-data run build",
+        "build:homepage":       "yarn workspace @isptutorproject/homepage run build",
+        "build:di-instruction": "yarn workspace @isptutorproject/di-instruction run build",
+        "build:di-pretest":     "yarn workspace @isptutorproject/di-pretest run build",
+        "build:hypo-defs":      "yarn workspace @isptutorproject/hypo-defs run build",
+        "build:isp-static":     "yarn workspace @isptutorproject/isp-static run build",
+        "watch:all": "yarn run watch:homepage && yarn run watch:di-instruction & yarn run watch:di-pretest & yarn run watch:hypo-defs & yarn run watch:isp-static",
+        "watch:homepage":       "yarn workspace @isptutorproject/homepage run watch",
+        "watch:di-instruction": "yarn workspace @isptutorproject/di-instruction run watch",
+        "watch:di-pretest":     "yarn workspace @isptutorproject/di-pretest run watch",
+        "watch:hypo-defs":      "yarn workspace @isptutorproject/hypo-defs run watch",
+        "watch:isp-static":     "yarn workspace @isptutorproject/isp-static run watch"
+    }
+}
