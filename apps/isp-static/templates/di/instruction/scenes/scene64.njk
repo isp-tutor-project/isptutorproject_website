@@ -1,0 +1,22 @@
+---
+heading: "Results B:"
+---
+
+{% extends "diinstr/dual-column.njk" %}
+
+{% import "diinstr/forms.njk" as forms %}
+{% block lhs %}
+    {% vertcenter 20 %}
+        <p class="text-lg">
+            How sure are you that water temperature caused this difference
+            in means?
+        </p>
+        {{ forms.survey_radios_form(page, isVert=true, marginLeft=30) }}
+    {% endvertcenter %}
+{% endblock %}
+
+
+{% block rhs %}
+    <img src="img/25a_GraphS62.png" class="img-centered" />
+{% endblock %}
+

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        {% include "stdHead.njk" %}
+        <title>{{ title }}</title>
+        {% block cssbundle %}{% endblock %}
+    </head>
+    <body>
+        <div id="scene_id_region"></div>
+        <main>
+            {% block main %} {% endblock %}
+        </main>
+        <img id="prev_btn" class="nav-btn prev-btn" />
+        <img id="next_btn" class="nav-btn next-btn" />
+        {% block bundles %}
+        {% endblock %}
+    </body>
+</html>

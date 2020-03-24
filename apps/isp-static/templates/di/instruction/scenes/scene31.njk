@@ -1,0 +1,22 @@
+
+{% extends "diinstr/wgtCrysGrowth.njk" %}
+
+{% block lhs %}
+    {% vertcenter 10 %}
+        <img src="img/7_Table_S31.jpg" class="img-centered" />
+    {% endvertcenter %}
+{% endblock %}
+
+{% block rhs_vert_centered %}
+    <p class="text-lg">
+        The mean weight in the Cold water condition is the sum of the numbers...
+    </p>
+    <p><code>3 + 8 + 12 + 16 + 12 = 60</code></p>
+    <p class="text-lg">
+        ...divided by the number of numbers (5):
+    </p>
+    <p><code>60 / 5 = 12</code></p>
+    <p class="text-lg">
+        So, the mean weight for the Cold water condition is 12 mg.
+    </p>
+{% endblock %}

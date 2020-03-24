@@ -1,0 +1,17 @@
+{
+  "name": "@isptutorproject/isp-static",
+  "version": "0.1.0",
+  "description": "templates for eleventy static-site-generator ",
+  "main": "index.js",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "build": "eleventy",
+    "watch": "eleventy --watch"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "0.10.0",
+    "prettier": "^1.19.1",
+    "uuid": "^3.4.0"     
+  }
+}

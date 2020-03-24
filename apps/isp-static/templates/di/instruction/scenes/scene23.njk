@@ -1,0 +1,24 @@
+
+{% extends "diinstr/stats.njk" %}
+
+{% import "diinstr/link.njk" as link %}
+
+{% block rhs %}
+    {% vertcenter 10 %}
+        <h1>
+            What is the <u>mode</u> in a set of numbers?
+        </h1>
+        <p class="text-xl">
+            The mode is the number (or range of numbers) that occurs most often
+            in a set of numbers.
+        </p>
+        <p class="text-xl">
+            For example, the most dog weights (6 of them) are in the range
+            between 40 and 50 lb.
+        </p>
+        <p class="text-xl">
+            So, the mode for this set of data is between 40-50 lb.
+        </p>
+        <img src="img/4a_DogGraph_S23.S25-26.jpg" class="img-centered" />
+    {% endvertcenter %}
+{% endblock %}

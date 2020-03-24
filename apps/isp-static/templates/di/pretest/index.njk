@@ -1,0 +1,20 @@
+---
+title: "Data Interpretation PreTest"
+---
+{% extends "diprepost/base.njk" %}
+
+{% block cssbundle %}
+    <link rel="stylesheet" href="dipretest.bundle.css" >
+{% endblock %}
+
+{% block main %}
+    {% for scene in collections.diPreTestScenes %}
+        <section id="{{scene.fileSlug}}" class="scene">
+            {{ scene.templateContent | safe }}
+        </section>
+    {% endfor %}
+{% endblock %}
+
+{% block bundles %} 
+    <script src="dipretest.bundle.js"></script>
+{% endblock %}

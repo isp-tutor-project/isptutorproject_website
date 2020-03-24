@@ -1,0 +1,13 @@
+{% extends "diinstr/dual-column.njk" %}
+
+{% set heading = "Results: weight of crystal growth" %}
+
+{% block lhsWidth %} style="width:40%;" {% endblock %}
+{% block rhsWidth %} style="width:60%;" {% endblock %}
+
+{% block lhs %}
+  {% vertcenter 10 %}
+    {% include "diinstr/dogsTable.njk" %}
+  {% endvertcenter %}
+{% endblock %}
+

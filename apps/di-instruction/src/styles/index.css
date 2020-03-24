@@ -1,0 +1,395 @@
+/* resets */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+main {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-color: white;
+    font-size: 14pt;
+}
+
+main {
+    border: solid #d6e9fc 40px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    text-align: center;
+}
+
+.text-xxl {
+    font-size: 32pt;
+}
+
+.text-xl {
+    font-size: 24pt;
+}
+
+.text-lg {
+    font-size: 18pt;
+}
+
+.text-md {
+    font-size: 14pt;
+}
+
+.text-sm {
+    font-size: 13pt;
+}
+
+.text-xs {
+    font-size: 12pt;
+}
+
+.text-xxs {
+    font-size: 10pt;
+}
+
+p {
+    /* default to centered. use text-justify if you want to override */
+    text-align: center;
+}
+
+
+/* useful for development to see borders of elements */
+.dev {
+    border: solid hotpink 1px;
+}
+
+
+.scene {
+    height: 100%;
+    width: 100%;
+    display: none;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.scene.active {
+    display: block;
+}
+
+
+
+.container {
+    height: 100%;
+    width: 100%;
+}
+
+/* used by vertcenter shortCode, which nests content inside 2 divs:
+   1) div.centered-wrapper (relative positioning)
+   2) div.centered (absolute positining)
+
+   it then specified div.centered::top vai style="top:${fromTopPercent}%;"
+    
+*/ 
+div.centered-wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+div.centered {
+    position: absolute;
+    height: max-content;
+    width: 100%;
+}
+
+
+.heading {
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24pt;
+}
+
+.lhs {
+    float: left;
+    height: 100%;
+    width: 50%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.lhs.with-heading {
+    height: calc(100% - 50px);
+}
+
+.rhs {
+    float: right;
+    height: 100%;
+    width: 50%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.rhs.with-heading {
+    height: calc(100% - 50px);
+}
+
+#scene_id_region {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.img-centered {
+    display: block;
+    /* max-width: 100%; */
+    /* height: auto; */
+    margin-left: auto;
+    margin-right: auto;
+}
+/* 
+.centered-form-wrapper {
+    position: relative;
+    width: 60%;
+    left: 40%;
+} */
+
+/* .form-centered { */
+    /* width: max-content; */
+    /* float: right; */
+    /* width: 100%; */
+    /* margin-left: 100px; */
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+/* } */
+
+ol.centered {
+    position: relative;
+    /* left: 10%; */
+    width: max-content;
+    list-style-position: inside;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul.centered {
+    position: relative;
+    /* left: 10%; */
+    width: max-content;
+    list-style-position: inside;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-centered {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+.div-centered {
+    /* display: inline-block; */
+    margin-left: 40%;
+    /* margin-right: auto; */
+}
+
+/* not exactly centered, but looks good */
+.vert-centered {
+    position: relative;
+    top: 30%;
+}
+
+
+
+.long-arrow-btn {
+    position: absolute;
+    margin: 0;
+    z-index: 3;    
+}
+
+/* .long-arrow-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+} */
+
+.ready-to-answer-btn {
+    /* image 209x81 */
+    top: calc(100% - 111px);
+    left: calc(100% - 241px);
+    content: url("/img/di/instr/readyToAnswerOrange.png");
+}
+.ready-to-answer-btn:hover {
+    content: url("/img/di/instr/readyToAnswerYellow.png");
+}
+
+.back-to-question-btn {
+    /* image is 209x81 */
+    top: calc(100% - 111px);
+    left: 30px;
+    content: url("/img/di/instr/backToQuestionOrange.png");
+}
+.back-to-question-btn:hover {
+    content: url("/img/di/instr/backToQuestionYellow.png");
+}
+
+
+.nav-btn {
+    position: absolute;
+    content: url("/img/buttonorange.png");
+    z-index: 2;
+}
+
+.nav-btn:hover {
+    content: url("/img/buttonyellow.png");
+}
+/* 
+.nav-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+} */
+
+.prev-btn {
+    /* should get displayed on top of border*/
+    /* img is 130x138px */
+    top: calc(100% - 138px);
+    left: 5px;
+}
+
+.next-btn {
+    /* should get displayed on top of border*/
+    /* img is 130x138px */
+    top: calc(100% - 138px);
+    left: calc(100% - 133px);
+    transform: scaleX(-1);
+}
+
+.btn {
+    border-radius: 5px;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn:hover {
+    opacity: 0.7;
+}
+/* .btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;   
+} */
+
+.btn-xxl {
+    font-size: 32pt;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.btn-lg {
+    font-size: large;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.btn-primary {
+    background-color: #1479f6;
+    color: white;
+}
+
+/* 
+.mc-radio {
+} 
+*/
+
+.submit-mc {
+    display: block;
+}
+
+
+table.dogs-table {
+    text-align: center;
+    border: solid black 1px;
+    border-spacing: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px; 
+}
+
+table.dogs-table td {
+    border: solid black 1px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+}
+
+table.dogs-table th {
+    border: solid black 1px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+td.blue-bg {
+    background-color: lightblue;
+}
+td.green-bg {
+    background-color: lightgreen;
+}
+
+button.link {
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  /*optional*/
+  font-family: arial, sans-serif;
+  /*input has OS specific font-family*/
+  color: rgb(0, 0, 238);
+  cursor: pointer;
+}
+
+button.link:hover,
+button.link:focus {
+ text-decoration: underline;
+}
+
+button.link.visited {
+    color: rgb(247, 104, 255);
+}
+
+.feedback-region {
+    min-height: 50px;
+    max-height: fit-content;
+    width: 100%;
+}
+
+
+.hidden {
+    display: none;
+}
+
+.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+}

@@ -1,0 +1,29 @@
+{% extends "hypo/defs/single-column.njk" %}
+
+{% block content %}
+    <h2>Types of Relationships for Hypotheses</h2>
+    <ol class="horiz">
+        <li class="active">Definition</li>
+        <li>Cause</li>
+        <li>Correlation</li>
+    </ol>
+    <p>
+        The meaning of a concept
+    </p>
+    <div>
+        <div>
+            {% block text2 %}{% endblock %}
+        </div>
+        <div>
+            {% block image1 %}{% endblock %}
+        </div>
+    </div>
+    <div>
+        <div>
+            {% block text3 %}{% endblock %}
+        </div>
+        <div>
+            {% block image2 %}{% endblock %}
+        </div>
+    </div>
+{% endblock %}

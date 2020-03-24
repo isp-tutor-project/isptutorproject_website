@@ -1,0 +1,23 @@
+
+{% extends "diinstr/stats.njk" %}
+
+{% import "diinstr/link.njk" as link %}
+
+{% block rhs %}
+    {% vertcenter %}
+        <h1>
+            What is the <u>median</u> value?
+        </h1>
+        <p class="text-xl">
+            For example, let’s say we wanted to find out the median of this set
+            of15 weights.
+        </p>
+        <p class="text-xl">
+            We would start with the smallest and largest numbers (9.2 &amp; 64.7 lb).
+        </p>
+        <p class="text-centered">
+            {{ link.namedTransition(page, "back", "back") }} &nbsp; 
+            {{ link.namedTransition(page, "more", "more") }}
+        </p>
+    {% endvertcenter%}
+{% endblock %}

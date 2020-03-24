@@ -1,0 +1,18 @@
+{
+  "name": "@isptutorproject/build-captivate-app",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "munge-captivate-app": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "copyfiles": "^2.2.0",
+    "rimraf": "^3.0.2"
+  }
+}

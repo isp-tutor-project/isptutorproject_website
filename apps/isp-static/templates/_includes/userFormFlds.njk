@@ -1,0 +1,84 @@
+ {% macro create(prefix) %}
+      <div class="container">
+          <label><b>Class Code</b></label>
+          <input type="text" 
+                 placeholder="Enter class code" 
+                 id="{{prefix}}_classcode" 
+                 required>
+          <label><b>First two letters of first name</b></label>
+          <input type="text" 
+                 value="" 
+                 id="{{prefix}}_fname" 
+                 size="2"
+                 placeholder="FN"
+                 pattern="[a-zA-Z]{2}"
+                 minlength="2"
+                 maxlength="2" 
+                 required>
+          <label><b>First two letters of last name</b></label>
+          <input type="text"
+                 value="" 
+                 id="{{prefix}}_lname" 
+                 size="2"
+                 placeholder="LN"
+                 pattern="[a-zA-Z]{2}"
+                 minlength="2"
+                 maxlength="2" 
+                 required>
+          <label><b>Birthday</b></label>
+          <br>
+          <select class="select-css"
+                  id="{{prefix}}_bmonth"
+                  required>
+            <option value="" disabled selected hidden>Month</option>
+            <option value="JAN">January</option>
+            <option value="FEB">February</option>
+            <option value="MAR">March</option>
+            <option value="APR">April</option>
+            <option value="MAY">May</option>
+            <option value="JUN">June</option>
+            <option value="JUL">July</option>
+            <option value="AUG">August</option>
+            <option value="SEP">September</option>
+            <option value="OCT">October</option>
+            <option value="NOV">November</option>
+            <option value="DEC">December</option>
+          </select>
+          <select class="select-css"
+                  id="{{prefix}}_bday"
+                  required>
+            <option value="" disabled selected hidden>Day</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+            <option>14</option>
+            <option>15</option>
+            <option>16</option>
+            <option>17</option>
+            <option>18</option>
+            <option>19</option>
+            <option>20</option>
+            <option>21</option>
+            <option>22</option>
+            <option>23</option>
+            <option>24</option>
+            <option>25</option>
+            <option>26</option>
+            <option>27</option>
+            <option>28</option>
+            <option>29</option>
+            <option>30</option>
+            <option>31</option>
+          </select>      
+        </div>
+{% endmacro %}

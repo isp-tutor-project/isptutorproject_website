@@ -1,0 +1,65 @@
+{% macro gen_uuid(prefix) -%}
+    {{ prefix | uuid }}
+{%- endmacro %}
+
+{% macro radio_btn(btnName, value, label) %}
+    {% set id = gen_uuid(btnName) %}
+    <label for="{{id}}" class="text-lg">
+        <input type="radio"
+               class="radio-btn form-control"
+               id="{{id}}"
+               name="{{btnName}}"
+               value="{{value}}"
+               required />
+        {{label}}
+    </label>
+{% endmacro %}
+
+{% macro radio_form(sceneId, question, quesName, isVert=false, marginLeft=0) %}
+    <form id="{{sceneId}}_{{quesName}}_form" class="form-centered">
+        <p id="{{sceneId}}_{{quesName}}_text" class="question-text text-lg">
+            {% if quesName == "q1" %}{{ question.text }}{% endif %}
+        </p>
+        <div id="{{sceneId}}_{{quesName}}_form_controls"
+             class="form-controls">
+        {% set btnName = sceneId + "_" + quesName %}
+        {% for option in question.options %}
+            {{ radio_btn(btnName, option.value, option.label) }}       
+        {% endfor %}
+        </div>
+        <button id="{{sceneId}}_{{quesName}}_submit"
+                class="submit-{{quesName}} form-submit-centered btn btn-lg btn-primary">
+            Submit
+        </button>
+    </form>
+{% endmacro %}
+
+
+{% macro q1_form(page, isVert=false, marginLeft=0) %}
+    {{ radio_form(page.data.id, page.data.questions.q1, "q1", isVert, marginLeft) }}
+{% endmacro %}
+
+
+{% macro q2_form(page, isVert=False, marginLeft=0) %}
+    {% set sceneId = page.data.id %}
+    <form id="{{sceneId}}_q2_form" class="form-centered">
+        <p id="{{sceneId}}_q2_text" class="question-text text-lg"></p>
+        <div id="{{sceneId}}_q2_form_controls"
+             class="form-controls">
+            <textarea id="{{sceneId}}_q2_answer"
+                      class="text-area form-control"
+                      rows="4"
+                      cols="80"
+                      required></textarea>
+        </div>
+        <button id="{{sceneId}}_q2_submit"
+                class="submit-q2 form-submit-centered btn btn-lg btn-primary">
+            Submit
+        </button>
+    </form>
+{% endmacro %}
+
+{% macro q3_form(page, isVert=false, marginLeft=0) %}
+    {{ radio_form(page.data.id, page.data.questions.q3, "q3", isVert, marginLeft) }}
+{% endmacro %}
+

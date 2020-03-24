@@ -1,0 +1,155 @@
+{% set surveyOptions = [
+        {value: 'a', label: "Not at all sure"}, 
+        {value: 'b', label: "A little sure"}, 
+        {value: 'c', label: "Pretty sure"}, 
+        {value: 'd', label: "Very sure"}, 
+        {value: 'e', label: "I am Absolutely sure"}
+    ]
+%}
+
+{% macro _join(separator, array) %}{{ array | join(separator) }}{% endmacro %}
+
+{% macro _append(str1, str2) %}{{str1}}{{str2}}{% endmacro %}
+
+{% macro correct_answer_hidden_field(sceneId, question=null) %}
+    {% if question %}
+        {% if question.correctAnswer %}
+            <input type="hidden"
+                id="{{sceneId}}_correct_answer"
+                class="correct-answer"
+                value="{{question.correctAnswer}}" />
+        {% else %} 
+            <input type="hidden"
+                id="{{sceneId}}_correct_answer"
+                class="correct-answer"
+                value="n/a" />
+        {% endif %}
+    {% else %} 
+        <input type="hidden"
+            id="{{sceneId}}_correct_answer"
+            class="correct-answer"
+            value="n/a" />
+    {% endif %}
+{% endmacro %}
+
+
+{% macro feedback_hidden_fields(sceneId, question=null) %}
+    {% if question %}
+        {% if question.posFb %}
+            <input type="hidden"
+                id="{{sceneId}}_pos_fb"
+                class="pos-fb"
+                value="{{question.posFb}}" />
+        {% endif %}
+
+        {% if question.negFb %}
+            <input type="hidden"
+                id="{{sceneId}}_neg_fb"
+                class="neg-fb"
+                value="{{question.negFb}}" />
+        {% endif %}
+        
+        {% if question.ntlFb %}
+            <input type="hidden"
+                id="{{sceneId}}_ntl_fb"
+                class="ntl-fb"
+                value="{{question.ntlFb}}" />
+        {% else %}
+            <input type="hidden"
+                id="{{sceneId}}_ntl_fb"
+                class="ntl-fb"
+                value="" />
+        {% endif %}
+    {% else %}
+        <input type="hidden"
+            id="{{sceneId}}_ntl_fb"
+            class="ntl-fb"
+            value="" />
+    {% endif %}
+{% endmacro %}
+
+{% macro hidden_fields(sceneId, question) %}
+    <input type="hidden"
+           id="{{sceneId}}_question_type"
+           class="question-type"
+           value="{{question.type}}" />
+    {{ correct_answer_hidden_field(sceneId,question) }}    
+    {{ feedback_hidden_fields(sceneId, question) }}
+
+{% endmacro %}
+
+
+{% macro radio_btn(id, name, value, label, isVert=false) %}
+    <input type="radio"
+           id="{{id}}"
+           name="{{name}}"
+           value="{{value}}" required>
+    <label id="{{id}}_label" class="option-label text-lg" for="{{id}}">{{label}}</label>
+    {% if isVert %} <br/> {% endif %}
+{% endmacro %}
+
+{% macro radio_btns(sceneId, options, isVert=false) %}
+    {% for option in options %}
+        {% set radioId = _join('_', [sceneId, "option", option.value]) %}
+        {% set name = _join('_', [sceneId, "option"]) %}
+        {{ radio_btn(radioId, name, option.value, option.label, isVert=isVert) }}
+    {% endfor %}
+{% endmacro %}
+
+{% macro submit_btn(sceneId, formType) %}
+    <button id="{{sceneId}}_submit_btn"
+            type="submit"
+            class="submit-{{formType}}-form-btn btn btn-lg btn-primary">
+        Submit
+    </button>
+{% endmacro %}
+
+{% macro feedback_region(sceneId) %}
+    <div id="{{sceneId}}_feedback_region" class="feedback-region invisible">
+    </div> <!-- ./feedback-region -->
+{% endmacro %}
+
+{% macro radios_form(page, isVert=false, marginLeft=0) %}
+    {# {{ showpage(page) }} #}
+    {% set sceneId = page.data.id %}
+    {% set question = page.data.question %}
+    <form id="{{sceneId}}_radio_form"
+          style="margin-left:{{marginLeft}}%;">
+        {# {{ hidden_fields(sceneId, question) }} #}
+        {{ feedback_region(sceneId) }}
+        {{ radio_btns(sceneId, question.options, isVert=isVert) }}
+        {{ submit_btn(sceneId, "radio") }}
+    </form>
+{% endmacro %}
+
+
+{% macro survey_radios_form(page, isVert=false, marginLeft=0) %}
+    {% set sceneId = page.data.id %}
+    {% set question = page.data.question %}
+    {% if isVert %}
+        <form id="{{sceneId}}_radio_form"
+            style="margin-left:{{marginLeft}}%;">
+            {# {{ hidden_fields(sceneId, question) }} #}
+            {{ radio_btns(sceneId, surveyOptions, isVert=true) }}
+            {{ submit_btn(sceneId, "radio") }}
+            {{ feedback_region(sceneId) }}
+        </form>
+    {% else %}
+        <form id="{{sceneId}}_radio_form">
+            {{ hidden_fields(sceneId, question) }}
+            <p class="text-centered">
+                {{ radio_btns(sceneId, surveyOptions) }}
+            </p>
+            <div class="div-centered">
+                {{ submit_btn(sceneId, "radio") }}
+                {{ feedback_region(sceneId) }}
+            </div>
+        </form>
+    {% endif %}
+{% endmacro %}
+
+{% macro showpage(page) %}
+    <pre>
+        {{ page | jsonify(4) | safe }}
+    </pre>
+{% endmacro %}

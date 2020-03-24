@@ -1,0 +1,42 @@
+
+{% extends "diinstr/wgtCrysGrowth.njk" %}
+
+{% import "diinstr/link.njk" as link %}
+
+{# 
+{% block lhs %}
+    {% vertcenter 10 %}
+        <img src="img/3_Table3C_S8-26.jpg" class="img-centered" />
+    {% endvertcenter %}
+{% endblock %} #}
+
+{% block rhs_vert_centered %}
+    <p class="text-lg">
+        <b>What do you think is the best way to summarize the data in each
+        condition?</b>
+    </p>
+    <p class="text-lg">
+        Take a moment to think about this question before answering.
+    </p>
+    <p class="text-lg">
+        When you’re ready to answer, click “Next”.
+    </p>
+    <ul class="text-lg">
+        <li>Minimum (The Smallest Number)</li>
+        <li>Maximum (The Biggest Number)</li>
+        <li>
+            Mean (or average)
+            {{ link.namedTransition(page, "mean", "what is this?") }}
+        </li>
+        <li>
+            Median (The Middle number) {{ link.namedTransition(page, "median", "what is this?") }}
+        </li>
+        <li>
+            Mode (The Most common number) {{ link.namedTransition(page, "mode", "what is this?") }}
+        </li>
+        <li>
+            Range {{ link.namedTransition(page, "range", "what is this?") }}
+        </li>
+    </ul>
+{% endblock %}
+

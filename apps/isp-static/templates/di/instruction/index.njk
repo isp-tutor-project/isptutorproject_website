@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title> Data Interpretation Instruction Module </title>
+        <link rel="stylesheet" href="./di-instruction.bundle.css" />
+    </head>
+    <body>
+        <main class="my-main">
+            <div id="scene_id_region"></div>
+            {% for scene in collections.diInstrScenes %}
+                <section id="{{scene.fileSlug}}" class="scene ">
+                    {{ scene.templateContent | safe }}
+                </section>
+            {% endfor %}
+            <img id="prev_btn" class="nav-btn prev-btn" />
+            <img id="next_btn" class="nav-btn next-btn" />
+            <img id="back_to_question_btn" class="long-arrow-btn back-to-question-btn" />
+            <img id="ready_to_answer_btn" class="long-arrow-btn ready-to-answer-btn" />
+        </main>
+        <script src="./di-instruction.bundle.js"></script>
+    </body> 
+</html>

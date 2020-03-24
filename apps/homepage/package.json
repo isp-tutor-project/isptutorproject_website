@@ -1,0 +1,26 @@
+{
+    "name": "@isptutorproject/homepage",
+    "version": "0.1.0",
+    "description": "isp tutor project home page",
+    "main": "src/index.js",
+    "license": "UNLICENSED",
+    "private": true,
+    "scripts": {
+        "build": "rimraf dist && NODE_ENV=production DEBUG=false  webpack --mode=production",
+        "watch": "NODE_ENV=development DEBUG=true webpack --watch --mode=development"
+    },
+    "dependencies": {
+        "@isptutorproject/isp-database": "0.1.0",
+        "@isptutorproject/isp-site-styles": "0.1.0"
+    },
+    "devDependencies": {
+        "css-loader": "^3.4.2",
+        "file-loader": "^5.1.0",
+        "mini-css-extract-plugin": "0.9.0",
+        "style-loader": "1.1.3",    
+        "rimraf": "^3.0.2",
+        "webpack": "^4.42.0",
+        "webpack-cli": "^3.3.11",
+        "webpack-merge": "4.2.2"
+    }
+}

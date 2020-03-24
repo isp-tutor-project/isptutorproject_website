@@ -1,0 +1,21 @@
+
+{% extends "diinstr/stats.njk" %}
+
+{% import "diinstr/link.njk" as link %}
+
+{% block rhs %}
+    {% vertcenter %}
+        <h1>
+            What is the <u>median</u> value?
+        </h1>
+        <p class="text-xl">
+            Then we’d move down from the top and up from the bottom.
+        </p>
+        <p class="text-centered">
+            {{ link.namedTransition(page, "back", "back") }} &nbsp; 
+            {{ link.namedTransition(page, "more", "more") }}
+        </p> 
+    {% endvertcenter %}
+{% endblock %}
+
+

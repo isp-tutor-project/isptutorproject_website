@@ -1,0 +1,16 @@
+{% extends "diinstr/dual-column.njk" %}
+
+{% set heading = "Results: weight of crystal growth" %}
+
+{% block lhs %}
+    {% vertcenter 10 %}
+      <img src="img/3_Table3C_S8-26.jpg" class="img-centered" />
+    {% endvertcenter %}
+{% endblock %}
+
+{% block rhs %}
+    {% vertcenter 20 %}
+    {% block rhs_vert_centered %}
+    {% endblock %}
+    {% endvertcenter %}
+{% endblock %}

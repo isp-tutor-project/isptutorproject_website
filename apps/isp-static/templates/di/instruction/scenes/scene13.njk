@@ -1,0 +1,31 @@
+
+{% extends "diinstr/stats.njk" %}
+
+{% import "diinstr/link.njk" as link %}
+
+{% block rhs %}
+    {% vertcenter %}
+        <h1>What is the <u>mean</u> (or average) value?</h1>
+        <p class="text-xl">
+            For example, let’s say we wanted to find the average of this set
+            of 15 dog weights.
+        </p>
+        <p class="text-xl">
+            We would first add all of the weights together.
+        </p>
+        <p class="text-lg">
+            The total is 631.3.
+        </p>
+        <p class="text-lg">
+            Then we divide that total by 15 (since there are 15 numbers in the
+            set).
+        </p>
+        <p><code>631.3 / 15 = 42.1</code></p>
+        <p class="text-lg">
+            That would give us the mean of 42.1 lb.
+        </p>
+        <p class="text-centered">
+            {{ link.namedTransition(page, "back", "back") }} 
+        </p>
+    {% endvertcenter %}
+{% endblock %}

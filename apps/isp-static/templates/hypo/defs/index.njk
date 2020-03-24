@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% include "stdHead.njk" %}
+        <title>Hypothesis Definitions</title>
+        <link rel="stylesheet" href="hypodefs.bundle.css" >
+    </head>
+    <body>
+        <header></header>
+        <main>
+            <div id="scene_id_region"></div>
+
+            {% for scene in collections.hypoDefScenes %}
+                <section id="{{scene.fileSlug}}" class="scene">
+                    {{ scene.templateContent | safe }}
+                </section>
+            {% endfor %}
+
+            <img id="prev_btn" class="nav-btn prev-btn" />
+            <img id="next_btn" class="nav-btn next-btn" />
+        </main>
+        <script src="./hypodefs.bundle.js"></script>
+    </body>
+</html>

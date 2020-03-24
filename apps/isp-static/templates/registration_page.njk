@@ -1,0 +1,10 @@
+---
+permalink: false
+tags: ["homePageSections"]
+---
+{% import "userFormFlds.njk" as userForm %}
+<button id="r-back-button" class="back-button">Back</button>
+<form class="border-container" id="registration_form">
+    {{ userForm.create("register") }}
+    <button type="submit" id="registration_submit">Register</button>
+</form>

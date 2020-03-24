@@ -1,0 +1,17 @@
+<div class="container">
+    {% block heading %}
+        {% if heading%}
+            <header class="heading">{{heading}}</header>
+        {% endif %}
+    {% endblock %}
+    
+    <div class="lhs {% if heading %} with-heading {% endif %}"
+         {% block lhsWidth %}style="width:50%;"{% endblock %}>
+        {% block lhs %}{% endblock %}
+    </div>
+
+    <div class="rhs {% if heading %} with-heading {% endif %}"
+         {% block rhsWidth %}style="width:50%;"{% endblock %} >
+        {% block rhs %}{% endblock %}
+    </div>
+</div>

@@ -1,0 +1,7 @@
+{% macro namedTransition(page, transitionName, label) %}
+    <button class="link transition-to text-lg"
+            id="{{page.fileSlug}}_{{transitionName}}"
+            data-transition="{{transitionName}}">
+        {{label}}
+    </button>
+{% endmacro %}

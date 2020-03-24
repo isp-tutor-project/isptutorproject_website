@@ -1,0 +1,54 @@
+<heading class="results-heading">
+    Below is the {% block heading %} {% endblock %} set of possible results for 
+    each <u>height</u> the rocket traveled (in meters).
+</heading>
+
+<div class="results-top">
+    <div class="results-top-left">
+        {% vertcenter 50 %}
+        <button id="{{page.data.id}}_reveal_left_mean"
+                class="reveal-mean-left btn btn-lg btn-primary pull-right">
+            Reveal Curved mean
+        </button>
+        <div id="{{page.data.id}}_left_mean"
+             class="mean-left hidden">
+            Curved mean = {{means.left}}
+        </div>
+        {% endvertcenter %}
+    </div>
+    <div class="results-top-center">
+        {% vertcenter 20 %}
+        <div>
+            <img id="{{page.data.id}}_sorted"
+                src="{{images.sorted}}"
+                class="img-centered hidden" />
+            <img id="{{page.data.id}}_unsorted"
+                src="{{images.unsorted}}"
+                class="img-centered" />
+        </div>
+        <p>
+            <button id="{{page.data.id}}_show_sorted"
+                    class="show-sorted-img btn btn-lg btn-primary">
+                Sort each condition from lowest to highest
+            </button>
+        </p>
+        {% endvertcenter %}
+        
+    </div>
+    <div class="results-top-right">
+        {% vertcenter 50 %}
+        <button id="{{page.data.id}}_reveal_right_mean"
+                class="reveal-mean-right btn btn-lg btn-primary pull-left">
+            Reveal Straight mean
+        </button>
+        <div id="{{page.data.id}}_right_mean"
+             class="mean-right hidden">
+            Straight mean = {{ means.right }}
+        </div>        
+        {% endvertcenter %}
+    </div>
+</div>
+<div class="results-bottom">
+    <div class="question-region">
+    </div>
+</div>

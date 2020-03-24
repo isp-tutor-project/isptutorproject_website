@@ -1,0 +1,20 @@
+{% extends "diinstr/wgtCrysGrowth.njk" %}
+
+{% import "diinstr/forms.njk" as forms %}
+
+{% block lhs %}
+    {% vertcenter 10%}
+        <img src="img/2_Table3_S7.jpg" class="img-centered" />
+    {% endvertcenter %}
+{% endblock %}
+
+
+{% block rhs_vert_centered %}
+    <p class="text-lg">
+        Let’s calculate the mean for the Hot water condition. 
+    </p>
+    <p>
+      {{page.data.question.text}}
+    </p>
+    {{ forms.radios_form(page, isVert=true)}}
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "diinstr/single-column.njk" %}
+
+{% import "diinstr/forms.njk" as forms %}
+
+{% block content %}
+
+    <img src="img/37_CDTable_S90-91.png" class="img-centered" />  
+    <p class="text-lg">
+        {{ page.data.question.text }}
+    </p>
+    {{ forms.radios_form(page, isVert=true, marginLeft=45) }}
+
+{% endblock %}

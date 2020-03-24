@@ -1,0 +1,12 @@
+{
+    "name": "@isptutorproject/di-prepost",
+    "version": "0.1.0",
+    "main": "index.js",
+    "license": "PROPRIETARY",
+    "private": true,
+    "dependencies": {
+        "@isptutorproject/isp-database": "0.1.0",
+        "@isptutorproject/isp-site-styles": "0.1.0",
+        "@isptutorproject/scene-transitions-base": "0.1.0"
+    }
+}

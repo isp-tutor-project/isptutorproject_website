@@ -1,0 +1,18 @@
+
+{% extends "diinstr/single-column.njk" %}
+
+{% import "diinstr/forms.njk" as forms %}
+
+{% block content %}
+
+    <h1>Results: weight of crystal growth</h1>
+
+    <img src="img/9_Table_S32-33.jpg" class="img-centered" />
+
+    <p class="text-lg">
+        How sure are you that the independent variable (water temperature)
+        --rather than random errors--caused this difference?
+    </p>
+    {{ forms.survey_radios_form(page) }}
+
+{% endblock %}

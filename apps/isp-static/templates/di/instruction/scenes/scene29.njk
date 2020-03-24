@@ -1,0 +1,23 @@
+
+{% extends "diinstr/wgtCrysGrowth.njk" %}
+
+{% block lhs %}
+    {% vertcenter 10 %}
+        <img src="img/5_TableS29.jpg" class="img-centered" />
+    {% endvertcenter %}
+{% endblock %}
+
+{% block rhs_vert_centered %}
+    <p class="text-lg">
+        The mean is calculated as the sum of the numbers divided by the number
+        of number:
+    </p>
+    <code class="text-lg">
+        (20 + 27 + 30 + 32 + 41) / 5<br/>
+        = 150 / 5<br/>
+        = 30
+    </code>
+    <p class="text-lg">
+        So, the mean weight for the Hot water condition is 30 mg.
+    </p>
+{% endblock %}

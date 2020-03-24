@@ -1,0 +1,21 @@
+{% extends "diinstr/stats.njk" %}
+
+{% import "diinstr/link.njk" as link %}
+
+{% block rhs %}
+    {% vertcenter %}
+    <p class="text-xl">
+        <b>What is the <u>median</u> value?</b>
+    </p>
+    <p class="text-xl">
+        The median is number that describes a typical value for a set of numbers.
+    </p>
+    <p class="text-xl">
+        The median in a set of numbers sorted from low to high (or smallest to
+        largest) is the middle number in the set.
+    </p>
+    <p class="text-centered">
+        {{ link.namedTransition(page, "more", "more") }}
+    </p>
+    {% endvertcenter %}
+{% endblock %}

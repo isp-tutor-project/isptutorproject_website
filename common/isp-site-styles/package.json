@@ -1,0 +1,10 @@
+{
+  "name": "@isptutorproject/isp-site-styles",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "PROPRIETARY",
+  "private": true,
+  "scripts": {
+    "test": "echo \"no tests specified\""
+  }
+}

@@ -1,0 +1,21 @@
+---
+heading: "Results A: Hot (A) and Cold (A) conditions"
+---
+
+{% extends "diinstr/dual-column.njk" %}
+
+{% import "diinstr/forms.njk" as forms %}
+
+{% block lhs %}
+    <img src="img/24_GraphS57-59.png" class="img-centered" />
+{% endblock %}
+
+{% block rhs %}
+    {% vertcenter 30 %}
+        <p class="text-lg">
+            {{ page.data.question.text }}
+        </p>
+        {{ forms.radios_form(page, isVert=true) }}
+    {% endvertcenter %}
+{% endblock %}
+

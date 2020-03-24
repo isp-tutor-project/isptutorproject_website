@@ -1,0 +1,50 @@
+{% extends "hypo/defs/single-column.njk" %}
+
+{% import "hypo/defs/forms.njk" as forms %}
+
+{% block content %}
+    <p>
+        For each phrase below, as one concept (underlined) increases, the
+        other (underlined) concept may increase or decrease. Select the
+        type of relationship that best describes the following pairs of concepts:
+    </p>
+    
+    <form id="defPage100_form">
+        <table>
+            <tr>
+                <td>{{ page.data.questions.q1.text | safe }}</td>
+                <td>{{ forms.select(page.data.questions.q1) }}</td>
+            </tr>
+            <tr>
+                <td>{{ page.data.questions.q2.text | safe }}</td>
+                <td>{{ forms.select(page.data.questions.q2) }}</td>
+            </tr>
+            <tr>
+                <td>{{ page.data.questions.q3.text | safe }}</td>
+                <td>{{ forms.select(page.data.questions.q3) }}</td>
+            </tr>
+            <tr>
+                <td>{{ page.data.questions.q4.text | safe }}</td>
+                <td>{{ forms.select(page.data.questions.q4) }}</td>
+            </tr>
+            <tr>
+                <td>{{ page.data.questions.q5.text | safe }}</td>
+                <td>{{ forms.select(page.data.questions.q5) }}</td>
+            </tr>
+        </table>
+        <button id="check_answers"
+                type="submit" 
+                class="btn btn-xl btn-primary">
+            Check Answers
+        </button>
+    </form>
+    <p>
+        Reminder: Correlations and causes are different types of relationships.
+    </p>
+    <p>
+        Just because two things are strongly related does not mean that one
+        caused the other. There may be other reasons for this correlation.
+        Both things may be caused by something else.
+    </p>
+
+{% endblock %}

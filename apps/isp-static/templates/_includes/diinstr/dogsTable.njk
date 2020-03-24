@@ -1,0 +1,39 @@
+{% set tableData = [
+    ["Bailey", 9.2],
+    ["Charlie", 28.3],
+    ["Lucy", 29.6],
+    ["Duke", 30.1],
+    ["Max", 37.3],
+    ["Tucker", 39.8],
+    ["Buddy", 42.2],
+    ["Scout", 42.4],
+    ["Chopper", 44.0],
+    ["Sadie", 46.3],
+    ["Daisy", 46.7],
+    ["Sam", 48.9],
+    ["Smokey", 57.3],
+    ["Bella", 64.5],
+    ["Luna", 64.7]] %}
+
+<table id="{{page.fileSlug}}_dogs_table"
+       class="dogs-table">
+    <thead>
+        <tr>
+            <th>Dog<br/>Name</th>
+            <th>Weight<br/>(in pounds)</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% set rowNum = 1 %}
+        {% for row in tableData %}
+            <tr>
+                {% set colNum = 1 %}
+                {% for col in row %}
+                    <td class="row{{rowNum}} col{{colNum}}">{{col}}</td>
+                    {% set colNum = colNum + 1 %}
+                {% endfor %}
+            </tr>
+            {% set rowNum = rowNum + 1 %}
+        {% endfor %}    
+    </tbody>
+</table>

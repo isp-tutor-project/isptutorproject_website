@@ -1,0 +1,8 @@
+{% macro select(question) %}
+    <select id="{{question.id}}">
+        <option value=""> --- Please Select an Option ---</option>
+        {% for option in question.options %}
+            <option value="{{option.value}}">{{option.label}}</option>
+        {% endfor %}
+    </select>
+{% endmacro %}

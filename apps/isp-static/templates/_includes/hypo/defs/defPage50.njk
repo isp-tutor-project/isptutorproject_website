@@ -1,0 +1,30 @@
+{% extends "hypo/defs/single-column.njk" %}
+{% block content %}
+    <h2>Types of Relationships</h2>
+    <p>
+        When you make your hypothesis, you will need to choose the type of
+        relationship between pairs of concepts. Here are the three types
+        of relationships you can choose from when you make your hypothesis:
+    </p>
+    <div class="container">
+        <div class="left">
+            {% block image1 %}
+            {% endblock %}
+        </div>
+        <div class="center">
+            <ol>
+                <li>Definition</li>
+                <li>Cause</li>
+                <li>Correlation</li>
+            </ol>
+        </div>
+        <div class="right">
+            {% block image3 %}
+            {% endblock %}
+        </div>
+    </div>
+    <div>
+        {% block image2 %}
+        {% endblock %}
+    </div>
+{% endblock %}
