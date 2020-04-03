@@ -1,0 +1,8 @@
+{
+  "name": "@isptutorproject/config",
+  "version": "0.1.0",
+  "description": "webpack config, etc",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true
+}
