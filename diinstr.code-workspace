@@ -1,0 +1,27 @@
+{
+	"folders": [
+		{
+			"name": "✨ /home/ckot/projects/work/isptutorproject_website",
+			"path": "."
+		},
+		{
+			"name": "🚀@isptutorproject/di-instruction",
+			"path": "apps/di-instruction"
+		},
+		{
+			"name": "🚀@isptutorproject/isp-static",
+			"path": "apps/isp-static"
+		},
+		{
+			"name": "📦 @isptutorproject/isp-data",
+			"path": "common/isp-data"
+		},
+		{
+			"name": "📦 @isptutorproject/scene-transitions-base",
+			"path": "common/scene-transitions-base"
+		}
+	],
+	"settings": {
+		"liveServer.settings.root": "/wwwroot"
+	}
+}
