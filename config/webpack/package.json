@@ -1,5 +1,5 @@
 {
-  "name": "@isptutorproject/config",
+  "name": "@isptutorproject/webpack",
   "version": "0.1.0",
   "description": "webpack config, etc",
   "main": "index.js",
