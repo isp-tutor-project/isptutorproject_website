@@ -3,9 +3,9 @@ const path = require("path");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const merge = require("webpack-merge");
-const dev    = require('../../config/webpack.dev');
-const prod   = require('../../config/webpack.prod');
-const common = require("../../config/webpack.common");
+const dev    = require('@isptutorproject/webpack-config/webpack.dev');
+const prod   = require('@isptutorproject/webpack-config/webpack.prod');
+const common = require("@isptutorproject/webpack-config/webpack.common");
 
 let cfg = {
     entry: {
