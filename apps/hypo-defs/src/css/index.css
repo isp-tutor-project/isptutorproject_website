@@ -62,6 +62,24 @@ p {
     font-size: 10pt;
 }
 
+.col {
+    display: inline-block;
+    height: 100%;
+}
+
+.col-2 {
+    width: 16%;
+}
+
+.col-4 {
+    width: 33%;
+}
+
+
+.col-5 {
+    width: 41%;
+}
+
 .scene {
     display: none;
     width: 100%;
