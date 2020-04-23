@@ -1,6 +1,6 @@
 {
     "private": true,
-    "workspaces": ["common/*", "apps/*"],
+    "workspaces": ["common/*", "apps/*", "config/*"],
     "scripts": {
         "build:all": "rimraf wwwroot && yarn run build:data && yarn run build:homepage && yarn run build:di-instruction && yarn run build:di-pretest && yarn run build:hypo-defs && yarn run build:isp-static",
         "build:data":           "yarn workspace @isptutorproject/isp-data run build",
