@@ -32,8 +32,8 @@ function jsonify(obj, indent = null) {
 
 const APPS = {
     "homepage": ".",
-    "di-instruction": "di/instruction",
-    "di-pretest": "di/pretest",
+    "di-instruction": "di-instruction",
+    "di-prepost": "di-prepost",
     "hypo-defs": "hypo/defs"
 };
 

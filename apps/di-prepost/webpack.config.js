@@ -9,7 +9,9 @@ const common = require("@isptutorproject/webpack-config/webpack.common");
 
 let cfg = {
     entry: {
-        dipretest: "./src/index.js",
+        dipretest: "./src/pretest.js",
+        diposttest: "./src/posttest.js",
+
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -17,7 +19,7 @@ let cfg = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: "dipretest.bundle.css"
+            filename: "diprepost.bundle.css"
         }),
     ]
 };

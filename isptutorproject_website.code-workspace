@@ -9,12 +9,8 @@
 			"path": "apps/di-instruction"
 		},
 		{
-			"name": "🚀@isptutorproject/di-posttest",
-			"path": "apps/di-posttest"
-		},
-		{
-			"name": "🚀@isptutorproject/di-pretest",
-			"path": "apps/di-pretest"
+			"name": "🚀@isptutorproject/di-prepost",
+			"path": "apps/di-prepost"
 		},
 		{
 			"name": "🚀@isptutorproject/homepage",
@@ -37,10 +33,6 @@
 			"path": "common/captivate-save-questions"
 		},
 		{
-			"name": "📦 @isptutorproject/di-prepost",
-			"path": "common/di-prepost"
-		},
-		{
 			"name": "📦 @isptutorproject/isp-data",
 			"path": "common/isp-data"
 		},
@@ -57,8 +49,8 @@
 			"path": "common/scene-transitions-base"
 		},
 		{
-			"name": "⚙️ @isptutorproject/webpack",
-			"path": "config/webpack"
+			"name": "⚙️ @isptutorproject/webpack-config",
+			"path": "config/webpack-config"
 		}
 	],
 	"settings": {
