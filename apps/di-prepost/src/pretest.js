@@ -1,5 +1,5 @@
 
-import { DiTestApp, DiTestScene, DiTestResultsScene } from "@isptutorproject/di-prepost/index";
+import { DiTestApp, DiTestScene, DiTestResultsScene } from "./index";
 
 const preTestData = require("@isptutorproject/isp-data/dist/diPreTest.json");
 
