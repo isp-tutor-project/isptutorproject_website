@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"name": "🚀@isptutorproject/di-prepost",
+			"path": "apps/di-prepost"
+		},
+		{
+			"name": "🚀@isptutorproject/isp-static",
+			"path": "apps/isp-static"
+		},
+		{
+			"name": "📦 @isptutorproject/isp-data",
+			"path": "common/isp-data"
+		},
+		{
+			"name": "📦 @isptutorproject/isp-database",
+			"path": "common/isp-database"
+		},
+		{
+			"name": "📦 @isptutorproject/isp-site-styles",
+			"path": "common/isp-site-styles"
+		},
+		{
+			"name": "📦 @isptutorproject/scene-transitions-base",
+			"path": "common/scene-transitions-base"
+		}
+	]
+}
