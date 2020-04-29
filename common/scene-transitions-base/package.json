@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "description": "reusable classes for apps which transition between scenes",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "",
   "license": "ISC"
 }
