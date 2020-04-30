@@ -54,9 +54,10 @@
 		}
 	],
 	"settings": {
-		"liveServer.settings.root": "/wwwroot",
+		"liveServer.settings.root": "./wwwroot",
 		"monorepoWorkspace.folders.regex.apps": "^apps",
 		"monorepoWorkspace.folders.regex.libs": "^common",
-		"monorepoWorkspace.folders.regex.tools": "^config"
+		"monorepoWorkspace.folders.regex.tools": "^config",
+		"liveServer.settings.multiRootWorkspaceName": "✨ /home/ckot/projects/work/isptutorproject_website"
 	}
 }
