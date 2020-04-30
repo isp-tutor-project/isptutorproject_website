@@ -24,5 +24,9 @@
 			"name": "📦 @isptutorproject/scene-transitions-base",
 			"path": "common/scene-transitions-base"
 		}
-	]
+	],
+	"settings": {
+		"liveServer.settings.root": "../../wwwroot",		
+		"liveServer.settings.multiRootWorkspaceName": "🚀@isptutorproject/isp-static"
+	}
 }
