@@ -17,7 +17,7 @@ function handleQ1Submit(e) {
         let errMsg = document.getElementById(`${sceneId}_notification_region`);
         console.log(errMsg);
         errMsg.classList.remove("invisible");
-        errMsg.classList.add("visible");
+        // errMsg.classList.add("visible");
     }
 }
 
