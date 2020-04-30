@@ -5,7 +5,7 @@ export const modules = [
         storageInfo: {
             currentModule: "diPreTest",
         },
-        url: "/di/pretest/",
+        url: "/di-prepost/pretest.html",
         implemented: true
     },
     {
@@ -83,7 +83,7 @@ export const modules = [
         storageInfo: {
             currentModule: "diInstruction"
         },
-        url: "/di/instruction/",
+        url: "/di-instruction/",
         implemented: true
     },
     {
@@ -92,7 +92,7 @@ export const modules = [
         storageInfo: {
             currentModule: "diPostTest",
         },
-        url: "/di/posttest/",
+        url: "/di-prepost/posttest.html",
         implemented: false
     }
 ];
