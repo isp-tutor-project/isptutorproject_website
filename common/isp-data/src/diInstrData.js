@@ -598,7 +598,7 @@ const diInstructionData = {
             question: {
                 type: "mc",
                 text: "Comparing the means across condtions, what to these results suggest?",
-                correctAnswer: "",
+                correctAnswer: "a",
                 posFb: "Right!",
                 negFb: "Actually...",
                 options: [
