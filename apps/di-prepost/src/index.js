@@ -225,6 +225,7 @@ export class DiTestApp extends SceneTransitionsApp{
     constructor(testData, testName = "") {
         super(testData);        
         this.testName = testName;
+        this.goHomeBtn = document.getElementById("go_home_btn");
         this.nextBtn = document.getElementById("next_btn");
         this.prevBtn = document.getElementById("prev_btn");
         this.sceneIdRegion = document.getElementById("scene_id_region");
@@ -235,6 +236,9 @@ export class DiTestApp extends SceneTransitionsApp{
         this.prevBtn.addEventListener("click", (e) => {
             e.preventDefault();
             this.handleTransition("prev");
+        });
+        this.goHomeBtn.addEventListener("click", (e) => {
+            window.location.href = "/";
         });
         window.app = this;
     }
