@@ -124,7 +124,7 @@ export class SceneTransitionsApp {
 
     makeInvisible(el) {
         if (el) {
-            el.classList.remove("visible");
+            // el.classList.remove("visible");
             el.classList.add("invisible");
         }
     }
@@ -132,7 +132,7 @@ export class SceneTransitionsApp {
     makeVisible(el) {
         if (el) {
             el.classList.remove("invisible");
-            el.classList.add("visible");
+            // el.classList.add("visible");
         }
     }
 
