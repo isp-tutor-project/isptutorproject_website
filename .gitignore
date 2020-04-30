@@ -1,6 +1,8 @@
 # built dirs
 wwwroot
 
+di_instr_tmp
+
 # mac stuff
 **/.DS_Store
 
