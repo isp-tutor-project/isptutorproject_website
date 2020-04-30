@@ -21,44 +21,6 @@ function handleQ1Submit(e) {
     }
 }
 
-// function initApp(sceneId) {
-//     console.log("initializating app...");
-//     console.log(scenes);
-
-//     const tm = new TransitionsManager(scenes);
-//     tm.registerTransitionLogger(logTransition);
-//     tm.registerActionHandler("displaySceneId", displaySceneId);
-//     tm.registerActionHandler('hideBtns', hideBtns);
-//     tm.registerActionHandler('showBtns', showBtns);
-//     tm.registerActionHandler('disableBtns', disableBtns);
-//     tm.registerActionHandler("initForms", initForms);
-//     tm.initialize();
-//     tm.setCurrScene(sceneId);
-    
-//     prevBtn.addEventListener("click", (e) => {
-//         e.preventDefault();
-//         tm.transitionTo("prev");
-//     });
-//     nextBtn.addEventListener("click", (e) => {
-//         e.preventDefault();
-//         tm.transitionTo("next");
-//     });
-
-//     for (let btn of document.getElementsByClassName("reveal-mean")) {
-//         btn.addEventListener("click", revealMean);
-//     }
-//     for (let btn of document.getElementsByClassName("show-sorted-img")) {
-//         btn.addEventListener("click", handleSortImageClick);
-//     }
-//     for (let btn of document.getElementsByClassName("submit-q1")) {
-//         console.log(btn);
-//         btn.addEventListener("click", handleQ1Submit);
-//     }
-//     for (let radio of document.querySelectorAll('input[type="radio"]')) {
-//         radio.addEventListener("change", handleFormChange);        
-//     }
-//     console.log("app init complete");
-// }
 class MemoryResultsScene extends DiTestResultsScene {
     constructor(app, sceneInfo) {
         super(app, sceneInfo);
