@@ -18,6 +18,7 @@
 		}
 	],
 	"settings": {
-		"liveServer.settings.root": "/wwwroot"
+		"liveServer.settings.root": "../../wwwroot",
+		"liveServer.settings.multiRootWorkspaceName": "🚀@isptutorproject/isp-static"
 	}
 }
