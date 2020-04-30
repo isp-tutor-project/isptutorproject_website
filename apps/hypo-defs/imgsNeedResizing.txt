@@ -1,0 +1,39 @@
+images are located in  isptutorproject_website/apps/isp-static/img/hypo/
+
+slide #s are using Steph's powerpoint
+
+slide4:
+iv2dvWithArrow.png scale to 55% of current size
+
+
+slide 5 & 6:
+defPagesCptMap.jpg  
+size ok. requires labels added to arrows as in Steph's powerpoint, perhaps .png 
+instead because it contains text (up to you)
+
+
+slide 8:
+defGraph.png 50%
+causeGraph.png 50%
+corrGraph.png 50%
+
+slide9:
+
+temperaturegif.gif  15%?  I think we may need to play around with this one's size (email to me rather than commit to github)
+densitygraphic.jpg  50%
+
+slide10:
+
+comic.jpg   70%   (might want to make text bigger and may .png. again up to you)
+coffeegraphic.jpg 70%
+
+slide 11:
+
+correlation.png 40%
+IceCreamSwimming.png 50%
+graph1.png 40%
+graph2.png 40%
+
+
+
+will need images for slides 18-25
