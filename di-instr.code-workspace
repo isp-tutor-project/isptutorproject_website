@@ -1,10 +1,6 @@
 {
 	"folders": [
 		{
-			"name": "✨ /home/ckot/projects/work/isptutorproject_website",
-			"path": "."
-		},
-		{
 			"name": "🚀@isptutorproject/di-instruction",
 			"path": "apps/di-instruction"
 		},
