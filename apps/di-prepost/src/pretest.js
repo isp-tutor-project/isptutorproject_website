@@ -56,4 +56,4 @@ class DiPreTestApp extends DiTestApp {
 }
 
 let app = new DiPreTestApp(preTestData, "dipretest");
-app.setStartScene("rocketsResults1");
+app.setStartScene("intro");
