@@ -1,6 +1,9 @@
 # built dirs
 wwwroot
 
+# mac stuff
+**/.DS_Store
+
 # Logs
 logs
 *.log
