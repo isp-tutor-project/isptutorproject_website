@@ -275,9 +275,10 @@ button.form-submit-centered {
 .invisible {
     visibility: hidden;
 }
+/* 
 .visible {
     visibility: visible;
-}
+} */
 
 .hidden {
     display: none;
