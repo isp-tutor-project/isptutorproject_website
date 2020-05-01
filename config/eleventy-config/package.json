@@ -1,0 +1,13 @@
+{
+  "name": "@isptutorproject/eleventy-config",
+  "version": "0.1.0",
+  "description": "config file and shared resources for our eleventy setup(s)",
+  "main": "index.js",
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "@11ty/eleventy": "0.10.0",
+    "prettier": "^1.19.1",
+    "uuid": "^3.4.0"
+  } 
+}
