@@ -52,6 +52,7 @@ module.exports = function(eleventyConfig) {
     return {
         dir: {
             input: "templates",
+            includes: "_includes",
             output: "../../wwwroot",
         },
         templateFormats: ["njk"]
