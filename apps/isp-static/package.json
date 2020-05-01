@@ -10,6 +10,7 @@
     "watch": "eleventy --watch"
   },
   "devDependencies": {
+    "@11ty/eleventy": "0.10.0",
     "@isptutorproject/eleventy-config": "0.1.0"   
   }
 }
