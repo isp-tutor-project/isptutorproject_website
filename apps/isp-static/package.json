@@ -10,8 +10,6 @@
     "watch": "eleventy --watch"
   },
   "devDependencies": {
-    "@11ty/eleventy": "0.10.0",
-    "prettier": "^1.19.1",
-    "uuid": "^3.4.0"     
+    "@isptutorproject/eleventy-config": "0.1.0"   
   }
 }
