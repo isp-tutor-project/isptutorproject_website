@@ -3,54 +3,6 @@
 		{
 			"name": "✨ /home/ckot/projects/work/isptutorproject_website",
 			"path": "."
-		},
-		{
-			"name": "🚀@isptutorproject/di-instruction",
-			"path": "apps/di-instruction"
-		},
-		{
-			"name": "🚀@isptutorproject/di-prepost",
-			"path": "apps/di-prepost"
-		},
-		{
-			"name": "🚀@isptutorproject/homepage",
-			"path": "apps/homepage"
-		},
-		{
-			"name": "🚀@isptutorproject/hypo-defs",
-			"path": "apps/hypo-defs"
-		},
-		{
-			"name": "🚀@isptutorproject/isp-static",
-			"path": "apps/isp-static"
-		},
-		{
-			"name": "📦 @isptutorproject/build-captivate-app",
-			"path": "common/build-captivate-app"
-		},
-		{
-			"name": "📦 @isptutorproject/captivate-save-questions",
-			"path": "common/captivate-save-questions"
-		},
-		{
-			"name": "📦 @isptutorproject/isp-data",
-			"path": "common/isp-data"
-		},
-		{
-			"name": "📦 @isptutorproject/isp-database",
-			"path": "common/isp-database"
-		},
-		{
-			"name": "📦 @isptutorproject/isp-site-styles",
-			"path": "common/isp-site-styles"
-		},
-		{
-			"name": "📦 @isptutorproject/scene-transitions-base",
-			"path": "common/scene-transitions-base"
-		},
-		{
-			"name": "⚙️ @isptutorproject/webpack-config",
-			"path": "config/webpack-config"
 		}
 	],
 	"settings": {
