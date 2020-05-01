@@ -1,6 +1,9 @@
 # built dirs
 wwwroot
 
+# symlinks
+apps/*/templates/_includes/site
+
 di_instr_tmp
 
 # mac stuff
