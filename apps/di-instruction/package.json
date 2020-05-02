@@ -3,8 +3,14 @@
   "version": "0.1.0",
   "description": "Data Interpretation Instruction Module",
   "scripts": {
-    "build": "NODE_ENV=production DEBUG=false webpack --mode=production",
-    "watch": "NODE_ENV=development DEBUG=true webpack --watch --mode=development"
+    "clean": "rimraf dist",
+    "build": "npm run clean && npm run build:data && npm run build:code && npm run build:html",
+    "build:data": "node scripts/buildData.js",
+    "build:code": "NODE_ENV=production DEBUG=false webpack --mode=production",
+    "build:html": "eleventy",
+    "watch": "npm run build:data && npm run watch:code & npm run watch:html",
+    "watch:code": "NODE_ENV=development DEBUG=true webpack --watch --mode=development",
+    "watch:html": "eleventy --watch"
   },
   "author": "Scott Silliman <scott.t.silliman@gmail.com>",
   "license": "Proprietary",
@@ -14,6 +20,8 @@
     "@isptutorproject/scene-transitions-base": "0.1.0"
   },
   "devDependencies": {
+    "@11ty/eleventy": "0.10.0",
+    "@isptutorproject/eleventy-config": "0.1.0",
     "@isptutorproject/webpack-config": "0.1.0",
     "rimraf": "^3.0.2",        
     "webpack": "4.42.0",
