@@ -1,7 +1,7 @@
 
 import { DiTestApp, DiTestScene, DiTestResultsScene } from "./index";
 
-const preTestData = require("@isptutorproject/isp-data/dist/diPreTest.json");
+const preTestData = require("../data/diPreTest.json");
 
 function handleQ1Submit(e) {
     console.log("clicked");
