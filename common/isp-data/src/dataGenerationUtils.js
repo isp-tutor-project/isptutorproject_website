@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+
 function addSceneTypeIfMissing(sd) {
     if (! sd.hasOwnProperty("sceneType")) {
         sd["sceneType"] = "standard";
@@ -20,6 +21,66 @@ function addCustomExitActionsIfMissing(sd) {
     }
     return sd;
 }
+
+
+class DataBuilder {
+    constructor(filePrefix) {
+        // this.inFile = path.resolve(__dirname, `${filePrefix}Data`);
+        // this.outFile = path.resolve(__dirname, `${filePrefix}.json`);
+        const pwd = process.cwd();        
+        this.inFile  = path.join(pwd, "data", `${filePrefix}Data.js`);
+        this.outFile = path.join(pwd, "data", `${filePrefix}.json`);
+        // console.log("__dirname", __dirname);
+        console.log("infile", this.inFile);
+        console.log("outfile", this.outFile);
+    }
+
+    buildData() {
+        // blow away old generated content if it exists
+        // console.log(`infile: ${inFile}\noutfile: ${outFile}`);
+        if (fs.existsSync(this.outFile)) {
+            // console.log("blowing away old outfile");
+            try {
+                fs.unlinkSync(this.outFile);
+            } catch (err) {
+                console.error(err);
+            }
+        }
+        let origData;
+        try {
+            console.log(`loading ${this.inFile}`);
+            origData = require(this.inFile);
+            // console.log(`data loaded`);
+        } catch (err) {
+            console.error(err);
+            process.exit(1);
+        }
+        const mungedData = this.mungeData(origData);
+        if (mungedData) {
+            // console.log(`writing to outfile ${outFile}`);
+            fs.writeFileSync(this.outFile, JSON.stringify(mungedData, null, 4));
+        }
+    }
+
+    mungeData(data)  {
+        let newData = { scenes: {} };
+        let errorsFound = false;
+        for (let [sceneId, sceneData] of Object.entries(data.scenes)) {
+            sceneData["id"] = sceneId;
+            sceneData = addSceneTypeIfMissing(sceneData);
+            sceneData = addCustomEnterActionsIfMissing(sceneData);
+            sceneData = addCustomExitActionsIfMissing(sceneData);
+            newData.scenes[sceneId] = sceneData;
+        }
+        if (errorsFound) {
+            newData = null;
+        }
+        return newData;
+    }
+
+};
+
+
 
 function genData(filePrefix, munger) {
     console.log(`generating ${filePrefix} data..`);
@@ -56,6 +117,7 @@ function genData(filePrefix, munger) {
 }
 
 const dgu = {
+    DataBuilder,
     genData,
     addSceneTypeIfMissing,
     addCustomEnterActionsIfMissing,
