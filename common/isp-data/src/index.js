@@ -66,10 +66,10 @@ function stdMungeData(data) {
 }
 
 
-dgu.genData("diPreTest", diPrePostMunger);
+// dgu.genData("diPreTest", diPrePostMunger);
 
 
-dgu.genData("diInstr", stdMungeData);
+// dgu.genData("diInstr", stdMungeData);
 
 
 dgu.genData("hypoDefs", stdMungeData);
