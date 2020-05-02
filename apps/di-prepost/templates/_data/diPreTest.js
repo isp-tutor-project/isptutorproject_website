@@ -1,4 +1,4 @@
 
-const data = require("@isptutorproject/isp-data/dist/diPreTest.json");
+const data = require("../../data/diPreTest.json");
 module.exports = data;
 
