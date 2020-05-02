@@ -1,3 +1,3 @@
-const data = require("@isptutorproject/isp-data/dist/diInstr.json");
+const data = require("../../data/diInstr.json");
 
 module.exports = data;
