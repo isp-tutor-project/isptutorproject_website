@@ -4,6 +4,9 @@ wwwroot
 # symlinks
 apps/*/templates/_includes/site
 
+# built data files
+apps/*/data/*.json
+
 di_instr_tmp
 
 # mac stuff
