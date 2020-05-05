@@ -72,4 +72,4 @@ function stdMungeData(data) {
 // dgu.genData("diInstr", stdMungeData);
 
 
-dgu.genData("hypoDefs", stdMungeData);
+// dgu.genData("hypoDefs", stdMungeData);
