@@ -1,4 +1,4 @@
 
-const data = require("@isptutorproject/isp-data/dist/hypoDefs.json");
+const data = require("../../data/hypo.json");
 module.exports = data;
 
