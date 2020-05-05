@@ -759,7 +759,7 @@ class QuestionScene extends Scene {
     }
 }
 
-class HypoDefinitionsApp extends SceneTransitionsApp {
+class HypoApp extends SceneTransitionsApp {
     constructor(appData) {
         super(appData);
         this.nextBtn = document.getElementById("next_btn");
@@ -809,5 +809,5 @@ class HypoDefinitionsApp extends SceneTransitionsApp {
     }
 }
 
-const app = new HypoDefinitionsApp(appData);
+const app = new HypoApp(appData);
 app.setStartScene("startPage");
