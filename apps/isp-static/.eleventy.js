@@ -10,12 +10,12 @@ const {
 } = require("@isptutorproject/eleventy-config");
 
 const APPS = {
-    "homepage": ".",
-    "hypo-defs": "hypo/defs"
+    "homepage": "."
 };
 
 // "di-instruction": "di-instruction",
 // "di-prepost": "di-prepost",
+// "hypo-defs": "hypo/defs"
 
 module.exports = function(eleventyConfig) {
     eleventyConfig.addTransform("prettier", prettify);
@@ -27,6 +27,8 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy({"../di-instruction/dist": "di-instruction"});
     eleventyConfig.addWatchTarget('../di-prepost/dist/*.*');
     eleventyConfig.addPassthroughCopy({ "../di-prepost/dist": "di-prepost" });
+    eleventyConfig.addWatchTarget('../hypo/dist/*.*');
+    eleventyConfig.addPassthroughCopy({ "../hypo/dist": "hypo" });
 
     for (let [app, appPath] of Object.entries(APPS)) {
         eleventyConfig.addWatchTarget(`../${app}/dist/*.*`);
@@ -48,11 +50,11 @@ module.exports = function(eleventyConfig) {
     //     return mergeScenesWithData(scenes, sceneData);
     // });
 
-    eleventyConfig.addCollection("hypoDefScenesWithData", function (collection) {
-        let scenes = collection.getFilteredByTag("hypoDefScenes");
-        let sceneData = collection.getAll()[0].data.hypoDefs.scenes;
-        return mergeScenesWithData(scenes, sceneData);
-    });
+    // eleventyConfig.addCollection("hypoDefScenesWithData", function (collection) {
+    //     let scenes = collection.getFilteredByTag("hypoDefScenes");
+    //     let sceneData = collection.getAll()[0].data.hypoDefs.scenes;
+    //     return mergeScenesWithData(scenes, sceneData);
+    // });
 
     return {
         dir: {
