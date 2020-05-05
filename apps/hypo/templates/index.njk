@@ -3,14 +3,14 @@
     <head>
         {% include "site/stdHead.njk" %}
         <title>Hypothesis Definitions</title>
-        <link rel="stylesheet" href="hypodefs.bundle.css" >
+        <link rel="stylesheet" href="hypo.bundle.css" >
     </head>
     <body>
         <header></header>
         <main>
             <div id="scene_id_region"></div>
 
-            {% for scene in collections.hypoDefScenes %}
+            {% for scene in collections.hypoScenes %}
                 <section id="{{scene.fileSlug}}" class="scene">
                     {{ scene.templateContent | safe }}
                 </section>
@@ -19,6 +19,6 @@
             <img id="prev_btn" class="nav-btn prev-btn" />
             <img id="next_btn" class="nav-btn next-btn" />
         </main>
-        <script src="./hypodefs.bundle.js"></script>
+        <script src="./hypo.bundle.js"></script>
     </body>
 </html>
