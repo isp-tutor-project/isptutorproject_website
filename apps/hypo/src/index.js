@@ -3,7 +3,7 @@ import { Scene, SceneTransitionsApp } from "@isptutorproject/scene-transitions-b
 
 import "./css/index.css";
 
-let appData = require("@isptutorproject/isp-data/dist/hypoDefs.json");
+let appData = require("../data/hypo.json");
 
 // function raiseYourHand() {
 //     stage.removeAllChildren();
