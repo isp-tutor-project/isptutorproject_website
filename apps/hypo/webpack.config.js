@@ -9,7 +9,7 @@ const common = require("@isptutorproject/webpack-config/webpack.common");
 
 let cfg = {
     entry: {
-        hypodefs: "./src/index.js",
+        hypo: "./src/index.js",
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -17,7 +17,7 @@ let cfg = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: "hypodefs.bundle.css"
+            filename: "hypo.bundle.css"
         }),
     ]
 };
