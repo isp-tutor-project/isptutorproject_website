@@ -7,14 +7,6 @@
 		{
 			"name": "🚀@isptutorproject/isp-static",
 			"path": "apps/isp-static"
-		},
-		{
-			"name": "📦 @isptutorproject/isp-data",
-			"path": "common/isp-data"
-		},
-		{
-			"name": "📦 @isptutorproject/scene-transitions-base",
-			"path": "common/scene-transitions-base"
 		}
 	],
 	"settings": {
