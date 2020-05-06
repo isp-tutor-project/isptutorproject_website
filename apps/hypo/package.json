@@ -6,15 +6,9 @@
   "license": "PROPRIETARY",
   "private": true,
   "scripts": {
-      "clean": "rimraf dist",
-      "build": "npm run clean && npm run build:data && npm run build:code && npm run build:html",
-      "build:data": "node scripts/buildData.js",
-      "build:code": "NODE_ENV=production DEBUG=false webpack --mode=production",
-      "build:html": "eleventy",
-      "watch": "npm run build:data && npm run watch:code & npm run watch:html",
-      "watch:code": "NODE_ENV=development DEBUG=true webpack --watch --mode=development",
-      "watch:html": "eleventy --watch",
-      "setup": "cd templates/_includes && ln -sf ../../../../config/eleventy-config/sitewide_includes site"
+      "build": "npm run setup && rimraf dist && node scripts/buildData.js && NODE_ENV=production DEBUG=false webpack --mode=production && eleventy",
+      "watch": "npm run setup && rimraf dist && node scripts/buildData.js && NODE_ENV=development DEBUG=true webpack --watch --mode=development & eleventy --watch",
+      "setup": "cd templates/_includes && ln -sf ../../../../config/eleventy-config/sitewide_includes site && cd ../.."
     },
   "dependencies": {
     "@isptutorproject/isp-database": "0.1.0",

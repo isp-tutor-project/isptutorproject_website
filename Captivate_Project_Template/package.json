@@ -4,7 +4,7 @@
   "main": "src/index.js",
   "license": "UNLICENSED",
   "private": true,
-  "scripts": {
+  "comments": {
     "build": "rimraf dist && webpack --mode=production && munge-captivate-app"
   },
   "dependencies": {

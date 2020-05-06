@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "description": "Data Interpretation Instruction Module",
   "scripts": {
-    "build": "rimraf dist && node scripts/buildData.js && NODE_ENV=production DEBUG=false webpack --mode=production && eleventy",
-    "watch": "rimraf dist && node scripts/buildData.js && NODE_ENV=development DEBUG=true webpack --watch --mode=development & eleventy --watch"
+    "build": "npm run setup && rimraf dist && node scripts/buildData.js && NODE_ENV=production DEBUG=false webpack --mode=production && eleventy",
+    "watch": "npm run setup && rimraf dist && node scripts/buildData.js && NODE_ENV=development DEBUG=true webpack --watch --mode=development & eleventy --watch",
+    "setup": "cd templates/_includes && ln -sf ../../../../config/eleventy-config/sitewide_includes site && cd ../.."
   },
   "author": "Scott Silliman <scott.t.silliman@gmail.com>",
   "license": "Proprietary",
