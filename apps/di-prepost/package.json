@@ -8,7 +8,7 @@
     "scripts": {
         "build": "npm run setup && rimraf dist && node scripts/buildData.js && NODE_ENV=production DEBUG=false webpack --mode=production && eleventy",
         "watch": "npm run setup && rimraf dist && node scripts/buildData.js && NODE_ENV=development DEBUG=false webpack --watch --mode=development & eleventy --watch",
-        "setup": "cd templates/_includes && ln -sf ../../../../config/eleventy-config/sitewide_includes site && cd ../.."
+        "setup": "cd templates/_includes && ln -sfn ../../../../config/eleventy-config/sitewide_includes site && cd ../.."
     },
     "dependencies": {
         "@isptutorproject/isp-database": "0.1.0",
