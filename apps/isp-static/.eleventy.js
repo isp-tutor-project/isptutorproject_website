@@ -1,13 +1,4 @@
-// const fs = require("fs");
-// const path = require("path");
-
-// const { 
-//     prettify, 
-//     uuid,
-//     verticallyCenter,
-//     jsonify,
-//     mergeScenesWithData
-// } = require("@isptutorproject/eleventy-config");
+// this config simply copies all of the individually built apps into wwwroot
 
 const APPS = {
     "../di-instr/dist/*.*": "di-instr",
@@ -17,19 +8,14 @@ const APPS = {
 };
 
 module.exports = function(eleventyConfig) {
-    // eleventyConfig.addTransform("prettier", prettify);
-    // eleventyConfig.addNunjucksFilter("jsonify", jsonify);
-    // eleventyConfig.addNunjucksFilter("uuid", uuid);
-    // eleventyConfig.addPairedShortcode("vertcenter", verticallyCenter);
-
+ 
     for (let [appSrc, appDest] of Object.entries(APPS)) {
         eleventyConfig.addWatchTarget(appSrc);
         eleventyConfig.addPassthroughCopy({[appSrc]: appDest});
     }
     
     eleventyConfig.addPassthroughCopy({"img": "img"});
-    // eleventyConfig.addPassthroughCopy({"src/styles/*.*": "."});
-
+ 
     return {
         dir: {
             input: "templates",
