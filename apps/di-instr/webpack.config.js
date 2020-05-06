@@ -9,7 +9,7 @@ const common = require("@isptutorproject/webpack-config/webpack.common");
 
 let cfg = {
     entry: {
-        "di-instruction": './src/index.js',
+        "di-instr": './src/index.js',
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -17,7 +17,7 @@ let cfg = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: "di-instruction.bundle.css"
+            filename: "di-instr.bundle.css"
         }),
     ]
 }
