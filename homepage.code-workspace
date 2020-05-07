@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "🚀@isptutorproject/homepage",
+			"path": "apps/homepage"
+		},
+		{
+			"name": "🚀@isptutorproject/isp-static",
+			"path": "apps/isp-static"
+		}
+	],
+	"settings": {
+		"liveServer.settings.root": "/wwwroot"
+	}
+}
