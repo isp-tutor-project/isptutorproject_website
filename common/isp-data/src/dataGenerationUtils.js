@@ -31,8 +31,8 @@ class DataBuilder {
         this.inFile  = path.join(pwd, "data", `${filePrefix}Data.js`);
         this.outFile = path.join(pwd, "data", `${filePrefix}.json`);
         // console.log("__dirname", __dirname);
-        console.log("infile", this.inFile);
-        console.log("outfile", this.outFile);
+        // console.log("infile", this.inFile);
+        // console.log("outfile", this.outFile);
     }
 
     buildData() {
@@ -48,7 +48,7 @@ class DataBuilder {
         }
         let origData;
         try {
-            console.log(`loading ${this.inFile}`);
+            // console.log(`loading ${this.inFile}`);
             origData = require(this.inFile);
             // console.log(`data loaded`);
         } catch (err) {
