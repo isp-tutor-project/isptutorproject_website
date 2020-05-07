@@ -42,17 +42,18 @@ export const modules = [
         label: "Definitions for Hypotheses",
         phase: "hypo",
         storageInfo: {
-            currentModule: "hypoDefs"
+            currentModule: "hypo",
+            tutorFeatures: "FTR_WEB:FTR_DEFS_ONLY"
         },
-        url: "/hypo/defs/",
+        url: "/hypo/",
         implemented: true
     },
     {
         label: "Initial Hypothesis (No CptMap)",
         phase: "hypo",
         storageInfo: {
-            currentModule: "initialHypo",
-            tutorFeatures: "FTR_NOCPTMAP"
+            currentModule: "hypo",
+            tutorFeatures: "FTR_WEB:FTR_INITIAL_HYP:FTR_NOCPTMAP"
         },
         url: "/hypo/",
         implemented: false
@@ -61,8 +62,8 @@ export const modules = [
         label: "Initial Hypothesis (CptMap)",
         phase: "hypo",
         storageInfo: {
-            currentModule: "initialHypo",
-            tutorFeatures: "FTR_CPTMAP"
+            currentModule: "hypo",
+            tutorFeatures: "FTR_WEB:FTR_INITIAL_HYP:FTR_CPTMAP"
         },
         url: "/hypo/",
         implemented: false
@@ -71,8 +72,8 @@ export const modules = [
         label: "Final Hypothesis",
         phase: "hypo",
         storageInfo: {
-            currentModule: "finalHypo",
-            tutorFeatures: "FTR_CPTMAP"
+            currentModule: "hypo",
+            tutorFeatures: "FTR_WEB:FTR_FINAL_HYP:FTR_CPTMAP"
         },
         url: "/hypo/",
         implemented: false
@@ -83,7 +84,7 @@ export const modules = [
         storageInfo: {
             currentModule: "diInstruction"
         },
-        url: "/di-instruction/",
+        url: "/di-instr/",
         implemented: true
     },
     {
