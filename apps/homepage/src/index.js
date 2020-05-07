@@ -2,7 +2,7 @@
 import  db  from "@isptutorproject/isp-database";
 window.db = db;
 
-import { modules } from "@isptutorproject/isp-data/src/homePageData";
+import { modules } from "../data/homePageData";
 
 import "./styles/main.css";
 
