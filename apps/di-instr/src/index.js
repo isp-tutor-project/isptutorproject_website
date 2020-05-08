@@ -6,4 +6,4 @@ import "./styles/index.css";
 let appData = require("../data/diInstr.json");
 
 let app = new DiInstructionApp(appData)
-app.setStartScene("scene1");
+app.setStartScene("intro1");
