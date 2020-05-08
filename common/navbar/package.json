@@ -1,0 +1,8 @@
+{
+  "name": "@isptutorproject/navbar",
+  "version": "0.1.0",
+  "description": "navbar for site-wide use",
+  "main": "index.js",
+  "license": "UNLICENED",
+  "private": true
+}

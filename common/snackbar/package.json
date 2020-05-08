@@ -1,0 +1,8 @@
+{
+  "name": "@isptutorproject/snackbar",
+  "version": "0.1.0",
+  "description": "simple snackbar implementation for site-wide use",
+  "main": "index.js",
+  "license": "UNLICENSED",
+  "private": true
+}
