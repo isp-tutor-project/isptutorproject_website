@@ -218,20 +218,20 @@ ul.centered {
     /* image 209x81 */
     top: calc(100% - 111px);
     left: calc(100% - 241px);
-    content: url("/img/di/instr/readyToAnswerOrange.png");
+    content: url("/di-instr/img/readyToAnswerOrange.png");
 }
 .ready-to-answer-btn:hover {
-    content: url("/img/di/instr/readyToAnswerYellow.png");
+    content: url("/di-instr/img/readyToAnswerYellow.png");
 }
 
 .back-to-question-btn {
     /* image is 209x81 */
     top: calc(100% - 111px);
     left: 30px;
-    content: url("/img/di/instr/backToQuestionOrange.png");
+    content: url("/di-instr/img/backToQuestionOrange.png");
 }
 .back-to-question-btn:hover {
-    content: url("/img/di/instr/backToQuestionYellow.png");
+    content: url("/di-instr/img/backToQuestionYellow.png");
 }
 
 
