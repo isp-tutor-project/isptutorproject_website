@@ -9,17 +9,7 @@ export const modules = [
         implemented: true
     },
     {
-        label: "Research Question Selection (Choice)",
-        phase: "rqSelect",
-        storageInfo: {
-            currentModule: "rqSelect",
-            tutorFeatures: "FTR_WEB:FTR_CHOICE"
-        },
-        url: "/tutors/rqSelect.html",
-        implemented: false
-    },
-    {
-        label: "Research Question Selection (No Choice)",
+        label: "Research Question Selection (No Choice Crystal)",
         phase: "rqSelect",
         storageInfo: {
             currentModule: "rqSelect",
@@ -39,17 +29,7 @@ export const modules = [
         implemented: false
     },
     {
-        label: "Definitions for Hypotheses",
-        phase: "hypo",
-        storageInfo: {
-            currentModule: "hypo",
-            tutorFeatures: "FTR_WEB:FTR_DEFS_ONLY"
-        },
-        url: "/hypo/",
-        implemented: true
-    },
-    {
-        label: "Initial Hypothesis (No CptMap)",
+        label: "Hypothesis (Initial Hypo w/o CptMap)",
         phase: "hypo",
         storageInfo: {
             currentModule: "hypo",
@@ -59,7 +39,7 @@ export const modules = [
         implemented: false
     },
     {
-        label: "Initial Hypothesis (CptMap)",
+        label: "Hypothesis (Initial Hypo with CptMap)",
         phase: "hypo",
         storageInfo: {
             currentModule: "hypo",
@@ -69,7 +49,17 @@ export const modules = [
         implemented: false
     },
     {
-        label: "Final Hypothesis",
+        label: "Hypothesis (definition pages only)",
+        phase: "hypo",
+        storageInfo: {
+            currentModule: "hypo",
+            tutorFeatures: "FTR_WEB:FTR_DEFS_ONLY"
+        },
+        url: "/hypo/",
+        implemented: true
+    },
+    {
+        label: "Hypothesis (final hypothesis",
         phase: "hypo",
         storageInfo: {
             currentModule: "hypo",
@@ -97,3 +87,13 @@ export const modules = [
         implemented: false
     }
 ];
+// {
+//     label: "Research Question Selection (Choice)",
+//         phase: "rqSelect",
+//             storageInfo: {
+//         currentModule: "rqSelect",
+//             tutorFeatures: "FTR_WEB:FTR_CHOICE"
+//     },
+//     url: "/tutors/rqSelect.html",
+//         implemented: false
+// },
