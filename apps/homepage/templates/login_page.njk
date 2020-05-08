@@ -3,8 +3,8 @@ permalink: false
 tags: ["homePageSections"]
 ---
 {% import "userFormFlds.njk" as userForm %}
-<button id="l-back-button" class="back-button">Back</button>
+<button id="l-back-button" class="btn-md back-button">Back</button>
 <form class="border-container" id="login_form">
     {{ userForm.create("login") }}
-    <button type="submit" id="login_submit">Login</button>
+    <button type="submit" id="login_submit" class="btn-md">Login</button>
 </form>
