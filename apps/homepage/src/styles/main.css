@@ -7,6 +7,13 @@ body {
   margin: 0;
 }
 
+footer {
+  font-size: 10px;
+  background-color: #E4E3E3;
+  padding: 10px;
+  margin-top: 80px;
+}
+
 h2 {
   text-align: center;
   margin: 0;
@@ -22,20 +29,6 @@ input {
   text-transform: uppercase;
 }
 
-input::placeholder {
-  text-transform: none;
-}
-
-.border-container {
-  border: 3px solid #f1f1f1;
-  width: 600px;
-  margin: auto
-}
-
-label {
-  font-size: 20px;
-}
-
 input {
   width: 100%;
   padding: 12px 20px;
@@ -43,6 +36,14 @@ input {
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
+  font-size: 20px;
+}
+
+input::placeholder {
+  text-transform: none;
+}
+
+label {
   font-size: 20px;
 }
 
@@ -61,12 +62,38 @@ button:hover {
   opacity: 0.8;
 }
 
+.border-container {
+  border: 3px solid #f1f1f1;
+  width: 600px;
+  margin: auto
+}
+
 .container {
   padding: 20px;
 }
 
-#module_btns_container {
-  column-count: 3;
+
+.hidden {
+  display: none;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.btn-lg {
+  width: 400px;
+}
+
+.btn-md {
+  width: 200px;
+}
+
+.btn-sm {
+  width: 100px;
+  margin: 0;
+  padding: 5px;
+  font-size: small;
 }
 
 .header {
@@ -74,79 +101,6 @@ button:hover {
   /* height: 160px; */
   height: fit-content;
   background-color: #0080FF;
-}
-
-
-/* Footer */
-footer {
-  font-size: 10px;
-  background-color: #E4E3E3;
-  padding: 10px;
-  margin-top: 80px;
-}
-
-.logo {
-  position: absolute;
-  height: 200px;
-  z-index: 1;
-}
-
-.button-container {
-  width: 600px;
-  margin: auto;
-}
-
-.module-button {
-  background-color: #0080FF;
-}
-
-#signin_button {
-  background-color: #0F52BA;
-}
-
-#register_button {
-  background-color: #4CAF50;
-}
-
-#title_logo {
-  display: block;
-  width: 100%;
-  margin: auto;
-}
-
-#home-icon {
-  display: absolute;
-  font-size: 64px;
-  cursor: pointer;
-  z-index: 1;
-}
-
-#home-icon:hover {
-  color: #828282;
-}
-
-.overlay {
-  position: fixed;
-  display: none;
-  z-index: 1;
-}
-
-#home-overlay {
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #FFFFFF;
-  height: 220px;
-}
-
-#completion-overlay {
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #FFFFFF;
-  height: 220px;
 }
 
 .inline-btn-container {
@@ -167,19 +121,6 @@ footer {
 
 .disabled:hover {
   opacity: 1;
-}
-
-#sign_in_text {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 1;
-}
-#sign_out_region {
-  position: absolute;
-  top: 30px;
-  right: 20px;
-  z-index: 1;
 }
 
 .page {
@@ -244,174 +185,49 @@ footer {
   font-weight:normal;
 }
 
-.back-button {
-  position: block;
-  width: 80px;
-  margin: 20px;
-  background-color: #659EC7;
-}
 
-/* For Hypo module */
-#instruction_video_overlay {
+.logo {
   position: absolute;
-  display: none;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  height: 200px;
   z-index: 1;
 }
 
-#hypo-canvas {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+.button-container {
+  width: 600px;
+  margin: auto;
 }
 
-.quiz_questions {
-  font-size: 20px;
-  margin-bottom: 20px;
+.module-button {
+  background-color: #0080FF;
 }
 
-.quiz_questions:invalid {
-  color: red;
+
+
+#module_btns_container {
+  column-count: 3;
 }
 
-#quiz_overlay ul li {
-  margin-bottom: 20px;
-  font-size: 24px;
+#signin_button {
+  background-color: #0F52BA;
 }
 
-#start_page_overlay {
-  font-size: 10px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 475px;
-  height: 250px;
+#register_button {
+  background-color: #4CAF50;
 }
 
-.notepad {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 200px;
-  height: 300px;
-  background-color: yellow;
-  border: 1px solid black;
-}
-.notepad-heading {
-  height: 62px;
+#title_logo {
+  display: block;
   width: 100%;
-  text-align: center;
-  border: 1px black;
-  /* font-weight: bold; */
-}
-.notepad-body {
-  width: 100%;
-  border: 0;
-  max-height: calc(100% - 62px);
-  min-height: calc(100% - 62px);
-  overflow: auto;
+  margin: auto;
 }
 
-#save_concept_map_overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 500px;
-  height: 300px;
-  border: 1px solid black;
-  background-color: white;
-}
-.save-cpt-map-heading {
-  font-size: 20px;
-  padding: 10px;
-  margin: 20px;
+#home-icon {
+  display: absolute;
+  font-size: 64px;
+  cursor: pointer;
+  z-index: 1;
 }
 
-#leave_concept_map_overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 300px;
-  height: 200px;
-  border: 1px solid black;
-  background-color: white;
-}
-.leave-cpt-map-heading {
-  font-size: 20px;
-  padding: 10px;
-  margin: 20px;
-}
-
-/* The snackbar - position it at the bottom and in the middle of the screen */
-#snackbar {
-  visibility: hidden; /* Hidden by default. Visible on click */
-  min-width: 300px; /* Set a default minimum width */
-  margin-left: -150px; /* Divide value of min-width by 2 */
-  background-color: #333; /* Black background color */
-  color: #fff; /* White text color */
-  text-align: center; /* Centered text */
-  border-radius: 2px; /* Rounded borders */
-  padding: 16px; /* Padding */
-  position: fixed; /* Sit on top of the screen */
-  z-index: 1; /* Add a z-index if needed */
-  left: 50%; /* Center the snackbar */
-  bottom: 30px; /* 30px from the bottom */
-}
-/* Show the snackbar when clicking on a button (class added with JavaScript) */
-#snackbar.show {
-  visibility: visible; /* Show the snackbar */
-  /* Add animation: Take 0.5 seconds to fade in and out the snackbar. 
-  However, delay the fade out process for 2.5 seconds */
-  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-  animation: fadein 0.5s, fadeout 0.5s 2.5s;
-}
-/* Animations to fade the snackbar in and out */
-@-webkit-keyframes fadein {
-  from {bottom: 0; opacity: 0;} 
-  to {bottom: 30px; opacity: 1;}
-}
-@keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
-}
-@-webkit-keyframes fadeout {
-  from {bottom: 30px; opacity: 1;} 
-  to {bottom: 0; opacity: 0;}
-}
-@keyframes fadeout {
-  from {bottom: 30px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
-}
-
-/* for adobe animate (rq and ted) */
-#animation_container, #_preload_div_ {
-  position:absolute;
-  margin:auto;
-  left:0;right:0;
-  top:0;bottom:0;
-}
-
-.hidden {
-  display: none;
-}
-
-.btn-lg {
-  width: 400px;
-}
-
-.btn-md {
-  width: 200px;
+#home-icon:hover {
+  color: #828282;
 }
