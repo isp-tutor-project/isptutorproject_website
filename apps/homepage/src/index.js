@@ -2,6 +2,9 @@
 import  db  from "@isptutorproject/isp-database";
 window.db = db;
 
+import { NavBar } from "@isptutorproject/navbar";
+import { SnackBar } from "@isptutorproject/snackbar";
+
 import { modules } from "../data/homePageData";
 
 import "./styles/main.css";
@@ -33,31 +36,23 @@ function removeUserInfoFromLocalStorage() {
     getUserInfoFromLocalStorage();
 }
 
-function logoutUser(e) {
-    e.preventDefault();
-    signInText.innerHTML = "";
-    signOutBtn.classList.add("hidden");
+function logoutUser() {
     removeUserInfoFromLocalStorage();
     indexPage();
 }
 
-function showSnackbar(text) {
-    // Get the snackbar DIV
-    snackbar.innerHTML = text;
-    // Add the "show" class to DIV
-    snackbar.className = "show";
-    // After 3 seconds, remove the show class from DIV
-    setTimeout(() => {
-        snackbar.className = snackbar.className.replace("show", "");
-    }, 3000);
-}
-
 function handleModuleBtn(e) {
     e.preventDefault();
-    console.log(e.target);
     let url = e.target.getAttribute("data-url");
     let currentModule = e.target.getAttribute("data-module");
     let features = e.target.getAttribute("data-features");
+    console.log(`
+    clicked on: ${e.target}
+    url: ${url}
+    module: ${currentModule}
+    features: ${features}
+    `);
+
     localStorage.setItem("currentModule", currentModule);
     if (features) {
         localStorage.setItem("moduleFeatures", features);
@@ -94,9 +89,10 @@ function homePage(e) {
         e.preventDefault();
     }
     activatePage("home_page");
-    signInText.innerHTML = `Welcome, ${userID}`;
-    signOutBtn.classList.remove("hidden");
-    // clear module btns
+    navbar.displayUser(userID);
+    // signInText.innerHTML = `Welcome, ${userID}`;
+    // signOutBtn.classList.remove("hidden");
+    // // clear module btns
     moduleBtnsCntr.innerHTML = "";
     // add module btns
     modules.forEach((mod) => {
@@ -122,11 +118,12 @@ function homePage(e) {
 let collectionID; 
 let userID; 
 
-const snackbar = getEleById("snackbar");
+const navbar = new NavBar(logoutUser);
+const snackbar = new SnackBar();
 
-const signInText = getEleById("sign_in_text");
-const signOutRegion = getEleById("sign_out_region");
-const signOutBtn = getEleById("sign_out_button");
+// const signInText = getEleById("sign_in_text");
+// const signOutRegion = getEleById("sign_out_region");
+// const signOutBtn = getEleById("sign_out_button");
 
 const loginBtn = getEleById("login_button");
 const loginBackBtn = getEleById("l-back-button");
@@ -150,14 +147,14 @@ function isValidInput(input) {
         return true;
     }
     else {
-        showSnackbar("Please do not enter any numbers, spaces, or special characters in your input.");
+        snackbar.show("Please do not enter any numbers, spaces, or special characters in your input.");
         return false;
     }
 }
 
 function ensureLength2(value, fldName) {
     if (value.length !== 2) {
-        showSnackbar(`Please enter exactly two letters for your ${fldName}`)
+        snackbar.show(`Please enter exactly two letters for your ${fldName}`)
         return false;
     }
     return true;
@@ -201,7 +198,7 @@ function parseUserForm(prefix, form) {
 // ================================= Event Listeners ===========================
 // =============================================================================
 
-signOutBtn.addEventListener("click", logoutUser);
+// signOutBtn.addEventListener("click", logoutUser);
 
 loginBtn.addEventListener("click", loginPage);
 
@@ -218,16 +215,16 @@ loginSubmitBtn.addEventListener("click", e => {
         db.collection(collectionID).doc(userID).get().then((doc) => {
             if (doc.exists) {
                 console.log("Account found");
-                showSnackbar("Signed in as " + userID + ".");
+                snackbar.show("Signed in as " + userID + ".");
                 homePage();
             } else {
                 // doc.data() will be undefined in this case
                 console.log("No such account!");
-                showSnackbar("No such account exists. Check that your name and birthday were typed in correctly.")
+                snackbar.show("No such account exists. Check that your name and birthday were typed in correctly.")
             }
         }).catch(function (error) {
             console.log("Error getting account:", error);
-            showSnackbar("No such account exists. Check that you typed in the classcode correctly.")
+            snackbar.show("No such account exists. Check that you typed in the classcode correctly.")
         })
     }
 });
@@ -257,7 +254,7 @@ registerSubmitBtn.addEventListener("click", e => {
         db.collection(collectionID).doc(userID).get().then((doc) => {
             if (doc.exists) {
                 console.log("Account already exists");
-                showSnackbar("Account already exists.");
+                snackbar.show("Account already exists.");
             } else {
                 console.log("Creating account");
                 db.collection(collectionID).doc(userID).set({
@@ -265,17 +262,17 @@ registerSubmitBtn.addEventListener("click", e => {
                 })
                 .then(function () {
                     console.log("Document successfully written!");
-                    showSnackbar("Signed in as " + userID + ".");
+                    snackbar.show("Signed in as " + userID + ".");
                     homePage();
                 })
                 .catch(function (error) {
                     console.error("Error writing document: ", error);
-                    showSnackbar("Error creating new account.");
+                    snackbar.show("Error creating new account.");
                 });
             }
         }).catch(function (error) {
             console.log("Error getting account:", error);
-            showSnackbar("Cannot create account. Please make sure that class code is correct.");
+            snackbar.show("Cannot create account. Please make sure that class code is correct.");
         });
     }
 });
