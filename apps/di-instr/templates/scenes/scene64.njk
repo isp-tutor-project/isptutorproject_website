@@ -8,10 +8,9 @@ heading: "Results B:"
 {% block lhs %}
     {% vertcenter 20 %}
         <p class="text-lg">
-            How sure are you that water temperature caused this difference
-            in means?
+            {{ page.data.question.text }}            
         </p>
-        {{ forms.survey_radios_form(page, isVert=true, marginLeft=30) }}
+        {{ forms.radios_form(page, isVert=true, marginLeft=30) }}
     {% endvertcenter %}
 {% endblock %}
 

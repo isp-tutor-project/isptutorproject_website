@@ -615,9 +615,17 @@ const diInstructionData = {
             }
         },
         scene33: {
+            sceneType: SCENE_TYPES.mc,
             transitions: {
                 prev: "scene32a",
                 next: "scene34"
+            },
+            question: {
+                type: "survey",
+                text: "How sure are you that the independent variable (water temperature) -- rather than random errors -- caused this difference?",  
+                correctAnswer: "N/A",
+                ntlFb: "Thanks!",
+                options: SURVEY_OPTIONS
             }
         },
         scene34: {
@@ -646,9 +654,17 @@ const diInstructionData = {
             }
         },
         scene36: {
+            sceneType: SCENE_TYPES.mc,
             transitions: {
                 prev: "scene35",
                 next: "scene37"
+            },
+            question: {
+                type: "survey",
+                text: "Now, how sure are you that the independent variable (water temperature) --rather than random errors--caused this difference?",
+                correctAnswer: "N/A",
+                ntlFb: "Thanks!",
+                options: SURVEY_OPTIONS
             }
         },
         scene37: {
@@ -714,9 +730,17 @@ const diInstructionData = {
             }
         },
         scene43: {
+            sceneType: SCENE_TYPES.mc,
             transitions: {
                 prev: "scene42",
                 next: "scene44"
+            },
+            question: {
+                type: "survey",
+                text: "Now, how sure are you that water temperature -- rather than experimenter or random errors -- caused this difference?",
+                correctAnswer: "N/A",
+                ntlFb: "Thanks!",
+                options: SURVEY_OPTIONS
             }
         },
         scene44: {
@@ -861,9 +885,17 @@ const diInstructionData = {
             }
         },
         scene59: {
+            sceneType: SCENE_TYPES.mc,
             transitions: {
                 prev: "scene58",
                 next: "scene60"
+            },
+            question: {
+                type: "survey",
+                text: "How sure are you that water temperature caused this difference in means?",
+                correctAnswer: "N/A",
+                ntlFb: "Thanks!",
+                options: SURVEY_OPTIONS
             }
         },
         scene60: {
@@ -910,9 +942,14 @@ const diInstructionData = {
             }
         },
         scene64: {
+            sceneType: SCENE_TYPES.mc,
             transitions: {
                 prev: "scene63a",
                 next: "scene65"
+            },
+            question: {
+                type: "survey",
+                text: "How sure are you that water temperature caused this difference in means?",
             }
         },
         scene65: {

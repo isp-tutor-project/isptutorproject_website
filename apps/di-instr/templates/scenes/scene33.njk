@@ -1,4 +1,3 @@
-
 {% extends "single-column.njk" %}
 
 {% import "forms.njk" as forms %}
@@ -10,9 +9,9 @@
     <img src="img/9_Table_S32-33.jpg" class="img-centered" />
 
     <p class="text-lg">
-        How sure are you that the independent variable (water temperature)
-        --rather than random errors--caused this difference?
+        {{ page.data.question.text }}      
     </p>
-    {{ forms.survey_radios_form(page) }}
+    
+    {{ forms.radios_form(page, isVert=false, marginLeft=30) }}
 
 {% endblock %}
