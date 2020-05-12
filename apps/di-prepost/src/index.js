@@ -142,10 +142,11 @@ export class DiTestResultsScene extends DiTestScene {
             let selected = this.q1Form.querySelector('input[type="radio"]:checked');
             this.q1Answer = selected.value; 
             this.app.logStudentAnswer("q1", this.q1Answer);
+            let phRepl = `<span class="q1_answer">${this.q1Answer}</span>`;
             this.questions.q2.text = this.questions.q2.text.replace("PLACEHOLDER",
-                                                                    this.q1Answer);
+                                                                    phRepl);
             this.questions.q3.text = this.questions.q3.text.replace("PLACEHOLDER",
-                this.q1Answer);
+                                                                    phRepl);
             this.q2Text.innerHTML = this.questions.q2.text;
             this.q3Text.innerHTML = this.questions.q3.text;
             this.app.hide(this.q1Form);
