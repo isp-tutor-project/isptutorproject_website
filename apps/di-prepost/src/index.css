@@ -284,3 +284,8 @@ button.form-submit-centered {
 .hidden {
     display: none;
 }
+
+.q1_answer { 
+    color: blue;
+    font-weight: bold;
+}
