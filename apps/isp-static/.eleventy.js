@@ -33,7 +33,7 @@ const APPS = {
 module.exports = function(eleventyConfig) {
  
     for (let [appSrc, appDest] of Object.entries(APPS)) {
-        eleventyConfig.addWatchTarget(`${appSrc}/*.*`);
+        eleventyConfig.addWatchTarget(`${appSrc}/**`);
         eleventyConfig.addPassthroughCopy({[appSrc]: appDest});
     }
     // for (let app of Object.entries(APPS)) {
@@ -44,7 +44,7 @@ module.exports = function(eleventyConfig) {
     // }
     
     eleventyConfig.addPassthroughCopy("img");
- 
+    
     return {
         dir: {
             input: "templates",
