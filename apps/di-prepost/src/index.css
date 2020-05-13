@@ -289,3 +289,9 @@ button.form-submit-centered {
     color: blue;
     font-weight: bold;
 }
+
+.form-submit-centered {
+    background-color: darkorange;
+    color: white;
+}
+
