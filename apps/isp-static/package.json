@@ -9,6 +9,7 @@
     "build:all": "cd ../.. && npm run build",
     "build": "eleventy",
     "watch": "eleventy --watch",
+    "start": "eleventy --serve",
     "setup": "cd templates/_includes && ln -sf ../../../../config/eleventy-config/sitewide_includes site"
   },
   "devDependencies": {
