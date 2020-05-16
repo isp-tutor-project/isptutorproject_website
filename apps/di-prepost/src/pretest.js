@@ -17,7 +17,6 @@ function handleQ1Submit(e) {
         let errMsg = document.getElementById(`${sceneId}_notification_region`);
         console.log(errMsg);
         errMsg.classList.remove("invisible");
-        // errMsg.classList.add("visible");
     }
 }
 
@@ -34,9 +33,6 @@ class RocketsResultsScene extends DiTestResultsScene {
 }
 
 class DiPreTestApp extends DiTestApp {
-    constructor(appData, testName) {
-        super(appData, testName);
-    }
 
     createScene(sceneInfo) {
         let scene;
@@ -56,4 +52,4 @@ class DiPreTestApp extends DiTestApp {
 }
 
 let app = new DiPreTestApp(preTestData, "dipretest");
-app.setStartScene("intro");
+app.setStartScene("start");
