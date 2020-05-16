@@ -5,58 +5,61 @@
 </header>
 
 <div class="results-top">
+    
     <div class="results-top-left">
-        {% vertcenter 50 %}
-        <button id="{{page.data.id}}_reveal_left_mean"
-                class="reveal-mean btn btn-lg btn-primary pull-right">
-            {{ left_mean_btn_label }}
-        </button>
-        <div id="{{page.data.id}}_left_mean"
-             class="left-mean hidden pull-right">
-            {{ left_mean_label }} = {{means.left}}
-        </div>
-        {% endvertcenter %}
-    </div>
-    <div class="results-top-center">
-        {% vertcenter 20 %}
-        <div>
-            <img id="{{page.data.id}}_sorted"
-                src="{{images.sorted}}"
-                class="img-centered hidden" />
-            <img id="{{page.data.id}}_unsorted"
-                src="{{images.unsorted}}"
-                class="img-centered" />
-        </div>
-        <p>
-            <button id="{{page.data.id}}_show_sorted_table"
-                    class="show-sorted-img btn btn-lg btn-primary">
-                Sort each condition from lowest to highest
+        <div class="results-centered">
+            <button id="{{page.data.id}}_reveal_left_mean"
+                    class="reveal-mean btn btn-lg btn-primary pull-right">
+                {{ left_mean_btn_label }}
             </button>
-        </p>
-        <p id="{{page.data.id}}_sorted_text"
-               class="hidden">
-            Conditions are sorted from lowest to highest
-        </p>
-        {% endvertcenter %}
-        
+            <div id="{{page.data.id}}_left_mean"
+                class="left-mean hidden pull-right">
+                {{ left_mean_label }} = {{means.left}}
+            </div>
+        </div>
     </div>
+
+    <div class="results-top-center">
+        <div class="results-centered">
+            <div>
+                <img id="{{page.data.id}}_sorted"
+                    src="{{images.sorted}}"
+                    class="img-centered hidden" />
+                <img id="{{page.data.id}}_unsorted"
+                    src="{{images.unsorted}}"
+                    class="img-centered" />
+            </div>
+            <p>
+                <button id="{{page.data.id}}_show_sorted_table"
+                        class="show-sorted-img btn btn-lg btn-primary">
+                    Sort each condition from lowest to highest
+                </button>
+            </p>
+            <p id="{{page.data.id}}_sorted_text"
+                class="hidden">
+                Conditions are sorted from lowest to highest
+            </p>
+        </div>
+    </div>
+
     <div class="results-top-right">
-        {% vertcenter 50 %}
-        <button id="{{page.data.id}}_reveal_right_mean"
-                class="reveal-mean btn btn-lg btn-primary pull-left">
-            {{ right_mean_btn_label }}
-        </button>
-        <div id="{{page.data.id}}_right_mean"
-             class="right-mean hidden">
-            {{ right_mean_label }} = {{ means.right }}
-        </div>        
-        {% endvertcenter %}
+        <div class="results-centered">
+            <button id="{{page.data.id}}_reveal_right_mean"
+                    class="reveal-mean btn btn-lg btn-primary pull-left">
+                {{ right_mean_btn_label }}
+            </button>
+            <div id="{{page.data.id}}_right_mean"
+                class="right-mean hidden">
+                {{ right_mean_label }} = {{ means.right }}
+            </div>        
+        </div>
     </div>
+
 </div>
+
 <div class="results-bottom">
     
     <div class="question-region">
-    {% block questions %}
-    {% endblock %}
+    {% block questions %}{% endblock %}
     </div>
 </div>
