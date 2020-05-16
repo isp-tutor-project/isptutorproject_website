@@ -6,45 +6,6 @@ import {
     Scene
 } from "@isptutorproject/scene-transitions-base";
 
-// const btnNamesToBtns = {
-//     "prev": prevBtn,
-//     "next": nextBtn
-// };
-
-// function isValidBtnName(btnName) {
-//     return btnNamesToBtns.hasOwnProperty(btnName);
-// }
-
-// function getBtnByName(btnName) {
-//     return btnNamesToBtns[btnName];
-// }
-
-
-// function getMeanElements(sceneId, side) {
-//     let btn = document.getElementById(`${sceneId}_reveal_${side}_mean`);
-//     let div = document.getElementById(`${sceneId}_${side}_mean`);
-//     return [btn, div];
-// }
-
-
-// function getImageRelatedElements(sceneId) {
-//     let btn = document.getElementById(`${sceneId}_show_sorted_table`);
-//     let msg = document.getElementById(`${sceneId}_sorted_text`);
-//     let sortedImg = document.getElementById(`${sceneId}_sorted`);
-//     let unsortedImg = document.getElementById(`${sceneId}_unsorted`);
-//     return [btn, msg, sortedImg, unsortedImg];
-// }
-
-// function getQuestionForms(sceneId) {
-//     let q1Form =
-//         let q2Form =
-//             let q3Form = 
-//         return [q1Form, q2Form, q3Form];
-// }
-
-// function getQuestionSubmitBtns(sceneId) {
-// }
-
 
 export class DiTestScene extends Scene {
     constructor(app, sceneInfo) {
