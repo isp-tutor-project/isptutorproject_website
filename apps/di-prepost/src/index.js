@@ -5,6 +5,7 @@ import {
     SceneTransitionsApp, 
     Scene
 } from "@isptutorproject/scene-transitions-base";
+import { SnackBar } from "@isptutorproject/snackbar";
 
 
 export class DiTestScene extends Scene {
@@ -51,7 +52,7 @@ export class DiTestResultsScene extends DiTestScene {
         this.sortedTableText = document.getElementById(`${this.id}_sorted_text`);
         this.sortedImg = document.getElementById(`${this.id}_sorted`);
         this.unsortedImg = document.getElementById(`${this.id}_unsorted`);
-        this.notifyRegion = document.getElementById(`${this.id}_notification_region`);
+        // this.notifyRegion = document.getElementById(`${this.id}_notification_region`);
         this.q1Form = document.getElementById(`${this.id}_q1_form`);
         this.q2Form = document.getElementById(`${this.id}_q2_form`);
         this.q3Form = document.getElementById(`${this.id}_q3_form`);
@@ -68,13 +69,13 @@ export class DiTestResultsScene extends DiTestScene {
         this.rightMeanBtn.addEventListener("click", this.showRightMean);
         this.showSortedTableBtn.addEventListener("click", this.showSortedTable);
 
-        for (let form of [this.q1Form, this.q3Form]) {
-            for (let el of form.querySelectorAll(".form-control")) {
-                el.addEventListener("change", this.handleFormChange);
-            }
-        }
+        // for (let form of [this.q1Form, this.q3Form]) {
+        //     for (let el of form.querySelectorAll(".form-control")) {
+        //         el.addEventListener("change", this.handleFormChange);
+        //     }
+        // }
         // textareas don't support "onchange" event
-        this.q2TextArea.addEventListener("input", this.handleFormChange);
+        // this.q2TextArea.addEventListener("input", this.handleFormChange);
         this.q1SubmitBtn.addEventListener("click", this.handleQ1Submit);
         this.q2SubmitBtn.addEventListener("click", this.handleQ2Submit);
         this.q3SubmitBtn.addEventListener("click", this.handleQ3Submit);
@@ -114,7 +115,8 @@ export class DiTestResultsScene extends DiTestScene {
             this.app.show(this.q2Form);
             this.q2TextArea.focus();
         } else {
-            this.showNotificationRegion();
+            this.app.snackbar.show("Please answer the question");
+            // this.showNotificationRegion();
         }
     }
 
@@ -129,7 +131,8 @@ export class DiTestResultsScene extends DiTestScene {
             this.app.hide(this.q2Form);
             this.app.show(this.q3Form);
         } else {
-            this.showNotificationRegion();
+            this.app.snackbar.show("Please answer the question");
+            // this.showNotificationRegion();
         }
     }
 
@@ -145,25 +148,26 @@ export class DiTestResultsScene extends DiTestScene {
                 this.app.enable(this.app.prevBtn);
             }
         } else {
-            this.showNotificationRegion();
+            this.app.snackbar.show("Please answer the question");
+            // this.showNotificationRegion();
         }
     }
 
 
-    hideNotificationRegion() {
-        this.app.makeInvisible(this.notifyRegion);
-    }
+    // hideNotificationRegion() {
+    //     this.app.makeInvisible(this.notifyRegion);
+    // }
 
-    showNotificationRegion() {
-        this.app.makeVisible(this.notifyRegion);
-    }
+    // showNotificationRegion() {
+    //     this.app.makeVisible(this.notifyRegion);
+    // }
 
-    handleFormChange(e) {
-        // let btn = e.target;
-        // console.log(`|${btn.id}|`);
-        // let sceneId = btn.id.split('_')[0];
-        this.hideNotificationRegion();
-    }
+    // handleFormChange(e) {
+    //     // let btn = e.target;
+    //     // console.log(`|${btn.id}|`);
+    //     // let sceneId = btn.id.split('_')[0];
+    //     this.hideNotificationRegion();
+    // }
 
     defaultEnterSceneActions() {
         super.defaultEnterSceneActions();
@@ -187,6 +191,7 @@ export class DiTestApp extends SceneTransitionsApp{
     constructor(testData, testName = "") {
         super(testData);        
         this.testName = testName;
+        this.snackbar = new SnackBar();
         this.goHomeBtn = document.getElementById("go_home_btn");
         this.nextBtn = document.getElementById("next_btn");
         this.prevBtn = document.getElementById("prev_btn");
