@@ -1,0 +1,21 @@
+---
+title: "Data Interpretation Post-Test"
+permalink: posttest.html
+---
+{% extends "base.njk" %}
+
+{% block cssbundle %}
+    <link rel="stylesheet" href="diprepost.bundle.css" >
+{% endblock %}
+
+{% block main %}
+    {% for scene in collections.diPostTestScenes %}
+        <section id="{{scene.fileSlug}}" class="scene">
+            {{ scene.templateContent | safe }}
+        </section>
+    {% endfor %}
+{% endblock %}
+
+{% block bundles %} 
+    <script src="diposttest.bundle.js"></script>
+{% endblock %}

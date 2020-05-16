@@ -1,0 +1,17 @@
+{% extends "results.njk" %}
+
+{% import "forms.njk" as forms %}
+
+{% set heading_prefix = "Below is the" %}
+{% set heading_suffix = "set of possible results for the number of correct answers on the quiz by each friend." %}
+{% set left_mean_btn_label = "Reveal Table 1 Mean" %}
+{% set left_mean_label = "Table 1 Mean" %}
+{% set right_mean_btn_label = "Reveal Table 2 Mean" %}
+{% set right_mean_label = "Table 2 Mean" %}
+
+{% block questions %}
+    {{ forms.q1_form(page, isVert=false) }}
+    {{ forms.q2_form(page, isVert=false) }}
+    {{ forms.q3_form(page, isVert=false) }}
+{% endblock %}
+

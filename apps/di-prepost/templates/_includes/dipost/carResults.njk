@@ -1,0 +1,17 @@
+{% extends "results.njk" %}
+
+{% import "forms.njk" as forms %}
+
+{% set heading_prefix = "Below is the" %}
+{% set heading_suffix = "set of possible results for the speed of cars (in meters per second)." %}
+{% set left_mean_btn_label = "Reveal Thick Wheels Mean" %}
+{% set left_mean_label = "Thick Wheels Mean" %}
+{% set right_mean_btn_label = "Reveal Thin Wheels Mean" %}
+{% set right_mean_label = "Thin Wheels Mean" %}
+
+
+{% block questions %}
+    {{ forms.q1_form(page, isVert=false) }}
+    {{ forms.q2_form(page, isVert=false) }}
+    {{ forms.q3_form(page, isVert=false) }}
+{% endblock %}
