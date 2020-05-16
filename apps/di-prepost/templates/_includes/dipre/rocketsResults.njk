@@ -4,10 +4,10 @@
 
 {% set heading_prefix = "Below is the" %}
 {% set heading_suffix = "set of possible results for each <u>height</u> the rocket traveled (in meters)." %}
-{% set left_mean_btn_label = "Reveal Curved mean" %}
-{% set left_mean_label = "Curved mean" %}
-{% set right_mean_btn_label = "Reveal Straight mean" %}
-{% set right_mean_label = "Straight mean" %}
+{% set left_mean_btn_label = "Reveal Curved Mean" %}
+{% set left_mean_label = "Curved Mean" %}
+{% set right_mean_btn_label = "Reveal Straight Mean" %}
+{% set right_mean_label = "Straight Mean" %}
 
 {% block questions %}
     {{ forms.q1_form(page, isVert=false) }}
@@ -15,8 +15,3 @@
     {{ forms.q3_form(page, isVert=false) }}
 {% endblock %}
 
-{# 
-    <form id="{{page.data.id}}_q1_form">
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form> 
-#}
