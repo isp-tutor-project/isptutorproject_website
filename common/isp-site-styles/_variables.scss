@@ -1,0 +1,50 @@
+// needed for map-merge 
+@use "sass:map";
+$bg-default: white;
+$bg-secondary: #f7f7f7;
+
+$module-border-color: #d6e9fc;
+
+
+$primary: #1479f6;
+$success: #00cc00;
+$warn: #fffe00;
+$danger: #ff471a;
+$info: #51bef1;
+
+$theme-colors: () !default;
+
+$theme-colors: map-merge(
+    (
+        "primary": $primary,
+        "success": $success,
+        "warn": $warn,
+        "danger": $danger,
+        "info": $info
+    ),
+    $theme-colors
+);
+
+
+$font-size-xxl: 32pt;
+$font-size-xl: 24pt;
+$font-size-lg: 18pt;
+$font-size-md: 14pt;
+$font-size-sm: 13pt;
+$font-size-xs: 12pt;
+$font-size-xxs: 10pt;
+
+$font-sizes: () !default;
+
+$font-sizes: map-merge(
+    (
+        "xxl": $font-size-xxl,
+        "xl": $font-size-xl,
+        "lg": $font-size-lg,
+        "md": $font-size-md,
+        "sm": $font-size-sm,
+        "xs": $font-size-xs,
+        "xxs": $font-size-xxs
+    ),
+    $font-sizes
+);
