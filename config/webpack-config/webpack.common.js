@@ -4,10 +4,11 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/, 
+                test: /\.(s)?css$/, 
                 use: [
                     MiniCssExtractPlugin.loader,
-                    'css-loader'
+                    'css-loader',
+                    'sass-loader'
                 ]
             },
             {
@@ -18,9 +19,3 @@ module.exports = {
     }
 };
 
-// {
-//     test: /\.js$/,
-//     include: [__dirname, path.resolve("../../common")],
-//     exclude: /node-modules/,
-//     use: ['babel-loader']
-// },
