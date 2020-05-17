@@ -18,7 +18,9 @@
     "@11ty/eleventy": "0.10.0",
     "@isptutorproject/eleventy-config": "0.1.0",
     "@isptutorproject/webpack-config": "0.1.0",
-    "rimraf": "^3.0.2",        
+    "rimraf": "^3.0.2",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
     "webpack": "4.42.0",
     "webpack-cli": "3.3.11"
   }
