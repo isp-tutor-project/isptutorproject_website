@@ -6,29 +6,6 @@ const APPS = {
     "../homepage/dist": ".",
     "../hypo/dist": "hypo"
 };
-// {
-//     "di-instr": {
-//         watchFiles: "../di-instr/dist/",
-//         src: "../di-instr/dist/",
-//         dest: "di-instr"
-//     },
-//     // "di-prepost": {
-//     //     watchFiles: "../di-prepost/dist/*.*",
-//     //     src: "../../di-prepost/",
-//     //     dest: "di-prepost"
-//     // },
-//     // "homepage": {
-//     //     watchFiles: "../homepage/dist/*.*",
-//     //     src: "../../homepage/dist/",
-//     //     dest: "."
-//     // },
-//     // "hypo": {
-//     //     watchFiles: "../hypo/dist/*.*",
-//     //     src: "../../hypo/dist/",
-//     //     dest: "hypo"
-//     // }
-// };
-
 
 module.exports = function(eleventyConfig) {
  
@@ -36,12 +13,6 @@ module.exports = function(eleventyConfig) {
         eleventyConfig.addWatchTarget(`${appSrc}/**`);
         eleventyConfig.addPassthroughCopy({[appSrc]: appDest});
     }
-    // for (let app of Object.entries(APPS)) {
-    //     console.log(process.cwd());
-    //     console.log(app);
-    //     eleventyConfig.addWatchTarget(app.watchFiles);
-    //     eleventyConfig.addPassthroughCopy({[app.src]: app.dest});
-    // }
     
     eleventyConfig.addPassthroughCopy("img");
     
