@@ -6,26 +6,26 @@ Let's begin.
 
 
 
-2. 
+2. carsIntro1
 Scenario #1: Racing Toy Cars
 
 Ethan wanted to see whether toy cars can go faster when they have which wheels or thin wheels. He built two toy cars: one with thick wheels and one with thin wheels. But everything else about the cars was the same. 
 
-3. 
+3. carsIntro2
 Ethan made a ramp. He started with the toy car with the thick wheels from the rest at the top of the ramp and recorded how fast it was moving at the bottom of the ramp. He did this five times. 
 
 Then he did the same thing with the toy car with thin wheels. He recorded the speed of this toy car at the bottom of the ramp five times.
 
-4. 
+4. carsIntro3
 
  Next we'll show you 5 different possible sets of results of this experiment. We will ask you to interpret each set of results. 
 
-5. 
+5. carsResultsIntro1
 Possible Toy Car Speed Results: #1 of 5
 
 
 
-6.
+6. carsResults1
 Below is the first set of possible results for the speed of toy cars (in meters per second). 
 
 Q1: What do these results suggest about which type of wheel was faster? 
@@ -46,12 +46,12 @@ Absolutely sure
 
 
 
-7. 
+7. carsResultsIntro1
 Possible Toy Car Speed Results: #2 of 5
 
 
 
-8.
+8. carseResults2
 Below is the second set of possible results for the speed of toy cars (in meters per second). 
 
 Q1: What do these results suggest about which type of wheel was faster? 
@@ -78,12 +78,12 @@ Absolutely sure
 
 
 
-9. 
+9. carsResultsIntro3
 Possible Toy Car Speed Results: #3 of 5
 
 
 
-10.
+10.  carsResults3
 Below is the third set of possible results for the speed of toy cars (in meters per second). 
 
 Q1: What do these results suggest about which type of wheel was faster? 
@@ -106,12 +106,12 @@ Absolutely sure
 
 
 
-11. 
+11. carsResultsIntro4
 Possible Toy Car Speed Results: #4 of 5
 
 
 
-12.
+12. carsResults4
 Below is the fourth set of possible results for the speed of toy cars (in meters per second). 
 
 Q1: What do these results suggest about which type of wheel was faster? 
@@ -133,12 +133,12 @@ Absolutely sure
 
 
 
-13. 
+13. carsResultsIntro5
 Possible Toy Car Speed Results: #5 of 5
 
 
 
-14.
+14. carsResults5
 Below is the last set of possible results for the speed of toy cars (in meters per second). 
 
 Q1: What do these results suggest about which type of wheel was faster? 
@@ -159,33 +159,34 @@ Absolutely sure
 
 
 
+15. libraryIntro1
 
-15. Scenario #2: Student Learning Experiment
+Scenario #2: Student Learning Experiment
 
-16.
+16. libraryIntro2
 Student Learning Experiment
 
 Taylor wanted to see whether people learn more if they study by themselves at the library or home. 
 
-17.
+17. libraryIntro3
 Taylor asked five friends to study for 1 hours at the library on their own. 
 
-18.
+18.  libraryIntro4
 Then she asked five different friends to study for 1 hour at their own home. 
 
 
-19. 
+19. libraryIntro5
 The next day, everyone took q quiz on what they learned. They had 15 minutes to finish the quiz. 
 
-20.
+20. libraryIntro6
 Next, we'll show you five different possible sets of results for this experiment. We will ask you to interpret each set of results. 
 
 You will see tables with the number of correct answers for each person. 
 
-
+libraryResultsIntro1
 21. Possible Learning Results: #1 of 5
 
-22.
+22. libraryResults1
 Below is the first set of possible results for the number of correct answers on the quiz for each friend. 
 
 Q1: Where do these results suggest that students learn more? 
@@ -198,6 +199,7 @@ Q2: Please briefly explain why you said that these results suggest that students
 
 Q3: How sure are you that students learned more at [students choice here]?
 
+
 Not at all sure
 A little sure
 Fairly sure
@@ -207,7 +209,9 @@ Absolutely sure
 
 
 
-23. Possible Learning Results: #2 of 5
+23. library
+
+Possible Learning Results: #2 of 5
 
 24.
 Below is the second set of possible results for the number of correct answers on the quiz for each friend. 
