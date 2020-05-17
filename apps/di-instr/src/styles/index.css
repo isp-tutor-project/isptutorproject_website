@@ -1,19 +1,12 @@
-/* resets */
-* {
-    box-sizing: border-box;
-}
+@import "~@isptutorproject/isp-site-styles";
 
-html,
-body,
+/* start of app-specific css */
 main {
     height: 100%;
     width: 100%;
     margin: 0;
     background-color: white;
     font-size: 14pt;
-}
-
-main {
     border: solid #d6e9fc 40px;
 }
 
@@ -25,43 +18,9 @@ h5 {
     text-align: center;
 }
 
-.text-xxl {
-    font-size: 32pt;
-}
-
-.text-xl {
-    font-size: 24pt;
-}
-
-.text-lg {
-    font-size: 18pt;
-}
-
-.text-md {
-    font-size: 14pt;
-}
-
-.text-sm {
-    font-size: 13pt;
-}
-
-.text-xs {
-    font-size: 12pt;
-}
-
-.text-xxs {
-    font-size: 10pt;
-}
-
 p {
     /* default to centered. use text-justify if you want to override */
     text-align: center;
-}
-
-
-/* useful for development to see borders of elements */
-.dev {
-    border: solid hotpink 1px;
 }
 
 
@@ -180,14 +139,6 @@ ul.centered {
     margin-left: auto;
     margin-right: auto;
 }
-
-.text-centered {
-    text-align: center;
-}
-
-.text-justify {
-    text-align: justify;
-}
 .div-centered {
     /* display: inline-block; */
     margin-left: 40%;
@@ -235,22 +186,6 @@ ul.centered {
 }
 
 
-.nav-btn {
-    position: absolute;
-    content: url("/img/buttonorange.png");
-    z-index: 2;
-}
-
-.nav-btn:hover {
-    content: url("/img/buttonyellow.png");
-}
-/* 
-.nav-btn.disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    pointer-events: none;
-} */
-
 .prev-btn {
     /* should get displayed on top of border*/
     /* img is 130x138px */
@@ -265,51 +200,6 @@ ul.centered {
     left: calc(100% - 133px);
     transform: scaleX(-1);
 }
-
-.btn {
-    border-radius: 5px;
-}
-
-.btn:focus {
-    outline: none;
-}
-
-.btn:hover {
-    opacity: 0.7;
-}
-/* .btn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    pointer-events: none;   
-} */
-
-.btn-xxl {
-    font-size: 32pt;
-    border-radius: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 40px;
-    padding-right: 40px;
-}
-
-.btn-lg {
-    font-size: large;
-    border-radius: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 40px;
-    padding-right: 40px;
-}
-
-.btn-primary {
-    background-color: #1479f6;
-    color: white;
-}
-
-/* 
-.mc-radio {
-} 
-*/
 
 .submit-mc {
     display: block;
@@ -349,26 +239,6 @@ td.green-bg {
     background-color: lightgreen;
 }
 
-button.link {
-  background: none!important;
-  border: none;
-  padding: 0!important;
-  /*optional*/
-  font-family: arial, sans-serif;
-  /*input has OS specific font-family*/
-  color: rgb(0, 0, 238);
-  cursor: pointer;
-}
-
-button.link:hover,
-button.link:focus {
- text-decoration: underline;
-}
-
-button.link.visited {
-    color: rgb(247, 104, 255);
-}
-
 .feedback-region {
     min-height: 50px;
     max-height: fit-content;
@@ -376,20 +246,3 @@ button.link.visited {
 }
 
 
-.hidden {
-    display: none;
-}
-
-.disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    pointer-events: none;
-}
-
-.invisible {
-    visibility: hidden;
-}
-
-.visible {
-    visibility: visible;
-}
