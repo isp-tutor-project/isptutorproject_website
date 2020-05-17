@@ -7,7 +7,7 @@ import { SnackBar } from "@isptutorproject/snackbar";
 
 import { modules } from "../data/homePageData";
 
-import "./styles/main.css";
+import "./styles/index.scss";
 
 // convenience function so I don't have to constantly type document.getElementById()
 function getEleById(eleID) {
