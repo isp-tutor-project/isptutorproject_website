@@ -17,34 +17,12 @@ body {
     font-size: map.get($font-sizes, "md");
 }
 
-
-.text-xxl {
-    font-size: map.get($font-sizes, "xxl");
+@each $name, $font-size in $font-sizes {
+    .text-#{$name} {
+        font-size: $font-size;
+    }
 }
 
-.text-xl {
-    font-size: map.get($font-sizes, "xl");
-}
-
-.text-lg {
-    font-size: map.get($font-sizes, "lg");
-}
-
-.text-md {
-    font-size: map.get($font-sizes, "md");
-}
-
-.text-sm {
-    font-size: map.get($font-sizes, "sm");
-}
-
-.text-xs {
-    font-size: map.get($font-sizes, "xs");
-}
-
-.text-xxs {
-    font-size: map.get($font-sizes, "xxs");
-}
 
 .text-centered {
     text-align: center;
@@ -78,7 +56,16 @@ body {
 }
 
 .btn-xxl {
-    font-size: 32pt;
+    font-size: map.get($font-sizes, "xxl");
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.btn-xl {
+    font-size: map.get($font-sizes, "xl");
     border-radius: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -87,13 +74,66 @@ body {
 }
 
 .btn-lg {
-    font-size: large;
+    font-size: map.get($font-sizes, "lg");
     border-radius: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 40px;
     padding-right: 40px;
 }
+
+.btn-md {
+    font-size: map.get($font-sizes, "md");
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.btn-sm {
+    font-size: map.get($font-sizes, "sm");
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.btn-xs {
+    font-size: map.get($font-sizes, "xs");
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.btn-xxs {
+    font-size: map.get($font-sizes, "xxs");
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+
+// .btn-lg {
+//   width: 400px;
+// }
+
+// .btn-md {
+//   width: 200px;
+// }
+
+// .btn-sm {
+//   width: 100px;
+//   margin: 0;
+//   padding: 5px;
+//   font-size: small;
+// }
+
 
 .btn-primary {
     background-color: #1479f6;
