@@ -36,7 +36,7 @@ export class DiTestResultsScene extends DiTestScene {
         this.handleQ1Submit = this.handleQ1Submit.bind(this);
         this.handleQ2Submit = this.handleQ2Submit.bind(this);
         this.handleQ3Submit = this.handleQ3Submit.bind(this);
-        this.handleFormChange = this.handleFormChange.bind(this);
+        // this.handleFormChange = this.handleFormChange.bind(this);
         this.setupElementReferences();
         this.setupEventHandlers();
     }
