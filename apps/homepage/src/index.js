@@ -1,13 +1,14 @@
+import "./styles/index.scss";
 
-import  db  from "@isptutorproject/isp-database";
-window.db = db;
 
 import { NavBar } from "@isptutorproject/navbar";
 import { SnackBar } from "@isptutorproject/snackbar";
 
+import db from "@isptutorproject/isp-database";
+window.db = db;
+
 import { modules } from "../data/homePageData";
 
-import "./styles/index.scss";
 
 // convenience function so I don't have to constantly type document.getElementById()
 function getEleById(eleID) {
