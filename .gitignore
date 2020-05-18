@@ -3,6 +3,7 @@ wwwroot
 
 # symlinks
 apps/*/templates/_includes/site
+apps/*/templates/img/site
 
 # built data files
 apps/*/data/*.json
