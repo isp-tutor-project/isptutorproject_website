@@ -1,6 +1,8 @@
 @use "sass:map";
 @import "variables";
 
+$app_path: "" !default;
+
 /* start of styles imported from isp-site-styles */
 
 * {
