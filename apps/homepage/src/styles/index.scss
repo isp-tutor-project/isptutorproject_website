@@ -1,5 +1,6 @@
-@use "sass:map";
-@import "~@isptutorproject/isp-site-styles";
+@use "~@isptutorproject/isp-site-styles" with (
+  $app_path: "/"
+);
 
 /* start of app-specific styles */
 body {
