@@ -14,7 +14,7 @@ module.exports = function(eleventyConfig) {
         eleventyConfig.addPassthroughCopy({[appSrc]: appDest});
     }
     
-    eleventyConfig.addPassthroughCopy("img");
+    // eleventyConfig.addPassthroughCopy("img");
     
     return {
         dir: {
