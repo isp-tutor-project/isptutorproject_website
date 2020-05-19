@@ -46,9 +46,9 @@ body {
 }
 
 
-.btn {
-    border-radius: 5px;
-}
+// .btn {
+//     border-radius: 5px;
+// }
 
 .btn:focus {
     outline: none;
@@ -57,7 +57,8 @@ body {
 .btn:hover {
     opacity: 0.7;
 }
-.btn:disabled {
+.btn:disabled,
+.btn.disabled {
     opacity: 0.5;
     cursor: not-allowed;
     pointer-events: none;   
@@ -68,9 +69,12 @@ body {
     font-size:      map.get($font-sizes, $size);
     padding: map.get($btn-padding-y, $size) map.get($btn-padding-x, $size);
 
-    .btn-rounded {
-        border-radius:  map.get($border-radius, $size);
-    }
+    // .btn-rounded {
+    border-radius:  map.get($border-radius, $size);
+    // }
+}
+.btn-rect {
+    border-radius: 0px !important;
 }
 
 @each $size in ("xxl", "xl", "lg", "md", "sm", "xs", "xxs") {
@@ -122,11 +126,11 @@ button.link.visited {
 }
 
 .invisible {
-    visibility: hidden;
+    visibility: hidden !important;
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 .nav-btn {
