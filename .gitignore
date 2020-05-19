@@ -3,6 +3,7 @@ wwwroot
 
 # symlinks
 apps/*/templates/_includes/site
+# duplicate files
 apps/*/templates/img/site
 
 # built data files
@@ -117,3 +118,12 @@ dist
 
 # TernJS port file
 .tern-port
+
+# python stuff
+**/__pycache__/
+*.pyc
+venv
+
+# sqlite
+db.sqlite3
+
