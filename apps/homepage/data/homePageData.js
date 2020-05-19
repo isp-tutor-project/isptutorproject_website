@@ -56,7 +56,7 @@ export const modules = [
             tutorFeatures: "FTR_WEB:FTR_DEFS_ONLY"
         },
         url: "/hypo/",
-        implemented: true
+        implemented: false
     },
     {
         label: "Hypothesis (final hypothesis",
@@ -84,7 +84,7 @@ export const modules = [
             currentModule: "diPostTest",
         },
         url: "/di-prepost/posttest.html",
-        implemented: false
+        implemented: true
     }
 ];
 // {
