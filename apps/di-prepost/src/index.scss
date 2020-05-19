@@ -1,4 +1,6 @@
-@import "~@isptutorproject/isp-site-styles";
+@use "~@isptutorproject/isp-site-styles" with (
+    $app_path: "/di-prepost/"
+);
 
 /* start of app-specific styling */
 main {
