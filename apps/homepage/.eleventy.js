@@ -12,6 +12,8 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addNunjucksFilter("jsonify", jsonify);
     eleventyConfig.addNunjucksFilter("uuid", uuid);
 
+    eleventyConfig.addPassthroughCopy("templates/img");
+    
     return {
         dir: {
             input: "templates",
