@@ -25,6 +25,12 @@ body {
     }
 }
 
+@each $name, $color in $theme-colors {
+    .text-#{$name} {
+        color: $color;
+        background-color: $bg-default;
+    }
+}
 
 .text-centered {
     text-align: center;
@@ -57,90 +63,33 @@ body {
     pointer-events: none;   
 }
 
-.btn-xxl {
-    font-size: map.get($font-sizes, "xxl");
-    border-radius: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 40px;
-    padding-right: 40px;
+
+@mixin button($size) {
+    font-size:      map.get($font-sizes, $size);
+    padding: map.get($btn-padding-y, $size) map.get($btn-padding-x, $size);
+
+    .btn-rounded {
+        border-radius:  map.get($border-radius, $size);
+    }
 }
 
-.btn-xl {
-    font-size: map.get($font-sizes, "xl");
-    border-radius: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 40px;
-    padding-right: 40px;
+@each $size in ("xxl", "xl", "lg", "md", "sm", "xs", "xxs") {
+    .btn-#{$size} {
+        @include button($size);
+    }
 }
 
-.btn-lg {
-    font-size: map.get($font-sizes, "lg");
-    border-radius: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 40px;
-    padding-right: 40px;
+@each $name, $color in $theme-colors {
+    .btn-#{$name} {
+        background-color: $color;
+        color: $bg-secondary;
+    }
 }
 
-.btn-md {
-    font-size: map.get($font-sizes, "md");
-    border-radius: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 40px;
-    padding-right: 40px;
-}
-
-.btn-sm {
-    font-size: map.get($font-sizes, "sm");
-    border-radius: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 40px;
-    padding-right: 40px;
-}
-
-.btn-xs {
-    font-size: map.get($font-sizes, "xs");
-    border-radius: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 40px;
-    padding-right: 40px;
-}
-
-.btn-xxs {
-    font-size: map.get($font-sizes, "xxs");
-    border-radius: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 40px;
-    padding-right: 40px;
-}
-
-
-// .btn-lg {
-//   width: 400px;
+// .btn-primary {
+//     background-color: #1479f6;
+//     color: white;
 // }
-
-// .btn-md {
-//   width: 200px;
-// }
-
-// .btn-sm {
-//   width: 100px;
-//   margin: 0;
-//   padding: 5px;
-//   font-size: small;
-// }
-
-
-.btn-primary {
-    background-color: #1479f6;
-    color: white;
-}
 
 
 
