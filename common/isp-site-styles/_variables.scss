@@ -36,30 +36,44 @@ $font-sizes: (
     "xxs": 10pt
 );
 
-$border-radius-default:        .25rem !default;
+// $border-radius-default:        .25rem !default;
+$border-radius-default:        .5rem !default;
+$border-radius-increment:      .1rem !default;
+
 $btn-padding-x-default:        .375rem;
 $btn-padding-y-default:        .75rem;
 $btn-font-size-default:        map.get($font-sizes, "md");
 // $btn-font-size-default:  $btn-font-size;
 
+
 $border-radius: (
-    "xxs":           .1rem,
-    "xs":            .15rem,
-    "sm":            .2rem,
+    "xxs":           $border-radius-default - (3 * $border-radius-increment),
+    "xs":            $border-radius-default - (2 * $border-radius-increment),
+    "sm":            $border-radius-default - (1 * $border-radius-increment),
     "md":            $border-radius-default,
-    "lg":            .3rem,
-    "xl":            .35rem,
-    "xxl":           .4rem
+    "lg":            $border-radius-default + (1 * $border-radius-increment),
+    "xl":            $border-radius-default + (2 * $border-radius-increment),
+    "xxl":           $border-radius-default + (3 * $border-radius-increment),
 );
 
+// $btn-padding-x: (
+//     "xxs":           .065rem,
+//     "xs":            .125rem,
+//     "sm":            .25rem,
+//     "md":            $btn-padding-x-default,
+//     "lg":            .50rem,
+//     "xl":            .625rem,
+//     "xxl":           .75rem
+// );
+
 $btn-padding-x: (
-    "xxs":           .065rem,
-    "xs":            .125rem,
-    "sm":            .25rem,
-    "md":            $btn-padding-x-default,
-    "lg":            .50rem,
-    "xl":            .625rem,
-    "xxl":           .75rem
+    "xxs":           .125rem,
+    "xs":            .25rem,
+    "sm":            .5rem,
+    "md":            .75,
+    "lg":            1rem,
+    "xl":            1.25rem,
+    "xxl":           1.5rem
 );
 
 $btn-padding-y: (
