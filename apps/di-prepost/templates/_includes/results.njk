@@ -9,11 +9,11 @@
     <div class="results-top-left">
         <div class="results-centered">
             <button id="{{page.data.id}}_reveal_left_mean"
-                    class="reveal-mean btn btn-lg btn-primary pull-right">
+                    class="reveal-mean btn btn-lg btn-primary">
                 {{ left_mean_btn_label }}
             </button>
             <div id="{{page.data.id}}_left_mean"
-                class="left-mean hidden pull-right">
+                class="left-mean hidden">
                 {{ left_mean_label }} = {{means.left}}
             </div>
         </div>
@@ -31,7 +31,7 @@
             </div>
             <p>
                 <button id="{{page.data.id}}_show_sorted_table"
-                        class="show-sorted-img btn btn-rounded btn-lg btn-primary">
+                        class="show-sorted-img btn-lg btn-primary">
                     Sort each condition from lowest to highest
                 </button>
             </p>
@@ -45,7 +45,7 @@
     <div class="results-top-right">
         <div class="results-centered">
             <button id="{{page.data.id}}_reveal_right_mean"
-                    class="reveal-mean btn btn-lg btn-primary pull-left">
+                    class="reveal-mean btn btn-lg btn-primary">
                 {{ right_mean_btn_label }}
             </button>
             <div id="{{page.data.id}}_right_mean"
@@ -58,7 +58,6 @@
 </div>
 
 <div class="results-bottom">
-    
     <div class="question-region">
     {% block questions %}{% endblock %}
     </div>
