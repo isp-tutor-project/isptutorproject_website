@@ -36,45 +36,49 @@ $font-sizes: (
     "xxs": 10pt
 );
 
-$border-radius:               .25rem !default;
+$border-radius-default:        .25rem !default;
+$btn-padding-x-default:        .375rem;
+$btn-padding-y-default:        .75rem;
+$btn-font-size-default:        map.get($font-sizes, "md");
+// $btn-font-size-default:  $btn-font-size;
 
-$border-radius-xxs:           .1rem;
-$border-radius-xs:            .15rem;
-$border-radius-sm:            .2rem !default;
-$border-radius-md:            $border-radius;
-$border-radius-lg:            .3rem !default;
-$border-radius-xl:            .35rem;
-$border-radius-xxl:           .4rem;
+$border-radius: (
+    "xxs":           .1rem,
+    "xs":            .15rem,
+    "sm":            .2rem,
+    "md":            $border-radius-default,
+    "lg":            .3rem,
+    "xl":            .35rem,
+    "xxl":           .4rem
+);
 
+$btn-padding-x: (
+    "xxs":           .065rem,
+    "xs":            .125rem,
+    "sm":            .25rem,
+    "md":            $btn-padding-x-default,
+    "lg":            .50rem,
+    "xl":            .625rem,
+    "xxl":           .75rem
+);
 
-$btn-padding-x:               .375rem;
-$btn-padding-y:               .75rem;
-$btn-font-size:               map.get($font-sizes, "md");
+$btn-padding-y: (
+    "xxs":           .125rem,
+    "xs":            .25rem,
+    "sm":            .50rem,
+    "md":            $btn-padding-y-default,
+    "lg":            1rem,
+    "xl":            1.25rem,
+    "xxl":           1.5rem
+);
 
-$btn-padding-x-xxs:           .065rem;
-$btn-padding-y-xxs:           .125rem;
-$btn-font-size-xxs:           map.get($font-sizes, "xxs");
+$btn-font-sizes: (
+    "xxs":           map.get($font-sizes, "xxs"),
+    "xs":            map.get($font-sizes, "xs"),
+    "sm":            map.get($font-sizes, "sm"),
+    "md":            $btn-font-size-default,
+    "lg":            map.get($font-sizes, "lg"),
+    "xl":            map.get($font-sizes, "xl"),
+    "xxl":           map.get($font-sizes, "xxl"),
+);
 
-$btn-padding-x-xs:            .125rem;
-$btn-padding-y-xs:            .25rem;
-$btn-font-size-xs:            map.get($font-sizes, "xs");
-
-$btn-padding-x-sm:            .25rem;
-$btn-padding-y-sm:            .50rem;
-$btn-font-size-sm:            map.get($font-sizes, "sm");
-
-$btn-padding-x-md:            $btn-padding-x;
-$btn-padding-y-md:            $btn-padding-y;
-$btn-font-size-md:            $btn-font-size;
-
-$btn-padding-x-lg:            .50rem;
-$btn-padding-y-lg:            1rem;
-$btn-font-size-lg:            map.get($font-sizes, "lg");
-
-$btn-padding-x-xl:            .625rem;
-$btn-padding-y-xl:            1.25rem;
-$btn-font-size-xl:            map.get($font-sizes, "xl");
-
-$btn-padding-x-xxl:           .75rem;
-$btn-padding-y-xxl:           1.5rem;
-$btn-font-size-xxl:           map.get($font-sizes, "xxl");
