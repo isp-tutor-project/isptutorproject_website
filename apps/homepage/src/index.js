@@ -102,7 +102,8 @@ function homePage(e) {
         if (!mod.implemented) {
             btn.classList.add("disabled");
         }
-        btn.classList.add("btn-lg");
+        btn.classList.add("module-button");
+        btn.classList.add("btn");
         btn.type = "button";
         btn.innerHTML = mod.label;
         if (mod.storageInfo.tutorFeatures) {
