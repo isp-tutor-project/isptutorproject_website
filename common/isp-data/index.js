@@ -116,11 +116,10 @@ function genData(filePrefix, munger) {
     }
 }
 
-const dgu = {
+module.exports = {
     DataBuilder,
     genData,
     addSceneTypeIfMissing,
     addCustomEnterActionsIfMissing,
     addCustomExitActionsIfMissing
 };
-module.exports = dgu; 
