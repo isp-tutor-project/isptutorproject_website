@@ -1,12 +1,7 @@
 {
   "name": "@isptutorproject/isp-data",
   "version": "0.1.0",
-  "description": "js data files and scripts to convert them to json format for use in both code and static-site-generation",
-  "main": "src/index.js",
+  "description": "shared code to aid in app datafile generation",
   "license": "UNLICENSED",
-  "private": true,
-  "dependencies": {},
-  "devDependencies": {
-    "rimraf": "^3.0.2"
+  "private": true
   }
-}
