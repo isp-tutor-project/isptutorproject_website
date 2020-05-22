@@ -1,5 +1,4 @@
-const { DataBuilder } = require("@isptutorproject/isp-data/src/dataGenerationUtils");
-
+const { DataBuilder } = require("@isptutorproject/isp-data");
 
 let builder = new DataBuilder("hypo");
 builder.buildData()
