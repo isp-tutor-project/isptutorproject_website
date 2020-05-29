@@ -11,10 +11,65 @@ import { SnackBar } from "@isptutorproject/snackbar";
 export class DiTestScene extends Scene {
     constructor(app, sceneInfo) {
         super(app, sceneInfo);
+        this.handleTransitionButton = this.handleTransitionButton.bind(this);
+        this.customActions = {
+            showBtns: this.showBtns,
+            hideBtns: this.hideBtns,
+        };
+        this.btnNames = {
+            prev: this.app.prevBtn,
+            next: this.app.nextBtn
+        };
+    }
+
+
+    showBtns(btnNames) {
+        for (let btnName of btnNames) {
+            if (this.btnNames.hasOwnProperty(btnName)) {
+                this.app.show(this.btnNames[btnName]);
+            }
+        }
+    }
+
+    hideBtns(btnNames) {
+        for (let btnName of btnNames) {
+            if (this.btnNames.hasOwnProperty(btnName)) {
+                this.app.hide(this.btnNames[btnName]);
+            }
+        }
+    }
+
+
+    handleTransitionButton(e) {
+        e.preventDefault();
+        let transitionName = e.target.dataset.transition;
+        this.app.handleTransition(transitionName);
+    }
+
+
+    getTransitionElements() {
+        return this.el.getElementsByClassName("transition-to");
+    }
+
+    setupTransitionEventHandlers() {
+        for (let el of this.getTransitionElements()) {
+            el.addEventListener("click", this.handleTransitionButton, { once: true });
+        }
+    }
+
+    performCustomEnterSceneActions() {
+        for (let action of this.customEnterActions) {
+            let name = action.name;
+            let args = action.args;
+            if (this.customActions.hasOwnProperty(name)) {
+                this[name](args);
+            }
+        }
     }
 
     defaultEnterSceneActions() {
         super.defaultEnterSceneActions();
+        this.setupTransitionEventHandlers();
         if (process.env.NODE_ENV === "production") {
             this.app.hide(this.app.prevBtn);
         } else {
