@@ -61,7 +61,13 @@ module.exports = {
         start: {
             transitions: {
                 next: "intro"
-            }
+            }, 
+            customEnterActions: [
+                {
+                    name: "hideBtns",
+                    args: ["prev", "next"]
+                }
+            ]
         },
         intro: {
             transitions: {
