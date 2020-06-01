@@ -1,6 +1,4 @@
-const { DataBuilder } = require("@isptutorproject/isp-data/src/dataGenerationUtils");
-
-// let inputData = require("../data/diInstrData");
+const { DataBuilder } = require("@isptutorproject/isp-data");
 
 let builder = new DataBuilder("diInstr");
 builder.buildData()

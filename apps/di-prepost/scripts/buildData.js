@@ -3,7 +3,7 @@ const {
     addCustomExitActionsIfMissing,
     addSceneTypeIfMissing,
     DataBuilder 
-} = require("@isptutorproject/isp-data/src/dataGenerationUtils");
+} = require("@isptutorproject/isp-data");
 
 
 const VALID_TRANSITION_NAMES = ["prev", "next"];

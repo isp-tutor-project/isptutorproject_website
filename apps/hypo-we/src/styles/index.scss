@@ -1,0 +1,25 @@
+@use "~@isptutorproject/isp-site-styles" with (
+    $app_path: "/hypoWE/"
+);
+
+/* start of app-specific css */
+main {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-color: white;
+    font-size: 14pt;
+    // border: solid #d6e9fc 40px;
+}
+
+.scene {
+    height: 100%;
+    width: 100%;
+    display: none;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.scene.active {
+    display: block;
+}
+
