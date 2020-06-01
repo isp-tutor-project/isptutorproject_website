@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> ISP Teacher's Portal - Create Class </title>
+  {% load static %}
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+
+  <style>
+  body {
+    font-family: 'Abel';font-size: 20px;
+  }
+  </style>
+
+  <!-- JS Files -->
+  <script src="{% static 'js/script1.js' %}"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/xlsx.full.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/jszip.js"></script>
+  
+  <!-- Required libraries for Bootstrap (jQuery and Popper) -->
+  <!-- <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> -->
+  
+  <!-- Bootstrap -->
+
+  <!-- Setting up ajax -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+  
+  <!-- Add icon library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+ 
+<body>
+	<img src="{% static 'img/tutor.png' %}" style="width:100%">
+  <div class="row">
+    <div class="column" style="width: 5%">
+    </div>
+    <div class="column" style="width: 5%">
+      <img src="{% static 'img/portal-icon.png' %}" style="width:100%">
+    </div>
+    <div class="column" style="width: 45%">
+      <h1>Teacher's Portal</h1>
+    </div>
+    <div class="column" style="width: 40%">
+      <div class="progress">
+        <div class="progress-bar" style="width:10%"></div>
+      </div>
+      <div class="row">
+        <div class="column" style="width: 25%; text-align:center">
+          <img src="{% static 'img/one.png' %}" style="width:30%">
+          <p>Create class</p>
+        </div>
+        <div class="column" style="width: 25%; text-align:center">
+          <img src="{% static 'img/two.png' %}" style="width:30%">
+          <p>Add students</p>
+        </div>
+        <div class="column" style="width: 25%; text-align:center">
+          <img src="{% static 'img/three.png' %}" style="width:30%">
+          <p>Assign students</p>
+        </div>
+        <div class="column" style="width: 25%; text-align:center">
+          <img src="{% static 'img/four.png' %}" style="width:30%">
+          <p>Get class link</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <input type="file" id="fileUpload" />
+  <input type="button" id="display" value="Display Worksheet" onclick="Upload()" />
+  <input type="button" id="generate" value="Generate Urls" onclick="Generate()" />
+  <hr />
+  <div id="Excel"></div>
+
+  
+
+</body>
+</html>
+
+
+

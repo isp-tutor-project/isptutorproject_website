@@ -1,13 +1,12 @@
 from django.contrib import admin
 
 from .models import (
-    App, EnabledFeature, Feature, Module, OrderedApp, Pathway
+    Activity, Pathway, School, Class, Teacher, Student,
+    EnabledFeature, Feature, Module, OrderedActivity,
 )
-
 
 class FeatureInline(admin.TabularInline):
     model = Feature
-
 
 class EnabledFeatureInline(admin.TabularInline):
     model = EnabledFeature
@@ -19,19 +18,16 @@ class EnabledFeatureInline(admin.TabularInline):
             field.queryset = field.queryset.filter(module__exact=app.module.id)
         return field
 
-
-class OrderedAppInline(admin.TabularInline):
-    model = OrderedApp
-
+class OrderedActivityInline(admin.TabularInline):
+    model = OrderedActivity
 
 @admin.register(Module)
 class ModuleAdmin(admin.ModelAdmin):
     list_display = ('name',)
     inlines = [ FeatureInline ]
 
-
-@admin.register(App)
-class AppAdmin(admin.ModelAdmin):
+@admin.register(Activity)
+class ActivityAdmin(admin.ModelAdmin):
     list_display = ('name', 'module')
     inlines = [ EnabledFeatureInline ]
 
@@ -39,12 +35,11 @@ class AppAdmin(admin.ModelAdmin):
         request._obj = obj
         return [
             inline(self.model, self.admin_site) 
-            for inline in self.inlines 
+            for inline in self.inlines
             if obj is not None
         ]
-
 
 @admin.register(Pathway)
 class PathwayAdmin(admin.ModelAdmin):
     list_display = ('name', 'description')
-    inlines = [ OrderedAppInline ]
+    inlines = [ OrderedActivityInline ]

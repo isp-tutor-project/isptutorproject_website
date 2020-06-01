@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> ISP Teacher's Portal - Add Students </title>
+  {% load static %}
+
+  <!-- CSS Files -->
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+  <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+  
+  <style>
+  body {
+    font-family: 'Abel';font-size: 20px;
+  }
+  </style>
+
+  <!-- JS Files -->
+  <script src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+  <script src="{% static 'js/FileSaver.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/xlsx.full.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/jszip.js"></script>
+  
+  <!-- Add icon library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <!-- Add my js files -->
+  <script src="{% static 'js/script2.js' %}"></script>
+
+</head>
+
+<body>
+	<img src="{% static 'img/tutor.png'%}" style="width:100%">
+  <div class="row">
+    <div class="column" style="width: 5%">
+    </div>
+    <div class="column" style="width: 5%">
+      <img src="{% static 'img/portal-icon.png'%}" style="width:100%">
+    </div>
+    <div class="column" style="width: 45%">
+      <h1>Teacher's Portal</h1>
+    </div>
+    <div class="column" style="width: 40%">
+      <div class="progress">
+        <div class="progress-bar" style="width:35%"></div>
+      </div>
+      <div class="row">
+        <div class="column" style="width: 25%; text-align:center">
+          <img src="{% static 'img/one.png'%}" style="width:30%">
+          <p>Create class</p>
+        </div>
+        <div class="column" style="width: 25%; text-align:center">
+          <img src="{% static 'img/two.png'%}" style="width:30%">
+          <p>Add students</p>
+        </div>
+        <div class="column" style="width: 25%; text-align:center">
+          <img src="{% static 'img/three.png'%}" style="width:30%">
+          <p>Assign students</p>
+        </div>
+        <div class="column" style="width: 25%; text-align:center">
+          <img src="{% static 'img/four.png'%}" style="width:30%">
+          <p>Get class link</p>
+        </div>
+      </div>
+    </div> 
+  </div>
+
+
+
+<div class="row" >
+  <div class="column" style="width:60%">
+  </div>
+  
+  <div style="display:none;">
+    <table id="sample_table">
+      <tr id="">
+       <td><div class="row_data" col_name="fname">John</div></td>
+       <td><div class="row_data" col_name="lname">Doe</div></td>
+       <td><div class="row_data" col_name="userid">JohnDoe</div></td>
+       <td><div class="row_data" col_name="pretest">Complete</div></td>
+       <td><div class="row_data" col_name="tutor">Miss Evans</div></td>
+       <td><div class="row_data" col_name="posttest">N/A</div></td>
+       <td>
+					<span class="btn_edit" > <a href="#" class="btn btn-link " row_id="'+row_id+'" > Edit </a> </span>
+					<span class="btn_save"> <a href="#" class="btn btn-link"  row_id="'+row_id+'"> Save</a> | </span>
+					<span class="btn_cancel"> <a href="#" class="btn btn-link" row_id="'+row_id+'"> Cancel</a> | </span>
+          <span class="btn_delete"> <a href="#" class="btn btn-link" row_id="'+row_id+'" > Delete Row</a> </span>
+			 </td>
+     </tr>
+   </table>
+  </div>
+  <div class="column" style="width:40%">
+    <a class="btn btn-primary add-record" style="color:white" data-added="0"> <i class="fa fa-plus"></i> Add Row</a>
+  </div>
+  </div>
+
+
+<div class="row">
+  <div class="column" style="width:10%">
+  </div>
+  <div class="column">
+    <div class="panel panel-default">
+    <div class="panel-heading"><b> Student List </b> </div>
+    <div class="panel-body"></div>
+    <div class="tbl_user_data"></div>
+    </div>
+  </div>  
+</div>
+
+<div class="row">
+  <div class="column" style="width:60%">
+  </div>
+  <div class="column">
+  <a class="btn btn-primary export" style="color:white" onclick="exportTableToExcel('sample_table','test')">
+  <i class="fa fa-download"></i> Export Worksheet to Excel</a>
+  </div>
+</div>
+
+</body>
+</html>

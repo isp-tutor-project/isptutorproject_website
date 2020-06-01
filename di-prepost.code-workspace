@@ -1,16 +1,20 @@
 {
 	"folders": [
 		{
-			"name": "🚀@isptutorproject/di-prepost",
+			"name": "🚀 @isptutorproject/di-prepost",
 			"path": "apps/di-prepost"
 		},
 		{
-			"name": "🚀@isptutorproject/isp-static",
+			"name": "🚀 @isptutorproject/isp-static",
 			"path": "apps/isp-static"
+		},
+		{
+			"name": "📦 @isptutorproject/isp-site-styles",
+			"path": "common/isp-site-styles"
 		}
 	],
 	"settings": {
 		"liveServer.settings.root": "../../wwwroot",		
-		"liveServer.settings.multiRootWorkspaceName": "🚀@isptutorproject/isp-static"
+		"liveServer.settings.multiRootWorkspaceName": "🚀 @isptutorproject/isp-static"
 	}
 }
