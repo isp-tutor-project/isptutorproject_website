@@ -251,9 +251,7 @@ jQuery(document).delegate('.btn_delete', 'click', function(e) {
       var row_div = jQuery(this).attr('row_div');
       jQuery('#rec-' + id).remove();
       
-    //regnerate index number on table
     $('#tbl_posts_body tr').each(function(index) {
-      //alert(index);
       $(this).find('span.sn').html(index+1);
     });
     return true;
@@ -265,20 +263,65 @@ jQuery(document).delegate('.btn_delete', 'click', function(e) {
 jQuery(document).delegate('a.add-record', 'click', function(e) {
      e.preventDefault();
      var content = jQuery('#sample_table tr'),
-     size = jQuery('#tbl_posts >tbody >tr').length + 1,
-     element = null,
-     element = content.clone();
-     element.attr('id', 'rec-'+size);
-     // read the 
-     element.find('.btn_delete').attr('row_id', size);
+	 size = jQuery('#tbl_posts >tbody >tr').length + 1;
+     element = null;
+	 element = content.clone();
+	 element.attr('id', 'rec-'+size);
+	 element.find('.btn_delete').attr('row_id', size);
      element.appendTo('#tbl_posts_body');
-     element.find('.sn').html(size);
+	 element.find('.sn').html(size);
+	 changeSelectID(element, size);
+	 changeCheckboxID(element, size);
 });
+
+function changeSelectID(table, size){
+	default_name = 'pathopts';
+	table.find('select').each(function(){
+		var ID = $(this).attr('id');
+		$(document.getElementById(ID)).attr('id', default_name+size);
+	});
+}
+
+function changeCheckboxID(table, size) {
+	table.find(':checkbox').each(function() {
+		var default_name = $(this).attr('class');
+		var ID = $(this).attr('id');
+		$(document.getElementById(ID)).attr('id', default_name+size);
+	});
+}
+
+function clearSel(row_num) {
+	var list = ['RQ-WE', 'RQ-GR', 'BRM-WE', 'BRM-GR', 'Hypothesis-WE', 'Hypothesis-GR',
+	 'PEM-WE', 'PEM-GR', 'Materials-WE', 'Materials-GR', 'DI-WE', 'DI-GR', 'DC-WE', 'DC-GR'];
+    for (var i = 0; i < list.length; i++) {
+		var cbid = list[i] + row_num;
+		document.getElementById(cbid).checked = false;
+}
+}
+
+function changeSel(event) {
+	var sel = event.target;
+	var row_num = sel.id.charAt(8);
+	var sel_index = sel.selectedIndex;
+	var list, cbid; // LISTS acquired through django backend (HOW)
+	if (sel_index == 1) { // stored pathway1
+		list = ['RQ-WE', 'BRM-GR', 'Hypothesis-WE', 'PEM-WE', 'Materials-GR', 'DI-GR', 'DC-WE'];
+	}
+	else if (sel_index == 2) { // stored pathway2
+		list = ['RQ-GR', 'BRM-GR', 'Hypothesis-WE', 'PEM-GR', 'Materials-WE', 'DI-WE', 'DC-GR'];
+	}
+	else list = [];
+	clearSel(row_num);
+	for (var i = 0; i < list.length; i++) {
+			cbid = list[i] + row_num;
+			document.getElementById(cbid).click();
+	}
+}
 
 
 //referenced from https://www.codexworld.com/export-html-table-data-to-excel-using-javascript/
-function exportTableToExcel(tableID, filename=''){
-    var wb = XLSX.utils.table_to_book(document.getElementById(tableID));
+function exportTableToExcel(table_ID, filename=''){
+    var wb = XLSX.utils.table_to_book(document.getElementById(table_ID));
     var wbout = XLSX.write(wb, {bookType:'xlsx', bookSST:true, type:'binary'});
 
     function s2ab(s){
@@ -292,33 +335,3 @@ function exportTableToExcel(tableID, filename=''){
     
     saveAs(new Blob([s2ab(wbout)],{type:"application/octet-stream"}), filename);
 }
-
-function clearSel() {
-    $("input[type='checkbox']").attr("checked",false);
-}
-
-function changeSel() {
-    var sel = document.getElementById('pathopts');
-    var sel_value = sel.options[sel.selectedIndex].value;
-    clearSel();
-    if (sel_value == 'path1') {
-        // acquired through django backend (HOW)
-        document.getElementById('RQ-WE').click();
-        document.getElementById('BRM-GR').click();
-        document.getElementById('Hypothesis-WE').click();
-        document.getElementById('PEM-WE').click();
-        document.getElementById('Materials-GR').click();
-        document.getElementById('DI-GR').click();
-        document.getElementById('DC-WE').click();
-    }
-    else if (sel_value == 'path2') {
-        document.getElementById('RQ-GR').click();
-        document.getElementById('BRM-GR').click();
-        document.getElementById('Hypothesis-WE').click();
-        document.getElementById('PEM-GR').click();
-        document.getElementById('Materials-WE').click();
-        document.getElementById('DI-WE').click();
-        document.getElementById('DC-GR').click();
-    }
-}
-
