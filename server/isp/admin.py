@@ -1,9 +1,11 @@
 from django.contrib import admin
 
 from .models import (
-    Activity, Pathway, School, Class, Teacher, Student,
-    EnabledFeature, Feature, Module, OrderedActivity,
+    App, Feature, Activity, EnabledFeature, School, Teacher
 )
+# Class, Student,
+#     Pathway, OrderedActivity
+# )
 
 class FeatureInline(admin.TabularInline):
     model = Feature
@@ -18,17 +20,20 @@ class EnabledFeatureInline(admin.TabularInline):
             field.queryset = field.queryset.filter(module__exact=app.module.id)
         return field
 
-class OrderedActivityInline(admin.TabularInline):
-    model = OrderedActivity
+class TeacherInline(admin.TabularInline):
+    model = Teacher
 
-@admin.register(Module)
-class ModuleAdmin(admin.ModelAdmin):
+# class OrderedActivityInline(admin.TabularInline):
+#     model = OrderedActivity
+
+@admin.register(App)
+class AppAdmin(admin.ModelAdmin):
     list_display = ('name',)
     inlines = [ FeatureInline ]
 
 @admin.register(Activity)
 class ActivityAdmin(admin.ModelAdmin):
-    list_display = ('name', 'module')
+    list_display = ('name', 'app')
     inlines = [ EnabledFeatureInline ]
 
     def get_inline_instances(self, request, obj=None):
@@ -39,7 +44,11 @@ class ActivityAdmin(admin.ModelAdmin):
             if obj is not None
         ]
 
-@admin.register(Pathway)
-class PathwayAdmin(admin.ModelAdmin):
-    list_display = ('name', 'description')
-    inlines = [ OrderedActivityInline ]
+@admin.register(School)
+class SchoolAdmin(admin.ModelAdmin):
+    inlines = [ TeacherInline ]
+    
+# @admin.register(Pathway)
+# class PathwayAdmin(admin.ModelAdmin):
+#     list_display = ('name', 'description')
+#     inlines = [ OrderedActivityInline ]
