@@ -1,6 +1,6 @@
 [
     {
-        "model": "isp.module",
+        "model": "isp.app",
         "pk": 1,
         "fields": {
             "name": "RQ Module",
@@ -9,25 +9,25 @@
         }
     },
     {
-        "model": "isp.module",
+        "model": "isp.app",
         "pk": 2,
         "fields": {
             "name": "Hypothesis Module",
             "description": "",
-            "url": "/hypo/"
+            "url": "/hypo-gr/"
         }
     },
     {
-        "model": "isp.module",
+        "model": "isp.app",
         "pk": 3,
         "fields": {
             "name": "DI Instruction",
-            "description": "Data Interpretation Instruction module",
+            "description": "Data Interpretation Instruction app",
             "url": "/di-instr/"
         }
     },
     {
-        "model": "isp.module",
+        "model": "isp.app",
         "pk": 4,
         "fields": {
             "name": "DI Pre-Test",
@@ -36,7 +36,7 @@
         }
     },
     {
-        "model": "isp.module",
+        "model": "isp.app",
         "pk": 5,
         "fields": {
             "name": "DI Post Test",
@@ -45,7 +45,7 @@
         }
     },
     {
-        "model": "isp.module",
+        "model": "isp.app",
         "pk": 6,
         "fields": {
             "name": "BRM",
@@ -54,7 +54,7 @@
         }
     },
     {
-        "model": "isp.module",
+        "model": "isp.app",
         "pk": 7,
         "fields": {
             "name": "WE BRM",
@@ -63,7 +63,7 @@
         }
     },
     {
-        "model": "isp.module",
+        "model": "isp.app",
         "pk": 8,
         "fields": {
             "name": "goodRQ",
@@ -72,7 +72,7 @@
         }
     },
     {
-        "model": "isp.module",
+        "model": "isp.app",
         "pk": 9,
         "fields": {
             "name": "TED",
@@ -86,7 +86,7 @@
         "fields": {
             "name": "FTR_BL",
             "description": "baseline - mutually exclusive",
-            "module": 1
+            "app": 1
         }
     },
     {
@@ -95,7 +95,7 @@
         "fields": {
             "name": "FTR_CHOICE",
             "description": "choice - mutually exclusive",
-            "module": 1
+            "app": 1
         }
     },
     {
@@ -104,7 +104,7 @@
         "fields": {
             "name": "FTR_NCCRYSTAL",
             "description": "must be combined with no choice",
-            "module": 1
+            "app": 1
         }
     },
     {
@@ -113,7 +113,7 @@
         "fields": {
             "name": "INITIAL_HYPO",
             "description": "saves hypo as initial hypo",
-            "module": 2
+            "app": 2
         }
     },
     {
@@ -122,7 +122,7 @@
         "fields": {
             "name": "FINAL_HYPO",
             "description": "saves hypo as final hypo",
-            "module": 2
+            "app": 2
         }
     },
     {
@@ -131,7 +131,7 @@
         "fields": {
             "name": "NO_CPT_MAP",
             "description": "disabled concept map",
-            "module": 2
+            "app": 2
         }
     },
     {
@@ -140,7 +140,7 @@
         "fields": {
             "name": "DEFS_ONLY",
             "description": "allows student to return to definition pages at any time",
-            "module": 2
+            "app": 2
         }
     },
     {
@@ -149,7 +149,7 @@
         "fields": {
             "name": "FTR_NOCHOICE",
             "description": "no choice - must be combined with topic",
-            "module": 1
+            "app": 1
         }
     },
     {
@@ -158,122 +158,122 @@
         "fields": {
             "name": "NO_DEFS",
             "description": "do not display definition pages",
-            "module": 2
+            "app": 2
         }
     },
     {
-        "model": "isp.app",
+        "model": "isp.activity",
         "pk": 1,
         "fields": {
             "name": "RQSelect (BaseLine)",
             "label": "Research Question Selection",
-            "module": 1
+            "app": 1
         }
     },
     {
-        "model": "isp.app",
+        "model": "isp.activity",
         "pk": 2,
         "fields": {
             "name": "initial hyp w/o cpt map",
             "label": "Initial Hypothesis",
-            "module": 2
+            "app": 2
         }
     },
     {
-        "model": "isp.app",
+        "model": "isp.activity",
         "pk": 3,
         "fields": {
             "name": "initial hypo w/ cpt map",
             "label": "Initial Hypothesis",
-            "module": 2
+            "app": 2
         }
     },
     {
-        "model": "isp.app",
+        "model": "isp.activity",
         "pk": 4,
         "fields": {
             "name": "Final Hypo",
             "label": "Final Hypothesis",
-            "module": 2
+            "app": 2
         }
     },
     {
-        "model": "isp.app",
+        "model": "isp.activity",
         "pk": 5,
         "fields": {
             "name": "RQSelect Choice",
             "label": "Research Question Selection",
-            "module": 1
+            "app": 1
         }
     },
     {
-        "model": "isp.app",
+        "model": "isp.activity",
         "pk": 6,
         "fields": {
             "name": "RQSelect No-Choice Crystal",
             "label": "Research Question Selection",
-            "module": 1
+            "app": 1
         }
     },
     {
-        "model": "isp.app",
+        "model": "isp.activity",
         "pk": 7,
         "fields": {
             "name": "DI Pre-Test",
             "label": "Data Interpretation Pre-Test",
-            "module": 4
+            "app": 4
         }
     },
     {
-        "model": "isp.app",
+        "model": "isp.activity",
         "pk": 8,
         "fields": {
             "name": "DI Post Test",
             "label": "Data Interpretation Post-Test",
-            "module": 5
+            "app": 5
         }
     },
     {
-        "model": "isp.app",
+        "model": "isp.activity",
         "pk": 9,
         "fields": {
             "name": "DI Instruction",
             "label": "Data Interpretation Lesson",
-            "module": 3
+            "app": 3
         }
     },
     {
-        "model": "isp.app",
+        "model": "isp.activity",
         "pk": 10,
         "fields": {
             "name": "BRM",
             "label": "Basic Research",
-            "module": 6
+            "app": 6
         }
     },
     {
-        "model": "isp.app",
+        "model": "isp.activity",
         "pk": 11,
         "fields": {
             "name": "WE BRM",
             "label": "Basic Research",
-            "module": 7
+            "app": 7
         }
     },
     {
-        "model": "isp.app",
+        "model": "isp.activity",
         "pk": 12,
         "fields": {
             "name": "goodRQ",
             "label": "Selecting a Good Research Question Lesson",
-            "module": 8
+            "app": 8
         }
     },
     {
         "model": "isp.enabledfeature",
         "pk": 1,
         "fields": {
-            "app": 1,
+            "activity": 1,
             "feature": 1
         }
     },
@@ -281,7 +281,7 @@
         "model": "isp.enabledfeature",
         "pk": 2,
         "fields": {
-            "app": 2,
+            "activity": 2,
             "feature": 4
         }
     },
@@ -289,7 +289,7 @@
         "model": "isp.enabledfeature",
         "pk": 3,
         "fields": {
-            "app": 2,
+            "activity": 2,
             "feature": 6
         }
     },
@@ -297,7 +297,7 @@
         "model": "isp.enabledfeature",
         "pk": 4,
         "fields": {
-            "app": 3,
+            "activity": 3,
             "feature": 4
         }
     },
@@ -305,7 +305,7 @@
         "model": "isp.enabledfeature",
         "pk": 5,
         "fields": {
-            "app": 4,
+            "activity": 4,
             "feature": 5
         }
     },
@@ -313,7 +313,7 @@
         "model": "isp.enabledfeature",
         "pk": 6,
         "fields": {
-            "app": 4,
+            "activity": 4,
             "feature": 9
         }
     },
@@ -321,7 +321,7 @@
         "model": "isp.enabledfeature",
         "pk": 7,
         "fields": {
-            "app": 5,
+            "activity": 5,
             "feature": 2
         }
     },
@@ -329,7 +329,7 @@
         "model": "isp.enabledfeature",
         "pk": 8,
         "fields": {
-            "app": 6,
+            "activity": 6,
             "feature": 8
         }
     },
@@ -337,79 +337,54 @@
         "model": "isp.enabledfeature",
         "pk": 9,
         "fields": {
-            "app": 6,
+            "activity": 6,
             "feature": 3
         }
     },
     {
-        "model": "isp.pathway",
+        "model": "isp.school",
         "pk": 1,
         "fields": {
-            "name": "pathway1",
-            "description": "for gifted and talented students"
+            "name": "school1"
         }
     },
     {
-        "model": "isp.orderedapp",
-        "pk": 1,
-        "fields": {
-            "pathway": 1,
-            "order": 2,
-            "app": 1
-        }
-    },
-    {
-        "model": "isp.orderedapp",
+        "model": "isp.school",
         "pk": 2,
         "fields": {
-            "pathway": 1,
-            "order": 3,
-            "app": 3
+            "name": "school2"
         }
     },
     {
-        "model": "isp.orderedapp",
+        "model": "isp.teacher",
+        "pk": 1,
+        "fields": {
+            "name": "Joe",
+            "school": 1
+        }
+    },
+    {
+        "model": "isp.teacher",
+        "pk": 2,
+        "fields": {
+            "name": "Sue",
+            "school": 1
+        }
+    },
+    {
+        "model": "isp.teacher",
         "pk": 3,
         "fields": {
-            "pathway": 1,
-            "order": 1,
-            "app": 7
+            "name": "Betty",
+            "school": 2
         }
     },
     {
-        "model": "isp.orderedapp",
+        "model": "isp.teacher",
         "pk": 4,
         "fields": {
-            "pathway": 1,
-            "order": 6,
-            "app": 9
-        }
-    },
-    {
-        "model": "isp.orderedapp",
-        "pk": 5,
-        "fields": {
-            "pathway": 1,
-            "order": 4,
-            "app": 10
-        }
-    },
-    {
-        "model": "isp.orderedapp",
-        "pk": 6,
-        "fields": {
-            "pathway": 1,
-            "order": 5,
-            "app": 4
-        }
-    },
-    {
-        "model": "isp.orderedapp",
-        "pk": 7,
-        "fields": {
-            "pathway": 1,
-            "order": 7,
-            "app": 8
+            "name": "Sarah",
+            "school": 2
         }
     }
 ]
