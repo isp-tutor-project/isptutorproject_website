@@ -35,18 +35,18 @@ export const modules = [
             currentModule: "hypo",
             tutorFeatures: "FTR_WEB:FTR_INITIAL_HYP:FTR_NOCPTMAP"
         },
-        url: "/hypo/",
-        implemented: false
+        url: "/hypo-gr/",
+        implemented: true
     },
     {
         label: "Hypothesis (Initial Hypo with CptMap)",
         phase: "hypo",
         storageInfo: {
             currentModule: "hypo",
-            tutorFeatures: "FTR_WEB:FTR_INITIAL_HYP:FTR_CPTMAP"
+            tutorFeatures: "FTR_WEB:FTR_INITIAL_HYP"
         },
-        url: "/hypo/",
-        implemented: false
+        url: "/hypo-gr/",
+        implemented: true
     },
     {
         label: "Hypothesis (definition pages only)",
@@ -55,18 +55,28 @@ export const modules = [
             currentModule: "hypo",
             tutorFeatures: "FTR_WEB:FTR_DEFS_ONLY"
         },
-        url: "/hypo/",
-        implemented: false
+        url: "/hypo-gr/",
+        implemented: true
+    },
+    {
+        label: "Hypothesis (Initial Hypo Bi-Directional)",
+        phase: "hypo",
+        storageInfo: {
+            currentModule: "hypo",
+            tutorFeatures: "FTR_WEB:FTR_INITIAL_HYP:FTR_BI_DIR"
+        },
+        url: "/hypo-gr/",
+        implemented: true
     },
     {
         label: "Hypothesis (final hypothesis",
         phase: "hypo",
         storageInfo: {
             currentModule: "hypo",
-            tutorFeatures: "FTR_WEB:FTR_FINAL_HYP:FTR_CPTMAP"
+            tutorFeatures: "FTR_WEB:FTR_FINAL_HYP:FTR_NO_DEFS"
         },
-        url: "/hypo/",
-        implemented: false
+        url: "/hypo-gr/",
+        implemented: true
     },
     {
         label: "Data Interpretation Instruction",
