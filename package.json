@@ -6,7 +6,7 @@
         "config/*"
     ],
     "scripts": {
-        "clean": "rimraf wwwroot",
+        "clean": "rimraf wwwroot/apps",
         "build": "yarn run clean && yarn run build:homepage && yarn run build:di-instr && yarn run build:di-prepost && yarn run build:hypo-gr && yarn run build:isp-static",
         "build:homepage": "yarn workspace @isptutorproject/homepage run build",
         "build:di-instr": "yarn workspace @isptutorproject/di-instr run build",
