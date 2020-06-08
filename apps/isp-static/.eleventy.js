@@ -1,10 +1,10 @@
 // this config simply copies all of the individually built apps into wwwroot
 
 const APPS = {
-    "../di-instr/dist": "di-instr",
-    "../di-prepost/dist": "di-prepost",
+    "../di-instr/dist": "apps/di-instr",
+    "../di-prepost/dist": "apps/di-prepost",
     "../homepage/dist": ".",
-    "../hypo-gr/dist": "hypo-gr"
+    "../hypo-gr/dist": "apps/hypo-gr"
 };
 
 module.exports = function(eleventyConfig) {
