@@ -1,6 +1,5 @@
 from django.db import models
 
-
 # a App is simply a named URL with 0-more config options (feature flags)
 class App(models.Model):
     name = models.CharField(max_length=64, unique=True)
@@ -75,16 +74,13 @@ class Class(models.Model):
 
     def __str__(self):
         return self.name
-
-    class Meta:
-        unique_together = ['teacher', 'name']
     
 
 class Pathway(models.Model):
     name = models.CharField(max_length=64, unique=True)
     description = models.TextField(blank=True, null=True)
 
-    # constrain_school = models.ForeignKey(School, on_delete=models.CASCADE, null=True)
+    constrain_school = models.ForeignKey(School, on_delete=models.CASCADE, null=True)
     # constrain_teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE, null=True)
     # constrain_class = models.ForeignKey(Class, on_delete=models.CASCADE, null=True)
  

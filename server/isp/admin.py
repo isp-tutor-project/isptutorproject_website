@@ -1,11 +1,15 @@
 from django.contrib import admin
+from django.contrib.admin import AdminSite
+
+class TeachersAdminSite(AdminSite):
+    site_header = "ISP Teacher's Portal"
+    index_title = "Teacher's Administration"
+
+teacheradmin = TeachersAdminSite(name = "teacher_admin")
 
 from .models import (
-    App, Feature, Activity, EnabledFeature, School, Teacher
+    App, Feature, Activity, EnabledFeature, School, Teacher,
 )
-# Class, Student,
-#     Pathway, OrderedActivity
-# )
 
 class FeatureInline(admin.TabularInline):
     model = Feature
@@ -48,7 +52,3 @@ class ActivityAdmin(admin.ModelAdmin):
 class SchoolAdmin(admin.ModelAdmin):
     inlines = [ TeacherInline ]
     
-# @admin.register(Pathway)
-# class PathwayAdmin(admin.ModelAdmin):
-#     list_display = ('name', 'description')
-#     inlines = [ OrderedActivityInline ]
