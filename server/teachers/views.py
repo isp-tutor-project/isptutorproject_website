@@ -3,7 +3,7 @@ from django.http import HttpResponse
 
 
 # Add students
-def addstudents(request, classcode):
+def addstudents(request):
     return render(request, 'addstudents.html')
 
 # Assign students

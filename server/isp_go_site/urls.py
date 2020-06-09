@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from isp.admin import teacheradmin
+#from isp.admin import teachersadmin
+#from teachers.admin import teacheradmin
 
 admin.site.site_header = 'ISP general admin'
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('teachers/teachers/class/<int:classcode>/', include('teachers.urls')),
-    path('teachers/', teacheradmin.urls),
+    #path('teachers/isp/class/<int:classcode>/', include('teachers.urls')),
+    path('teachers/', include('teachers.urls')),
 ]
