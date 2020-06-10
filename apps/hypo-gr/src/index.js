@@ -2142,8 +2142,9 @@ function joinAndCapitalize(sentences) {
 
 function initConceptsList(list) {
     list.innerHTML = "";
-    let newNodes = [...nodes].sort();
-    let captitalized = newNodes.map((node) => capitalize(node));
+    // let newNodes = [...nodes].sort();
+    // let captitalized = newNodes.map((node) => capitalize(node));
+    let captitalized = nodes.map((node) => capitalize(node));
     for (let capCpt of captitalized) {
         let li = document.createElement("li");
         li.innerHTML = capCpt;
@@ -2341,7 +2342,7 @@ function initializeConceptsMenu(menu) {
     defaultOpt.setAttribute("disabled", true);
     defaultOpt.setAttribute("hidden", true);
     menu.appendChild(defaultOpt);
-    for (let node of [...nodes].sort()) {
+    // for (let node of [...nodes].sort()) {
         let opt = document.createElement("option");
         opt.value = node;
         opt.innerText = ` ${node} `;
