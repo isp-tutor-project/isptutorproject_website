@@ -53,6 +53,7 @@ export class DiInstructionScene extends Scene {
     getTransitionElements() {
         return this.el.getElementsByClassName("transition-to");
     }
+
     setupTransitionEventHandlers() {
         for (let el of this.getTransitionElements()) {
             el.addEventListener("click", this.handleTransitionButton, { once: true });
