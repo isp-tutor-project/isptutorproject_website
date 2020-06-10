@@ -4166,5 +4166,6 @@ export function initHypoTasks(data) {
 }
 
 
-db = getDBConnection("localstorage", "BOGUS_CLASSCODE" "BOGUS_USER");
+db = getDBConnection("localstorage");
+db.setCredentials("BOGUS_CLASSCODE", "BOGUS_USER");
 initHypoPage();
