@@ -4,7 +4,8 @@ const APPS = {
     "../di-instr/dist": "apps/di-instr",
     "../di-prepost/dist": "apps/di-prepost",
     "../homepage/dist": ".",
-    "../hypo-gr/dist": "apps/hypo-gr"
+    "../hypo-gr/dist": "apps/hypo-gr",
+    "../hypo-we/dist": "apps/hypo-we"
 };
 
 module.exports = function(eleventyConfig) {
