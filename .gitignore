@@ -9,9 +9,8 @@ apps/*/templates/img/site
 # built data files
 apps/*/data/*.json
 
-# kruft
-hypo.bak
-di_instr_tmp
+# dir where I store all my kruft
+kruft
 
 # mac stuff
 **/.DS_Store
