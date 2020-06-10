@@ -711,6 +711,7 @@ function definitionPage1() {
 }
 
 function lessonOverview() {
+    console.log("in lessonOverview()");
     stage.removeAllChildren();
     let overlay = document.getElementById("lesson_overview_overlay");
     let invisibles = overlay.querySelectorAll(".invisible");
