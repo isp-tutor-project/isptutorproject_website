@@ -1,6 +1,7 @@
 module.exports = {
     scenes: {
         selectVIN: {
+            sceneType: "selectVIN",
             transitions: {
                 next: "selectHotCold"
             },
@@ -12,12 +13,34 @@ module.exports = {
             ]
         },
         selectHotCold: {
-            customEnterActions: [
-                {
-                    name: "hideBtns",
-                    args: ["prev", "next"]
-                }
-            ]
+            sceneType: "hotOrCold",
+            transitions: {
+                prev: "selectVIN",
+                next: "scene3"
+            },
+            // customEnterActions: [
+            //     {
+            //         name: "hideBtns",
+            //         args: ["prev", "next"]
+            //     }
+            // ]
+        },
+        scene3: {
+            transitions: {
+                prev: "selectHotCold",
+                next: "scene4"
+            }
+        },
+        scene4: {
+            transitions: {
+                prev: "scene3",
+                next: "scene5"
+            }
+        },
+        scene5: {
+            transitions: {
+                prev: "scene4",
+            }
         },
         scene6c: {
             transitions: {
