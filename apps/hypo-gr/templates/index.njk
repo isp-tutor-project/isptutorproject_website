@@ -2,30 +2,17 @@
 <html>
 
   <head>
-  {% include "site/stdHead.njk" %}
-  {# 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Google Material Icons (Home Icon) -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          rel="stylesheet">
-    <!-- Adobe Animate (RQ and TED) -->
-    #}
+    {% include "site/stdHead.njk" %}
     {% include "site/createjs.njk" %}
     <title>ISP Tutor Hypothesis Lesson</title>
     <link rel="stylesheet" href="hypo-gr.bundle.css">
-    </head>
+  </head>
 
   <body>
-
-    <!-- Home Page -->
-    <!-- <div class="page" id="home-page">
-      <img id="title-logo" src="isptutorlogo_narrow.png" alt="ISP Tutor">
-    </div> -->
+    {% include "site/navbar.njk" %}
 
     <img id="loading_gif" src="img/site/_preloader.gif" class="hidden" />
-    <!-- Hypo Page -->
-    <div class="page" id="hypo-page">
+    <main>
       <canvas id="hypo-canvas" width="1200" height="750">
         Error: HTML5 canvas is not working. Please make sure JavaScript is enabled.
       </canvas>
@@ -33,17 +20,12 @@
       {% for overlay in collections.overlays %}
         {{ overlay.templateContent | safe }}
       {% endfor %}
-            
-    </div>
+    </main>
 
 
     
     <!-- Snackbar -->
     <div id="snackbar">Some text some message..</div>
-    {# 
-    <!-- Load the JS to control account registration system -->
-    <script src="hypothesisPage.js"></script> 
-    #}
 
     <script src="hypo-gr.bundle.js"></script>
   </body>
