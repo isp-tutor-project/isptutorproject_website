@@ -1,13 +1,9 @@
 import "./styles/index.scss";
 
-
 import { NavBar } from "@isptutorproject/navbar";
 import { SnackBar } from "@isptutorproject/snackbar";
-
-import db from "@isptutorproject/isp-database";
-window.db = db;
-
-import { modules } from "../data/homePageData";
+import { getDBConnection } from "@isptutorproject/isp-database";
+import { activities } from "../data/homePageData";
 
 
 // convenience function so I don't have to constantly type document.getElementById()
@@ -26,40 +22,45 @@ function activatePage(pageID) {
 }
 
 function getUserInfoFromLocalStorage() {
-    collectionID = localStorage.getItem("collectionID");
+    classCode = localStorage.getItem("classCode");
     userID = localStorage.getItem("userID");
 }
 
-function removeUserInfoFromLocalStorage() {
-    localStorage.removeItem("collectionID");
-    localStorage.removeItem("userID");
-    // reset collectionID and user ID vars to undefined
-    getUserInfoFromLocalStorage();
+// function removeUserInfoFromLocalStorage() {
+//     localStorage.removeItem("classCode");
+//     localStorage.removeItem("userID");
+//     // reset collectionID and user ID vars to undefined
+//     getUserInfoFromLocalStorage();
+// }
+
+// function logoutUser() {
+//     removeUserInfoFromLocalStorage();
+//     indexPage();
+// }
+
+function handleActivityHover(e) {
+    // e.preventDefault();
+    let url = e.target.getAttribute("data-url");
+    let currentActivity = e.target.getAttribute("data-activity");
+    let activityFeatures = e.target.getAttribute("data-features");
+    console.log(`
+    hovering over: ${e.target}
+    url: ${url}
+    currentActivity: ${currentActivity}
+    activityFeatures: ${activityFeatures}
+    `);
 }
 
-function logoutUser() {
-    removeUserInfoFromLocalStorage();
-    indexPage();
-}
-
-function handleModuleBtn(e) {
+function handleActivityClick(e) {
     e.preventDefault();
     let url = e.target.getAttribute("data-url");
-    let currentModule = e.target.getAttribute("data-module");
-    let features = e.target.getAttribute("data-features");
-    console.log(`
-    clicked on: ${e.target}
-    url: ${url}
-    module: ${currentModule}
-    features: ${features}
-    `);
-
-    localStorage.setItem("currentModule", currentModule);
-    if (features) {
-        localStorage.setItem("moduleFeatures", features);
+    let currentActivity = e.target.getAttribute("data-activity");
+    let activityFeatures = e.target.getAttribute("data-features");
+    localStorage.setItem("currentActivity", currentActivity);
+    if (activityFeatures) {
+        localStorage.setItem("activityFeatures", activityFeatures);
     }
     window.location.href = url;
-    // console.log(`I will redirect to: ${url}`);
 }
 
 function indexPage(e) {
@@ -91,41 +92,36 @@ function homePage(e) {
     }
     activatePage("home_page");
     navbar.displayUser(userID);
-    // signInText.innerHTML = `Welcome, ${userID}`;
-    // signOutBtn.classList.remove("hidden");
-    // // clear module btns
-    moduleBtnsCntr.innerHTML = "";
-    // add module btns
-    modules.forEach((mod) => {
+    // refresh activity btns
+    activityBtnsCntr.innerHTML = "";
+    activities.forEach((act) => {
         let p = document.createElement("p");
         let btn = document.createElement("button");
-        if (!mod.implemented) {
+        if (!act.implemented) {
             btn.classList.add("disabled");
         }
-        btn.classList.add("module-button");
+        btn.classList.add("activity-button");
         btn.classList.add("btn");
         btn.type = "button";
-        btn.innerHTML = mod.label;
-        if (mod.storageInfo.tutorFeatures) {
-            btn.setAttribute("data-features", mod.storageInfo.tutorFeatures);
+        btn.innerHTML = act.label;
+        if (act.storageInfo.activityFeatures) {
+            btn.setAttribute("data-features", act.storageInfo.activityFeatures);
         }
-        btn.setAttribute("data-module", mod.storageInfo.currentModule);
-        btn.setAttribute("data-url", mod.url);
-        btn.addEventListener("click", handleModuleBtn);
+        btn.setAttribute("data-activity", act.storageInfo.currentActivity);
+        btn.setAttribute("data-url", act.url);
+        btn.addEventListener("click", handleActivityClick);
+        // for debugging
+        btn.addEventListener("mouseover", handleActivityHover);
         p.appendChild(btn);
-        moduleBtnsCntr.appendChild(p);
-    })
+        activityBtnsCntr.appendChild(p);
+    });
 }
 
-let collectionID; 
+let classCode; 
 let userID; 
 
-const navbar = new NavBar(logoutUser);
+const navbar = new NavBar();
 const snackbar = new SnackBar();
-
-// const signInText = getEleById("sign_in_text");
-// const signOutRegion = getEleById("sign_out_region");
-// const signOutBtn = getEleById("sign_out_button");
 
 const loginBtn = getEleById("login_button");
 const loginBackBtn = getEleById("l-back-button");
@@ -137,7 +133,7 @@ const registerBackBtn = getEleById("r-back-button");
 const registrationForm = getEleById("registration_form");
 const registerSubmitBtn = getEleById("registration_submit");
 
-const moduleBtnsCntr = getEleById("module_btns_container");
+const activityBtnsCntr = getEleById("activity_btns_container");
 
 // =============================================================================
 // ======================= userForm related functions ==========================
@@ -172,8 +168,7 @@ function parseUserForm(prefix, form) {
     if (!form.reportValidity()) {
         return false;
     }
-    let classCode = getEleById(flds.classcode).value.toUpperCase();
-    collectionID = classCode;
+    classCode = getEleById(flds.classcode).value.toUpperCase();
     let firstname = getEleById(flds.fname).value;
     let lastname = getEleById(flds.lname).value;
     let month = getEleById(flds.bmonth).value;
@@ -190,8 +185,8 @@ function parseUserForm(prefix, form) {
     }
     userID += '_' + month + '_' + day;
     userID = userID.toUpperCase();
-    // save collection and uid so BRM can connect to firebase
-    localStorage.setItem("collectionID", collectionID);
+    // save classCode and uid so BRM can connect to firebase
+    localStorage.setItem("classCode", classCode);
     localStorage.setItem("userID", userID);
     return true;
 }
@@ -203,24 +198,22 @@ function parseUserForm(prefix, form) {
 // signOutBtn.addEventListener("click", logoutUser);
 
 loginBtn.addEventListener("click", loginPage);
-
 registerBtn.addEventListener("click", registrationPage);
-
 loginBackBtn.addEventListener("click", indexPage);
-
 registerBackBtn.addEventListener("click", indexPage);
 
 
 loginSubmitBtn.addEventListener("click", e => {
     e.preventDefault();
     if (parseUserForm("login", loginForm)) {
-        db.collection(collectionID).doc(userID).get().then((doc) => {
-            if (doc.exists) {
+        db.setCredentials(classCode, userID)
+        .then(() => db.getUserData())
+        .then((userData) => {
+            if (userData) {
                 console.log("Account found");
                 snackbar.show("Signed in as " + userID + ".");
                 homePage();
             } else {
-                // doc.data() will be undefined in this case
                 console.log("No such account!");
                 snackbar.show("No such account exists. Check that your name and birthday were typed in correctly.")
             }
@@ -231,36 +224,21 @@ loginSubmitBtn.addEventListener("click", e => {
     }
 });
 
-// function fetchUserDoc(collec, uid) {
-//     return db.collection(classCode).doc(uid).get();
-// }
-
-// function createAccount(classCode, uid) {
-//     fetchUserDoc(classCode, uid)
-//     .then((doc) => {
-//         if (doc.exists) {
-//             // account already exists
-//         } else {
-//             // try writing something do doc to create it
-//         }
-//     })
-// }
-
-// function loginUser(classCode, uid) {
-
-// }
-
 registerSubmitBtn.addEventListener("click", e => {
     e.preventDefault();
     if (parseUserForm("register", registrationForm)) {
-        db.collection(collectionID).doc(userID).get().then((doc) => {
-            if (doc.exists) {
+        db.setCredentials(classCode, userID)
+        .then(() => db.getUserData())
+        .then((userData) => {
+            if (userData) {
                 console.log("Account already exists");
                 snackbar.show("Account already exists.");
             } else {
                 console.log("Creating account");
-                db.collection(collectionID).doc(userID).set({
-                    currTutorNdx: 0
+                // add some fields to account object
+                db.setValues({
+                    classCode: classCode,
+                    userID: userID
                 })
                 .then(function () {
                     console.log("Document successfully written!");
@@ -281,9 +259,9 @@ registerSubmitBtn.addEventListener("click", e => {
 
 
 function initApp() {
-    
+    window.db = getDBConnection("localstorage");
     getUserInfoFromLocalStorage();
-    if (collectionID && userID) {
+    if (classCode && userID) {
         homePage();
     } else {
         indexPage();
