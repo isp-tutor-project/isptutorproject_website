@@ -10,7 +10,7 @@
 
 import "./styles/index.css";
 import { getDBConnection } from "@isptutorproject/isp-database";
-
+import { NavBar } from "@isptutorproject/navbar";
 import { SnackBar } from "@isptutorproject/snackbar";
 import { ontology } from "./ontology";
 import { hypoOntology } from "./hypoOntology";
@@ -19,6 +19,7 @@ import {
 } from "./features";
 
 const snackbar = new SnackBar();
+const navbar = new NavBar();
 let db;
 
 // ============================================================================
