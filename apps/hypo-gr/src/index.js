@@ -15,7 +15,7 @@ import { SnackBar } from "@isptutorproject/snackbar";
 import { ontology } from "./ontology";
 import { hypoOntology } from "./hypoOntology";
 import {
-    
+    computeHypoTasks
 } from "./features";
 
 const snackbar = new SnackBar();
@@ -241,7 +241,8 @@ function loadData() {
     // module-specific variables based on what it recieves
     return db.getUserData()
     .then((userData) => {
-        // console.log("loadData", userData);
+        console.log("loadData", userData);
+        console.log(typeof(userData));
         firstPrediction = userData.firstPrediction;
         initialHypoLocked = userData.initialHypo !== null;
         secondPrediction = userData.secondPrediction;
