@@ -4147,14 +4147,20 @@ export function currHypoTask() {
 export function initHypoTasks(data) {
     // console.log("initHypoTasks()", data);
     currHypoTaskIdx = data.currHypoTaskIdx || 0;
-    studentCondition = data.condition;
+    // studentCondition = data.condition;
     updateCurrTaskIndex(currHypoTaskIdx)
         .then(() => {
-            studentHypoTasks = conditionHypoTasks[studentCondition].map(
+            let _pageNames = computeHypoTasks();
+            console.log('pageNames', _pageNames);
+            studentHypoTasks = _pageNames.map(
                 x => pageNamesToFunctions[x]
             );
+            console.log(studentHypoTasks);
+            // conditionHypoTasks[studentCondition].map(
+            //     x => pageNamesToFunctions[x]
+            // );
             let taskNames = studentHypoTasks.map(x => x.name);
-            // console.log(taskNames);
+            console.log("taskNames", taskNames);
             currHypoTask();
         });
 }
