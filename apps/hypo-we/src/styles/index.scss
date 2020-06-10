@@ -1,5 +1,7 @@
+$my_path: "/apps/hypo-we/";
+
 @use "~@isptutorproject/isp-site-styles" with (
-    $app_path: "/hypoWE/"
+    $app_path: $my_path
 );
 
 /* start of app-specific css */
@@ -23,3 +25,9 @@ main {
     display: block;
 }
 
+.vin-mya { content: url($my_path + "img/VIN_1.png"); }
+.vin-joy { content: url($my_path + "img/VIN_2.png"); }
+.vin-fin { content: url($my_path + "img/VIN_3.png"); }
+.vin-tom { content: url($my_path + "img/VIN_4.png"); }
+.vin-meg { content: url($my_path + "img/VIN_5.png"); }
+.vin-joe { content: url($my_path + "img/VIN_6.png"); }
