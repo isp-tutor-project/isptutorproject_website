@@ -17,17 +17,9 @@ $(document).ready(function()
 		//--->create table header > start
 		tbl +='<thead>';
 			tbl +='<tr>';
-			tbl +='<th>First Name</th>';
-			tbl +='<th>Last Name</th>';
+			tbl +='<th>Select</th>';
 			tbl +='<th>User ID</th>';
       		tbl +='<th>Pathway</th>';
-            tbl +='<th>RQ Mod</th>';
-            tbl +='<th>BRM Mod</th>';
-            tbl +='<th>Hypothesis</th>';
-            tbl +='<th>Proc./Exper.Mod</th>';
-            tbl +='<th>Materials Mod</th>';
-            tbl +='<th>Data Interpretation</th>';
-            tbl +='<th>Drawing Concl.</th>';
       		tbl +='<th>Options</th>';
 			tbl +='</tr>';
 		tbl +='</thead>';
@@ -44,12 +36,10 @@ $(document).ready(function()
 
 				//loop through ajax row data
 				tbl +='<tr row_id="'+row_id+'">';
-					tbl +='<td ><div class="row_data" col_name="fname">'+val['fname']+'</div></td>';
-					tbl +='<td ><div class="row_data" col_name="lname">'+val['lname']+'</div></td>';
+					tbl +='<td ><div class="row_data" col_name="selected">'+val['select']+'</div></td>';
 					tbl +='<td ><div class="row_data" col_name="userid">'+val['userid']+'</div></td>';
           			tbl +='<td ><div class="row_data" col_name="pathway">'+val['pathway']+'</div></td>';
           			tbl +='<td ><div class="row_data" col_name="selections">'+val['selections']+'</div></td>';
-    
 
 					//--->edit options > start
 					tbl +='<td>';
@@ -269,55 +259,37 @@ jQuery(document).delegate('a.add-record', 'click', function(e) {
 	 element.attr('id', 'rec-'+size);
 	 element.find('.btn_delete').attr('row_id', size);
      element.appendTo('#tbl_posts_body');
-	 element.find('.sn').html(size);
-	 changeSelectID(element, size);
-	 changeCheckboxID(element, size);
+     element.find('.sn').html(size);
+     changeSelectID(element, size);
 });
 
 function changeSelectID(table, size){
-	default_name = 'pathopts';
-	table.find('select').each(function(){
+	default_name = 'selected';
+	table.find('.selects').each(function(){
 		var ID = $(this).attr('id');
-		$(document.getElementById(ID)).attr('id', default_name+size);
-	});
+        $(document.getElementById(ID)).attr('id', default_name+size);
+        console.log(document.getElementById(default_name+size));
+    });
+    console.log('changed!');
 }
 
-function changeCheckboxID(table, size) {
-	table.find(':checkbox').each(function() {
-		var default_name = $(this).attr('class');
-		var ID = $(this).attr('id');
-		$(document.getElementById(ID)).attr('id', default_name+size);
-	});
+function apply(event){
+    var actions_sel = document.getElementById('actions');
+    var sel_index = actions_sel.selectedIndex;
+    var list = [];
+    if (sel_index == 0) { // delete selected option
+        var obj = document.getElementsByClassName('selects');
+        for (var i = 0; i < obj.length; i++) {
+            if (obj[i].checked == true) {
+                list.push(obj[i].id);
+            }
+        }
+        for (var j = 0; j < list.length; j++) {
+            var row_num = list[j].charAt(8);
+            jQuery('#rec-' + row_num).remove();
+        }
+    }
 }
-
-function clearSel(row_num) {
-	var list = ['RQ-WE', 'RQ-GR', 'BRM-WE', 'BRM-GR', 'Hypothesis-WE', 'Hypothesis-GR',
-	 'PEM-WE', 'PEM-GR', 'Materials-WE', 'Materials-GR', 'DI-WE', 'DI-GR', 'DC-WE', 'DC-GR'];
-    for (var i = 0; i < list.length; i++) {
-		var cbid = list[i] + row_num;
-		document.getElementById(cbid).checked = false;
-}
-}
-
-function changeSel(event) {
-	var sel = event.target;
-	var row_num = sel.id.charAt(8);
-	var sel_index = sel.selectedIndex;
-	var list, cbid; // LISTS acquired through django backend (HOW)
-	if (sel_index == 1) { // stored pathway1
-		list = ['RQ-WE', 'BRM-GR', 'Hypothesis-WE', 'PEM-WE', 'Materials-GR', 'DI-GR', 'DC-WE'];
-	}
-	else if (sel_index == 2) { // stored pathway2
-		list = ['RQ-GR', 'BRM-GR', 'Hypothesis-WE', 'PEM-GR', 'Materials-WE', 'DI-WE', 'DC-GR'];
-	}
-	else list = [];
-	clearSel(row_num);
-	for (var i = 0; i < list.length; i++) {
-			cbid = list[i] + row_num;
-			document.getElementById(cbid).click();
-	}
-}
-
 
 //referenced from https://www.codexworld.com/export-html-table-data-to-excel-using-javascript/
 function exportTableToExcel(table_ID, filename=''){

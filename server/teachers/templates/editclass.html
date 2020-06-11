@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> ISP Teacher's Portal - Edit Class </title>
+  {% load static %}
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+  <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+  
+  <style>
+  body {
+    font-family: 'Abel';font-size: 16px;
+  }
+  </style>
+
+  <!-- JS Files -->
+  <script src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+  <script src="{% static 'js/FileSaver.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/xlsx.full.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/jszip.js"></script>
+  
+  <!-- Add icon library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <!-- Add my js files -->
+  <script src="{% static 'js/script3.js' %}"></script>
+
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="column" style="width: 1%">
+    </div>
+    <div class="column" style="width: 4%">
+      <br>
+      <br>
+      <img src="{% static 'img/portal-icon.png'%}" style="width:100%">
+    </div>
+    <div class="column" style="width: 15%">
+      <br>
+      <br>
+      <h1 style="font-family:verdana; font-size: 35px" >Teacher's</h1>
+      <h1 style="font-family:verdana; font-size: 35px">Portal</h1>
+    </div>
+    <div class="column" style="width: 80%">
+      <img src="{% static 'img/tutor.png'%}" style="width:100%">
+    </div>
+  </div>
+  <div class="row">
+    <div class="column" style="width: 70%">
+    </div>
+    <div class="column" style="width: 20%">
+      <div class="progress">
+        <div class="progress-bar" style="width:20%"></div>
+      </div>
+      <div class="row">
+        <div class="column" style="width: 50%; text-align:center">
+          <img src="{% static 'img/one.png' %}" style="width:30%">
+          <p>Edit Class</p>
+        </div>
+        <div class="column" style="width: 50%; text-align:center">
+          <img src="{% static 'img/two.png' %}" style="width:30%">
+          <p>Save and View Class</p>
+        </div>
+      </div>
+    </div>
+    <div class="column" style="width: 10%">
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="column" style="width:80%">
+    </div>
+    <div class="column" style="width:20%">
+      <a class="btn btn-primary add-record" style="color:white" data-added="0"> <i class="fa fa-plus"></i> Add Row</a>
+    </div>
+  </div>
+
+  </div>
+
+
+<div class="row">
+  <div class="column" style="width:10%">
+  </div>
+  <div class="column" style="width:70%">
+    <div class="panel panel-default">
+    <div class="panel-heading"><b> </b> </div>
+    <label for="actions" style="font-size:20px">Actions:</label>
+    <select id="actions">
+      <option value="delete">Delete Selected Student(s)</option>
+      <option value="add_A">Add Selected Student(s) to Pathway A</option>
+      <option value="add_B">Add Selected Student(s) to Pathway B</option>
+    </select>
+    <button type="button" class="btn btn-outline-dark btn-sm" onclick="apply(event)">Apply</button>
+    <div class="panel-body"></div>
+    <div class="tbl_user_data"></div>
+    
+    </div>
+  </div>  
+</div>
+</body>
+</html>
+
+<div style="display:none">
+    <table id="sample_table">
+      <tr id="">
+       <td>
+       <input type="checkbox" class="selects" id="selected">
+        </td>
+       <td><div class="row_data" col_name="userid">JohnDoe</div></td>
+       <td>
+          <select name="pathopts" id="pathopts">
+            <option value="default">----</option>
+            <option value="path1">Pathway1</option>
+            <option value="path2">Pathway2</option>
+          </select>
+       </td>
+       <td>
+					<span class="btn_edit" > <a href="#" class="btn btn-link " row_id="'+row_id+'" > Edit </a> </span>
+					<span class="btn_save"> <a href="#" class="btn btn-link"  row_id="'+row_id+'"> Save</a> | </span>
+					<span class="btn_cancel"> <a href="#" class="btn btn-link" row_id="'+row_id+'"> Cancel</a> | </span>
+          <span class="btn_delete"> <a href="#" class="btn btn-link" row_id="'+row_id+'" > Delete Row</a> </span>
+			 </td>
+     </tr>
+   </table>
+  </div>
+

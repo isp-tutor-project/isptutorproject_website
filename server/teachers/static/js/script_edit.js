@@ -1,5 +1,6 @@
 $(document).ready(function()
-{
+{   
+
 	//ajax row data
 	var ajax_data = []
 	var random_id = function() 
@@ -16,16 +17,10 @@ $(document).ready(function()
 		//--->create table header > start
 		tbl +='<thead>';
 			tbl +='<tr>';
+			tbl +='<th>Select</th>';
 			tbl +='<th>User ID</th>';
-			tbl +='<th>Pathway</th>';
-			tbl +='<th>RQ Mod</th>';
-			tbl +='<th>BRM Mod</th>';
-			tbl +='<th>Hypothesis</th>';
-			tbl +='<th>Proc./Exper.Mod</th>';
-			tbl +='<th>Materials Mod.</th>';
-			tbl +='<th>Data Interpretation</th>';
-			tbl +='<th>Drawing Concl.</th>';
-			tbl +='<th>Options</th>';
+      		tbl +='<th>Pathway</th>';
+      		tbl +='<th>Options</th>';
 			tbl +='</tr>';
 		tbl +='</thead>';
 		//--->create table header > end
@@ -41,15 +36,11 @@ $(document).ready(function()
 
 				//loop through ajax row data
 				tbl +='<tr row_id="'+row_id+'">';
+					tbl +='<td ><div class="row_data" col_name="selected">'+val['select']+'</div></td>';
 					tbl +='<td ><div class="row_data" col_name="userid">'+val['userid']+'</div></td>';
           			tbl +='<td ><div class="row_data" col_name="pathway">'+val['pathway']+'</div></td>';
-					tbl +='<td ><div class="row_data" col_name="rq_mod">'+val['rq_mod']+'</div></td>';
-					tbl +='<td ><div class="row_data" col_name="brm_mod">'+val['brm_mod']+'</div></td>';
-					tbl +='<td ><div class="row_data" col_name="hypo">'+val['hypo']+'</div></td>';
-					tbl +='<td ><div class="row_data" col_name="promod">'+val['procmod']+'</div></td>';
-					tbl +='<td ><div class="row_data" col_name="materials">'+val['materials']+'</div></td>';
-					tbl +='<td ><div class="row_data" col_name="data">'+val['data']+'</div></td>';
-					tbl +='<td ><div class="row_data" col_name="draw">'+val['draw']+'</div></td>';
+          			tbl +='<td ><div class="row_data" col_name="selections">'+val['selections']+'</div></td>';
+
 					//--->edit options > start
 					tbl +='<td>';
 					
@@ -57,15 +48,14 @@ $(document).ready(function()
 						//only show this button if edit button is clicked
 						tbl +='<span class="btn_save"> <a href="#" class="btn btn-link"  row_id="'+row_id+'"> Save</a> | </span>';
 						tbl +='<span class="btn_cancel"> <a href="#" class="btn btn-link" row_id="'+row_id+'"> Cancel</a> | </span>';
-            tbl +='<span class="btn_delete"> <a href="#" class="btn btn-link" row_id="'+row_id+'" > Delete Row</a> </span>';
+                        tbl +='<span class="btn_delete"> <a href="#" class="btn btn-link" row_id="'+row_id+'" > Delete Row</a> </span>';
 
 					tbl +='</td>';
 					//--->edit options > end
 					
 				tbl +='</tr>';
 			});
-
-			//--->create table body rows > end
+            //--->create table body rows > end
 
 		tbl +='</tbody>';
 		//--->create table body > end
@@ -77,7 +67,7 @@ $(document).ready(function()
 	$(document).find('.tbl_user_data').html(tbl);
 	$(document).find('.btn_save').hide();
 	$(document).find('.btn_cancel').hide();
-  $(document).find('.btn_delete').hide(); 
+    $(document).find('.btn_delete').hide();
 
 
 	//--->make div editable > start
@@ -238,7 +228,8 @@ $(document).ready(function()
 		 
 
 	});
-	//--->save whole row entery > end
+    //--->save whole row entery > end
+
 
 }); 
 
@@ -250,9 +241,7 @@ jQuery(document).delegate('.btn_delete', 'click', function(e) {
       var row_div = jQuery(this).attr('row_div');
       jQuery('#rec-' + id).remove();
       
-    //regnerate index number on table
     $('#tbl_posts_body tr').each(function(index) {
-      //alert(index);
       $(this).find('span.sn').html(index+1);
     });
     return true;
@@ -264,13 +253,13 @@ jQuery(document).delegate('.btn_delete', 'click', function(e) {
 jQuery(document).delegate('a.add-record', 'click', function(e) {
      e.preventDefault();
      var content = jQuery('#sample_table tr'),
-     size = jQuery('#tbl_posts >tbody >tr').length + 1,
-     element = null,
-     element = content.clone();
-     element.attr('id', 'rec-'+size);
-     element.find('.btn_delete').attr('row_id', size);
+	 size = jQuery('#tbl_posts >tbody >tr').length + 1;
+     element = null;
+	 element = content.clone();
+	 element.attr('id', 'rec-'+size);
+	 element.find('.btn_delete').attr('row_id', size);
      element.appendTo('#tbl_posts_body');
-     element.find('.sn').html(size);
+	 element.find('.sn').html(size);
 	 changeSelectID(element, size);
 	 changeCheckboxID(element, size);
 });

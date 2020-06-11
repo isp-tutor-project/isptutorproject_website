@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> ISP Teacher's Portal - Assign Students </title>
+  <title> ISP Teacher's Portal - View Class </title>
   {% load static %}
 
   <!-- CSS Files -->
@@ -28,67 +28,69 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
   <!-- Add my js files -->
-  <script src="{% static 'js/script3.js' %}"></script>
+  <script src="{% static 'js/script2.js' %}"></script>
 
 </head>
 
  
 <body>
-	<img src="{% static 'img/tutor.png' %}" style="width:100%">
   <div class="row">
-    <div class="column" style="width: 5%">
+    <div class="column" style="width: 1%">
     </div>
-    <div class="column" style="width: 5%">
-      <img src="{% static 'img/portal-icon.png' %}" style="width:100%">
+    <div class="column" style="width: 4%">
+      <br>
+      <br>
+      <img src="{% static 'img/portal-icon.png'%}" style="width:100%">
     </div>
-    <div class="column" style="width: 45%">
-      <h1>Teacher's Portal</h1>
+    <div class="column" style="width: 15%">
+      <br>
+      <br>
+      <h1 style="font-family:verdana; font-size: 35px" >Teacher's</h1>
+      <h1 style="font-family:verdana; font-size: 35px">Portal</h1>
     </div>
-    <div class="column" style="width: 40%">
+    <div class="column" style="width: 80%">
+      <img src="{% static 'img/tutor.png'%}" style="width:100%">
+    </div>
+  </div>
+  <div class="row">
+    <div class="column" style="width: 70%">
+    </div>
+    <div class="column" style="width: 20%">
       <div class="progress">
-        <div class="progress-bar" style="width:65%"></div>
+        <div class="progress-bar" style="width:20%"></div>
       </div>
       <div class="row">
-        <div class="column" style="width: 25%; text-align:center">
+        <div class="column" style="width: 50%; text-align:center">
           <img src="{% static 'img/one.png' %}" style="width:30%">
-          <p>Create class</p>
+          <p>Edit Class</p>
         </div>
-        <div class="column" style="width: 25%; text-align:center">
+        <div class="column" style="width: 50%; text-align:center">
           <img src="{% static 'img/two.png' %}" style="width:30%">
-          <p>Add students</p>
-        </div>
-        <div class="column" style="width: 25%; text-align:center">
-          <img src="{% static 'img/three.png' %}" style="width:30%">
-          <p>Assign students</p>
-        </div>
-        <div class="column" style="width: 25%; text-align:center">
-          <img src="{% static 'img/four.png' %}" style="width:30%">
-          <p>Get class link</p>
+          <p>Save and View Class</p>
         </div>
       </div>
     </div>
-  </div>
-
-<div class="row" >
-  <div class="column" style="width:20%">
+    <div class="column" style="width: 10%">
+    </div>
   </div>
   
-  
-  <div class="column" style="width:40%">
-    <a class="btn btn-primary add-record" style="color:white" data-added="0"> <i class="fa fa-plus"></i> Add Row</a>
+  <div class="row">
+    <div class="column" style="width:80%">
+    </div>
+    <div class="column" style="width:20%">
+      <a class="btn btn-primary add-record" style="color:white" data-added="0"> <i class="fa fa-plus"></i> Add Row</a>
+    </div>
   </div>
-
-
   </div>
 
 
 <div class="row">
   <div class="column" style="width:10%">
   </div>
-  <div class="column">
+  <div class="column" style="width:70%">
     <div class="panel panel-default">
-    <div class="panel-heading"><b> Student List </b> </div>
-    <div class="panel-body"></div>
+    <div class="panel-heading"><b> </b> </div>
+    <div class="panel-body" style="width=100%"></div>
     <div class="tbl_user_data"></div>
     
     </div>
@@ -101,8 +103,6 @@
 <div style="display:none">
     <table id="sample_table">
       <tr id="">
-       <td><div class="row_data" col_name="fname">John</div></td>
-       <td><div class="row_data" col_name="lname">Doe</div></td>
        <td><div class="row_data" col_name="userid">JohnDoe</div></td>
        <td>
           <select name="pathopts" id="pathopts" onchange="changeSel(event)">

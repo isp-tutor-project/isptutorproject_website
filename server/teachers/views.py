@@ -3,10 +3,10 @@ from django.http import HttpResponse
 
 
 # Add students
-def addstudents(request):
-    return render(request, 'addstudents.html')
+def editClass(request):
+    return render(request, 'editclass.html')
 
 # Assign students
-def assignstudents(request):
-    return render(request, 'assignstudents.html')
+def viewClass(request):
+    return render(request, 'viewclass.html')
 
