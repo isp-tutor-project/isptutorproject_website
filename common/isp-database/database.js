@@ -1,13 +1,22 @@
 // abstract class - interface
 export class Database {
-    constructor(classCode, userID) {
+    constructor() {
 
+    }
+
+    setCredentials(classCode, userID) {
+        this.classCode = classCode;
+        this.userID = userID;
     }
 
     getUserData() {
 
     }
 
+    getActivityData(activityKey, decodeJSON = true) {
+
+    }
+    
     getRQData() {
 
     }   

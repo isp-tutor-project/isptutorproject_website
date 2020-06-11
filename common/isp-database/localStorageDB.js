@@ -5,30 +5,31 @@ import { Database } from "./database";
 // we may be using, which may be either sync or async
 export class LocalStorageDB extends Database {
 
-    constructor(classCode, userID) {
-        super(classCode, userID);
-        Promise.all([
+    constructor() {
+        super();
+    }
+
+    setCredentials(classCode, userID) {
+        super.setCredentials(classCode, userID);
+        return Promise.all([
             this.saveValue("classCode", classCode),
             this.saveValue("userID", userID),
-            this.saveValue("condition", "demo")
-        ]).then(([result1, result2, result3]) => { });
+        ]).then(([result1, result2]) => { });
     }
-    
+
     getUserData() {
         console.count("getUserData() called");
         let data = {};
         return Promise.all([
             this.getTextValue("classCode"),
             this.getTextValue("userID"),
-            this.getTextValue("condition"),
-            this.getRQData(),
+            this.getActivityData("rqted"),
             this.getCurrHypoTask(),
             this.getIntialHypoData(),
             this.getFinalHypoData()
-        ]).then(([ccRes, uidRes, condRes, rqRes, chtRes, ihRes, fhRes]) => {
+        ]).then(([ccRes, uidRes, rqRes, chtRes, ihRes, fhRes]) => {
             data.classCode = ccRes;
             data.userID = uidRes;
-            data.condition = condRes;
             data.rqted = rqRes;
             if (chtRes) {
                 data.currHypoTaskIdx = chtRes
@@ -45,10 +46,20 @@ export class LocalStorageDB extends Database {
         });
     }
 
+    getActivityData(activityKey, decodeJSON = true) {
+        return this.getJSONValue(activityKey)
+        .then((data) => {
+            if (data && decodeJSON) {
+                return JSON.parse(data);
+            } else {
+                return data;
+            }
+        });
+    }
+
     getRQData() {
         let retVal = null;
-        
-        return this.getJSONValue("rqted")
+        return this.getActivityData("rqted")
         .then((rqted) => {
             // console.log(rqted);
             if (rqted) {
@@ -123,6 +134,20 @@ export class LocalStorageDB extends Database {
                 console.error(err);
                 return data;
             });
+    }
+
+    setValues(object, overwrite=false) {
+        // overwrite param is ignored, as it is specific to firestore
+        return new Promise((resolve, reject) => {
+            try {
+                for (let [key, value] of Object.items(object)) {
+                    localStorage.setItem(key, value);
+                }
+                resolve(true);
+            } catch (error) {
+                reject(error);
+            }
+        });
     }
 
     saveValue(varName, value) {

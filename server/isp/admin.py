@@ -14,8 +14,8 @@ class EnabledFeatureInline(admin.TabularInline):
     def formfield_for_foreignkey(self, db_field, request, **kwargs):
         field = super().formfield_for_foreignkey(db_field, request, **kwargs)
         if db_field.name == "feature":
-            app = request._obj
-            field.queryset = field.queryset.filter(module__exact=app.module.id)
+            activity = request._obj
+            field.queryset = field.queryset.filter(app__exact=activity.app.id)
         return field
 
 class TeacherInline(admin.TabularInline):

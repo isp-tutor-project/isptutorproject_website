@@ -71,7 +71,10 @@ completePage       |completePage                |completePage
 //     "FTR_FINAL_HYP",
 // ];
 
-const features = (localStorage.getItem("tutorFeatures") || "").filter(x, x !== "");
+const features = (localStorage.getItem("activityFeatures") || "")
+    .split(":")
+    .filter(x => x !== "");
+console.log("features", features);
 
 const definitionPages = [
     "definitionPage1",
@@ -90,10 +93,10 @@ const definitionPages = [
 ];
 
 const hypoPages = [
-    "predictionPage",
     "graphPage",
     "notePadPage"
-]
+];
+
 const conditionHypoPages = [
     "instructionPage",
     "conceptMapPage"
@@ -106,9 +109,9 @@ const biDirectionalPages = [
     "oppositeDirectionConceptMap"
 ]
 
-let pages = ["startPage"];
-function calcPages() {
-    if (features.includes("FTR_IN_CLASSROOM")) {
+export function computeHypoTasks() {
+    let pages = ["startPage"];
+    if (features.includes("FTR_IN_CLASS")) {
         pages.unshift("raiseYourHand")
     }
     if (!features.includes("FTR_NO_DEFS")) {
@@ -116,15 +119,20 @@ function calcPages() {
         for (let defPage of definitionPages) {
             pages.push(defPage);
         }
+        pages.push("backToYourRQ");
     }
     if (features.includes("FTR_DEFS_ONLY")) {
         // send them back to home page if DEFS_ONLY
-        pages.push("complete")
+        pages.push("completePage")
         return;
     }
-    // should I add backToYourRQ page here???
     
     // add the subset of hypoPages which are always present
+    if (features.includes("FTR_INITIAL_HYP")) {
+        pages.push("predictionPage1");
+    } else {
+        pages.push("predictionPage2");
+    }
     for (let page of hypoPages) {
         pages.push(page);
     }
@@ -136,117 +144,123 @@ function calcPages() {
     if (features.includes("FTR_NO_CPT_MAP")) {
         pages.push("conceptMapPlaceholder");
     } else {
-        pages.push("conceptMapPage")
+        if (features.includes("FTR_INITIAL_HYP")) {
+            pages.push("initialConceptMap")
+        } else {
+            pages.push("finalConceptMap")
+        }
+        
     }
     // if bi-directional, add those pages
-    if (features.includes("FTR_BI_DIRECTIONAL")) {
+    if (features.includes("FTR_BI_DIR")) {
         for (let bdp of biDirectionalPages) {
             pages.push(bdp);
         }
     }
     // add link to home page
-    pages.push("complete");
+    pages.push("completePage");
+    return pages;
 }
 
 
-export const conditionHypoTasks = {
-    "demo": [
-        "startPage",
-        "definitionPage1",
-        "lessonOverview",
-        "lessonOverview2",
-        "definitionPage2",
-        "definitionPage3",
-        "definitionPage4",
-        "definitionPage5",
-        "definitionPage6",
-        "causes1",
-        "causes2",
-        "corr1",
-        "corr2",
-        "quizPage",
-        "backToYourRQ",
-        "predictionPage2",
-        "graphPage",
-        "notePadPage",
-        "instructionPage",
-        "finalConceptMap",
-        "completePage"
-    ],
-    "cond1": [
-        "raiseYourHand",
-        "startPage",
-        "definitionPage1",
-        "definitionPage2",
-        "definitionPage3",
-        "definitionPage4",
-        "definitionPage5",
-        "definitionPage6",
-        "definitionPage7",
-        "definitionPage8",
-        "definitionPage9",
-        "definitionPage10",
-        "instructionPage",
-        "backToYourRQ",
-        "predictionPage1",
-        "graphPage1",
-        "graphPage2",
-        "initialConceptMap",
-        "brmPage",
-        "predictionPage2",
-        "finalConceptMap",
-        "completePage"
-    ],
-    "cond2": [
-        "raiseYourHand",
-        "startPage",
-        "definitionPage1",
-        "definitionPage2",
-        "definitionPage3",
-        "definitionPage4",
-        "definitionPage5",
-        "definitionPage6",
-        "definitionPage7",
-        "definitionPage8",
-        "definitionPage9",
-        "definitionPage10",
-        "instructionPage",
-        "backToYourRQ",
-        "predictionPage1",
-        "graphPage1",
-        "graphPage2",
-        "initialConceptMap",
-        "biDirInstructionPage1",
-        "biDirInstructionPage2",
-        "biDirInstructionPage3",
-        "oppositeDirectionConceptMap",
-        "brmPage",
-        "predictionPage2",
-        "finalConceptMap",
-        "completePage"
-    ],
-    "cond3": [
-        "raiseYourHand",
-        "startPage",
-        "definitionPage1",
-        "definitionPage2",
-        "definitionPage3",
-        "definitionPage4",
-        "definitionPage5",
-        "definitionPage6",
-        "definitionPage7",
-        "definitionPage8",
-        "definitionPage9",
-        "definitionPage10",
-        "instructionPage",
-        "backToYourRQ",
-        "predictionPage1",
-        "graphPage1",
-        "graphPage2",
-        "initialConceptMapPlaceholder",
-        "brmPage",
-        "predictionPage2",
-        "finalConceptMap",
-        "completePage"
-    ]
-}
+// export const conditionHypoTasks = {
+//     "demo": [
+//         "startPage",
+//         "definitionPage1",
+//         "lessonOverview",
+//         "lessonOverview2",
+//         "definitionPage2",
+//         "definitionPage3",
+//         "definitionPage4",
+//         "definitionPage5",
+//         "definitionPage6",
+//         "causes1",
+//         "causes2",
+//         "corr1",
+//         "corr2",
+//         "quizPage",
+//         "backToYourRQ",
+//         "predictionPage2",
+//         "graphPage",
+//         "notePadPage",
+//         "instructionPage",
+//         "finalConceptMap",
+//         "completePage"
+//     ],
+//     "cond1": [
+//         "raiseYourHand",
+//         "startPage",
+//         "definitionPage1",
+//         "definitionPage2",
+//         "definitionPage3",
+//         "definitionPage4",
+//         "definitionPage5",
+//         "definitionPage6",
+//         "definitionPage7",
+//         "definitionPage8",
+//         "definitionPage9",
+//         "definitionPage10",
+//         "instructionPage",
+//         "backToYourRQ",
+//         "predictionPage1",
+//         "graphPage1",
+//         "graphPage2",
+//         "initialConceptMap",
+//         "brmPage",
+//         "predictionPage2",
+//         "finalConceptMap",
+//         "completePage"
+//     ],
+//     "cond2": [
+//         "raiseYourHand",
+//         "startPage",
+//         "definitionPage1",
+//         "definitionPage2",
+//         "definitionPage3",
+//         "definitionPage4",
+//         "definitionPage5",
+//         "definitionPage6",
+//         "definitionPage7",
+//         "definitionPage8",
+//         "definitionPage9",
+//         "definitionPage10",
+//         "instructionPage",
+//         "backToYourRQ",
+//         "predictionPage1",
+//         "graphPage1",
+//         "graphPage2",
+//         "initialConceptMap",
+//         "biDirInstructionPage1",
+//         "biDirInstructionPage2",
+//         "biDirInstructionPage3",
+//         "oppositeDirectionConceptMap",
+//         "brmPage",
+//         "predictionPage2",
+//         "finalConceptMap",
+//         "completePage"
+//     ],
+//     "cond3": [
+//         "raiseYourHand",
+//         "startPage",
+//         "definitionPage1",
+//         "definitionPage2",
+//         "definitionPage3",
+//         "definitionPage4",
+//         "definitionPage5",
+//         "definitionPage6",
+//         "definitionPage7",
+//         "definitionPage8",
+//         "definitionPage9",
+//         "definitionPage10",
+//         "instructionPage",
+//         "backToYourRQ",
+//         "predictionPage1",
+//         "graphPage1",
+//         "graphPage2",
+//         "initialConceptMapPlaceholder",
+//         "brmPage",
+//         "predictionPage2",
+//         "finalConceptMap",
+//         "completePage"
+//     ]
+// }

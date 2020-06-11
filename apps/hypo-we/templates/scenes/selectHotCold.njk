@@ -1,0 +1,16 @@
+{% extends "single-column.njk" %}
+
+{% block content %}
+<h1>
+    Prediction of experimental outcome...
+</h1>
+<form>
+    <p>Do you think there will be more crystal growth in:</p>
+    <label for="hot_prediction"><input id="hot_prediction" type="radio" name="prediction" value="hot"/>Hot Water</label><br/>
+    <label for="cold_prediction"><input id="cold_prediction" type="radio" name="prediction" value="cold"/>Room Temperature Water</label><br/>    
+    <input type="submit" />
+</form>
+
+
+<p>likert question</p>
+{% endblock %}

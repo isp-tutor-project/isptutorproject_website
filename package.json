@@ -6,12 +6,13 @@
         "config/*"
     ],
     "scripts": {
-        "clean": "rimraf wwwroot",
-        "build": "yarn run clean && yarn run build:homepage && yarn run build:di-instr && yarn run build:di-prepost && yarn run build:hypo-gr && yarn run build:isp-static",
+        "clean": "rimraf wwwroot/apps",
+        "build": "yarn run clean && yarn run build:homepage && yarn run build:di-instr && yarn run build:di-prepost && yarn run build:hypo-gr && yarn run build:hypo-we && yarn run build:isp-static",
         "build:homepage": "yarn workspace @isptutorproject/homepage run build",
         "build:di-instr": "yarn workspace @isptutorproject/di-instr run build",
         "build:di-prepost": "yarn workspace @isptutorproject/di-prepost run build",
         "build:hypo-gr": "yarn workspace @isptutorproject/hypo-gr run build",
+        "build:hypo-we": "yarn workspace @isptutorproject/hypo-we run build",
         "build:isp-static": "yarn workspace @isptutorproject/isp-static run build"
     },
     "version": "0.0.0"

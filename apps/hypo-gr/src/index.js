@@ -10,15 +10,16 @@
 
 import "./styles/index.css";
 import { getDBConnection } from "@isptutorproject/isp-database";
-
+import { NavBar } from "@isptutorproject/navbar";
 import { SnackBar } from "@isptutorproject/snackbar";
 import { ontology } from "./ontology";
 import { hypoOntology } from "./hypoOntology";
 import {
-    
+    computeHypoTasks
 } from "./features";
 
 const snackbar = new SnackBar();
+const navbar = new NavBar();
 let db;
 
 // ============================================================================
@@ -240,7 +241,8 @@ function loadData() {
     // module-specific variables based on what it recieves
     return db.getUserData()
     .then((userData) => {
-        // console.log("loadData", userData);
+        console.log("loadData", userData);
+        console.log(typeof(userData));
         firstPrediction = userData.firstPrediction;
         initialHypoLocked = userData.initialHypo !== null;
         secondPrediction = userData.secondPrediction;
@@ -709,6 +711,7 @@ function definitionPage1() {
 }
 
 function lessonOverview() {
+    console.log("in lessonOverview()");
     stage.removeAllChildren();
     let overlay = document.getElementById("lesson_overview_overlay");
     let invisibles = overlay.querySelectorAll(".invisible");
@@ -2139,8 +2142,9 @@ function joinAndCapitalize(sentences) {
 
 function initConceptsList(list) {
     list.innerHTML = "";
-    let newNodes = [...nodes].sort();
-    let captitalized = newNodes.map((node) => capitalize(node));
+    // let newNodes = [...nodes].sort();
+    // let captitalized = newNodes.map((node) => capitalize(node));
+    let captitalized = nodes.map((node) => capitalize(node));
     for (let capCpt of captitalized) {
         let li = document.createElement("li");
         li.innerHTML = capCpt;
@@ -2338,7 +2342,8 @@ function initializeConceptsMenu(menu) {
     defaultOpt.setAttribute("disabled", true);
     defaultOpt.setAttribute("hidden", true);
     menu.appendChild(defaultOpt);
-    for (let node of [...nodes].sort()) {
+    // for (let node of [...nodes].sort()) {
+    for (let node of nodes) {
         let opt = document.createElement("option");
         opt.value = node;
         opt.innerText = ` ${node} `;
@@ -2499,7 +2504,7 @@ function conceptMapPage(whichHypo, prediction)
     let saveWarning = new createjs.DOMElement("save_concept_map_warning").set(modalProps);
     let notepadPaste = new createjs.DOMElement("notepad_paste").set(modalProps);
     let drawCptMap = new createjs.DOMElement("draw_cpt_map").set(modalProps);
-    let goHome = new createjs.DOMElement('completion-overlay').set(modalProps);
+    let goHome = new createjs.DOMElement("completion_overlay").set(modalProps);
     
     let dismissHelp = document.getElementById("dismiss_cpt_map_help");
     let helpContents = document.getElementById("cpt_map_help_contents")
@@ -4142,18 +4147,25 @@ export function currHypoTask() {
 export function initHypoTasks(data) {
     // console.log("initHypoTasks()", data);
     currHypoTaskIdx = data.currHypoTaskIdx || 0;
-    studentCondition = data.condition;
+    // studentCondition = data.condition;
     updateCurrTaskIndex(currHypoTaskIdx)
         .then(() => {
-            studentHypoTasks = conditionHypoTasks[studentCondition].map(
+            let _pageNames = computeHypoTasks();
+            console.log('pageNames', _pageNames);
+            studentHypoTasks = _pageNames.map(
                 x => pageNamesToFunctions[x]
             );
+            console.log(studentHypoTasks);
+            // conditionHypoTasks[studentCondition].map(
+            //     x => pageNamesToFunctions[x]
+            // );
             let taskNames = studentHypoTasks.map(x => x.name);
-            // console.log(taskNames);
+            console.log("taskNames", taskNames);
             currHypoTask();
         });
 }
 
 
-db = getDBConnection("localstorage", "BOGUS_CLASSCODE" "BOGUS_USER");
+db = getDBConnection("localstorage");
+db.setCredentials("BOGUS_CLASSCODE", "BOGUS_USER");
 initHypoPage();
