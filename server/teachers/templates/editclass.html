@@ -13,7 +13,7 @@
   
   <style>
   body {
-    font-family: 'Abel';font-size: 16px;
+    font-family: 'verdana';font-size: 15px;
   }
   </style>
 
@@ -52,9 +52,65 @@
       <img src="{% static 'img/tutor.png'%}" style="width:100%">
     </div>
   </div>
+
+
+
   <div class="row">
-    <div class="column" style="width: 70%">
+    <div class="column" style="width: 10%"> </div>
+    <div class="column" style="width: 30%">
+      <div class="card" style="border: 2px solid rgb(186, 217, 248)">
+        <div class="card-body">
+          <h5 class="card-title">Class Info</h5>
+          <div class="row">
+            <div class="column" style="width: 80%">
+              <div class="form" style="font-family: verdana; font-size: 14px">
+                <label for="class">Class name:</label> 
+                <input type="text" id="class" value="class1" style="border: 2px solid rgb(186, 217, 248)">
+                <br><br>  
+                <label for="classcode">Class code:</label>
+                <input type="text" id="classcode" value="classcode1" style="border: 2px solid rgb(186, 217, 248)">
+                <br><br>
+                <label for="school">School: </label>
+                <input type="text" id="school" value="school1" style="border: 2px solid rgb(186, 217, 248)" 
+                readonly><br><br>
+              </div>            
+            </div>
+            <div class="column" style="width: 20%">
+              <a href="#"><i id="edit1" class="fa fa-edit" aria-hidden="true" onclick="edit1()" 
+              title="edit class name"></i></a>
+              <a href="#"><i id="save1" class="fa fa-save" aria-hidden="true" onclick="save1()" 
+              title="save class name"></i></a>
+              <br><br>
+              <a href="#"><i id="edit2" class="fa fa-edit" aria-hidden="true" onclick="edit2()" 
+              title="edit class code"></i></a>
+              <a href="#"><i id="save2" class="fa fa-save" aria-hidden="true" onclick="save2()" 
+              title="save class code"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <div class="column" style="width: 2%"></div>
+    <div class="column" style="width: 20%">
+      <div class="card" style="height: 100%; border: 2px solid rgb(186, 217, 248)">
+        <div class="card-body">
+          <h5 class="card-title">My Pathways</h5>
+          <div class="vertical-menu">
+            <a href="#">Pathway 1</a> 
+            <a href="#">Pathway 2</a>
+            <a href="#">Pathway 3</a>
+            <a href="#">Pathway 4</a>
+            <a href="#">Pathway 5</a>
+            <a href="#">Pathway 6</a>
+          </div>
+          <br>
+          <button type="button" class="btn btn-outline-dark btn-sm" onclick="editpathway(event)">Edit</button>
+          <button type="button" class="btn btn-outline-dark btn-sm" onclick="deletepathway(event)">Delete</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="column" style="width: 8%"></div>
     <div class="column" style="width: 20%">
       <div class="progress">
         <div class="progress-bar" style="width:20%"></div>
@@ -69,20 +125,21 @@
           <p>Save and View Class</p>
         </div>
       </div>
-    </div>
-    <div class="column" style="width: 10%">
-    </div>
-  </div>
-  
-  <div class="row">
-    <div class="column" style="width:80%">
-    </div>
-    <div class="column" style="width:20%">
-      <a class="btn btn-primary add-record" style="color:white" data-added="0"> <i class="fa fa-plus"></i> Add Row</a>
+      <br>
+      <a class="btn btn-primary btn-lg" style="color:white" onclick="upload()"> <i class="fa fa-upload">
+      </i> Upload Excel</a>
     </div>
   </div>
 
+  <br>
+  <div class="row">
+    <div class="column" style="width:10%">
+    </div>
+    <div class="column" style="width:70%">
+      
+    </div>
   </div>
+  <br>
 
 
 <div class="row">
@@ -90,22 +147,39 @@
   </div>
   <div class="column" style="width:70%">
     <div class="panel panel-default">
-    <div class="panel-heading"><b> </b> </div>
-    <label for="actions" style="font-size:20px">Actions:</label>
-    <select id="actions">
-      <option value="delete">Delete Selected Student(s)</option>
-      <option value="add_A">Add Selected Student(s) to Pathway A</option>
-      <option value="add_B">Add Selected Student(s) to Pathway B</option>
-    </select>
-    <button type="button" class="btn btn-outline-dark btn-sm" onclick="apply(event)">Apply</button>
-    <div class="panel-body"></div>
-    <div class="tbl_user_data"></div>
-    
+      <div class="panel-heading"><b> </b> </div>
+      <label for="actions" style="font-size:20px">Bulk Student Actions:</label>
+      <select id="actions">
+        <option value="delete">Delete Selected Student(s)</option>
+        <option value="add_A">Add Selected Student(s) to Pathway A</option>
+        <option value="add_B">Add Selected Student(s) to Pathway B</option>
+      </select>
+      <button type="button" class="btn btn-outline-dark btn-sm" onclick="apply(event)">Apply</button>
     </div>
-  </div>  
+  </div>
+  <div class="column" style="width:10%">
+    <a class="btn btn-primary add-record" style="color:white" data-added="0"><i class="fa fa-plus">
+    </i> Add Row</a>
+  </div>
 </div>
+
+<hr width="80%" size="6" color="DodgerBlue">
+<div class="row">
+  <div class="column" style="width:10%"></div>
+  <div class="column" style="width:70%">
+    <div class="panel-body"></div>
+    <div class="tbl_user_data" ></div> 
+  </div>
+</div>
+<div class="row">
+  <div class="column" style="width:80%">
+  </div>
+  <button type="button" class="btn btn-primary" onclick="save(event)"><i class="fa fa-save"></i> Save Sheet</button>
+</div>
+
 </body>
 </html>
+
 
 <div style="display:none">
     <table id="sample_table">
@@ -122,12 +196,10 @@
           </select>
        </td>
        <td>
-					<span class="btn_edit" > <a href="#" class="btn btn-link " row_id="'+row_id+'" > Edit </a> </span>
-					<span class="btn_save"> <a href="#" class="btn btn-link"  row_id="'+row_id+'"> Save</a> | </span>
-					<span class="btn_cancel"> <a href="#" class="btn btn-link" row_id="'+row_id+'"> Cancel</a> | </span>
-          <span class="btn_delete"> <a href="#" class="btn btn-link" row_id="'+row_id+'" > Delete Row</a> </span>
+        <span class="btn_delete"> <a href="#" class="btn btn-link" > <i class="fa fa-trash" aria-hidden="true">
+        </i></a> </span>
 			 </td>
      </tr>
    </table>
-  </div>
+</div>
 
