@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> ISP Teacher's Portal - Edit Class </title>
+  {% load static %}
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+  <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+  
+  <style>
+  body {
+    font-family: 'verdana';font-size: 15px;
+  }
+  </style>
+
+  <!-- JS Files -->
+  <script src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+  <script src="{% static 'js/FileSaver.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/xlsx.full.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/jszip.js"></script>
+  
+  <!-- Add icon library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <!-- Add my js files -->
+  <script src="{% static 'js/script_addclass.js' %}"></script>
+
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="column" style="width: 1%">
+    </div>
+    <div class="column" style="width: 4%">
+      <br>
+      <br>
+      <img src="{% static 'img/portal-icon.png'%}" style="width:100%">
+    </div>
+    <div class="column" style="width: 15%">
+      <br>
+      <br>
+      <h1 style="font-family:verdana; font-size: 35px" >Teacher's</h1>
+      <h1 style="font-family:verdana; font-size: 35px">Portal</h1>
+    </div>
+    <div class="column" style="width: 80%">
+      <img src="{% static 'img/tutor.png'%}" style="width:100%">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="column" style="width: 30%"> </div>
+    <div class="column" style="width: 40%">
+      <div class="card" style="border: 2px solid rgb(186, 217, 248)">
+        <div class="card-body">
+          <h5 class="card-title">Add Class </h5>
+          <div class="row">
+            <div class="column" style="width: 70%">
+              <div class="form" style="font-family: verdana; font-size: 14px">
+                <label for="class">Class name:</label> 
+                <input type="text" id="class" placeholder="classA" style="border: 2px solid rgb(186, 217, 248)">
+                <br><br>  
+                <label for="classcode">Class code:</label>
+                <input type="text" id="classcode" placeholder="classcodeA" style="border: 2px solid rgb(186, 217, 248)">
+                <br><br>
+                <label for="school">School: </label>
+                <input type="text" id="school" placeholder="schoolA" style="border: 2px solid rgb(186, 217, 248)" 
+                ><br><br>
+              </div>            
+            </div>
+            <div class="column" style="width: 10%; height:100%">
+            <br><br><br><br>
+            <button class="btn btn-primary" id="addclass"><i class="fa fa-plus" title="add new class"></i>
+            Add class</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card" style="border: 2px solid rgb(186, 217, 248)">
+        <div class="card-body">
+          <h5 class="card-title" id="cardname">Edit Class:</h5>
+          <div class="row">
+            <div class="column" style="width: 5%"></div>
+            <div class="column" style="width: 25%">
+                <button class="btn btn-primary" id="editclass"><i class="fa fa-edit" title="edit new class"></i>
+                Edit</button>
+            </div>
+            <div class="column" style="width: 30%">
+                <button class="btn btn-primary" id="deleteclass" ><i class="fa fa-trash" title="delete new class"></i>
+                Delete</button>
+            </div>
+            <div class="column" style="width: 30%">
+                <button class="btn btn-primary" id="viewclass" ><i class="fa fa-eye" title="view new class"></i>
+                View</button>
+            </div>
+           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+
+
+
+</body>
+</html>
+
+

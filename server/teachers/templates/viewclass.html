@@ -13,7 +13,7 @@
   
   <style>
   body {
-    font-family: 'Abel';font-size: 16px;
+    font-family: 'Abel';font-size: 18px;
   }
   </style>
 
@@ -28,7 +28,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
   <!-- Add my js files -->
-  <script src="{% static 'js/script2.js' %}"></script>
 
 </head>
 
@@ -52,121 +51,140 @@
       <img src="{% static 'img/tutor.png'%}" style="width:100%">
     </div>
   </div>
+
+  <br>
+
   <div class="row">
-    <div class="column" style="width: 70%">
+    <div class="column" style="width: 10%">
     </div>
     <div class="column" style="width: 20%">
-      <div class="progress">
-        <div class="progress-bar" style="width:20%"></div>
-      </div>
-      <div class="row">
-        <div class="column" style="width: 50%; text-align:center">
-          <img src="{% static 'img/one.png' %}" style="width:30%">
-          <p>Edit Class</p>
-        </div>
-        <div class="column" style="width: 50%; text-align:center">
-          <img src="{% static 'img/two.png' %}" style="width:30%">
-          <p>Save and View Class</p>
-        </div>
-      </div>
+    <label for="classes">Class name:</label>
+    <select name="classes" id="classes" style="width:60%" >
+            <option value="default">----</option>
+            <option value="class1">Class1</option>
+            <option value="class2">Class2</option>
+    </select>
     </div>
     <div class="column" style="width: 10%">
     </div>
   </div>
-  
-  <div class="row">
-    <div class="column" style="width:80%">
-    </div>
-    <div class="column" style="width:20%">
-      <a class="btn btn-primary add-record" style="color:white" data-added="0"> <i class="fa fa-plus"></i> Add Row</a>
-    </div>
-  </div>
-  </div>
 
 
 <div class="row">
-  <div class="column" style="width:10%">
-  </div>
-  <div class="column" style="width:70%">
-    <div class="panel panel-default">
-    <div class="panel-heading"><b> </b> </div>
-    <div class="panel-body" style="width=100%"></div>
-    <div class="tbl_user_data"></div>
-    
+  <div class="column" style="width:10%"></div>
+  <div class="column" style="width:40%">
+    <div class="card" style="height: 100%">
+      <div class="card-body">
+        <h5 class="card-title">Pathway A Students</h5>
+        <div class="panel panel-default">
+          <div class="panel-heading"><b> </b> </div>
+          <div class="panel-body" style="width:100%">
+            <table id="sample_table">
+              <tr>
+                <th>UserID</th>
+                <th>RQ Mod</th>
+                <th>BRM Mod</th>
+                <th>Hypothesis</th>
+                <th>Activity 4</th>
+              </tr>
+              <tr>
+                <td>
+                  JohnDoe
+                  <br>
+                  <a href="#">View</a>
+                </td>
+                <td>
+                  <input type="checkbox" class="RQ-WE" id="RQ-WE" checked>
+                  <label class="custom-control-label" for="customCheck">WE</label>
+                  <br>
+                  <input type="checkbox" class="RQ-GR" id="RQ-GR">
+                  <label class="custom-control-label" for="customCheck">GR</label>
+                </td>
+                <td>
+                  <input type="checkbox" class ="BRM-WE" id="BRM-WE">
+                  <label class="custom-control-label" for="customCheck">WE</label>
+                  <br>
+                  <input type="checkbox" class="BRM-GR" id="BRM-GR" checked>
+                  <label class="custom-control-label" for="customCheck">GR</label>
+                </td>
+                <td>
+                  <input type="checkbox" class="Hypothesis-WE" id="Hypothesis-WE" checked>
+                  <label class="custom-control-label" for="customCheck">WE</label>
+                  <br>
+                  <input type="checkbox" class="Hypothesis-GR" id="Hypothesis-GR">
+                  <label class="custom-control-label" for="customCheck">GR</label>
+                </td>
+                <td>
+                  <input type="checkbox" class="other-WE" id="other-WE" checked>
+                  <label class="custom-control-label" for="customCheck">WE</label>
+                  <br>
+                  <input type="checkbox" class="other-GR" id="other-GR">
+                  <label class="custom-control-label" for="customCheck">GR</label>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>  
+  </div>
+  <div class="column" style="width:40%">
+    <div class="card" style="height: 100%">
+      <div class="card-body">
+        <h5 class="card-title">Pathway B Students</h5>
+        <div class="panel panel-default">
+        <div class="panel-heading"><b> </b> </div>
+        <div class="panel-body" style="width=100%"></div>
+        <table id="sample_table" style="width=100%">
+          <tr>
+            <th>UserID</th>
+            <th>Proc. Mod</th>
+            <th>Materials Mod</th>
+            <th>Data Interp.</th>
+            <th>Drawing Concl.</th>
+          </tr>
+          <tr>
+            <td>
+              Jane Doe
+              <br>
+              <a href="#">View</a>
+            </td>
+            <td>
+              <input type="checkbox" class="PEM-WE" id="PEM-WE">
+              <label class="custom-control-label" for="customCheck">WE</label>
+              <br>
+              <input type="checkbox" class="PEM-GR" id="PEM-GR" checked>
+              <label class="custom-control-label" for="customCheck">GR</label>
+            </td>
+            <td>
+              <input type="checkbox" class="Materials-WE" id="Materials-WE" checked>
+              <label class="custom-control-label" for="customCheck">WE</label>
+              <br>
+              <input type="checkbox" class="Materials-GR" id="Materials-GR">
+              <label class="custom-control-label" for="customCheck">GR</label>
+            </td>
+            <td>
+              <input type="checkbox" class="DI-WE" id="DI-WE">
+              <label class="custom-control-label" for="customCheck">WE</label>
+              <br>
+              <input type="checkbox" class="DI-GR" id="DI-GR" checked>
+              <label class="custom-control-label" for="customCheck">GR</label>
+            </td>
+            <td>
+              <input type="checkbox" class="DC-WE" id="DC-WE" checked>
+              <label class="custom-control-label" for="customCheck">WE</label>
+              <br>
+              <input type="checkbox" class="DC-GR" id="DC-GR">
+              <label class="custom-control-label" for="customCheck">GR</label>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
 
 </body>
 </html>
 
-<div style="display:none">
-    <table id="sample_table">
-      <tr id="">
-       <td><div class="row_data" col_name="userid">JohnDoe</div></td>
-       <td>
-          <select name="pathopts" id="pathopts" onchange="changeSel(event)">
-            <option value="default">----</option>
-            <option value="path1">Pathway1</option>
-            <option value="path2">Pathway2</option>
-          </select>
-       </td>
-       <td>
-          <input type="checkbox" class="RQ-WE" id="RQ-WE">
-          <label class="custom-control-label" for="customCheck">WE</label>
-          <br>
-          <input type="checkbox" class="RQ-GR" id="RQ-GR">
-          <label class="custom-control-label" for="customCheck">GR</label>
-       </td>
-       <td>
-          <input type="checkbox" class ="BRM-WE" id="BRM-WE">
-          <label class="custom-control-label" for="customCheck">WE</label>
-          <br>
-          <input type="checkbox" class="BRM-GR" id="BRM-GR">
-          <label class="custom-control-label" for="customCheck">GR</label>
-       </td>
-       <td>
-          <input type="checkbox" class="Hypothesis-WE" id="Hypothesis-WE">
-          <label class="custom-control-label" for="customCheck">WE</label>
-          <br>
-          <input type="checkbox" class="Hypothesis-GR" id="Hypothesis-GR">
-          <label class="custom-control-label" for="customCheck">GR</label>
-       </td>
-       <td>
-          <input type="checkbox" class="PEM-WE" id="PEM-WE">
-          <label class="custom-control-label" for="customCheck">WE</label>
-          <br>
-          <input type="checkbox" class="PEM-GR" id="PEM-GR">
-          <label class="custom-control-label" for="customCheck">GR</label>
-       </td>
-       <td>
-          <input type="checkbox" class="Materials-WE" id="Materials-WE">
-          <label class="custom-control-label" for="customCheck">WE</label>
-          <br>
-          <input type="checkbox" class="Materials-GR" id="Materials-GR">
-          <label class="custom-control-label" for="customCheck">GR</label>
-       </td>
-       <td>
-          <input type="checkbox" class="DI-WE" id="DI-WE">
-          <label class="custom-control-label" for="customCheck">WE</label>
-          <br>
-          <input type="checkbox" class="DI-GR" id="DI-GR">
-          <label class="custom-control-label" for="customCheck">GR</label>
-       </td>
-       <td>
-          <input type="checkbox" class="DC-WE" id="DC-WE">
-          <label class="custom-control-label" for="customCheck">WE</label>
-          <br>
-          <input type="checkbox" class="DC-GR" id="DC-GR">
-          <label class="custom-control-label" for="customCheck">GR</label>
-       </td>
-       <td>
-					<span class="btn_edit" > <a href="#" class="btn btn-link " row_id="'+row_id+'" > Edit </a> </span>
-					<span class="btn_save"> <a href="#" class="btn btn-link"  row_id="'+row_id+'"> Save</a> | </span>
-					<span class="btn_cancel"> <a href="#" class="btn btn-link" row_id="'+row_id+'"> Cancel</a> | </span>
-          <span class="btn_delete"> <a href="#" class="btn btn-link" row_id="'+row_id+'" > Delete Row</a> </span>
-			 </td>
-     </tr>
-   </table>
-  </div>
 
