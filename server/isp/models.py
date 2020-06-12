@@ -81,12 +81,9 @@ class Class(models.Model):
 
 class Pathway(models.Model):
     name = models.CharField(max_length=64, unique=True)
-    description = models.TextField(blank=True, null=True)
-
-    # constrain_school = models.ForeignKey(School, on_delete=models.CASCADE, null=True)
-    # constrain_teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE, null=True)
-    # constrain_class = models.ForeignKey(Class, on_delete=models.CASCADE, null=True)
- 
+    description = models.CharField(max_length=128, default="", blank=True)
+    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
+    
     def __str__(self):
          return self.name
     

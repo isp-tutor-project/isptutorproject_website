@@ -22,12 +22,16 @@ class TeacherInline(admin.TabularInline):
     model = Teacher
     show_change_link = True
 
-class ClassInline(admin.TabularInline):
-    model = Class
-    show_change_link = True
 
 class PathwayInline(admin.TabularInline):
     model = Pathway
+    show_change_link = True
+    extra = 0
+
+class ClassInline(admin.TabularInline):
+    model = Class
+    show_change_link = True
+    extra = 0
 
 class StudentInline(admin.TabularInline):
     model = Student
@@ -59,23 +63,12 @@ class SchoolAdmin(admin.ModelAdmin):
 
 @admin.register(Teacher)
 class TeacherAdmin(admin.ModelAdmin):
-    inlines = [ ClassInline ]
+    inlines = [ PathwayInline, ClassInline ]
 
 @admin.register(Class)
 class ClassAdmin(admin.ModelAdmin):
-    # model = Class
-    # teacheradmin.disable_action('delete_selected')
-    # actions = ['delete_students', 'assign_students'] 
     inlines = [ StudentInline ]
     
-    # def delete_students(self, modeladmin, request):
-    #     return
-    # delete_students.short_description = "Delete Selected Student(s)"
-
-    # def assign_students(self, modeladmin, request):
-    #     return
-    # assign_students.short_description = "Assign Selected Student(s) to Pathway X"
-
 @admin.register(Pathway)
 class PathwayAdmin(admin.ModelAdmin):
     list_display = ('name', 'description')
