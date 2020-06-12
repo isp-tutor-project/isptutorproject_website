@@ -67,6 +67,17 @@ class Teacher(models.Model):
         unique_together = [['name', 'school']]
 
 
+class Pathway(models.Model):
+    name = models.CharField(max_length=64, unique=False)
+    description = models.CharField(max_length=128, default="", blank=True)
+    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        unique_together = [['name', 'teacher']]
+
 class Class(models.Model):
     name = models.CharField(max_length=64, null=False, help_text="teacher friendly name")
     classcode = models.CharField(max_length=64, unique=True, null=False, help_text="unique name for class")
@@ -77,16 +88,8 @@ class Class(models.Model):
     
     class Meta:
         verbose_name_plural = "Classes"
-    
+        unique_together = [['name', 'teacher']]
 
-class Pathway(models.Model):
-    name = models.CharField(max_length=64, unique=True)
-    description = models.CharField(max_length=128, default="", blank=True)
-    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
-    
-    def __str__(self):
-         return self.name
-    
 
 class Student(models.Model):
     name = models.CharField(max_length=128, null=False)
