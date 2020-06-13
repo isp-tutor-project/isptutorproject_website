@@ -43,8 +43,7 @@
       <img src="{% static 'img/portal-icon.png'%}" style="width:100%">
     </div>
     <div class="column" style="width: 15%">
-      <br>
-      <br>
+      <br><br>
       <h1 style="font-family:verdana; font-size: 35px" >Teacher's</h1>
       <h1 style="font-family:verdana; font-size: 35px">Portal</h1>
     </div>
@@ -54,60 +53,74 @@
   </div>
 
   <div class="row">
-    <div class="column" style="width: 30%"> </div>
-    <div class="column" style="width: 40%">
-      <div class="card" style="border: 2px solid rgb(186, 217, 248)">
+    <div class="column" style="width:10%"></div>
+    <div class="column" style="width: 80%"> 
+      <div class="card" style="height: 100%; border: 2px solid rgb(186, 217, 248)">
         <div class="card-body">
-          <h5 class="card-title">Add Class </h5>
+          <h5 class="card-title">My Pathways</h5>
           <div class="row">
-            <div class="column" style="width: 70%">
-              <div class="form" style="font-family: verdana; font-size: 14px">
-                <label for="class">Class name:</label> 
-                <input type="text" id="class" placeholder="classA" style="border: 2px solid rgb(186, 217, 248)">
-                <br><br>  
-                <label for="classcode">Class code:</label>
-                <input type="text" id="classcode" placeholder="classcodeA" style="border: 2px solid rgb(186, 217, 248)">
-                <br><br>
-                <label for="school">School: </label>
-                <input type="text" id="school" placeholder="schoolA" style="border: 2px solid rgb(186, 217, 248)" 
-                ><br><br>
-              </div>            
-            </div>
-            <div class="column" style="width: 10%; height:100%">
-            <br><br><br><br>
-            <button class="btn btn-primary" id="addclass"><i class="fa fa-plus" title="add new class"></i>
-            Add class</button>
+            <div class="column" style="width: 10%"></div>
+            <div class="column" style="width: 80%">
+              <div class="tbl_user_data_pathways"></div>
+              <a class="btn btn-primary add-record-pathway" style="color:white" data-added="0"><i class="fa fa-plus">
+              </i> New pathway</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="card" style="border: 2px solid rgb(186, 217, 248)">
+    </div>
+  </div>
+
+<br><br>
+  <div class="row">
+    <div class="column" style="width:10%"></div>
+    <div class="column" style="width: 80%"> 
+      <div class="card" style="height: 100%; border: 2px solid rgb(186, 217, 248)">
         <div class="card-body">
-          <h5 class="card-title" id="cardname">Edit Class:</h5>
+          <h5 class="card-title">My Classes</h5>
           <div class="row">
-            <div class="column" style="width: 5%"></div>
-            <div class="column" style="width: 25%">
-                <button class="btn btn-primary" id="editclass"><i class="fa fa-edit" title="edit new class"></i>
-                Edit</button>
+            <div class="column" style="width: 10%"></div>
+            <div class="column" style="width: 80%">
+              <div class="tbl_user_data_classes"></div> 
+              <a class="btn btn-primary add-record-class" style="color:white" data-added="0"><i class="fa fa-plus">
+              </i> New class </a>
             </div>
-            <div class="column" style="width: 30%">
-                <button class="btn btn-primary" id="deleteclass" ><i class="fa fa-trash" title="delete new class"></i>
-                Delete</button>
-            </div>
-            <div class="column" style="width: 30%">
-                <button class="btn btn-primary" id="viewclass" ><i class="fa fa-eye" title="view new class"></i>
-                View</button>
-            </div>
-           </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-    
-
-
 
 </body>
 </html>
 
+<div style="display:none">
+    <table id="sample_pathway_table">
+      <tr id="">
+       <td><div class="row_data" col_name="pathname"><input type="text" id="pathname" placeholder="pathwayA" 
+       style="border: 2px solid dodgerblue">
+       </div></td>
+       <td><div class="row_data" col_name="description"><input type="text" id="description" placeholder="description of pathway" 
+       style="border: 2px solid dodgerblue">
+       </div></td>
+       <td>
+        <a href="http://127.0.0.1:8000/teachers/pathway/edit/">Edit</a> | <a href="#">Delete</a>
+			 </td>
+     </tr>
+   </table>
+</div>
 
+<div style="display:none">
+    <table id="sample_class_table">
+      <tr id="">
+       <td><div class="row_data" col_name="classname"><input type="text" id="classname" placeholder="class1" style="border: 2px solid dodgerblue">
+       </div></td>
+       <td><div class="row_data" col_name="classcode"><input type="text" id="classcode" placeholder="classcode1" style="border: 2px solid dodgerblue">
+       </div></td>
+       <td>
+        <a href="http://127.0.0.1:8000/teachers/class/edit/">Edit</a> | <a href="http://127.0.0.1:8000/teachers/class/view/">View</a> | <a href="#">Delete</a>
+			 </td>
+     </tr>
+   </table>
+</div>

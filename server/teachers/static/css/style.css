@@ -37,23 +37,11 @@ th, td {
   float: right;
 }
 
-#onhover1{
-  visibility: hidden;
-}
-#onhover2{
-  visibility: hidden;
-}
-#edit1:hover ~ #onhover1{
-  visibility: visible;
-}
-#edit2:hover ~ #onhover2{
-  visibility: visible;
-}
 
 .table-wrapper
 {
   width: 100%;
-  height: 250px;
+  height: 200px;
   overflow: scroll;
 }
 

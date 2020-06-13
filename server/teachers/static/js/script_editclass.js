@@ -1,7 +1,5 @@
 $(document).ready(function()
 {   
-    $("#class").prop("readonly",true);
-    $("#classcode").prop("readonly",true);
 	//ajax row data
 	var ajax_data = []
 	var random_id = function() 
@@ -129,17 +127,4 @@ function exportTableToExcel(table_ID, filename=''){
     }
     
     saveAs(new Blob([s2ab(wbout)],{type:"application/octet-stream"}), filename);
-}
-
-function edit1(){
-    $("#class").prop("readonly",false);
-}
-function save1(){
-    $("#class").prop("readonly",true);
-}
-function edit2(){
-    $("#classcode").prop("readonly",false);
-}
-function save2(){
-    $("#classcode").prop("readonly",true);
 }
