@@ -9,9 +9,9 @@
             "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}/manage.py",
-            "console": "internalConsole",
             "args": [
                 "runserver",
+                "--noreload",
                 "8000"
             ],
             "django": true
