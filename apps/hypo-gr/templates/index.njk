@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    {% include "site/stdHead.njk" %}
+    {% include "site/createjs.njk" %}
+    <title>ISP Tutor Hypothesis Lesson</title>
+    <link rel="stylesheet" href="hypo-gr.bundle.css">
+  </head>
+
+  <body>
+    {% include "site/navbar.njk" %}
+
+    <img id="loading_gif" src="img/site/_preloader.gif" class="hidden" />
+    <main>
+      <canvas id="hypo-canvas" width="1200" height="750">
+        Error: HTML5 canvas is not working. Please make sure JavaScript is enabled.
+      </canvas>
+
+      {% for overlay in collections.overlays %}
+        {{ overlay.templateContent | safe }}
+      {% endfor %}
+    </main>
+
+
+    
+    <!-- Snackbar -->
+    <div id="snackbar">Some text some message..</div>
+
+    <script src="hypo-gr.bundle.js"></script>
+  </body>
+</html>

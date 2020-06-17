@@ -1,0 +1,11 @@
+[
+    {
+        "model": "teachers.class",
+        "pk": 1,
+        "fields": {
+            "name": "Class1",
+            "classcode": "class1",
+            "teacher": "Joe"
+        }
+    }
+]

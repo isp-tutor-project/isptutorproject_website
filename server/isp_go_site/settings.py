@@ -35,6 +35,7 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
     'isp',
+    'teachers',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -58,7 +59,7 @@ ROOT_URLCONF = 'isp_go_site.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,3 +123,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'statics')
+# ]
+
+# media files
+MEDIA_URL = '/media/'
+
+
+WWW_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'wwwroot')
+STATIC_ROOT = os.path.join(WWW_ROOT, 'static')
+MEDIA_ROOT = os.path.join(WWW_ROOT, 'media')

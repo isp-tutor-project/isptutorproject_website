@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"name": "🚀@isptutorproject/hypo-we",
+			"path": "apps/hypo-we"
+		},
+		{
+			"name": "🚀@isptutorproject/isp-static",
+			"path": "apps/isp-static"
+		},
+		{
+			"name": "📦 @isptutorproject/isp-site-styles",
+			"path": "common/isp-site-styles"
+		}
+	],
+	"settings": {
+		"liveServer.settings.root": "./wwwroot",
+		"monorepoWorkspace.folders.regex.apps": "^apps",
+		"monorepoWorkspace.folders.regex.libs": "^common",
+		"monorepoWorkspace.folders.regex.tools": "^config",
+		"liveServer.settings.multiRootWorkspaceName": "✨ /home/ckot/projects/work/isptutorproject_website"
+	}
+}

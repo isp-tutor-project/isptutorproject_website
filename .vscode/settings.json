@@ -1,4 +1,6 @@
 {
     "liveServer.settings.root": "/wwwroot",
-    "python.pythonPath": "server/venv/bin/python"
+    "python.pythonPath": "server/venv/bin/python",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true
 }

@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "./server"
+		}
+	],
+	"settings": {
+		"liveServer.settings.root": "/wwwroot",
+		"git.ignoreLimitWarning": true,
+		"liveServer.settings.port": 5501,
+		"python.pythonPath": "../venv/bin/python"
+	}
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> ISP Teacher's Portal - Edit Class </title>
+  {% load static %}
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+  <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+  
+  <style>
+  body {
+    font-family: 'verdana';font-size: 15px;
+  }
+  </style>
+
+  <!-- JS Files -->
+  <script src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+  <script src="{% static 'js/FileSaver.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/xlsx.full.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/jszip.js"></script>
+  
+  <!-- Add icon library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <!-- Add my js files -->
+  <script src="{% static 'js/script_addclass.js' %}"></script>
+
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="column" style="width: 1%">
+    </div>
+    <div class="column" style="width: 4%">
+      <br>
+      <br>
+      <img src="{% static 'img/portal-icon.png'%}" style="width:100%">
+    </div>
+    <div class="column" style="width: 15%">
+      <br><br>
+      <h1 style="font-family:verdana; font-size: 35px" >Teacher's</h1>
+      <h1 style="font-family:verdana; font-size: 35px">Portal</h1>
+    </div>
+    <div class="column" style="width: 80%">
+      <img src="{% static 'img/tutor.png'%}" style="width:100%">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="column" style="width:10%"></div>
+    <div class="column" style="width: 80%"> 
+      <div class="card" style="height: 100%; border: 2px solid rgb(186, 217, 248)">
+        <div class="card-body">
+          <h5 class="card-title">My Pathways</h5>
+          <div class="row">
+            <div class="column" style="width: 10%"></div>
+            <div class="column" style="width: 80%">
+              <div class="tbl_user_data_pathways"></div>
+              <a class="btn btn-primary add-record-pathway" style="color:white" data-added="0"><i class="fa fa-plus">
+              </i> New pathway</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<br><br>
+  <div class="row">
+    <div class="column" style="width:10%"></div>
+    <div class="column" style="width: 80%"> 
+      <div class="card" style="height: 100%; border: 2px solid rgb(186, 217, 248)">
+        <div class="card-body">
+          <h5 class="card-title">My Classes</h5>
+          <div class="row">
+            <div class="column" style="width: 10%"></div>
+            <div class="column" style="width: 80%">
+              <div class="tbl_user_data_classes"></div> 
+              <a class="btn btn-primary add-record-class" style="color:white" data-added="0"><i class="fa fa-plus">
+              </i> New class </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+
+<div style="display:none">
+    <table id="sample_pathway_table">
+      <tr id="">
+       <td><div class="row_data" col_name="pathname"><input type="text" id="pathname" placeholder="pathwayA" 
+       style="border: 2px solid dodgerblue">
+       </div></td>
+       <td><div class="row_data" col_name="description"><input type="text" id="description" placeholder="description of pathway" 
+       style="border: 2px solid dodgerblue">
+       </div></td>
+       <td>
+        <a href="http://127.0.0.1:8000/teachers/pathway/edit/">Edit</a> | <a href="#">Delete</a>
+			 </td>
+     </tr>
+   </table>
+</div>
+
+<div style="display:none">
+    <table id="sample_class_table">
+      <tr id="">
+       <td><div class="row_data" col_name="classname"><input type="text" id="classname" placeholder="class1" style="border: 2px solid dodgerblue">
+       </div></td>
+       <td><div class="row_data" col_name="classcode"><input type="text" id="classcode" placeholder="classcode1" style="border: 2px solid dodgerblue">
+       </div></td>
+       <td>
+        <a href="http://127.0.0.1:8000/teachers/class/edit/">Edit</a> | <a href="http://127.0.0.1:8000/teachers/class/view/">View</a> | <a href="#">Delete</a>
+			 </td>
+     </tr>
+   </table>
+</div>

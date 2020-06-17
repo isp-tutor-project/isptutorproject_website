@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% include "site/stdHead.njk" %}
+        <title> Hypothesis Module </title>
+        <link rel="stylesheet" href="./hypo-we.bundle.css" />
+    </head>
+    <body>
+        <main>
+            <div id="scene_id_region"></div>
+            {% for scene in collections.hypoWEScenes %}
+                <section id="{{scene.fileSlug}}" class="scene">
+                    {{ scene.templateContent | safe }}
+                </section>
+            {% endfor %}
+            <img id="prev_btn" class="nav-btn prev-btn" />
+            <img id="next_btn" class="nav-btn next-btn" />
+        </main>
+        <script src="./hypo-we.bundle.js"></script>
+    </body>
+</html>
