@@ -6,3 +6,4 @@ let appData = require("../data/hypoWE.json");
 
 let app = new HypoWEApp(appData);
 app.setStartScene("selectVIN");
+

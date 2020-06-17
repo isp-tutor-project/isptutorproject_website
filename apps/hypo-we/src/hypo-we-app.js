@@ -30,9 +30,35 @@ class SelectVINScene extends Scene {
 class SelectHotColdScene extends Scene {
     constructor(app, data) {
         super(app, data);
-        
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }   
+
+    defaultEnterSceneActions() {
+        super.defaultEnterSceneActions();
+        let submitBtn = document.getElementById("submit_prediction");
+        submitBtn.addEventListener("click", this.handleSubmit);
+    }
+
+    handleSubmit(event) {
+        event.preventDefault();
+        console.log("in handleSubmit()");
+        let form = event.target.form;
+        if (form.checkValidity()) {
+            for (let fld of form.querySelectorAll('input[type="radio"]:checked')) {
+                if ("prediction" === fld.name) {
+                    this.app.prediction = fld.value;
+                } else {
+                    console.log(fld.name, fld.value);
+                }
+            }
+            this.app.handleTransition("next");
+        } else {
+            form.reportValidity();
+        }
     }
 }
+
+
 class HypoWEScene extends Scene {
     constructor(app, data) {
         super(app, data);
@@ -111,6 +137,7 @@ export class HypoWEApp extends(SceneTransitionsApp) {
     constructor(appData) {
         super(appData);
         this.vinName = null;
+        this.prediction = null;
         this.nextBtn = document.getElementById("next_btn");
         this.prevBtn = document.getElementById("prev_btn");
         this.sceneIdRegion = document.getElementById("scene_id_region");
@@ -126,14 +153,15 @@ export class HypoWEApp extends(SceneTransitionsApp) {
 
     createScene(sceneInfo) {
         let newScene;
-        // if ("stats" === sceneInfo.sceneType) {
-        //     newScene = new DiStatsScene(this, sceneInfo);
-        // } else if ("multipleChoiceForm" === sceneInfo.sceneType) {
-        //     newScene = new DiMultipleChoiceFormScene(this, sceneInfo);
-        if ("selectVIN" === sceneInfo.sceneType) {
-            newScene = new SelectVINScene(this, sceneInfo);
-        } else {
-            newScene = new HypoWEScene(this, sceneInfo);
+        switch (sceneInfo.sceneType) {
+            case "selectVIN":
+                newScene = new SelectVINScene(this, sceneInfo);
+                break;
+            case "selectHotOrCold":
+                newScene = new SelectHotColdScene(this, sceneInfo);
+                break;
+            default:
+                newScene = new HypoWEScene(this, sceneInfo);
         }
         return newScene;
     }

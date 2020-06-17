@@ -13,7 +13,7 @@ module.exports = {
             ]
         },
         selectHotCold: {
-            sceneType: "hotOrCold",
+            sceneType: "selectHotOrCold",
             transitions: {
                 prev: "selectVIN",
                 next: "scene3"

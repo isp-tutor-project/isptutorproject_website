@@ -5,6 +5,8 @@ $my_path: "/apps/hypo-we/";
 );
 
 /* start of app-specific css */
+
+
 main {
     height: 100%;
     width: 100%;
@@ -12,6 +14,11 @@ main {
     background-color: white;
     font-size: 14pt;
     // border: solid #d6e9fc 40px;
+}
+
+input:invalid:required {
+  border: 1px solid #900;
+  background-color: #FDD;
 }
 
 .scene {
@@ -30,6 +37,8 @@ main {
 
 .single-column-content {
     position: absolute;
+    width: 90%;
+    height: 90%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);

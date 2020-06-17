@@ -1,16 +1,21 @@
 {% extends "single-column.njk" %}
 
 {% block content %}
-<h1>
-    Prediction of experimental outcome...
-</h1>
-<form>
-    <p>Do you think there will be more crystal growth in:</p>
-    <label for="hot_prediction"><input id="hot_prediction" type="radio" name="prediction" value="hot"/>Hot Water</label><br/>
-    <label for="cold_prediction"><input id="cold_prediction" type="radio" name="prediction" value="cold"/>Room Temperature Water</label><br/>    
-    <input type="submit" />
-</form>
+    <h1>
+        Prediction of experimental outcome...
+    </h1>
+    <form>
+        <p>Do you think there will be more crystal growth in:</p>
+        <label><input type="radio" name="prediction" value="hot" required/> Hot Water </label><br/>
+        <label><input type="radio" name="prediction" value="cold" required/> Room Temperature Water </label><br/>    
 
-
-<p>likert question</p>
-{% endblock %}
+        <p> How confident are you with your prediction?</p>
+        <label><input type="radio" name="likert_prediction" value="I guessed"     required /> I just guessed</label>
+        <label><input type="radio" name="likert_prediction" value="a little sure" required /> A little bit sure</label>
+        <label><input type="radio" name="likert_prediction" value="pretty sure"   required /> Pretty Sure</label>
+        <label><input type="radio" name="likert_prediction" value="very sure"     required /> Very Sure </label>
+        <label><input type="radio" name="likert_prediction" value="entirely sure" required /> 100% sure!</label>
+        <br/>
+        <button id="submit_prediction" type="submit" class="btn btn-md btn-primary">Submit</button>
+    </form>
+{% endblock %}x
