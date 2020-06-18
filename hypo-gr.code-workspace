@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"name": "🚀@isptutorproject/hypo-gr",
+			"path": "apps/hypo-gr"
+		},
+		{
+			"name": "📦 @isptutorproject/navbar",
+			"path": "common/navbar"
+		},
+		{
+			"name": "📦 @isptutorproject/snackbar",
+			"path": "common/snackbar"
+		}
+	],
+	"settings": {
+		"liveServer.settings.root": "../../wwwroot",
+		"liveServer.settings.multiRootWorkspaceName": "@isptutorproject/isp-static"
+	}
+}
