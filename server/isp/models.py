@@ -31,7 +31,7 @@ class App(models.Model):
         return self.name
 
 
-# a Feature (flag) is simply a string associated with a App which modifies it's 
+# a Feature (flag) is simply a string associated with a App which modifies it's
 # behavior
 class Feature(models.Model):
     name = models.CharField(max_length=32)
@@ -85,7 +85,7 @@ class Teacher(models.Model):
 
     def __str__(self):
         return self.name
-    
+
     class Meta:
         unique_together = [['name', 'school']]
 
@@ -108,7 +108,7 @@ class Class(models.Model):
 
     def __str__(self):
         return self.name
-    
+
     class Meta:
         verbose_name_plural = "Classes"
         unique_together = [['name', 'teacher']]
@@ -129,6 +129,6 @@ class OrderedActivity(models.Model):
 
     def __str__(self):
         return "%d" % self.order
-        
+
     class Meta:
         ordering = ('order',)
