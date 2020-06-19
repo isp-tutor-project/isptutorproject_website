@@ -1,8 +1,8 @@
 
 import "./index.scss";
 
-import { 
-    SceneTransitionsApp, 
+import {
+    SceneTransitionsApp,
     Scene
 } from "@isptutorproject/scene-transitions-base";
 import { SnackBar } from "@isptutorproject/snackbar";
@@ -78,7 +78,7 @@ export class DiTestScene extends Scene {
         this.app.show(this.app.nextBtn);
     }
 
-    
+
 }
 
 export class DiTestResultsScene extends DiTestScene {
@@ -102,7 +102,7 @@ export class DiTestResultsScene extends DiTestScene {
         this.leftMeanValue = document.getElementById(`${this.id}_${side}_mean`);
         side = "right";
         this.rightMeanBtn   = document.getElementById(`${this.id}_reveal_${side}_mean`);
-        this.rightMeanValue = document.getElementById(`${this.id}_${side}_mean`);        
+        this.rightMeanValue = document.getElementById(`${this.id}_${side}_mean`);
         this.showSortedTableBtn = document.getElementById(`${this.id}_show_sorted_table`);
         this.sortedTableText = document.getElementById(`${this.id}_sorted_text`);
         this.sortedImg = document.getElementById(`${this.id}_sorted`);
@@ -157,7 +157,7 @@ export class DiTestResultsScene extends DiTestScene {
         e.preventDefault();
         if (this.q1Form.checkValidity()) {
             let selected = this.q1Form.querySelector('input[type="radio"]:checked');
-            this.q1Answer = selected.value; 
+            this.q1Answer = selected.value;
             this.app.logStudentAnswer("q1", this.q1Answer);
             let phRepl = `<span class="q1_answer">${this.q1Answer}</span>`;
             this.questions.q2.text = this.questions.q2.text.replace("PLACEHOLDER",
@@ -244,7 +244,7 @@ export class DiTestResultsScene extends DiTestScene {
 
 export class DiTestApp extends SceneTransitionsApp{
     constructor(testData, testName = "") {
-        super(testData);        
+        super(testData);
         this.testName = testName;
         this.snackbar = new SnackBar();
         this.goHomeBtn = document.getElementById("go_home_btn");
@@ -293,7 +293,7 @@ export class DiTestApp extends SceneTransitionsApp{
         let question = this.currentScene.questions[questionName];
         let isCorrect = "N/A";
         if (question.hasOwnProperty("correctAnswer")) {
-            isCorrect = (answer === question.correctAnswer) 
+            isCorrect = (answer === question.correctAnswer)
         }
         let qid = `${this.currentScene.id}.${questionName}`;
         if ("" !== this.testName) {
