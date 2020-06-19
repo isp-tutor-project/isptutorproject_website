@@ -57,7 +57,13 @@ module.exports = {
         start: {
             transitions: {
                 next: "intro"
-            }
+            },
+            customEnterActions: [
+                {
+                    name: "hideBtns",
+                    args: ["prev", "next"]
+                }
+            ]
         },
         intro: {
             transitions: {
@@ -246,13 +252,13 @@ module.exports = {
             sceneType: "libraryResults",
             transitions: {
                 prev: "libraryResultsIntro5",
-                next: "complete"
+                next: "completed"
             }
         },
-        complete: {
+        completed: {
             transitions: {
-                prev: "libraryResults5",
+                prev: "libraryResults5"
             }
-        },
+        }
     }
 }
