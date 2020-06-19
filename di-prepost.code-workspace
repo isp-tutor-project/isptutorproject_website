@@ -1,20 +1,24 @@
 {
 	"folders": [
 		{
-			"name": "🚀 @isptutorproject/di-prepost",
+			"name": "🚀@isptutorproject/di-prepost",
 			"path": "apps/di-prepost"
 		},
 		{
-			"name": "🚀 @isptutorproject/isp-static",
+			"name": "🚀@isptutorproject/isp-static",
 			"path": "apps/isp-static"
 		},
 		{
 			"name": "📦 @isptutorproject/isp-site-styles",
 			"path": "common/isp-site-styles"
+		},
+		{
+			"name": "@isptutorproject/eleventy-config",
+			"path": "config/eleventy-config"
 		}
 	],
 	"settings": {
-		"liveServer.settings.root": "../../wwwroot",		
+		"liveServer.settings.root": "../../wwwroot",
 		"liveServer.settings.multiRootWorkspaceName": "🚀 @isptutorproject/isp-static"
 	}
 }
