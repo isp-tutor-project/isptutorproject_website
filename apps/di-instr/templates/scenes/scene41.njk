@@ -2,13 +2,21 @@
 {% extends "single-column.njk" %}
 
 {% import "forms.njk" as forms %}
+
 {% block content %}
+
     <h1>
         Results: weight of crystal growth
     </h1>
+
     <img src="img/15_S41-43.png" class="img-centered" />
+
     <p class="text-lg">
         {{ page.data.question.text }}
     </p>
-    {{ forms.radios_form(page, isVert=true, marginLeft=40) }}
+
+    <div class="form-wrapper">
+        {{ forms.radios_form(page, isVert=false, marginLeft=auto) }}
+    </div>
+
 {% endblock %}

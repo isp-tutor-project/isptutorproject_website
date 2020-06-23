@@ -11,11 +11,12 @@ heading: "Results A: Hot (A) and Cold (A) conditions"
 {% endblock %}
 
 {% block rhs %}
-    {% vertcenter 30 %}
-        <p class="text-lg">
-            {{ page.data.question.text }}
-        </p>
-        {{ forms.radios_form(page, isVert=true) }}
-    {% endvertcenter %}
+
+    <p class="text-lg">
+        {{ page.data.question.text }}
+    </p>
+
+    {{ forms.radios_form(page, isVert=true) }}
+
 {% endblock %}
 

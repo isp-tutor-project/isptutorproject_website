@@ -4,12 +4,12 @@
 
 {% block content %}
 
-<img src="img/48_Graph_S108-S110.png" class="img-centered" /> 
+    <img src="img/48_Graph_S108-S110.png" class="img-centered" />
 
-<p class="text-lg">
-    {{ page.data.question.text | safe }}
-</p>
-{{ forms.radios_form(page, isVert=true, marginLeft=30) }}
+    <p class="text-lg">
+        {{ page.data.question.text | safe }}
+    </p>
 
+    {{ forms.radios_form(page, isVert=false, marginLeft=auto) }}
 
 {% endblock %}

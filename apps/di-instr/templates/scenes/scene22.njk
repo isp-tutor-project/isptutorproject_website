@@ -3,23 +3,27 @@
 {% import "link.njk" as link %}
 
 {% block rhs %}
-     {% vertcenter %}
-        <h1>
-            What is the <u>median</u> value?
-        </h1>
-        <p class="text-lg">
-            We have found the middle number!!
-        </p>
-        <p class="text-lg">
-            The median value is 42.4!
-        </p>
-        <p class="text-lg">
-            “Scout” is our median dog.  :) 
-        </p>
-        <p class="text-centered">
-            {{ link.namedTransition(page, "back", "back") }} 
-        </p> 
-    {% endvertcenter %}
+
+    <h1>
+        What is the <u>median</u> value?
+    </h1>
+
+    <p class="text-lg">
+        We have found the middle number!!
+    </p>
+
+    <p class="text-lg">
+        The median value is 42.4!
+    </p>
+
+    <p class="text-lg">
+        “Scout” is our median dog.  :)
+    </p>
+
+    <p class="text-centered">
+        {{ link.namedTransition(page, "back", "back") }}
+    </p>
+
  {% endblock %}
 
 
