@@ -1,8 +1,8 @@
 {% set surveyOptions = [
-        {value: 'a', label: "Not at all sure"}, 
-        {value: 'b', label: "A little sure"}, 
-        {value: 'c', label: "Pretty sure"}, 
-        {value: 'd', label: "Very sure"}, 
+        {value: 'a', label: "Not at all sure"},
+        {value: 'b', label: "A little sure"},
+        {value: 'c', label: "Pretty sure"},
+        {value: 'd', label: "Very sure"},
         {value: 'e', label: "I am Absolutely sure"}
     ]
 %}
@@ -18,13 +18,13 @@
                 id="{{sceneId}}_correct_answer"
                 class="correct-answer"
                 value="{{question.correctAnswer}}" />
-        {% else %} 
+        {% else %}
             <input type="hidden"
                 id="{{sceneId}}_correct_answer"
                 class="correct-answer"
                 value="n/a" />
         {% endif %}
-    {% else %} 
+    {% else %}
         <input type="hidden"
             id="{{sceneId}}_correct_answer"
             class="correct-answer"
@@ -48,7 +48,7 @@
                 class="neg-fb"
                 value="{{question.negFb}}" />
         {% endif %}
-        
+
         {% if question.ntlFb %}
             <input type="hidden"
                 id="{{sceneId}}_ntl_fb"
@@ -73,7 +73,7 @@
            id="{{sceneId}}_question_type"
            class="question-type"
            value="{{question.type}}" />
-    {{ correct_answer_hidden_field(sceneId,question) }}    
+    {{ correct_answer_hidden_field(sceneId,question) }}
     {{ feedback_hidden_fields(sceneId, question) }}
 
 {% endmacro %}
@@ -115,9 +115,9 @@
     {% set sceneId = page.data.id %}
     {% set question = page.data.question %}
     <form id="{{sceneId}}_radio_form"
-          style="margin-left:{{marginLeft}}%;">
-        {# {{ hidden_fields(sceneId, question) }} #}
-        {{ feedback_region(sceneId) }}
+          class="centered-form">
+          {# style="margin-left:{{marginLeft}}%;"> #}
+        {# {{ feedback_region(sceneId) }} #}
         {{ radio_btns(sceneId, question.options, isVert=isVert) }}
         {{ submit_btn(sceneId, "radio") }}
     </form>
