@@ -97,12 +97,13 @@
 {% endmacro %}
 
 {% macro submit_btn(sceneId, formType) %}
-    <br/>
+    <p class="text-xxs">
     <button id="{{sceneId}}_submit_btn"
             type="submit"
             class="submit-{{formType}}-form-btn btn btn-lg btn-primary">
         Submit
     </button>
+    </p>
 {% endmacro %}
 
 {% macro feedback_region(sceneId) %}
