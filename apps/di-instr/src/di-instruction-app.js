@@ -30,6 +30,14 @@ export class DiInstructionApp extends SceneTransitionsApp {
         window.app = this;
     }
 
+    setSnackbar(snackbar) {
+        this.snackbar = snackbar;
+    }
+
+    showFeedback(feedback) {
+        this.snackbar.show(feedback);
+    }
+
     createScene(sceneInfo) {
         let newScene;
         if ("stats" === sceneInfo.sceneType) {
