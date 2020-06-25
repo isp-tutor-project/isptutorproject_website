@@ -22,7 +22,7 @@ ClassFormset = inlineformset_factory(
 #     fields = ['name']
 
 
-class teacherupdate(UpdateView):
+class TeacherUpdate(UpdateView):
     """view for updating teacher with inlines"""
     model = Teacher
     fields = ['name', 'description']
@@ -65,13 +65,14 @@ class teacherupdate(UpdateView):
 #     success_url = reverse_lazy('author-list')
 
 
-# Add students
-def editClass(request):
+# Add students/ assign pathways
+def editClass(request, pk):
     return render(request, 'editclass.html')
 
-# Assign students
-def viewClass(request):
+# monitor student progress
+def viewClass(request, pk):
     return render(request, 'viewclass.html')
 
-def editPathway(request, pathway):
+# currently unused - edit pathway activities
+def editPathway(request, pk):
     return render(request, 'addclass.html')

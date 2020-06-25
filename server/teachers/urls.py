@@ -1,10 +1,10 @@
 from django.urls import path
 from . import views
-from .views import teacherupdate
+from .views import TeacherUpdate
 
 urlpatterns = [
-    path('class/edit/', views.editClass), #editclass
-    path('class/view/', views.viewClass),  #viewclass
-    path('edit/<str:pathway>', views.editPathway, name='edit-pathway'), #might need to chanage to pk
-    path('<int:pk>/edit/', teacherupdate.as_view(), name='teacher-update'), 
+    path('<int:pk>/change/',         TeacherUpdate.as_view(), name='isp_teacher_change'),
+    path('class/<int:pk>/change/',   views.editClass,         name="isp_class_change"),
+    path('class/<int:pk>/',          views.viewClass,         name="isp_class_view"),
+    path('pathway/<int:pk>/change/', views.editPathway,       name='isp_pathway_change'),
 ]
