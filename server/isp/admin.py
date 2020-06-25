@@ -54,7 +54,7 @@ class ActivityAdmin(admin.ModelAdmin):
     def get_inline_instances(self, request, obj=None):
         request._obj = obj
         return [
-            inline(self.model, self.admin_site) 
+            inline(self.model, self.admin_site)
             for inline in self.inlines
             if obj is not None
         ]
@@ -70,14 +70,8 @@ class TeacherAdmin(admin.ModelAdmin):
 @admin.register(Class)
 class ClassAdmin(admin.ModelAdmin):
     inlines = [ StudentInline ]
-    
+
 @admin.register(Pathway)
 class PathwayAdmin(admin.ModelAdmin):
-    readonly_fields = ('edit_link',)
-    def edit_link(self, instance):
-        return 
-    
-    edit_link.short_description = "Edit"
-    list_display = ('name', 'description', 'edit_link')
     inlines = [ OrderedActivityInline ]
 

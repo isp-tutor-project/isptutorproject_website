@@ -100,13 +100,10 @@ class Pathway(models.Model):
     name = models.CharField(max_length=64, unique=False)
     description = models.CharField(max_length=128, default="", blank=True)
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
-    edit_link = models.URLField(max_length=64, default="pathway/edit", null=True)
-    
+
     def __str__(self):
         return self.name
-    
-    def get_absolute_url(self):
-        return reverse('edit-pathway', args=[self.name])
+
 
 class Class(models.Model):
     name = models.CharField(max_length=64, null=False, help_text="teacher friendly name")

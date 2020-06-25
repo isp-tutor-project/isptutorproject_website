@@ -26,9 +26,8 @@ SECRET_KEY = '%9&j+b7@nh=rhsbn84x)h#u28edt&c_eehbo+!y^tlsm96jsu&'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'localhost', 
+    'localhost',
     '127.0.0.1',
-    'beb8baf9e593.ngrok.io',
 ]
 
 
@@ -43,7 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "django_readonly_field",
 ]
 
 MIDDLEWARE = [
