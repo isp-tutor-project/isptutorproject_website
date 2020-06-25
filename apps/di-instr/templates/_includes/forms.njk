@@ -11,6 +11,7 @@
 
 {% macro _append(str1, str2) %}{{str1}}{{str2}}{% endmacro %}
 
+{#
 {% macro correct_answer_hidden_field(sceneId, question=null) %}
     {% if question %}
         {% if question.correctAnswer %}
@@ -75,8 +76,8 @@
            value="{{question.type}}" />
     {{ correct_answer_hidden_field(sceneId,question) }}
     {{ feedback_hidden_fields(sceneId, question) }}
-
 {% endmacro %}
+#}
 
 
 {% macro radio_btn(id, name, value, label, isVert=false) %}
@@ -106,48 +107,19 @@
     </p>
 {% endmacro %}
 
-{% macro feedback_region(sceneId) %}
-    <div id="{{sceneId}}_feedback_region" class="feedback-region invisible">
-    </div> <!-- ./feedback-region -->
-{% endmacro %}
 
-{% macro radios_form(page, isVert=false, marginLeft=0) %}
+{% macro radios_form(page, isVert=false) %}
     {# {{ showpage(page) }} #}
     {% set sceneId = page.data.id %}
     {% set question = page.data.question %}
-    <form id="{{sceneId}}_radio_form"
-          class="centered-form">
-          {# style="margin-left:{{marginLeft}}%;"> #}
-        {# {{ feedback_region(sceneId) }} #}
-        {{ radio_btns(sceneId, question.options, isVert=isVert) }}
-        {{ submit_btn(sceneId, "radio") }}
-    </form>
-{% endmacro %}
-
-
-{% macro survey_radios_form(page, isVert=false, marginLeft=0) %}
-    {% set sceneId = page.data.id %}
-    {% set question = page.data.question %}
-    {% if isVert %}
-        <form id="{{sceneId}}_radio_form"
-            style="margin-left:{{marginLeft}}%;">
-            {# {{ hidden_fields(sceneId, question) }} #}
-            {{ radio_btns(sceneId, surveyOptions, isVert=true) }}
-            {{ submit_btn(sceneId, "radio") }}
-            {{ feedback_region(sceneId) }}
-        </form>
-    {% else %}
+    <div class="form-wrapper">
         <form id="{{sceneId}}_radio_form">
-            {{ hidden_fields(sceneId, question) }}
-            <p class="text-centered">
-                {{ radio_btns(sceneId, surveyOptions) }}
-            </p>
-            <div class="div-centered">
+            <div class="form-content">
+                {{ radio_btns(sceneId, question.options, isVert=isVert) }}
                 {{ submit_btn(sceneId, "radio") }}
-                {{ feedback_region(sceneId) }}
             </div>
         </form>
-    {% endif %}
+    </div>
 {% endmacro %}
 
 {% macro showpage(page) %}
