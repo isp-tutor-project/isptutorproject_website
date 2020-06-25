@@ -1,0 +1,54 @@
+
+<h3>{{inline_title}}</h3>
+        {{ formset.management_form}}
+        <table class="table table-condensed table-striped">
+            <thead>
+                <tr>
+                {% for form in formset.forms %}
+                    {% if forloop.first %}
+                        {% for field in form %}
+                            {% if field in form.visible_fields %} 
+                            <th> {{field.label }} </th> 
+                            {% endif%}
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+                </tr>
+            </thead>
+            <tbody id="{{ model_name }}_tbody">
+                {% for form in formset.forms %}
+                    <tr>
+                        {% for field in form %}
+                            {% if field not in form.visible_fields %}
+                                {{ field }}
+                            {% else %}
+                                <td> {{ field }} </td>
+                            {% endif %}
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+                <tr id="empty_{{ model_name }}_form" class="d-none">
+                    {% for field in formset.empty_form %}
+                        {% if field.widget.is_hidden %}
+                            {{ field }}
+                        {% else %}
+                            <td> {{ field }} </td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+            </tbody>
+        </table>
+    <button class="btn btn-link" id="add_{{model_name}}">Add {{model_name | title}} </button>
+    <script>
+    
+    function add_{{model_name}}_handler(event) {
+        event.preventDefault();
+        let tbody = document.getElementById("{{model_name}}_tbody");
+        let empty = document.getElementById("empty_{{model_name}}_form");
+        let tr = document.createElement("tr");
+        alert("add {{model_name}}");
+    }
+    document.getElementById("add_{{model_name}}").addEventListener("click", add_{{model_name}}_handler);
+    </script>
+    {% comment %} </div>
+</div> {% endcomment %}

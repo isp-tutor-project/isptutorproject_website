@@ -1,5 +1,6 @@
 from django.contrib import admin
 
+
 from .models import (
     Module, App, Feature, ActivityType, Activity, EnabledFeature,
     Pathway, OrderedActivity
@@ -85,10 +86,7 @@ class ActivityAdmin(admin.ModelAdmin):
 
 @admin.register(Pathway)
 class PathwayAdmin(admin.ModelAdmin):
-    list_display = ('name', 'description')
     inlines = [ OrderedActivityInline ]
-
-
 
 
 # @admin.register(Teacher)

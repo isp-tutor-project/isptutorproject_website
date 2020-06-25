@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Module(models.Model):
@@ -121,12 +122,15 @@ class Teacher(models.Model):
                             blank=False)
     school = models.CharField(max_length=128,
                               default="")
+    description = models.CharField(max_length=128, default="", blank=True)
 
     def __str__(self):
         return self.name
 
+
     class Meta:
-        unique_together = [['name', 'school']]
+        unique_together = [['school', 'name']]
+
 
 
 class Pathway(models.Model):
@@ -141,8 +145,6 @@ class Pathway(models.Model):
     def __str__(self):
         return self.name
 
-    class Meta:
-        unique_together = [['name', 'teacher']]
 
 
 class OrderedActivity(models.Model):
