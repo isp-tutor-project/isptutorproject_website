@@ -209,15 +209,27 @@ ul.centered {
 }
 
 .form-wrapper {
-    text-align: center;
+    // text-align: center;
+    width: 100%;
+    height: fit-content;
+
 }
-.centered-form {
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-    // width: 100%;
-    // text-align: left;
+
+.form-content {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    left: 50%;
+    transform: translate(-50%);
 }
+
+// .centered-form {
+//     display: inline-block;
+//     margin-left: auto;
+//     margin-right: auto;
+//     // width: 100%;
+//     // text-align: left;
+// }
 
 .prev-btn {
     /* should get displayed on top of border*/
