@@ -35,9 +35,9 @@ $(document).ready(function()
 
 				//loop through ajax row data
 				tbl1 +='<tr row_id="'+row_id+'">';
-					tbl1 +='<td ><div class="row_data" col_name="classname">'+val['classname']+'</div></td>';
-          			tbl1 +='<td ><div class="row_data" col_name="classcode">'+val['classcode']+'</div></td>';
-                    tbl1 +='<td ><a href="http://127.0.0.1:8000/teachers/pathway/edit/">Edit</a> | <a href="#">Delete</a></td>';
+					tbl1 +='<td><div class="row_data" col_name="classname">'+val['classname']+'</div></td>';
+          			tbl1 +='<td><div class="row_data" col_name="classcode">'+val['classcode']+'</div></td>';
+                    tbl1 +='<td><a href="http://127.0.0.1:8000/teachers/pathway/edit/">Edit</a> | <a href="#">Delete</a></td>';
 				tbl1 +='</tr>';
 			});
             //--->create table body rows > end

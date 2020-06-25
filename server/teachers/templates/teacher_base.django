@@ -1,0 +1,37 @@
+{% load static %}
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet"
+              href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+              integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+              crossorigin="anonymous">
+        <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="column" style="width: 1%">
+                </div>
+                <div class="column" style="width: 4%">
+                    <br>
+                    <br>
+                    <img src="{% static 'teachers/img/portal-icon.png'%}" style="width:100%">
+                </div>
+                <div class="column" style="width: 15%">
+                    <br>
+                    <br>
+                    <h1 style="font-family:verdana; font-size: 35px" >Teacher's</h1>
+                    <h1 style="font-family:verdana; font-size: 35px">Portal</h1>
+                </div>
+                <div class="column" style="width: 80%">
+                    <img src="{% static 'teachers/img/tutor.png'%}" style="width:100%">
+                </div>
+            </div>
+
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+</html>

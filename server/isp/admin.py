@@ -1,5 +1,6 @@
 from django.contrib import admin
 
+
 from .models import (
     App, Feature, Activity, EnabledFeature, School, Teacher,
     Student, Class, Pathway, OrderedActivity
@@ -20,7 +21,8 @@ class EnabledFeatureInline(admin.TabularInline):
 
 class TeacherInline(admin.TabularInline):
     model = Teacher
-    show_change_link = True
+    extra = 1
+    show_change_url = True
 
 
 class PathwayInline(admin.TabularInline):
@@ -71,6 +73,11 @@ class ClassAdmin(admin.ModelAdmin):
     
 @admin.register(Pathway)
 class PathwayAdmin(admin.ModelAdmin):
-    list_display = ('name', 'description')
+    readonly_fields = ('edit_link',)
+    def edit_link(self, instance):
+        return 
+    
+    edit_link.short_description = "Edit"
+    list_display = ('name', 'description', 'edit_link')
     inlines = [ OrderedActivityInline ]
 

@@ -1,0 +1,49 @@
+{% extends "teachers/teacher_base.django" %}
+
+{% block content %}
+
+    <form action="" method="post">
+        {% csrf_token %}
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">My Information</h3>
+                        {% for field in form %} 
+                        {% comment %} need to add if statement checking for form.id {% endcomment %}
+                            {{ field.label}} {{field}} 
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6">
+                        {% include "includes/tabular_inline.django" with inline_title="My Pathways" model_name="pathway" formset=my_pathways_formset %}
+                    </div>
+                {% comment %} </div> {% endcomment %}
+
+                {% comment %} <div class="row"> {% endcomment %}
+                    <div class="col-6">
+                        {% include "includes/tabular_inline.django" with inline_title="My Classes" model_name="class" formset=my_classes_formset %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <button type="submit" name="_continue" class="btn btn-lg btn-info">Save &amp; Continue</button>
+                <button type="submit" name="_save" class="btn btn-lg btn-primary">Save</button>
+            </div>
+        </div>
+
+    </form>
+
+{% endblock %}

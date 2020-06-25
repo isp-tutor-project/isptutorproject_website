@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 PRE = '00PRE'
 RQ = '05RQ'
@@ -81,25 +82,31 @@ class School(models.Model):
 
 class Teacher(models.Model):
     name = models.CharField(max_length=128, blank=False)
-    school = models.ForeignKey(School, on_delete=models.CASCADE)
+    description = models.CharField(max_length=128, default="", blank=True)
+    school = models.ForeignKey(School, null=False, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse('teacher-update', kwargs={'pk': self.pk})
+
     class Meta:
-        unique_together = [['name', 'school']]
+        unique_together = [['school', 'name']]
+
 
 
 class Pathway(models.Model):
     name = models.CharField(max_length=64, unique=False)
     description = models.CharField(max_length=128, default="", blank=True)
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
-
+    edit_link = models.URLField(max_length=64, default="pathway/edit", null=True)
+    
     def __str__(self):
         return self.name
-
-    class Meta:
-        unique_together = [['name', 'teacher']]
+    
+    def get_absolute_url(self):
+        return reverse('edit-pathway', args=[self.name])
 
 class Class(models.Model):
     name = models.CharField(max_length=64, null=False, help_text="teacher friendly name")
