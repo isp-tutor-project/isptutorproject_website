@@ -12,8 +12,6 @@
         {{ page.data.question.text | safe }}
     </p>
 
-    <div class="form-wrapper">
-        {{ forms.radios_form(page, isVert=true, marginLeft=40) }}
-    </div>
+    {{ forms.radios_form(page, isVert=true) }}
 
 {% endblock %}
