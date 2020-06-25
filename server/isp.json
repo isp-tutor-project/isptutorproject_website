@@ -1,20 +1,148 @@
 [
     {
+        "model": "isp.module",
+        "pk": 1,
+        "fields": {
+            "order": 10,
+            "name": "Pre-Training",
+            "description": ""
+        }
+    },
+    {
+        "model": "isp.module",
+        "pk": 2,
+        "fields": {
+            "order": 20,
+            "name": "Variables and Values",
+            "description": ""
+        }
+    },
+    {
+        "model": "isp.module",
+        "pk": 3,
+        "fields": {
+            "order": 30,
+            "name": "Research Question",
+            "description": ""
+        }
+    },
+    {
+        "model": "isp.module",
+        "pk": 4,
+        "fields": {
+            "order": 40,
+            "name": "Hypothesis",
+            "description": ""
+        }
+    },
+    {
+        "model": "isp.module",
+        "pk": 5,
+        "fields": {
+            "order": 50,
+            "name": "Plan Research",
+            "description": ""
+        }
+    },
+    {
+        "model": "isp.module",
+        "pk": 6,
+        "fields": {
+            "order": 60,
+            "name": "Basic Research",
+            "description": ""
+        }
+    },
+    {
+        "model": "isp.module",
+        "pk": 7,
+        "fields": {
+            "order": 70,
+            "name": "Procedures and Experimental Setup",
+            "description": ""
+        }
+    },
+    {
+        "model": "isp.module",
+        "pk": 8,
+        "fields": {
+            "order": 80,
+            "name": "TED",
+            "description": ""
+        }
+    },
+    {
+        "model": "isp.module",
+        "pk": 9,
+        "fields": {
+            "order": 90,
+            "name": "Materials",
+            "description": ""
+        }
+    },
+    {
+        "model": "isp.module",
+        "pk": 10,
+        "fields": {
+            "order": 100,
+            "name": "Conduct",
+            "description": ""
+        }
+    },
+    {
+        "model": "isp.module",
+        "pk": 11,
+        "fields": {
+            "order": 110,
+            "name": "Data Interpretation",
+            "description": ""
+        }
+    },
+    {
+        "model": "isp.module",
+        "pk": 12,
+        "fields": {
+            "order": 120,
+            "name": "Drawing Conclusions",
+            "description": ""
+        }
+    },
+    {
+        "model": "isp.module",
+        "pk": 13,
+        "fields": {
+            "order": 130,
+            "name": "Poster",
+            "description": ""
+        }
+    },
+    {
+        "model": "isp.module",
+        "pk": 14,
+        "fields": {
+            "order": 140,
+            "name": "Post-Training",
+            "description": ""
+        }
+    },
+    {
         "model": "isp.app",
         "pk": 1,
         "fields": {
-            "name": "RQ Module",
+            "name": "EF_RQSelect",
             "description": "",
-            "url": "/tutors/rqselect.html"
+            "url": "/tutors/rqselect.html",
+            "module": 3
         }
     },
     {
         "model": "isp.app",
         "pk": 2,
         "fields": {
-            "name": "Hypothesis Module",
+            "name": "Hypothesis App",
             "description": "",
-            "url": "/hypo-gr/"
+            "url": "/apps/hypo-gr/",
+            "module": 4
         }
     },
     {
@@ -23,7 +151,8 @@
         "fields": {
             "name": "DI Instruction",
             "description": "Data Interpretation Instruction app",
-            "url": "/di-instr/"
+            "url": "/apps/di-instr/",
+            "module": 11
         }
     },
     {
@@ -32,7 +161,8 @@
         "fields": {
             "name": "DI Pre-Test",
             "description": "Data Interpretation Pre-Test",
-            "url": "/di-prepost/pretest.html"
+            "url": "/apps/di-prepost/pretest.html",
+            "module": 1
         }
     },
     {
@@ -41,25 +171,28 @@
         "fields": {
             "name": "DI Post Test",
             "description": "Data Interpretation Post-Test",
-            "url": "/di-prepost/posttest.html"
+            "url": "/apps/di-prepost/posttest.html",
+            "module": 14
         }
     },
     {
         "model": "isp.app",
         "pk": 6,
         "fields": {
-            "name": "BRM",
+            "name": "BRM Website",
             "description": "Basic Research Module",
-            "url": "/brm/"
+            "url": "/apps/brm/",
+            "module": 6
         }
     },
     {
         "model": "isp.app",
         "pk": 7,
         "fields": {
-            "name": "WE BRM",
+            "name": "BRM Captivate",
             "description": "Worked Example BRM",
-            "url": "/we_brm/"
+            "url": "/apps/we_brm/",
+            "module": 6
         }
     },
     {
@@ -68,16 +201,28 @@
         "fields": {
             "name": "goodRQ",
             "description": "Selecting a Good Research Question Lesson",
-            "url": "/goodrq/"
+            "url": "/apps/goodrq/",
+            "module": 3
         }
     },
     {
         "model": "isp.app",
         "pk": 9,
         "fields": {
-            "name": "TED",
+            "name": "EF_TED",
             "description": "TED Tutor",
-            "url": "/tutors/ted.html"
+            "url": "/tutors/ted.html",
+            "module": 8
+        }
+    },
+    {
+        "model": "isp.app",
+        "pk": 10,
+        "fields": {
+            "name": "Hypothesis Captivate",
+            "description": "",
+            "url": "/apps/hypo-we",
+            "module": 4
         }
     },
     {
@@ -162,12 +307,59 @@
         }
     },
     {
+        "model": "isp.feature",
+        "pk": 10,
+        "fields": {
+            "name": "FTR_ONE_DIRECTIONAL",
+            "description": "One-Directional Hypothesis",
+            "app": 10
+        }
+    },
+    {
+        "model": "isp.feature",
+        "pk": 11,
+        "fields": {
+            "name": "FTR_BI_DIRECTIONAL",
+            "description": "BI-Directional Hypothesis",
+            "app": 10
+        }
+    },
+    {
+        "model": "isp.activitytype",
+        "pk": 1,
+        "fields": {
+            "order": 30,
+            "name": "WE",
+            "description": "Worked Example"
+        }
+    },
+    {
+        "model": "isp.activitytype",
+        "pk": 2,
+        "fields": {
+            "order": 50,
+            "name": "GR",
+            "description": "Guided Response"
+        }
+    },
+    {
+        "model": "isp.activitytype",
+        "pk": 3,
+        "fields": {
+            "order": 70,
+            "name": "Instruction",
+            "description": ""
+        }
+    },
+    {
         "model": "isp.activity",
         "pk": 1,
         "fields": {
             "name": "RQSelect (BaseLine)",
+            "description": "",
             "label": "Research Question Selection",
-            "app": 1
+            "app": 1,
+            "activity_type": 2
         }
     },
     {
@@ -175,8 +367,10 @@
         "pk": 2,
         "fields": {
             "name": "initial hyp w/o cpt map",
+            "description": "",
             "label": "Initial Hypothesis",
-            "app": 2
+            "app": 2,
+            "activity_type": 2
         }
     },
     {
@@ -184,8 +378,10 @@
         "pk": 3,
         "fields": {
             "name": "initial hypo w/ cpt map",
+            "description": "",
             "label": "Initial Hypothesis",
-            "app": 2
+            "app": 2,
+            "activity_type": 1
         }
     },
     {
@@ -193,8 +389,10 @@
         "pk": 4,
         "fields": {
             "name": "Final Hypo",
+            "description": "",
             "label": "Final Hypothesis",
-            "app": 2
+            "app": 2,
+            "activity_type": 2
         }
     },
     {
@@ -202,8 +400,10 @@
         "pk": 5,
         "fields": {
             "name": "RQSelect Choice",
+            "description": "",
             "label": "Research Question Selection",
-            "app": 1
+            "app": 1,
+            "activity_type": 2
         }
     },
     {
@@ -211,8 +411,10 @@
         "pk": 6,
         "fields": {
             "name": "RQSelect No-Choice Crystal",
+            "description": "",
             "label": "Research Question Selection",
-            "app": 1
+            "app": 1,
+            "activity_type": 2
         }
     },
     {
@@ -220,8 +422,10 @@
         "pk": 7,
         "fields": {
             "name": "DI Pre-Test",
+            "description": "",
             "label": "Data Interpretation Pre-Test",
-            "app": 4
+            "app": 4,
+            "activity_type": 3
         }
     },
     {
@@ -229,8 +433,10 @@
         "pk": 8,
         "fields": {
             "name": "DI Post Test",
+            "description": "",
             "label": "Data Interpretation Post-Test",
-            "app": 5
+            "app": 5,
+            "activity_type": 3
         }
     },
     {
@@ -238,8 +444,10 @@
         "pk": 9,
         "fields": {
             "name": "DI Instruction",
+            "description": "",
             "label": "Data Interpretation Lesson",
-            "app": 3
+            "app": 3,
+            "activity_type": 3
         }
     },
     {
@@ -247,8 +455,10 @@
         "pk": 10,
         "fields": {
             "name": "BRM",
+            "description": "",
             "label": "Basic Research",
-            "app": 6
+            "app": 6,
+            "activity_type": 2
         }
     },
     {
@@ -256,8 +466,10 @@
         "pk": 11,
         "fields": {
             "name": "WE BRM",
+            "description": "",
             "label": "Basic Research",
-            "app": 7
+            "app": 7,
+            "activity_type": 1
         }
     },
     {
@@ -265,8 +477,32 @@
         "pk": 12,
         "fields": {
             "name": "goodRQ",
+            "description": "",
             "label": "Selecting a Good Research Question Lesson",
-            "app": 8
+            "app": 8,
+            "activity_type": 3
+        }
+    },
+    {
+        "model": "isp.activity",
+        "pk": 13,
+        "fields": {
+            "name": "Hypothesis WE One-directional",
+            "description": "",
+            "label": "Hypothesis",
+            "app": 10,
+            "activity_type": 1
+        }
+    },
+    {
+        "model": "isp.activity",
+        "pk": 14,
+        "fields": {
+            "name": "Hypothesis WE Bi-directional",
+            "description": "",
+            "label": "Hypothesis",
+            "app": 10,
+            "activity_type": 1
         }
     },
     {
@@ -342,49 +578,19 @@
         }
     },
     {
-        "model": "isp.school",
-        "pk": 1,
+        "model": "isp.enabledfeature",
+        "pk": 10,
         "fields": {
-            "name": "school1"
+            "activity": 13,
+            "feature": 10
         }
     },
     {
-        "model": "isp.school",
-        "pk": 2,
+        "model": "isp.enabledfeature",
+        "pk": 11,
         "fields": {
-            "name": "school2"
-        }
-    },
-    {
-        "model": "isp.teacher",
-        "pk": 1,
-        "fields": {
-            "name": "Joe",
-            "school": 1
-        }
-    },
-    {
-        "model": "isp.teacher",
-        "pk": 2,
-        "fields": {
-            "name": "Sue",
-            "school": 1
-        }
-    },
-    {
-        "model": "isp.teacher",
-        "pk": 3,
-        "fields": {
-            "name": "Betty",
-            "school": 2
-        }
-    },
-    {
-        "model": "isp.teacher",
-        "pk": 4,
-        "fields": {
-            "name": "Sarah",
-            "school": 2
+            "activity": 14,
+            "feature": 11
         }
     }
 ]
