@@ -4,21 +4,24 @@
 {% import "link.njk" as link %}
 
 {% block rhs %}
-    {% vertcenter %}
-        <h1>
-            What is the <u>range</u> of a set of numbers?
-        </h1>
-        <p class="text-xl">
-            For example, in this set of dog weights (sorted from lowest to highest),
-            the range is calculated as:
-        </p>
-        <p class="text-xl text-centered">
-            <code>
-                64.7 - 9.2 = 55.5 lb
-            </code>
-        </p>
-        <p class="text-centered">
-            {{ link.namedTransition(page, "back", "back") }}
-        </p>
-    {% endvertcenter %}
+
+    <h1>
+        What is the <u>range</u> of a set of numbers?
+    </h1>
+
+    <p class="text-lg">
+        For example, in this set of dog weights (sorted from lowest to highest),
+        the range is calculated as:
+    </p>
+
+    <p class="text-lg text-centered">
+        <code>
+            64.7 - 9.2 = 55.5 lb
+        </code>
+    </p>
+
+    <p class="text-centered">
+        {{ link.namedTransition(page, "back", "back") }}
+    </p>
+
 {% endblock%}

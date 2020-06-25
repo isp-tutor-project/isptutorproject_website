@@ -11,6 +11,11 @@
   <p class="text-lg">
     What do you think these results suggest?
   </p>
-  <p class="text-lg">{{page.data.question.text}}</p>
-  {{ forms.radios_form(page, isVert=true, marginLeft=40) }}
+
+  <p class="text-lg">
+    {{page.data.question.text}}
+  </p>
+
+    {{ forms.radios_form(page, isVert=false) }}
+
 {% endblock %}

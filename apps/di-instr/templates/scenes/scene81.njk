@@ -3,10 +3,13 @@
 {% import "forms.njk" as forms %}
 
 {% block content %}
-    <img src="img/34_Graph_S78.png" class="img-centered" /> 
+
+    <img src="img/34_Graph_S78.png" class="img-centered" />
+
     <p class="text-lg">
         {{ page.data.question.text }}
     </p>
-    {{ forms.radios_form(page, isVert=true, marginLeft=45) }}
+
+    {{ forms.radios_form(page, isVert=false) }}
 
 {% endblock %}

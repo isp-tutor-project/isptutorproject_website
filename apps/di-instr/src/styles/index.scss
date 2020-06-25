@@ -1,28 +1,30 @@
+$my_path: "/apps/di-instr/";
+
 @use "~@isptutorproject/isp-site-styles" with (
-    $app_path: "/apps/di-instr/"
+    $app_path: $my_path
 );
 
-/* start of app-specific css */
+/*
+ * start of app-specific css
+ */
 main {
     height: 100%;
     width: 100%;
     margin: 0;
     background-color: white;
     font-size: 14pt;
-    border: solid #d6e9fc 40px;
+    // border: solid #d6e9fc 40px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
+h1, h2, h3, h4, h5 {
     text-align: center;
 }
 
 p {
     /* default to centered. use text-justify if you want to override */
     text-align: center;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
 }
 
 
@@ -49,8 +51,8 @@ p {
    2) div.centered (absolute positining)
 
    it then specified div.centered::top vai style="top:${fromTopPercent}%;"
-    
-*/ 
+
+*/
 div.centered-wrapper {
     position: relative;
     height: 100%;
@@ -71,8 +73,26 @@ div.centered {
     font-size: 24pt;
 }
 
+.single-column-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.centered-column {
+    position: absolute;
+    width: 100%;
+    height: max-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 .lhs {
     float: left;
+    position: relative;
     height: 100%;
     width: 50%;
     padding-left: 20px;
@@ -84,7 +104,9 @@ div.centered {
 }
 
 .rhs {
-    float: right;
+    // float: right;
+    float: left;
+    position: relative;
     height: 100%;
     width: 50%;
     padding-left: 20px;
@@ -108,7 +130,7 @@ div.centered {
     margin-left: auto;
     margin-right: auto;
 }
-/* 
+/*
 .centered-form-wrapper {
     position: relative;
     width: 60%;
@@ -158,7 +180,8 @@ ul.centered {
 .long-arrow-btn {
     position: absolute;
     margin: 0;
-    z-index: 3;    
+    z-index: 3;
+    top: calc(100% - 91px);
 }
 
 /* .long-arrow-btn.disabled {
@@ -169,24 +192,44 @@ ul.centered {
 
 .ready-to-answer-btn {
     /* image 209x81 */
-    top: calc(100% - 111px);
-    left: calc(100% - 241px);
-    content: url("/di-instr/img/readyToAnswerOrange.png");
+    left: calc(100% - 221px);
+    content: url($my_path + "/img/readyToAnswerOrange.png");
 }
 .ready-to-answer-btn:hover {
-    content: url("/di-instr/img/readyToAnswerYellow.png");
+    content: url($my_path + "/img/readyToAnswerYellow.png");
 }
 
 .back-to-question-btn {
     /* image is 209x81 */
-    top: calc(100% - 111px);
-    left: 30px;
-    content: url("/di-instr/img/backToQuestionOrange.png");
+    left: 10px;
+    content: url($my_path + "/img/backToQuestionOrange.png");
 }
 .back-to-question-btn:hover {
-    content: url("/di-instr/img/backToQuestionYellow.png");
+    content: url($my_path + "/img/backToQuestionYellow.png");
 }
 
+.form-wrapper {
+    // text-align: center;
+    width: 100%;
+    height: fit-content;
+
+}
+
+.form-content {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+// .centered-form {
+//     display: inline-block;
+//     margin-left: auto;
+//     margin-right: auto;
+//     // width: 100%;
+//     // text-align: left;
+// }
 
 .prev-btn {
     /* should get displayed on top of border*/
@@ -214,7 +257,7 @@ table.dogs-table {
     border-spacing: 0px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px; 
+    margin-top: 20px;
 }
 
 table.dogs-table td {

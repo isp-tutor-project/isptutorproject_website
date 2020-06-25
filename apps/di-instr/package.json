@@ -12,7 +12,8 @@
   "dependencies": {
     "@isptutorproject/isp-database": "0.1.0",
     "@isptutorproject/isp-site-styles": "0.1.0",
-    "@isptutorproject/scene-transitions-base": "0.1.0"
+    "@isptutorproject/scene-transitions-base": "0.1.0",
+    "@isptutorproject/snackbar": "0.1.0"
   },
   "devDependencies": {
     "@11ty/eleventy": "0.10.0",

@@ -3,15 +3,16 @@
 {% import "forms.njk" as forms %}
 
 {% block lhs %}
-    {% vertcenter 10%}
-        <img src="img/6_Table_S30.jpg" class="img-centered" />
-    {% endvertcenter %}
+    <img src="img/6_Table_S30.jpg" class="img-centered" />
 {% endblock %}
 
 
-{% block rhs_vert_centered %}
+{% block rhs %}
+
     <p class="text-lg">
         {{page.data.question.text}}
     </p>
-    {{ forms.radios_form(page, isVert=true, marginLeft=20) }}
+
+    {{ forms.radios_form(page, isVert=true) }}
+
 {% endblock %}

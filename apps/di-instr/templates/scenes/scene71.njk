@@ -3,15 +3,19 @@
 {% import "forms.njk" as forms %}
 
 {% block content %}
+
   <p class="text-lg">
-    Let’s answer the same question, looking at the number data (instead of the 
+    Let’s answer the same question, looking at the number data (instead of the
     histograms)...
   </p>
+
   <img src="img/27_ABTable_S71.png" class="img-centered" />
+
   <p class="text-lg">
     {{ page.data.question.text }}
     (Hint: Look at the ranges of the salt weights in each condition.)
   </p>
-  {{ forms.radios_form(page, isVert=true, marginLeft=30) }}
+
+  {{ forms.radios_form(page, isVert=false) }}
 
 {% endblock %}

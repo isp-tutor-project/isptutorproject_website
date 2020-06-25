@@ -7,12 +7,13 @@ heading: "Results B:"
 {% import "forms.njk" as forms %}
 
 {% block lhs %}
-    {% vertcenter 30 %}
-        <p class="text-lg">
-            {{ page.data.question.text }}
-        </p>
-        {{ forms.radios_form(page, isVert=true) }}
-    {% endvertcenter %}
+
+    <p class="text-lg">
+        {{ page.data.question.text }}
+    </p>
+
+    {{ forms.radios_form(page, isVert=true) }}
+
 {% endblock %}
 
 

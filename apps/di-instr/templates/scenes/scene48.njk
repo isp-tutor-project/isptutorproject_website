@@ -3,10 +3,15 @@
 {% import "forms.njk" as forms %}
 
 {% block content %}
+
     <h1>Results: weight of crystal growth</h1>
+
     <img src="img/19_S48.png" class="img-centered" />
+
     <p class="text-lg">
         {{ page.data.question.text | safe }}
     </p>
-    {{ forms.radios_form(page, isVert=true, marginLeft=35) }}
+
+    {{ forms.radios_form(page, isVert=true) }}
+
 {% endblock %}

@@ -1,4 +1,4 @@
-// needed for map-merge 
+// needed for map-merge
 @use "sass:map";
 $bg-default: white;
 $bg-secondary: #f7f7f7;
@@ -27,12 +27,12 @@ $theme-colors: map-merge(
 
 
 $font-sizes: (
-    "xxl": 32pt, 
-    "xl": 24pt, 
-    "lg": 18pt, 
-    "md": 14pt, 
-    "sm": 13pt, 
-    "xs": 12pt, 
+    "xxl": 32pt,
+    "xl": 24pt,
+    "lg": 18pt,
+    "md": 14pt,
+    "sm": 13pt,
+    "xs": 12pt,
     "xxs": 10pt
 );
 
@@ -42,6 +42,7 @@ $border-radius-increment:      .1rem !default;
 
 $btn-padding-x-default:        .375rem;
 $btn-padding-y-default:        .75rem;
+
 $btn-font-size-default:        map.get($font-sizes, "md");
 // $btn-font-size-default:  $btn-font-size;
 

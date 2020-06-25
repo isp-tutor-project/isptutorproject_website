@@ -4,27 +4,27 @@ export class DiMultipleChoiceFormScene extends DiInstructionScene {
     constructor(app, data) {
         super(app, data);
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
-        this.handleFormChange = this.handleFormChange.bind(this);
+        // this.handleFormChange = this.handleFormChange.bind(this);
         this.formInfo = data.question;
         this.form = document.getElementById(`${this.id}_radio_form`);
-        this.fbRegion = document.getElementById(
-            `${this.id}_feedback_region`
-        );
+        // this.fbRegion = document.getElementById(
+        //     `${this.id}_feedback_region`
+        // );
         this.radios = this.form.querySelectorAll('input[type="radio"]');
         this.submitBtn = document.getElementById(`${this.id}_submit_btn`);
     }
 
-    hideFeedbackRegion() {
-        this.app.makeInvisible(this.fbRegion);
-    }
+    // hideFeedbackRegion() {
+    //     this.app.makeInvisible(this.fbRegion);
+    // }
 
-    showFeedbackRegion() {
-        this.app.makeVisible(this.fbRegion);
-    }
+    // showFeedbackRegion() {
+    //     this.app.makeVisible(this.fbRegion);
+    // }
 
-    handleFormChange(e) {
-        this.hideFeedbackRegion();
-    }
+    // handleFormChange(e) {
+    //     this.hideFeedbackRegion();
+    // }
 
     handleFormSubmit(e) {
         e.preventDefault();
@@ -57,11 +57,14 @@ export class DiMultipleChoiceFormScene extends DiInstructionScene {
                 fbText = sfi.ntlFb;
                 fbClassName = 'ntl-feedback';
             }
-            if (this.fbRegion && fbText) {
-                this.fbRegion.innerHTML = `<span class="${fbClassName}">
+            // if (this.fbRegion && fbText) {
+            if (fbText) {
+                let fbMsg =  `<span class="${fbClassName}">
                     ${fbText}
                 </span>`;
-                this.showFeedbackRegion();
+                this.app.showFeedback(fbMsg);
+                // this.fbRegion.innerHTML = fbMsg;
+                // this.showFeedbackRegion();
             }
             // what we want to store in firestore
             let log = {
@@ -81,10 +84,12 @@ export class DiMultipleChoiceFormScene extends DiInstructionScene {
             this.app.disable(this.submitBtn);
             this.app.enable(this.app.nextBtn);
             this.app.enable(this.app.prevBtn);
-        } else if (this.fbRegion) {
-            this.fbRegion.innerHTML =
-                `<span class="text-danger">Please select an option</span>`;
-            this.showFeedbackRegion();
+        // } else if (this.fbRegion) {
+        } else {
+            let fbMsg = `<span class="text-danger">Please select an option</span>`;
+            this.app.showFeedback(fbMsg);
+            // this.fbRegion.innerHTML = fbMsg;
+            // this.showFeedbackRegion();
         }
     }
 

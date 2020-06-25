@@ -287,7 +287,7 @@ const diInstructionData = {
                     name: "showBtns",
                     args: ["backToQuestion"]
                 },
-                { 
+                {
                     name: "hiliteTableCells", args: {
                         table: "dogs_table",
                         cellSelectors: [".row1.col2", ".row15.col2"],
@@ -622,7 +622,7 @@ const diInstructionData = {
             },
             question: {
                 type: "survey",
-                text: "How sure are you that the independent variable (water temperature) -- rather than random errors -- caused this difference?",  
+                text: "How sure are you that the independent variable (water temperature) -- rather than random errors -- caused this difference?",
                 correctAnswer: "N/A",
                 ntlFb: "Thanks!",
                 options: SURVEY_OPTIONS
@@ -950,6 +950,9 @@ const diInstructionData = {
             question: {
                 type: "survey",
                 text: "How sure are you that water temperature caused this difference in means?",
+                correctAnswer: "N/A",
+                ntlFb: "Thanks!",
+                options: SURVEY_OPTIONS
             }
         },
         scene65: {
@@ -974,7 +977,7 @@ const diInstructionData = {
                     { value: "a", label: "Results A" },
                     { value: "b", label: "Results B" },
                     { value: "c", label: "They are the same." }
-                ]    
+                ]
             }
         },
         scene67: {

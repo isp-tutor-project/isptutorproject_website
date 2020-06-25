@@ -1,9 +1,12 @@
 @use "sass:map";
 @import "variables";
 
-$app_path: "" !default;
 
-/* start of styles imported from isp-site-styles */
+/*
+ * start of styles imported from isp-site-styles
+ */
+
+ $app_path: "" !default;
 
 * {
     box-sizing: border-box;
@@ -40,7 +43,7 @@ body {
     text-align: justify;
 }
 
-// useful for development to see borders of elements 
+// useful for development to see borders of elements
 .dev {
     border: solid hotpink 1px;
 }
@@ -61,13 +64,15 @@ body {
 .btn.disabled {
     opacity: 0.5;
     cursor: not-allowed;
-    pointer-events: none;   
+    pointer-events: none;
 }
 
 
 @mixin button($size) {
     font-size:      map.get($font-sizes, $size);
-    padding: map.get($btn-padding-y, $size) map.get($btn-padding-x, $size);
+    // padding: 0.5em 0.75em;
+    padding: 0.35em 0.50em;
+    // map.get($btn-padding-y, $size) map.get($btn-padding-x, $size);
 
     // .btn-rounded {
     border-radius:  map.get($border-radius, $size);
@@ -165,4 +170,6 @@ button.link.visited {
 // }
 
 
-/* end of styles imported from isp-site-styles */
+/*
+ * end of styles imported from isp-site-styles
+ */
