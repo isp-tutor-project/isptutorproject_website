@@ -1,4 +1,4 @@
-{% extends "teachers/teacher_base.django" %}
+{% extends "teacher_base.django" %}
 
 {% block content %}
 
