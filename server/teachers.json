@@ -1,11 +1,118 @@
 [
     {
-        "model": "teachers.class",
+        "model": "isp.teacher",
         "pk": 1,
         "fields": {
-            "name": "Class1",
-            "classcode": "class1",
-            "teacher": "Joe"
+            "name": "Joe",
+            "school": "school1",
+            "description": ""
+        }
+    },
+    {
+        "model": "isp.teacher",
+        "pk": 2,
+        "fields": {
+            "name": "Sue",
+            "school": "school1",
+            "description": ""
+        }
+    },
+    {
+        "model": "isp.teacher",
+        "pk": 3,
+        "fields": {
+            "name": "Betty",
+            "school": "school2",
+            "description": ""
+        }
+    },
+    {
+        "model": "isp.teacher",
+        "pk": 4,
+        "fields": {
+            "name": "Sarah",
+            "school": "school2",
+            "description": ""
+        }
+    },
+    {
+        "model": "isp.pathway",
+        "pk": 1,
+        "fields": {
+            "name": "pathway5",
+            "description": "",
+            "teacher": 1
+        }
+    },
+    {
+        "model": "isp.pathway",
+        "pk": 2,
+        "fields": {
+            "name": "pathway1",
+            "description": "",
+            "teacher": 4
+        }
+    },
+    {
+        "model": "isp.pathway",
+        "pk": 3,
+        "fields": {
+            "name": "pathway1",
+            "description": "",
+            "teacher": 3
+        }
+    },
+    {
+        "model": "isp.pathway",
+        "pk": 4,
+        "fields": {
+            "name": "pathway2",
+            "description": "",
+            "teacher": 3
+        }
+    },
+    {
+        "model": "isp.orderedactivity",
+        "pk": 1,
+        "fields": {
+            "pathway": 1,
+            "order": 1,
+            "activity": 5
+        }
+    },
+    {
+        "model": "isp.orderedactivity",
+        "pk": 2,
+        "fields": {
+            "pathway": 1,
+            "order": 3,
+            "activity": 4
+        }
+    },
+    {
+        "model": "isp.class",
+        "pk": 1,
+        "fields": {
+            "name": "class1",
+            "teacher": 1
+        }
+    },
+    {
+        "model": "isp.student",
+        "pk": 1,
+        "fields": {
+            "name": "Sally",
+            "pathway": null,
+            "classname": 1
+        }
+    },
+    {
+        "model": "isp.student",
+        "pk": 2,
+        "fields": {
+            "name": "Bob",
+            "pathway": null,
+            "classname": 1
         }
     }
 ]
