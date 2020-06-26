@@ -66,13 +66,13 @@ class ActivityTypeAdmin(admin.ModelAdmin):
     list_display = ('order', 'name', 'description')
 
 
-def app_module(obj):
+def module(obj):
     return obj.app.module
 
 
 @admin.register(Activity)
 class ActivityAdmin(admin.ModelAdmin):
-    list_display = ('name', 'app', app_module, 'activity_type', 'description')
+    list_display = ('name', 'app', module, 'activity_type', 'description')
     inlines = [ EnabledFeatureInline ]
 
     def get_inline_instances(self, request, obj=None):
