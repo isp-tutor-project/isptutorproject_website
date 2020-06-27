@@ -3,6 +3,8 @@ wwwroot
 
 # symlinks
 apps/*/templates/_includes/site
+apps/hypo-we/templates/public/index.html
+
 # duplicate files
 apps/*/templates/img/site
 
