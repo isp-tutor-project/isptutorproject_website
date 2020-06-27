@@ -1,9 +1,7 @@
 import "./styles/index.scss";
 
-import { HypoWEApp } from "./hypo-we-app";
+function initApp() {
+    console.log("app initted");
+}
 
-let appData = require("../data/hypoWE.json");
-
-let app = new HypoWEApp(appData);
-app.setStartScene("selectVIN");
-
+initApp();

@@ -1,63 +1,20 @@
-$my_path: "/apps/hypo-we/";
+* {
+    box-sizing: border-box;
+}
 
-@use "~@isptutorproject/isp-site-styles" with (
-    $app_path: $my_path
-);
-
-/* start of app-specific css */
-
-
-main {
-    height: 100%;
+body, html {
     width: 100%;
+    height: 100%;
     margin: 0;
-    background-color: white;
-    font-size: 14pt;
-    // border: solid #d6e9fc 40px;
 }
 
-input:invalid:required {
-  border: 1px solid #900;
-  background-color: #FDD;
-}
-
-.scene {
-    position: relative;
-    display: none;
-    // top: 0;
-    // left: 0;
-    height: 100%;
+header {
+    height: 50px;
     width: 100%;
-    // padding-left: 20px;
-    // padding-right: 20px;
-}
-.scene.active {
-    display: block;
 }
 
-.single-column-content {
-    position: absolute;
-    width: 90%;
-    height: 90%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+iframe {
+    width: 100%;
+    height: calc(100% - 50px);
+    border: 0;
 }
-
-.vin-wrapper {
-    width: 288px * .7;
-    height: 425px * .7;
-    display: inline-flex;
-}
-
-.vin-img {
-    width: 288px * .7;
-    height: 425px * .7;
-}
-
-.vin-mya { content: url($my_path + "img/VIN_1.png"); }
-.vin-joy { content: url($my_path + "img/VIN_2.png"); }
-.vin-fin { content: url($my_path + "img/VIN_3.png"); }
-.vin-tom { content: url($my_path + "img/VIN_4.png"); }
-.vin-meg { content: url($my_path + "img/VIN_5.png"); }
-.vin-joe { content: url($my_path + "img/VIN_6.png"); }
