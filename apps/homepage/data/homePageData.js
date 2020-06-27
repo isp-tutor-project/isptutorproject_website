@@ -19,6 +19,26 @@ export const activities = [
         implemented: false
     },
     {
+        label: "Research Question Selection (No Choice Crystal)",
+        phase: "rqSelect",
+        storageInfo: {
+            currentActivity: "rqSelect",
+            activityFeatures: "FTR_WEB:FTR_NOCHOICE:FTR_NCCRYSTAL"
+        },
+        url: "/tutors/rqSelect.html",
+        implemented: false
+    },
+    {
+        label: "Research Question Selection (Choice)",
+        phase: "rqSelect",
+        storageInfo: {
+            currentModule: "rqSelect",
+            activityFeatures: "FTR_WEB:FTR_CHOICE"
+        },
+        url: "/tutors/rqSelect.html",
+        implemented: false
+    },
+    {
         label: "Hypothesis (definition pages only)",
         phase: "reference",
         storageInfo: {
@@ -26,7 +46,7 @@ export const activities = [
             activityFeatures: "FTR_WEB:FTR_DEFS_ONLY"
         },
         url: "/apps/hypo-gr/",
-        implemented: true
+        implemented: false
     },
     {
         label: "Hypothesis (Initial Hypo w/o CptMap)",
@@ -36,7 +56,7 @@ export const activities = [
             activityFeatures: "FTR_WEB:FTR_INITIAL_HYP:FTR_NOCPTMAP"
         },
         url: "/apps/hypo-gr/",
-        implemented: true
+        implemented: false
     },
     {
         label: "Hypothesis (Initial Hypo with CptMap)",
@@ -46,7 +66,7 @@ export const activities = [
             activityFeatures: "FTR_WEB:FTR_INITIAL_HYP"
         },
         url: "/apps/hypo-gr/",
-        implemented: true
+        implemented: false
     },
     {
         label: "Hypothesis (Initial Hypo Bi-Directional)",
@@ -56,7 +76,7 @@ export const activities = [
             activityFeatures: "FTR_WEB:FTR_INITIAL_HYP:FTR_BI_DIR"
         },
         url: "/apps/hypo-gr/",
-        implemented: true
+        implemented: false
     },
     {
         label: "Hypothesis (final hypothesis)",
@@ -66,6 +86,26 @@ export const activities = [
             activityFeatures: "FTR_WEB:FTR_FINAL_HYP:FTR_NO_DEFS"
         },
         url: "/apps/hypo-gr/",
+        implemented: false
+    },
+    {
+        label: "Hypothesis WE (one-directional)",
+        phase: "hypo",
+        storageInfo: {
+            currentActivity: "hypoWE",
+            activityFeatures: "FTR_ONE_DIRECTIONAL"
+        },
+        url: "/apps/hypo-we/",
+        implemented: true
+    },
+    {
+        label: "Hypothesis WE (bi-directional)",
+        phase: "hypo",
+        storageInfo: {
+            currentActivity: "hypoWE",
+            activityFeatures: "FTR_BI_DIRECTIONAL"
+        },
+        url: "/apps/hypo-we/",
         implemented: true
     },
     {
@@ -87,23 +127,3 @@ export const activities = [
         implemented: true
     }
 ];
-// {
-//     label: "Research Question Selection (No Choice Crystal)",
-//         phase: "rqSelect",
-//             storageInfo: {
-//         currentActivity: "rqSelect",
-//             activityFeatures: "FTR_WEB:FTR_NOCHOICE:FTR_NCCRYSTAL"
-//     },
-//     url: "/tutors/rqSelect.html",
-//         implemented: false
-// },
-// {
-//     label: "Research Question Selection (Choice)",
-//         phase: "rqSelect",
-//             storageInfo: {
-//         currentModule: "rqSelect",
-//             activityFeatures: "FTR_WEB:FTR_CHOICE"
-//     },
-//     url: "/tutors/rqSelect.html",
-//         implemented: false
-// },
