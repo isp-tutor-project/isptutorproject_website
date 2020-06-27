@@ -13,7 +13,7 @@
     "setup": "cd templates/_includes && ln -sf ../../../../config/eleventy-config/sitewide_includes site"
   },
   "devDependencies": {
-    "@11ty/eleventy": "0.10.0",
-    "@isptutorproject/eleventy-config": "0.1.0"   
+    "@11ty/eleventy": "0.11.0",
+    "@isptutorproject/eleventy-config": "0.1.0"
   }
 }
