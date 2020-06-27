@@ -3,24 +3,25 @@ const path = require("path");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const merge = require("webpack-merge");
-const dev    = require('@isptutorproject/webpack-config/webpack.dev');
-const prod   = require('@isptutorproject/webpack-config/webpack.prod');
+const dev = require('@isptutorproject/webpack-config/webpack.dev');
+const prod = require('@isptutorproject/webpack-config/webpack.prod');
 const common = require("@isptutorproject/webpack-config/webpack.common");
 
 let cfg = {
     entry: {
-        "hypo-we": './src/index.js',
+        hypowe: "./src/index.js",
+        iframe: "./src/iframe.js"
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: "[name].bundle.js"
+        filename: '[name].bundle.js'
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: "hypo-we.bundle.css"
+            filename: "hypowe.bundle.css"
         }),
     ]
-}
+};
 
 let build;
 

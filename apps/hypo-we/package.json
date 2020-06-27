@@ -1,29 +1,23 @@
 {
   "name": "@isptutorproject/hypo-we",
   "version": "0.1.0",
-  "description": "Worked Example Hypo Module",
   "main": "src/index.js",
-  "license": "Proprietary",
+  "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "build": "npm run setup && rimraf dist && node scripts/buildData.js && NODE_ENV=production DEBUG=false webpack --mode=production && eleventy",
-    "watch": "npm run setup && rimraf dist && node scripts/buildData.js && NODE_ENV=development DEBUG=true webpack --watch --mode=development & eleventy --watch",
-    "setup": "cd templates/_includes && ln -sfn ../../../../config/eleventy-config/sitewide_includes site && cd ../.. && cd templates/img && mkdir -p site && cp -r ../../../../config/eleventy-config/sitewide_images/* site && cd ../.."
+    "build": "rimraf dist && webpack --mode=production && eleventy"
   },
   "dependencies": {
-    "@isptutorproject/isp-database": "0.1.0",
-    "@isptutorproject/isp-site-styles": "0.1.0",
-    "@isptutorproject/scene-transitions-base": "0.1.0"
+    "@isptutorproject/isp-database": "0.1.0"
   },
   "devDependencies": {
     "@11ty/eleventy": "0.11.0",
-    "@isptutorproject/isp-data": "0.1.0",
-    "@isptutorproject/eleventy-config": "0.1.0",
+    "@isptutorproject/captivate-save-questions": "0.1.0",
+    "@isptutorproject/build-captivate-app": "0.1.0",
     "@isptutorproject/webpack-config": "0.1.0",
+    "@isptutorproject/eleventy-config": "0.1.0",
     "rimraf": "^3.0.2",
-    "sass": "^1.26.5",
-    "sass-loader": "^8.0.2",
-    "webpack": "^4.43.0",
-    "webpack-cli": "3.3.11"
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
   }
 }
