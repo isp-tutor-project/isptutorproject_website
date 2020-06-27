@@ -9,8 +9,12 @@
 			"path": "apps/isp-static"
 		},
 		{
-			"name": "📦 @isptutorproject/isp-site-styles",
-			"path": "common/isp-site-styles"
+			"name": "📦 @isptutorproject/build-captivate-app",
+			"path": "common/build-captivate-app"
+		},
+		{
+			"name": "📦 @isptutorproject/captivate-save-questions",
+			"path": "common/captivate-save-questions"
 		}
 	],
 	"settings": {
