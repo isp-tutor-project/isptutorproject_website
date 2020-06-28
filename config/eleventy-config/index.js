@@ -1,6 +1,8 @@
 const prettier = require("prettier");
 const uuidV1 = require("uuid/v1");
 
+import { captivate } from "./captivate";
+
 // both indents html output and catches some html syntax errors
 function prettify(content, outputPath) {
     if (outputPath && outputPath.endsWith(".html")) {
@@ -43,5 +45,6 @@ module.exports = {
     uuid,
     verticallyCenter,
     jsonify,
-    mergeScenesWithData
+    mergeScenesWithData,
+    captivate
 };
