@@ -4,6 +4,7 @@ const INDEX_HTML_HEAD_SNIPPET = `
 <script src="https://www.gstatic.com/firebasejs/6.2.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.2.1/firebase-firestore.js"></script>
 `;
+
 const INDEX_HTML_BODY_SNIPPET = `
 <script src="../iframe.bundle.js"></script>
 `;
@@ -32,12 +33,6 @@ function computeHtmlFilePaths() {
 function configure(options={}) {
     console.log(JSON.stringify(options));
     eleventyOutputPath = options.eleventyOutputPath || DEFAULT_ELEVENTY_OUTPUT_PATH;
-    // publicPath = options.publicDestPath || DEFAULT_PUBLIC_DEST_PATH;
-    // if (options.noIframe) {
-    //     destDir = "";
-    //     destPath = ".";
-    // }  else {
-    // }
     destDir = DEFAULT_PUBLIC_DEST_PATH;
     destPath = DEFAULT_PUBLIC_DEST_PATH;
     computeHtmlFilePaths();
@@ -67,13 +62,6 @@ function dispSettings() {
     `);
 }
 
-
-function setOutputDir(dirName) {
-    outputDir = dirname;
-}
-function noIframe() {
-    destDir = "";
-}
 
 function setCustomPassthroughs(customPassThroughs) {
     PASS_THRUS = customPassThroughs;
@@ -125,8 +113,6 @@ function mungeGoodbyeHtml(content, outputPath) {
 const captivate = {
     DEFAULT_PASS_THRUS,
     configure,
-    // setOutputDir,
-    // noIframe,
     setCustomPassthroughs,
     setupPassthroughsCopys,
     mungeIndexHtml,
@@ -136,67 +122,3 @@ const captivate = {
 module.exports = {
     captivate
 };
-
-// let iframeMode = false;
-// let args = process.argv;
-// if (3 === args.length && "iframe" === args[2]) {
-//     iframeMode = true;
-// }
-
-// const fs = require("fs");
-// const copyFiles = require("copyfiles");
-
-// files relative to this script
-// const headSnippetFile = path.join(__dirname, "headSnippet.html");
-// const bodySnippetFile = path.join(__dirname, "bodySnippet.html");
-// const headSnippet = fs.readFileSync(headSnippetFile,
-//     { encoding: "utf8" });
-// const bodySnippet = fs.readFileSync(bodySnippetFile,
-//     { encoding: "utf8" });
-
-
-// files relative to project we're building
-// const projectDir = path.basename(process.cwd());
-// const publicDir  = path.join(".", "public");
-// const srcDir     = path.join(".", "src");
-// let buildDir;
-// buildDir   = path.join(".", "dist");
-// if (iframeMode) {
-//     buildDir = path.join(".", "dist", "public")
-// }
-// const inputHtmlFile  = path.join(publicDir,  "index.html");
-// let outputHtmlFile;
-// if (iframeMode) {
-//     outputHtmlFile = path.join(buildDir, "public", "index.html");
-// } else {
-    // outputHtmlFile = path.join(buildDir, "index.html");
-// }
-
-// function old_mungeIndexHtml() {
-//     let html = fs.readFileSync(inputHtmlFile, { encoding: 'utf8' });
-//     html = html.replace("</head>", `${headSnippet}</head>`);
-//     html = html.replace("</body>", `${bodySnippet}</body>`);
-//     fs.writeFileSync(outputHtmlFile, html);
-// }
-
-// // NOTE: this is asyncronous
-// function wrap_copyfiles() {
-//     copyFiles([
-//             `${publicDir}/*`,
-//             `${publicDir}/**/*`,
-//             `${publicDir}/**/**/*`,
-//             buildDir
-//         ], {
-//             up: 1,
-//             verbose: true
-//         },
-//         (err) => {
-//             if (err) {
-//                 throw(err);
-//             }
-//             // call placed here, so it occurs syncronously after file copies
-//             // (if successful)
-//             mungeIndexHtml();
-//         }
-//     );
-// }
