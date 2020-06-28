@@ -1,6 +1,7 @@
 {
-  "name": "@isptutorproject/captivate-save-questions",
+  "name": "@isptutorproject/isp-captivate",
   "version": "0.1.0",
+  "description": "javascript for isp captivate activities",
   "main": "index.js",
   "license": "UNLICENSED",
   "private": true
