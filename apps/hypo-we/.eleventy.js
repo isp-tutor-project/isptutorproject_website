@@ -1,45 +1,27 @@
-const fs = require("fs");
-const path = require("path");
 
-// const {
-//     prettify,
-// // } = require("@isptutorproject/eleventy-config");
-// const {
-//     configureCaptivatePassThrus,
-//     mungeIndexHtml,
-//     mungeGoodbyeHtml
-// } =
-const {captivate} = require("@isptutorproject/build-captivate-app");
-// console.log(captivate);
-// uuid,
+const {
+    prettify,
+    captivate
+} = require("@isptutorproject/eleventy-config")
+//     uuid,
 //     jsonify,
-//     mergeScenesWithData
-// verticallyCenter,
-// eleventyConfig.addPairedShortcode("vertcenter", verticallyCenter);
+
 
 
 module.exports = function(eleventyConfig) {
-    // eleventyConfig.addTransform("prettier", prettify);
+    eleventyConfig.addTransform("prettier", prettify);
     // eleventyConfig.addNunjucksFilter("jsonify", jsonify);
     // eleventyConfig.addNunjucksFilter("uuid", uuid);
-    // captivate.configure({
-    //     noIframe: true
-    // });
     captivate.setupPassthroughsCopys(eleventyConfig);
-    // eleventyConfig.addPassthroughCopy("public");
+    eleventyConfig.addPassthroughCopy("templates/img");
     eleventyConfig.addTransform("mungeIndexHtml", captivate.mungeIndexHtml);
-
-    // eleventyConfig.addCollection("hypoWEScenesWithData", function (collection) {
-    //     let scenes = collection.getFilteredByTag("hypoWEScenes");
-    //     let sceneData = collection.getAll()[0].data.hypoWE.scenes;
-    //     return mergeScenesWithData(scenes, sceneData);
-    // });
 
     return {
         dir: {
             input: "templates",
             output: "dist",
         },
+        // html needed for captivate project html file munging transforms
         templateFormats: ["njk", "html"]
     }
 }
