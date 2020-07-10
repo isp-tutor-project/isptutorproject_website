@@ -1,64 +1,151 @@
-const EVT_ON_VAR_CHANGE = "CPAPI_VARIABLEVALUECHANGED";
-const EVT_ON_SLIDE_ENTER = "CPAPI_SLIDEENTER";
-const EVT_ON_SLIDE_EXIT = "CPAPI_SLIDEEXIT";
-const EVT_ON_QUES_SUBMIT = "CPAPI_QUESTIONSUBMIT";
+export const EVT_ON_VAR_CHANGE  = "CPAPI_VARIABLEVALUECHANGED";
+export const EVT_ON_SLIDE_ENTER = "CPAPI_SLIDEENTER";
+export const EVT_ON_SLIDE_EXIT  = "CPAPI_SLIDEEXIT";
+export const EVT_ON_QUES_SUBMIT = "CPAPI_QUESTIONSUBMIT";
 
 
-class ISPCaptivateActivity {
-    constructor(varsToTrack) {
-        this.varsToTrack = varsToTrack;
-        this.state = {
-        };
+const INITIAL_STATE = {
+    transitions: [],
+    answers: [],
+    variableChanges: []
+};
+
+export class ISPCaptivateActivity {
+    constructor(cpAPI, db, variablesToTrack) {
         // bind event handlers
-        this.onModuleReady = this.onModuleReady.bind(this);
-        this.onSlideTransition = this.onSlideTransition.bind(this);
-        this.onVarChange = this.onVarChange.bind(this);
+        this.onSlideEnter = this.onSlideEnter.bind(this);
+        // this.onSlideTransition = this.onSlideTransition.bind(this);
         this.onQuestionSubmit = this.onQuestionSubmit.bind(this);
-        // add event handler for initialization
-        window.addEventListener("moduleReadyEvent", this.onModuleReady);
-        this.prevSlide = "";
+        this.onVarChange = this.onVarChange.bind(this);
+        this.cpAPI = cpAPI;
+        this.cpEventEmitter = this.cpAPI.getEventEmitter();
+        this.variablesToTrack = variablesToTrack;
+        this.userID = localStorage.getItem("userID");
+        this.classCode = localStorage.getItem("classCode");
+        this.currentActivity = localStorage.getItem("currentActivity");
+        this.features = (localStorage.getItem("currentActivityFeatures") || "")
+                        .split(":").filter((item) => item !== "");
+        this.db = db;
     }
 
-    onModuleReady(event) {
-        // event.Data is the same as window.cpAPIInterface
-        this.cpAPI = event.Data;
-        this.cpEventEmitter = cpAPI.getEventEmitter();
-        this.setupEventHandlers();
+
+    init() {
+        this.db.setCredentials(this.classCode, this.userID);
+        this.db.getActiityData(this.currentActivity)
+        .then((data) => {
+            if (typeof(data) === "undefined" || null === data) {
+                // if no state exists in db, copy INITIAL_STATE
+                this.state = { ...INITIAL_STATE };
+            } else {
+                this.state = data;
+            }
+            this.showState();
+            return this.state;
+        })
+        .then(() => {
+            // do some stuff beforehand (if necessary) prior to
+            // setting up event handlers
+            this.processFeatures();
+            this.restoreCaptivateState();
+            this.setupEventHandlers();
+        });
+
     }
+
+    processFeatures() {
+
+    }
+
+    showState() {
+        console.log(this.state);
+    }
+
+    pushTransition(transition) {
+        // console.log(transition);
+        this.state.transitions.push(transition);
+        this.showState();
+    }
+
+    pushAnswer(answer) {
+        // console.log(answer);
+        this.state.answers.push(answer);
+        this.showState();
+    }
+
+    pushVarChange(varChange) {
+        if (typeof (this.state.variableChanges) === "undefined") {
+            this.state.variableChanges = [];
+        }
+        this.state.variableChanges.push(varChange);
+        this.showState();
+    }
+
 
     setupEventHandlers() {
-        cpEventEmitter.addEventListener(EVT_ON_SLIDE_ENTER, onSlideTransition);
-        cpEventEmitter.addEventListener(EVT_ON_SLIDE_EXIT, onSlideTransition);
-        cpEventEmitter.addEventListener(EVT_ON_QUES_SUBMIT, onQuestionSubmit);
-        for (let varName of this.varsToTrack) {
-            cpEventEmitter.addEventListener(
-                EVT_ON_VAR_CHANGE, onVarChange, varName
+        this.cpEventEmitter.addEventListener(EVT_ON_SLIDE_ENTER,
+                                             this.onSlideEnter);
+        // this.cpEventEmitter.addEventListener(EVT_ON_SLIDE_EXIT,
+        //                                      this.onSlideTransition);
+        this.cpEventEmitter.addEventListener(EVT_ON_QUES_SUBMIT,
+                                             this.onQuestionSubmit);
+        for (let varName of self.variablesToTrack) {
+            this.cpEventEmitter.addEventListener(
+                EVT_ON_VAR_CHANGE, this.onVarChange, varName
             );
         }
+        this.setupCustomEventHandlers();
     }
 
-    onSlideTransition(evt) {
-        // console.log(evt);
-        const transitionType = ("CPSlideEnter" === evt.cpName) ? "enter" : "exit";
-        let label = evt.cpData.lb;
-        const slideNumber = `${evt.cpData.slideNumber}`;
-        if ("" === label) {
-            label = slideNumber;
-        }
-        const now = new Date().toLocaleString();
-        console.log(`${now}:: ${transitionType}ing slide: ${label}`);
+    setupCustomEventHandlers() {
+        // hook for initializing any custom event handlers
+    }
+
+    onSlideEnter(evt) {
+        this.pushTransition({
+            slide_number: evt.cpData.slideNumber,
+            slide_label: evt.cpData.lb,
+            timestamp: Date.now()
+        });
+    }
+
+    // onSlideTransition(evt) {
+    //     // console.log(evt);
+    //     const transitionType = ("CPSlideEnter" === evt.cpName) ? "enter" : "exit";
+    //     let label = evt.cpData.lb;
+    //     const slideNumber = `${evt.cpData.slideNumber}`;
+    //     if ("" === label) {
+    //         label = slideNumber;
+    //     }
+    //     const now = Date.now();
+    //     console.log(`${now}:: ${transitionType}ing slide: ${label}`);
+    // }
+
+    onQuestionSubmit(evt) {
+        let data = Object.assign(evt.cpData, {timestamp: Date.now()});
+        this.pushAnswer(data);
     }
 
     onVarChange(evt) {
+        const now = Date.now();
         const varName = evt.cpData.varName;
-        const oldVal = evt.cpData.oldVal;
         const newVal = evt.cpData.newVal;
-        const now = new Date().toLocaleString();
-        console.log(`${now}:: variable ${varName} changed from: "${oldVal}" to: "${newVal}"`);
+        const oldVal = evt.cpData.oldVal;
+        this.state[varName] = newVal;
+        this.pushVarChange({
+            variable: varName,
+            newValue: newVal,
+            oldValue: oldVal,
+            timestamp: now
+        });
     }
 
-    onQuestionSubmit(evt) {
-        console.log(evt);
+    gotoSlide(slideNumber) {
+        console.log("manually navigating to slide:", slideNumber);
+        this.cpAPI.gotoSlide(slideNumber);
+    }
+
+    setCaptivateVariable(varName, value) {
+        this.cpAPI.setVariableValue(varName, value);
     }
 
 }
