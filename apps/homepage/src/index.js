@@ -220,8 +220,8 @@ registerBackBtn.addEventListener("click", indexPage);
 loginSubmitBtn.addEventListener("click", e => {
     e.preventDefault();
     if (parseUserForm("login", loginForm)) {
-        db.setCredentials(classCode, userID)
-        .then(() => db.getUserData())
+        db.setCredentials(classCode, userID);
+        db.getUserData()
         .then((userData) => {
             if (userData) {
                 console.log("Account found");
@@ -241,8 +241,8 @@ loginSubmitBtn.addEventListener("click", e => {
 registerSubmitBtn.addEventListener("click", e => {
     e.preventDefault();
     if (parseUserForm("register", registrationForm)) {
-        db.setCredentials(classCode, userID)
-        .then(() => db.getUserData())
+        db.setCredentials(classCode, userID);
+        db.getUserData()
         .then((userData) => {
             if (userData) {
                 console.log("Account already exists");
