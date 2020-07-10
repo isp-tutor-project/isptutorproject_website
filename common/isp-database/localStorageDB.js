@@ -11,10 +11,10 @@ export class LocalStorageDB extends Database {
 
     setCredentials(classCode, userID) {
         super.setCredentials(classCode, userID);
-        return Promise.all([
-            this.saveValue("classCode", classCode),
-            this.saveValue("userID", userID),
-        ]).then(([result1, result2]) => { });
+        // return Promise.all([
+        // this.saveValue("classCode", classCode),
+        // this.saveValue("userID", userID),
+        // ]).then(([result1, result2]) => { });
     }
 
     getUserData() {
@@ -75,7 +75,7 @@ export class LocalStorageDB extends Database {
                     }
                 };
             }
-            // console.log(retVal); 
+            // console.log(retVal);
             return retVal;
         })
         .catch((err) => {
@@ -83,11 +83,11 @@ export class LocalStorageDB extends Database {
             return retVal;
         });
     }
-    
+
     getCurrHypoTask() {
         return this.getIntValue("currHypoTaskIdx")
     }
-    
+
     getIntialHypoData() {
         let data = {};
         return this.getTextValue("firstPrediction")
@@ -192,7 +192,7 @@ export class LocalStorageDB extends Database {
     getIntValue(varName) {
         let retVal;
         return new Promise((resolve, reject) => {
-            try {    
+            try {
                let value = localStorage.getItem(varName);
                 if (value) {
                     retVal = parseInt(value, 10);
@@ -207,7 +207,7 @@ export class LocalStorageDB extends Database {
     getFloatValue(varName) {
         let retVal;
         return new Promise((resolve, reject) => {
-            try {    
+            try {
                 let value = localStorage.getItem(varName);
                 if (value) {
                     retVal = parseFloat(value);
@@ -222,7 +222,7 @@ export class LocalStorageDB extends Database {
     getTextValue(varName) {
         let retVal;
         return new Promise((resolve, reject) => {
-            try {    
+            try {
                 let value = localStorage.getItem(varName);
                 if (value) {
                     retVal = value;
@@ -236,7 +236,7 @@ export class LocalStorageDB extends Database {
 
     getJSONValue(varName) {
         return new Promise((resolve, reject) => {
-            try {    
+            try {
                 let value = localStorage.getItem(varName);
                 if (value) {
                     value = JSON.parse(value);
