@@ -37,7 +37,7 @@ function configure(options={}) {
     destPath = DEFAULT_PUBLIC_DEST_PATH;
     computeHtmlFilePaths();
     configured = true;
-    dispSettings();
+    // dispSettings();
     // process.exit(0);
 }
 
@@ -47,7 +47,7 @@ function useDefaults() {
     destPath = DEFAULT_PUBLIC_DEST_PATH;
     computeHtmlFilePaths();
     configured = true;
-    dispSettings();
+    // dispSettings();
     // process.exit(0);
 }
 
@@ -75,14 +75,14 @@ function setupPassthroughsCopys(eleventyConfig, addGoodbye=true) {
         let src = `public/${item}`;
         let dest = `${destPath}/${item}`;
         let passThru = {[src]: dest};
-        console.log(`adding PassThru: {"${src}": "${dest}"}`);
+        // console.log(`adding PassThru: {"${src}": "${dest}"}`);
         eleventyConfig.addPassthroughCopy(passThru);
     }
     if (addGoodbye) {
         let src = "public/goodbye.html";
         let dest = `${destPath}/goodbye.html`;
         let passThru = { [src]: dest };
-        console.log(`adding PassThru: {"${src}": "${dest}"}`);
+        // console.log(`adding PassThru: {"${src}": "${dest}"}`);
         eleventyConfig.addPassthroughCopy(passThru);
     }
 }
@@ -92,7 +92,7 @@ function mungeIndexHtml(content, outputPath) {
         useDefaults();
     }
     if (indexHtmlPath === outputPath) {
-        console.log(`tranforming content of ${outputPath}`);
+        // console.log(`tranforming content of ${outputPath}`);
         content = content.replace("</head>", `${INDEX_HTML_HEAD_SNIPPET}\n</head>`);
         content = content.replace("</body>", `${INDEX_HTML_BODY_SNIPPET}\n</body>`);
     }
