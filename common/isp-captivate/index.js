@@ -92,7 +92,7 @@ export class ISPCaptivateActivity {
         //                                      this.onSlideTransition);
         this.cpEventEmitter.addEventListener(EVT_ON_QUES_SUBMIT,
                                              this.onQuestionSubmit);
-        for (let varName of self.variablesToTrack) {
+        for (let varName of this.variablesToTrack) {
             this.cpEventEmitter.addEventListener(
                 EVT_ON_VAR_CHANGE, this.onVarChange, varName
             );
