@@ -42,12 +42,12 @@ function handleActivityHover(e) {
     // e.preventDefault();
     let url = e.target.getAttribute("data-url");
     let currentActivity = e.target.getAttribute("data-activity");
-    let activityFeatures = e.target.getAttribute("data-features");
+    let currentActivityFeatures = e.target.getAttribute("data-activity-features");
     console.log(`
     hovering over: ${e.target}
     url: ${url}
     currentActivity: ${currentActivity}
-    activityFeatures: ${activityFeatures}
+    currentActivityFeatures: ${currentActivityFeatures}
     `);
 }
 
@@ -55,11 +55,9 @@ function handleActivityClick(e) {
     e.preventDefault();
     let url = e.target.getAttribute("data-url");
     let currentActivity = e.target.getAttribute("data-activity");
-    let activityFeatures = e.target.getAttribute("data-features");
+    let currentActivityFeatures = e.target.getAttribute("data-activity-features");
     localStorage.setItem("currentActivity", currentActivity);
-    if (activityFeatures) {
-        localStorage.setItem("activityFeatures", activityFeatures);
-    }
+    localStorage.setItem("currentActivityFeatures", currentActivityFeatures);
     window.location.href = url;
 }
 
@@ -107,7 +105,8 @@ function homePage(e) {
         if (act.storageInfo.activityFeatures) {
             btn.setAttribute("data-features", act.storageInfo.activityFeatures);
         }
-        btn.setAttribute("data-activity", act.storageInfo.currentActivity);
+            btn.setAttribute("data-activity-features", act.storageInfo.currentActivityFeatures || "");
+            btn.setAttribute("data-activity", act.storageInfo.currentActivity);
         btn.setAttribute("data-url", act.url);
         btn.addEventListener("click", handleActivityClick);
         // for debugging
