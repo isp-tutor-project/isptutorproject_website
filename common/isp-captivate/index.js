@@ -31,7 +31,7 @@ export class ISPCaptivateActivity {
 
     init() {
         this.db.setCredentials(this.classCode, this.userID);
-        this.db.getActiityData(this.currentActivity)
+        this.db.getActivityData(this.currentActivity)
         .then((data) => {
             if (typeof(data) === "undefined" || null === data) {
                 // if no state exists in db, copy INITIAL_STATE
