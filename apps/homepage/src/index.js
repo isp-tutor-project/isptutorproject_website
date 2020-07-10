@@ -258,6 +258,10 @@ registerSubmitBtn.addEventListener("click", e => {
 
 
 function initApp() {
+    if (null === localStorage.getItem("homepage")) {
+        let homePage = window.location.href;
+        localStorage.setItem("homepage", homePage);
+    }
     window.db = getDBConnection("localstorage");
     getUserInfoFromLocalStorage();
     if (classCode && userID) {
