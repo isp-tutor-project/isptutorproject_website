@@ -106,7 +106,7 @@ export class SceneTransitionsApp {
             return;
         }
 
-        this.currentScene = this.createScene(this.bogusSceneInfo); 
+        this.currentScene = this.createScene(this.bogusSceneInfo);
         if (!startSceneInfo) {
             return;
         }
@@ -137,11 +137,21 @@ export class SceneTransitionsApp {
     }
 
     disable(el) {
-        if (el) { el.classList.add("disabled"); }
+        if (el) {
+            // console.log("disabling:", el);
+            el.classList.add("disabled");
+        } else {
+            // console.log("not disabling non-existinant element:", el);
+        }
     }
 
     enable(el) {
-        if (el) { el.classList.remove("disabled"); }
+        if (el) {
+            // console.log("disabling:", el);
+            el.classList.remove("disabled");
+        } else {
+            // console.log("not disabling non-existinant element:", el);
+        }
     }
 
 }
