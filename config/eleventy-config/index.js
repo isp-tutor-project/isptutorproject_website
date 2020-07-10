@@ -1,7 +1,7 @@
 const prettier = require("prettier");
 const uuidV1 = require("uuid/v1");
 
-import { captivate } from "./captivate";
+const { captivate } = require("./captivate");
 
 // both indents html output and catches some html syntax errors
 function prettify(content, outputPath) {
