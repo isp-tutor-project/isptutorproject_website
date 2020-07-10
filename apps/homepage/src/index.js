@@ -93,26 +93,41 @@ function homePage(e) {
     // refresh activity btns
     activityBtnsCntr.innerHTML = "";
     activities.forEach((act) => {
-        let p = document.createElement("p");
-        let btn = document.createElement("button");
-        if (!act.implemented) {
-            btn.classList.add("disabled");
-        }
-        btn.classList.add("activity-button");
-        btn.classList.add("btn");
-        btn.type = "button";
-        btn.innerHTML = act.label;
-        if (act.storageInfo.activityFeatures) {
-            btn.setAttribute("data-features", act.storageInfo.activityFeatures);
-        }
+        if (act.implemented) {
+            // console.log(act);
+            let url;
+            let p = document.createElement("p");
+            let btn = document.createElement("button");
+            // if (!act.implemented) {
+            //     btn.classList.add("disabled");
+            // }
+            btn.classList.add("activity-button");
+            btn.classList.add("btn");
+            btn.type = "button";
+            btn.innerHTML = act.label;
+            if (act.url.startsWith("http")) {
+                url = act.url;
+            } else {
+                // homepage url can be at a random path, and may end with index.html
+                // localstorage retains all of this so we can simply redirect back.
+                // strip off index.html and/or trailing slash if exist and append
+                // relative path
+                let tmp = localStorage.getItem("homepage");
+                tmp = tmp.replace("index.html", "");
+                if (tmp.endsWith("/")) {
+                    tmp = tmp.slice(0, -1);
+                }
+                url = `${tmp}${act.url}`;
+            }
             btn.setAttribute("data-activity-features", act.storageInfo.currentActivityFeatures || "");
             btn.setAttribute("data-activity", act.storageInfo.currentActivity);
-        btn.setAttribute("data-url", act.url);
-        btn.addEventListener("click", handleActivityClick);
-        // for debugging
-        btn.addEventListener("mouseover", handleActivityHover);
-        p.appendChild(btn);
-        activityBtnsCntr.appendChild(p);
+            btn.setAttribute("data-url", url);
+            btn.addEventListener("click", handleActivityClick);
+            // for debugging
+            btn.addEventListener("mouseover", handleActivityHover);
+            p.appendChild(btn);
+            activityBtnsCntr.appendChild(p);
+        }
     });
 }
 
