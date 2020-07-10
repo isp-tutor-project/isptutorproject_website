@@ -131,8 +131,8 @@ function homePage(e) {
     });
 }
 
-let classCode; 
-let userID; 
+let classCode;
+let userID;
 
 const navbar = new NavBar();
 const snackbar = new SnackBar();
