@@ -15,14 +15,8 @@ export class NavBar {
 
     signOutUser(e) {
         this.userInfoRegion.classList.add("invisible");
-        // if (this.logoutHandler) {
-        //     this.logoutHandler();
-        // } else {
         localStorage.clear();
         window.location.path = "/";
-        // }
-        // localStorage.removeItem("CLASSCODE");
-        // localStorage.remove("USERID");
     }
 
     displayActivityTitle(title) {
