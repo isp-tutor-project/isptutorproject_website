@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+        {% include "site/stdHead.njk" %}
+        <title>Hypothesis Lesson</title>
         <link rel="stylesheet" href="hypowe.bundle.css" />
     </head>
     <body>
-        <header>header goes here</header>
+        {% include "site/navbar.njk" %}
         <iframe src="public/index.html"></iframe>
         <script src="hypowe.bundle.js"></script>
     </body>
