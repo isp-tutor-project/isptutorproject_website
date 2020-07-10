@@ -1,59 +1,74 @@
+import {
+    // EVT_ON_VAR_CHANGE,
+    ISPCaptivateActivity
+} from "@isptutorproject/isp-captivate";
 
 
-const EVT_ON_VAR_CHANGE  = "CPAPI_VARIABLEVALUECHANGED";
-const EVT_ON_SLIDE_ENTER = "CPAPI_SLIDEENTER";
-const EVT_ON_SLIDE_EXIT  = "CPAPI_SLIDEEXIT";
-const EVT_ON_QUES_SUBMIT = "CPAPI_QUESTIONSUBMIT";
+import {
+    getDBConnection
+} from "@isptutorproject/isp-database";
+
+const FTR_ONE_DIR = "FTR_ONE_DIRECTIONAL";
+const FTR_BI_DIR  = "FTR_BI_DIRECTIONAL";
+const COND_ONE_DIR = "one-directional";
+const COND_BI_DIR  = "bi-directional";
 
 const TRACKED_VARS = [
     "condition", "prediction", "gender", "VINname", "twinName"
 ];
 
-let cpAPI;
-let cpEventEmitter;
-let prevSlide = "";
-
-function onQuestionSubmit(evt) {
-    console.log(evt);
+function undefinedOrSame(currState, value) {
+    return ("undefined" === typeof(currState) || currState === value)
 }
 
-function onSlideTransition(evt) {
-    // console.log(evt);
-    const transitionType = ("CPSlideEnter" === evt.cpName) ? "enter" : "exit";
-    let label = evt.cpData.lb;
-    const slideNumber = `${evt.cpData.slideNumber}`;
-    if ("" === label) {
-        label = slideNumber;
+class HypoWECaptivateActivity extends ISPCaptivateActivity {
+    constructor(cpAPI, db, varsToTrack) {
+        super(cpAPI, db, varsToTrack);
     }
-    const now = new Date().toLocaleString();
-    console.log(`${transitionType}ing slide: ${label} time: ${now}`);
-}
 
-
-function onVarChange(evt) {
-    const varName = evt.cpData.varName;
-    const oldVal = evt.cpData.oldVal;
-    const newVal = evt.cpData.newVal;
-    console.log(`${varName} changed from: ${oldVal} to: ${newVal}`);
-}
-
-function myInit() {
-    for (let varName of TRACKED_VARS) {
-        cpEventEmitter.addEventListener(EVT_ON_VAR_CHANGE,
-                                        onVarChange,
-                                        varName);
+    processFeatures() {
+        let feats = [...this.features];
+        let hasOneDir = feats.includes(FTR_ONE_DIR);
+        let hasBiDir = feats.includes(FTR_BI_DIR);
+        let currentDBVal = this.state.condition;
+        if (hasOneDir && hasBiDir) {
+            console.error("has features for both conditions");
+        } else if (!hasOneDir && !hasBiDir) {
+            console.error("doesn't have feature for either condition");
+        } else if (hasOneDir) {
+            if (!undefinedOrSame(this.state.condition, COND_ONE_DIR)) {
+                console.error(`state.condition(${this.state.condition}) !== to feature value(${COND_ONE_DIR})`);
+            } else {
+                this.state.condition = COND_ONE_DIR;
+                feats = feats.filter((item) => item !== FTR_ONE_DIR);
+                // this.setCaptivateVariable("condition", COND_ON_DIR);
+            }
+        } else if (hasBiDir) {
+            if (!undefinedOrSame(this.state.condition, COND_BI_DIR)) {
+                console.error(`state.condition(${this.state.condition}) !== to feature value(${COND_BI_DIR})`);
+            } else {
+                this.state.condition = COND_BI_DIR;
+                feats = feats.filter((item) => item !== FTR_BI_DIR);
+                // this.setCaptivateVariable("condition", COND_BI_DIR);
+            }
+        } else {
+            console.error("WTF! how did I get here?")
+        }
+        console.log("remaining feats:", feats);
+        console.log("# remaining feats", feats.length);
     }
-    cpEventEmitter.addEventListener(EVT_ON_SLIDE_ENTER, onSlideTransition);
-    cpEventEmitter.addEventListener(EVT_ON_SLIDE_EXIT,  onSlideTransition);
-    cpEventEmitter.addEventListener(EVT_ON_QUES_SUBMIT, onQuestionSubmit);
+
 }
 
-function onModuleReady(event) {
+function initApp(event) {
+    console.log("initApp()");
     // event.Data is the same as window.cpAPIInterface
-    cpAPI = event.Data;
-    cpEventEmitter = cpAPI.getEventEmitter();
-    myInit();
+    const cpAPI = event.Data;
+    const db = getDBConnection("localstorage");
+    const app = new HypoWECaptivateActivity(cpAPI, db, TRACKED_VARS);
+    app.init();
 }
 
-// window.addEventListener("load", initIframe);
-window.addEventListener("moduleReadyEvent", onModuleReady);
+
+// window.addEventListener("load", initApp);
+window.addEventListener("moduleReadyEvent", initApp);
