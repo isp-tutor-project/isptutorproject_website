@@ -41,7 +41,7 @@ class HypoWECaptivateActivity extends ISPCaptivateActivity {
             } else {
                 this.state.condition = COND_ONE_DIR;
                 feats = feats.filter((item) => item !== FTR_ONE_DIR);
-                // this.setCaptivateVariable("condition", COND_ON_DIR);
+                this.setCaptivateVariable("condition", COND_ONE_DIR);
             }
         } else if (hasBiDir) {
             if (!undefinedOrSame(this.state.condition, COND_BI_DIR)) {
@@ -49,7 +49,7 @@ class HypoWECaptivateActivity extends ISPCaptivateActivity {
             } else {
                 this.state.condition = COND_BI_DIR;
                 feats = feats.filter((item) => item !== FTR_BI_DIR);
-                // this.setCaptivateVariable("condition", COND_BI_DIR);
+                this.setCaptivateVariable("condition", COND_BI_DIR);
             }
         } else {
             console.error("WTF! how did I get here?")
