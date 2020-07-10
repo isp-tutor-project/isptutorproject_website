@@ -56,6 +56,10 @@ export class ISPCaptivateActivity {
 
     }
 
+    restoreCaptivateState() {
+
+    }
+
     showState() {
         console.log(this.state);
     }
