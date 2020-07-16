@@ -597,7 +597,7 @@ const diInstructionData = {
             },
             question: {
                 type: "mc",
-                text: "Comparing the means across condtions, what to these results suggest?",
+                text: "Comparing the means across conditions, what to these results suggest?",
                 correctAnswer: "a",
                 posFb: "Right!",
                 negFb: "Actually...",
@@ -638,12 +638,12 @@ const diInstructionData = {
             sceneType: SCENE_TYPES.mc,
             transitions: {
                 prev: "scene34",
-                next: "scene36"
+                next: "scene35a"
             },
             question: {
                 type: "mc",
                 text: "What does comparing the means of Hot#1 condition to the Cold#2 condition suggest?",
-                correctAnswer: "",
+                correctAnswer: "a",
                 posFb: "Right!",
                 negFb: "Actually...",
                 options: [
@@ -651,6 +651,12 @@ const diInstructionData = {
                     { value: "b", label: "Salt crystals grew more in cold water" },
                     { value: "c", label: "Salt crystals grew equally well in hot and cold water." }
                 ]
+            }
+        },
+        scene35a: {
+            transitions: {
+                prev: "scene35",
+                next: "scene36"
             }
         },
         scene36: {
@@ -712,7 +718,7 @@ const diInstructionData = {
             },
             question: {
                 type: "mc",
-                text: "What do the results from the Hot water and Cold#2 conditions suggest?",
+                text: "What do the results from the Hot water and Cold#3 conditions suggest?",
                 correctAnswer: "b",
                 posFb: "Right!",
                 negFb: "Actually...",
@@ -752,7 +758,7 @@ const diInstructionData = {
             question: {
                 type: "mc",
                 text: "Compared to the hot condition results, which cold condition results (Cold#1 or Cold #3) are stronger evidence that water temperature affects crystal growth?",
-                correctAnswer: "",
+                correctAnswer: "c",
                 posFb: "Right!",
                 negFb: "Actually...",
                 options: [
@@ -869,7 +875,7 @@ const diInstructionData = {
             sceneType: SCENE_TYPES.mc,
             transitions: {
                 prev: "scene57",
-                next: "scene59"
+                next: "scene58a"
             },
             question: {
                 type: "mc",
@@ -882,6 +888,12 @@ const diInstructionData = {
                     { value: "b", label: "Salt crystals grew more in cold water." },
                     { value: "c", label: "Salt crystals grew equally well in hot and cold water." }
                 ]
+            }
+        },
+        scene58a: {
+            transitions: {
+                prev: "scene58",
+                next: "scene59"
             }
         },
         scene59: {
@@ -925,7 +937,7 @@ const diInstructionData = {
             question: {
                 type: "mc",
                 text: "What do these results suggest?",
-                correctAnswer: "",
+                correctAnswer: "a",
                 posFb: "That’s right!",
                 negFb: "Well, actually...",
                 options: [
@@ -970,7 +982,7 @@ const diInstructionData = {
             question: {
                 type: "mc",
                 text: "Which results (weight of crystals) are LESS spread out? (HINT: look at the range of salt weights on the x-axis.)",
-                correctAnswer: "",
+                correctAnswer: "a",
                 posFb: "Right!",
                 negFb: "Actually...",
                 options: [
@@ -1013,7 +1025,7 @@ const diInstructionData = {
             question: {
                 type: "mc",
                 text: "Which results (weight of crystals) are LESS spread out?",
-                correctAnswer: "",
+                correctAnswer: "a",
                 posFb: "Right!",
                 negFb: "Actually...",
                 options: [
@@ -1086,7 +1098,7 @@ const diInstructionData = {
             question: {
                 type: "mc",
                 text: "So, based on the amount of spread in the data, which results are stronger evidence that water temperature affects crystal growth?",
-                correctAnswer: "",
+                correctAnswer: "a",
                 posFb: "Right!",
                 negFb: "Actually...",
                 options: [
@@ -1129,12 +1141,12 @@ const diInstructionData = {
             question: {
                 type: "mc",
                 text: "Which data are LESS spread out?",
-                correctAnswer: "",
+                correctAnswer: "b",
                 posFb: "Right!",
                 negFb: "Actually...",
                 options: [
                     { value: "a", label: "Results C" },
-                    { value: "d", label: "Results D" },
+                    { value: "b", label: "Results D" },
                     { value: "c", label: "They are the same."}
                 ],
             }
@@ -1178,12 +1190,12 @@ const diInstructionData = {
             question: {
                 type: "mc",
                 text: "So, which Results (C or D) are stronger evidence that water temperature affects crystal growth?",
-                correctAnswer: "",
+                correctAnswer: "b",
                 posFb: "Right!",
                 negFb: "Actually...",
                 options: [
                     { value: "a", label: "Results C" },
-                    { value: "d", label: "Results D" },
+                    { value: "b", label: "Results D" },
                     { value: "c", label: "They are the same."}
                 ]
             }
@@ -1239,7 +1251,7 @@ const diInstructionData = {
             question: {
                 type: "mc",
                 text: "What do these two sets of results (Results E &amp; F) suggest?",
-                correctAnswer: "",
+                correctAnswer: "c",
                 posFb: "Right!",
                 negFb: "Actually...",
                 options: [
@@ -1270,7 +1282,7 @@ const diInstructionData = {
             question: {
                 type: "mc",
                 text: "Now that you see their measurements, which of the two sets of results do you trust more?",
-                correctAnswer: "",
+                correctAnswer: "b",
                 posFb: "Right!",
                 negFb: "Actually...",
                 options: [
@@ -1295,7 +1307,7 @@ const diInstructionData = {
             question: {
                 type: "mc",
                 text: "Based on Results E &amp; F, which statement is more likely to be true?",
-                correctAnswer: "",
+                correctAnswer: "a",
                 posFb: "Right!",
                 negFb: "Actually...",
                 options: [
