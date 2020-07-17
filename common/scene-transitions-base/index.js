@@ -21,6 +21,17 @@ export class Scene {
         return this.id === "N/A" || this.sceneType === "bogus";
     }
 
+    hasForm() {
+        return false;
+    }
+
+    formChanged() {
+        return false;
+    }
+
+    pre_enter() {
+
+    }
     enter() {
         if (this._isBogus()) {
             return;
