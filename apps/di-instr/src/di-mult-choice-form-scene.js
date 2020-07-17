@@ -71,11 +71,6 @@ export class DiMultipleChoiceFormScene extends DiInstructionScene {
 
     defaultExitSceneActions() {
         super.defaultExitSceneActions();
-        // these are strictly for development when the user can return to
-        // this page via the prev btn
-        this.app.enable(this.submitBtn);
-        for (let rb of this.radios) {
-            this.app.enable(rb);
-        }
+        this.teardownEventHandlers();
     }
 }
