@@ -4,10 +4,8 @@ import { DiStatsScene } from "./di-stats-scene";
 import { DiMultipleChoiceFormScene } from "./di-mult-choice-form-scene";
 
 export class DiInstructionApp extends SceneTransitionsApp {
-    constructor(appData) {
-        super(appData);
-        this.nextBtn = document.getElementById("next_btn");
-        this.prevBtn = document.getElementById("prev_btn");
+    constructor(appData, db, activityKey, features) {
+        super(appData, db, activityKey, features);
         this.backToQuestionBtn = document.getElementById("back_to_question_btn");
         this.readyToAnswerBtn = document.getElementById("ready_to_answer_btn");
         this.sceneIdRegion = document.getElementById("scene_id_region");
