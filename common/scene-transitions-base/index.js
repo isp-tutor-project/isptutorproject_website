@@ -212,12 +212,16 @@ export class SceneTransitionsApp {
     }
 
     logTransition(scene) {
-        console.warn("Unimplemented Method: logTransition()");
+        let data = {
+            action: "SCENE_TRANSITION",
+            from: this.currentScene.id,
+            to: scene.id,
+            timestamp: Date.now()
+        };
+        this.state.transitions.push(data);
+        console.debug("Updating state.transitions");
     }
 
-    setStartScene(sceneId) {
-        console.debug("setStartScene()", sceneId);
-        let startSceneInfo = this.lookupScene(sceneId);
 
         if (!this.scenes.hasOwnProperty(sceneId)) {
             console.error(`no scene named "${sceneId}"`);
