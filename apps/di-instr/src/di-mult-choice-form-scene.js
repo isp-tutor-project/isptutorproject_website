@@ -1,17 +1,8 @@
 import { DiInstructionScene } from "./di-instruction-scene";
 
 export class DiMultipleChoiceFormScene extends DiInstructionScene {
-    constructor(app, data) {
-        super(app, data);
-        this.handleFormSubmit = this.handleFormSubmit.bind(this);
-        // this.handleFormChange = this.handleFormChange.bind(this);
-        this.formInfo = data.question;
-        this.form = document.getElementById(`${this.id}_radio_form`);
-        // this.fbRegion = document.getElementById(
-        //     `${this.id}_feedback_region`
-        // );
-        this.radios = this.form.querySelectorAll('input[type="radio"]');
-        this.submitBtn = document.getElementById(`${this.id}_submit_btn`);
+    constructor(app, sceneInfo) {
+        super(app, sceneInfo);
     }
 
     // hideFeedbackRegion() {
