@@ -1,6 +1,7 @@
 
 export class Scene {
     constructor(app, sceneInfo) {
+        console.debug(`\tInitializing Scene: ${sceneInfo.id}`);
         this.app = app;
         // copy all sceneInfo to 'this'
         for (let [k, v] of Object.entries(sceneInfo)) {
@@ -36,6 +37,9 @@ export class Scene {
         if (this._isBogus()) {
             return;
         }
+        console.debug(`Entering Scene: ${this.id}`);
+        console.debug("\tUpdating state.currentScene");
+        this.app.state.currentScene = this.id;
         this.defaultEnterSceneActions();
         if (this.customEnterActions.length) {
             this.performCustomEnterSceneActions();
@@ -54,6 +58,7 @@ export class Scene {
         if (this._isBogus()) {
             return;
         }
+        console.debug(`Exiting Scene: ${this.id}`);
         this.defaultExitSceneActions();
         if (this.customExitActions.length) {
             this.performCustomExitSceneActions();
