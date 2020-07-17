@@ -109,6 +109,49 @@ export class SceneTransitionsApp {
         this.startScene = sceneId;
     }
 
+    start() {
+        console.log("starting");
+        this.getAppState()
+        .then((state) => {
+            if (null === state) {
+                console.log("no activity data in db. using initial data")
+                state = this.defaultState;
+            }
+            this.state = state;
+            return;
+        })
+        .then(() => {
+            console.log(this.state);
+            console.log("Initializing Scenes");
+            for (let section of document.querySelectorAll("section.scene")) {
+                let sceneId = section.id;
+                // console.log(`creating scene for ${sceneId}`);
+                let sceneObj = this.createScene(this.sceneData[sceneId]);
+                // console.log(sceneObj);
+                this.scenes[sceneId] = sceneObj;
+            }
+            return;
+        })
+        .then(() => {
+            console.log(this.state.sceneFormState);
+            console.log("Restoring App State")
+            for (let section of document.querySelectorAll("section.scene")) {
+                let sceneId = section.id;
+                let sceneState = this.state.sceneFormState[sceneId];
+                this.scenes[sceneId].restoreState(sceneState);
+            }
+            return;
+        })
+        .then(() => {
+            // console.debug(this.sceneData);
+            // console.log(this.scenes);
+        })
+        .then(() => {
+            this.gotoStartScene();
+        })
+        .catch((error) => {
+            console.error(error);
+        });
     }
 
     createScene(sceneInfo) {
