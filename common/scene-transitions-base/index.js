@@ -65,6 +65,10 @@ export class Scene {
         }
     }
 
+    post_exit() {
+
+
+    }
     defaultEnterSceneActions() {
         this.el.classList.add("active");
     }
