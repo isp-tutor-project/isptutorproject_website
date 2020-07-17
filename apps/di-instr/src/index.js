@@ -17,6 +17,8 @@ let features = localStorage.getItem("currentActivityFeatures")
 db.setCredentials(classCode, userID);
 let app = new DiInstructionApp(appData, db, currentActivity, features);
 let snackbar = new SnackBar();
-let app = new DiInstructionApp(appData)
 app.setSnackbar(snackbar);
-app.setStartScene("start");
+if (process.env.NODE_ENV !== "production") {
+    app.setStartScene("scene28");
+}
+app.start();
