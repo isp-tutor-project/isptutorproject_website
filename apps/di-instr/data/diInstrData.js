@@ -8,6 +8,8 @@ const SCENE_TYPES = {
     mc: "multipleChoiceForm"
 };
 
+NA = "N/A";
+
 const SURVEY_OPTIONS = [
     { value: 'a', label: "Not at all sure" },
     { value: 'b', label: "A little sure" },
