@@ -67,8 +67,8 @@ export class Scene {
 
     post_exit() {
 
-
     }
+    
     defaultEnterSceneActions() {
         this.el.classList.add("active");
     }
@@ -87,12 +87,22 @@ export class Scene {
 }
 
 export class SceneTransitionsApp {
-    constructor(appData) {
-        this.scenes = appData.scenes;
-        console.debug(this.scenes);
+    constructor(appData, db, activityKey, activityFeatures) {
+        this.sceneData = appData.scenes;
+        this.db = db;
+        this.activityKey = activityKey;
+        this.defaultState = {};
+        this.state = {};
+        this.scenes = {};
+        this.startScene = "start";
+        this.currentScene = null;
+        this.prevScene = null;
+        // is this needed???
         this.bogusSceneInfo = {
             id: "N/A",
             sceneType: "bogus"
+        };
+    }
         }
     }
 
