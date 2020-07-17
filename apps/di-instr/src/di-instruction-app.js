@@ -37,6 +37,25 @@ export class DiInstructionApp extends SceneTransitionsApp {
         window.app = this;
     }
 
+
+    handlePrev(event) {
+        event.preventDefault();
+        if (this.currentScene.hasForm() && this.currentScene.formChanged()) {
+            this.showFeedback(this.currentScene.form.getFeedback());
+        }
+        this.handleTransition("prev");
+        this.saveAppState();
+    }
+
+    handleNext(event) {
+        event.preventDefault();
+        if (this.currentScene.hasForm() && this.currentScene.formChanged()) {
+            this.showFeedback(this.currentScene.form.getFeedback());
+        }
+        this.handleTransition("next");
+        this.saveAppState();
+    }
+
     setSnackbar(snackbar) {
         this.snackbar = snackbar;
     }
