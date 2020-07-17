@@ -2,8 +2,8 @@
 import { DiInstructionScene } from "./di-instruction-scene";
 
 export class DiStatsScene extends DiInstructionScene {
-    constructor(app, data) {
-        super(app, data);
+    constructor(app, sceneInfo) {
+        super(app, sceneInfo);
     }
 
     defaultEnterSceneActions() {
