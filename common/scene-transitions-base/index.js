@@ -42,6 +42,14 @@ export class Scene {
         }
     }
 
+    post_enter() {
+
+    }
+
+    pre_exit() {
+
+    }
+
     exit() {
         if (this._isBogus()) {
             return;
