@@ -76,37 +76,33 @@ export class DiInstructionApp extends SceneTransitionsApp {
         return newScene;
     }
 
-    logTransition(scene) {
-        // FIXME: this needs to get stored in firestore
-        let data = {
-            action: "SCENE_TRANSITION",
-            from: this.currentScene.id,
-            to: scene.id,
-            timestamp: new Date().toLocaleString()
-        };
-        console.log(scene.id, data);
-    }
 
-    logStudentAnswer(questionName, answer) {
-        let question = this.currentScene.questions[questionName];
-        let isCorrect = "N/A";
-        if (question.hasOwnProperty("correctAnswer")) {
-            isCorrect = (answer === question.correctAnswer)
-        }
-        let qid = `${this.currentScene.id}.${questionName}`;
-        if ("" !== this.testName) {
-            qid = `${this.testName}.${qid}`;
-        }
-        let data = {
-            action: "SUBMIT_ANSWER",
-            questionId: qid,
-            questionText: question.text,
-            answer: answer,
-            isCorrect: isCorrect,
-            timestamp: new Date().toLocaleString()
-        }
-        console.log(data);
-    }
+    // logStudentAnswer(questionName, answer) {
+    //     // FIXME: this needs to get stored in firestore
+    //     this.scene.
+    //     let question = this.currentScene.questions[questionName];
+    //     let isCorrect = "N/A";
+    //     if ((typeof(question.correctAnswer) !== "undefined") &&
+    //         (question.correctAnswer !== "N/A"))
+    //     {
+    //         isCorrect = (answer === question.correctAnswer);
+    //     }
+    //     let qid = `${this.currentScene.id}.${questionName}`;
+    //     if ("" !== this.testName) {
+    //         qid = `${this.testName}.${qid}`;
+    //     }
+    //     let data = {
+    //         action: "SUBMIT_ANSWER",
+    //         questionId: qid,
+    //         questionText: question.text,
+    //         answer: answer,
+    //         isCorrect: isCorrect,
+    //         timestamp: Date.now()
+    //     }
+    //     this.state.answers.push(data);
+    //     console.log(data);
+    // }
+
 
     gotoScene(scene) {
         super.gotoScene(scene);
