@@ -223,18 +223,13 @@ export class SceneTransitionsApp {
     }
 
 
-        if (!this.scenes.hasOwnProperty(sceneId)) {
-            console.error(`no scene named "${sceneId}"`);
-            return;
-        }
-
-        this.currentScene = this.createScene(this.bogusSceneInfo);
-        if (!startSceneInfo) {
-            return;
-        }
-        let startScene = this.createScene(startSceneInfo);
-        this.transitionTo(startScene);
+    gotoStartScene() {
+        // bypasses transitionTo(scene)
+        this.currentScene = null;
+        let startScene = this.lookupScene(this.startScene);
+        this.gotoScene(startScene);
     }
+
 
     hide(el) {
         if (el) { el.classList.add("hidden"); }
