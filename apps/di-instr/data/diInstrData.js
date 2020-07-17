@@ -166,7 +166,7 @@ const diInstructionData = {
             question: {
                 type: "survey",
                 text: "How sure are you that the independent variable (water temperature) caused this difference in crystal weight across conditions?",
-                correctAnswer: "N/A",
+                correctAnswer: NA,
                 ntlFb: "Thanks!",
                 options: SURVEY_OPTIONS
             }
@@ -553,9 +553,9 @@ const diInstructionData = {
                 negFb: "Actually...",
                 options: [
                     { value: "a", label: "(20 + 27 + 30 + 32 + 41)" },
-                    { value: "b", label: "(20 + 27 + 30 + 32 + 41 / 5" },
+                    { value: "b", label: "(20 + 27 + 30 + 32 + 41) / 5" },
                     { value: "c", label: "(41 - 20) / 2" },
-                    { value: "d", label: "( 41 + 20 ) / 2" }
+                    { value: "d", label: "(41 + 20) / 2" }
                 ]
             }
         },
@@ -625,7 +625,7 @@ const diInstructionData = {
             question: {
                 type: "survey",
                 text: "How sure are you that the independent variable (water temperature) -- rather than random errors -- caused this difference?",
-                correctAnswer: "N/A",
+                correctAnswer: NA,
                 ntlFb: "Thanks!",
                 options: SURVEY_OPTIONS
             }
@@ -670,7 +670,7 @@ const diInstructionData = {
             question: {
                 type: "survey",
                 text: "Now, how sure are you that the independent variable (water temperature) --rather than random errors--caused this difference?",
-                correctAnswer: "N/A",
+                correctAnswer: NA,
                 ntlFb: "Thanks!",
                 options: SURVEY_OPTIONS
             }
@@ -746,7 +746,7 @@ const diInstructionData = {
             question: {
                 type: "survey",
                 text: "Now, how sure are you that water temperature -- rather than experimenter or random errors -- caused this difference?",
-                correctAnswer: "N/A",
+                correctAnswer: NA,
                 ntlFb: "Thanks!",
                 options: SURVEY_OPTIONS
             }
@@ -907,7 +907,7 @@ const diInstructionData = {
             question: {
                 type: "survey",
                 text: "How sure are you that water temperature caused this difference in means?",
-                correctAnswer: "N/A",
+                correctAnswer: NA,
                 ntlFb: "Thanks!",
                 options: SURVEY_OPTIONS
             }
@@ -964,7 +964,7 @@ const diInstructionData = {
             question: {
                 type: "survey",
                 text: "How sure are you that water temperature caused this difference in means?",
-                correctAnswer: "N/A",
+                correctAnswer: NA,
                 ntlFb: "Thanks!",
                 options: SURVEY_OPTIONS
             }
