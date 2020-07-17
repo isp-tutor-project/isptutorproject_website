@@ -51,16 +51,21 @@ export class DiMultipleChoiceFormScene extends DiInstructionScene {
     }
 
     setupEventHandlers() {
-        for (let rb of this.radios) {
-            rb.addEventListener('change', this.handleFormChange)
-        }
-        this.submitBtn.addEventListener("click", this.handleFormSubmit);
+        this.form.setupEventHandlers();
+    }
+
+    teardownEventHandlers() {
+        this.form.teardownEventHandlers();
     }
 
     defaultEnterSceneActions() {
         super.defaultEnterSceneActions();
-        this.app.disable(this.app.prevBtn);
-        this.app.disable(this.app.nextBtn);
+        if (process.env.NODE_ENV === "production") {
+            // don't let student skip over question
+            if (! this.form.isValid() ) {
+                this.app.disable(this.app.nextBtn);
+            }
+        }
         this.setupEventHandlers();
     }
 
