@@ -9,6 +9,14 @@ export class Scene {
         this.el = document.getElementById(this.id);
     }
 
+    restoreState(value) {
+        if (typeof (value) !== "undefined") {
+            console.debug(`\tRestoring Scene State for: ${this.id} `);
+            return true;
+        }
+        return false;
+    }
+
     _isBogus() {
         return this.id === "N/A" || this.sceneType === "bogus";
     }
