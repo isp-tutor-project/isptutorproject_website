@@ -108,8 +108,8 @@ export class DiInstructionApp extends SceneTransitionsApp {
         console.log(data);
     }
 
-    transitionTo(scene) {
-        super.transitionTo(scene);
+    gotoScene(scene) {
+        super.gotoScene(scene);
         this.displaySceneId();
     }
 
