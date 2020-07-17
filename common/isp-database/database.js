@@ -16,10 +16,14 @@ export class Database {
     getActivityData(activityKey, decodeJSON = true) {
 
     }
-    
+
+    setActivityData(activityKey, object) {
+
+    }
+
     getRQData() {
 
-    }   
+    }
 
     getCurrHypoTask() {
 
