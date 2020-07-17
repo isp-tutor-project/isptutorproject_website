@@ -200,12 +200,14 @@ export class SceneTransitionsApp {
 
     handleTransition(transitionName) {
         let newSceneId = this.currentScene.transitions[transitionName];
-        let newSceneInfo = this.lookupScene(newSceneId);
-        if (!newSceneInfo) {
-            return;
-        }
-        let newScene = this.createScene(newSceneInfo);
-        console.debug(newScene);
+        // let newSceneInfo = this.lookupScene(newSceneId);
+        // if (!newSceneInfo) {
+        //     return;
+        // }
+        // let newScene = this.createScene(newSceneInfo);
+        let newScene = this.scenes[newSceneId]
+
+        // console.debug(newScene);
         this.transitionTo(newScene);
     }
 
