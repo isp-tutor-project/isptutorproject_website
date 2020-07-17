@@ -1,8 +1,8 @@
 import { Scene } from "@isptutorproject/scene-transitions-base";
 
 export class DiInstructionScene extends Scene {
-    constructor(app, data) {
-        super(app, data);
+    constructor(app, sceneInfo) {
+        super(app, sceneInfo);
         this.handleTransitionButton = this.handleTransitionButton.bind(this);
         this.customActions = {
             showBtns: this.showBtns,
@@ -69,12 +69,11 @@ export class DiInstructionScene extends Scene {
     defaultEnterSceneActions() {
         super.defaultEnterSceneActions();
         this.setupTransitionEventHandlers();
-        if (process.env.NODE_ENV === "production") {
-            this.app.hide(this.app.prevBtn);
-        } else {
-            this.app.show(this.app.prevBtn);
-        }
+        // these button states may get overriden by scene-specific custom actions
+        this.app.show(this.app.prevBtn);
+        this.app.enable(this.app.prevBtn);
         this.app.show(this.app.nextBtn);
+        this.app.enable(this.app.nextBtn);
         this.app.hide(this.app.readyToAnswerBtn);
         this.app.hide(this.app.backToQuestionBtn);
     }
