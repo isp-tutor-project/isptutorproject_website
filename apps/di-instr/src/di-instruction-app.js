@@ -15,17 +15,17 @@ const INITIAL_STATE = {
 export class DiInstructionApp extends SceneTransitionsApp {
     constructor(appData, db, activityKey, features) {
         super(appData, db, activityKey, features);
+        //if no  state from db
+        this.defaultState = Object.assign({}, INITIAL_STATE);
+        this.handleNext = this.handleNext.bind(this);
+        this.handlePrev = this.handlePrev.bind(this);
+        this.nextBtn           = document.getElementById("next_btn");
+        this.prevBtn           = document.getElementById("prev_btn");
         this.backToQuestionBtn = document.getElementById("back_to_question_btn");
-        this.readyToAnswerBtn = document.getElementById("ready_to_answer_btn");
-        this.sceneIdRegion = document.getElementById("scene_id_region");
-        this.nextBtn.addEventListener("click", (e) => {
-            e.preventDefault();
-            this.handleTransition("next");
-        });
-        this.prevBtn.addEventListener("click", (e) => {
-            e.preventDefault();
-            this.handleTransition("prev");
-        });
+        this.readyToAnswerBtn  = document.getElementById("ready_to_answer_btn");
+        this.sceneIdRegion     = document.getElementById("scene_id_region");
+        this.nextBtn.addEventListener("click", this.handleNext);
+        this.prevBtn.addEventListener("click", this.handlePrev);
         this.readyToAnswerBtn.addEventListener("click", (e) => {
             e.preventDefault();
             this.handleTransition("readyToAnswer");
