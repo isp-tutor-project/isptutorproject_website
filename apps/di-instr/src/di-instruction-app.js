@@ -3,6 +3,15 @@ import { DiInstructionScene } from "./di-instruction-scene";
 import { DiStatsScene } from "./di-stats-scene";
 import { DiMultipleChoiceFormScene } from "./di-mult-choice-form-scene";
 
+
+const INITIAL_STATE = {
+    transitions: [],
+    answers: [],
+    // mapping of sceneid => formValues
+    sceneFormState: {},
+    currentScene: "start"
+};
+
 export class DiInstructionApp extends SceneTransitionsApp {
     constructor(appData, db, activityKey, features) {
         super(appData, db, activityKey, features);
