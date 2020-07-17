@@ -57,6 +57,10 @@ export class LocalStorageDB extends Database {
         });
     }
 
+    setActivityData(activityKey, object) {
+        return this.saveJSONValue(activityKey, object);
+    }
+
     getRQData() {
         let retVal = null;
         return this.getActivityData("rqted")
