@@ -47,6 +47,10 @@ export class DiMultipleChoiceFormScene extends DiInstructionScene {
         this.app.state.sceneFormState[this.id] = data.selectedValue;
     }
 
+    pre_exit() {
+        super.pre_exit();
+        if (this.form.changed) {
+            this.saveFormData();
         }
     }
 
