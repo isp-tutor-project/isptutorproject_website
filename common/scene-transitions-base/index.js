@@ -154,6 +154,16 @@ export class SceneTransitionsApp {
         });
     }
 
+    getAppState() {
+        console.debug("Loading App State");
+        return this.db.getActivityData(this.activityKey);
+    }
+
+    saveAppState() {
+        console.debug("Saving App State");
+        return this.db.setActivityData(this.activityKey, this.state);
+    }
+
     createScene(sceneInfo) {
         console.debug("createScene()", sceneInfo);
         return new Scene(this, sceneInfo);
