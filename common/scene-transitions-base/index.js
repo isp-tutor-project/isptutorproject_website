@@ -165,17 +165,29 @@ export class SceneTransitionsApp {
     }
 
     createScene(sceneInfo) {
-        console.debug("createScene()", sceneInfo);
+        // you'll want to override this to do anything useful
+        // console.debug("createScene()", sceneInfo, sceneState);
         return new Scene(this, sceneInfo);
     }
 
     transitionTo(scene) {
         this.logTransition(scene);
+        this.gotoScene(scene);
+    }
+
+    gotoScene(scene) {
         this.prevScene = this.currentScene;
-        this.prevScene.exit();
+        if (this.prevScene) {
+            this.prevScene.pre_exit();
+            this.prevScene.exit();
+            this.prevScene.post_exit();
+        }
         this.currentScene = scene;
+        this.currentScene.pre_enter();
         this.currentScene.enter();
-        delete this.prevScene;
+        this.currentScene.post_enter();
+        // delete this.prevScene;
+
     }
 
     lookupScene(sceneId) {
