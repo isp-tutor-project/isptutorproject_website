@@ -9,82 +9,44 @@ export class DiMultipleChoiceFormScene extends DiInstructionScene {
         );
     }
 
-    // hideFeedbackRegion() {
-    //     this.app.makeInvisible(this.fbRegion);
-    // }
 
-    // showFeedbackRegion() {
-    //     this.app.makeVisible(this.fbRegion);
-    // }
+    restoreState(value) {
+        if (super.restoreState(value)) {
+            let eleID = `${this.id}_option_${value}`;
+            let el = document.getElementById(eleID);
+            if (typeof(el) === "undefined") {
+                console.error(`\t\tUnable to Select Radio Button ${eleID}`);
+                return false;
+             } else {
+                el.checked = true;
+                console.debug(`\t\tSelected Radio Button: ${eleID}`);
+                return true;
+            }
+        }
+        return false;
+    }
 
-    // handleFormChange(e) {
-    //     this.hideFeedbackRegion();
-    // }
 
-    handleFormSubmit(e) {
-        e.preventDefault();
+    hasForm() {
+        return true;
+    }
 
-        if (this.form.checkValidity()) {
-            let sfi = this.formInfo;
-            let selectedAnswer = this.form.querySelector(
-                'input[type="radio"]:checked'
-            )
-            let val = selectedAnswer.value.trim();
-            let ansText = selectedAnswer.labels[0].innerText;
-            let correctAnswer = sfi.correctAnswer;
-            let isCorrect;
-            let fbText;
-            let fbClassName;
-            if ("n/a" === correctAnswer) {
-                isCorrect = null;
-                fbText = sfi.ntlFb;
-                fbClassName = "ntl-feedback";
-            } else if (correctAnswer === val) {
-                isCorrect = true;
-                fbText = sfi.posFb;
-                fbClassName = "pos-feedback";
-            } else {
-                isCorrect = false;
-                fbText = sfi.negFb;
-                fbClassName = 'neg-feedback';
-            }
-            if (!fbText) {
-                fbText = sfi.ntlFb;
-                fbClassName = 'ntl-feedback';
-            }
-            // if (this.fbRegion && fbText) {
-            if (fbText) {
-                let fbMsg =  `<span class="${fbClassName}">
-                    ${fbText}
-                </span>`;
-                this.app.showFeedback(fbMsg);
-                // this.fbRegion.innerHTML = fbMsg;
-                // this.showFeedbackRegion();
-            }
-            // what we want to store in firestore
-            let log = {
-                id: `${this.id}.question`,
-                questionType: sfi.type,
-                question: sfi.questionText,
-                selected: ansText,
-                isCorrect: isCorrect,
-                timestamp: new Date().toLocaleString()
-            }
-            console.log(log);
+    formChanged() {
+        return this.form.changed;
+    }
 
-            for (let radio of this.radios) {
-                this.app.disable(radio);
-                this.app.disable(radio.labels[0]);
-            }
-            this.app.disable(this.submitBtn);
-            this.app.enable(this.app.nextBtn);
-            this.app.enable(this.app.prevBtn);
-        // } else if (this.fbRegion) {
-        } else {
-            let fbMsg = `<span class="text-danger">Please select an option</span>`;
-            this.app.showFeedback(fbMsg);
-            // this.fbRegion.innerHTML = fbMsg;
-            // this.showFeedbackRegion();
+    saveFormData() {
+        let data = this.form.getData();
+        let logData = Object.assign(
+            { action_type: "SUBMIT_ANSWER", questionId: `${this.app.activityKey}.${this.id}` },
+            data
+        );
+        console.log("Updating state.answers");
+        this.app.state.answers.push(logData);
+        console.log("Updating state.sceneFormState");
+        this.app.state.sceneFormState[this.id] = data.selectedValue;
+    }
+
         }
     }
 
