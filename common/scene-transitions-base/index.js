@@ -68,7 +68,7 @@ export class Scene {
     post_exit() {
 
     }
-    
+
     defaultEnterSceneActions() {
         this.el.classList.add("active");
     }
@@ -103,7 +103,12 @@ export class SceneTransitionsApp {
             sceneType: "bogus"
         };
     }
-        }
+
+    setStartScene(sceneId) {
+        console.debug("setStartScene()", sceneId);
+        this.startScene = sceneId;
+    }
+
     }
 
     createScene(sceneInfo) {
