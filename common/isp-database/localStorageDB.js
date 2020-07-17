@@ -49,8 +49,8 @@ export class LocalStorageDB extends Database {
     getActivityData(activityKey, decodeJSON = true) {
         return this.getJSONValue(activityKey)
         .then((data) => {
-            if (data && decodeJSON) {
-                return JSON.parse(data);
+            if (data && !decodeJSON) {
+                return JSON.stringify(data);
             } else {
                 return data;
             }
