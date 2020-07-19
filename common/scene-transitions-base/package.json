@@ -1,8 +1,11 @@
 {
-  "name": "@isptutorproject/scene-transitions-base",
+  "name": "@isptutorproject/scene-app-base",
   "version": "0.1.0",
-  "description": "reusable classes for apps which transition between scenes",
+  "description": "base classes for scene based apps",
   "main": "index.js",
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@isptutorproject/isp-database": "0.1.0"
+  }
 }
