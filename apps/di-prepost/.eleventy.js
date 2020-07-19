@@ -6,10 +6,15 @@ const {
     mergeScenesWithData
 } = require("@isptutorproject/eleventy-config");
 
+function getNthLetter(n) {
+    return "abcdefghijklmnopqrstuvwxyz"[n];
+}
+
 module.exports = function(eleventyConfig) {
     eleventyConfig.addTransform("prettier", prettify);
     eleventyConfig.addNunjucksFilter("jsonify", jsonify);
     eleventyConfig.addNunjucksFilter("uuid", uuid);
+    eleventyConfig.addNunjucksFilter("getNthLetter", getNthLetter);
 
     eleventyConfig.addPassthroughCopy("templates/img");
 

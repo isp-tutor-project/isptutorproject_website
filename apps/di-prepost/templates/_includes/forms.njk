@@ -1,9 +1,9 @@
-{% macro gen_uuid(prefix) -%}
+{# {% macro gen_uuid(prefix) -%}
     {{ prefix | uuid }}
-{%- endmacro %}
+{%- endmacro %} #}
 
-{% macro radio_btn(btnName, value, label) %}
-    {% set id = gen_uuid(btnName) %}
+{% macro radio_btn(id, btnName, value, label) %}
+    {# {% set id = gen_uuid(btnName) %} #}
     <label for="{{id}}" class="text-lg">
         <input type="radio"
                class="radio-btn form-control"
@@ -24,7 +24,8 @@
              class="form-controls">
         {% set btnName = sceneId + "_" + quesName %}
         {% for option in question.options %}
-            {{ radio_btn(btnName, option.value, option.label) }}       
+            {% set btnId = sceneId + "_" + quesName + "_option_" + loop.index0 | getNthLetter  %}
+            {{ radio_btn(btnId, btnName, option.value, option.label) }}
         {% endfor %}
         </div>
         <button id="{{sceneId}}_{{quesName}}_submit"
