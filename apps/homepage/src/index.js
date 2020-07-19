@@ -262,11 +262,14 @@ registerSubmitBtn.addEventListener("click", e => {
 });
 
 function initApp() {
-    if (null === localStorage.getItem("homepage")) {
-        let homePage = window.location.href;
-        localStorage.setItem("homepage", homePage);
-    }
-    window.db = getDBConnection("localstorage");
+    navbar = new NavBar();
+    snackbar = new SnackBar();
+    navbar.displayActivityTitle("ISP Home Page");
+    let DB = "localstorage";
+    let homePageURL = window.location.href;
+    localStorage.setItem("homepage", homePageURL);
+    localStorage.setItem("database", DB);
+    db = getDBConnection(DB);
     getUserInfoFromLocalStorage();
     if (classCode && userID) {
         homePage();
