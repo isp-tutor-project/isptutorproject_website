@@ -1,0 +1,8 @@
+{
+  "name": "@isptutorproject/activity-config",
+  "version": "0.1.0",
+  "description": "code which gets activity configuration from localstorage",
+  "main": "index.js",
+  "license": "PROPRIETARY",
+  "private": true
+}
