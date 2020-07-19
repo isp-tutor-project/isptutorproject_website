@@ -134,6 +134,12 @@ function homePage(e) {
     });
 }
 
+function loginUser() {
+    console.debug("Account found");
+    snackbar.show("Signed in as " + userID + ".");
+    homePage();
+}
+
 // =============================================================================
 // ======================= userForm related functions ==========================
 // =============================================================================
