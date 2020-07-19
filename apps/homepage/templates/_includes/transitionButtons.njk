@@ -1,0 +1,24 @@
+{% macro moduleButton(page, transitionName, label) %}
+    {{ transitionButton(page, transitionName, label, "module-button") }}
+{% endmacro %}
+
+
+{% macro backButton(page, transitionName, label) %}
+    {{ transitionButton(page, transitionName, label, "btn-md") }}
+{% endmacro %}
+
+{% macro transitionButton(page, transitionName, label, buttonClass) %}
+    <button class="{{buttonClass}} transition-to"
+            id="{{page.fileSlug}}_{{transitionName}}"
+            data-transition="{{transitionName}}">
+        {{label}}
+    </button>
+{% endmacro %}
+
+{#
+<button class="module-button transition-to text-lg"
+        id="{{page.fileSlug}}_{{transitionName}}"
+        data-transition="{{transitionName}}">
+    {{label}}
+</button>
+#}
