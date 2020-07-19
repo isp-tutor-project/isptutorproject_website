@@ -11,6 +11,20 @@ function getEleById(eleID) {
     return document.getElementById(eleID);
 }
 
+let classCode, userID, db, navbar, snackbar;
+
+// page elements
+const loginBtn          = getEleById("login_button");
+const registerBtn       = getEleById("register_button");
+const loginBackBtn      = getEleById("l-back-button");
+const registerBackBtn   = getEleById("r-back-button");
+const loginForm         = getEleById("login_form");
+const loginSubmitBtn    = getEleById("login_submit");
+const registrationForm  = getEleById("registration_form");
+const registerSubmitBtn = getEleById("registration_submit");
+const activityBtnsCntr  = getEleById("activity_btns_container");
+
+
 function activatePage(pageID) {
     for (let page of document.querySelectorAll(".page")) {
         if (page.id === pageID) {
@@ -119,24 +133,6 @@ function homePage(e) {
         }
     });
 }
-
-let classCode;
-let userID;
-
-const navbar = new NavBar();
-const snackbar = new SnackBar();
-
-const loginBtn = getEleById("login_button");
-const loginBackBtn = getEleById("l-back-button");
-const loginForm = getEleById("login_form");
-const loginSubmitBtn = getEleById("login_submit");
-
-const registerBtn = getEleById("register_button");
-const registerBackBtn = getEleById("r-back-button");
-const registrationForm = getEleById("registration_form");
-const registerSubmitBtn = getEleById("registration_submit");
-
-const activityBtnsCntr = getEleById("activity_btns_container");
 
 // =============================================================================
 // ======================= userForm related functions ==========================
