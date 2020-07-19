@@ -26,17 +26,6 @@ function getUserInfoFromLocalStorage() {
     userID = localStorage.getItem("userID");
 }
 
-// function removeUserInfoFromLocalStorage() {
-//     localStorage.removeItem("classCode");
-//     localStorage.removeItem("userID");
-//     // reset collectionID and user ID vars to undefined
-//     getUserInfoFromLocalStorage();
-// }
-
-// function logoutUser() {
-//     removeUserInfoFromLocalStorage();
-//     indexPage();
-// }
 
 function handleActivityHover(e) {
     // e.preventDefault();
