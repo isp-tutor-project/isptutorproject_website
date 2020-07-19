@@ -215,9 +215,7 @@ loginSubmitBtn.addEventListener("click", e => {
         db.getUserData()
         .then((userData) => {
             if (userData) {
-                console.log("Account found");
-                snackbar.show("Signed in as " + userID + ".");
-                homePage();
+                loginUser();
             } else {
                 console.log("No such account!");
                 snackbar.show("No such account exists. Check that your name and birthday were typed in correctly.")
@@ -246,9 +244,8 @@ registerSubmitBtn.addEventListener("click", e => {
                     userID: userID
                 })
                 .then(function () {
-                    console.log("Document successfully written!");
-                    snackbar.show("Signed in as " + userID + ".");
-                    homePage();
+                    console.debug("Document successfully written!");
+                    loginUser();
                 })
                 .catch(function (error) {
                     console.error("Error writing document: ", error);
