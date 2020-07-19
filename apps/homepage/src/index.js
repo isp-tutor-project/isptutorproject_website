@@ -217,13 +217,13 @@ loginSubmitBtn.addEventListener("click", e => {
             if (userData) {
                 loginUser();
             } else {
-                console.log("No such account!");
+                console.error("No such account!");
                 snackbar.show("No such account exists. Check that your name and birthday were typed in correctly.")
             }
         }).catch(function (error) {
             console.log("Error getting account:", error);
             snackbar.show("No such account exists. Check that you typed in the classcode correctly.")
-        })
+        });
     }
 });
 
@@ -234,10 +234,11 @@ registerSubmitBtn.addEventListener("click", e => {
         db.getUserData()
         .then((userData) => {
             if (userData) {
-                console.log("Account already exists");
-                snackbar.show("Account already exists.");
+                let msg = "Account already exists.";
+                console.error(msg);
+                snackbar.show(msg);
             } else {
-                console.log("Creating account");
+                console.debug("Creating account");
                 // add some fields to account object
                 db.setValues({
                     classCode: classCode,
@@ -248,17 +249,17 @@ registerSubmitBtn.addEventListener("click", e => {
                     loginUser();
                 })
                 .catch(function (error) {
-                    console.error("Error writing document: ", error);
-                    snackbar.show("Error creating new account.");
+                    let msg = "Error creating new account.";
+                    console.error(msg, error);
+                    snackbar.show(msg);
                 });
             }
         }).catch(function (error) {
-            console.log("Error getting account:", error);
+            console.error("Error getting account:", error);
             snackbar.show("Cannot create account. Please make sure that class code is correct.");
         });
     }
 });
-
 
 function initApp() {
     if (null === localStorage.getItem("homepage")) {
