@@ -5,7 +5,7 @@ module.exports = {
         car: {
             q1: {
                 type: "mc",
-                text: "Q1) What do these results suggest about which type of wheel was faster?",
+                text: "Q1) Which type of wheel do these results suggest was faster?",
                 options: [{
                     value: "thick wheels",
                     label: "Thick Wheels"
@@ -39,7 +39,7 @@ module.exports = {
                     label: "Home"
                 }, {
                     value: "neither location",
-                    label: "Neither Location"
+                    label: "Neither"
                 }]
             },
             q2: {
@@ -55,7 +55,7 @@ module.exports = {
     },
     scenes: {
         start: {
-            transitions: {
+            edges: {
                 next: "intro"
             },
             customEnterActions: [
@@ -66,197 +66,197 @@ module.exports = {
             ]
         },
         intro: {
-            transitions: {
+            edges: {
                 prev: "start",
                 next: "carsIntro1"
             }
         },
         carsIntro1: {
-            transitions: {
+            edges: {
                 prev: "intro",
                 next: "carsIntro2"
             }
         },
         carsIntro2: {
-            transitions: {
+            edges: {
                 prev: "carsIntro1",
                 next: "carsIntro3"
             }
         },
         carsIntro3: {
-            transitions: {
+            edges: {
                 prev: "carsIntro2",
                 next: "carsResultsIntro1"
             }
         },
         carsResultsIntro1: {
-            transitions: {
+            edges: {
                 prev: "carsIntro3",
                 next: "carsResults1"
             }
         },
         carsResults1: {
             sceneType: "carResults",
-            transitions: {
+            edges: {
                 prev: "carsResultsIntro1",
                 next: "carsResultsIntro2"
             }
         },
         carsResultsIntro2: {
-            transitions: {
+            edges: {
                 prev: "carsResults1",
                 next: "carsResults2"
             }
         },
         carsResults2: {
             sceneType: "carResults",
-            transitions: {
+            edges: {
                 prev: "carsResultsIntro2",
                 next: "carsResultsIntro3"
             }
         },
         carsResultsIntro3: {
-            transitions: {
+            edges: {
                 prev: "carsResults2",
                 next: "carsResults3"
             }
         },
         carsResults3: {
             sceneType: "carResults",
-            transitions: {
+            edges: {
                 prev: "carsResultsIntro3",
                 next: "carsResultsIntro4"
             }
         },
         carsResultsIntro4: {
-            transitions: {
+            edges: {
                 prev: "carsResults3",
                 next: "carsResults4"
             }
         },
         carsResults4: {
             sceneType: "carResults",
-            transitions: {
+            edges: {
                 prev: "carsResultsIntro4",
                 next: "carsResultsIntro5"
             }
         },
         carsResultsIntro5: {
-            transitions: {
+            edges: {
                 prev: "carsResults4",
                 next: "carsResults5"
             }
         },
         carsResults5: {
             sceneType: "carResults",
-            transitions: {
+            edges: {
                 prev: "carsResultsIntro5",
                 next: "libraryIntro1"
             }
         },
         libraryIntro1: {
-            transitions: {
+            edges: {
                 prev: "carsResults5",
                 next: "libraryIntro2"
             }
         },
         libraryIntro2: {
-            transitions: {
+            edges: {
                 prev: "libraryIntro1",
                 next: "libraryIntro3"
             }
         },
         libraryIntro3: {
-            transitions: {
+            edges: {
                 prev: "libraryIntro2",
                 next: "libraryIntro4"
             }
         },
         libraryIntro4: {
-            transitions: {
+            edges: {
                 prev: "libraryIntro3",
                 next: "libraryIntro5"
             }
         },
         libraryIntro5: {
-            transitions: {
+            edges: {
                 prev: "libraryIntro4",
                 next: "libraryIntro6"
             }
         },
         libraryIntro6: {
-            transitions: {
+            edges: {
                 prev: "libraryIntro5",
                 next: "libraryResultsIntro1"
             }
         },
         libraryResultsIntro1: {
-            transitions: {
+            edges: {
                 prev: "libraryIntro6",
                 next: "libraryResults1"
             }
         },
         libraryResults1: {
             sceneType: "libraryResults",
-            transitions: {
+            edges: {
                 prev: "libraryResultsIntro1",
                 next: "libraryResultsIntro2"
             }
         },
         libraryResultsIntro2: {
-            transitions: {
+            edges: {
                 prev: "libraryResults1",
                 next: "libraryResults2"
             }
         },
         libraryResults2: {
             sceneType: "libraryResults",
-            transitions: {
+            edges: {
                 prev: "libraryResultsIntro2",
                 next: "libraryResultsIntro3"
             }
         },
         libraryResultsIntro3: {
-            transitions: {
+            edges: {
                 prev: "libraryResults2",
                 next: "libraryResults3"
             }
         },
         libraryResults3: {
             sceneType: "libraryResults",
-            transitions: {
+            edges: {
                 prev: "libraryResultsIntro3",
                 next: "libraryResultsIntro4"
             }
         },
         libraryResultsIntro4: {
-            transitions: {
+            edges: {
                 prev: "libraryResults3",
                 next: "libraryResults4"
             }
         },
         libraryResults4: {
             sceneType: "libraryResults",
-            transitions: {
+            edges: {
                 prev: "libraryResultsIntro4",
                 next: "libraryResultsIntro5"
             }
         },
         libraryResultsIntro5: {
-            transitions: {
+            edges: {
                 prev: "libraryResults4",
                 next: "libraryResults5"
             }
         },
         libraryResults5: {
             sceneType: "libraryResults",
-            transitions: {
+            edges: {
                 prev: "libraryResultsIntro5",
                 next: "completed"
             }
         },
         completed: {
-            transitions: {
+            edges: {
                 prev: "libraryResults5"
             }
         }
