@@ -10,7 +10,6 @@ export class DiMultipleChoiceFormScene extends DiInstructionScene {
         );
     }
 
-
     restoreState(value) {
         if (super.restoreState(value)) {
             let eleID = `${this.id}_option_${value}`;
@@ -27,7 +26,6 @@ export class DiMultipleChoiceFormScene extends DiInstructionScene {
         return false;
     }
 
-
     hasForm() {
         return true;
     }
@@ -39,18 +37,22 @@ export class DiMultipleChoiceFormScene extends DiInstructionScene {
     saveFormData() {
         let data = this.form.getData();
         let logData = Object.assign(
-            { action_type: "SUBMIT_ANSWER", questionId: `${this.app.activityKey}.${this.id}` },
+            {
+                action_type: "SUBMIT_ANSWER",
+                questionId: `${this.app.activityKey}.${this.id}`
+            },
             data
         );
-        console.log("Updating state.answers");
-        this.app.state.answers.push(logData);
-        console.log("Updating state.sceneFormState");
-        this.app.state.sceneFormState[this.id] = data.selectedValue;
+        console.log("Updating state.events");
+        this.app.state.events.push(logData);
+        console.log("Updating state.sceneState");
+        console.log(this.app.state);
+        this.app.state.sceneState[this.id] = data.selectedValue;
     }
 
     pre_exit() {
         super.pre_exit();
-        if (this.form.changed) {
+        if (this.formChanged()) {
             this.saveFormData();
         }
     }
