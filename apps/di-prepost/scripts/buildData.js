@@ -1,28 +1,28 @@
-const { 
+const {
     addCustomEnterActionsIfMissing,
     addCustomExitActionsIfMissing,
     addSceneTypeIfMissing,
-    DataBuilder 
+    DataBuilder
 } = require("@isptutorproject/isp-data");
 
 
-const VALID_TRANSITION_NAMES = ["prev", "next"];
+const VALID_EDGE_NAMES = ["prev", "next"];
 
 class DiPreTestDataBuilder extends DataBuilder {
- 
+
     mungeData(data) {
         let newData = { scenes: {} };
         let questions = data.questions;
         let errorsFound = false;
         for (let [sceneId, sceneData] of Object.entries(data.scenes)) {
             sceneData['id'] = sceneId;
-            for (let [transName, transSceneId] of Object.entries(sceneData.transitions)) {
-                if (!VALID_TRANSITION_NAMES.includes(transName)) {
-                    console.error(`ERROR: ${sceneId} has an invalid transition: ${transName}`);
+            for (let [edgeName, edgeSceneId] of Object.entries(sceneData.edges)) {
+                if (!VALID_EDGE_NAMES.includes(edgeName)) {
+                    console.error(`ERROR: ${sceneId} has an invalid edge: ${edgeName}`);
                     errorsFound = true;
                 }
-                if (!data.scenes.hasOwnProperty(transSceneId)) {
-                    console.error(`ERROR: ${sceneId}.transitions.${transName} points to an invalid scene: ${transSceneId}`);
+                if (!data.scenes.hasOwnProperty(edgeSceneId)) {
+                    console.error(`ERROR: ${sceneId}.edges.${edgeName} points to an invalid scene: ${edgeSceneId}`);
                     errorsFound = true;
                 }
             }
@@ -57,13 +57,13 @@ class DiPostTestDataBuilder extends DataBuilder {
         let errorsFound = false;
         for (let [sceneId, sceneData] of Object.entries(data.scenes)) {
             sceneData['id'] = sceneId;
-            for (let [transName, transSceneId] of Object.entries(sceneData.transitions)) {
-                if (!VALID_TRANSITION_NAMES.includes(transName)) {
-                    console.error(`ERROR: ${sceneId} has an invalid transition: ${transName}`);
+            for (let [edgeName, edgeSceneId] of Object.entries(sceneData.edges)) {
+                if (!VALID_EDGE_NAMES.includes(edgeName)) {
+                    console.error(`ERROR: ${sceneId} has an invalid edge: ${edgeName}`);
                     errorsFound = true;
                 }
-                if (!data.scenes.hasOwnProperty(transSceneId)) {
-                    console.error(`ERROR: ${sceneId}.transitions.${transName} points to an invalid scene: ${transSceneId}`);
+                if (!data.scenes.hasOwnProperty(edgeSceneId)) {
+                    console.error(`ERROR: ${sceneId}.edges.${edgeName} points to an invalid scene: ${edgeSceneId}`);
                     errorsFound = true;
                 }
             }
