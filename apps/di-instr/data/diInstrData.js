@@ -21,7 +21,7 @@ const SURVEY_OPTIONS = [
 const diInstructionData = {
     scenes: {
         start: {
-            transitions: {
+            edges: {
                 next: "intro1"
             },
             customEnterActions: [
@@ -32,116 +32,116 @@ const diInstructionData = {
             ]
         },
         intro1: {
-            transitions: {
+            edges: {
                 prev: "start",
                 next: "intro2"
             }
         },
         intro2: {
-            transitions: {
+            edges: {
                 prev: "intro1",
                 next: "intro3"
             }
         },
         intro3: {
-            transitions: {
+            edges: {
                 prev: "intro2",
                 next: "intro4"
             }
         },
         intro4: {
-            transitions: {
+            edges: {
                 prev: "intro3",
                 next: "intro5"
             }
         },
         intro5: {
-            transitions: {
+            edges: {
                 prev: "intro4",
                 next: "intro6"
             }
         },
         intro6: {
-            transitions: {
+            edges: {
                 prev: "intro5",
                 next: "intro7"
             }
         },
         intro7: {
-            transitions: {
+            edges: {
                 prev: "intro6",
                 next: "intro8"
             }
         },
         intro8: {
-            transitions: {
+            edges: {
                 prev: "intro7",
                 next: "intro9"
             }
         },
         intro9: {
-            transitions: {
+            edges: {
                 prev: "intro8",
                 next: "intro10"
             }
         },
         intro10: {
-            transitions: {
+            edges: {
                 prev: "intro9",
                 next: "intro11"
             }
         },
         intro11: {
-            transitions: {
+            edges: {
                 prev: "intro10",
                 next: "intro12"
             }
         },
         intro12: {
-            transitions: {
+            edges: {
                 prev: "intro11",
                 next: "intro13"
             }
         },
         intro13: {
-            transitions: {
+            edges: {
                 prev: "intro12",
                 next: "intro14"
             }
         },
         intro14: {
-            transitions: {
+            edges: {
                 prev: "intro13",
                 next: "intro15"
             }
         },
         intro15: {
-            transitions: {
+            edges: {
                 prev: "intro14",
                 next: "intro16"
             }
         },
         intro16: {
-            transitions: {
+            edges: {
                 prev: "intro15",
                 next: "scene1"
             }
         },
         scene1: {
-            transitions: {
+            edges: {
                 prev: "intro16",
                 next: "scene2"
             }
         },
         scene2: {
-            transitions: {
+            edges: {
                 prev: "scene1",
                 next: "scene3"
             }
         },
         scene3: {
             sceneType: SCENE_TYPES.mc,
-            transitions: {
+            edges: {
                 prev: "scene2",
                 next: "scene4"
             },
@@ -159,7 +159,7 @@ const diInstructionData = {
         },
         scene4: {
             sceneType: SCENE_TYPES.mc,
-            transitions: {
+            edges: {
                 prev: "scene3",
                 next: "scene5"
             },
@@ -172,26 +172,26 @@ const diInstructionData = {
             }
         },
         scene5: {
-            transitions: {
+            edges: {
                 prev: "scene4",
                 next: "scene6"
             }
         },
         scene6: {
-            transitions: {
+            edges: {
                 prev: "scene5",
                 next: "scene7"
             }
         },
         scene7: {
-            transitions: {
+            edges: {
                 prev: "scene6",
                 next: "scene8"
             }
         },
         scene8: {
             sceneType: SCENE_TYPES.mc,
-            transitions: {
+            edges: {
                 prev: "scene7",
                 next: "scene9"
             },
@@ -208,19 +208,19 @@ const diInstructionData = {
             }
         },
         scene9: {
-            transitions: {
+            edges: {
                 prev: "scene8",
                 next: "scene10"
             }
         },
         scene10: {
-            transitions: {
+            edges: {
                 prev: "scene9",
                 next: "scene11"
             }
         },
         scene11: {
-            transitions: {
+            edges: {
                 prev: "scene10",
                 next: "scene26",
                 mean: "scene12",
@@ -231,7 +231,7 @@ const diInstructionData = {
         },
         scene12: {
             sceneType: SCENE_TYPES.stats,
-            transitions: {
+            edges: {
                 prev: "scene11",
                 next: "scene13",
                 more: "scene13",
@@ -246,7 +246,7 @@ const diInstructionData = {
         },
         scene13: {
             sceneType: SCENE_TYPES.stats,
-            transitions: {
+            edges: {
                 prev: "scene12",
                 next: "scene14",
                 back: "scene12",
@@ -262,7 +262,7 @@ const diInstructionData = {
         },
         scene14: {
             sceneType: SCENE_TYPES.stats,
-            transitions: {
+            edges: {
                 prev: "scene13",
                 backToQuestion: BACK_TO_QUESTION_SCENE,
                 more: "scene15",
@@ -277,7 +277,7 @@ const diInstructionData = {
         },
         scene15: {
             sceneType: SCENE_TYPES.stats,
-            transitions: {
+            edges: {
                 prev: "scene14",
                 next: "scene16",
                 back: "scene14",
@@ -300,7 +300,7 @@ const diInstructionData = {
         },
         scene16: {
             sceneType: SCENE_TYPES.stats,
-            transitions: {
+            edges: {
                 prev: "scene15",
                 next: "scene17",
                 back: "scene15",
@@ -323,7 +323,7 @@ const diInstructionData = {
         },
         scene17: {
             sceneType: SCENE_TYPES.stats,
-            transitions: {
+            edges: {
                 prev: "scene16",
                 next: "scene18",
                 back: "scene16",
@@ -346,7 +346,7 @@ const diInstructionData = {
         },
         scene18: {
             sceneType: SCENE_TYPES.stats,
-            transitions: {
+            edges: {
                 prev: "scene17",
                 next: "scene19",
                 back: "scene17",
@@ -369,7 +369,7 @@ const diInstructionData = {
         },
         scene19: {
             sceneType: SCENE_TYPES.stats,
-            transitions: {
+            edges: {
                 prev: "scene18",
                 next: "scene20",
                 back: "scene18",
@@ -392,7 +392,7 @@ const diInstructionData = {
         },
         scene20: {
             sceneType: SCENE_TYPES.stats,
-            transitions: {
+            edges: {
                 prev: "scene19",
                 next: "scene21",
                 back: "scene19",
@@ -415,7 +415,7 @@ const diInstructionData = {
         },
         scene21: {
             sceneType: SCENE_TYPES.stats,
-            transitions: {
+            edges: {
                 prev: "scene20",
                 next: "scene22",
                 back: "scene20",
@@ -438,7 +438,7 @@ const diInstructionData = {
         },
         scene22: {
             sceneType: SCENE_TYPES.stats,
-            transitions: {
+            edges: {
                 prev: "scene21",
                 next: "scene23",
                 back: "scene21",
@@ -461,7 +461,7 @@ const diInstructionData = {
         },
         scene23: {
             sceneType: SCENE_TYPES.stats,
-            transitions: {
+            edges: {
                 prev: "scene22",
                 next: "scene24",
                 backToQuestion: BACK_TO_QUESTION_SCENE,
@@ -476,7 +476,7 @@ const diInstructionData = {
         },
         scene24: {
             sceneType: SCENE_TYPES.stats,
-            transitions: {
+            edges: {
                 prev: "scene23",
                 next: "scene25",
                 backToQuestion: BACK_TO_QUESTION_SCENE,
@@ -491,7 +491,7 @@ const diInstructionData = {
         },
         scene25: {
             sceneType: SCENE_TYPES.stats,
-            transitions: {
+            edges: {
                 prev: "scene24",
                 next: "scene26",
                 back: "scene24",
@@ -507,7 +507,7 @@ const diInstructionData = {
         },
         scene26: {
             sceneType: SCENE_TYPES.mc,
-            transitions: {
+            edges: {
                 prev: "scene25",
                 next: "scene27"
             },
@@ -528,20 +528,20 @@ const diInstructionData = {
             }
         },
         scene27: {
-            transitions: {
+            edges: {
                 prev: "scene26",
                 next: "scene27a"
             }
         },
         scene27a: {
-            transitions: {
+            edges: {
                 prev: "scene27",
                 next: "scene28"
             }
         },
         scene28: {
             sceneType: SCENE_TYPES.mc,
-            transitions: {
+            edges: {
                 prev: "scene27a",
                 next: "scene29"
             },
@@ -560,14 +560,14 @@ const diInstructionData = {
             }
         },
         scene29: {
-            transitions: {
+            edges: {
                 prev: "scene28",
                 next: "scene30"
             }
         },
         scene30: {
             sceneType: SCENE_TYPES.mc,
-            transitions: {
+            edges: {
                 prev: "scene29",
                 next: "scene31"
             },
@@ -586,14 +586,14 @@ const diInstructionData = {
             }
         },
         scene31: {
-            transitions: {
+            edges: {
                 prev: "scene30",
                 next: "scene32"
             }
         },
         scene32: {
             sceneType: SCENE_TYPES.mc,
-            transitions: {
+            edges: {
                 prev: "scene31",
                 next: "scene32a"
             },
@@ -611,14 +611,14 @@ const diInstructionData = {
             }
         },
         scene32a: {
-            transitions: {
+            edges: {
                 prev: "scene32",
                 next: "scene33"
             }
         },
         scene33: {
             sceneType: SCENE_TYPES.mc,
-            transitions: {
+            edges: {
                 prev: "scene32a",
                 next: "scene34"
             },
@@ -631,14 +631,14 @@ const diInstructionData = {
             }
         },
         scene34: {
-            transitions: {
+            edges: {
                 prev: "scene33",
                 next: "scene35"
             }
         },
         scene35: {
             sceneType: SCENE_TYPES.mc,
-            transitions: {
+            edges: {
                 prev: "scene34",
                 next: "scene35a"
             },
@@ -656,14 +656,14 @@ const diInstructionData = {
             }
         },
         scene35a: {
-            transitions: {
+            edges: {
                 prev: "scene35",
                 next: "scene36"
             }
         },
         scene36: {
             sceneType: SCENE_TYPES.mc,
-            transitions: {
+            edges: {
                 prev: "scene35",
                 next: "scene37"
             },
@@ -677,7 +677,7 @@ const diInstructionData = {
         },
         scene37: {
             sceneType: SCENE_TYPES.mc,
-            transitions: {
+            edges: {
                 prev: "scene36",
                 next: "scene38"
             },
@@ -695,26 +695,26 @@ const diInstructionData = {
             }
         },
         scene38: {
-            transitions: {
+            edges: {
                 prev: "scene37",
                 next: "scene39"
             }
         },
         scene39: {
-            transitions: {
+            edges: {
                 prev: "scene38",
                 next: "scene40"
             }
         },
         scene40: {
-            transitions: {
+            edges: {
                 prev: "scene39",
                 next: "scene41"
             }
         },
         scene41: {
             sceneType: SCENE_TYPES.mc,
-            transitions: {
+            edges: {
                 prev: "scene40",
                 next: "scene42"
             },
@@ -732,14 +732,14 @@ const diInstructionData = {
             }
         },
         scene42: {
-            transitions: {
+            edges: {
                 prev: "scene41",
                 next: "scene43"
             }
         },
         scene43: {
             sceneType: SCENE_TYPES.mc,
-            transitions: {
+            edges: {
                 prev: "scene42",
                 next: "scene44"
             },
@@ -753,7 +753,7 @@ const diInstructionData = {
         },
         scene44: {
             sceneType: SCENE_TYPES.mc,
-            transitions: {
+            edges: {
                 prev: "scene43",
                 next: "scene45"
             },
@@ -771,26 +771,26 @@ const diInstructionData = {
             }
         },
         scene45: {
-            transitions: {
+            edges: {
                 prev: "scene44",
                 next: "scene46"
             }
         },
         scene46: {
-            transitions: {
+            edges: {
                 prev: "scene45",
                 next: "scene47"
             }
         },
         scene47: {
-            transitions: {
+            edges: {
                 prev: "scene46",
                 next: "scene48"
             }
         },
         scene48: {
             sceneType: SCENE_TYPES.mc,
-            transitions: {
+            edges: {
                 prev: "scene47",
                 next: "scene49"
             },
@@ -808,74 +808,74 @@ const diInstructionData = {
             }
         },
         scene49: {
-            transitions: {
+            edges: {
                 prev: "scene48",
                 next: "scene50"
             }
         },
         scene50: {
-            transitions: {
+            edges: {
                 prev: "scene49",
                 next: "scene50a"
             }
         },
         scene50a: {
-            transitions: {
+            edges: {
                 prev: "scene50",
                 next: "scene51"
             }
         },
         scene51: {
-            transitions: {
+            edges: {
                 prev: "scene50a",
                 next: "scene51a"
             }
         },
         scene51a: {
-            transitions: {
+            edges: {
                 prev: "scene51",
                 next: "scene52"
             }
         },
         scene52: {
-            transitions: {
+            edges: {
                 prev: "scene51",
                 next: "scene53"
             }
         },
         scene53: {
-            transitions: {
+            edges: {
                 prev: "scene52",
                 next: "scene54"
             }
         },
         scene54: {
-            transitions: {
+            edges: {
                 prev: "scene53",
                 next: "scene55"
             }
         },
         scene55: {
-            transitions: {
+            edges: {
                 prev: "scene54",
                 next: "scene56"
             }
         },
         scene56: {
-            transitions: {
+            edges: {
                 prev: "scene55",
                 next: "scene57"
             }
         },
         scene57: {
-            transitions: {
+            edges: {
                 prev: "scene56",
                 next: "scene58"
             }
         },
         scene58: {
             sceneType: SCENE_TYPES.mc,
-            transitions: {
+            edges: {
                 prev: "scene57",
                 next: "scene58a"
             },
@@ -893,14 +893,14 @@ const diInstructionData = {
             }
         },
         scene58a: {
-            transitions: {
+            edges: {
                 prev: "scene58",
                 next: "scene59"
             }
         },
         scene59: {
             sceneType: SCENE_TYPES.mc,
-            transitions: {
+            edges: {
                 prev: "scene58",
                 next: "scene60"
             },
@@ -913,26 +913,26 @@ const diInstructionData = {
             }
         },
         scene60: {
-            transitions: {
+            edges: {
                 prev: "scene59",
                 next: "scene61"
             }
         },
         scene61: {
-            transitions: {
+            edges: {
                 prev: "scene60",
                 next: "scene62"
             }
         },
         scene62: {
-            transitions: {
+            edges: {
                 prev: "scene61",
                 next: "scene63"
             }
         },
         scene63: {
             sceneType: SCENE_TYPES.mc,
-            transitions: {
+            edges: {
                 prev: "scene62",
                 next: "scene63a"
             },
@@ -950,14 +950,14 @@ const diInstructionData = {
             }
         },
         scene63a: {
-            transitions: {
+            edges: {
                 prev: "scene63",
                 next: "scene64"
             }
         },
         scene64: {
             sceneType: SCENE_TYPES.mc,
-            transitions: {
+            edges: {
                 prev: "scene63a",
                 next: "scene65"
             },
@@ -970,14 +970,14 @@ const diInstructionData = {
             }
         },
         scene65: {
-            transitions: {
+            edges: {
                 prev: "scene64",
                 next: "scene66"
             }
         },
         scene66: {
             sceneType: SCENE_TYPES.mc,
-            transitions: {
+            edges: {
                 prev: "scene65",
                 next: "scene67"
             },
@@ -995,32 +995,32 @@ const diInstructionData = {
             }
         },
         scene67: {
-            transitions: {
+            edges: {
                 prev: "scene66",
                 next: "scene68"
             }
         },
         scene68: {
-            transitions: {
+            edges: {
                 prev: "scene67",
                 next: "scene69"
             }
         },
         scene69: {
-            transitions: {
+            edges: {
                 prev: "scene68",
                 next: "scene70"
             }
         },
         scene70: {
-            transitions: {
+            edges: {
                 prev: "scene69",
                 next: "scene71"
             }
         },
         scene71: {
             sceneType: SCENE_TYPES.mc,
-            transitions: {
+            edges: {
                 prev: "scene70",
                 next: "scene72"
             },
@@ -1038,62 +1038,62 @@ const diInstructionData = {
             }
         },
         scene72: {
-            transitions: {
+            edges: {
                 prev: "scene71",
                 next: "scene73"
             }
         },
         scene73: {
-            transitions: {
+            edges: {
                 prev: "scene72",
                 next: "scene74"
             }
         },
         scene74: {
-            transitions: {
+            edges: {
                 prev: "scene73",
                 next: "scene75"
             }
         },
         scene75: {
-            transitions: {
+            edges: {
                 prev: "scene74",
                 next: "scene76"
             }
         },
         scene76: {
-            transitions: {
+            edges: {
                 prev: "scene75",
                 next: "scene77"
             }
         },
         scene77: {
-            transitions: {
+            edges: {
                 prev: "scene76",
                 next: "scene78"
             }
         },
         scene78: {
-            transitions: {
+            edges: {
                 prev: "scene77",
                 next: "scene79"
             }
         },
         scene79: {
-            transitions: {
+            edges: {
                 prev: "scene78",
                 next: "scene80"
             }
         },
         scene80: {
-            transitions: {
+            edges: {
                 prev: "scene79",
                 next: "scene81"
             }
         },
         scene81: {
             sceneType: SCENE_TYPES.mc,
-            transitions: {
+            edges: {
                 prev: "scene80",
                 next: "scene82"
             },
@@ -1111,32 +1111,32 @@ const diInstructionData = {
             }
         },
         scene82: {
-            transitions: {
+            edges: {
                 prev: "scene81",
                 next: "scene83"
             }
         },
         scene83: {
-            transitions: {
+            edges: {
                 prev: "scene82",
                 next: "scene84"
             }
         },
         scene84: {
-            transitions: {
+            edges: {
                 prev: "scene83",
                 next: "scene89"
             }
         },
         scene89: {
-            transitions: {
+            edges: {
                 prev: "scene84",
                 next: "scene90"
             }
         },
         scene90: {
             sceneType: SCENE_TYPES.mc,
-            transitions: {
+            edges: {
                 prev: "scene89",
                 next: "scene91"
             },
@@ -1154,38 +1154,38 @@ const diInstructionData = {
             }
         },
         scene91: {
-            transitions: {
+            edges: {
                 prev: "scene90",
                 next: "scene92"
             }
         },
         scene92: {
-            transitions: {
+            edges: {
                 prev: "scene91",
                 next: "scene93"
             }
         },
         scene93: {
-            transitions: {
+            edges: {
                 prev: "scene92",
                 next: "scene94"
             }
         },
         scene94: {
-            transitions: {
+            edges: {
                 prev: "scene93",
                 next: "scene95"
             }
         },
         scene95: {
-            transitions: {
+            edges: {
                 prev: "scene94",
                 next: "scene96"
             }
         },
         scene96: {
             sceneType: SCENE_TYPES.mc,
-            transitions: {
+            edges: {
                 prev: "scene95",
                 next: "scene97"
             },
@@ -1203,50 +1203,50 @@ const diInstructionData = {
             }
         },
         scene97: {
-            transitions: {
+            edges: {
                 prev: "scene96",
                 next: "scene98"
             }
         },
         scene98: {
-            transitions: {
+            edges: {
                 prev: "scene97",
                 next: "scene99"
             }
         },
         scene99: {
-            transitions: {
+            edges: {
                 prev: "scene98",
                 next: "scene100"
             }
         },
         scene100: {
-            transitions: {
+            edges: {
                 prev: "scene99",
                 next: "scene101"
             }
         },
         scene101: {
-            transitions: {
+            edges: {
                 prev: "scene100",
                 next: "scene102"
             }
         },
         scene102: {
-            transitions: {
+            edges: {
                 prev: "scene101",
                 next: "scene103"
             }
         },
         scene103: {
-            transitions: {
+            edges: {
                 prev: "scene102",
                 next: "scene104"
             }
         },
         scene104: {
             sceneType: SCENE_TYPES.mc,
-            transitions: {
+            edges: {
                 prev: "scene103",
                 next: "scene104a"
             },
@@ -1264,20 +1264,20 @@ const diInstructionData = {
             }
         },
         scene104a: {
-            transitions: {
+            edges: {
                 prev: "scene104",
                 next: "scene105"
             }
         },
         scene105: {
-            transitions: {
+            edges: {
                 prev: "scene104a",
                 next: "scene106"
             }
         },
         scene106: {
             sceneType: SCENE_TYPES.mc,
-            transitions: {
+            edges: {
                 prev: "scene105",
                 next: "scene107"
             },
@@ -1295,14 +1295,14 @@ const diInstructionData = {
             }
         },
         scene107: {
-            transitions: {
+            edges: {
                 prev: "scene106",
                 next: "scene108"
             }
         },
         scene108: {
             sceneType: SCENE_TYPES.mc,
-            transitions: {
+            edges: {
                 prev: "scene107",
                 next: "scene108a"
             },
@@ -1320,43 +1320,43 @@ const diInstructionData = {
             }
         },
         scene108a: {
-            transitions: {
+            edges: {
                 prev: "scene108",
                 next: "scene109"
             }
         },
         scene109: {
-            transitions: {
+            edges: {
                 prev: "scene108a",
                 next: "scene110"
             }
         },
         scene110: {
-            transitions: {
+            edges: {
                 prev: "scene109",
                 next: "scene111"
             }
         },
         scene111: {
-            transitions: {
+            edges: {
                 prev: "scene110",
                 next: "scene112"
             }
         },
         scene112: {
-            transitions: {
+            edges: {
                 prev: "scene111",
                 next: "scene113"
             }
         },
         scene113: {
-            transitions: {
+            edges: {
                 prev: "scene112",
                 next: "completed"
             }
         },
         completed: {
-            transitions: {
+            edges: {
                 prev: "scene113"
             }
         }
