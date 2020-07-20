@@ -1,4 +1,4 @@
-import { SceneTransitionsApp } from "@isptutorproject/scene-transitions-base";
+import { SceneBasedApp } from "@isptutorproject/scene-app-base";
 import { DiInstructionScene } from "./di-instruction-scene";
 import { DiStatsScene } from "./di-stats-scene";
 import { DiMultipleChoiceFormScene } from "./di-mult-choice-form-scene";
