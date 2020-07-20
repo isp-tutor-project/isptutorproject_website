@@ -85,18 +85,19 @@ export class RadioButtonForm {
     }
 
     getData() {
-        let sfi = this.formInfo
+        let sfi = this.formInfo;
         let isCorrect = this.getCorrectness();
         let selectedAnswer = this.form.querySelector(
             'input[type="radio"]:checked'
-        )
+        );
         let val = selectedAnswer.value.trim();
-        let ansText = selectedAnswer.labels[0].innerText;
+        let lbl = selectedAnswer.labels[0].innerText;
         let formData = {
             questionType: sfi.type,
-            question: sfi.text,
+            questionText: sfi.text,
+            selectedEleId: selectedAnswer.id,
             selectedValue: val,
-            selectedLabel: ansText,
+            selectedLabel: lbl,
             isCorrect: isCorrect,
             timestamp: Date.now()
         }
