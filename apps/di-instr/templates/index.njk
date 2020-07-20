@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="./di-instr.bundle.css" />
     </head>
     <body>
+        {% include "site/navbar.njk" %}
         <main class="my-main">
             <div id="scene_id_region"></div>
             {% for scene in collections.diInstrScenes | sortBySceneName %}
