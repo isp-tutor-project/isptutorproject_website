@@ -4,19 +4,27 @@ import { SnackBar} from "@isptutorproject/snackbar";
 export class SceneBasedApp {
     constructor(appData, activityConfig, defaultInitialState) {
         this.sceneData = appData.scenes;
+        this.activityConfig = activityConfig;
         this.db = getDBConnection(activityConfig.database);
         this.db.setCredentials(activityConfig.classCode, activityConfig.userID);
         this.activityKey = activityConfig.activityKey;
         this.defaultState = defaultInitialState;
 
         this.snackbar = new SnackBar();
-
+        this.homePageBtn = null;
+        homePageBtn  = document.getElementById("go_home_page_btn");
         this.nextBtn = document.getElementById("next_btn");
         this.prevBtn = document.getElementById("prev_btn");
         this.sceneIdRegion = document.getElementById("scene_id_region");
-
+        if (homePageBtn) {
+            this.homePageBtn = this.homePageBtn;
+        }
+        this.handleGoHomePage = this.handleGoHomePage.bind(this);
         this.handleNext = this.handleNext.bind(this);
         this.handlePrev = this.handlePrev.bind(this);
+        if (this.homePageBtn) {
+            this.homePageBtn.addEventListener("click", this.handleGoHomePage);
+        }
         this.nextBtn.addEventListener("click", this.handleNext);
         this.prevBtn.addEventListener("click", this.handlePrev);
 
@@ -40,6 +48,11 @@ export class SceneBasedApp {
 
     showFeedback(feedback) {
         this.snackbar.show(feedback);
+    }
+
+    handleGoHomePage(event) {
+        event.preventDefault();
+        window.location.href = this.activityConfig.homepage
     }
 
     handlePrev(event) {
