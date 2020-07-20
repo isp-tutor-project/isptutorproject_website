@@ -1,4 +1,4 @@
-{% set surveyOptions = [
+{# {% set surveyOptions = [
         {value: 'a', label: "Not at all sure"},
         {value: 'b', label: "A little sure"},
         {value: 'c', label: "Pretty sure"},
@@ -6,6 +6,7 @@
         {value: 'e', label: "I am Absolutely sure"}
     ]
 %}
+#}
 
 {% macro _join(separator, array) %}{{ array | join(separator) }}{% endmacro %}
 
