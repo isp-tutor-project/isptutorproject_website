@@ -12,12 +12,12 @@ export class SceneBasedApp {
 
         this.snackbar = new SnackBar();
         this.homePageBtn = null;
-        homePageBtn  = document.getElementById("go_home_page_btn");
+        let homePageBtn  = document.getElementById("go_home_page");
         this.nextBtn = document.getElementById("next_btn");
         this.prevBtn = document.getElementById("prev_btn");
         this.sceneIdRegion = document.getElementById("scene_id_region");
         if (homePageBtn) {
-            this.homePageBtn = this.homePageBtn;
+            this.homePageBtn = homePageBtn;
         }
         this.handleGoHomePage = this.handleGoHomePage.bind(this);
         this.handleNext = this.handleNext.bind(this);
