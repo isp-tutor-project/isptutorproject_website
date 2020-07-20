@@ -1,9 +1,8 @@
-import { Scene } from "@isptutorproject/scene-transitions-base";
+import { Scene } from "@isptutorproject/scene-app-base";
 
 export class DiInstructionScene extends Scene {
     constructor(app, sceneInfo) {
         super(app, sceneInfo);
-        this.handleTransitionButton = this.handleTransitionButton.bind(this);
         this.customActions = {
             showBtns: this.showBtns,
             hideBtns: this.hideBtns,
@@ -17,22 +16,6 @@ export class DiInstructionScene extends Scene {
         };
     }
 
-    showBtns(btnNames) {
-        for (let btnName of btnNames) {
-            if (this.btnNames.hasOwnProperty(btnName)) {
-                this.app.show(this.btnNames[btnName]);
-            }
-        }
-    }
-
-    hideBtns(btnNames) {
-        for (let btnName of btnNames) {
-            if (this.btnNames.hasOwnProperty(btnName)) {
-                this.app.hide(this.btnNames[btnName]);
-            }
-        }
-    }
-
     hiliteTableCells(args) {
         let tableId = `${this.id}_${args.table}`;
         let table = document.getElementById(tableId);
@@ -42,40 +25,6 @@ export class DiInstructionScene extends Scene {
             let cell = table.querySelector(sel);
             cell.classList.add(`${color}-bg`);
         }
-    }
-
-    handleTransitionButton(e) {
-        e.preventDefault();
-        let transitionName = e.target.dataset.transition;
-        this.app.handleTransition(transitionName);
-    }
-
-    getTransitionElements() {
-        return this.el.getElementsByClassName("transition-to");
-    }
-
-    setupTransitionEventHandlers() {
-        for (let el of this.getTransitionElements()) {
-            el.addEventListener("click", this.handleTransitionButton, { once: true });
-        }
-    }
-
-    // teardownTransitionEventHandlers() {
-    //     for (let el of this.getTransitionElements()) {
-    //         el.removeEventListener("click", this.handleTransition);
-    //     }
-    // }
-
-    defaultEnterSceneActions() {
-        super.defaultEnterSceneActions();
-        this.setupTransitionEventHandlers();
-        // these button states may get overriden by scene-specific custom actions
-        this.app.show(this.app.prevBtn);
-        this.app.enable(this.app.prevBtn);
-        this.app.show(this.app.nextBtn);
-        this.app.enable(this.app.nextBtn);
-        this.app.hide(this.app.readyToAnswerBtn);
-        this.app.hide(this.app.backToQuestionBtn);
     }
 
     performCustomEnterSceneActions() {
@@ -88,7 +37,15 @@ export class DiInstructionScene extends Scene {
         }
     }
 
-    defaultExitSceneActions() {
-        super.defaultExitSceneActions()
+    defaultEnterSceneActions() {
+        super.defaultEnterSceneActions();
+        // these button states may get overriden by scene-specific custom actions
+        this.app.show(this.app.prevBtn);
+        this.app.enable(this.app.prevBtn);
+        this.app.show(this.app.nextBtn);
+        this.app.enable(this.app.nextBtn);
+        this.app.hide(this.app.readyToAnswerBtn);
+        this.app.hide(this.app.backToQuestionBtn);
     }
+
 };
