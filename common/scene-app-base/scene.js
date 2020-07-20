@@ -77,6 +77,7 @@ export class Scene {
     pre_enter() {
 
     }
+
     enter() {
         if (this._isBogus()) {
             return;
