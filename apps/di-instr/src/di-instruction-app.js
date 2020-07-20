@@ -4,64 +4,26 @@ import { DiStatsScene } from "./di-stats-scene";
 import { DiMultipleChoiceFormScene } from "./di-mult-choice-form-scene";
 
 
-const INITIAL_STATE = {
-    transitions: [],
-    answers: [],
-    // mapping of sceneid => formValues
-    sceneFormState: {},
-    currentScene: "start"
-};
-
-export class DiInstructionApp extends SceneTransitionsApp {
-    constructor(appData, db, activityKey, features) {
-        super(appData, db, activityKey, features);
-        //if no  state from db
-        this.defaultState = Object.assign({}, INITIAL_STATE);
-        this.handleNext = this.handleNext.bind(this);
-        this.handlePrev = this.handlePrev.bind(this);
-        this.nextBtn           = document.getElementById("next_btn");
-        this.prevBtn           = document.getElementById("prev_btn");
+export class DiInstructionApp extends SceneBasedApp {
+    constructor(appData, activityConfig, defaultInitialState) {
+        super(appData, activityConfig, defaultInitialState);
+        // bind event handlers
+        this.handleBackToQuestion = this.handleBackToQuestion.bind(this);
+        this.handleReadyToAnswer = this.handleReadyToAnswer.bind(this);
         this.backToQuestionBtn = document.getElementById("back_to_question_btn");
         this.readyToAnswerBtn  = document.getElementById("ready_to_answer_btn");
-        this.sceneIdRegion     = document.getElementById("scene_id_region");
-        this.nextBtn.addEventListener("click", this.handleNext);
-        this.prevBtn.addEventListener("click", this.handlePrev);
-        this.readyToAnswerBtn.addEventListener("click", (e) => {
-            e.preventDefault();
-            this.handleTransition("readyToAnswer");
-        });
-        this.backToQuestionBtn.addEventListener("click", (e) => {
-            e.preventDefault();
-            this.handleTransition("backToQuestion");
-        });
-        window.app = this;
+        this.readyToAnswerBtn.addEventListener("click", this.handleReadyToAnswer);
+        this.backToQuestionBtn.addEventListener("click", this.handleBackToQuestion);
     }
 
-
-    handlePrev(event) {
+    handleReadyToAnswer(event) {
         event.preventDefault();
-        if (this.currentScene.hasForm() && this.currentScene.formChanged()) {
-            this.showFeedback(this.currentScene.form.getFeedback());
-        }
-        this.handleTransition("prev");
-        this.saveAppState();
+        this.followEdge("readyToAnswer");
     }
 
-    handleNext(event) {
+    handleBackToQuestion(event) {
         event.preventDefault();
-        if (this.currentScene.hasForm() && this.currentScene.formChanged()) {
-            this.showFeedback(this.currentScene.form.getFeedback());
-        }
-        this.handleTransition("next");
-        this.saveAppState();
-    }
-
-    setSnackbar(snackbar) {
-        this.snackbar = snackbar;
-    }
-
-    showFeedback(feedback) {
-        this.snackbar.show(feedback);
+        this.followEdge("backToQuestion");
     }
 
     createScene(sceneInfo) {
@@ -76,43 +38,4 @@ export class DiInstructionApp extends SceneTransitionsApp {
         return newScene;
     }
 
-
-    // logStudentAnswer(questionName, answer) {
-    //     // FIXME: this needs to get stored in firestore
-    //     this.scene.
-    //     let question = this.currentScene.questions[questionName];
-    //     let isCorrect = "N/A";
-    //     if ((typeof(question.correctAnswer) !== "undefined") &&
-    //         (question.correctAnswer !== "N/A"))
-    //     {
-    //         isCorrect = (answer === question.correctAnswer);
-    //     }
-    //     let qid = `${this.currentScene.id}.${questionName}`;
-    //     if ("" !== this.testName) {
-    //         qid = `${this.testName}.${qid}`;
-    //     }
-    //     let data = {
-    //         action: "SUBMIT_ANSWER",
-    //         questionId: qid,
-    //         questionText: question.text,
-    //         answer: answer,
-    //         isCorrect: isCorrect,
-    //         timestamp: Date.now()
-    //     }
-    //     this.state.answers.push(data);
-    //     console.log(data);
-    // }
-
-
-    gotoScene(scene) {
-        super.gotoScene(scene);
-        this.displaySceneId();
-    }
-
-    displaySceneId() {
-        if (process.env.NODE_ENV === "development") {
-            this.sceneIdRegion.innerHTML = this.currentScene.id;
-        }
-    }
-
-};
+}
