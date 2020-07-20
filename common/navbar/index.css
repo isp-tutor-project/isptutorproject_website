@@ -22,18 +22,17 @@
   display: inline;
   width: fit-content;
 }
-/* 
-.navbar-items.lhs {
-  float: left;
-} 
-*/
 
-.navbar-items.center {
+.navbar-items.navbar-lhs {
+  float: left;
+}
+
+.navbar-items.navbar-center {
   margin-left: 100px;
   margin-right: 100px;
 }
 
-.navbar-items.rhs {
+.navbar-items.navbar-rhs {
   float: right;
 }
 
@@ -46,21 +45,21 @@
   border-radius: 0;
 }
 
-/* 
+/*
 #sign_out_region {
   position: absolute;
   top: 30px;
   right: 20px;
   z-index: 1;
-} 
+}
 */
-/* 
+/*
 #sign_in_text {
   position: absolute;
   top: 10px;
   right: 10px;
   z-index: 1;
   float: right;
-} 
+}
 */
 
