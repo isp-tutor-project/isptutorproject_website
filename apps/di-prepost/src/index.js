@@ -1,6 +1,8 @@
 
 import "./index.scss";
 
+import { NavBar } from "@isptutorproject/navbar";
+
 import { SceneBasedApp } from "@isptutorproject/scene-app-base";
 import { DiTestScene, DiTestResultsScene } from "./scenes";
 
