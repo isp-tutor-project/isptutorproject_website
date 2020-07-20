@@ -8,7 +8,7 @@ $my_path: "/apps/di-instr/";
  * start of app-specific css
  */
 main {
-    height: 100%;
+    height: calc(100% - 36px);
     width: 100%;
     margin: 0;
     background-color: white;
