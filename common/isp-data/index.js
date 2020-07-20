@@ -27,7 +27,7 @@ class DataBuilder {
     constructor(filePrefix) {
         // this.inFile = path.resolve(__dirname, `${filePrefix}Data`);
         // this.outFile = path.resolve(__dirname, `${filePrefix}.json`);
-        const pwd = process.cwd();        
+        const pwd = process.cwd();
         this.inFile  = path.join(pwd, "data", `${filePrefix}Data.js`);
         this.outFile = path.join(pwd, "data", `${filePrefix}.json`);
         // console.log("__dirname", __dirname);
@@ -38,15 +38,8 @@ class DataBuilder {
     buildData() {
         // blow away old generated content if it exists
         // console.log(`infile: ${inFile}\noutfile: ${outFile}`);
-        if (fs.existsSync(this.outFile)) {
-            // console.log("blowing away old outfile");
-            try {
-                fs.unlinkSync(this.outFile);
-            } catch (err) {
-                console.error(err);
-            }
-        }
         let origData;
+        removeOldFile(this.outFile);
         try {
             // console.log(`loading ${this.inFile}`);
             origData = require(this.inFile);
@@ -61,6 +54,7 @@ class DataBuilder {
             fs.writeFileSync(this.outFile, JSON.stringify(mungedData, null, 4));
         }
     }
+
 
     mungeData(data)  {
         let newData = { scenes: {} };
@@ -81,6 +75,17 @@ class DataBuilder {
 };
 
 
+function removeOldFile(outFile) {
+    if (fs.existsSync(outFile)) {
+        // console.log("blowing away old outfile");
+        try {
+            fs.unlinkSync(outFile);
+        } catch (err) {
+            console.error(err);
+        }
+    }
+}
+
 
 function genData(filePrefix, munger) {
     console.log(`generating ${filePrefix} data..`);
@@ -92,14 +97,7 @@ function genData(filePrefix, munger) {
     }
     // blow away old generated content if it exists
     // console.log(`infile: ${inFile}\noutfile: ${outFile}`);
-    if (fs.existsSync(outFile)) {
-        // console.log("blowing away old outfile");
-        try {
-            fs.unlinkSync(outFile);
-        } catch (err) {
-            console.error(err);
-        }
-    }
+    removeOldFile(outFile);
     let origData;
     try {
         // console.log(`loading ${inFile}`);
