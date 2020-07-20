@@ -6,6 +6,7 @@
         {% block cssbundle %}{% endblock %}
     </head>
     <body>
+        {% include "site/navbar.njk" %}
         <div id="scene_id_region"></div>
         <main>
             {% block main %} {% endblock %}
