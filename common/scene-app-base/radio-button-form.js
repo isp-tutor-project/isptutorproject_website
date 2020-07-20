@@ -107,46 +107,4 @@ export class RadioButtonForm {
         return formData;
     }
 
-    // getFormData() {
-
-    // }
-
-    // handleFormSubmit(e) {
-    //     e.preventDefault();
-
-    //     if (this.form.checkValidity()) {
-
-    //         let fbText;
-    //         let fbClassName;
-
-    //         if ("n/a" === correctAnswer) {
-    //             isCorrect = null;
-    //             fbText = sfi.ntlFb;
-    //             fbClassName = "ntl-feedback";
-    //         } else if (correctAnswer === val) {
-    //             isCorrect = true;
-    //             fbText = sfi.posFb;
-    //             fbClassName = "pos-feedback";
-    //         } else {
-    //             isCorrect = false;
-    //             fbText = sfi.negFb;
-    //             fbClassName = 'neg-feedback';
-    //         }
-
-    //         if (!fbText) {
-    //             fbText = sfi.ntlFb;
-    //             fbClassName = 'ntl-feedback';
-    //         }
-
-    //         this.app.showFeedback(fbMsg);
-    //         // what we want to store in firestore
-    // }
-    //         console.log(log);
-
-    //     } else {
-    //         let fbMsg = `<span class="text-danger">Please select an option</span>`;
-    //         this.app.showFeedback(fbMsg);
-    //     }
-    // }
-
 }
