@@ -1,7 +1,8 @@
-{% macro namedTransition(page, transitionName, label) %}
-    <button class="link transition-to text-lg"
-            id="{{page.fileSlug}}_{{transitionName}}"
-            data-transition="{{transitionName}}">
+{% macro followEdge(page, edgeName, label) %}
+    <button class="link follow-edge text-lg"
+            data-edge="{{edgeName}}">
         {{label}}
     </button>
 {% endmacro %}
+
+{# id="{{page.fileSlug}}_{{edgeName}}" #}
