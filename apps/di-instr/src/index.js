@@ -1,5 +1,6 @@
 import "./styles/index.scss";
 
+import { NavBar } from "@isptutorproject/navbar";
 import { getActivityConfiguration } from "@isptutorproject/activity-config";
 import { DiInstructionApp } from "./di-instruction-app";
 
@@ -13,6 +14,9 @@ const DEFAULT_INITIAL_APP_STATE = {
     currentScene: "start"
 };
 
+let navbar = new NavBar();
+navbar.displayActivityTitle("Data Interpretation Lesson");
+navbar.displayUser(activityConfig.userID);
 let app = new DiInstructionApp(
     activityData, activityConfig, DEFAULT_INITIAL_APP_STATE
 );
