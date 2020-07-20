@@ -15,7 +15,8 @@
     </label>
 {% endmacro %}
 
-{% macro radio_form(sceneId, question, quesName, isVert=false, marginLeft=0) %}
+{% macro radio_form(sceneId, question, quesName, isVert=false) %}
+    {# , marginLeft=0 #}
     <form id="{{sceneId}}_{{quesName}}_form" class="form-centered">
         <p id="{{sceneId}}_{{quesName}}_text" class="question-text text-lg">
             {% if quesName == "q1" %}{{ question.text }}{% endif %}
@@ -28,16 +29,20 @@
             {{ radio_btn(btnId, btnName, option.value, option.label) }}
         {% endfor %}
         </div>
+        {#
         <button id="{{sceneId}}_{{quesName}}_submit"
                 class="submit-{{quesName}} form-submit-centered btn btn-lg">
             Submit
         </button>
+        #}
     </form>
 {% endmacro %}
 
 
-{% macro q1_form(page, isVert=false, marginLeft=0) %}
-    {{ radio_form(page.data.id, page.data.questions.q1, "q1", isVert, marginLeft) }}
+{% macro q1_form(page, isVert=false) %}
+    {# , marginLeft=0 #}
+    {{ radio_form(page.data.id, page.data.questions.q1, "q1", isVert) }}
+    {# , marginLeft #}
 {% endmacro %}
 
 
@@ -53,14 +58,16 @@
                       cols="80"
                       required></textarea>
         </div>
-        <button id="{{sceneId}}_q2_submit"
+        {# <button id="{{sceneId}}_q2_submit"
                 class="submit-q2 form-submit-centered btn btn-lg btn-primary">
             Submit
-        </button>
+        </button> #}
     </form>
 {% endmacro %}
 
-{% macro q3_form(page, isVert=false, marginLeft=0) %}
-    {{ radio_form(page.data.id, page.data.questions.q3, "q3", isVert, marginLeft) }}
+{% macro q3_form(page, isVert=false) %}
+    {# , marginLeft=0 #}
+    {{ radio_form(page.data.id, page.data.questions.q3, "q3", isVert) }}
+    {# , marginLeft #}
 {% endmacro %}
 
