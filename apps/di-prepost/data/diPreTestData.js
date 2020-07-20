@@ -1,64 +1,62 @@
 const { surveyOptions } = require("./shared");
 
 module.exports = {
-    questions: {
-        memory: {
-            q1: {
-                type: "mc",
-                text: "Q1) What do these results suggest students remember better?",
-                options: [
-                    {
-                        value: "words", 
-                        label: "Words"
-                    },
-                    {
-                        value: "pictures",
-                        label: "Pictures"
-                    },
-                    {
-                        value: "neither",
-                        label: "Neither (they remember words and pictures the same)"
-                    }
-                ]
-            },        
-            q2: {
-                type: "textarea",
-                text: "Q2) Briefly explain why you said these results suggest students remember PLACEHOLDER better.",
-            },
-            q3: {
-                type: "survey",
-                text: "Q3) How sure are you that students remember PLACEHOLDER better?",
-                options: surveyOptions
-            }
-        },
-        rockets: {
-            q1: {
-                type: "mc",
-                text: "Q1) What do these results suggest about which rocket flew higher?",
-                options: [{
-                    value: "curved",
-                    label: "Curved"
-                }, {
-                    value: "straight",
-                    label: "Straight"
-                }, {
-                    value: "neither",
-                    label: "Neither (both rockets flew the same height)"
-                }]
-            },
-            q2: {
-                type: "textarea",
-                text: "Q2) Briefly explain why you said these results suggest that PLACEHOLDER rocket(s) flew higher."
-            },
-            q3: {
-                type: "survey",
-                text: "Q3) How sure are you that PLACEHOLDER rockets flew higher?",
-                options: surveyOptions
-            }                
-        }
+  questions: {
+    memory: {
+      q1: {
+        type: "mc",
+        text: "Q1) Which do these results suggest students remember better?",
+        options: [
+          {
+            value: "words",
+            label: "Words"
+          },
+          {
+            value: "pictures",
+            label: "Pictures"
+          },
+          {
+            value: "neither",
+            label: "Neither (they remember words and pictures the same)"
+          }
+        ]
+      },
+      q2: {
+        type: "textarea",
+        text: "Q2) Please briefly explain why you said these results suggest that students remember PLACEHOLDER better.",
+      },
+      q3: {
+        type: "survey",
+        text: "Q3) How sure are you that students remember PLACEHOLDER better?",
+        options: surveyOptions
+      }
     },
-    scenes: {
-        start: {
+    rockets: {
+      q1: {
+        type: "mc",
+        text: "Q1) Which type of rocket do these results suggest flew higher?",
+        options: [{
+          value: "curved",
+          label: "Curved"
+        }, {
+          value: "straight",
+          label: "Straight"
+        }, {
+          value: "neither",
+          label: "Neither (both rockets flew the same height)"
+        }]
+      },
+      q2: {
+        type: "textarea",
+        text: "Q2) Please briefly explain why you said these results suggest that PLACEHOLDER rocket(s) flew higher."
+      },
+      q3: {
+        type: "survey",
+        text: "Q3) How sure are you that PLACEHOLDER rockets flew higher?",
+        options: surveyOptions
+      }
+    }
+  },
             transitions: {
                 next: "intro"
             }, 
