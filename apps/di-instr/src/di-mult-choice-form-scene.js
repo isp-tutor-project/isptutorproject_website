@@ -1,6 +1,6 @@
 import { DiInstructionScene } from "./di-instruction-scene";
 
-import { RadioButtonForm } from "@isptutorproject/scene-transitions-base/radio-button-form";
+import { RadioButtonForm } from "@isptutorproject/scene-app-base/radio-button-form";
 
 export class DiMultipleChoiceFormScene extends DiInstructionScene {
     constructor(app, sceneInfo) {
