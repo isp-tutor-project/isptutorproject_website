@@ -43,10 +43,10 @@ export class DiMultipleChoiceFormScene extends DiInstructionScene {
             },
             data
         );
-        console.log("Updating state.events");
+        // console.log("Updating state.events");
         this.app.state.events.push(logData);
-        console.log("Updating state.sceneState");
-        console.log(this.app.state);
+        // console.log("Updating state.sceneState");
+        // console.log(this.app.state);
         this.app.state.sceneState[this.id] = data.selectedValue;
     }
 
