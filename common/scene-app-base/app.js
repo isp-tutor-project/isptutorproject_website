@@ -178,14 +178,13 @@ export class SceneBasedApp {
     }
 
     logSceneChange(scene) {
-        let data = {
-            action: "ENTER_SCENE",
+        this.state.events.push({
+            type: "SCENE_TRANSITION",
             from: this.currentScene.id,
             to: scene.id,
             timestamp: Date.now()
-        };
-        this.state.events.push(data);
-        console.debug("Updating state.events");
+        });
+        // console.debug("Updating state.events");
     }
 
 
