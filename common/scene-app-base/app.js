@@ -195,6 +195,12 @@ export class SceneBasedApp {
         if (!startScene) {
             startScene = this.lookupScene(this.startScene);
         }
+        this.state.events.push({
+            type: "APP_START",
+            scene:  startScene.id,
+            timestamp: Date.now()
+        });
+        // console.debug("Updating state.events");
         this.gotoScene(startScene);
     }
 
