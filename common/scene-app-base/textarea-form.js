@@ -19,7 +19,7 @@ export class TextareaForm {
         // set form to dirty state so it will get saved later on
         if (this.textarea.value.trim() != "") {
             this.changed = true;
-            console.log(this.getData());
+            // console.log(this.getData());
             if (this.isValid()) {
                 this.app.enable(this.app.nextBtn);
             }
