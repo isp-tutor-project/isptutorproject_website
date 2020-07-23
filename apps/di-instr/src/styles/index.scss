@@ -140,8 +140,8 @@ div.centered {
 
 #scene_id_region {
     position: absolute;
-    top: 50px;
-    left: 10px;
+    top: calc(100% - 50px);
+    left: calc(50% - 10px);
 }
 
 .img-centered {
