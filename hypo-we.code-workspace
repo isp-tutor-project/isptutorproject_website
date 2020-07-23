@@ -9,19 +9,27 @@
 			"path": "apps/isp-static"
 		},
 		{
-			"name": "📦 @isptutorproject/build-captivate-app",
-			"path": "common/build-captivate-app"
+			"name": "📦 @isptutorproject/isp-captivate",
+			"path": "common/isp-captivate"
 		},
 		{
-			"name": "📦 @isptutorproject/captivate-save-questions",
-			"path": "common/captivate-save-questions"
+			"name": "📦 @isptutorproject/isp-database",
+			"path": "common/isp-database"
+		},
+		{
+			"name": "📦 @isptutorproject/navbar",
+			"path": "common/navbar"
+		},
+		{
+			"name": "📦 @isptutorproject/build-captivate-app",
+			"path": "common/build-captivate-app"
 		}
 	],
 	"settings": {
-		"liveServer.settings.root": "./wwwroot",
+		"liveServer.settings.root": "../../wwwroot",
 		"monorepoWorkspace.folders.regex.apps": "^apps",
 		"monorepoWorkspace.folders.regex.libs": "^common",
 		"monorepoWorkspace.folders.regex.tools": "^config",
-		"liveServer.settings.multiRootWorkspaceName": "✨ /home/ckot/projects/work/isptutorproject_website"
+		"liveServer.settings.multiRootWorkspaceName": "🚀@isptutorproject/isp-static"
 	}
 }
