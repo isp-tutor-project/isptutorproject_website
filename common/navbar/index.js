@@ -14,7 +14,10 @@ export class NavBar {
     }
 
     signOutUser(e) {
-        this.userInfoRegion.classList.add("invisible");
+        // this.userInfoRegion.classList.add("invisible");
+        this.signInText.innerHTML = "";
+        this.signInText.classList.add("invisible");
+        this.signOutBtn.classList.add("invisible");
         let homePage = localStorage.getItem("homepage");
         if (null === homePage) {
             homePage = window.location.origin + "/";
@@ -33,6 +36,7 @@ export class NavBar {
 
     displayUser(userName) {
         this.signInText.innerHTML = `Welcome, ${userName}`;
-        this.userInfoRegion.classList.remove("invisible");
+        this.signInText.classList.remove("invisible");
+        this.signOutBtn.classList.remove("invisible");
     }
 };
