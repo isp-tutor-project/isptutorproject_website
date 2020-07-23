@@ -8,14 +8,15 @@
 
   <img src="img/1_DITable2-6.png" class="img-centered" />
 
-  <p class="text-lg">
+  <p class="text-xl">
     What do you think these results suggest?
   </p>
 
-  <p class="text-lg">
+  <p class="text-xl">
     {{page.data.question.text}}
   </p>
 
-    {{ forms.radios_form(page, isVert=false) }}
+  {{ forms.radios_form(page, isVert=false) }}
 
+  <br/>
 {% endblock %}

@@ -6,10 +6,14 @@
 
     <img src="img/48_Graph_S108-S110.png" class="img-centered" />
 
-    <p class="text-lg">
+    <br/>
+
+    <p class="text-xl">
         {{ page.data.question.text | safe }}
     </p>
 
     {{ forms.radios_form(page, isVert=true) }}
+
+    <br/>
 
 {% endblock %}

@@ -8,15 +8,17 @@
 
     <img src="img/12_Table_S37.png" class="img-centered" />
 
-    <p class="text-lg">
+    <p class="text-xl">
         {{ page.data.question.text }}
     </p>
 
-    <p>
+    <p class="text-md">
         Hint: Is there a bigger difference in means between the Hot and:
         Cold#1 condition or the Cold#2 condition?
     </p>
 
     {{ forms.radios_form(page, isVert=false) }}
+
+    <br/>
 
 {% endblock %}
