@@ -34,7 +34,22 @@ export class DiMultipleChoiceFormScene extends DiInstructionScene {
         return this.form.changed;
     }
 
+    handlePrevButton() {
+        if (this.formChanged()) {
+            this.saveFormData();
+        }
+        super.handlePrevButton();
+    }
+
+    handleNextButton() {
+        if (this.formChanged()) {
+            this.saveFormData();
+        }
+        super.handleNextButton();
+    }
+
     saveFormData() {
+        this.app.showFeedback(this.form.getFeedback());
         let data = this.form.getData();
         let logData = Object.assign(
             {
@@ -50,12 +65,12 @@ export class DiMultipleChoiceFormScene extends DiInstructionScene {
         this.app.state.sceneState[this.id] = data.selectedValue;
     }
 
-    pre_exit() {
-        super.pre_exit();
-        if (this.formChanged()) {
-            this.saveFormData();
-        }
-    }
+    // pre_exit() {
+    //     super.pre_exit();
+    //     if (this.formChanged()) {
+    //         this.saveFormData();
+    //     }
+    // }
 
     setupEventHandlers() {
         this.form.setupEventHandlers();
