@@ -9,16 +9,24 @@
 			"path": "apps/isp-static"
 		},
 		{
+			"name": "📦 @isptutorproject/activity-config",
+			"path": "common/activity-config"
+		},
+		{
+			"name": "📦 @isptutorproject/isp-database",
+			"path": "common/isp-database"
+		},
+		{
 			"name": "📦 @isptutorproject/isp-site-styles",
 			"path": "common/isp-site-styles"
 		},
 		{
-			"name": "@isptutorproject/eleventy-config",
-			"path": "config/eleventy-config"
+			"name": "📦 @isptutorproject/scene-app-base",
+			"path": "common/scene-app-base"
 		}
 	],
 	"settings": {
 		"liveServer.settings.root": "../../wwwroot",
-		"liveServer.settings.multiRootWorkspaceName": "🚀 @isptutorproject/isp-static"
+		"liveServer.settings.multiRootWorkspaceName": "🚀@isptutorproject/isp-static"
 	}
 }
