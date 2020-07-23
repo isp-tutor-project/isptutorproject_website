@@ -5,7 +5,7 @@ export class NavBar {
         this.el = document.querySelector("nav.navbar");
         this.userInfoRegion = document.getElementById("user_info_region");
         this.activityTitle = document.getElementById("activity_title");
-        this.activitySection = document.getElementById("activity_section");
+        // this.activitySection = document.getElementById("activity_section");
         this.signOutBtn = document.getElementById("sign_out_button");
         this.signInText = document.getElementById("sign_in_text");
         this.signOutUser = this.signOutUser.bind(this);
@@ -27,9 +27,9 @@ export class NavBar {
         this.activityTitle.innerText = title;
     }
 
-    displayActivitySection(section) {
-        this.activitySection.innerText = section;
-    }
+    // displayActivitySection(section) {
+    //     this.activitySection.innerText = section;
+    // }
 
     displayUser(userName) {
         this.signInText.innerHTML = `Welcome, ${userName}`;
