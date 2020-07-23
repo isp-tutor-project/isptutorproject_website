@@ -21,19 +21,26 @@ main {
 
 h1, h2, h3, h4, h5 {
     text-align: center;
+    margin-block-start: 0.25em;
+    margin-block-end: 1em;
 }
 
 p {
     /* default to centered. use text-justify if you want to override */
     text-align: center;
+    margin-block-start: 0.75em;
+    margin-block-end: 0.75em;
+}
+
 .btn-huge {
     font-size: 3rem;
     padding: 0.50em 0.50em;
     border-radius: 0.5em;
 }
 
+.list-wrapper {
+    text-align: center;
 }
-
 
 input[type="radio"] {
     -ms-transform: scale(1.5); /* IE 9 */
@@ -53,7 +60,6 @@ input[type="radio"] {
 .scene.active {
     display: block;
 }
-
 
 
 .container {
@@ -114,28 +120,27 @@ div.centered {
 .lhs {
     float: left;
     position: relative;
-    height: 100%;
+    // height: 100%;
     width: 50%;
     padding-left: 20px;
     padding-right: 20px;
 }
 
 .lhs.with-heading {
-    height: calc(100% - 50px);
+    height: calc(100% - 100px);
 }
 
 .rhs {
-    // float: right;
     float: left;
     position: relative;
-    height: 100%;
+    // height: 100%;
     width: 50%;
     padding-left: 20px;
     padding-right: 20px;
 }
 
 .rhs.with-heading {
-    height: calc(100% - 50px);
+    height: calc(100% - 100px);
 }
 
 #scene_id_region {
@@ -177,13 +182,16 @@ ol.centered {
 }
 
 ul.centered {
+    display: inline-block;
     position: relative;
+    text-align: left;
     /* left: 10%; */
     width: max-content;
-    list-style-position: inside;
+    list-style-position: outside;
     margin-left: auto;
     margin-right: auto;
 }
+
 .div-centered {
     /* display: inline-block; */
     margin-left: 40%;
@@ -253,14 +261,12 @@ ul.centered {
 // }
 
 .prev-btn {
-    /* should get displayed on top of border*/
     /* img is 130x138px */
     top: calc(100% - 138px);
     left: 5px;
 }
 
 .next-btn {
-    /* should get displayed on top of border*/
     /* img is 130x138px */
     top: calc(100% - 138px);
     left: calc(100% - 133px);
@@ -305,10 +311,10 @@ td.green-bg {
     background-color: lightgreen;
 }
 
-.feedback-region {
-    min-height: 50px;
-    max-height: fit-content;
-    width: 100%;
-}
+// .feedback-region {
+//     min-height: 50px;
+//     max-height: fit-content;
+//     width: 100%;
+// }
 
 
