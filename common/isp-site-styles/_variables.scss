@@ -25,15 +25,25 @@ $theme-colors: map-merge(
     $theme-colors
 );
 
+// $font-sizes: (
+//     "xxl": 32pt,
+//     "xl": 24pt,
+//     "lg": 18pt,
+//     "md": 14pt,
+//     "sm": 13pt,
+//     "xs": 12pt,
+//     "xxs": 10pt
+// );
+
 
 $font-sizes: (
-    "xxl": 32pt,
-    "xl": 24pt,
-    "lg": 18pt,
-    "md": 14pt,
-    "sm": 13pt,
-    "xs": 12pt,
-    "xxs": 10pt
+    "xxl": 32px,
+    "xl": 28px,
+    "lg": 26px,
+    "md": 24px,
+    "sm": 20px,
+    "xs": 14px,
+    "xxs": 12px
 );
 
 // $border-radius-default:        .25rem !default;
