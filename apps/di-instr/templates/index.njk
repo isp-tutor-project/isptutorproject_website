@@ -8,12 +8,12 @@
     <body>
         {% include "site/navbar.njk" %}
         <main class="my-main">
-            <div id="scene_id_region"></div>
             {% for scene in collections.diInstrScenes | sortBySceneName %}
                 <section id="{{scene.fileSlug}}" class="scene ">
                     {{ scene.templateContent | safe }}
                 </section>
             {% endfor %}
+            <div id="scene_id_region"></div>
             <img id="prev_btn" class="nav-btn prev-btn" />
             <img id="next_btn" class="nav-btn next-btn" />
             <img id="back_to_question_btn" class="long-arrow-btn back-to-question-btn" />
