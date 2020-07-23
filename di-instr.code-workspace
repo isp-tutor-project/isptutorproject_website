@@ -7,6 +7,18 @@
 		{
 			"name": "🚀@isptutorproject/isp-static",
 			"path": "apps/isp-static"
+		},
+		{
+			"name": "📦 @isptutorproject/isp-database",
+			"path": "common/isp-database"
+		},
+		{
+			"name": "📦 @isptutorproject/scene-app-base",
+			"path": "common/scene-app-base"
+		},
+		{
+			"name": "📦 @isptutorproject/snackbar",
+			"path": "common/snackbar"
 		}
 	],
 	"settings": {
