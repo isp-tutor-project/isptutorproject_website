@@ -4,6 +4,10 @@ $my_path: "/apps/di-instr/";
     $app_path: $my_path
 );
 
+html {
+    font-size: 24px;
+}
+
 /*
  * start of app-specific css
  */
@@ -12,7 +16,6 @@ main {
     width: 100%;
     margin: 0;
     background-color: white;
-    font-size: 14pt;
     // border: solid #d6e9fc 40px;
 }
 
