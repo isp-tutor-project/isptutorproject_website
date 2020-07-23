@@ -1,21 +1,27 @@
-<div class="container">
+<div class="dual-column-wrapper">
+
+    <div class="centered-column">
     {% block heading %}
         {% if heading%}
-            <header class="heading">{{heading}}</header>
+        <h1>{{heading}}</h1>
         {% endif %}
     {% endblock %}
-
-    <div class="lhs {% if heading %} with-heading {% endif %}"
-         {% block lhsWidth %}style="width:50%;"{% endblock %}>
-        <div class="centered-column">
-            {% block lhs %}{% endblock %}
+        <div class="lhs {% if heading %} with-heading {% endif %}"
+            {% block lhsWidth %}style="width:50%;"{% endblock %}>
+            <div class="horiz-centered-column">
+                {% block lhs %}{% endblock %}
+            </div>
         </div>
+
+        <div class="rhs {% if heading %} with-heading {% endif %}"
+            {% block rhsWidth %}style="width:50%;"{% endblock %} >
+            <div class="horiz-centered-column">
+                {% block rhs %}{% endblock %}
+            </div>
+        </div>
+
+        <br/>
+
     </div>
 
-    <div class="rhs {% if heading %} with-heading {% endif %}"
-         {% block rhsWidth %}style="width:50%;"{% endblock %} >
-        <div class="centered-column">
-            {% block rhs %}{% endblock %}
-        </div>
-    </div>
 </div>
