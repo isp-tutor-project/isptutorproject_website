@@ -24,7 +24,7 @@ export class NavBar {
     }
 
     displayActivityTitle(title) {
-        this.activityTitle.innerText = title;
+        this.activityTitle.innerText = title.toUpperCase();
     }
 
     // displayActivitySection(section) {
