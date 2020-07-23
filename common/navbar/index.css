@@ -3,6 +3,7 @@
   width: 100%;
   height: 36px;
   /* vertical-align: bottom; */
+  border: 1px solid black;
 }
 
 .navbar div {
