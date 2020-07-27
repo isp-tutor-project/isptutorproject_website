@@ -3,36 +3,50 @@ import "./index.css";
 export class NavBar {
     constructor() {
         this.el = document.querySelector("nav.navbar");
-        this.userInfoRegion = document.getElementById("user_info_region");
+        this.homeBtn = document.getElementById("navbar_home_btn");
         this.activityTitle = document.getElementById("activity_title");
-        // this.activitySection = document.getElementById("activity_section");
         this.signOutBtn = document.getElementById("sign_out_button");
         this.signInText = document.getElementById("sign_in_text");
+        this.goHome      = this.goHome.bind(this);
         this.signOutUser = this.signOutUser.bind(this);
-        // this.logoutHandler = logoutHandler;
+        this.homeBtn.addEventListener('click', this.goHome);
         this.signOutBtn.addEventListener("click", this.signOutUser);
     }
 
-    signOutUser(e) {
-        // this.userInfoRegion.classList.add("invisible");
-        this.signInText.innerHTML = "";
-        this.signInText.classList.add("invisible");
-        this.signOutBtn.classList.add("invisible");
+    goHome(e) {
+        let homePage = this.calcHomePage();
+        this.redirectTo(homePage);
+    }
+
+    calcHomePage() {
         let homePage = localStorage.getItem("homepage");
         if (null === homePage) {
             homePage = window.location.origin + "/";
         }
+        return homePage;
+    }
+
+    redirectTo(url) {
+        // prevent refresh if already on this page
+        if (window.location.href !== url) {
+            window.location.href = url;
+        }
+    }
+
+    signOutUser(e) {
+        this.signInText.innerHTML = "";
+        this.signInText.classList.add("invisible");
+        this.signOutBtn.classList.add("invisible");
+        let homePage = this.calcHomePage();
+        // this does the actual signing out
         localStorage.clear();
-        window.location.href = homePage;
+        this.redirectTo(homePage);
     }
 
     displayActivityTitle(title) {
         this.activityTitle.innerText = title.toUpperCase();
     }
 
-    // displayActivitySection(section) {
-    //     this.activitySection.innerText = section;
-    // }
 
     displayUser(userName) {
         this.signInText.innerHTML = `Welcome, ${userName}`;
