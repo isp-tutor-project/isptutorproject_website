@@ -1,27 +1,80 @@
+<br/>
 <header class="results-heading">
-    {{- heading_prefix | safe -}} 
-    {% block heading %} {% endblock %} 
+    {{- heading_prefix | safe -}}
+    {% block heading %} {% endblock %}
     {{- heading_suffix | safe -}}
 </header>
 
 <div class="results-top">
-    
+
     <div class="results-top-left">
         <div class="results-centered">
-            <button id="{{page.data.id}}_reveal_left_mean"
-                    class="reveal-mean btn btn-lg btn-primary">
-                {{ left_mean_btn_label }}
-            </button>
-            <div id="{{page.data.id}}_left_mean"
-                class="left-mean hidden">
-                {{ left_mean_label }} = {{means.left}}
-            </div>
+            <table class="stats-table">
+                <thead>
+                    <tr>
+                        <th colspan="2">{{leftStatsHeading}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Mean:</th>
+                        <td>
+                            <span id="{{page.data.id}}_left_mean" class="hidden">
+                                &nbsp; {{ stats.left.mean }} &nbsp; &nbsp; &nbsp;
+                            </span>
+                            <button id="{{page.data.id}}_reveal_left_mean"
+                                    class="reveal-stat btn btn-rect btn-sm btn-primary">
+                                Reveal
+                            </button>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Median:</th>
+                        <td>
+                            <span id="{{page.data.id}}_left_median" class="hidden">
+                                &nbsp; {{ stats.left.median }} &nbsp; &nbsp; &nbsp;
+                            </span>
+                            <button id="{{page.data.id}}_reveal_left_median"
+                                    class="reveal-stat btn btn-rect btn-sm btn-primary">
+                                Reveal
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Mode:</th>
+                        <td>
+                            <span id="{{page.data.id}}_left_mode" class="hidden">
+                                &nbsp; {{ stats.left.mode }} &nbsp; &nbsp; &nbsp;
+                            </span>
+                            <button id="{{page.data.id}}_reveal_left_mode"
+                                    class="reveal-stat btn btn-rect btn-sm btn-primary">
+                                Reveal
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Range:</th>
+                        <td>
+                            <span id="{{page.data.id}}_left_range" class="hidden">
+                                &nbsp; {{ stats.left.range }} &nbsp; &nbsp; &nbsp;
+                            </span>
+                            <button id="{{page.data.id}}_reveal_left_range"
+                                    class="reveal-stat btn btn-rect btn-sm btn-primary">
+                                Reveal
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
     <div class="results-top-center">
         <div class="results-centered">
-            <div>
+            {% block tables %}{% endblock %}
+            {#
+             <div>
                 <img id="{{page.data.id}}_sorted"
                     src="{{images.sorted}}"
                     class="img-centered hidden" />
@@ -29,6 +82,7 @@
                     src="{{images.unsorted}}"
                     class="img-centered" />
             </div>
+            #}
             <p>
                 <button id="{{page.data.id}}_show_sorted_table"
                         class="show-sorted-img btn-lg btn-primary">
@@ -44,14 +98,63 @@
 
     <div class="results-top-right">
         <div class="results-centered">
-            <button id="{{page.data.id}}_reveal_right_mean"
-                    class="reveal-mean btn btn-lg btn-primary">
-                {{ right_mean_btn_label }}
-            </button>
-            <div id="{{page.data.id}}_right_mean"
-                class="right-mean hidden">
-                {{ right_mean_label }} = {{ means.right }}
-            </div>        
+            <table class="stats-table">
+                <thead>
+                    <tr>
+                        <th colspan="2">{{rightStatsHeading}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Mean:</th>
+                        <td>
+                            <span id="{{page.data.id}}_right_mean" class="hidden">
+                                &nbsp; {{ stats.right.mean }} &nbsp; &nbsp; &nbsp;
+                            </span>
+                            <button id="{{page.data.id}}_reveal_right_mean"
+                                    class="reveal-stat btn btn-rect btn-sm btn-primary">
+                                Reveal
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Median:</th>
+                        <td>
+                            <span id="{{page.data.id}}_right_median" class="hidden">
+                                &nbsp; {{ stats.right.median }} &nbsp; &nbsp; &nbsp;
+                            </span>
+                            <button id="{{page.data.id}}_reveal_right_median"
+                                    class="reveal-stat btn btn-rect btn-sm btn-primary">
+                                Reveal
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Mode:</th>
+                        <td>
+                            <span id="{{page.data.id}}_right_mode" class="hidden">
+                                &nbsp; {{ stats.right.mode }} &nbsp; &nbsp; &nbsp;
+                            </span>
+                            <button id="{{page.data.id}}_reveal_right_mode"
+                                    class="reveal-stat btn btn-rect btn-sm btn-primary">
+                                Reveal
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Range:</th>
+                        <td>
+                            <span id="{{page.data.id}}_right_range" class="hidden">
+                                &nbsp; {{ stats.right.range }} &nbsp; &nbsp; &nbsp;
+                            </span>
+                            <button id="{{page.data.id}}_reveal_right_range"
+                                    class="reveal-stat btn btn-rect btn-sm btn-primary">
+                                Reveal
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
