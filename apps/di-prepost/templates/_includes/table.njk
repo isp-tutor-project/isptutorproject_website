@@ -1,0 +1,24 @@
+{% macro drawTable(table, which, heading, col1heading, col2heading) %}
+
+    <table class="data-table {{which}}-table" cellspacing="0">
+        <thead style="color:{{table.header.color}};background-color:{{table.header.bgcolor}};">
+            {% if "" !== heading  %}
+            <tr>
+                <th colspan="2">{{heading}}</th>
+            </tr>
+            {% endif %}
+            <tr>
+                <td>{{col1heading  | safe}}</td>
+                <td>{{col2heading | safe}}</td>
+            </tr>
+        </thead>
+        <tbody>
+        {% for row in table.data %}
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endmacro%}
