@@ -1,12 +1,44 @@
 ---
+tables:
+    left:
+        header:
+            color: white
+            bgcolor: red
+        data: [
+            [Alan, 4],
+            [Jen, 1],
+            [Tom, 9],
+            [Ian, 8],
+            [Liz, 5]
+        ]
+    right:
+        header:
+            color: white
+            bgcolor: red
+        data: [
+            [Meg, 1],
+            [Mya, 5],
+            [Joy, 10],
+            [Joe, 7],
+            [Fin, 6]
+        ]
+stats:
+    left:
+        mean: 5.4
+        median: 5
+        mode: "n/a"
+        range: 8
+    right:
+        mean: 5.8
+        median: 6
+        mode: "n/a"
+        range: 9
+---
+{% extends "dipre/memoryResults.njk" %}
+{#
 images:
     sorted:   "img/memory_pretest_1/Pre_T5_sorted.jpg"
     unsorted: "img/memory_pretest_1/Pre_T5_unsorted.jpg"
-means:
-    left: 5.4
-    right: 5.8
----
-{% extends "dipre/memoryResults.njk" %}
-
+ #}
 {% block heading %} last {% endblock %}
 

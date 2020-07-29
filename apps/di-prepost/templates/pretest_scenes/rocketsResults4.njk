@@ -1,11 +1,35 @@
 ---
-images:
-    sorted:   "img/rockets_pretest_2/Pre_T9_sorted.jpg"
-    unsorted: "img/rockets_pretest_2/Pre_T9_unsorted.jpg"
-means:
-    left: 25
-    right: 19
+table:
+    header:
+        color: white
+        bgcolor: orange
+    data: [
+        [30, 14],
+        [25, 27],
+        [33, 11],
+        [20, 24],
+        [17, 19]
+    ]
+stats:
+    left:
+        mean: 25
+        median: 25
+        mode: "n/a"
+        range: 16
+    right:
+        mean: 19
+        median: 19
+        mode: "n/a"
+        range: 16
 ---
 
 {% extends "dipre/rocketsResults.njk" %}
+
+{#
+images:
+    sorted:   "img/rockets_pretest_2/Pre_T9_sorted.jpg"
+    unsorted: "img/rockets_pretest_2/Pre_T9_unsorted.jpg"
+#}
+
+
 {% block heading %} fourth {% endblock %}

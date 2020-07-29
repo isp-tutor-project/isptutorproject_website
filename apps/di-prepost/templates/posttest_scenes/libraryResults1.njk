@@ -1,12 +1,45 @@
 ---
+tables:
+    left:
+        header:
+            color: white
+            bgcolor: blue
+        data: [
+            [Alan, 27],
+            [Liz, 35],
+            [Jen, 31],
+            [Ian, 34],
+            [Tom, 33]
+        ]
+    right:
+        header:
+            color: white
+            bgcolor: blue
+        data: [
+            [Joe, 30],
+            [Mya, 26],
+            [Fin, 33],
+            [Joy, 26],
+            [Meg, 25]
+        ]
+stats:
+    left:
+        mean: 32
+        median: 33
+        mode: "n/a"
+        range: 8
+    right:
+        mean: 28
+        median: 26
+        mode: 26
+        range: 8
+---
+{% extends "dipost/libraryResults.njk" %}
+{#
 images:
     sorted:   "img/library_posttest_2/T6_Post_Sorted.jpg"
     unsorted: "img/library_posttest_2/T6_Post_Unsorted.jpg"
-means:
-    left: 32
-    right: 28
----
-{% extends "dipost/libraryResults.njk" %}
+ #}
 
 {% block heading %} first {% endblock %}
 

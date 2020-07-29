@@ -1,12 +1,33 @@
 ---
+table:
+    header:
+        color: white
+        bgcolor: orange
+    data: [
+        [10, 5],
+        [8, 9],
+        [11, 4],
+        [7, 8],
+        [6, 6]
+    ]
+stats:
+    left:
+        mean: 8.4
+        median: 8
+        mode: "n/a"
+        range: 5
+    right:
+        mean: 6.4
+        median: 6
+        mode: "n/a"
+        range: 5
+---
+{% extends "dipost/carResults.njk" %}
+{#
 images:
     sorted:   "img/car_posttest_1/T4_Post_sorted.jpg"
     unsorted: "img/car_posttest_1/T4_Post_unsorted.jpg"
-means:
-    left: 8.4
-    right: 6.4
----
-{% extends "dipost/carResults.njk" %}
+ #}
 
 {% block heading %} fourth {% endblock %}
 

@@ -1,12 +1,34 @@
 ---
-images:
-    sorted:   "img/car_posttest_1/T3_Post_sorted.jpg"
-    unsorted: "img/car_posttest_1/T3_Post_unsorted.jpg"
-means:
-    left: 6.6
-    right: 9.4
+table:
+    header:
+        color: white
+        bgcolor: green
+    data: [
+        [9, 8],
+        [4, 9],
+        [7, 11],
+        [8, 7],
+        [5, 12]
+    ]
+stats:
+    left:
+        mean: 6.6
+        median: 7
+        mode: "n/a"
+        range: 5
+    right:
+        mean: 9.4
+        median: 9
+        mode: "n/a"
+        range: 5
 ---
 {% extends "dipost/carResults.njk" %}
+
+{#
+ images:
+    sorted:   "img/car_posttest_1/T3_Post_sorted.jpg"
+    unsorted: "img/car_posttest_1/T3_Post_unsorted.jpg"
+#}
 
 {% block heading %} third {% endblock %}
 
