@@ -25,12 +25,10 @@ export class DiTestScene extends Scene {
 
     defaultEnterSceneActions() {
         super.defaultEnterSceneActions();
-        // if (process.env.NODE_ENV === "production") {
-        //     this.app.hide(this.app.prevBtn);
-        // } else {
         this.app.show(this.app.prevBtn);
-        // }
         this.app.show(this.app.nextBtn);
+        this.app.enable(this.app.prevBtn);
+        this.app.enable(this.app.nextBtn);
     }
 
 }
