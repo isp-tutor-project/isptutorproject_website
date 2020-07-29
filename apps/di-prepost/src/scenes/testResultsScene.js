@@ -80,18 +80,19 @@ export class DiTestResultsScene extends DiTestScene {
                 let el = document.getElementById(sceneState.q3Selection);
                 el.checked = true;
             }
-            // fixme, these are the event handlers, which should be
-            // updating sceneState when clicked
-            if (sceneState.leftMeanShown) {
-                this.showMean("left");
+            for (let side of ["left", "right"]) {
+                for (let stat of ["mean", "median", "mode", "range"]) {
+                    if (sceneState[`${side}_${stat}_shown`]) {
+                        this.revealStat(side, stat);
             }
-            if (sceneState.rightMeanShown) {
-                this.showMean("right");
             }
-            if (sceneState.sortedTableShown) {
-                this.showSortedTable();
             }
+
+            if (sceneState.dataSorted) {
+                this.showSortedData();
+                this.replaceSortBtnWithText();
         }
+    }
     }
 
     updateSceneState(diff) {
