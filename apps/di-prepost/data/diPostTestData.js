@@ -23,7 +23,7 @@ module.exports = {
             },
             q3: {
                 type: "survey",
-                text: "Q3) How sure are you that PLACEHOLDER were faster?",
+                text: "Q3) How sure are you these results show PLACEHOLDER were faster?",
                 options: surveyOptions
             }
         },
@@ -48,7 +48,7 @@ module.exports = {
             },
             q3: {
                 type: "survey",
-                text: "Q3) How sure are you that students learned more at PLACEHOLDER?",
+                text: "Q3) How sure are you these results show students learned more at PLACEHOLDER?",
                 options: surveyOptions
             }
         }

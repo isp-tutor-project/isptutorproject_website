@@ -27,7 +27,7 @@ module.exports = {
       },
       q3: {
         type: "survey",
-        text: "Q3) How sure are you that students remember PLACEHOLDER better?",
+        text: "Q3) How sure are you these results show students remember PLACEHOLDER better?",
         options: surveyOptions
       }
     },
@@ -52,7 +52,7 @@ module.exports = {
       },
       q3: {
         type: "survey",
-        text: "Q3) How sure are you that PLACEHOLDER rockets flew higher?",
+        text: "Q3) How sure are you these results show PLACEHOLDER rockets flew higher?",
         options: surveyOptions
       }
     }
