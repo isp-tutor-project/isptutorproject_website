@@ -1,8 +1,6 @@
 import { DiTestScene } from "./testScene";
-import {
-    DiDualTableResultsScene,
-    DiSingleTableResultsScene
-} from "./testResultsScene";
+import { DiSingleTableResultsScene } from "./singleTableResultsScene";
+import { DiDualTableResultsScene } from "./dualTableResultsScene";
 
 export {
     DiTestScene,
