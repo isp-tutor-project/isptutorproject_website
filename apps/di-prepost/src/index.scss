@@ -219,3 +219,39 @@ button.form-submit-centered {
     color: white;
 }
 
+div.side-by-side-tables {
+    text-align: center;
+}
+
+table.stats-table th {
+    text-align: left;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+table.stats-table > thead > tr > th {
+    text-align: center;
+    text-decoration: underline;
+}
+
+table.data-table {
+    display: inline-block;
+    border: 1px solid black;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+table.data-table tr {
+    border: 1px solid black;
+}
+table.data-table th {
+    text-align: center;
+}
+
+table.data-table td {
+    border: 1px solid black;
+    text-align: center;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 6px;
+    padding-right: 6px;
+}
