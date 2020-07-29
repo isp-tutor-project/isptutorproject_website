@@ -1,14 +1,22 @@
 {% extends "results.njk" %}
 
 {% import "forms.njk" as forms %}
+{% import "table.njk" as tb %}
 
 {% set heading_prefix = "Below is the" %}
 {% set heading_suffix = "set of possible results for the speed of cars (in meters per second)." %}
-{% set left_mean_btn_label = "Reveal Thick Wheels Mean" %}
-{% set left_mean_label = "Thick Wheels Mean" %}
-{% set right_mean_btn_label = "Reveal Thin Wheels Mean" %}
-{% set right_mean_label = "Thin Wheels Mean" %}
 
+{% set c1heading = "Thick<br/>Wheels" %}
+{% set c2heading = "Thin<br/>Wheels" %}
+
+{% set leftStatsHeading = "Thick Wheels" %}
+{% set rightStatsHeading = "Thin Wheels" %}
+
+{% block tables %}
+    <div class="side-by-side-tables">
+        {{ tb.drawTable(table, "center", "", c1heading, c2heading) }}
+    </div>
+{% endblock %}
 
 {% block questions %}
     {{ forms.q1_form(page, isVert=false) }}

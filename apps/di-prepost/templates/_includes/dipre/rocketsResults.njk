@@ -1,13 +1,22 @@
 {% extends "results.njk" %}
 
 {% import "forms.njk" as forms %}
+{% import "table.njk" as tb %}
 
 {% set heading_prefix = "Below is the" %}
 {% set heading_suffix = "set of possible results for each <u>height</u> the rocket traveled (in meters)." %}
-{% set left_mean_btn_label = "Reveal Curved Mean" %}
-{% set left_mean_label = "Curved Mean" %}
-{% set right_mean_btn_label = "Reveal Straight Mean" %}
-{% set right_mean_label = "Straight Mean" %}
+
+{% set c1heading = "Curved<br/>body" %}
+{% set c2heading = "Straight<br/>body" %}
+
+{% set leftStatsHeading = "Curved body" %}
+{% set rightStatsHeading = "Straight body" %}
+
+{% block tables %}
+    <div class="side-by-side-tables">
+        {{ tb.drawTable(table, "center", "", c1heading, c2heading) }}
+    </div>
+{% endblock %}
 
 {% block questions %}
     {{ forms.q1_form(page, isVert=false) }}

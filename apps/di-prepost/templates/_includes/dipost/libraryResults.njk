@@ -1,13 +1,26 @@
 {% extends "results.njk" %}
 
 {% import "forms.njk" as forms %}
+{% import "table.njk" as tb %}
 
 {% set heading_prefix = "Below is the" %}
 {% set heading_suffix = "set of possible results for the number of correct answers on the quiz by each friend." %}
-{% set left_mean_btn_label = "Reveal Table 1 Mean" %}
-{% set left_mean_label = "Table 1 Mean" %}
-{% set right_mean_btn_label = "Reveal Table 2 Mean" %}
-{% set right_mean_label = "Table 2 Mean" %}
+
+{% set t1heading = "Table 1: Library" %}
+{% set t2heading = "Table 2: Home" %}
+{% set col1heading = "Friend" %}
+{% set col2heading = "# Correct" %}
+
+{% set leftStatsHeading = "Library" %}
+{% set rightStatsHeading = "Home" %}
+
+
+{% block tables %}
+    <div class="side-by-side-tables">
+        {{ tb.drawTable(tables.left,  "left",  t1heading, col1heading, col2heading) }}
+        {{ tb.drawTable(tables.right, "right", t2heading, col1heading, col2heading) }}
+    </div>
+{% endblock %}
 
 {% block questions %}
     {{ forms.q1_form(page, isVert=false) }}
