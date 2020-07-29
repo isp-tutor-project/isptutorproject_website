@@ -36,6 +36,9 @@ export class DiTestResultsScene extends DiTestScene {
         this.sortedImg   = document.getElementById(`${this.id}_sorted`);
         this.unsortedImg = document.getElementById(`${this.id}_unsorted`);
 
+        // this.sortedImg   = document.getElementById(`${this.id}_sorted`);
+        // this.unsortedImg = document.getElementById(`${this.id}_unsorted`);
+
         this.q2TextArea = document.getElementById(`${this.id}_q2_answer`);
         this.currentForm = null;
         this.q1Form = new RadioButtonForm(
