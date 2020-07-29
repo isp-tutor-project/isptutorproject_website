@@ -217,7 +217,6 @@ export class DiTestResultsScene extends DiTestScene {
             },
             data
         );
-        console.log(logData);
         this.app.state.events.push(logData);
     }
 
@@ -234,8 +233,8 @@ export class DiTestResultsScene extends DiTestScene {
     }
 
     handleTransition() {
-        console.log("TestResultsScene.handleTransition()");
-        console.log(this.currentTransition);
+        // console.log("TestResultsScene.handleTransition()");
+        // console.log(this.currentTransition);
         this.hideAllForms();
         this.currentForm = this.forms[this.currentTransition];
         this.app.show(this.currentForm.form);
@@ -261,8 +260,8 @@ export class DiTestResultsScene extends DiTestScene {
     }
 
     post_enter() {
-        console.log("TestResultsScene.post_enter()");
-        console.log(this.forms);
+        // console.log("TestResultsScene.post_enter()");
+        // console.log(this.forms);
         this.handleTransition();
         if (null !== this.currentState) {
             this.restoreState(this.currentState);
@@ -274,5 +273,5 @@ export class DiTestResultsScene extends DiTestScene {
     //         f.teardownEventHandlers();
     //     }
     // }
-
 }
+
