@@ -97,15 +97,11 @@ export class DiTestResultsScene extends DiTestScene {
         this.app.state.sceneState[this.id] = Object.assign({}, this.currentState);
     }
 
-    showMean(which) {
-        if ("left" === which) {
-            this.app.hide(this.leftMeanBtn);
-            this.app.show(this.leftMeanValue);
-        } else if ("right" === which) {
-            this.app.hide(this.rightMeanBtn);
-            this.app.show(this.rightMeanValue);
-        } else {
-            console.error(`showMean(${which}) is neither 'left' nor 'right'`);
+    revealStat(side, stat) {
+        let btnEl  = document.getElementById(`${this.id}_reveal_${side}_${stat}`);
+        let statEl = document.getElementById(`${this.id}_${side}_${stat}`);
+        this.app.hide(btnEl);
+        this.app.show(statEl);
         }
     }
 
