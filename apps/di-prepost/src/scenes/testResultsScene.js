@@ -223,22 +223,11 @@ export class DiTestResultsScene extends DiTestScene {
 
     defaultEnterSceneActions() {
         super.defaultEnterSceneActions();
-        this.app.hide(this.leftMeanValue);
-        this.app.hide(this.rightMeanValue);
-        this.app.hide(this.sortedTableText);
-        this.app.show(this.leftMeanBtn);
-        this.app.show(this.rightMeanBtn);
-        this.app.show(this.showSortedTableBtn);
-
-
-        // if (process.env.NODE_ENV === "production") {
-        //     this.app.disable(this.app.nextBtn);
-        // } else {
+        // I *believe* these next 4 are handle by superclass and can go away
         this.app.show(this.app.prevBtn);
         this.app.show(this.app.nextBtn);
         this.app.enable(this.app.prevBtn);
         this.app.enable(this.app.nextBtn);
-        // }
         this.q1Form.setupEventHandlers();
         this.q2Form.setupEventHandlers();
         this.q3Form.setupEventHandlers();
