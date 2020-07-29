@@ -112,14 +112,16 @@ export class DiTestResultsScene extends DiTestScene {
         this.app.show(this.sortedTableText);
     }
 
-    handleShowLeftMean(e) {
-        this.showMean("left");
-        this.updateSceneState({"leftMeanShown": true});
-    }
-
-    handleShowRightMean(e) {
-        this.showMean("right");
-        this.updateSceneState({"rightMeanShown": true});
+    revealStatHandler(e) {
+        let [_1, _2, side, stat] = e.target.id.replace(this.id, "").split("_");
+        this.revealStat(side, stat);
+        this.updateSceneState({ [`${side}_${stat}_shown`]: true })
+        this.app.state.events.push({
+            type: 'REVEAL_STAT',
+            side: side,
+            stat: stat,
+            time: Date.now()
+        });
     }
 
     handleSortData(e) {
