@@ -21,20 +21,8 @@ export class DiTestResultsScene extends DiTestScene {
         this.revealStatHandler = this.revealStatHandler.bind(this);
         this.handleSortData = this.handleSortData.bind(this);
 
-        this.handleShowLeftMean    = this.handleShowLeftMean.bind(this);
-        this.handleShowRightMean   = this.handleShowRightMean.bind(this);
-        this.handleShowSortedTable = this.handleShowSortedTable.bind(this);
-
-        let side = "left"
-        this.leftMeanBtn   = document.getElementById(`${this.id}_reveal_${side}_mean`);
-        this.leftMeanValue = document.getElementById(`${this.id}_${side}_mean`);
-        side = "right";
-        this.rightMeanBtn   = document.getElementById(`${this.id}_reveal_${side}_mean`);
-        this.rightMeanValue = document.getElementById(`${this.id}_${side}_mean`);
-        this.showSortedTableBtn = document.getElementById(`${this.id}_show_sorted_table`);
+        this.showSortedDataBtn = document.getElementById(`${this.id}_show_sorted_table`);
         this.sortedTableText    = document.getElementById(`${this.id}_sorted_text`);
-        this.sortedImg   = document.getElementById(`${this.id}_sorted`);
-        this.unsortedImg = document.getElementById(`${this.id}_unsorted`);
 
         // this.sortedImg   = document.getElementById(`${this.id}_sorted`);
         // this.unsortedImg = document.getElementById(`${this.id}_unsorted`);
