@@ -191,7 +191,6 @@ export class DiTestResultsScene extends DiTestScene {
     }
 
     saveQ1State(data) {
-        console.log("saveQ1State()");
         this.q1Answer = data.selectedValue;
         this.updateSceneState({
             "q1Selection": data.selectedEleId,
@@ -202,10 +201,7 @@ export class DiTestResultsScene extends DiTestScene {
     }
 
     saveQ2State(data) {
-        console.log("saveQ2State()");
-        this.updateSceneState({
-            q2Answer: data.answer
-        });
+        this.updateSceneState({q2Answer: data.answer});
         data.questionText = data.questionText
             .replace('<span class="q1-answer">', '')
             .replace('</span>', '');
@@ -213,10 +209,7 @@ export class DiTestResultsScene extends DiTestScene {
     }
 
     saveQ3State(data) {
-        console.log("saveQ3State()");
-        this.updateSceneState({
-            q3Selection: data.selectedEleId
-        });
+        this.updateSceneState({q3Selection: data.selectedEleId});
         data.questionText = data.questionText
             .replace('<span class="q1-answer">', '')
             .replace('</span>', '');
