@@ -122,9 +122,14 @@ export class DiTestResultsScene extends DiTestScene {
         this.updateSceneState({"rightMeanShown": true});
     }
 
-    handleShowSortedTable(e) {
-        this.showSortedTable();
-        this.updateSceneState({"sortedTableShown": true});
+    handleSortData(e) {
+        this.showSortedData();
+        this.replaceSortBtnWithText();
+        this.app.state.events.push({
+            type: "DATA_SORTED",
+            time: Date.now()
+        });
+        this.updateSceneState({"dataSorted": true});
     }
 
     hideAllForms() {
