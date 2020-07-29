@@ -9,6 +9,11 @@ permalink: pretest.html
 {% endblock %}
 
 {% block main %}
+    {% for scene in collections.diTestCommonScenes %}
+        <section id="{{scene.fileSlug}}" class="scene">
+            {{ scene.templateContent | safe }}
+        </section>
+    {% endfor %}
     {% for scene in collections.diPreTestScenes %}
         <section id="{{scene.fileSlug}}" class="scene">
             {{ scene.templateContent | safe }}
@@ -16,6 +21,6 @@ permalink: pretest.html
     {% endfor %}
 {% endblock %}
 
-{% block bundles %} 
+{% block bundles %}
     <script src="dipretest.bundle.js"></script>
 {% endblock %}
