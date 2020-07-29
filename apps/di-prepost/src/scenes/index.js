@@ -1,4 +1,11 @@
 import { DiTestScene } from "./testScene";
-import { DiTestResultsScene } from "./testResultsScene";
+import {
+    DiDualTableResultsScene,
+    DiSingleTableResultsScene
+} from "./testResultsScene";
 
-export { DiTestScene, DiTestResultsScene };
+export {
+    DiTestScene,
+    DiDualTableResultsScene,
+    DiSingleTableResultsScene
+};
