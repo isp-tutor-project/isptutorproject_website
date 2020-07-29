@@ -134,12 +134,10 @@ export class DiTestResultsScene extends DiTestScene {
     }
 
     handlePrevButton() {
-        console.log("TestResultsScene::handlePrevButton()");
         if (this.currentForm.changed) {
             this.currentTransitionStateSaver(this.currentForm.getData());
         }
         if (FIRST_TRANSITION === this.currentTransition) {
-            console.log("at first transition. go to prev scene");
             this.app.followEdge("prev");
         } else {
             this.currentTransition--;
@@ -148,18 +146,15 @@ export class DiTestResultsScene extends DiTestScene {
     }
 
     handleNextButton() {
-        console.log("TestResultsScene::handleNextButton()");
         if (this.currentForm.changed) {
             this.currentTransitionStateSaver(this.currentForm.getData());
         }
         if (LAST_TRANSITION === this.currentTransition) {
-            console.log("at last transition. go to next scene");
             this.app.followEdge("next");
         } else {
             this.currentTransition++;
             this.handleTransition();
         }
-
     }
 
     hasForm() {
