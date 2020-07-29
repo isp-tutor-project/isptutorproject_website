@@ -162,14 +162,11 @@ export class DiTestResultsScene extends DiTestScene {
     }
 
     setupEventHandlers() {
-        this.leftMeanBtn.addEventListener(
-            "click", this.handleShowLeftMean, {once: true}
-        );
-        this.rightMeanBtn.addEventListener(
-            "click", this.handleShowRightMean, { once: true }
-        );
-        this.showSortedTableBtn.addEventListener(
-            "click", this.handleShowSortedTable, { once: true }
+        for (let btn of this.el.querySelectorAll(".reveal-stat")) {
+            btn.addEventListener("click", this.revealStatHandler, {once: true});
+        }
+        this.showSortedDataBtn.addEventListener(
+            "click", this.handleSortData, { once: true }
         );
     }
 
