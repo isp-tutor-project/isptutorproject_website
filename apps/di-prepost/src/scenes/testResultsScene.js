@@ -103,12 +103,10 @@ export class DiTestResultsScene extends DiTestScene {
         this.app.hide(btnEl);
         this.app.show(statEl);
         }
-    }
 
-    showSortedTable() {
-        this.app.hide(this.showSortedTableBtn);
-        this.app.hide(this.unsortedImg);
-        this.app.show(this.sortedImg);
+
+    replaceSortBtnWithText() {
+        this.app.hide(this.showSortedDataBtn);
         this.app.show(this.sortedTableText);
     }
 
