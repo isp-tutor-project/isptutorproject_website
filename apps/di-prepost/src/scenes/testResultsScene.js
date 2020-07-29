@@ -77,15 +77,15 @@ export class DiTestResultsScene extends DiTestScene {
                 for (let stat of ["mean", "median", "mode", "range"]) {
                     if (sceneState[`${side}_${stat}_shown`]) {
                         this.revealStat(side, stat);
-            }
-            }
+                    }
+                }
             }
 
             if (sceneState.dataSorted) {
                 this.showSortedData();
                 this.replaceSortBtnWithText();
+            }
         }
-    }
     }
 
     updateSceneState(diff) {
@@ -102,7 +102,7 @@ export class DiTestResultsScene extends DiTestScene {
         let statEl = document.getElementById(`${this.id}_${side}_${stat}`);
         this.app.hide(btnEl);
         this.app.show(statEl);
-        }
+    }
 
 
     replaceSortBtnWithText() {
