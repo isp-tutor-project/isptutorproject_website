@@ -18,6 +18,8 @@ export class DiTestResultsScene extends DiTestScene {
         this.saveQ1State = this.saveQ1State.bind(this);
         this.saveQ2State = this.saveQ2State.bind(this);
         this.saveQ3State = this.saveQ3State.bind(this);
+        this.revealStatHandler = this.revealStatHandler.bind(this);
+        this.handleSortData = this.handleSortData.bind(this);
 
         this.handleShowLeftMean    = this.handleShowLeftMean.bind(this);
         this.handleShowRightMean   = this.handleShowRightMean.bind(this);
