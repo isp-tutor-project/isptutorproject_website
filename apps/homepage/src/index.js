@@ -264,7 +264,7 @@ registerSubmitBtn.addEventListener("click", e => {
 function initApp() {
     navbar = new NavBar();
     snackbar = new SnackBar();
-    navbar.displayActivityTitle("ISP Home Page");
+    // navbar.displayActivityTitle("ISP Home Page");
     let DB = "localstorage";
     let homePageURL = window.location.href;
     localStorage.setItem("homepage", homePageURL);
