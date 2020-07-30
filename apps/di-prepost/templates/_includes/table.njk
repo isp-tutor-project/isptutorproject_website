@@ -1,7 +1,7 @@
 {% macro drawTable(table, which, heading, col1heading, col2heading) %}
 
-    <table class="data-table {{which}}-table" cellspacing="0">
-        <thead style="color:{{table.header.color}};background-color:{{table.header.bgcolor}};">
+    <table class="data-table {{which}}-table {{table.header.className}}" cellspacing="0">
+        <thead>
             {% if "" !== heading  %}
             <tr>
                 <th colspan="2">{{heading}}</th>

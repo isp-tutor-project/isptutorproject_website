@@ -240,6 +240,13 @@ table.data-table {
     margin-left: 10px;
     margin-right: 10px;
 }
+table.data-table thead { color: white; }
+table.data-table.set1 thead { background-color: #1028FB; }
+table.data-table.set2 thead { background-color: #6F359E; }
+table.data-table.set3 thead { background-color: #72AC4D; }
+table.data-table.set4 thead { background-color: #C4662F; }
+table.data-table.set5 thead { background-color: #BE311C; }
+
 table.data-table tr {
     border: 1px solid black;
 }
