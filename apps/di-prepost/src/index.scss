@@ -137,21 +137,21 @@ div.results-top {
 }
 div.results-top-left {
     position:relative;
-    width: 20%;
+    // width: 30%;
     height: 100%;
-    flex: 1;
+    flex: 3;
 }
 div.results-top-center {
     position: relative;
-    width: 60%;
-    flex: 2;
+    // width: 40%;
     height: 100%;
+    flex: 7;
 }
 div.results-top-right {
     position: relative;
-    width: 20%;
+    // width: 30%;
     height: 100%;
-    flex: 1;
+    flex: 3;
 }
 
 div.results-centered {
