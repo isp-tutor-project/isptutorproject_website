@@ -162,6 +162,22 @@ div.results-centered {
     transform: translate(-50%, -50%);
 }
 
+div.stats-left-wrapper {
+    position: absolute;
+    width: fit-content;
+    top: 40%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+}
+
+div.stats-right-wrapper {
+    position: absolute;
+    width: fit-content;
+    top: 40%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+}
+
 form.form-centered {
     /* position: relative; */
     height: max-content;
