@@ -11,12 +11,16 @@ permalink: posttest.html
 {% block main %}
     {% for scene in collections.diTestCommonScenes %}
         <section id="{{scene.fileSlug}}" class="scene">
-            {{ scene.templateContent | safe }}
+            <div class="scene-content">
+                {{ scene.templateContent | safe }}
+            </div>
         </section>
     {% endfor %}
     {% for scene in collections.diPostTestScenes %}
         <section id="{{scene.fileSlug}}" class="scene">
-            {{ scene.templateContent | safe }}
+            <div class="scene-content">
+                {{ scene.templateContent | safe }}
+            </div>
         </section>
     {% endfor %}
 {% endblock %}
