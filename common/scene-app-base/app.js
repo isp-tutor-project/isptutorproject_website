@@ -25,6 +25,8 @@ export class SceneBasedApp {
         if (this.homePageBtn) {
             this.homePageBtn.addEventListener("click", this.handleGoHomePage);
         }
+        this.handleResize = this.handleResize.bind(this);
+
         this.nextBtn.addEventListener("click", this.handleNext);
         this.prevBtn.addEventListener("click", this.handlePrev);
 
@@ -39,6 +41,32 @@ export class SceneBasedApp {
             sceneType: "bogus"
         };
         window.app = this;
+        window.addEventListener("resize", this.handleResize);
+    }
+
+
+    handleResize(event) {
+        // console.log(event);
+        this.resizeContent();
+    }
+
+    resizeContent() {
+        let sEl, cEl, sWidth, sHeight, cWidth, cHeight, sc;
+        sEl = document.querySelector(".scene.active");
+        if (sEl) {
+            cEl = sEl.querySelector(".scene-content");
+        }
+        if (cEl) {
+            sWidth  = sEl.offsetWidth;
+            sHeight = sEl.offsetHeight;
+            cWidth  = cEl.offsetWidth;
+            cHeight = cEl.offsetHeight;
+            sc = Math.min(
+                sWidth / cWidth,
+                sHeight / cHeight
+            );
+            cEl.style.transform = `translate(-50%, -50%) scale(${sc})`;
+        }
     }
 
 
