@@ -6,15 +6,24 @@
 {% set heading_prefix = "Below is the" %}
 {% set heading_suffix = "set of possible results for the speed of cars (in meters per second)." %}
 
+{% set t1heading = "Condition 1: Thick Wheels" %}
+{% set t2heading = "Condition 2: Thin Wheels" %}
+
+{#
 {% set c1heading = "Thick<br/>Wheels" %}
 {% set c2heading = "Thin<br/>Wheels" %}
+#}
+{% set c1heading = "Trial #" %}
+{% set c2heading = "Speed" %}
 
 {% set leftStatsHeading = "Thick Wheels" %}
 {% set rightStatsHeading = "Thin Wheels" %}
 
 {% block tables %}
     <div class="side-by-side-tables">
-        {{ tb.drawTable(table, "center", "", c1heading, c2heading) }}
+        {# {{ tb.drawTable(table, "center", "", c1heading, c2heading) }} #}
+        {{ tb.drawTable(tables.left,  "left",  t1heading, c1heading, c2heading) }}
+        {{ tb.drawTable(tables.right, "right", t2heading, c1heading, c2heading) }}
     </div>
 {% endblock %}
 

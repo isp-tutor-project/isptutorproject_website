@@ -8,7 +8,7 @@
 <div class="results-top">
 
     <div class="results-top-left">
-        <div class="results-centered">
+        <div class="stats-left-wrapper">
             <table class="stats-table">
                 <thead>
                     <tr>
@@ -24,7 +24,7 @@
                             </span>
                             <button id="{{page.data.id}}_reveal_left_mean"
                                     class="reveal-stat btn btn-rect btn-sm btn-primary">
-                                Reveal
+                                Show
                             </button>
 
                         </td>
@@ -37,7 +37,7 @@
                             </span>
                             <button id="{{page.data.id}}_reveal_left_median"
                                     class="reveal-stat btn btn-rect btn-sm btn-primary">
-                                Reveal
+                                Show
                             </button>
                         </td>
                     </tr>
@@ -49,7 +49,7 @@
                             </span>
                             <button id="{{page.data.id}}_reveal_left_mode"
                                     class="reveal-stat btn btn-rect btn-sm btn-primary">
-                                Reveal
+                                Show
                             </button>
                         </td>
                     </tr>
@@ -61,7 +61,7 @@
                             </span>
                             <button id="{{page.data.id}}_reveal_left_range"
                                     class="reveal-stat btn btn-rect btn-sm btn-primary">
-                                Reveal
+                                Show
                             </button>
                         </td>
                     </tr>
@@ -73,31 +73,21 @@
     <div class="results-top-center">
         <div class="results-centered">
             {% block tables %}{% endblock %}
-            {#
-             <div>
-                <img id="{{page.data.id}}_sorted"
-                    src="{{images.sorted}}"
-                    class="img-centered hidden" />
-                <img id="{{page.data.id}}_unsorted"
-                    src="{{images.unsorted}}"
-                    class="img-centered" />
-            </div>
-            #}
             <p>
                 <button id="{{page.data.id}}_show_sorted_table"
-                        class="show-sorted-img btn-lg btn-primary">
-                    Sort each condition from lowest to highest
+                        class="show-sorted-img btn btn-lg btn-rect btn-primary">
+                    Sort results from lowest to highest
                 </button>
             </p>
             <p id="{{page.data.id}}_sorted_text"
-                class="hidden">
-                Conditions are sorted from lowest to highest
+                class="hidden text-lg">
+                Results are sorted from lowest to highest
             </p>
         </div>
     </div>
 
     <div class="results-top-right">
-        <div class="results-centered">
+        <div class="stats-right-wrapper">
             <table class="stats-table">
                 <thead>
                     <tr>
@@ -113,7 +103,7 @@
                             </span>
                             <button id="{{page.data.id}}_reveal_right_mean"
                                     class="reveal-stat btn btn-rect btn-sm btn-primary">
-                                Reveal
+                                Show
                             </button>
                         </td>
                     </tr>
@@ -125,7 +115,7 @@
                             </span>
                             <button id="{{page.data.id}}_reveal_right_median"
                                     class="reveal-stat btn btn-rect btn-sm btn-primary">
-                                Reveal
+                                Show
                             </button>
                         </td>
                     </tr>
@@ -137,7 +127,7 @@
                             </span>
                             <button id="{{page.data.id}}_reveal_right_mode"
                                     class="reveal-stat btn btn-rect btn-sm btn-primary">
-                                Reveal
+                                Show
                             </button>
                         </td>
                     </tr>
@@ -149,7 +139,7 @@
                             </span>
                             <button id="{{page.data.id}}_reveal_right_range"
                                     class="reveal-stat btn btn-rect btn-sm btn-primary">
-                                Reveal
+                                Show
                             </button>
                         </td>
                     </tr>

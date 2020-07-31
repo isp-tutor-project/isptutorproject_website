@@ -4,7 +4,7 @@
         <thead>
             {% if "" !== heading  %}
             <tr>
-                <th colspan="2">{{heading}}</th>
+                <th colspan="2">{{heading | safe}}</th>
             </tr>
             {% endif %}
             <tr>

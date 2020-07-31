@@ -6,15 +6,24 @@
 {% set heading_prefix = "Below is the" %}
 {% set heading_suffix = "set of possible results for each <u>height</u> the rocket traveled (in meters)." %}
 
+{% set t1heading = "Condition 1: Curved Body" %}
+{% set t2heading = "Condition 2: Straight Body" %}
+{#
 {% set c1heading = "Curved<br/>body" %}
 {% set c2heading = "Straight<br/>body" %}
+#}
+{% set c1heading = "Trial #" %}
+{% set c2heading = "Height" %}
+
 
 {% set leftStatsHeading = "Curved body" %}
 {% set rightStatsHeading = "Straight body" %}
 
 {% block tables %}
     <div class="side-by-side-tables">
-        {{ tb.drawTable(table, "center", "", c1heading, c2heading) }}
+        {# {{ tb.drawTable(table, "center", "", c1heading, c2heading) }} #}
+        {{ tb.drawTable(tables.left,  "left",  t1heading, c1heading, c2heading) }}
+        {{ tb.drawTable(tables.right, "right", t2heading, c1heading, c2heading) }}
     </div>
 {% endblock %}
 
