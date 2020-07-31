@@ -12,7 +12,7 @@ export class SceneBasedApp {
 
         this.snackbar = new SnackBar();
         this.homePageBtn = null;
-        let homePageBtn  = document.getElementById("go_home_page");
+        let homePageBtn  = document.getElementById("go_home_btn");
         this.nextBtn = document.getElementById("next_btn");
         this.prevBtn = document.getElementById("prev_btn");
         this.sceneIdRegion = document.getElementById("scene_id_region");
@@ -69,7 +69,6 @@ export class SceneBasedApp {
         }
     }
 
-
     // setSnackbar(snackbar) {
     //     this.snackbar = snackbar;
     // }
@@ -80,7 +79,8 @@ export class SceneBasedApp {
 
     handleGoHomePage(event) {
         event.preventDefault();
-        window.location.href = this.activityConfig.homepage
+        // incase we're in an iframe
+        top.location.href = this.activityConfig.homepage;
     }
 
     handlePrev(event) {
