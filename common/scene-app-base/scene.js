@@ -116,6 +116,7 @@ export class Scene {
 
     defaultEnterSceneActions() {
         this.el.classList.add("active");
+        this.app.resizeContent();
         this.setupFollowEdgeEventHandlers();
     }
 
