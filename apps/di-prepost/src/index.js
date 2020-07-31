@@ -17,8 +17,6 @@ export class DiTestApp extends SceneBasedApp{
         switch(sceneInfo.sceneType) {
             case "carResults":
             case "rocketsResults":
-                scene = new DiSingleTableResultsScene(this, sceneInfo);
-                break;
             case "libraryResults":
             case "memoryResults":
                 scene = new DiDualTableResultsScene(this, sceneInfo);
