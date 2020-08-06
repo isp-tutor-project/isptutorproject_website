@@ -86,7 +86,11 @@
            id="{{id}}"
            name="{{name}}"
            value="{{value}}" required>
-    <label id="{{id}}_label" class="option-label text-lg" for="{{id}}">{{label}}</label>
+    <label id="{{id}}_label"
+          class="option-label {% if isVert %}vert-radio-label{% endif %} text-lg"
+          for="{{id}}">
+            {{label}}
+    </label>
     {% if isVert %} <br/> {% endif %}
 {% endmacro %}
 
