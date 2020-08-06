@@ -1,22 +1,32 @@
 export const activities = [
     {
-        label: "Data Interpretation PreTest",
+        label: "Science Attitudes - Initial",
+        phase: "pre-training",
+        storageInfo: {
+            currentActivity: "matsPreTest",
+            currentActivityFeatures: "FTR_WEB:FTR_PRE"
+        },
+        url: "",
+        implemented: true
+    },
+    {
+        label: "Data Interpretation Questions - Initial",
         phase: "pre-training",
         storageInfo: {
             currentActivity: "diPreTest",
         },
-        url: "/apps/di-prepost/pretest.html",
+        url: "/apps/di-prepost/diPreTest.html",
         implemented: true
     },
     {
-        label: "Research Question Selection (Baseline)",
+        label: "See research question and trial run of experiment",
         phase: "rqSelect",
         storageInfo: {
             currentActivity: "rqSelect",
             currentActivityFeatures: "FTR_WEB:FTR_BASELINE:FTR_NCPLANTS"
         },
         url: "/tutors/rqSelect.html",
-        implemented: false
+        implemented: true
     },
     {
         label: "Research Question Selection (No Choice Crystal)",
@@ -89,27 +99,27 @@ export const activities = [
         implemented: false
     },
     {
-        label: "Hypothesis WE (one-directional)",
+        label: "Watch students talk about their hypotheses (one-directional)",
         phase: "hypo",
         storageInfo: {
             currentActivity: "hypoWE",
             currentActivityFeatures: "FTR_ONE_DIRECTIONAL"
         },
         url: "/apps/hypo-we/",
-        implemented: false
+        implemented: true
     },
     {
-        label: "Hypothesis WE (bi-directional)",
+        label: "Watch students talk about their hypotheses (bi-directional)",
         phase: "hypo",
         storageInfo: {
             currentActivity: "hypoWE",
             currentActivityFeatures: "FTR_BI_DIRECTIONAL"
         },
         url: "/apps/hypo-we/",
-        implemented: false
+        implemented: true
     },
     {
-        label: "Data Interpretation Instruction",
+        label: "Lesson on Data Interpretation",
         phase: "data-interpretation",
         storageInfo: {
             currentActivity: "diInstruction"
@@ -118,12 +128,31 @@ export const activities = [
         implemented: true
     },
     {
-        label: "Data Interpretation PostTest",
+        label: "Interpret results on crystal growth",
+        phase: "post-training",
+        storageInfo: {
+            currentActivity: "diCrysGr",
+        },
+        url: "/apps/di-prepost/diCrysGr.html",
+        implemented: true
+    },
+    {
+        label: "Science Attitudes - Final",
+        phase: "post-training",
+        storageInfo: {
+            currentActivity: "matsPostTest",
+            currentActivityFeatures: "FTR_WEB:FTR_POST"
+        },
+        url: "",
+        implemented: true
+    },
+    {
+        label: "Data Interpretation Questions - Final",
         phase: "post-training",
         storageInfo: {
             currentActivity: "diPostTest",
         },
-        url: "/apps/di-prepost/posttest.html",
+        url: "/apps/di-prepost/diPostTest.html",
         implemented: true
     }
 ];
