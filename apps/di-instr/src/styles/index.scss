@@ -50,10 +50,15 @@ input[type="radio"] {
     margin-left: 10px;
 }
 
+label.vert-radio-label {
+    line-height: 1.5em;
+}
+
 .scene {
+    position: relative;
+    display: none;
     height: 100%;
     width: 100%;
-    display: none;
     padding-left: 20px;
     padding-right: 20px;
 }
@@ -61,6 +66,16 @@ input[type="radio"] {
     display: block;
 }
 
+.scene-content {
+    position: relative;
+    // border: 1px solid hotpink;
+    width: 1300px;
+    height: 714px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: center center;
+}
 
 .container {
     height: 100%;
