@@ -10,7 +10,9 @@
         <main class="my-main">
             {% for scene in collections.diInstrScenes | sortBySceneName %}
                 <section id="{{scene.fileSlug}}" class="scene ">
-                    {{ scene.templateContent | safe }}
+                    <div class="scene-content">
+                        {{ scene.templateContent | safe }}
+                    </div>
                 </section>
             {% endfor %}
             <div id="scene_id_region"></div>
