@@ -1,0 +1,28 @@
+{% extends "results.njk" %}
+
+{% import "forms.njk" as forms %}
+{% import "table.njk" as tb %}
+
+{% set heading_prefix = "Below is the" %}
+{% set heading_suffix = "set of possible results for the weight of crystal growth for each condition's trials." %}
+
+{% set t1heading = "Condition 1: Hot Water" %}
+{% set t2heading = "Condition 2: Cold Water" %}
+{% set col1heading = "Trial #" %}
+{% set col2heading = "Weight" %}
+
+{% set leftStatsHeading = "Hot Water" %}
+{% set rightStatsHeading = "Cold Water" %}
+
+{% block tables %}
+    <div class="side-by-side-tables">
+        {{ tb.drawTable(tables.left,  "left",  t1heading, col1heading, col2heading) }}
+        {{ tb.drawTable(tables.right, "right", t2heading, col1heading, col2heading) }}
+    </div>
+{% endblock %}
+
+{% block questions %}
+    {{ forms.q1_form(page, isVert=false) }}
+    {{ forms.q2_form(page, isVert=false) }}
+    {{ forms.q3_form(page, isVert=false) }}
+{% endblock %}

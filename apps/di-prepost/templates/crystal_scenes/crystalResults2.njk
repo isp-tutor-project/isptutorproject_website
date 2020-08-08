@@ -1,0 +1,38 @@
+---
+tables:
+    left:
+        header:
+            className: set2
+        data: [
+            [1, 15],
+            [2, 25],
+            [3, 17],
+            [4, 23],
+            [5, 20]
+        ]
+    right:
+        header:
+            className: set2
+        data: [
+            [1, 33],
+            [2, 27],
+            [3, 35],
+            [4, 25],
+            [5, 30]
+        ]
+stats:
+    left:
+        mean: 20
+        median: 20
+        mode: "n/a"
+        range: 10
+    right:
+        mean: 30
+        median: 30
+        mode: "n/a"
+        range: 10
+---
+{% extends "dicrystal/crystalResults.njk" %}
+
+{% block heading %} 2nd {% endblock %}
+
