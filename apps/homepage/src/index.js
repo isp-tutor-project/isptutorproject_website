@@ -22,8 +22,8 @@ const loginForm         = getEleById("login_form");
 const loginSubmitBtn    = getEleById("login_submit");
 const registrationForm  = getEleById("registration_form");
 const registerSubmitBtn = getEleById("registration_submit");
-const activityBtnsCntr  = getEleById("activity_btns_container");
-
+// const activityBtnsCntr  = getEleById("activity_btns_container");
+const activityBtnsList  = getEleById("activity_btns_list");
 
 function activatePage(pageID) {
     for (let page of document.querySelectorAll(".page")) {
@@ -94,12 +94,14 @@ function homePage(e) {
     activatePage("home_page");
     navbar.displayUser(userID);
     // refresh activity btns
-    activityBtnsCntr.innerHTML = "";
+    // activityBtnsCntr.innerHTML = "";
+    activityBtnsList.innerHTML = "";
     activities.forEach((act) => {
         if (act.implemented) {
             // console.log(act);
             let url;
-            let p = document.createElement("p");
+            // let p = document.createElement("p");
+            let p = document.createElement("li");
             let btn = document.createElement("button");
             // if (!act.implemented) {
             //     btn.classList.add("disabled");
@@ -129,7 +131,8 @@ function homePage(e) {
             // for debugging
             btn.addEventListener("mouseover", handleActivityHover);
             p.appendChild(btn);
-            activityBtnsCntr.appendChild(p);
+            // activityBtnsCntr.appendChild(p);
+            activityBtnsList.appendChild(p);
         }
     });
 }
