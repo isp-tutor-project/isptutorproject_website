@@ -7,7 +7,7 @@ export const activities = [
             currentActivityFeatures: "FTR_WEB:FTR_PRE"
         },
         url: "",
-        implemented: true
+        implemented: false
     },
     {
         label: "Data Interpretation Questions - Initial",
@@ -15,7 +15,7 @@ export const activities = [
         storageInfo: {
             currentActivity: "diPreTest",
         },
-        url: "/apps/di-prepost/diPreTest.html",
+        url: "/apps/di-prepost/pretest.html",
         implemented: true
     },
     {
@@ -23,10 +23,10 @@ export const activities = [
         phase: "rqSelect",
         storageInfo: {
             currentActivity: "rqSelect",
-            currentActivityFeatures: "FTR_WEB:FTR_BASELINE:FTR_NCPLANTS"
+            currentActivityFeatures: "FTR_WEB:FTR_BASELINE:FTR_NCCRYSTAL"
         },
-        url: "/tutors/rqSelect.html",
-        implemented: true
+        url: "/edforge/rqSelect.html",
+        implemented: false
     },
     {
         label: "Research Question Selection (No Choice Crystal)",
@@ -35,7 +35,7 @@ export const activities = [
             currentActivity: "rqSelect",
             currentActivityFeatures: "FTR_WEB:FTR_NOCHOICE:FTR_NCCRYSTAL"
         },
-        url: "/tutors/rqSelect.html",
+        url: "/edforge/rqSelect.html",
         implemented: false
     },
     {
@@ -45,7 +45,7 @@ export const activities = [
             currentModule: "rqSelect",
             currentActivityFeatures: "FTR_WEB:FTR_CHOICE"
         },
-        url: "/tutors/rqSelect.html",
+        url: "/edforge/rqSelect.html",
         implemented: false
     },
     {
@@ -133,7 +133,7 @@ export const activities = [
         storageInfo: {
             currentActivity: "diCrysGr",
         },
-        url: "/apps/di-prepost/diCrysGr.html",
+        url: "/apps/di-prepost/crystal.html",
         implemented: true
     },
     {
@@ -144,7 +144,7 @@ export const activities = [
             currentActivityFeatures: "FTR_WEB:FTR_POST"
         },
         url: "",
-        implemented: true
+        implemented: false
     },
     {
         label: "Data Interpretation Questions - Final",
@@ -152,7 +152,7 @@ export const activities = [
         storageInfo: {
             currentActivity: "diPostTest",
         },
-        url: "/apps/di-prepost/diPostTest.html",
+        url: "/apps/di-prepost/posttest.html",
         implemented: true
     }
 ];

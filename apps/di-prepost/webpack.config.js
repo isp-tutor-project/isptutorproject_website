@@ -11,7 +11,7 @@ let cfg = {
     entry: {
         dipretest: "./src/pretest.js",
         diposttest: "./src/posttest.js",
-
+        dicrystal: "./src/crystal.js"
     },
     output: {
         path: path.resolve(__dirname, 'dist'),

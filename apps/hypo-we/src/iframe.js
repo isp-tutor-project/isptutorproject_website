@@ -14,7 +14,12 @@ const COND_ONE_DIR = "one-directional";
 const COND_BI_DIR  = "bi-directional";
 
 const TRACKED_VARS = [
-    "condition", "prediction", "gender", "VINname", "twinName"
+    "condition",
+    "gender",
+    "prediction",
+    "sibling",
+    "VINName",
+    "VINTwinName"
 ];
 
 function undefinedOrSame(currState, value) {

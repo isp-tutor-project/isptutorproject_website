@@ -30,6 +30,12 @@ module.exports = function(eleventyConfig) {
         return mergeScenesWithData(scenes, sceneData);
     });
 
+    eleventyConfig.addCollection("diCrystaltestScenesWithData", function (collection) {
+        let scenes = collection.getFilteredByTag("diCrystalTestScenes");
+        let sceneData = collection.getAll()[0].data.diCrystalTest.scenes;
+        return mergeScenesWithData(scenes, sceneData);
+    });
+
     return {
         dir: {
             input: "templates",

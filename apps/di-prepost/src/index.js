@@ -19,6 +19,7 @@ export class DiTestApp extends SceneBasedApp{
             case "rocketsResults":
             case "libraryResults":
             case "memoryResults":
+            case "crystalResults":
                 scene = new DiDualTableResultsScene(this, sceneInfo);
                 break;
             default:

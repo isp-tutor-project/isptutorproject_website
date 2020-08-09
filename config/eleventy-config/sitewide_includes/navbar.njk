@@ -1,19 +1,24 @@
 <nav class="navbar">
     <div class="navbar-items navbar-lhs">
         <img class="brand" src="img/site/icon.jpg" width="36" />
-        <button class="navbar-btn btn btn-sm btn-danger" id="navbar_home_btn">
-            home icon
-        </button>
+        {# <button class="navbar-btn btn btn-sm btn-danger" id="navbar_home_btn"> #}
+            <i class="material-icons navbar-text text-lg" id="navbar_home_btn">home</i>
+        {# </button> #}
         <div id="activity_title" class="navbar-text text-primary"></div>
     </div>
     <div class="navbar-items navbar-center invisible"></div>
     <div class="navbar-items navbar-rhs">
-        <button class="navbar-btn btn btn-sm btn-info" id="glossary">
+
+        <button class="navbar-btn btn btn-sm" id="navbar_glossary_btn">
             GLOSSARY
         </button>
+
         <button class="navbar-btn btn btn-sm btn-success" id="sign_out_button">
             SIGN OUT
         </button>
         <div id="sign_in_text" class="navbar-text"></div>
+    </div>
+    <div class="navbar-glossary-popup hidden">
+        <iframe src="https://go.isptutor.org/brm/glossary/" width="100%" height="100%"></iframe>
     </div>
 </nav>
