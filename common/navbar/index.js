@@ -5,17 +5,25 @@ export class NavBar {
         this.el = document.querySelector("nav.navbar");
         this.homeBtn = document.getElementById("navbar_home_btn");
         this.activityTitle = document.getElementById("activity_title");
+        this.glossaryBtn = document.getElementById("navbar_glossary_btn");
+        this.glossaryPopup = document.querySelector(".navbar-glossary-popup");
         this.signOutBtn = document.getElementById("sign_out_button");
         this.signInText = document.getElementById("sign_in_text");
         this.goHome      = this.goHome.bind(this);
+        this.toggleGlossary = this.toggleGlossary.bind(this);
         this.signOutUser = this.signOutUser.bind(this);
         this.homeBtn.addEventListener('click', this.goHome);
+        this.glossaryBtn.addEventListener("click", this.toggleGlossary);
         this.signOutBtn.addEventListener("click", this.signOutUser);
     }
 
     goHome(e) {
         let homePage = this.calcHomePage();
         this.redirectTo(homePage);
+    }
+
+    toggleGlossary(e) {
+        this.glossaryPopup.classList.toggle("hidden");
     }
 
     calcHomePage() {
