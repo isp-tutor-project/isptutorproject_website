@@ -25,8 +25,8 @@ function undefinedOrSame(currState, value) {
 }
 
 class HypoWECaptivateActivity extends ISPCaptivateActivity {
-    constructor(cpAPI, db, varsToTrack) {
-        super(cpAPI, db, varsToTrack);
+    constructor(activityConfig, cpAPI, varsToTrack) {
+        super(activityConfig, cpAPI, varsToTrack);
     }
 
     processFeatures() {
