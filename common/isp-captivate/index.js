@@ -207,4 +207,10 @@ export class ISPCaptivateActivity {
         this.cpAPI.setVariableValue(varName, value);
     }
 
+    goHomePage() {
+        // top instead of window because we're in an iframe
+        let url = this.activityConfig.homepage;
+        // console.log(url);
+        top.location.href = url;
+    }
 }
