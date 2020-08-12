@@ -193,55 +193,63 @@ registerBackBtn.addEventListener("click", indexPage);
 
 loginSubmitBtn.addEventListener("click", e => {
     e.preventDefault();
-    if (parseUserForm("login", loginForm)) {
-        db.setCredentials(classCode, userID);
-        db.getUserData()
+    if (loginForm.reportValidity()) {
+        let formData = parseUserForm("login", loginForm);
+        // console.log(formData);
+        db.lookupUserID(formData)
+        .then((uid) => {
+            if (!!uid) {
+                console.log(`account exists: ${uid}`);
+                setUserID(uid);
+                return db.loginUser(userID);
+            }
+            return false;
+        })
         .then((userData) => {
             if (userData) {
-                loginUser();
+                homePage(userData);
             } else {
-                console.error("No such account!");
-                snackbar.show("No such account exists. Check that your name and birthday were typed in correctly.")
+                console.error("loginError");
+                snackbar.show("login error");
             }
-        }).catch(function (error) {
-            console.log("Error getting account:", error);
-            snackbar.show("No such account exists. Check that you typed in the classcode correctly.")
         });
     }
 });
 
 registerSubmitBtn.addEventListener("click", e => {
     e.preventDefault();
-    if (parseUserForm("register", registrationForm)) {
-        db.setCredentials(classCode, userID);
-        db.getUserData()
-        .then((userData) => {
-            if (userData) {
-                let msg = "Account already exists.";
-                console.error(msg);
-                snackbar.show(msg);
+    if (registrationForm.reportValidity()) {
+        let formData = parseUserForm("register", registrationForm);
+        // console.log(formData);
+        db.lookupUserID(formData)
+        .then((uid) => {
+            // uid should be false if we're registering a new user
+            if (!!uid) {
+                snackbar.show("Account already exists!");
+                console.log(`account "${uid}" already exists`);
+                return false;
             } else {
-                console.debug("Creating account");
-                // add some fields to account object
-                db.setValues({
-                    classCode: classCode,
-                    userID: userID
-                })
-                .then(function () {
-                    console.debug("Document successfully written!");
-                    loginUser();
-                })
-                .catch(function (error) {
-                    let msg = "Error creating new account.";
-                    console.error(msg, error);
-                    snackbar.show(msg);
-                });
+                return db.registerUser(formData);
             }
-        }).catch(function (error) {
-            console.error("Error getting account:", error);
-            snackbar.show("Cannot create account. Please make sure that class code is correct.");
+        })
+        .then((uid) => {
+            if (uid) {
+                setUserID(uid);
+                // classCode = formData.classCode;
+                return db.loginUser(userID);
+            } else {
+                snackbar.show("error creating account");
+                return false;
+            }
+        }).then((userData) => {
+            if (userData) {
+                homePage(userData);
+            } else {
+                snackbar.show("login error");
+            }
         });
     }
+
 });
 
 function initApp() {
