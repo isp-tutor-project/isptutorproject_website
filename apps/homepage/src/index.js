@@ -255,15 +255,25 @@ registerSubmitBtn.addEventListener("click", e => {
 function initApp() {
     navbar = new NavBar();
     snackbar = new SnackBar();
-    // navbar.displayActivityTitle("ISP Home Page");
-    let DB = "localstorage";
+    // let DB = "localstorage";
+    let DB = "firestore";
+    let schema = "study3";
     let homePageURL = window.location.href;
     localStorage.setItem("homepage", homePageURL);
     localStorage.setItem("database", DB);
-    db = getDBConnection(DB);
-    getUserInfoFromLocalStorage();
-    if (classCode && userID) {
-        homePage();
+    db = getDBConnection(DB, schema);
+    console.log(db);
+    window.db = db;
+    getUserIDFromLocalStorage();
+    if (userID) {
+        db.loginUser(userID)
+        .then((userData) => {
+            if (userData) {
+                homePage(userData);
+            } else {
+                snackbar.show("login error");
+            }
+        })
     } else {
         indexPage();
     }
