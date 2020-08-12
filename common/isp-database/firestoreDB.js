@@ -84,6 +84,17 @@ export class FirestoreDB extends Database {
         });
     }
 
+    setActivityData(activityKey, state) {
+        let activityState = JSON.stringify(state);
+        return this.userRef.update({
+            [activityKey]: activityState
+        })
+        .then(() => {
+            console.log("app data saved successefully")
+        }).catch((error) => {
+            console.error(error);
+        });
+    }
     // getRQData() {
     //     return this.getAppData("rqted");
     // }
