@@ -1,29 +1,28 @@
  {% macro create(prefix) %}
       <div class="container">
-          <label><b>Class Code</b></label>
-          <input type="text" 
-                 placeholder="Enter class code" 
-                 id="{{prefix}}_classcode" 
-                 required>
+          <label><b>Class Code</b> (leave blank unless your teacher gave you one)</label>
+          <input type="text"
+                 placeholder="Enter class code"
+                 id="{{prefix}}_classcode">
           <label><b>First two letters of first name</b></label>
-          <input type="text" 
-                 value="" 
-                 id="{{prefix}}_fname" 
+          <input type="text"
+                 value=""
+                 id="{{prefix}}_fname"
                  size="2"
                  placeholder="FN"
                  pattern="[a-zA-Z]{2}"
                  minlength="2"
-                 maxlength="2" 
+                 maxlength="2"
                  required>
           <label><b>First two letters of last name</b></label>
           <input type="text"
-                 value="" 
-                 id="{{prefix}}_lname" 
+                 value=""
+                 id="{{prefix}}_lname"
                  size="2"
                  placeholder="LN"
                  pattern="[a-zA-Z]{2}"
                  minlength="2"
-                 maxlength="2" 
+                 maxlength="2"
                  required>
           <label><b>Birthday</b></label>
           <br>
@@ -79,6 +78,6 @@
             <option>29</option>
             <option>30</option>
             <option>31</option>
-          </select>      
+          </select>
         </div>
 {% endmacro %}
