@@ -30,12 +30,20 @@ export class Database {
         this.dbType = dbType;
     }
 
+    setCredentials(userID) {
+        this.userID = userID;
+    }
+
+    lookupUserID(formData) {
 
     }
 
-    setCredentials(classCode, userID) {
-        this.classCode = classCode;
-        this.userID = userID;
+    loginUser(userID) {
+
+    }
+
+    registerUser(formData) {
+
     }
 
     getUserData() {
