@@ -96,7 +96,11 @@ export class ISPCaptivateActivity {
             console.log("skipping slide 1");
             this.gotoSlide(2);
         }
+
+        this.restoreMultiStateObjects();
     }
+
+    restoreMultiStateObjects() {}
 
     showState() {
         console.log(this.state);
