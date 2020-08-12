@@ -95,7 +95,27 @@ class HypoWECaptivateActivity extends ISPCaptivateActivity {
         console.log("marking HypoWE as completed")
         this.db.markActivityAsCompleted(this.activityID)
             .then(() => this.goHomePage());
+    }
 
+    overrideDefaultWithNormal(value, defaultVal) {
+        return (value === defaultVal) ? "Normal" : value;
+    }
+
+    restoreMultiStateObjects() {
+        if ("VINName" in this.state) {
+            let val = this.overrideDefaultWithNormal(this.state.VINName, "Joy");
+            for (let smartObjName of VINImages) {
+                console.log(`Restoring state of object "${smartObjName}" to "${val}`);
+                this.cp.changeState(smartObjName, val);
+            }
+        }
+        if ("VINTwinName" in this.state) {
+            let val = this.overrideDefaultWithNormal(this.state.VINTwinName, "Ari");
+            for (let smartObjName of VINTwinImages) {
+                console.log(`Restoring state of object "${smartObjName}" to "${val}`);
+                this.cp.changeState(smartObjName, val);
+            }
+        }
     }
 }
 
