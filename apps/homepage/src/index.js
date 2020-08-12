@@ -35,8 +35,7 @@ function activatePage(pageID) {
     }
 }
 
-function getUserInfoFromLocalStorage() {
-    classCode = localStorage.getItem("classCode");
+function getUserIDFromLocalStorage() {
     userID = localStorage.getItem("userID");
 }
 
