@@ -15,9 +15,11 @@ export class FirestoreDB extends Database {
         this.store = firebase.firestore();
     }
 
-    setCredentials(classCode, userID) {
-        super.setCredentials(classCode, userID);
-        this.userRef = this.store.collection(this.classCode).doc(this.userID);
+    setCredentials(userID) {
+        super.setCredentials(userID);
+        this.userRef = this.store.collection("STUDY_3").doc(userID);
+    }
+
     }
 
     getUserData() {
