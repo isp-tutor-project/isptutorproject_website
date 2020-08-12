@@ -21,14 +21,20 @@ export class FirestoreDB extends Database {
     }
 
     getUserData() {
-        // returns promise with 'doc' if it exists, null otherwise
+        // returns promise with 'doc' if it exists, false otherwise
+        let userData = false;
         return this.userRef.get()
         .then((doc) => {
             if (doc.exists) {
-                return doc.data;
-            } else {
-                return null;
+                let data = doc.data();
+                userData = {
+                    userID: data.userID,
+                    condition: data.condition,
+                    assignments: JSON.parse(data.assignments),
+                    completedAssignments: JSON.parse(data.completedAssignments)
+                }
             }
+            return userData;
         });
     }
 
