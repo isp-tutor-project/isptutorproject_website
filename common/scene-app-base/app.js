@@ -6,7 +6,8 @@ export class SceneBasedApp {
         this.sceneData = appData.scenes;
         this.activityConfig = activityConfig;
         this.db = getDBConnection(activityConfig.database);
-        this.db.setCredentials(activityConfig.classCode, activityConfig.userID);
+        this.db.setCredentials(activityConfig.userID);
+        this.activityID = activityConfig.activityID
         this.activityKey = activityConfig.activityKey;
         this.defaultState = defaultInitialState;
 
