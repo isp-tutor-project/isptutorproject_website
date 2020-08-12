@@ -80,8 +80,12 @@ export class SceneBasedApp {
 
     handleGoHomePage(event) {
         event.preventDefault();
-        // incase we're in an iframe
-        top.location.href = this.activityConfig.homepage;
+        // mark this activity as completed
+        this.db.markActivityAsCompleted(this.activityID)
+        .then(() => {
+            // using top instead of window in case we're in an iframe
+            top.location.href = this.activityConfig.homepage;
+        });
     }
 
     handlePrev(event) {
