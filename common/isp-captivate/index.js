@@ -1,3 +1,5 @@
+import { getDBConnection } from "@isptutorproject/isp-database";
+
 export const EVT_ON_VAR_CHANGE  = "CPAPI_VARIABLEVALUECHANGED";
 export const EVT_ON_SLIDE_ENTER = "CPAPI_SLIDEENTER";
 export const EVT_ON_SLIDE_EXIT  = "CPAPI_SLIDEEXIT";
