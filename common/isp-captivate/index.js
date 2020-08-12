@@ -10,6 +10,25 @@ const INITIAL_STATE = {
     variableChanges: []
 };
 
+// allows us to log to the parent windows console
+// NOTE: the parent window needs to have some companion
+// code to make this work
+const _log = console.log;
+// Override the console
+console.log = function (...rest) {
+    // window.parent is the parent frame that made this window
+    window.parent.postMessage(
+        {
+            source: 'iframe',
+            message: rest,
+        },
+        '*'
+    );
+    // Finally applying the console statements to saved instance earlier
+    _log.apply(console, arguments);
+};
+
+
 export class ISPCaptivateActivity {
     constructor(cpAPI, db, variablesToTrack) {
         // bind event handlers
