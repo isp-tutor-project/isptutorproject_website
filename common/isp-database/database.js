@@ -1,3 +1,29 @@
+
+export const STUDY3 = {
+    conditionActivities: {
+        1: [
+            "matsPreTest",
+            "diPreTest",
+            "reSelectBL",
+            "hypoWEoneDir",
+            "diInstrGR",
+            "diCrystalGrowthTest",
+            "diPostTest",
+            "matsPostTest"
+        ],
+        2: [
+            "matsPreTest",
+            "diPreTest",
+            "reSelectBL",
+            "hypoWEbiDir",
+            "diInstrGR",
+            "diCrystalGrowthTest",
+            "diPostTest",
+            "matsPostTest"
+        ]
+    }
+};
+
 // abstract class - interface
 export class Database {
     constructor() {
