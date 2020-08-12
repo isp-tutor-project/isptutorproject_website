@@ -95,45 +95,54 @@ function homePage(userData) {
     navbar.displayUser(userID);
     console.log(userData);
     // refresh activity btns
-    // activityBtnsCntr.innerHTML = "";
     activityBtnsList.innerHTML = "";
-    activities.forEach((act) => {
-        if (act.implemented && userData.assignments.includes(act.id)) {
-            // console.log(act.id);
-            let completed = userData.completedAssignments.includes(act.id);
-            let url;
-            let li = document.createElement("li");
-            let btn = document.createElement("button");
-            if (completed) {
-                btn.classList.add("disabled");
-            }
-            btn.classList.add("activity-button");
-            btn.classList.add("btn");
-            btn.type = "button";
-            btn.innerHTML = act.label;
-            if (act.url.startsWith("http")) {
-                url = act.url;
-            } else {
-                // homepage url can be at a random path, and may end with index.html
-                // localstorage retains all of this so we can simply redirect back.
-                // strip off index.html and/or trailing slash if exist and append
-                // relative path
-                let tmp = localStorage.getItem("homepage");
-                tmp = tmp.replace("index.html", "");
-                if (tmp.endsWith("/")) {
-                    tmp = tmp.slice(0, -1);
-                }
-                url = `${tmp}${act.url}`;
-            }
-            btn.setAttribute("data-activity", JSON.stringify(act.storageInfo));
-            btn.setAttribute("data-url", url);
-            btn.addEventListener("click", handleActivityClick);
-            // for debugging
-            btn.addEventListener("mouseover", handleActivityHover);
-            li.appendChild(btn);
-            activityBtnsList.appendChild(li);
+    let acts = activities.filter((act) => act.implemented)
+        .filter((act) => userData.assignments.includes(act.id))
+        .map((act) => {
+            return Object.assign(act, {
+                completed: userData.completedAssignments.includes(act.id)
+            });
+        });
+
+    console.log(activities);
+    console.log("acts", acts);
+    let foundIncomplete = false;
+    for (let act of acts) {
+        let url;
+        let li = document.createElement("li");
+        let btn = document.createElement("button");
+        if (foundIncomplete || act.completed) {
+            btn.classList.add("disabled")
         }
-    });
+        if (!act.completed) {
+            foundIncomplete = true;
+        }
+        btn.classList.add("activity-button");
+        btn.classList.add("btn");
+        btn.type = "button";
+        btn.innerHTML = act.label;
+        if (act.url.startsWith("http")) {
+            url = act.url;
+        } else {
+            // homepage url can be at a random path, and may end with index.html
+            // localstorage retains all of this so we can simply redirect back.
+            // strip off index.html and/or trailing slash if exist and append
+            // relative path
+            let tmp = localStorage.getItem("homepage");
+            tmp = tmp.replace("index.html", "");
+            if (tmp.endsWith("/")) {
+                tmp = tmp.slice(0, -1);
+            }
+            url = `${tmp}${act.url}`;
+        }
+        btn.setAttribute("data-activity", JSON.stringify(act.storageInfo));
+        btn.setAttribute("data-url", url);
+        btn.addEventListener("click", handleActivityClick);
+        // for debugging
+        btn.addEventListener("mouseover", handleActivityHover);
+        li.appendChild(btn);
+        activityBtnsList.appendChild(li);
+    }
 }
 
 
