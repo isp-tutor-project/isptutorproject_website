@@ -3,10 +3,8 @@ import {
     ISPCaptivateActivity
 } from "@isptutorproject/isp-captivate";
 
+import { getActivityConfiguration } from "@isptutorproject/activity-config";
 
-import {
-    getDBConnection
-} from "@isptutorproject/isp-database";
 
 const FTR_ONE_DIR = "FTR_ONE_DIRECTIONAL";
 const FTR_BI_DIR  = "FTR_BI_DIRECTIONAL";
