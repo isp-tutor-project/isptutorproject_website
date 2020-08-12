@@ -30,22 +30,23 @@ console.log = function (...rest) {
 
 
 export class ISPCaptivateActivity {
-    constructor(cpAPI, db, variablesToTrack) {
+    constructor(activityConfig, cpAPI, variablesToTrack) {
+        console.log(activityConfig);
+        this.activityConfig = activityConfig;
+        this.db = getDBConnection(activityConfig.database);
+        this.userID = activityConfig.userID;
+        this.activityID = activityConfig.activityID;
+        this.activityKey = activityConfig.activityKey;
+        this.features = activityConfig.activityFeatures;
         // bind event handlers
         this.onSlideEnter = this.onSlideEnter.bind(this);
-        // this.onSlideTransition = this.onSlideTransition.bind(this);
         this.onQuestionSubmit = this.onQuestionSubmit.bind(this);
         this.onVarChange = this.onVarChange.bind(this);
+        // this.onSlideTransition = this.onSlideTransition.bind(this);
         this.cpAPI = cpAPI;
         this.cpEventEmitter = this.cpAPI.getEventEmitter();
         this.variablesToTrack = variablesToTrack;
-        this.userID = localStorage.getItem("userID");
-        this.classCode = localStorage.getItem("classCode");
-        this.currentActivity = localStorage.getItem("currentActivity");
-        this.features = (localStorage.getItem("currentActivityFeatures") || "")
-                        .split(":").filter((item) => item !== "");
-        this.db = db;
-    }
+        }
 
 
     init() {
