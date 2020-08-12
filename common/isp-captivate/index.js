@@ -147,6 +147,19 @@ export class ISPCaptivateActivity {
         this.saveAppData();
     }
 
+    getAppData() {
+        console.log("looking for saved app data in database");
+        return this.db.getActivityData(this.activityID)
+        .then((data) => {
+            console.log(data);
+            return data;
+        });
+    }
+
+    saveAppData() {
+        console.log("saving app data");
+        this.db.setActivityData(this.activityID, this.state)
+    }
     // onSlideTransition(evt) {
     //     // console.log(evt);
     //     const transitionType = ("CPSlideEnter" === evt.cpName) ? "enter" : "exit";
