@@ -11,7 +11,7 @@ function getEleById(eleID) {
     return document.getElementById(eleID);
 }
 
-let classCode, userID, db, navbar, snackbar;
+let userID, db, navbar, snackbar;
 
 // page elements
 const loginBtn          = getEleById("login_button");
