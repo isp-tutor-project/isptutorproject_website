@@ -192,8 +192,10 @@ export class ISPCaptivateActivity {
     }
 
     gotoSlide(slideNumber) {
+        // wierd. when animate reports the slide number you are on, they
+        // are one-based, but gotoSlide() is 0 based
         console.log("manually navigating to slide:", slideNumber);
-        this.cpAPI.gotoSlide(slideNumber);
+        this.cpAPI.gotoSlide(slideNumber-1);
     }
 
     setCaptivateVariable(varName, value) {
