@@ -87,25 +87,23 @@ function loginPage(e) {
     loginForm.reset();
 }
 
-function homePage(e) {
-    if (e) {
-        e.preventDefault();
-    }
+function homePage(userData) {
     activatePage("home_page");
     navbar.displayUser(userID);
+    console.log(userData);
     // refresh activity btns
     // activityBtnsCntr.innerHTML = "";
     activityBtnsList.innerHTML = "";
     activities.forEach((act) => {
-        if (act.implemented) {
-            // console.log(act);
+        if (act.implemented && userData.assignments.includes(act.id)) {
+            // console.log(act.id);
+            let completed = userData.completedAssignments.includes(act.id);
             let url;
-            // let p = document.createElement("p");
-            let p = document.createElement("li");
+            let li = document.createElement("li");
             let btn = document.createElement("button");
-            // if (!act.implemented) {
-            //     btn.classList.add("disabled");
-            // }
+            if (completed) {
+                btn.classList.add("disabled");
+            }
             btn.classList.add("activity-button");
             btn.classList.add("btn");
             btn.type = "button";
@@ -124,24 +122,17 @@ function homePage(e) {
                 }
                 url = `${tmp}${act.url}`;
             }
-            btn.setAttribute("data-activity-features", act.storageInfo.currentActivityFeatures || "");
-            btn.setAttribute("data-activity", act.storageInfo.currentActivity);
+            btn.setAttribute("data-activity", JSON.stringify(act.storageInfo));
             btn.setAttribute("data-url", url);
             btn.addEventListener("click", handleActivityClick);
             // for debugging
             btn.addEventListener("mouseover", handleActivityHover);
-            p.appendChild(btn);
-            // activityBtnsCntr.appendChild(p);
-            activityBtnsList.appendChild(p);
+            li.appendChild(btn);
+            activityBtnsList.appendChild(li);
         }
     });
 }
 
-function loginUser() {
-    console.debug("Account found");
-    snackbar.show("Signed in as " + userID + ".");
-    homePage();
-}
 
 // =============================================================================
 // ======================= userForm related functions ==========================
