@@ -18,7 +18,7 @@ let cfg = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: "hypowe.bundle.css"
+            filename: "[name].bundle.css"
         }),
     ]
 };
