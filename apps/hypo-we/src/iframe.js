@@ -20,6 +20,19 @@ const TRACKED_VARS = [
     "VINTwinName"
 ];
 
+const VINImages = [
+    "VINImageall",
+    "VINImageall_bi",
+    "VINImageall_bi_681"
+];
+
+const VINTwinImages = [
+    "VINTwin_all",
+    "VINTwin_bi",
+    "VINTwin_bi_682",
+    "VINTwin_all_724"
+];
+
 function undefinedOrSame(currState, value) {
     return ("undefined" === typeof(currState) || currState === value)
 }
