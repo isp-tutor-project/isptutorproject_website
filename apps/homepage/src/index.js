@@ -22,7 +22,6 @@ const loginForm         = getEleById("login_form");
 const loginSubmitBtn    = getEleById("login_submit");
 const registrationForm  = getEleById("registration_form");
 const registerSubmitBtn = getEleById("registration_submit");
-// const activityBtnsCntr  = getEleById("activity_btns_container");
 const activityBtnsList  = getEleById("activity_btns_list");
 
 function activatePage(pageID) {
@@ -187,7 +186,6 @@ function parseUserForm(prefix, form) {
 // ================================= Event Listeners ===========================
 // =============================================================================
 
-// signOutBtn.addEventListener("click", logoutUser);
 
 loginBtn.addEventListener("click", loginPage);
 registerBtn.addEventListener("click", registrationPage);
