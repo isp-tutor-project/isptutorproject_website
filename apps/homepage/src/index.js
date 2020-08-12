@@ -39,6 +39,10 @@ function getUserIDFromLocalStorage() {
     userID = localStorage.getItem("userID");
 }
 
+function setUserID(uid) {
+    userID = uid;
+    localStorage.setItem("userID", uid);
+}
 
 function parseActivityLinkData(e) {
     return {
