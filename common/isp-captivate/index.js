@@ -144,6 +144,7 @@ export class ISPCaptivateActivity {
             slide_label: evt.cpData.lb,
             timestamp: Date.now()
         });
+        this.saveAppData();
     }
 
     // onSlideTransition(evt) {
