@@ -109,6 +109,7 @@ export class SceneBasedApp {
         console.log("starting");
         this.getAppState()
             .then((state) => {
+                console.log("returned from getAppState()", state);
                 if (null === state) {
                     console.log("no activity data in db. using initial data")
                     state = this.defaultState;
