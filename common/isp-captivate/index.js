@@ -78,6 +78,19 @@ export class ISPCaptivateActivity {
 
     restoreCaptivateState() {
 
+        for (let varName of this.variablesToTrack) {
+            if (varName in this.state) {
+                console.log(`Restoring Captivate Variable "${varName}" to ${this.state[varName]}`);
+                this.setCaptivateVariable(varName, this.state[varName]);
+            }
+        }
+        if ("currentSlide" in this.state) {
+            console.log(`restoring to slide number ${this.state.currentSlide}`);
+            this.gotoSlide(this.state.currentSlide);
+        } else {
+            console.log("skipping slide 1");
+            this.gotoSlide(2);
+        }
     }
 
     showState() {
