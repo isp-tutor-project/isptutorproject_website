@@ -40,6 +40,13 @@ function getUserIDFromLocalStorage() {
 }
 
 
+function parseActivityLinkData(e) {
+    return {
+        url: e.target.getAttribute("data-url"),
+        currentActivity: JSON.parse(e.target.getAttribute("data-activity"))
+    };
+}
+
 function handleActivityHover(e) {
     // e.preventDefault();
     let url = e.target.getAttribute("data-url");
