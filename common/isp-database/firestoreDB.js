@@ -10,7 +10,7 @@ const firebaseConfig = {
 export class FirestoreDB extends Database {
 
     constructor() {
-        super();
+        super("firestore");
         firebase.initializeApp(firebaseConfig);
         this.store = firebase.firestore();
     }
