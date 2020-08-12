@@ -153,7 +153,7 @@ export class ISPCaptivateActivity {
 
     getAppData() {
         console.log("looking for saved app data in database");
-        return this.db.getActivityData(this.activityID)
+        return this.db.getActivityData(this.activityKey)
         .then((data) => {
             console.log(data);
             return data;
@@ -162,7 +162,7 @@ export class ISPCaptivateActivity {
 
     saveAppData() {
         console.log("saving app data");
-        this.db.setActivityData(this.activityID, this.state)
+        this.db.setActivityData(this.activityKey, this.state)
     }
     // onSlideTransition(evt) {
     //     // console.log(evt);
