@@ -207,7 +207,7 @@ export class FirestoreDB extends Database {
 
     setValues(object, overwrite=false) {
         // default to {merge: true} option for safety
-        return this.userRef.set(object, {merge: !overwrite});       
+        return this.userRef.set(object, {merge: !overwrite});
     }
 
     updateValues(object) {
@@ -232,8 +232,8 @@ export class FirestoreDB extends Database {
 
     // getIntValue(varName) {
 
-    // }   
-    
+    // }
+
     // getFloatValue(varName) {
 
     // }
