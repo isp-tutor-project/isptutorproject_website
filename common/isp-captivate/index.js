@@ -45,6 +45,7 @@ export class ISPCaptivateActivity {
         this.onQuestionSubmit = this.onQuestionSubmit.bind(this);
         this.onVarChange = this.onVarChange.bind(this);
         // this.onSlideTransition = this.onSlideTransition.bind(this);
+        this.cp = document.Captivate;
         this.cpAPI = cpAPI;
         this.cpEventEmitter = this.cpAPI.getEventEmitter();
         this.variablesToTrack = variablesToTrack;
