@@ -52,14 +52,16 @@ export class ISPCaptivateActivity {
 
 
     init() {
-        this.db.setCredentials(this.classCode, this.userID);
-        this.db.getActivityData(this.currentActivity)
-        .then((data) => {
-            if (typeof(data) === "undefined" || null === data) {
+        this.db.setCredentials(this.userID);
+        this.getAppData()
+        .then((state) => {
+            console.log("getAppData() returned:", state);
+            if (typeof(state) === "undefined" || null === state) {
                 // if no state exists in db, copy INITIAL_STATE
                 this.state = { ...INITIAL_STATE };
             } else {
-                this.state = data;
+                console.log("Restoring App State from database");
+                this.state = state;
             }
             this.showState();
             return this.state;
