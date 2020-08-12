@@ -1,4 +1,4 @@
-import { Database } from "./database";
+import { STUDY3, Database } from "./database";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
