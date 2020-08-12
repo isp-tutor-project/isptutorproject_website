@@ -60,16 +60,27 @@ export class FirestoreDB extends Database {
     getCurrHypoTask() {
 
     }
-  
+
     getActivityData(activityKey, decodeJSON=true) {
-        return this.getUserData()
+        return this.userRef.get()
+        .then((doc) => doc.data())
         .then((userData) => {
+            console.log("userData", userData);
+            if (!userData) {
+                return null;
+            }
             let data = userData[activityKey];
+            if (!data) {
+                return null;
+            }
             if (data && decodeJSON) {
                 return JSON.parse(data);
             } else {
                 return data;
             }
+        }).catch((error) => {
+            console.error(error);
+            return null;
         });
     }
 
