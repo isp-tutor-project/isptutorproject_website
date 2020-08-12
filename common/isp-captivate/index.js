@@ -186,6 +186,7 @@ export class ISPCaptivateActivity {
         const varName = evt.cpData.varName;
         const newVal = evt.cpData.newVal;
         const oldVal = evt.cpData.oldVal;
+        console.log(`Captivate variable ${varName} changed from: ${oldVal} to: ${newVal}`);
         this.state[varName] = newVal;
         this.pushVarChange({
             variable: varName,
