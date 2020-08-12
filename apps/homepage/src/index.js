@@ -59,12 +59,9 @@ function handleActivityHover(e) {
 
 function handleActivityClick(e) {
     e.preventDefault();
-    let url = e.target.getAttribute("data-url");
-    let currentActivity = e.target.getAttribute("data-activity");
-    let currentActivityFeatures = e.target.getAttribute("data-activity-features");
-    localStorage.setItem("currentActivity", currentActivity);
-    localStorage.setItem("currentActivityFeatures", currentActivityFeatures);
-    window.location.href = url;
+    let linkData = parseActivityLinkData(e);
+    localStorage.setItem("currentActivity", JSON.stringify(linkData.currentActivity));
+    window.location.href = linkData.url;
 }
 
 function indexPage(e) {
