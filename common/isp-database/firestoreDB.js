@@ -38,6 +38,24 @@ export class FirestoreDB extends Database {
         });
     }
 
+    markActivityAsCompleted(activityId) {
+        // console.log(`markActivityAsCompleted(${activityId})`);
+        return this.userRef.get()
+        .then((doc) => {
+            let data = doc.data();
+            return JSON.parse(data.completedAssignments)
+        })
+        .then((completedAssignments) => {
+            // console.log("BEFORE:", completedAssignments);
+            if (!completedAssignments.includes(activityId)) {
+                completedAssignments.push(activityId);
+            }
+            // console.log("AFTER", completedAssignments)
+            return this.userRef.update({
+                completedAssignments: JSON.stringify(completedAssignments)
+            });
+        });
+    }
 
     getCurrHypoTask() {
 
