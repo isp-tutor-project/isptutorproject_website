@@ -26,7 +26,10 @@ export const STUDY3 = {
 
 // abstract class - interface
 export class Database {
-    constructor() {
+    constructor(dbType) {
+        this.dbType = dbType;
+    }
+
 
     }
 
