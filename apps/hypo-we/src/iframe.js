@@ -1,5 +1,5 @@
 import {
-    // EVT_ON_VAR_CHANGE,
+    EVT_ON_VAR_CHANGE,
     ISPCaptivateActivity
 } from "@isptutorproject/isp-captivate";
 
@@ -27,6 +27,7 @@ function undefinedOrSame(currState, value) {
 class HypoWECaptivateActivity extends ISPCaptivateActivity {
     constructor(activityConfig, cpAPI, varsToTrack) {
         super(activityConfig, cpAPI, varsToTrack);
+        this.onFinished = this.onFinished.bind(this);
     }
 
     processFeatures() {
@@ -61,7 +62,30 @@ class HypoWECaptivateActivity extends ISPCaptivateActivity {
         console.log("# remaining feats", feats.length);
     }
 
+    setupCustomEventHandlers() {
+        this.cpEventEmitter.addEventListener(EVT_ON_VAR_CHANGE, this.onFinished, "Finished")
+    }
+
+    onFinished(evt) {
+        // console.log(evt);
+        const varName = evt.cpData.varName;
+        const newVal = evt.cpData.newVal;
+        const oldVal = evt.cpData.oldVal;
+        if (varName !== "Finished") {
+            console.error(`WTF! This event handler is only supposed be called on changes to 'Finished' var. varName '${varName}'`);
+            return;
+        }
+        if (newVal !== 1) {
+            console.log("I only act when the value of Finished is set to 1. aborting");
+            return;
+        }
+        console.log("marking HypoWE as completed")
+        this.db.markActivityAsCompleted(this.activityID)
+            .then(() => this.goHomePage());
+
+    }
 }
+
 
 function initApp(event) {
     console.log("initApp()");
