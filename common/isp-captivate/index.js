@@ -100,6 +100,7 @@ export class ISPCaptivateActivity {
     pushTransition(transition) {
         // console.log(transition);
         this.state.transitions.push(transition);
+        this.state.currentSlide = transition.slide_number;
         this.showState();
     }
 
