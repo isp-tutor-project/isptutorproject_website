@@ -162,7 +162,7 @@ export class SceneBasedApp {
 
     saveAppState() {
         console.debug("Saving App State");
-        return this.db.setActivityData(this.activityKey, this.state);
+        this.db.setActivityData(this.activityKey, this.state);
     }
 
     createScene(sceneInfo) {
