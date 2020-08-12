@@ -65,10 +65,11 @@ class HypoWECaptivateActivity extends ISPCaptivateActivity {
 
 function initApp(event) {
     console.log("initApp()");
+    let activityConfig = getActivityConfiguration();
+
     // event.Data is the same as window.cpAPIInterface
     const cpAPI = event.Data;
-    const db = getDBConnection("localstorage");
-    const app = new HypoWECaptivateActivity(cpAPI, db, TRACKED_VARS);
+    const app = new HypoWECaptivateActivity(activityConfig, cpAPI, TRACKED_VARS);
     app.init();
 }
 
