@@ -20,6 +20,100 @@ export class FirestoreDB extends Database {
         this.userRef = this.store.collection("STUDY_3").doc(userID);
     }
 
+    getNextUserNum() {
+        return this.store.collection("STUDY_3").doc("study_data").update({
+            usernum: firebase.firestore.FieldValue.increment(1)
+        }).then(() => this.store.collection("STUDY_3").doc("study_data").get())
+        .then((doc) => {
+            return doc.data().usernum;
+        })
+        .catch((error) => console.error(error));
+    }
+
+    // loginUser(classCode, userID) {
+    //     let retVal;
+    //     return this.store.collection("STUDY_3")
+    //         .where("classCode", "==", classCode)
+    //         .where("userID", "==", userID)
+    //         .get()
+    //         .then((snapshot) => {
+    //             if (1 !== snapshot.size) {
+    //                 return false;
+    //             }
+    //             this.userRef = snapshot.docs[0];
+    //             return true;
+    //         })
+    // }
+
+    loginUser(userID) {
+        let docRef = this.store.collection("STUDY_3").doc(userID);
+        return docRef.get()
+        .then((doc) => {
+            if (!doc.exists) {
+                return false;
+            } else {
+                this.userRef = docRef;
+                return this.getUserData()
+            }
+        });
+    }
+
+    lookupUserID(formData) {
+        // returns userID (truthy) or false
+        return this.store.collection("STUDY_3")
+            .where("classCode", "==", formData.classCode)
+            .where("FN",        "==", formData.FN)
+            .where("LN",        "==", formData.LN)
+            .where("MON",       "==", formData.MON)
+            .where("DAY",       "==", formData.DAY)
+            .get()
+            .then((snapshot) => {
+                // console.log(snapshot);
+                if (1 !== snapshot.size) {
+                    return false;
+                } else {
+                    console.log('record found');
+                    let userID = false;
+                    let data = snapshot.docs[0].data();
+                    if (data.userID) {
+                        userID = data.userID;
+                    } else {
+                        console.log("no userID field", data);
+                    }
+                    return userID;
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+                return false;
+            });
+    }
+
+    registerUser(formData) {
+        let userID = false;
+        console.log('registering user');
+        return this.getNextUserNum()
+        .then((userNum) => {
+            // if even cond1 if odd cond2
+            let conditionNum = (userNum % 2) + 1;
+            let conditionStr = `${conditionNum}`;
+            userID = `USER${userNum}_${conditionNum}`;
+            let activityList = STUDY3.conditionActivities[conditionStr];
+            let data = Object.assign(formData, {
+                userID: userID,
+                condition: conditionStr,
+                assignments: JSON.stringify(activityList),
+                completedAssignments: JSON.stringify([])
+            })
+            return this.store.collection("STUDY_3").doc(userID).set(data)
+        })
+        .then(() => {
+            return userID;
+        })
+        .catch((error) => {
+            console.error(error);
+            return false;
+        })
     }
 
     getUserData() {
