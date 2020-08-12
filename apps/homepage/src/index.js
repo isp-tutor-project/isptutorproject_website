@@ -164,30 +164,19 @@ function parseUserForm(prefix, form) {
     // create a map of fldNames to prefixed ('r-' or 's-') field names
     let flds = {};
     fldNames.forEach((fld) => flds[fld] = `${prefix}_${fld}`);
-    if (!form.reportValidity()) {
-        return false;
+    let classCode = getEleById(flds.classcode).value.trim().toUpperCase();
+    if ("" === classCode) {
+        classCode = "STUDY3";
     }
-    classCode = getEleById(flds.classcode).value.toUpperCase();
-    let firstname = getEleById(flds.fname).value;
-    let lastname = getEleById(flds.lname).value;
-    let month = getEleById(flds.bmonth).value;
-    let day = getEleById(flds.bday).value;
-    if (!ensureLength2(firstname, "first name")) {
-        return false;
-    }
-    if (!ensureLength2(lastname, "last name")) {
-        return false;
-    }
-    userID = firstname + lastname;
-    if (!isValidInput(userID)) {
-        return false;
-    }
-    userID += '_' + month + '_' + day;
-    userID = userID.toUpperCase();
-    // save classCode and uid so BRM can connect to firebase
-    localStorage.setItem("classCode", classCode);
-    localStorage.setItem("userID", userID);
-    return true;
+    let retVal = {
+        "classCode": classCode,
+        "FN":  getEleById(flds.fname).value.trim().toUpperCase(),
+        "LN": getEleById(flds.lname).value.trim().toUpperCase(),
+        "MON": getEleById(flds.bmonth).value.toUpperCase(),
+        "DAY": getEleById(flds.bday).value
+    };
+    // console.log(retVal);
+    return retVal;
 }
 
 // =============================================================================
