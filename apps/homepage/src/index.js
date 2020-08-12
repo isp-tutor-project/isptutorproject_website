@@ -49,14 +49,11 @@ function parseActivityLinkData(e) {
 
 function handleActivityHover(e) {
     // e.preventDefault();
-    let url = e.target.getAttribute("data-url");
-    let currentActivity = e.target.getAttribute("data-activity");
-    let currentActivityFeatures = e.target.getAttribute("data-activity-features");
+    let data = parseActivityLinkData(e);
     console.log(`
     hovering over: ${e.target}
-    url: ${url}
-    currentActivity: ${currentActivity}
-    currentActivityFeatures: ${currentActivityFeatures}
+    url: ${data.url}
+    currentActivity: ${JSON.stringify(data.currentActivity, null, 4)}
     `);
 }
 
