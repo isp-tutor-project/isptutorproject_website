@@ -62,6 +62,7 @@ build/Release
 
 # Dependency directories
 node_modules/
+!edforge/node_modules/
 jspm_packages/
 
 # TypeScript v1 declaration files
@@ -104,7 +105,7 @@ typings/
 # Nuxt.js build / generate output
 .nuxt
 dist
-
+!edforge/dist/
 # Gatsby files
 .cache/
 # Comment in the public line in if your project uses Gatsby and *not* Next.js
