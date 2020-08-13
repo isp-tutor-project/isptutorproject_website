@@ -5,11 +5,11 @@ export const activities = [
         phase: "pre-training",
         storageInfo: {
             id: "matsPreTest",
-            key: "mats",
+            key: "matsPre",
             features: "FTR_WEB:FTR_PRE"
         },
-        url: "",
-        implemented: false
+        url: "/edforge/mats.html",
+        implemented: true
     },
     {
         id: "diPreTest",
@@ -25,15 +25,15 @@ export const activities = [
     },
     {
         id: "rqSelectBL",
-        label: "See research question and trial run of experiment",
+        label: "Crystal Growth Experiment Intro",
         phase: "rqSelect",
         storageInfo: {
             id: "rqSelectBL",
-            key: "rqSelect",
+            key: "rqted",
             features: "FTR_WEB:FTR_BASELINE:FTR_NCCRYSTAL"
         },
-        url: "/edforge/rqSelect.html",
-        implemented: false
+        url: "/edforge/rq_bl.html",
+        implemented: true
     },
     {
         id: "rqSelectNC",
@@ -41,7 +41,7 @@ export const activities = [
         phase: "rqSelect",
         storageInfo: {
             id: "rqSelectNC",
-            key: "rqSelect",
+            key: "rqted",
             features: "FTR_WEB:FTR_NOCHOICE:FTR_NCCRYSTAL"
         },
         url: "/edforge/rqSelect.html",
@@ -53,7 +53,7 @@ export const activities = [
         phase: "rqSelect",
         storageInfo: {
             id: "rqSelectC",
-            key:"rqSelect",
+            key:"rqted",
             features: "FTR_WEB:FTR_CHOICE"
         },
         url: "/edforge/rqSelect.html",
@@ -185,10 +185,10 @@ export const activities = [
         phase: "post-training",
         storageInfo: {
             id: "matsPostTest",
-            key: "mats",
+            key: "matsPost",
             features: "FTR_WEB:FTR_POST"
         },
-        url: "",
-        implemented: false
+        url: "/edforge/mats.html",
+        implemented: true
     }
 ];
