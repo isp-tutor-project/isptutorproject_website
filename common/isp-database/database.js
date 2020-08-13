@@ -4,7 +4,7 @@ export const STUDY3 = {
         1: [
             "matsPreTest",
             "diPreTest",
-            "reSelectBL",
+            "rqSelectBL",
             "hypoWEoneDir",
             "diInstrGR",
             "diCrystalGrowthTest",
@@ -14,7 +14,7 @@ export const STUDY3 = {
         2: [
             "matsPreTest",
             "diPreTest",
-            "reSelectBL",
+            "rqSelectBL",
             "hypoWEbiDir",
             "diInstrGR",
             "diCrystalGrowthTest",
