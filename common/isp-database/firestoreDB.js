@@ -98,13 +98,13 @@ export class FirestoreDB extends Database {
             let conditionNum = (userNum % 2) + 1;
             let conditionStr = `${conditionNum}`;
             userID = `USER${userNum}_${conditionNum}`;
-            let activityList = STUDY3.conditionActivities[conditionStr];
+            // let activityList = STUDY3.conditionActivities[conditionStr];
             let data = Object.assign(formData, {
                 userID: userID,
                 condition: conditionStr,
-                assignments: JSON.stringify(activityList),
                 completedAssignments: JSON.stringify([])
-            })
+            });
+            // assignments: JSON.stringify(activityList),
             return this.store.collection("STUDY_3").doc(userID).set(data)
         })
         .then(() => {
@@ -126,10 +126,11 @@ export class FirestoreDB extends Database {
                 userData = {
                     userID: data.userID,
                     condition: data.condition,
-                    assignments: JSON.parse(data.assignments),
+                    assignments: STUDY3.conditionActivities[data.condition],
                     completedAssignments: JSON.parse(data.completedAssignments)
                 }
             }
+
             return userData;
         });
     }
