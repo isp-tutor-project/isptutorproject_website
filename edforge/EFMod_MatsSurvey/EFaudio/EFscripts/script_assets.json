@@ -1,0 +1,250 @@
+{
+	"SSceneStart": {
+		"tracks": {
+			"track1": {
+				"en": {
+					"html": "{{$EFO_MATS_MODE|part1}}",
+					"text": "{{$EFO_MATS_MODE|part1}}",
+					"volume": [
+						1
+					],
+					"cueSet": "...............................................................",
+					"segments": [
+						{
+							"templateVar": "$EFO_MATS_MODE|part1",
+							"MATSMODEpart1": {
+								"fileid": "0a",
+								"SSML": "Select the mode in which to run the Mats survey.",
+								"cues": [],
+								"duration": 2537.2083333333335,
+								"trim": 0,
+								"volume": 1
+							}
+						}
+					],
+					"timedSet": [],
+					"trim": [
+						0
+					],
+					"templates": {
+						"$EFO_MATS_MODE|part1": {
+							"MATSMODEpart1": "Select the mode in which to run the Mats survey."
+						}
+					}
+				}
+			}
+		}
+	},
+	"SMatsIntro": {
+		"tracks": {
+			"track1": {
+				"en": {
+					"html": "{{$EFO_MATS_INTRO|part1}}",
+					"text": "{{$EFO_MATS_INTRO|part1}}",
+					"volume": [
+						1
+					],
+					"cueSet": "...............................................................",
+					"segments": [
+						{
+							"templateVar": "$EFO_MATS_INTRO|part1",
+							"MATSINTROpart1": {
+								"fileid": "0a",
+								"SSML": "We will show you a series of forteen statements. You must rate how much you agree with each of them. For Example, as shown below, if you strongly agree with the statement, I like Kennywood, you would click on the Strongly Agree button.",
+								"cues": [],
+								"duration": 13498.041666666666,
+								"trim": 0,
+								"volume": 1
+							}
+						}
+					],
+					"timedSet": [],
+					"trim": [
+						0
+					],
+					"templates": {
+						"$EFO_MATS_INTRO|part1": {
+							"MATSINTROpart1": "We will show you a series of forteen statements. You must rate how much you agree with each of them. For Example, as shown below, if you strongly agree with the statement, I like Kennywood, you would click on the Strongly Agree button."
+						}
+					}
+				}
+			},
+			"track2": {
+				"en": {
+					"html": "{{$EFO_MATS_INTRO|part2}}",
+					"text": "{{$EFO_MATS_INTRO|part2}}",
+					"volume": [
+						1
+					],
+					"cueSet": "...............................................................",
+					"segments": [
+						{
+							"templateVar": "$EFO_MATS_INTRO|part2",
+							"MATSINTROpart2": {
+								"fileid": "0a",
+								"SSML": "Click on the next button to begin.",
+								"cues": [],
+								"duration": 1840.4166666666667,
+								"trim": 0,
+								"volume": 1
+							}
+						}
+					],
+					"timedSet": [],
+					"trim": [
+						0
+					],
+					"templates": {
+						"$EFO_MATS_INTRO|part2": {
+							"MATSINTROpart2": "Click on the next button to begin."
+						}
+					}
+				}
+			}
+		}
+	},
+	"SMatsPre1": {
+		"tracks": {
+			"track1": {
+				"en": {
+					"html": "{{$EFO_MATS_INST|part1}}",
+					"text": "{{$EFO_MATS_INST|part1}}",
+					"volume": [
+						1
+					],
+					"cueSet": "...............................................................",
+					"segments": [
+						{
+							"templateVar": "$EFO_MATS_INST|part1",
+							"MATSINSTpart1": {
+								"fileid": "0a",
+								"SSML": "Answer the questions on each page and then click next.  You may come back at any point and change your answers.",
+								"cues": [],
+								"duration": 6215.541666666667,
+								"trim": 0,
+								"volume": 1
+							}
+						}
+					],
+					"timedSet": [],
+					"trim": [
+						0
+					],
+					"templates": {
+						"$EFO_MATS_INST|part1": {
+							"MATSINSTpart1": "Answer the questions on each page and then click next.  You may come back at any point and change your answers."
+						}
+					}
+				}
+			}
+		}
+	},
+	"SMatsPre4": {
+		"tracks": {
+			"track1": {
+				"en": {
+					"html": "{{$EFO_MATS_INST|part2}}",
+					"text": "{{$EFO_MATS_INST|part2}}",
+					"volume": [
+						1
+					],
+					"cueSet": "...............................................................",
+					"segments": [
+						{
+							"templateVar": "$EFO_MATS_INST|part2",
+							"MATSINSTpart2": {
+								"fileid": "0a",
+								"SSML": "Click the Submit button when you are satisfied with your answers, or go back and make changes as desired.",
+								"cues": [],
+								"duration": 5630.375,
+								"trim": 0,
+								"volume": 1
+							}
+						}
+					],
+					"timedSet": [],
+					"trim": [
+						0
+					],
+					"templates": {
+						"$EFO_MATS_INST|part2": {
+							"MATSINSTpart2": "Click the Submit button when you are satisfied with your answers, or go back and make changes as desired."
+						}
+					}
+				}
+			}
+		}
+	},
+	"SMatsPost1": {
+		"tracks": {
+			"track1": {
+				"en": {
+					"html": "{{$EFO_MATS_INST|part1}}",
+					"text": "{{$EFO_MATS_INST|part1}}",
+					"volume": [
+						1
+					],
+					"cueSet": "...............................................................",
+					"segments": [
+						{
+							"templateVar": "$EFO_MATS_INST|part1",
+							"MATSINSTpart1": {
+								"fileid": "0a",
+								"SSML": "Answer the questions on each page and then click next.  You may come back at any point and change your answers.",
+								"cues": [],
+								"duration": 0,
+								"trim": 0,
+								"volume": 1
+							}
+						}
+					],
+					"timedSet": [],
+					"trim": [
+						0
+					],
+					"templates": {
+						"$EFO_MATS_INST|part1": {
+							"MATSINSTpart1": "Answer the questions on each page and then click next.  You may come back at any point and change your answers."
+						}
+					}
+				}
+			}
+		}
+	},
+	"SMatsPost4": {
+		"tracks": {
+			"track1": {
+				"en": {
+					"html": "{{$EFO_MATS_INST|part2}}",
+					"text": "{{$EFO_MATS_INST|part2}}",
+					"volume": [
+						1
+					],
+					"cueSet": "...............................................................",
+					"segments": [
+						{
+							"templateVar": "$EFO_MATS_INST|part2",
+							"MATSINSTpart2": {
+								"fileid": "0a",
+								"SSML": "Click the Submit button when you are satisfied with your answers, or go back and make changes as desired.",
+								"cues": [],
+								"duration": 0,
+								"trim": 0,
+								"volume": 1
+							}
+						}
+					],
+					"timedSet": [],
+					"trim": [
+						0
+					],
+					"templates": {
+						"$EFO_MATS_INST|part2": {
+							"MATSINSTpart2": "Click the Submit button when you are satisfied with your answers, or go back and make changes as desired."
+						}
+					}
+				}
+			}
+		}
+	}
+}

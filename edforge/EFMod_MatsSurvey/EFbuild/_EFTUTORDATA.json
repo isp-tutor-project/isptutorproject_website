@@ -1,0 +1,1508 @@
+{
+	"_MODULEDATA": "v1.0.0",
+	"SMatsIntro": {
+		"Stitle": {
+			"layoutsource": "$EFL_eftext.Stitle",
+			"htmlData": {
+				"html": "{{$EFO_MATS_INTRO|title}}"
+			},
+			"fontSize": 35
+		},
+		"Sg1": {
+			"grpData": {
+				"members": [
+					"Sg1b1",
+					"Sg1b2",
+					"Sg1b3",
+					"Sg1b4",
+					"Sg1b5"
+				]
+			}
+		},
+		"Squestion1": {
+			"layoutsource": "$EFL_eftext.Squestion1",
+			"htmlData": {
+				"html": "{{$EFO_MATS_INTRO|Q1}}"
+			},
+			"fontSize": 42
+		},
+		"Sg1b1": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|1}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b2": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|2}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b3": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|3}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b4": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|4}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b5": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|5}}",
+				"type": "radio"
+			}
+		}
+	},
+	"SMatsPost1": {
+		"Sg1": {
+			"grpData": {
+				"members": [
+					"Sg1b1",
+					"Sg1b2",
+					"Sg1b3",
+					"Sg1b4",
+					"Sg1b5"
+				]
+			}
+		},
+		"Sg2": {
+			"grpData": {
+				"members": [
+					"Sg2b1",
+					"Sg2b2",
+					"Sg2b3",
+					"Sg2b4",
+					"Sg2b5"
+				]
+			}
+		},
+		"Sg3": {
+			"grpData": {
+				"members": [
+					"Sg3b1",
+					"Sg3b2",
+					"Sg3b3",
+					"Sg3b4",
+					"Sg3b5"
+				]
+			}
+		},
+		"Sg4": {
+			"grpData": {
+				"members": [
+					"Sg4b1",
+					"Sg4b2",
+					"Sg4b3",
+					"Sg4b4",
+					"Sg4b5"
+				]
+			}
+		},
+		"Squestion1": {
+			"layoutsource": "$EFL_eftext.Squestion1",
+			"htmlData": {
+				"html": "{{$EFO_MATS_POST|Q1}}"
+			},
+			"fontSize": 42
+		},
+		"Squestion2": {
+			"layoutsource": "$EFL_eftext.Squestion2",
+			"htmlData": {
+				"html": "{{$EFO_MATS_POST|Q2}}"
+			},
+			"fontSize": 42
+		},
+		"Squestion3": {
+			"layoutsource": "$EFL_eftext.Squestion3",
+			"htmlData": {
+				"html": "{{$EFO_MATS_POST|Q3}}"
+			},
+			"fontSize": 42
+		},
+		"Squestion4": {
+			"layoutsource": "$EFL_eftext.Squestion4",
+			"htmlData": {
+				"html": "{{$EFO_MATS_POST|Q4}}"
+			},
+			"fontSize": 42
+		},
+		"Sg1b1": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|1}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b2": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|2}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b3": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|3}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b4": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|4}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b5": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|5}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b1": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|1}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b2": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|2}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b3": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|3}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b4": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|4}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b5": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|5}}",
+				"type": "radio"
+			}
+		},
+		"Sg3b1": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|1}}",
+				"type": "radio"
+			}
+		},
+		"Sg3b2": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|2}}",
+				"type": "radio"
+			}
+		},
+		"Sg3b3": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|3}}",
+				"type": "radio"
+			}
+		},
+		"Sg3b4": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|4}}",
+				"type": "radio"
+			}
+		},
+		"Sg3b5": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|5}}",
+				"type": "radio"
+			}
+		},
+		"Sg4b1": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|1}}",
+				"type": "radio"
+			}
+		},
+		"Sg4b2": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|2}}",
+				"type": "radio"
+			}
+		},
+		"Sg4b3": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|3}}",
+				"type": "radio"
+			}
+		},
+		"Sg4b4": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|4}}",
+				"type": "radio"
+			}
+		},
+		"Sg4b5": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|5}}",
+				"type": "radio"
+			}
+		}
+	},
+	"SMatsPost2": {
+		"Sg1": {
+			"grpData": {
+				"members": [
+					"Sg1b1",
+					"Sg1b2",
+					"Sg1b3",
+					"Sg1b4",
+					"Sg1b5"
+				]
+			}
+		},
+		"Sg2": {
+			"grpData": {
+				"members": [
+					"Sg2b1",
+					"Sg2b2",
+					"Sg2b3",
+					"Sg2b4",
+					"Sg2b5"
+				]
+			}
+		},
+		"Sg3": {
+			"grpData": {
+				"members": [
+					"Sg3b1",
+					"Sg3b2",
+					"Sg3b3",
+					"Sg3b4",
+					"Sg3b5"
+				]
+			}
+		},
+		"Sg4": {
+			"grpData": {
+				"members": [
+					"Sg4b1",
+					"Sg4b2",
+					"Sg4b3",
+					"Sg4b4",
+					"Sg4b5"
+				]
+			}
+		},
+		"Squestion1": {
+			"layoutsource": "$EFL_eftext.Squestion1",
+			"htmlData": {
+				"html": "{{$EFO_MATS_POST|Q5}}"
+			},
+			"fontSize": 42
+		},
+		"Squestion2": {
+			"layoutsource": "$EFL_eftext.Squestion2",
+			"htmlData": {
+				"html": "{{$EFO_MATS_POST|Q6}}"
+			},
+			"fontSize": 42
+		},
+		"Squestion3": {
+			"layoutsource": "$EFL_eftext.Squestion3",
+			"htmlData": {
+				"html": "{{$EFO_MATS_POST|Q7}}"
+			},
+			"fontSize": 42
+		},
+		"Squestion4": {
+			"layoutsource": "$EFL_eftext.Squestion4",
+			"htmlData": {
+				"html": "{{$EFO_MATS_POST|Q8}}"
+			},
+			"fontSize": 42
+		},
+		"Sg1b1": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|1}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b2": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|2}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b3": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|3}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b4": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|4}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b5": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|5}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b1": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|1}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b2": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|2}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b3": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|3}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b4": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|4}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b5": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|5}}",
+				"type": "radio"
+			}
+		},
+		"Sg3b1": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|1}}",
+				"type": "radio"
+			}
+		},
+		"Sg3b2": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|2}}",
+				"type": "radio"
+			}
+		},
+		"Sg3b3": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|3}}",
+				"type": "radio"
+			}
+		},
+		"Sg3b4": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|4}}",
+				"type": "radio"
+			}
+		},
+		"Sg3b5": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|5}}",
+				"type": "radio"
+			}
+		},
+		"Sg4b1": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|1}}",
+				"type": "radio"
+			}
+		},
+		"Sg4b2": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|2}}",
+				"type": "radio"
+			}
+		},
+		"Sg4b3": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|3}}",
+				"type": "radio"
+			}
+		},
+		"Sg4b4": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|4}}",
+				"type": "radio"
+			}
+		},
+		"Sg4b5": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|5}}",
+				"type": "radio"
+			}
+		}
+	},
+	"SMatsPost3": {
+		"Sg1": {
+			"grpData": {
+				"members": [
+					"Sg1b1",
+					"Sg1b2",
+					"Sg1b3",
+					"Sg1b4",
+					"Sg1b5"
+				]
+			}
+		},
+		"Sg2": {
+			"grpData": {
+				"members": [
+					"Sg2b1",
+					"Sg2b2",
+					"Sg2b3",
+					"Sg2b4",
+					"Sg2b5"
+				]
+			}
+		},
+		"Sg3": {
+			"grpData": {
+				"members": [
+					"Sg3b1",
+					"Sg3b2",
+					"Sg3b3",
+					"Sg3b4",
+					"Sg3b5"
+				]
+			}
+		},
+		"Sg4": {
+			"grpData": {
+				"members": [
+					"Sg4b1",
+					"Sg4b2",
+					"Sg4b3",
+					"Sg4b4",
+					"Sg4b5"
+				]
+			}
+		},
+		"Squestion1": {
+			"layoutsource": "$EFL_eftext.Squestion1",
+			"htmlData": {
+				"html": "{{$EFO_MATS_POST|Q9}}"
+			},
+			"fontSize": 42
+		},
+		"Squestion2": {
+			"layoutsource": "$EFL_eftext.Squestion2",
+			"htmlData": {
+				"html": "{{$EFO_MATS_POST|Q10}}"
+			},
+			"fontSize": 42
+		},
+		"Squestion3": {
+			"layoutsource": "$EFL_eftext.Squestion3",
+			"htmlData": {
+				"html": "{{$EFO_MATS_POST|Q11}}"
+			},
+			"fontSize": 42
+		},
+		"Squestion4": {
+			"layoutsource": "$EFL_eftext.Squestion4",
+			"htmlData": {
+				"html": "{{$EFO_MATS_POST|Q12}}"
+			},
+			"fontSize": 42
+		},
+		"Sg1b1": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|1}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b2": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|2}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b3": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|3}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b4": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|4}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b5": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|5}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b1": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|1}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b2": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|2}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b3": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|3}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b4": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|4}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b5": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|5}}",
+				"type": "radio"
+			}
+		},
+		"Sg3b1": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|1}}",
+				"type": "radio"
+			}
+		},
+		"Sg3b2": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|2}}",
+				"type": "radio"
+			}
+		},
+		"Sg3b3": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|3}}",
+				"type": "radio"
+			}
+		},
+		"Sg3b4": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|4}}",
+				"type": "radio"
+			}
+		},
+		"Sg3b5": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|5}}",
+				"type": "radio"
+			}
+		},
+		"Sg4b1": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|1}}",
+				"type": "radio"
+			}
+		},
+		"Sg4b2": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|2}}",
+				"type": "radio"
+			}
+		},
+		"Sg4b3": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|3}}",
+				"type": "radio"
+			}
+		},
+		"Sg4b4": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|4}}",
+				"type": "radio"
+			}
+		},
+		"Sg4b5": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|5}}",
+				"type": "radio"
+			}
+		}
+	},
+	"SMatsPost4": {
+		"Sg1": {
+			"grpData": {
+				"members": [
+					"Sg1b1",
+					"Sg1b2",
+					"Sg1b3",
+					"Sg1b4",
+					"Sg1b5"
+				]
+			}
+		},
+		"Sg2": {
+			"grpData": {
+				"members": [
+					"Sg2b1",
+					"Sg2b2",
+					"Sg2b3",
+					"Sg2b4",
+					"Sg2b5"
+				]
+			}
+		},
+		"Squestion1": {
+			"layoutsource": "$EFL_eftext.Squestion1",
+			"htmlData": {
+				"html": "{{$EFO_MATS_POST|Q13}}"
+			},
+			"fontSize": 42
+		},
+		"Squestion2": {
+			"layoutsource": "$EFL_eftext.Squestion2",
+			"htmlData": {
+				"html": "{{$EFO_MATS_POST|Q14}}"
+			},
+			"fontSize": 42
+		},
+		"Ssubmit": {},
+		"Sg1b1": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|1}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b2": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|2}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b3": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|3}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b4": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|4}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b5": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|5}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b1": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|1}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b2": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|2}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b3": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|3}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b4": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|4}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b5": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|5}}",
+				"type": "radio"
+			}
+		}
+	},
+	"SMatsPre1": {
+		"Sg1": {
+			"grpData": {
+				"members": [
+					"Sg1b1",
+					"Sg1b2",
+					"Sg1b3",
+					"Sg1b4",
+					"Sg1b5"
+				]
+			}
+		},
+		"Sg2": {
+			"grpData": {
+				"members": [
+					"Sg2b1",
+					"Sg2b2",
+					"Sg2b3",
+					"Sg2b4",
+					"Sg2b5"
+				]
+			}
+		},
+		"Sg3": {
+			"grpData": {
+				"members": [
+					"Sg3b1",
+					"Sg3b2",
+					"Sg3b3",
+					"Sg3b4",
+					"Sg3b5"
+				]
+			}
+		},
+		"Sg4": {
+			"grpData": {
+				"members": [
+					"Sg4b1",
+					"Sg4b2",
+					"Sg4b3",
+					"Sg4b4",
+					"Sg4b5"
+				]
+			}
+		},
+		"Squestion1": {
+			"layoutsource": "$EFL_eftext.Squestion1",
+			"htmlData": {
+				"html": "{{$EFO_MATS_PRE|Q1}}"
+			},
+			"fontSize": 42
+		},
+		"Squestion2": {
+			"layoutsource": "$EFL_eftext.Squestion2",
+			"htmlData": {
+				"html": "{{$EFO_MATS_PRE|Q2}}"
+			},
+			"fontSize": 42
+		},
+		"Squestion3": {
+			"layoutsource": "$EFL_eftext.Squestion3",
+			"htmlData": {
+				"html": "{{$EFO_MATS_PRE|Q3}}"
+			},
+			"fontSize": 42
+		},
+		"Squestion4": {
+			"layoutsource": "$EFL_eftext.Squestion4",
+			"htmlData": {
+				"html": "{{$EFO_MATS_PRE|Q4}}"
+			},
+			"fontSize": 42
+		},
+		"Sg1b1": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|1}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b2": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|2}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b3": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|3}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b4": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|4}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b5": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|5}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b1": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|1}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b2": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|2}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b3": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|3}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b4": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|4}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b5": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|5}}",
+				"type": "radio"
+			}
+		},
+		"Sg3b1": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|1}}",
+				"type": "radio"
+			}
+		},
+		"Sg3b2": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|2}}",
+				"type": "radio"
+			}
+		},
+		"Sg3b3": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|3}}",
+				"type": "radio"
+			}
+		},
+		"Sg3b4": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|4}}",
+				"type": "radio"
+			}
+		},
+		"Sg3b5": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|5}}",
+				"type": "radio"
+			}
+		},
+		"Sg4b1": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|1}}",
+				"type": "radio"
+			}
+		},
+		"Sg4b2": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|2}}",
+				"type": "radio"
+			}
+		},
+		"Sg4b3": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|3}}",
+				"type": "radio"
+			}
+		},
+		"Sg4b4": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|4}}",
+				"type": "radio"
+			}
+		},
+		"Sg4b5": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|5}}",
+				"type": "radio"
+			}
+		}
+	},
+	"SMatsPre2": {
+		"Sg1": {
+			"grpData": {
+				"members": [
+					"Sg1b1",
+					"Sg1b2",
+					"Sg1b3",
+					"Sg1b4",
+					"Sg1b5"
+				]
+			}
+		},
+		"Sg2": {
+			"grpData": {
+				"members": [
+					"Sg2b1",
+					"Sg2b2",
+					"Sg2b3",
+					"Sg2b4",
+					"Sg2b5"
+				]
+			}
+		},
+		"Sg3": {
+			"grpData": {
+				"members": [
+					"Sg3b1",
+					"Sg3b2",
+					"Sg3b3",
+					"Sg3b4",
+					"Sg3b5"
+				]
+			}
+		},
+		"Sg4": {
+			"grpData": {
+				"members": [
+					"Sg4b1",
+					"Sg4b2",
+					"Sg4b3",
+					"Sg4b4",
+					"Sg4b5"
+				]
+			}
+		},
+		"Squestion1": {
+			"layoutsource": "$EFL_eftext.Squestion1",
+			"htmlData": {
+				"html": "{{$EFO_MATS_PRE|Q5}}"
+			},
+			"fontSize": 42
+		},
+		"Squestion2": {
+			"layoutsource": "$EFL_eftext.Squestion2",
+			"htmlData": {
+				"html": "{{$EFO_MATS_PRE|Q6}}"
+			},
+			"fontSize": 42
+		},
+		"Squestion3": {
+			"layoutsource": "$EFL_eftext.Squestion3",
+			"htmlData": {
+				"html": "{{$EFO_MATS_PRE|Q7}}"
+			},
+			"fontSize": 42
+		},
+		"Squestion4": {
+			"layoutsource": "$EFL_eftext.Squestion4",
+			"htmlData": {
+				"html": "{{$EFO_MATS_PRE|Q8}}"
+			},
+			"fontSize": 42
+		},
+		"Sg1b1": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|1}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b2": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|2}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b3": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|3}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b4": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|4}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b5": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|5}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b1": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|1}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b2": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|2}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b3": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|3}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b4": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|4}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b5": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|5}}",
+				"type": "radio"
+			}
+		},
+		"Sg3b1": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|1}}",
+				"type": "radio"
+			}
+		},
+		"Sg3b2": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|2}}",
+				"type": "radio"
+			}
+		},
+		"Sg3b3": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|3}}",
+				"type": "radio"
+			}
+		},
+		"Sg3b4": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|4}}",
+				"type": "radio"
+			}
+		},
+		"Sg3b5": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|5}}",
+				"type": "radio"
+			}
+		},
+		"Sg4b1": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|1}}",
+				"type": "radio"
+			}
+		},
+		"Sg4b2": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|2}}",
+				"type": "radio"
+			}
+		},
+		"Sg4b3": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|3}}",
+				"type": "radio"
+			}
+		},
+		"Sg4b4": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|4}}",
+				"type": "radio"
+			}
+		},
+		"Sg4b5": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|5}}",
+				"type": "radio"
+			}
+		}
+	},
+	"SMatsPre3": {
+		"Sg1": {
+			"grpData": {
+				"members": [
+					"Sg1b1",
+					"Sg1b2",
+					"Sg1b3",
+					"Sg1b4",
+					"Sg1b5"
+				]
+			}
+		},
+		"Sg2": {
+			"grpData": {
+				"members": [
+					"Sg2b1",
+					"Sg2b2",
+					"Sg2b3",
+					"Sg2b4",
+					"Sg2b5"
+				]
+			}
+		},
+		"Sg3": {
+			"grpData": {
+				"members": [
+					"Sg3b1",
+					"Sg3b2",
+					"Sg3b3",
+					"Sg3b4",
+					"Sg3b5"
+				]
+			}
+		},
+		"Sg4": {
+			"grpData": {
+				"members": [
+					"Sg4b1",
+					"Sg4b2",
+					"Sg4b3",
+					"Sg4b4",
+					"Sg4b5"
+				]
+			}
+		},
+		"Squestion1": {
+			"layoutsource": "$EFL_eftext.Squestion1",
+			"htmlData": {
+				"html": "{{$EFO_MATS_PRE|Q9}}"
+			},
+			"fontSize": 42
+		},
+		"Squestion2": {
+			"layoutsource": "$EFL_eftext.Squestion2",
+			"htmlData": {
+				"html": "{{$EFO_MATS_PRE|Q10}}"
+			},
+			"fontSize": 42
+		},
+		"Squestion3": {
+			"layoutsource": "$EFL_eftext.Squestion3",
+			"htmlData": {
+				"html": "{{$EFO_MATS_PRE|Q11}}"
+			},
+			"fontSize": 42
+		},
+		"Squestion4": {
+			"layoutsource": "$EFL_eftext.Squestion4",
+			"htmlData": {
+				"html": "{{$EFO_MATS_PRE|Q12}}"
+			},
+			"fontSize": 42
+		},
+		"Sg1b1": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|1}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b2": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|2}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b3": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|3}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b4": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|4}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b5": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|5}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b1": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|1}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b2": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|2}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b3": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|3}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b4": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|4}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b5": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|5}}",
+				"type": "radio"
+			}
+		},
+		"Sg3b1": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|1}}",
+				"type": "radio"
+			}
+		},
+		"Sg3b2": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|2}}",
+				"type": "radio"
+			}
+		},
+		"Sg3b3": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|3}}",
+				"type": "radio"
+			}
+		},
+		"Sg3b4": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|4}}",
+				"type": "radio"
+			}
+		},
+		"Sg3b5": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|5}}",
+				"type": "radio"
+			}
+		},
+		"Sg4b1": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|1}}",
+				"type": "radio"
+			}
+		},
+		"Sg4b2": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|2}}",
+				"type": "radio"
+			}
+		},
+		"Sg4b3": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|3}}",
+				"type": "radio"
+			}
+		},
+		"Sg4b4": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|4}}",
+				"type": "radio"
+			}
+		},
+		"Sg4b5": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|5}}",
+				"type": "radio"
+			}
+		}
+	},
+	"SMatsPre4": {
+		"Sg1": {
+			"grpData": {
+				"members": [
+					"Sg1b1",
+					"Sg1b2",
+					"Sg1b3",
+					"Sg1b4",
+					"Sg1b5"
+				]
+			}
+		},
+		"Sg2": {
+			"grpData": {
+				"members": [
+					"Sg2b1",
+					"Sg2b2",
+					"Sg2b3",
+					"Sg2b4",
+					"Sg2b5"
+				]
+			}
+		},
+		"Squestion1": {
+			"layoutsource": "$EFL_eftext.Squestion1",
+			"htmlData": {
+				"html": "{{$EFO_MATS_PRE|Q13}}"
+			},
+			"fontSize": 42
+		},
+		"Squestion2": {
+			"layoutsource": "$EFL_eftext.Squestion2",
+			"htmlData": {
+				"html": "{{$EFO_MATS_PRE|Q14}}"
+			},
+			"fontSize": 42
+		},
+		"Ssubmit": {},
+		"Sg1b1": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|1}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b2": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|2}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b3": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|3}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b4": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|4}}",
+				"type": "radio"
+			}
+		},
+		"Sg1b5": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|5}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b1": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|1}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b2": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|2}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b3": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|3}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b4": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|4}}",
+				"type": "radio"
+			}
+		},
+		"Sg2b5": {
+			"btnData": {
+				"label": "{{$EFO_MATS_ANS|5}}",
+				"type": "radio"
+			}
+		}
+	},
+	"SNavigator": {
+		"SbreadCrumbs": {
+			"layoutsource": "$EFL_eftext.SbreadCrumbs",
+			"fontSize": 20
+		}
+	},
+	"_ONTOLOGY": {
+		"MATS": {
+			"MODE": {
+				"1": "PRE-TEST",
+				"2": "POST-TEST",
+				"part1": "Select the mode in which to run the Mats survey."
+			},
+			"INTRO": {
+				"part1": "We will show you a series of forteen statements. You must rate how much you agree with each of them. For Example, as shown below, if you strongly agree with the statement, I like Kennywood, you would click on the Strongly Agree button.",
+				"part2": "Click on the next button to begin.",
+				"title": "<p>We will show you 14 statements. You must rate how much you agree with each of them.<br>For Example, as shown below, if you strongly agree with the statement<br>'I like Kennywood', you would click on the 'Strongly Agree' button.</p>",
+				"Q1": "I like Kennywood:"
+			},
+			"INST": {
+				"part1": "Answer the questions on each page and then click next.  You may come back at any point and change your answers.",
+				"part2": "Click the Submit button when you are satisfied with your answers, or go back and make changes as desired."
+			},
+			"ANS": {
+				"1": "Strongly Disagree",
+				"2": "Disagree",
+				"3": "Neither Agree nor Disagree",
+				"4": "Agree",
+				"5": "Strongly Agree"
+			},
+			"PRE": {
+				"Q1": "<p>I have a good feeling about science:</p>",
+				"Q2": "<p>Science is useful for solving problems in everyday life:</p>",
+				"Q3": "<p>I do not do very well in science:</p>",
+				"Q4": "<p>Science is interesting to me:</p>",
+				"Q5": "<p>Science is one of my least favorite subjects:</p>",
+				"Q6": "<p>Science is something that I enjoy very much:</p>",
+				"Q7": "<p>I have a strong desire to learn science:</p>",
+				"Q8": "<p>I feel tense when someone talks to me about science:</p>",
+				"Q9": "<p>Most people should study some science:</p>",
+				"Q10": "<p>Science is easy for me:</p>",
+				"Q11": "<p>Science is helpful in understanding today's world:</p>",
+				"Q12": "<p>I usually understand what we are talking about in science:</p>",
+				"Q13": "<p>Sometimes I read ahead in our science book:</p>",
+				"Q14": "<p>It makes me nervous to even think about doing science experiments:</p>"
+			},
+			"POST": {
+				"Q1": "<p>It makes me nervous to even think about doing science experiments:</p>",
+				"Q2": "<p>Sometimes I read ahead in our science book:</p>",
+				"Q3": "<p>I usually understand what we are talking about in science:</p>",
+				"Q4": "<p>Science is helpful in understanding today's world:</p>",
+				"Q5": "<p>Science is easy for me:</p>",
+				"Q6": "<p>Most people should study some science:</p>",
+				"Q7": "<p>I feel tense when someone talks to me about science:</p>",
+				"Q8": "<p>I have a strong desire to learn science:</p>",
+				"Q9": "<p>Science is something that I enjoy very much:</p>",
+				"Q10": "<p>Science is one of my least favorite subjects:</p>",
+				"Q11": "<p>Science is interesting to me:</p>",
+				"Q12": "<p>I do not do very well in science:</p>",
+				"Q13": "<p>Science is useful for solving problems in everyday life:</p>",
+				"Q14": "<p>I have a good feeling about science:</p>"
+			}
+		}
+	},
+	"SSceneStart": {
+		"Sg1": {
+			"grpData": {
+				"members": [
+					"Sbutton1",
+					"Sbutton2"
+				]
+			}
+		},
+		"Sbutton1": {
+			"btnData": {
+				"label": "{{$EFO_MATS_MODE|1}}",
+				"type": "radio"
+			}
+		},
+		"Sbutton2": {
+			"btnData": {
+				"label": "{{$EFO_MATS_MODE|2}}",
+				"type": "radio"
+			}
+		}
+	}
+}

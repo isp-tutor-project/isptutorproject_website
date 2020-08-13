@@ -1,0 +1,225 @@
+
+{
+
+	"SNavigator":
+	{	
+		"COMMENT":"ISP Navigation Panel...",
+		"type":"animation",
+		"version":"0.1.0",
+	
+		"CNodes":
+		{	
+			"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CNodes  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+						
+			"root":{"COMMENT":"Welcome...",
+					"type":"node",
+					"subtype":"module", 
+					 "name":"NOOP",
+					 "edges":
+							[
+							]
+					}															
+		},		
+            
+		"CModules":
+		{
+			"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CModules  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+            
+            "NOOP":{
+				"COMMENT":"",
+				"type":"module",
+				"reuse":true,
+				"actiontracks":		
+				[
+					{"actionname":"NOOP", "features":""}
+				]
+			}			
+		}
+	},
+	
+	
+
+	"SScene1":
+	{	
+		"COMMENT":"TED Introduction sequence...",
+		"type":"animation",
+		"version":"0.1.0",
+	
+		"CNodes":
+		{	
+			"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CNodes  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+						
+			"root":{"COMMENT":"Welcome...",
+					"type":"node",
+					"subtype":"module", 
+					"name":"INTRO1",
+					"edges":
+							[
+								{"constraint":"","edge":"INTRO1" }
+							]
+					},
+															
+			"INTRO1":{"COMMENT":"Welcome...",
+					"type":"node",
+					"subtype":"module", 
+					"name":"INTRO2",
+					"edges":
+							[
+								{"constraint":"","edge":"NEXTSCENE" }
+							]
+					},					
+										
+			"NEXTSCENE":{"COMMENT":"When module is complete - move to next scene in the scenegraph",
+					 "type":"node",
+					"subtype":"module", 
+					 "name":"NEXTSCENE",
+					 "edges":
+							[
+							]
+					}															
+		},		
+			
+		"CModules":
+		{		
+			"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CModules  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+		
+			"INTRO1":
+			{
+				"COMMENT":"",
+				"type":"module",
+				"reuse":true,
+				"actiontracks":		
+				[
+					{"trackname":"track1", "autostep":true, "features":""}
+				]
+            },
+            "NEXTSCENE":{
+				"COMMENT":"",
+				"type":"module",
+				"reuse":true,
+				"actiontracks":		
+				[
+					{"actionname":"NEXTSCENE", "features":""}
+				]
+            }
+		}
+	},
+	
+	
+	"SScene2":
+	{	
+		"COMMENT":"Today we're going to...",
+		"type":"animation",
+		"version":"0.1.0",
+	
+		"CNodes":
+		{	
+			"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CNodes  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+						
+			"root":{"COMMENT":"...",
+					"type":"node",
+					"subtype":"module", 
+					"name":"NOOP",
+					 "edges":
+							[
+							]
+					}
+		},		
+			
+		"CModules":
+		{		
+            "COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CModules  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+            
+            "NOOP":{
+				"COMMENT":"",
+				"type":"module",
+				"reuse":true,
+				"actiontracks":		
+				[
+					{"actionname":"NOOP", "features":""}
+				]
+			}			
+
+		}		
+	},
+
+	"SScene3":
+	{	
+		"COMMENT":"Today we're going to...",
+		"type":"animation",
+		"version":"0.1.0",
+	
+		"CNodes":
+		{	
+			"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CNodes  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+						
+			"root":{"COMMENT":"...",
+					"type":"node",
+					"subtype":"module", 
+					"name":"NOOP",
+					 "edges":
+							[
+							]
+					}
+		},		
+			
+		"CModules":
+		{		
+            "COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CModules  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+            
+            "NOOP":{
+				"COMMENT":"",
+				"type":"module",
+				"reuse":true,
+				"actiontracks":		
+				[
+					{"actionname":"NOOP", "features":""}
+				]
+			}			
+
+		}		
+	},
+
+	"SScene4":
+	{	
+		"COMMENT":"Today we're going to...",
+		"type":"animation",
+		"version":"0.1.0",
+	
+		"CNodes":
+		{	
+			"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CNodes  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+						
+			"root":{"COMMENT":"...",
+					"type":"node",
+					"subtype":"module", 
+					"name":"NOOP",
+					 "edges":
+							[
+							]
+					}
+		},		
+			
+		"CModules":
+		{		
+            "COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CModules  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+            
+            "NOOP":{
+				"COMMENT":"",
+				"type":"module",
+				"reuse":true,
+				"actiontracks":		
+				[
+					{"actionname":"NOOP", "features":""}
+				]
+			}			
+
+		}		
+	}
+}
+
+
+
+
+
+

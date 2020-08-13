@@ -1,0 +1,156 @@
+{
+	"_LIBRARY": {
+		"eflist": {},
+		"eftext": {
+			"SbreadCrumbs": {
+				"src": "$$EFX.html_crumbText",
+				"htmlData": {
+					"style": {
+						"[sbreadcrumbs].outerContainer": {
+							"text-align": "left",
+							"user-select": "none",
+							"color": "rgba(0, 0, 0, 0.575)",
+							"font-weight": "bold",
+							"font-family": "'PT Sans'",
+							"font-size": "41px",
+							"height": "30px",
+							"width": "475"
+						},
+						"[sbreadcrumbs] .tablecell": {
+							"vertical-align": "middle"
+						}
+					},
+					"html": "\n        <p></p>\n    "
+				}
+			},
+			"Stitle": {
+				"src": "$$EFX.html_text",
+				"htmlData": {
+					"style": {
+						"[stitle].outerContainer": {
+							"text-align": "center",
+							"user-select": "none",
+							"font-family": "PT Sans",
+							"font-size": "30pt",
+							"border-radius": "10px",
+							"height": "317px",
+							"width": "1644px",
+							"left": "0px",
+							"top": "0px"
+						},
+						"[stitle] .tablecell": {
+							"vertical-align": "middle"
+						},
+						"[stitle] p": {
+							"color": "rgb(35, 35, 165)"
+						}
+					},
+					"html": "\n            <p></p>\n        "
+				}
+			},
+			"Squestion1": {
+				"src": "$$EFX.html_text",
+				"htmlData": {
+					"style": {
+						"[squestion1].outerContainer": {
+							"text-align": "center",
+							"user-select": "none",
+							"font-family": "PT Sans",
+							"font-size": "30pt",
+							"border-radius": "10px",
+							"height": "317px",
+							"width": "1644px",
+							"left": "0px",
+							"top": "0px"
+						},
+						"[squestion1] .tablecell": {
+							"vertical-align": "middle"
+						},
+						"[squestion1] p": {
+							"color": "rgb(35, 35, 165)"
+						}
+					},
+					"html": "\n            <p></p>\n        "
+				}
+			},
+			"Squestion2": {
+				"src": "$$EFX.html_text",
+				"htmlData": {
+					"style": {
+						"[squestion2].outerContainer": {
+							"text-align": "center",
+							"user-select": "none",
+							"font-family": "PT Sans",
+							"font-size": "30pt",
+							"border-radius": "10px",
+							"height": "317px",
+							"width": "1644px",
+							"left": "0px",
+							"top": "0px"
+						},
+						"[squestion2] .tablecell": {
+							"vertical-align": "middle"
+						},
+						"[squestion2] p": {
+							"color": "rgb(35, 35, 165)"
+						}
+					},
+					"html": "\n            <p></p>\n        "
+				}
+			},
+			"Squestion3": {
+				"src": "$$EFX.html_text",
+				"htmlData": {
+					"style": {
+						"[squestion3].outerContainer": {
+							"text-align": "center",
+							"user-select": "none",
+							"font-family": "PT Sans",
+							"font-size": "30pt",
+							"border-radius": "10px",
+							"height": "317px",
+							"width": "1644px",
+							"left": "0px",
+							"top": "0px"
+						},
+						"[squestion3] .tablecell": {
+							"vertical-align": "middle"
+						},
+						"[squestion3] p": {
+							"color": "rgb(35, 35, 165)"
+						}
+					},
+					"html": "\n            <p></p>\n        "
+				}
+			},
+			"Squestion4": {
+				"src": "$$EFX.html_text",
+				"htmlData": {
+					"style": {
+						"[squestion4].outerContainer": {
+							"text-align": "center",
+							"user-select": "none",
+							"font-family": "PT Sans",
+							"font-size": "30pt",
+							"border-radius": "10px",
+							"height": "317px",
+							"width": "1644px",
+							"left": "0px",
+							"top": "0px"
+						},
+						"[squestion4] .tablecell": {
+							"vertical-align": "middle"
+						},
+						"[squestion4] p": {
+							"color": "rgb(35, 35, 165)"
+						}
+					},
+					"html": "\n            <p></p>\n        "
+				}
+			}
+		},
+		"efinput": {},
+		"eftable": {},
+		"efdata": {}
+	}
+}

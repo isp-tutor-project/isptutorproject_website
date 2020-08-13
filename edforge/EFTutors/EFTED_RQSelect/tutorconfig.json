@@ -1,0 +1,4 @@
+{
+    "dependencies": ["EFMod_RQSelect","EFMod_Algae","EFMod_Balloon","EFMod_Crystal","EFMod_GrHouse","EFMod_IceMelt","EFMod_Ramps","EFMod_Sinking","EFMod_Soda"],
+    "tutorStateID": "RQTED"
+}

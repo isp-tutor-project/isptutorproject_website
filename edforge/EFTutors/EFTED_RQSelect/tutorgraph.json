@@ -1,0 +1,401 @@
+{
+	"type":"graph",
+	"history":"volatile",
+    "name":"RQ Selection TuTor",
+    
+	"hostModule":"EFMod_RQSelect",
+	"version":"0.1.0",
+
+
+	"CNodes":
+	{	
+		"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CNodes  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+
+        "nav_loader":{
+            "COMMENT":"%%%%%%%%%%%%%%%% Navigation Components preload node - used to force nav scene creation %%%%%%%%%%%%%%%%%%%%",
+            "type":"module",
+            "link":"nav_loader",
+            "edges":
+                    [
+                    ]
+            },
+                    
+		"root":{"COMMENT":"Introduction to tutor",
+				"type":"module", 
+				"link":"start",
+				"edges":
+                    [													
+                        {"constraint":"FTR_BASELINE","edge":"BASE_LINE_INTRO"},
+                        {"constraint":"","edge":"CHOOSE_AREA"}
+                    ]
+				},
+
+
+		"BASE_LINE_INTRO":{
+                "COMMENT":"Area of Science Selection Sequence",
+				"type":"module", 
+				"link":"BASE_LINE_INTRO",
+				"edges":
+                    [													                        
+                        {"constraint":"","edge":"EXPT_DEMO"}
+                    ]
+				},
+
+		"CHOOSE_AREA":{
+                "COMMENT":"Area of Science Selection Sequence",
+				"type":"module", 
+				"link":"CHOOSE_AREA",
+				"edges":
+                    [													                        
+                        {"constraint":"","edge":"CHOOSE_TOPIC"}
+                    ]
+				},
+
+		"CHOOSE_TOPIC":{
+                "COMMENT":"Topic within Research Area Selection Sequence",
+				"type":"module", 
+				"link":"CHOOSE_TOPIC",
+				"edges":
+                    [													
+                        {"constraint":"","edge":"EXPT_DEMO"}
+                    ]
+				},
+
+		"EXPT_DEMO":{
+                "COMMENT":"Experiment Explication Sequence",
+				"type":"module", 
+				"link":"EXPT_DEMO",
+				"edges":
+                    [													
+                        {"constraint":"FTR_BASELINE","edge":"SUMMARY"},
+                        {"constraint":"","edge":"CHOOSE_RQ"}
+                    ]
+				},
+
+		"CHOOSE_RQ":{
+                "COMMENT":"Research Question Selection Sequence",
+				"type":"module", 
+				"link":"CHOOSE_RQ",
+				"edges":
+                    [											                        
+                        {"constraint":"CHANGE_RQ","edge":"CHOOSE_RQ" },
+                        {"constraint":"CHANGE_TOPIC","edge":"CHOOSE_AREA" },
+                        {"constraint":"CHANGE_AREA","edge":"CHOOSE_AREA" },
+
+                        {"constraint":"","edge":"SUMMARY"}
+                    ]
+				},
+
+		"SUMMARY":{
+                "COMMENT":"Research Question Selection Sequence",
+				"type":"module", 
+				"link":"SUMMARY",
+				"edges":
+                    [											                        
+                    ]
+				},
+
+		"END_CLOAK":{ "COMMENT":"End Cloak - Allows LogManager to gracefully shutdown the session",
+					"type":"module", 
+					"link":"END_CLOAK",
+					"edges":
+							[
+							]
+					}					
+	},		
+		
+	"CModules":
+	{		
+		"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CModules  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+	
+		"nav_loader":
+		{
+			"instanceNode":"",
+			"reuse":true,			
+			"scenes":		
+			[
+				{"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SNavigator", "classname":"EFMod_RQSelect.Navigator", "features":"", "enqueue":"false" , "create":"true" , "visible":"true", "persist":"false", "ischeckpnt":"true", "object":"null" }
+			]
+		},	
+			
+		"start":
+		{
+			"instanceNode":"",
+			"reuse":true,
+			"scenes":		
+			[
+                {"title":"WEB Start Page- Audio Requirement", "page":"", "name":"SSceneStart"  , "classname":"EFMod_RQSelect.SceneStart",    "features":"FTR_WEB", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+
+				{"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene1",  "classname":"EFMod_RQSelect.Scene1",   "features":"!FTR_BASELINE", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"}
+			]
+        },
+
+		"BASE_LINE_INTRO":
+		{
+			"instanceNode":"",
+			"reuse":true,
+			"scenes":		
+			[
+                {"title":"", "page":"", "name":"SSceneBL"   , "classname":"EFMod_RQSelect.SceneBL", "features":"", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"}
+			]
+        },
+
+
+
+		"CHOOSE_AREA":
+		{
+			"instanceNode":"",
+			"reuse":true,
+			"scenes":		
+			[
+				{"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene2",  "classname":"EFMod_RQSelect.Scene2",   "features":"FTR_PASS1", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene2a",  "classname":"EFMod_RQSelect.Scene2",   "features":"FTR_PASS2", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"}
+			]
+        },
+
+		"CHOOSE_TOPIC":
+		{
+			"instanceNode":"",
+			"reuse":true,
+			"scenes":		
+			[
+				{"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene3",  "classname":"EFMod_RQSelect.Scene3",   "features":"", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"}
+            ]
+        },
+
+		"EXPT_DEMO":
+		{
+			"instanceNode":"",
+			"reuse":true,
+			"scenes":		
+			[
+				{"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene4",  "classname":"EFMod_RQSelect.Scene4",   "features":"", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+
+                {"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene5",  "classname":"EFMod_Crystal.RQintro1",    "hostname":"EFMod_RQSelect",  "features":"FTR_CRYSTAL", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+                {"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene5a", "classname":"EFMod_Crystal.RQmaterials", "hostname":"EFMod_RQSelect",  "features":"FTR_CRYSTAL", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":true,  "copyof":"",  "name":"SScene6a", "classname":"EFMod_Crystal.RQintro2",    "hostname":"EFMod_RQSelect",  "features":"FTR_CRYSTAL", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"SScene6a",  "name":"SScene6b", "classname":"EFMod_Crystal.RQintro3",    "hostname":"EFMod_RQSelect",  "features":"FTR_CRYSTAL", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"SScene6a",  "name":"SScene6c", "classname":"EFMod_Crystal.RQintro4",    "hostname":"EFMod_RQSelect",  "features":"FTR_CRYSTAL", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"SScene6a",  "name":"SScene6d", "classname":"EFMod_Crystal.RQintro5",    "hostname":"EFMod_RQSelect",  "features":"FTR_CRYSTAL", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"SScene6a",  "name":"SScene6e", "classname":"EFMod_Crystal.RQintro6",    "hostname":"EFMod_RQSelect",  "features":"FTR_CRYSTAL", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"SScene6a",  "name":"SScene6f", "classname":"EFMod_Crystal.RQintro7",    "hostname":"EFMod_RQSelect",  "features":"FTR_CRYSTAL", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene7",  "classname":"EFMod_Crystal.RQmovie",     "hostname":"EFMod_RQSelect",  "features":"FTR_CRYSTAL", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+                {"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene8",  "classname":"EFMod_Crystal.RQenumVars",  "hostname":"EFMod_RQSelect",  "features":"FTR_CRYSTAL", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+
+				{"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene5",  "classname":"EFMod_Soda.RQintro1",     "hostname":"EFMod_RQSelect",  "features":"FTR_SODA", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+                {"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene5a", "classname":"EFMod_Soda.RQmaterials",  "hostname":"EFMod_RQSelect",  "features":"FTR_SODA", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+                {"title":"", "page":"", "isanchor":true,  "copyof":"",  "name":"SScene6a", "classname":"EFMod_Soda.RQintro2",     "hostname":"EFMod_RQSelect",  "features":"FTR_SODA", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"SScene6a",  "name":"SScene6b", "classname":"EFMod_Soda.RQintro3",     "hostname":"EFMod_RQSelect",  "features":"FTR_SODA", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"SScene6a",  "name":"SScene6c", "classname":"EFMod_Soda.RQintro4",     "hostname":"EFMod_RQSelect",  "features":"FTR_SODA", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene7",  "classname":"EFMod_Soda.RQmovie",      "hostname":"EFMod_RQSelect",  "features":"FTR_SODA", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene8",  "classname":"EFMod_Soda.RQenumVars",   "hostname":"EFMod_RQSelect",  "features":"FTR_SODA", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+
+				{"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene5",  "classname":"EFMod_IceMelt.RQintro1",    "hostname":"EFMod_RQSelect",  "features":"FTR_ICEMELT", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+                {"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene5a", "classname":"EFMod_IceMelt.RQmaterials", "hostname":"EFMod_RQSelect",  "features":"FTR_ICEMELT", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+                {"title":"", "page":"", "isanchor":true, "copyof":"",  "name":"SScene6a", "classname":"EFMod_IceMelt.RQintro2",    "hostname":"EFMod_RQSelect",  "features":"FTR_ICEMELT", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"SScene6a",  "name":"SScene6b", "classname":"EFMod_IceMelt.RQintro3",    "hostname":"EFMod_RQSelect",  "features":"FTR_ICEMELT", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"SScene6a",  "name":"SScene6c", "classname":"EFMod_IceMelt.RQintro4",    "hostname":"EFMod_RQSelect",  "features":"FTR_ICEMELT", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene7",  "classname":"EFMod_IceMelt.RQmovie",     "hostname":"EFMod_RQSelect",  "features":"FTR_ICEMELT", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene8",  "classname":"EFMod_IceMelt.RQenumVars",  "hostname":"EFMod_RQSelect",  "features":"FTR_ICEMELT", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+
+				{"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene5",  "classname":"EFMod_Balloon.RQintro1",    "hostname":"EFMod_RQSelect",  "features":"FTR_BALLOON", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+                {"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene5a", "classname":"EFMod_Balloon.RQmaterials", "hostname":"EFMod_RQSelect",  "features":"FTR_BALLOON", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+                {"title":"", "page":"", "isanchor":true, "copyof":"",  "name":"SScene6a", "classname":"EFMod_Balloon.RQintro2",    "hostname":"EFMod_RQSelect",  "features":"FTR_BALLOON", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"SScene6a",  "name":"SScene6b", "classname":"EFMod_Balloon.RQintro3",    "hostname":"EFMod_RQSelect",  "features":"FTR_BALLOON", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"SScene6a",  "name":"SScene6c", "classname":"EFMod_Balloon.RQintro4",    "hostname":"EFMod_RQSelect",  "features":"FTR_BALLOON", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"SScene6a",  "name":"SScene6d", "classname":"EFMod_Balloon.RQintro5",    "hostname":"EFMod_RQSelect",  "features":"FTR_BALLOON", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"SScene6a",  "name":"SScene6e", "classname":"EFMod_Balloon.RQintro6",    "hostname":"EFMod_RQSelect",  "features":"FTR_BALLOON", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene7",  "classname":"EFMod_Balloon.RQmovie",     "hostname":"EFMod_RQSelect",  "features":"FTR_BALLOON", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene8",  "classname":"EFMod_Balloon.RQenumVars",  "hostname":"EFMod_RQSelect",  "features":"FTR_BALLOON", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+
+				{"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene5",  "classname":"EFMod_Ramps.RQintro1",     "hostname":"EFMod_RQSelect",  "features":"FTR_RAMPS", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+                {"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene5a", "classname":"EFMod_Ramps.RQmaterials",  "hostname":"EFMod_RQSelect",  "features":"FTR_RAMPS", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+                {"title":"", "page":"", "isanchor":true,  "copyof":"",  "name":"SScene6a", "classname":"EFMod_Ramps.RQintro2",     "hostname":"EFMod_RQSelect",  "features":"FTR_RAMPS", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"SScene6a",  "name":"SScene6b", "classname":"EFMod_Ramps.RQintro3",     "hostname":"EFMod_RQSelect",  "features":"FTR_RAMPS", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"SScene6a",  "name":"SScene6c", "classname":"EFMod_Ramps.RQintro4",     "hostname":"EFMod_RQSelect",  "features":"FTR_RAMPS", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene7",  "classname":"EFMod_Ramps.RQmovie",      "hostname":"EFMod_RQSelect",  "features":"FTR_RAMPS", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene8",  "classname":"EFMod_Ramps.RQenumVars",   "hostname":"EFMod_RQSelect",  "features":"FTR_RAMPS", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+
+				{"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene5",  "classname":"EFMod_Sinking.RQintro1",    "hostname":"EFMod_RQSelect",  "features":"FTR_SINKING", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+                {"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene5a", "classname":"EFMod_Sinking.RQmaterials", "hostname":"EFMod_RQSelect",  "features":"FTR_SINKING", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+                {"title":"", "page":"", "isanchor":true, "copyof":"",  "name":"SScene6a", "classname":"EFMod_Sinking.RQintro2",    "hostname":"EFMod_RQSelect",  "features":"FTR_SINKING", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"SScene6a",  "name":"SScene6b", "classname":"EFMod_Sinking.RQintro3",    "hostname":"EFMod_RQSelect",  "features":"FTR_SINKING", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"SScene6a",  "name":"SScene6c", "classname":"EFMod_Sinking.RQintro4",    "hostname":"EFMod_RQSelect",  "features":"FTR_SINKING", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"SScene6a",  "name":"SScene6d", "classname":"EFMod_Sinking.RQintro5",    "hostname":"EFMod_RQSelect",  "features":"FTR_SINKING", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"SScene6a",  "name":"SScene6e", "classname":"EFMod_Sinking.RQintro6",    "hostname":"EFMod_RQSelect",  "features":"FTR_SINKING", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene7",  "classname":"EFMod_Sinking.RQmovie",     "hostname":"EFMod_RQSelect",  "features":"FTR_SINKING", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene8",  "classname":"EFMod_Sinking.RQenumVars",  "hostname":"EFMod_RQSelect",  "features":"FTR_SINKING", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+
+				{"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene5",  "classname":"EFMod_GrHouse.RQintro1",    "hostname":"EFMod_RQSelect",  "features":"FTR_GRHOUSE", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+                {"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene5a", "classname":"EFMod_GrHouse.RQmaterials", "hostname":"EFMod_RQSelect",  "features":"FTR_GRHOUSE", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+                {"title":"", "page":"", "isanchor":true,  "copyof":"",  "name":"SScene6a", "classname":"EFMod_GrHouse.RQintro2",    "hostname":"EFMod_RQSelect",  "features":"FTR_GRHOUSE", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"SScene6a",  "name":"SScene6b", "classname":"EFMod_GrHouse.RQintro3",    "hostname":"EFMod_RQSelect",  "features":"FTR_GRHOUSE", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"SScene6a",  "name":"SScene6c", "classname":"EFMod_GrHouse.RQintro4",    "hostname":"EFMod_RQSelect",  "features":"FTR_GRHOUSE", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"SScene6a",  "name":"SScene6d", "classname":"EFMod_GrHouse.RQintro5",    "hostname":"EFMod_RQSelect",  "features":"FTR_GRHOUSE", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene7",  "classname":"EFMod_GrHouse.RQmovie",     "hostname":"EFMod_RQSelect",  "features":"FTR_GRHOUSE", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene8",  "classname":"EFMod_GrHouse.RQenumVars",  "hostname":"EFMod_RQSelect",  "features":"FTR_GRHOUSE", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+
+				{"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene5",  "classname":"EFMod_Algae.RQintro1",     "hostname":"EFMod_RQSelect",  "features":"FTR_ALGAE", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+                {"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene5a", "classname":"EFMod_Algae.RQmaterials",  "hostname":"EFMod_RQSelect",  "features":"FTR_ALGAE", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+                {"title":"", "page":"", "isanchor":true, "copyof":"",  "name":"SScene6a", "classname":"EFMod_Algae.RQintro2",     "hostname":"EFMod_RQSelect",  "features":"FTR_ALGAE", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"SScene6a",  "name":"SScene6b", "classname":"EFMod_Algae.RQintro3",     "hostname":"EFMod_RQSelect",  "features":"FTR_ALGAE", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"SScene6a",  "name":"SScene6c", "classname":"EFMod_Algae.RQintro4",     "hostname":"EFMod_RQSelect",  "features":"FTR_ALGAE", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene7",  "classname":"EFMod_Algae.RQmovie",      "hostname":"EFMod_RQSelect",  "features":"FTR_ALGAE", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+                {"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene8",  "classname":"EFMod_Algae.RQenumVars",   "hostname":"EFMod_RQSelect",  "features":"FTR_ALGAE", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"}
+			]
+        },
+
+		"CHOOSE_RQ":
+		{
+			"instanceNode":"",
+			"reuse":true,
+			"scenes":		
+			[
+				{"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene9",  "classname":"EFMod_RQSelect.Scene9",    "features":"", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"},
+				{"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene10", "classname":"EFMod_RQSelect.Scene10",   "features":"FTR_CHOICE", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"}
+			]
+        },
+
+		"SUMMARY":
+		{
+			"instanceNode":"",
+			"reuse":true,
+			"scenes":		
+			[
+				{"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SScene11", "classname":"EFMod_RQSelect.Scene11",   "features":"", "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"}
+			]
+        },
+
+		"END_CLOAK":
+		{
+			"instanceNode":"",
+			"reuse":true,
+			"scenes":		
+			[	
+				{"title":"", "page":"", "isanchor":false, "copyof":"",  "name":"SSceneEnd"  , "classname":"EFMod_RQSelect.SceneEnd", "features":"" , "enqueue":"true", "create":"false", "persist":"false", "ischeckpnt":"true", "object":"null"}
+			]
+		}		
+		
+	},
+
+	"CModuleGroups":
+	{
+		"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CModuleGroups  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+	
+		"solcom-modgrp":
+		{
+			"instanceNode":"",
+			"type":"seqtype",
+			"start":"0",
+			"show":"1",
+			"reuse":true,
+			"onempty":"na",
+			
+			"modules":
+			[
+				{"instanceNode":"", "name":"SOLCOM_A"},
+				{"instanceNode":"", "name":"SOLCOM_B"},
+				{"instanceNode":"", "name":"SOLCOM_C"}
+			]
+        }
+	},
+
+
+	"CActions":
+	{
+		"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CActions  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+	
+		"act0":{"cmd":"assertFeature",
+			    "parms":
+					[
+						"FTR_RIGHT"
+					]},
+					
+		"act1":{"cmd":"retractFeature",
+				"parms":
+					[
+						"FTR_RIGHT"
+					]}
+	},
+	
+	"CConstraints":
+	{
+		"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CConstraints  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+			
+		"FTR_PRETEST":{"cmd":"test", "code":"FTR_PRETEST"},
+		"SKILL_R0_FAIL" :{"cmd":"exec","code":"{return (gTutor.ktSkills['rule0'].queryBelief() < 0.93);}"},
+		"q6B_NOCHECKED":{"cmd":"exec","code":"return gTutor['Sq6p1_B'].q6Check2.getChecked();"}
+	},
+
+	"CSubGraphs":
+	{
+		"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CSubGraphs  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+			
+	},
+	
+	
+	"CExternals":
+	{
+		"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CExternals  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+	},
+	
+	
+	"CSkills":
+	{
+		"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CSkills  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+	
+		"rule0":
+		{
+			"description":"Identify Target variable",
+			"pL": 0.125,
+			"pT": 0.046667,
+			"pG": 0.1,
+			"pS": 0.1
+		},
+		"rule1":
+		{
+			"description":"Vary target variable",
+			"pL": 0.250,
+			"pT": 0.041667,
+			"pG": 0.1,
+			"pS": 0.1
+		},
+		"rule2":
+		{
+			"description":"Control non-target variables",
+			"pL": 0.05,
+			"pT": 0.06,
+			"pG": 0.1,
+			"pS": 0.1
+		},
+		"rule_vvfar":
+		{
+			"description":"Vary Variable for any reason",
+			"pL": 0.5,
+			"pT": 0.213333,
+			"pG": 0.1,
+			"pS": 0.1
+		},
+		"rule_tov":
+		{
+			"description":"Test one variable at a time",
+			"pL": 0.03,
+			"pT": 0.046667,
+			"pG": 0.1,
+			"pS": 0.1
+		},
+		"rule_cvslog":
+		{
+			"description":"Full CS Logic - R-0,1,2",
+			"pL": 0.03,
+			"pT": 0.03,
+			"pG": 0.1,
+			"pS": 0.1
+		}
+	}
+		
+		
+}
+
+
+

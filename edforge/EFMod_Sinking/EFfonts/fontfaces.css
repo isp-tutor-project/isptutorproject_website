@@ -1,0 +1,63 @@
+
+
+@font-face {
+    font-family: "Pangolin";
+    src:url(./EFFonts/Pangolin/Pangolin-Regular.ttf);
+	font-weight:normal;
+	font-style:normal;
+}
+
+
+@font-face {
+	font-family:"Mouse Memoirs";
+    src:url(./EFFonts/Mouse_Memoirs/MouseMemoirs-Regular.ttf);
+	font-weight:normal;
+	font-style:normal;
+}
+
+
+@font-face {
+	font-family:"PT Mono";
+    src:url(./EFFonts/PT_Mono/PTM55FT.ttf);
+	font-weight:normal;
+	font-style:normal;
+}
+
+
+@font-face {
+	font-family:"PT Sans";
+    src:url(./EFFonts/PT_Sans/PT_Sans-Web-Regular.ttf);
+	font-weight:normal;
+	font-style:normal;
+}
+
+
+@font-face {
+	font-family:"PT Sans Bold";
+    src:url(./EFFonts/PT_Sans/PT_Sans-Web-Bold.ttf);
+	font-weight:bold;
+	font-style:normal;
+}
+
+@font-face {
+	font-family:"PT Sans Narrow";
+    src:url(./EFFonts/PT_Sans_Narrow/PT_Sans-Narrow-Web-Bold.ttf);
+	font-weight:normal;
+	font-style:normal;
+}
+
+
+@font-face {
+	font-family:"PT Serif";
+    src:url(./EFFonts/PT_Serif/PT_Serif-Web-Bold.ttf);
+	font-weight:bold;
+	font-style:normal;
+}
+
+@font-face {
+	font-family:"VarelaRound";
+    src:url(./EFFonts/Varela_Round/VarelaRound-Regular.ttf);
+	font-weight:normal;
+	font-style:normal;
+}
+

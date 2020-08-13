@@ -1,0 +1,525 @@
+
+{
+
+	"SNavigator":
+	{	
+		"COMMENT":"ISP Navigation Panel...",
+		"type":"animation",
+		"version":"0.1.0",
+		"volatile":true,
+	
+		"CNodes":
+		{	
+			"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CNodes  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+						
+			"root":{"COMMENT":"Welcome...",
+					"type":"moduleRef",
+					"subtype":"module", 
+					 "name":"NOOP",
+					 "edges":
+							[
+							]
+					}															
+		},		
+            
+		"CModules":
+		{
+			"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CModules  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+            
+            "NOOP":{
+				"COMMENT":"",
+				"type":"module",
+				"reuse":true,
+				"actiontracks":		
+				[
+					{"actionname":"NOOP", "features":""}
+				]
+			}			
+		}
+	},
+
+	"SSceneStart":
+	{	
+		"COMMENT":"TED Introduction sequence...",
+		"type":"animation",
+		"version":"0.1.0",
+		"volatile":true,
+	
+		"CNodes":
+		{	
+			"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CNodes  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+						
+			"root":{"COMMENT":"Mats Intro...",
+					"type":"module",
+                    "name":"MATSINTRO",
+                    "reuse":true,
+                    "actiontracks":		
+                    [
+                        {"trackname":"track1",  "autostep":false,  "stepdelay":800,  "features":""}
+                    ],                        
+					"edges":
+							[
+								{"constraint":""         ,"edge":"NEXTSCENE" }
+							]
+					},
+															
+            "NEXTSCENE":{"COMMENT":"When Scene is complete - move to next scene in the scenegraph",
+                        "type":"module", 
+                        "name":"NEXTSCENE",
+                        "reuse":true,
+                        "actiontracks":		
+                        [
+                            {"actionname":"NOOP", "autostep":true, "features":""}
+                        ],                                              
+                        "edges":
+                        [
+                        ]
+                    }
+        },		
+			
+		"CModules":
+		{		
+		}
+    },
+    
+	"SMatsIntro":
+	{	
+		"COMMENT":"TED Introduction sequence...",
+		"type":"animation",
+		"version":"0.1.0",
+		"volatile":true,
+	
+		"CNodes":
+		{	
+			"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CNodes  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+						
+			"root":{"COMMENT":"Mats Intro...",
+					"type":"module",
+                    "name":"MATSINTRO",
+                    "reuse":true,
+                    "actiontracks":		
+                    [
+                        {"trackname":"track1",  "autostep":true,  "stepdelay":800,  "features":""},
+                        {"trackname":"track2",  "autostep":false, "stepdelay":800,  "features":""}
+                    ],                        
+					"edges":
+							[
+								{"constraint":""         ,"edge":"NEXTSCENE" }
+							]
+					},
+															
+            "NEXTSCENE":{"COMMENT":"When Scene is complete - move to next scene in the scenegraph",
+                        "type":"module", 
+                        "name":"NEXTSCENE",
+                        "reuse":true,
+                        "actiontracks":		
+                        [
+                            {"actionname":"NOOP", "autostep":true, "features":""}
+                        ],                                              
+                        "edges":
+                        [
+                        ]
+                    }
+		},		
+			
+		"CModules":
+		{		
+		}
+    },
+	"SMatsPre1":
+	{	
+		"COMMENT":"TED Introduction sequence...",
+		"type":"animation",
+		"version":"0.1.0",
+		"volatile":true,
+	
+		"CNodes":
+		{	
+			"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CNodes  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+						
+			"root":{"COMMENT":"Mats page1...",
+					"type":"module",
+                    "name":"MATSPRESTEST1-4",
+                    "reuse":true,
+                    "actiontracks":		
+                    [
+                        {"trackname":"track1",  "autostep":false,  "stepdelay":800,  "features":""}
+                    ],                        
+					"edges":
+							[
+								{"constraint":""         ,"edge":"NEXTSCENE" }
+							]
+					},
+															
+            "NEXTSCENE":{"COMMENT":"When Scene is complete - move to next scene in the scenegraph",
+                        "type":"module", 
+                        "name":"NEXTSCENE",
+                        "reuse":true,
+                        "actiontracks":		
+                        [
+                            {"actionname":"NOOP", "autostep":true, "features":""}
+                        ],                                              
+                        "edges":
+                        [
+                        ]
+                    }
+		},		
+			
+		"CModules":
+		{		
+		}
+    },
+	"SMatsPre2":
+	{	
+		"COMMENT":"TED Introduction sequence...",
+		"type":"animation",
+		"version":"0.1.0",
+		"volatile":true,
+	
+		"CNodes":
+		{	
+			"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CNodes  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+						
+			"root":{"COMMENT":"Mats page2...",
+					"type":"module",
+                    "name":"MATSPRESTEST5-8",
+                    "reuse":true,
+                    "actiontracks":		
+                    [
+                    ],                        
+					"edges":
+							[
+								{"constraint":""         ,"edge":"NEXTSCENE" }
+							]
+					},
+															
+            "NEXTSCENE":{"COMMENT":"When Scene is complete - move to next scene in the scenegraph",
+                        "type":"module", 
+                        "name":"NEXTSCENE",
+                        "reuse":true,
+                        "actiontracks":		
+                        [
+                            {"actionname":"NOOP", "autostep":false, "features":""}
+                        ],                                              
+                        "edges":
+                        [
+                        ]
+                    }
+		},		
+			
+		"CModules":
+		{		
+		}
+    },
+	"SMatsPre3":
+	{	
+		"COMMENT":"TED Introduction sequence...",
+		"type":"animation",
+		"version":"0.1.0",
+		"volatile":true,
+	
+		"CNodes":
+		{	
+			"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CNodes  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+						
+			"root":{"COMMENT":"MATSPRESTEST9-12",
+					"type":"module",
+                    "name":"SELECTTV",
+                    "reuse":true,
+                    "actiontracks":		
+                    [
+                    ],                        
+					"edges":
+							[
+								{"constraint":""         ,"edge":"NEXTSCENE" }
+							]
+					},
+															
+            "NEXTSCENE":{"COMMENT":"When Scene is complete - move to next scene in the scenegraph",
+                        "type":"module", 
+                        "name":"NEXTSCENE",
+                        "reuse":true,
+                        "actiontracks":		
+                        [
+                            {"actionname":"NOOP", "autostep":false, "features":""}
+                        ],                                              
+                        "edges":
+                        [
+                        ]
+                    }
+		},		
+			
+		"CModules":
+		{		
+		}
+    },
+	"SMatsPre4":
+	{	
+		"COMMENT":"TED Introduction sequence...",
+		"type":"animation",
+		"version":"0.1.0",
+		"volatile":true,
+	
+		"CNodes":
+		{	
+			"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CNodes  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+						
+			"root":{"COMMENT":"MATSPRESTEST13-14",
+					"type":"module",
+                    "name":"SELECTTV",
+                    "reuse":true,
+                    "actiontracks":		
+                    [
+                        {"actionname":"WAIT",  "autostep":false, "features":""},
+                        {"trackname":"track1",  "autostep":false, "stepdelay":800,  "features":"!FTR_PROMPTED"}
+                    ],                        
+					"edges":
+							[
+								{"constraint":""         ,"edge":"NEXTSCENE" }
+							]
+					},
+															
+            "NEXTSCENE":{"COMMENT":"When Scene is complete - move to next scene in the scenegraph",
+                        "type":"module", 
+                        "name":"NEXTSCENE",
+                        "reuse":true,
+                        "actiontracks":		
+                        [
+                            {"actionname":"NOOP", "autostep":true, "features":""}
+                        ],                                              
+                        "edges":
+                        [
+                        ]
+                    }
+		},		
+			
+		"CModules":
+		{		
+		}
+    },
+
+
+    
+
+
+	"SMatsPost1":
+	{	
+		"COMMENT":"TED Introduction sequence...",
+		"type":"animation",
+		"version":"0.1.0",
+		"volatile":true,
+	
+		"CNodes":
+		{	
+			"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CNodes  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+						
+			"root":{"COMMENT":"Mats page1...",
+					"type":"module",
+                    "name":"SELECTTV",
+                    "reuse":true,
+                    "actiontracks":		
+                    [
+                        {"trackname":"track1",  "autostep":false,  "stepdelay":800,  "features":""}
+                    ],                        
+					"edges":
+							[
+								{"constraint":""         ,"edge":"NEXTSCENE" }
+							]
+					},
+															
+            "NEXTSCENE":{"COMMENT":"When Scene is complete - move to next scene in the scenegraph",
+                        "type":"module", 
+                        "name":"NEXTSCENE",
+                        "reuse":true,
+                        "actiontracks":		
+                        [
+                            {"actionname":"NOOP", "autostep":true, "features":""}
+                        ],                                              
+                        "edges":
+                        [
+                        ]
+                    }
+		},		
+			
+		"CModules":
+		{		
+		}
+    },
+	"SMatsPost2":
+	{	
+		"COMMENT":"TED Introduction sequence...",
+		"type":"animation",
+		"version":"0.1.0",
+		"volatile":true,
+	
+		"CNodes":
+		{	
+			"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CNodes  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+						
+			"root":{"COMMENT":"Mats page2...",
+					"type":"module",
+                    "name":"SELECTTV",
+                    "reuse":true,
+                    "actiontracks":		
+                    [
+                    ],                        
+					"edges":
+							[
+								{"constraint":""         ,"edge":"NEXTSCENE" }
+							]
+					},
+															
+            "NEXTSCENE":{"COMMENT":"When Scene is complete - move to next scene in the scenegraph",
+                        "type":"module", 
+                        "name":"NEXTSCENE",
+                        "reuse":true,
+                        "actiontracks":		
+                        [
+                            {"actionname":"NOOP", "autostep":false, "features":""}
+                        ],                                              
+                        "edges":
+                        [
+                        ]
+                    }
+		},		
+			
+		"CModules":
+		{		
+		}
+    },
+	"SMatsPost3":
+	{	
+		"COMMENT":"TED Introduction sequence...",
+		"type":"animation",
+		"version":"0.1.0",
+		"volatile":true,
+	
+		"CNodes":
+		{	
+			"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CNodes  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+						
+			"root":{"COMMENT":"Mats page3...",
+					"type":"module",
+                    "name":"SELECTTV",
+                    "reuse":true,
+                    "actiontracks":		
+                    [
+                    ],                        
+					"edges":
+							[
+								{"constraint":""         ,"edge":"NEXTSCENE" }
+							]
+					},
+															
+            "NEXTSCENE":{"COMMENT":"When Scene is complete - move to next scene in the scenegraph",
+                        "type":"module", 
+                        "name":"NEXTSCENE",
+                        "reuse":true,
+                        "actiontracks":		
+                        [
+                            {"actionname":"NOOP", "autostep":false, "features":""}
+                        ],                                              
+                        "edges":
+                        [
+                        ]
+                    }
+		},		
+			
+		"CModules":
+		{		
+		}
+    },
+	"SMatsPost4":
+	{	
+		"COMMENT":"TED Introduction sequence...",
+		"type":"animation",
+		"version":"0.1.0",
+		"volatile":true,
+	
+		"CNodes":
+		{	
+			"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CNodes  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+						
+			"root":{"COMMENT":"Mats page4...",
+					"type":"module",
+                    "name":"SELECTTV",
+                    "reuse":true,
+                    "actiontracks":		
+                    [
+                        {"actionname":"WAIT",  "autostep":false, "features":""},
+                        {"trackname":"track1",  "autostep":false, "stepdelay":800,  "features":"!FTR_PROMPTED"}
+                    ],                        
+					"edges":
+							[
+								{"constraint":""         ,"edge":"NEXTSCENE" }
+							]
+					},
+															
+            "NEXTSCENE":{"COMMENT":"When Scene is complete - move to next scene in the scenegraph",
+                        "type":"module", 
+                        "name":"NEXTSCENE",
+                        "reuse":true,
+                        "actiontracks":		
+                        [
+                            {"actionname":"NOOP", "autostep":true, "features":""}
+                        ],                                              
+                        "edges":
+                        [
+                        ]
+                    }
+		},		
+			
+		"CModules":
+		{		
+		}
+    },
+
+	"SSceneEnd":
+	{	
+		"COMMENT":"TED Introduction sequence...",
+		"type":"animation",
+		"version":"0.1.0",
+		"volatile":true,
+	
+		"CNodes":
+		{	
+			"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CNodes  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+						
+			"root":{"COMMENT":"Mats page4...",
+					"type":"module",
+                    "name":"SELECTTV",
+                    "reuse":true,
+                    "actiontracks":		
+                    [
+                    ],                        
+					"edges":
+							[
+								{"constraint":""         ,"edge":"NEXTSCENE" }
+							]
+					},
+															
+            "NEXTSCENE":{"COMMENT":"When Scene is complete - move to next scene in the scenegraph",
+                        "type":"module", 
+                        "name":"NEXTSCENE",
+                        "reuse":true,
+                        "actiontracks":		
+                        [
+                            {"actionname":"NOOP", "autostep":false, "features":""}
+                        ],                                              
+                        "edges":
+                        [
+                        ]
+                    }
+		},		
+			
+		"CModules":
+		{		
+		}
+    }
+}
+
+
+
+
+
+

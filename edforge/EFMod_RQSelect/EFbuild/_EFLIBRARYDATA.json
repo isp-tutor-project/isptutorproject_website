@@ -1,0 +1,645 @@
+{
+	"_LIBRARY": {
+		"eflist": {},
+		"eftext": {
+			"SbreadCrumbs": {
+				"src": "$$EFX.html_crumbText",
+				"htmlData": {
+					"style": {
+						"[sbreadcrumbs].outerContainer": {
+							"text-align": "left",
+							"user-select": "none",
+							"color": "rgba(0, 0, 0, 0.575)",
+							"font-weight": "bold",
+							"font-family": "'PT Sans'",
+							"font-size": "41px",
+							"height": "30px",
+							"width": "475"
+						},
+						"[sbreadcrumbs] .tablecell": {
+							"vertical-align": "middle"
+						}
+					},
+					"html": "\n        <p></p>\n    "
+				}
+			},
+			"Stitle": {
+				"src": "$$EFX.html_text2",
+				"htmlData": {
+					"style": {
+						"[stitle].outerContainer": {
+							"text-align": "center",
+							"user-select": "none",
+							"color": "rgb(0, 0, 0)",
+							"font-weight": "bold",
+							"font-family": "'PT Sans'",
+							"font-size": "41px",
+							"height": "158px",
+							"width": "274px"
+						},
+						"[stitle] .tablecell": {
+							"vertical-align": "middle"
+						}
+					},
+					"html": "\n        <p></p>\n    "
+				}
+			},
+			"StitleBL": {
+				"src": "$$EFX.html_text2",
+				"htmlData": {
+					"style": {
+						"[stitlebl].outerContainer": {
+							"text-align": "center",
+							"user-select": "none",
+							"color": "rgb(0, 0, 0)",
+							"font-weight": "bold",
+							"font-family": "'PT Sans'",
+							"font-size": "41px",
+							"height": "158px",
+							"width": "274px"
+						},
+						"[stitlebl] .tablecell": {
+							"vertical-align": "middle"
+						}
+					},
+					"html": "\n        <p></p>\n    "
+				}
+			},
+			"Svar1": {
+				"src": "$$EFX.html_text3",
+				"htmlData": {
+					"style": {
+						"[svar1].outerContainer": {
+							"text-align": "left",
+							"user-select": "none",
+							"color": "rgb(0, 0, 0)",
+							"font-weight": "bold",
+							"font-family": "'PT Sans'",
+							"font-size": "41px",
+							"height": "158px",
+							"width": "274px"
+						},
+						"[svar1] .tablecell": {
+							"vertical-align": "middle"
+						}
+					},
+					"html": "\n        <p></p>\n    "
+				}
+			},
+			"Svar2": {
+				"src": "$$EFX.html_text3",
+				"htmlData": {
+					"style": {
+						"[svar2].outerContainer": {
+							"text-align": "left",
+							"user-select": "none",
+							"color": "rgb(0, 0, 0)",
+							"font-weight": "bold",
+							"font-family": "'PT Sans'",
+							"font-size": "41px",
+							"height": "158px",
+							"width": "274px"
+						},
+						"[svar2] .tablecell": {
+							"vertical-align": "middle"
+						}
+					},
+					"html": "\n        <p></p>\n    "
+				}
+			},
+			"Svar3": {
+				"src": "$$EFX.html_text3",
+				"htmlData": {
+					"style": {
+						"[svar3].outerContainer": {
+							"text-align": "left",
+							"user-select": "none",
+							"color": "rgb(0, 0, 0)",
+							"font-weight": "bold",
+							"font-family": "'PT Sans'",
+							"font-size": "41px",
+							"height": "158px",
+							"width": "274px"
+						},
+						"[svar3] .tablecell": {
+							"vertical-align": "middle"
+						}
+					},
+					"html": "\n        <p></p>\n    "
+				}
+			},
+			"Svar4": {
+				"src": "$$EFX.html_text3",
+				"htmlData": {
+					"style": {
+						"[svar4].outerContainer": {
+							"text-align": "left",
+							"user-select": "none",
+							"color": "rgb(0, 0, 0)",
+							"font-weight": "bold",
+							"font-family": "'PT Sans'",
+							"font-size": "41px",
+							"height": "158px",
+							"width": "274px"
+						},
+						"[svar4] .tablecell": {
+							"vertical-align": "middle"
+						}
+					},
+					"html": "\n        <p></p>\n    "
+				}
+			},
+			"Stext": {
+				"src": "$$EFX.html_text1",
+				"htmlData": {
+					"style": {
+						"[stext].outerContainer": {
+							"text-align": "center",
+							"user-select": "none",
+							"color": "white",
+							"font-family": "'pangolin'",
+							"font-size": "21px",
+							"height": "158px",
+							"width": "274px"
+						},
+						"[stext] .tablecell": {
+							"vertical-align": "middle"
+						}
+					},
+					"html": "\n        <p></p>\n    "
+				}
+			},
+			"STextBox1": {
+				"src": "$$EFX.html_text",
+				"fontSize": 40,
+				"htmlData": {
+					"style": {
+						"[stextbox1].outerContainer": {
+							"text-align": "center",
+							"user-select": "none",
+							"color": "white",
+							"font-family": "'pangolin'",
+							"font-size": "47px",
+							"height": "112px",
+							"width": "506px"
+						},
+						"[stextbox1] .tablecell": {
+							"vertical-align": "middle"
+						}
+					},
+					"html": "\n        <p></p>\n    "
+				}
+			},
+			"STextBox2": {
+				"src": "$$EFX.html_text1",
+				"fontSize": 40,
+				"htmlData": {
+					"style": {
+						"[stextbox2].outerContainer": {
+							"text-align": "center",
+							"user-select": "none",
+							"color": "white",
+							"font-family": "'pangolin'",
+							"font-size": "21px",
+							"height": "158px",
+							"width": "274px"
+						},
+						"[stextbox2] .tablecell": {
+							"vertical-align": "middle"
+						}
+					},
+					"html": "\n        <p></p>\n    "
+				}
+			},
+			"S8": {
+				"Stitle": [
+					{
+						"id": "A",
+						"src": "$$EFX.html_text2",
+						"htmlData": {
+							"style": {
+								"[stitle].outerContainer": {
+									"text-align": "center",
+									"user-select": "none",
+									"color": "rgb(0, 0, 0)",
+									"font-weight": "bold",
+									"font-family": "'PT Sans'",
+									"font-size": "41px",
+									"height": "158px",
+									"width": "274px"
+								},
+								"[stitle] .tablecell": {
+									"vertical-align": "middle"
+								}
+							},
+							"html": "\n        <p></p>\n    "
+						},
+						"default": true,
+						"fontSize": 70
+					},
+					{
+						"id": "B",
+						"datasource": "$EFL_efdata.enumValue1",
+						"fontSize": 70
+					},
+					{
+						"id": "C",
+						"datasource": "$EFL_efdata.enumValue2"
+					},
+					{
+						"id": "D",
+						"datasource": "$EFL_efdata.enumValue3"
+					},
+					{
+						"id": "E",
+						"datasource": "$EFL_efdata.enumValue4"
+					}
+				],
+				"SsubTitle1": [
+					{
+						"id": "A",
+						"src": "$$EFX.html_text2",
+						"htmlData": {
+							"style": {
+								"[ssubtitle1].outerContainer": {
+									"text-align": "center",
+									"user-select": "none",
+									"color": "rgb(0, 0, 0)",
+									"font-weight": "bold",
+									"font-family": "'PT Sans'",
+									"font-size": "41px",
+									"height": "158px",
+									"width": "274px"
+								},
+								"[ssubtitle1] .tablecell": {
+									"vertical-align": "middle"
+								}
+							},
+							"html": "\n        <p></p>\n    "
+						},
+						"default": true,
+						"fontSize": 50
+					},
+					{
+						"id": "B",
+						"datasource": "$EFL_efdata.enumValue1a",
+						"fontSize": 50
+					},
+					{
+						"id": "C",
+						"datasource": "$EFL_efdata.enumValue2a"
+					},
+					{
+						"id": "D",
+						"datasource": "$EFL_efdata.enumValue3a"
+					},
+					{
+						"id": "E",
+						"datasource": "$EFL_efdata.enumValue4a"
+					}
+				],
+				"SsubTitle2": [
+					{
+						"id": "A",
+						"src": "$$EFX.html_text2",
+						"htmlData": {
+							"style": {
+								"[ssubtitle2].outerContainer": {
+									"text-align": "center",
+									"user-select": "none",
+									"color": "rgb(0, 0, 0)",
+									"font-weight": "bold",
+									"font-family": "'PT Sans'",
+									"font-size": "41px",
+									"height": "158px",
+									"width": "274px"
+								},
+								"[ssubtitle2] .tablecell": {
+									"vertical-align": "middle"
+								}
+							},
+							"html": "\n        <p></p>\n    "
+						},
+						"default": true,
+						"fontSize": 50
+					},
+					{
+						"id": "B",
+						"datasource": "$EFL_efdata.enumValue1b",
+						"fontSize": 50
+					},
+					{
+						"id": "C",
+						"datasource": "$EFL_efdata.enumValue2b"
+					},
+					{
+						"id": "D",
+						"datasource": "$EFL_efdata.enumValue3b"
+					},
+					{
+						"id": "E",
+						"datasource": "$EFL_efdata.enumValue4b"
+					}
+				]
+			},
+			"S11": {
+				"Stitle": {
+					"src": "$$EFX.html_text2",
+					"htmlData": {
+						"style": {
+							"[stitle].outerContainer": {
+								"text-align": "center",
+								"user-select": "none",
+								"color": "rgb(0, 0, 0)",
+								"font-weight": "bold",
+								"font-family": "'PT Sans'",
+								"font-size": "41px",
+								"height": "158px",
+								"width": "274px"
+							},
+							"[stitle] .tablecell": {
+								"vertical-align": "middle"
+							}
+						},
+						"html": "\n        <p></p>\n    "
+					}
+				}
+			}
+		},
+		"efinput": {},
+		"eftable": {},
+		"efdata": {
+			"SBLStitle": {
+				"htmlData": {
+					"html": "<p>{{$EFO_EG_A3|introtitle}}</p>"
+				},
+				"templateRef": {}
+			},
+			"S3StitleC": {
+				"htmlData": {
+					"html": "<p>{{$EFO_S_A?|withinarea}}{{$EFO_EG_A?|selecttopic}}</p>"
+				},
+				"templateRef": {
+					"S_A?|withinarea": "$EFM_selectedArea.ontologyKey",
+					"EG_A?|selecttopic": "$EFT_experimentalGroup.ontologyKey"
+				}
+			},
+			"S3StitleNC": {
+				"htmlData": {
+					"html": "<p>{{$EFO_S_A?|withinarea}}{{$EFO_S_A?_T?|wewillselect}}{{$EFO_EG_A?|selecttopic}}</p>"
+				},
+				"templateRef": {
+					"S_A?|withinarea": "$EFM_selectedArea.ontologyKey",
+					"S_A?_T?|wewillselect": "$EFM_selectedTopic.ontologyKey",
+					"EG_A?|selecttopic": "$EFT_experimentalGroup.ontologyKey"
+				}
+			},
+			"S4Stitle": {
+				"htmlData": {
+					"html": "<p>{{$EFO_S_A?_T?|belowarevariables}}{{$EFO_EG_A?|cantest}}</p>"
+				},
+				"templateRef": {
+					"S_A?_T?|belowarevariables": "$EFM_selectedTopic.ontologyKey",
+					"EG_A?|cantest": "$EFT_experimentalGroup.ontologyKey"
+				}
+			},
+			"S4Svar1": {
+				"htmlData": {
+					"html": "<p>{{$EFO_S_A?_T?|enumVar1}}</p>"
+				},
+				"templateRef": {
+					"S_A?_T?|enumVar1": "$EFM_selectedTopic.ontologyKey"
+				}
+			},
+			"S4Svar2": {
+				"htmlData": {
+					"html": "<p>{{$EFO_S_A?_T?|enumVar2}}</p>"
+				},
+				"templateRef": {
+					"S_A?_T?|enumVar2": "$EFM_selectedTopic.ontologyKey"
+				}
+			},
+			"S4Svar3": {
+				"htmlData": {
+					"html": "<p>{{$EFO_S_A?_T?|enumVar3}}</p>"
+				},
+				"templateRef": {
+					"S_A?_T?|enumVar3": "$EFM_selectedTopic.ontologyKey"
+				}
+			},
+			"S4Svar4": {
+				"htmlData": {
+					"html": "<p>{{$EFO_S_A?_T?|enumVar4}}</p>"
+				},
+				"templateRef": {
+					"S_A?_T?|enumVar4": "$EFM_selectedTopic.ontologyKey"
+				}
+			},
+			"enumValue1": {
+				"htmlData": {
+					"html": "<p>{{$EFO_S_A?_T?|enumValue1}}</p>"
+				},
+				"templateRef": {
+					"S_A?_T?|enumValue1": "$EFM_selectedTopic.ontologyKey"
+				}
+			},
+			"enumValue2": {
+				"htmlData": {
+					"html": "<p>{{$EFO_S_A?_T?|enumValue2}}</p>"
+				},
+				"templateRef": {
+					"S_A?_T?|enumValue2": "$EFM_selectedTopic.ontologyKey"
+				}
+			},
+			"enumValue3": {
+				"htmlData": {
+					"html": "<p>{{$EFO_S_A?_T?|enumValue3}}</p>"
+				},
+				"templateRef": {
+					"S_A?_T?|enumValue3": "$EFM_selectedTopic.ontologyKey"
+				}
+			},
+			"enumValue4": {
+				"htmlData": {
+					"html": "<p>{{$EFO_S_A?_T?|enumValue4}}</p>"
+				},
+				"templateRef": {
+					"S_A?_T?|enumValue4": "$EFM_selectedTopic.ontologyKey"
+				}
+			},
+			"enumValue1a": {
+				"htmlData": {
+					"html": "<p>{{$EFO_S_A?_T?|enumValue1a}}</p>"
+				},
+				"templateRef": {
+					"S_A?_T?|enumValue1a": "$EFM_selectedTopic.ontologyKey"
+				}
+			},
+			"enumValue1b": {
+				"htmlData": {
+					"html": "<p>{{$EFO_S_A?_T?|enumValue1b}}</p>"
+				},
+				"templateRef": {
+					"S_A?_T?|enumValue1b": "$EFM_selectedTopic.ontologyKey"
+				}
+			},
+			"enumValue2a": {
+				"htmlData": {
+					"html": "<p>{{$EFO_S_A?_T?|enumValue2a}}</p>"
+				},
+				"templateRef": {
+					"S_A?_T?|enumValue2a": "$EFM_selectedTopic.ontologyKey"
+				}
+			},
+			"enumValue2b": {
+				"htmlData": {
+					"html": "<p>{{$EFO_S_A?_T?|enumValue2b}}</p>"
+				},
+				"templateRef": {
+					"S_A?_T?|enumValue2b": "$EFM_selectedTopic.ontologyKey"
+				}
+			},
+			"enumValue3a": {
+				"htmlData": {
+					"html": "<p>{{$EFO_S_A?_T?|enumValue3a}}</p>"
+				},
+				"templateRef": {
+					"S_A?_T?|enumValue3a": "$EFM_selectedTopic.ontologyKey"
+				}
+			},
+			"enumValue3b": {
+				"htmlData": {
+					"html": "<p>{{$EFO_S_A?_T?|enumValue3b}}</p>"
+				},
+				"templateRef": {
+					"S_A?_T?|enumValue3b": "$EFM_selectedTopic.ontologyKey"
+				}
+			},
+			"enumValue4a": {
+				"htmlData": {
+					"html": "<p>{{$EFO_S_A?_T?|enumValue4a}}</p>"
+				},
+				"templateRef": {
+					"S_A?_T?|enumValue4a": "$EFM_selectedTopic.ontologyKey"
+				}
+			},
+			"enumValue4b": {
+				"htmlData": {
+					"html": "<p>{{$EFO_S_A?_T?|enumValue4b}}</p>"
+				},
+				"templateRef": {
+					"S_A?_T?|enumValue4b": "$EFM_selectedTopic.ontologyKey"
+				}
+			},
+			"S9": {
+				"Stitle": {
+					"htmlData": {
+						"html": "{{$EFO_EG_A?|selecttv}}"
+					},
+					"text": "",
+					"templateRef": {
+						"EG_A?|selecttv": "$EFT_experimentalGroup.ontologyKey"
+					}
+				},
+				"Sbutton1": {
+					"htmlData": {
+						"html": "{{$EFO_S_A?_T?|buttVarName1}}"
+					},
+					"text": "",
+					"templateRef": {
+						"S_A?_T?|buttVarName1": "$EFM_selectedTopic.ontologyKey"
+					}
+				},
+				"Sbutton2": {
+					"htmlData": {
+						"html": "{{$EFO_S_A?_T?|buttVarName2}}"
+					},
+					"text": "",
+					"templateRef": {
+						"S_A?_T?|buttVarName2": "$EFM_selectedTopic.ontologyKey"
+					}
+				},
+				"Sbutton3": {
+					"htmlData": {
+						"html": "{{$EFO_S_A?_T?|buttVarName3}}"
+					},
+					"text": "",
+					"templateRef": {
+						"S_A?_T?|buttVarName3": "$EFM_selectedTopic.ontologyKey"
+					}
+				},
+				"Sbutton4": {
+					"htmlData": {
+						"html": "{{$EFO_S_A?_T?|buttVarName4}}"
+					},
+					"text": "",
+					"templateRef": {
+						"S_A?_T?|buttVarName4": "$EFM_selectedTopic.ontologyKey"
+					}
+				}
+			},
+			"S10": {
+				"Stitle": {
+					"htmlData": {
+						"html": "<p>{{$EFO_EG_A?|rqselectedText}}<br>{{$EFO_S_A?_T?_RQ?|rqselected}}{{$EFO_S_A?_T?|rqselectedall}}</p>"
+					},
+					"text": "",
+					"templateRef": {
+						"EG_A?|rqselectedText": "$EFT_experimentalGroup.ontologyKey",
+						"S_A?_T?_RQ?|rqselected": "$EFM_selectedRQ.ontologyKey",
+						"S_A?_T?|rqselectedall": "$EFM_selectedRQ.ontologyKey"
+					}
+				},
+				"Sbutton1": {
+					"htmlData": {
+						"html": "<p>{{$EFO_EG_BOTH|S10B1}}</p>"
+					},
+					"text": "",
+					"templateRef": {
+						"EG_BOTH|S10B1": "$EFT_experimentalGroup.ontologyKey"
+					}
+				},
+				"Sbutton2": {
+					"htmlData": {
+						"html": "<p>{{$EFO_EG_BOTH|S10B2}}</p>"
+					},
+					"text": "",
+					"templateRef": {
+						"EG_BOTH|S10B2": "$EFT_experimentalGroup.ontologyKey"
+					}
+				},
+				"Sbutton3": {
+					"htmlData": {
+						"html": "<p>{{$EFO_EG_BOTH|S10B3}}</p>"
+					},
+					"text": "",
+					"templateRef": {
+						"EG_BOTH|S10B3": "$EFT_experimentalGroup.ontologyKey"
+					}
+				},
+				"Sbutton4": {
+					"htmlData": {
+						"html": "<p>{{$EFO_EG_BOTH|S10B4}}</p>"
+					},
+					"text": "",
+					"templateRef": {
+						"EG_BOTH|S10B4": "$EFT_experimentalGroup.ontologyKey"
+					}
+				}
+			},
+			"S11": {
+				"Stitle": {
+					"htmlData": {
+						"html": "<p>{{$EFO_EG_A?|okselectedText}}<br><br>{{$EFO_S_A?_T?_RQ?|rqselected}}{{$EFO_S_A?_T?|rqselectedall}}</p>"
+					},
+					"text": "",
+					"templateRef": {
+						"EG_A?|okselectedText": "$EFT_experimentalGroup.ontologyKey",
+						"S_A?_T?_RQ?|rqselected": "$EFM_selectedRQ.ontologyKey",
+						"S_A?_T?|rqselectedall": "$EFM_selectedRQ.ontologyKey"
+					}
+				}
+			}
+		}
+	}
+}
