@@ -136,7 +136,7 @@ const diInstructionData = {
         scene2: {
             edges: {
                 prev: "scene1",
-                next: "scene3"
+                next: "scene5"
             }
         },
         scene3: {
@@ -173,7 +173,7 @@ const diInstructionData = {
         },
         scene5: {
             edges: {
-                prev: "scene4",
+                prev: "scene2",
                 next: "scene6"
             }
         },
