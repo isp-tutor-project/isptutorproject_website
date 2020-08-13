@@ -113,13 +113,18 @@ function homePage(userData) {
     console.log(userData);
     // refresh activity btns
     activityBtnsList.innerHTML = "";
-    let acts = activities.filter((act) => act.implemented)
+    let annotated = activities
+        .filter((act) => act.implemented)
         .filter((act) => userData.assignments.includes(act.id))
-        .map((act) => {
-            return Object.assign(act, {
-                completed: userData.completedAssignments.includes(act.id)
-            });
-        });
+        .map((act) => Object.assign({}, act, {
+            completed: userData.completedAssignments.includes(act.id)
+        }));
+    let acts;
+    if (true) {
+        acts = markFirstIncompleteAsActive(annotated);
+    } else {
+        acts = annotated.map(setAsActive);
+    }
 
     console.log(activities);
     console.log("acts", acts);
