@@ -127,17 +127,14 @@ function homePage(userData) {
     }
 
     console.log(activities);
+    console.log(annotated);
     console.log("acts", acts);
-    let foundIncomplete = false;
     for (let act of acts) {
         let url;
         let li = document.createElement("li");
         let btn = document.createElement("button");
-        if (foundIncomplete || act.completed) {
+        if (!act.active) {
             btn.classList.add("disabled")
-        }
-        if (!act.completed) {
-            foundIncomplete = true;
         }
         btn.classList.add("activity-button");
         btn.classList.add("btn");
