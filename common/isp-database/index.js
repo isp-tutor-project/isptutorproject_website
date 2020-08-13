@@ -1,7 +1,7 @@
 import { LocalStorageDB } from "./localStorageDB";
 import { FirestoreDB } from "./firestoreDB";
 
-export function getDBConnection(dbType) {
+export function getDBConnection(dbType, schema) {
     let db;
     switch(dbType) {
         case "firestore":
@@ -10,5 +10,5 @@ export function getDBConnection(dbType) {
         default:
             db = new LocalStorageDB();
     }
-    return db; 
+    return db;
 }

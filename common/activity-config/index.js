@@ -1,13 +1,12 @@
 export function getActivityConfiguration() {
+    let currentActivity = JSON.parse(localStorage.getItem("currentActivity"));
     let activityConfig = {
         userID: localStorage.getItem("userID"),
-        classCode: localStorage.getItem("classCode"),
         database: localStorage.getItem("database"),
         homepage: localStorage.getItem("homepage"),
-        activityKey: localStorage.getItem("currentActivity"),
-        features: (localStorage.getItem("currentActivityFeatures") || "")
-                  .split(":")
-                  .filter((item) => item !== "")
+        activityID: currentActivity.id,
+        activityKey: currentActivity.key,
+        activityFeatures: currentActivity.features.split(":").filter((item) => item !== "")
     };
     console.log(activityConfig);
     return activityConfig;

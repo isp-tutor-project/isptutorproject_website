@@ -1,3 +1,5 @@
+import { getDBConnection } from "@isptutorproject/isp-database";
+
 export const EVT_ON_VAR_CHANGE  = "CPAPI_VARIABLEVALUECHANGED";
 export const EVT_ON_SLIDE_ENTER = "CPAPI_SLIDEENTER";
 export const EVT_ON_SLIDE_EXIT  = "CPAPI_SLIDEEXIT";
@@ -10,34 +12,57 @@ const INITIAL_STATE = {
     variableChanges: []
 };
 
+// allows us to log to the parent windows console
+// NOTE: the parent window needs to have some companion
+// code to make this work
+const _log = console.log;
+// Override the console
+console.log = function (...rest) {
+    // window.parent is the parent frame that made this window
+    window.parent.postMessage(
+        {
+            source: 'iframe',
+            message: rest,
+        },
+        '*'
+    );
+    // Finally applying the console statements to saved instance earlier
+    _log.apply(console, arguments);
+};
+
+
 export class ISPCaptivateActivity {
-    constructor(cpAPI, db, variablesToTrack) {
+    constructor(activityConfig, cpAPI, variablesToTrack) {
+        console.log(activityConfig);
+        this.activityConfig = activityConfig;
+        this.db = getDBConnection(activityConfig.database);
+        this.userID = activityConfig.userID;
+        this.activityID = activityConfig.activityID;
+        this.activityKey = activityConfig.activityKey;
+        this.features = activityConfig.activityFeatures;
         // bind event handlers
         this.onSlideEnter = this.onSlideEnter.bind(this);
-        // this.onSlideTransition = this.onSlideTransition.bind(this);
         this.onQuestionSubmit = this.onQuestionSubmit.bind(this);
         this.onVarChange = this.onVarChange.bind(this);
+        // this.onSlideTransition = this.onSlideTransition.bind(this);
+        this.cp = document.Captivate;
         this.cpAPI = cpAPI;
         this.cpEventEmitter = this.cpAPI.getEventEmitter();
         this.variablesToTrack = variablesToTrack;
-        this.userID = localStorage.getItem("userID");
-        this.classCode = localStorage.getItem("classCode");
-        this.currentActivity = localStorage.getItem("currentActivity");
-        this.features = (localStorage.getItem("currentActivityFeatures") || "")
-                        .split(":").filter((item) => item !== "");
-        this.db = db;
-    }
+        }
 
 
     init() {
-        this.db.setCredentials(this.classCode, this.userID);
-        this.db.getActivityData(this.currentActivity)
-        .then((data) => {
-            if (typeof(data) === "undefined" || null === data) {
+        this.db.setCredentials(this.userID);
+        this.getAppData()
+        .then((state) => {
+            console.log("getAppData() returned:", state);
+            if (typeof(state) === "undefined" || null === state) {
                 // if no state exists in db, copy INITIAL_STATE
                 this.state = { ...INITIAL_STATE };
             } else {
-                this.state = data;
+                console.log("Restoring App State from database");
+                this.state = state;
             }
             this.showState();
             return this.state;
@@ -58,7 +83,24 @@ export class ISPCaptivateActivity {
 
     restoreCaptivateState() {
 
+        for (let varName of this.variablesToTrack) {
+            if (varName in this.state) {
+                console.log(`Restoring Captivate Variable "${varName}" to ${this.state[varName]}`);
+                this.setCaptivateVariable(varName, this.state[varName]);
+            }
+        }
+        if ("currentSlide" in this.state) {
+            console.log(`restoring to slide number ${this.state.currentSlide}`);
+            this.gotoSlide(this.state.currentSlide);
+        } else {
+            console.log("skipping slide 1");
+            this.gotoSlide(2);
+        }
+
+        this.restoreMultiStateObjects();
     }
+
+    restoreMultiStateObjects() {}
 
     showState() {
         console.log(this.state);
@@ -67,6 +109,7 @@ export class ISPCaptivateActivity {
     pushTransition(transition) {
         // console.log(transition);
         this.state.transitions.push(transition);
+        this.state.currentSlide = transition.slide_number;
         this.showState();
     }
 
@@ -110,8 +153,22 @@ export class ISPCaptivateActivity {
             slide_label: evt.cpData.lb,
             timestamp: Date.now()
         });
+        this.saveAppData();
     }
 
+    getAppData() {
+        console.log("looking for saved app data in database");
+        return this.db.getActivityData(this.activityKey)
+        .then((data) => {
+            console.log(data);
+            return data;
+        });
+    }
+
+    saveAppData() {
+        console.log("saving app data");
+        this.db.setActivityData(this.activityKey, this.state)
+    }
     // onSlideTransition(evt) {
     //     // console.log(evt);
     //     const transitionType = ("CPSlideEnter" === evt.cpName) ? "enter" : "exit";
@@ -134,6 +191,7 @@ export class ISPCaptivateActivity {
         const varName = evt.cpData.varName;
         const newVal = evt.cpData.newVal;
         const oldVal = evt.cpData.oldVal;
+        console.log(`Captivate variable ${varName} changed from: ${oldVal} to: ${newVal}`);
         this.state[varName] = newVal;
         this.pushVarChange({
             variable: varName,
@@ -144,12 +202,20 @@ export class ISPCaptivateActivity {
     }
 
     gotoSlide(slideNumber) {
+        // wierd. when animate reports the slide number you are on, they
+        // are one-based, but gotoSlide() is 0 based
         console.log("manually navigating to slide:", slideNumber);
-        this.cpAPI.gotoSlide(slideNumber);
+        this.cpAPI.gotoSlide(slideNumber-1);
     }
 
     setCaptivateVariable(varName, value) {
         this.cpAPI.setVariableValue(varName, value);
     }
 
+    goHomePage() {
+        // top instead of window because we're in an iframe
+        let url = this.activityConfig.homepage;
+        // console.log(url);
+        top.location.href = url;
+    }
 }

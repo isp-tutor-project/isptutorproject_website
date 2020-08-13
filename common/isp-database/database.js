@@ -1,12 +1,49 @@
+
+export const STUDY3 = {
+    conditionActivities: {
+        1: [
+            "matsPreTest",
+            "diPreTest",
+            "reSelectBL",
+            "hypoWEoneDir",
+            "diInstrGR",
+            "diCrystalGrowthTest",
+            "diPostTest",
+            "matsPostTest"
+        ],
+        2: [
+            "matsPreTest",
+            "diPreTest",
+            "reSelectBL",
+            "hypoWEbiDir",
+            "diInstrGR",
+            "diCrystalGrowthTest",
+            "diPostTest",
+            "matsPostTest"
+        ]
+    }
+};
+
 // abstract class - interface
 export class Database {
-    constructor() {
+    constructor(dbType) {
+        this.dbType = dbType;
+    }
+
+    setCredentials(userID) {
+        this.userID = userID;
+    }
+
+    lookupUserID(formData) {
 
     }
 
-    setCredentials(classCode, userID) {
-        this.classCode = classCode;
-        this.userID = userID;
+    loginUser(userID) {
+
+    }
+
+    registerUser(formData) {
+
     }
 
     getUserData() {

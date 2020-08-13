@@ -1,158 +1,194 @@
 export const activities = [
     {
-        label: "Science Attitudes - Initial",
+        id: "matsPreTest",
+        label: "\"MATS\" Science Survey (pre)",
         phase: "pre-training",
         storageInfo: {
-            currentActivity: "matsPreTest",
-            currentActivityFeatures: "FTR_WEB:FTR_PRE"
+            id: "matsPreTest",
+            key: "mats",
+            features: "FTR_WEB:FTR_PRE"
         },
         url: "",
         implemented: false
     },
     {
+        id: "diPreTest",
         label: "Data Interpretation Questions - Initial",
         phase: "pre-training",
         storageInfo: {
-            currentActivity: "diPreTest",
+            id: "diPreTest",
+            key: "diPreTest",
+            features: ""
         },
         url: "/apps/di-prepost/pretest.html",
         implemented: true
     },
     {
+        id: "rqSelectBL",
         label: "See research question and trial run of experiment",
         phase: "rqSelect",
         storageInfo: {
-            currentActivity: "rqSelect",
-            currentActivityFeatures: "FTR_WEB:FTR_BASELINE:FTR_NCCRYSTAL"
+            id: "rqSelectBL",
+            key: "rqSelect",
+            features: "FTR_WEB:FTR_BASELINE:FTR_NCCRYSTAL"
         },
         url: "/edforge/rqSelect.html",
         implemented: false
     },
     {
+        id: "rqSelectNC",
         label: "Research Question Selection (No Choice Crystal)",
         phase: "rqSelect",
         storageInfo: {
-            currentActivity: "rqSelect",
-            currentActivityFeatures: "FTR_WEB:FTR_NOCHOICE:FTR_NCCRYSTAL"
+            id: "rqSelectNC",
+            key: "rqSelect",
+            features: "FTR_WEB:FTR_NOCHOICE:FTR_NCCRYSTAL"
         },
         url: "/edforge/rqSelect.html",
         implemented: false
     },
     {
+        id: "rqSelectC",
         label: "Research Question Selection (Choice)",
         phase: "rqSelect",
         storageInfo: {
-            currentModule: "rqSelect",
-            currentActivityFeatures: "FTR_WEB:FTR_CHOICE"
+            id: "rqSelectC",
+            key:"rqSelect",
+            features: "FTR_WEB:FTR_CHOICE"
         },
         url: "/edforge/rqSelect.html",
         implemented: false
     },
     {
+        id: "hypoDefs",
         label: "Hypothesis (definition pages only)",
         phase: "reference",
         storageInfo: {
-            currentActivity: "hypoDefs",
-            currentActivityFeatures: "FTR_WEB:FTR_DEFS_ONLY"
+            id: "hypoDefs",
+            key: "hypoDefs",
+            features: "FTR_WEB:FTR_DEFS_ONLY"
         },
         url: "/apps/hypo-gr/",
         implemented: false
     },
     {
+        id: "hypoGRinitialHypoNoCptMap",
         label: "Hypothesis (Initial Hypo w/o CptMap)",
         phase: "hypo",
         storageInfo: {
-            currentActivity: "initialHypo",
-            currentActivityFeatures: "FTR_WEB:FTR_INITIAL_HYP:FTR_NOCPTMAP"
+            id: "hypoGRinitialHypoNoCptMap",
+            key: "initialHypo",
+            features: "FTR_WEB:FTR_INITIAL_HYP:FTR_NOCPTMAP"
         },
         url: "/apps/hypo-gr/",
         implemented: false
     },
     {
+        id: "hypoGRinitialHypoCptMap",
         label: "Hypothesis (Initial Hypo with CptMap)",
         phase: "hypo",
         storageInfo: {
-            currentActivity: "initialHypo",
-            currentActivityFeatures: "FTR_WEB:FTR_INITIAL_HYP"
+            id: "hypoGRinitialHypoCptMap",
+            key: "initialHypo",
+            features: "FTR_WEB:FTR_INITIAL_HYP"
         },
         url: "/apps/hypo-gr/",
         implemented: false
     },
     {
+        id: "hypoGRinitialHypoBiDir",
         label: "Hypothesis (Initial Hypo Bi-Directional)",
         phase: "hypo",
         storageInfo: {
-            currentActivity: "initialHypo",
-            currentActivityFeatures: "FTR_WEB:FTR_INITIAL_HYP:FTR_BI_DIR"
+            id: "hypoGRinitialHypoBiDir",
+            key: "initialHypo",
+            features: "FTR_WEB:FTR_INITIAL_HYP:FTR_BI_DIR"
         },
         url: "/apps/hypo-gr/",
         implemented: false
     },
     {
+        id: "hypoGRfinalHypo",
         label: "Hypothesis (final hypothesis)",
         phase: "hypo",
         storageInfo: {
-            currentActivity: "finalHypo",
-            currentActivityFeatures: "FTR_WEB:FTR_FINAL_HYP:FTR_NO_DEFS"
+            id: "hypoGRfinalHypo",
+            key: "finalHypo",
+            features: "FTR_WEB:FTR_FINAL_HYP:FTR_NO_DEFS"
         },
         url: "/apps/hypo-gr/",
         implemented: false
     },
     {
-        label: "Watch students talk about their hypotheses (one-directional)",
+        id: "hypoWEoneDir",
+        label: "Hypothesis Lesson",
         phase: "hypo",
         storageInfo: {
-            currentActivity: "hypoWE",
-            currentActivityFeatures: "FTR_ONE_DIRECTIONAL"
+            id: "hypoWEoneDir",
+            key: "hypoWE",
+            features: "FTR_ONE_DIRECTIONAL"
         },
         url: "/apps/hypo-we/",
         implemented: true
     },
     {
-        label: "Watch students talk about their hypotheses (bi-directional)",
+        id: "hypoWEbiDir",
+        label: "Hypothesis Lesson",
         phase: "hypo",
         storageInfo: {
-            currentActivity: "hypoWE",
-            currentActivityFeatures: "FTR_BI_DIRECTIONAL"
+            id: "hypoWEbiDir",
+            key: "hypoWE",
+            features: "FTR_BI_DIRECTIONAL"
         },
         url: "/apps/hypo-we/",
         implemented: true
     },
     {
-        label: "Lesson on Data Interpretation",
+        id: "diInstrGR",
+        label: "Data Interpretation Instruction",
         phase: "data-interpretation",
         storageInfo: {
-            currentActivity: "diInstruction"
+            id: "diInstrGR",
+            key: "diInstruction",
+            features: ""
         },
         url: "/apps/di-instr/",
         implemented: true
     },
     {
-        label: "Interpret results on crystal growth",
+        id: "diCrystalGrowthTest",
+        label: "Interpret final crystal growth results",
         phase: "post-training",
         storageInfo: {
-            currentActivity: "diCrysGr",
+            id: "diCrystalGrowthTest",
+            key: "diCrystalGrowthTest",
+            features: ""
         },
         url: "/apps/di-prepost/crystal.html",
         implemented: true
     },
     {
-        label: "Science Attitudes - Final",
-        phase: "post-training",
-        storageInfo: {
-            currentActivity: "matsPostTest",
-            currentActivityFeatures: "FTR_WEB:FTR_POST"
-        },
-        url: "",
-        implemented: false
-    },
-    {
+        id: "diPostTest",
         label: "Data Interpretation Questions - Final",
         phase: "post-training",
         storageInfo: {
-            currentActivity: "diPostTest",
+            id: "diPostTest",
+            key: "diPostTest",
+            features: ""
         },
         url: "/apps/di-prepost/posttest.html",
         implemented: true
+    },
+    {
+        id: "matsPostTest",
+        label: "\"MATS\" Science Survey (post)",
+        phase: "post-training",
+        storageInfo: {
+            id: "matsPostTest",
+            key: "mats",
+            features: "FTR_WEB:FTR_POST"
+        },
+        url: "",
+        implemented: false
     }
 ];

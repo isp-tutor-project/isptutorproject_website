@@ -6,7 +6,8 @@ export class SceneBasedApp {
         this.sceneData = appData.scenes;
         this.activityConfig = activityConfig;
         this.db = getDBConnection(activityConfig.database);
-        this.db.setCredentials(activityConfig.classCode, activityConfig.userID);
+        this.db.setCredentials(activityConfig.userID);
+        this.activityID = activityConfig.activityID
         this.activityKey = activityConfig.activityKey;
         this.defaultState = defaultInitialState;
 
@@ -79,8 +80,12 @@ export class SceneBasedApp {
 
     handleGoHomePage(event) {
         event.preventDefault();
-        // incase we're in an iframe
-        top.location.href = this.activityConfig.homepage;
+        // mark this activity as completed
+        this.db.markActivityAsCompleted(this.activityID)
+        .then(() => {
+            // using top instead of window in case we're in an iframe
+            top.location.href = this.activityConfig.homepage;
+        });
     }
 
     handlePrev(event) {
@@ -104,6 +109,7 @@ export class SceneBasedApp {
         console.log("starting");
         this.getAppState()
             .then((state) => {
+                console.log("returned from getAppState()", state);
                 if (null === state) {
                     console.log("no activity data in db. using initial data")
                     state = this.defaultState;
@@ -156,7 +162,7 @@ export class SceneBasedApp {
 
     saveAppState() {
         console.debug("Saving App State");
-        return this.db.setActivityData(this.activityKey, this.state);
+        this.db.setActivityData(this.activityKey, this.state);
     }
 
     createScene(sceneInfo) {

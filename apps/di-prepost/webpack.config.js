@@ -19,7 +19,7 @@ let cfg = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: "diprepost.bundle.css"
+            filename: "[name].bundle.css"
         }),
     ]
 };

@@ -1,4 +1,5 @@
-@import "~@isptutorproject/navbar/index.css";
+// @import "~@isptutorproject/navbar/index.css";
+// @use "~@isptutorproject/isp-site-styles/index.scss";
 
 * {
     box-sizing: border-box;
@@ -20,4 +21,8 @@ iframe {
     // 100% height - navbar height
     height: calc(100% - 36px);
     border: 0;
+}
+
+.hidden {
+    display: none;
 }

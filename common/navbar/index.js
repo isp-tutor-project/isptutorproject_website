@@ -34,10 +34,15 @@ export class NavBar {
         return homePage;
     }
 
-    redirectTo(url) {
+    redirectTo(url, allowRefresh=false) {
         // prevent refresh if already on this page
-        if (window.location.href !== url) {
+        let isSamePage = window.location.href === url;
+        if (!isSamePage) {
             window.location.href = url;
+        } else if (allowRefresh) {
+            window.location.reload();
+        } else {
+            console.log("same url but refresh disabled");
         }
     }
 
@@ -48,7 +53,7 @@ export class NavBar {
         let homePage = this.calcHomePage();
         // this does the actual signing out
         localStorage.clear();
-        this.redirectTo(homePage);
+        this.redirectTo(homePage, true);
     }
 
     displayActivityTitle(title) {

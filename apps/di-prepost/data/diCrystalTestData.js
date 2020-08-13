@@ -35,7 +35,7 @@ module.exports = {
     scenes: {
         start: {
             edges: {
-                next: "crystalResults1Intro"
+                next: "crystalIntro1"
             },
             customEnterActions: [
                 {
@@ -44,9 +44,15 @@ module.exports = {
                 }
             ]
         },
-        crystalResults1Intro: {
+        crystalIntro1: {
             edges: {
                 prev: "start",
+                next: "crystalResults1Intro"
+            }
+        },
+        crystalResults1Intro: {
+            edges: {
+                prev: "crystalIntro1",
                 next: "crystalResults1"
             }
         },
