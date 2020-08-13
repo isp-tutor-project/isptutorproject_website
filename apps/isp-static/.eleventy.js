@@ -5,7 +5,8 @@ const APPS = {
     "../di-prepost/dist": "apps/di-prepost",
     "../homepage/dist": ".",
     "../hypo-we/dist": "apps/hypo-we",
-    "../../common/isp-api/dist": "libs"
+    "../../common/isp-api/dist": "libs",
+    "../../edforge": "edforge"
 };
 
 // "../hypo-gr/dist": "apps/hypo-gr",
