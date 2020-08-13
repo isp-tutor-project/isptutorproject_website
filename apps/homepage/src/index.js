@@ -90,6 +90,23 @@ function loginPage(e) {
     loginForm.reset();
 }
 
+const isImplemented = (activity) => activity.implemented;
+const setAsActive   = (activity) => Object.assign({}, activity, { active: true });
+const setAsInactive = (activity) => Object.assign({}, activity, { active: false });
+
+function markFirstIncompleteAsActive(activities) {
+    let allInactive = activities.map(setAsInactive);
+    let idx = allInactive.findIndex((i) => !i.completed);
+    if (-1 === idx) {
+        return allInactive;
+    }
+    return [
+        ...allInactive.slice(0, idx),
+        setAsActive(allInactive[idx]),
+        ...allInactive.slice(idx + 1, allInactive.length)
+    ];
+}
+
 function homePage(userData) {
     activatePage("home_page");
     navbar.displayUser(userID);
