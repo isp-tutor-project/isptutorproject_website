@@ -113,20 +113,22 @@ function homePage(userData) {
     console.log(userData);
     // refresh activity btns
     activityBtnsList.innerHTML = "";
-    let annotated = activities
-        .filter((act) => act.implemented)
-        .filter((act) => userData.assignments.includes(act.id))
-        .map((act) => Object.assign({}, act, {
+    let implemented = activities.filter(isImplemented);
+    let assigned = implemented
+                    .filter((act) => userData.assignments.includes(act.id));
+
+    let annotated = assigned.map((act) => Object.assign({}, act, {
             completed: userData.completedAssignments.includes(act.id)
         }));
     let acts;
-    if (true) {
-        acts = markFirstIncompleteAsActive(annotated);
-    } else {
+    if (process.env.NODE_ENV === "development") {
         acts = annotated.map(setAsActive);
+    } else {
+        acts = markFirstIncompleteAsActive(annotated);
     }
-
     console.log(activities);
+    console.log(implemented);
+    console.log(assigned);
     console.log(annotated);
     console.log("acts", acts);
     for (let act of acts) {
