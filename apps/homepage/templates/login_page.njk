@@ -3,6 +3,17 @@ permalink: false
 tags: ["homePageSections"]
 ---
 {% import "userFormFlds.njk" as userForm %}
+
+<div class="directions">
+    <b>DIRECTIONS:</b> <button class="link toggle-button collapsed" data-target="login_directions"></button>
+    <div id="login_directions" class="hidden">
+        Please use the exact same information you used when you registered for your:
+        <ul>
+            <li>class code, first name, last name, and birthday month and day.</li>
+        </ul>
+    </div>
+</div>
+
 <button id="l-back-button" class="btn-md back-button">Back</button>
 <form class="border-container" id="login_form">
     {{ userForm.create("login") }}

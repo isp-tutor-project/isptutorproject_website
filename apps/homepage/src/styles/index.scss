@@ -242,3 +242,20 @@ button:hover {
 //   padding: 5px;
 //   font-size: small;
 // }
+
+.text-centered {
+  text-align: center;
+}
+
+.toggle-button::after {
+  content: "(hide)"
+}
+
+.toggle-button.collapsed::after {
+  content: "(show)"
+}
+
+.directions {
+  width: 80%;
+  margin-left: 10%;
+}

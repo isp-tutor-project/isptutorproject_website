@@ -3,6 +3,28 @@ permalink: false
 tags: ["homePageSections"]
 ---
 {% import "userFormFlds.njk" as userForm %}
+
+<div class="directions">
+    <b>DIRECTIONS FOR REGISTERING:</b> <button class="link toggle-button collapsed" data-target="register_directions"></button>
+    <div id="register_directions" class="hidden">
+        <p>
+            <b>Important:</b> Please record the information you enter below on a piece of paper so you can make sure to enter the same information when you sign back in.
+        </p>
+        <div>
+            <ul>
+                <li>For Class Code, leave this field blank  unless your teacher has given you one</li>
+                <li>Then enter the first two letters of your first name (e.g., “MI” for “Michael”)</li>
+                <li>And enter the last two letters of your last name (e.g., “SM” for “Smith”)</li>
+                <li>Then enter the Month and Day for your Birthday</li>
+                <li>Then click REGISTER to register your account.</li>
+                <li>After you have registered, you will not need to register again. Instead, when you return to do more work, you will click on the BLUE “User Sign-In” button.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
 <button id="r-back-button" class="back-button btn-md">Back</button>
 <form class="border-container" id="registration_form">
     {{ userForm.create("register") }}

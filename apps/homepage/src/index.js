@@ -34,6 +34,16 @@ function activatePage(pageID) {
     }
 }
 
+function handleToggle(evt) {
+    let btn = evt.target;
+    let divId = btn.dataset.target;
+    let div = document.getElementById(divId);
+    console.log(btn, div)
+    btn.classList.toggle("collapsed");
+    div.classList.toggle("hidden");
+
+}
+
 function getUserIDFromLocalStorage() {
     userID = localStorage.getItem("userID");
 }
@@ -216,6 +226,9 @@ function parseUserForm(prefix, form) {
 // ================================= Event Listeners ===========================
 // =============================================================================
 
+for (let tb of document.querySelectorAll("button.toggle-button")) {
+    tb.addEventListener("click", handleToggle);
+}
 
 loginBtn.addEventListener("click", loginPage);
 registerBtn.addEventListener("click", registrationPage);
