@@ -5725,12 +5725,12 @@ System.register("network/WebLogger", [], function (exports_59, context_59) {
                 updateTutorState(tutorID, tutorStateJSON) {
                     console.log(`WebLogger::updateTutorState("${tutorID}")`);
                     this.currTutorState = tutorStateJSON;
-                    ispAPI.saveAppData(this.currTutorState)
+                    ispAPI.saveAppData(JSON.parse(this.currTutorState))
                         .then(() => console.log("WebLogger::state persisted to db"));
                 }
                 tutorComplete() {
                     console.log("WebLogger::tutorComplete()");
-                    ispAPI.saveAppData(this.currTutorState)
+                    ispAPI.saveAppData(JSON.parse(this.currTutorState))
                         .then(() => ispAPI.saveAppComplete())
                         .then(() => ispAPI.goHomePage())
                         .catch((error) => console.error(error));
@@ -5847,6 +5847,7 @@ System.register("core/CEFTutorDoc", ["managers/CLogManager", "network/CURLLoader
                 }
                 launchTutor() {
                     this.hostModule = this.tutorGraph.hostModule;
+                    console.log("tutor has been launched and weblogger is about to start up");
                     EFLoadManager.nativeUserMgr = new WebLogger_1.WebLogger();
                     EFLoadManager.nativeUserMgr.setValues(EFLoadManager.efBootNode, EFLoadManager.efFeatures);
                     if (EFLoadManager.nativeUserMgr) {
