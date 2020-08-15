@@ -22,8 +22,8 @@ export class IspAPI {
         return this.db.getActivityData(this.activityConfig.activityKey, decodeJSON);
     }
 
-    saveAppData(jsonData) {
-        return this.db.setActivityData(this.activityConfig.activityKey, jsonData);
+    saveAppData(object) {
+        return this.db.setActivityData(this.activityConfig.activityKey, object);
     }
 
     saveAppComplete() {
