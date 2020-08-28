@@ -136,11 +136,31 @@ function homePage(userData) {
     } else {
         acts = markFirstIncompleteAsActive(annotated);
     }
-    console.log(activities);
-    console.log(implemented);
-    console.log(assigned);
-    console.log(annotated);
-    console.log("acts", acts);
+    // console.log(activities);
+    // console.log(implemented);
+    // console.log(assigned);
+    // console.log(annotated);
+    // console.log("acts", acts);
+
+    // hack to prepend always active, yet optional histogram lesson to
+    // activivies list after the current active activitiy has already been
+    //determined
+    const histogramActiity = {
+        id: "histogramLesson",
+        label: "Histogram Lesson - Please complete if you're not familiar with histograms",
+        phase: "pre-training",
+        storageInfo: {
+            id: "histogramLesson",
+            key: "histogramLesson",
+            features: ""
+        },
+        url: "https://isp-tutor-project.github.io/demo/games/histogram",
+        implemented: true,
+        active: true,
+        completed: false
+    };
+    acts.unshift(histogramActiity);
+
     for (let act of acts) {
         let url;
         let li = document.createElement("li");
