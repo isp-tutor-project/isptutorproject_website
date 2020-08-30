@@ -130,7 +130,7 @@ dist
 # python stuff
 **/__pycache__/
 *.pyc
-venv
+**/venv
 .mypy_cache/
 # sqlite
 db.sqlite3
