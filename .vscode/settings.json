@@ -1,6 +1,6 @@
 {
     "liveServer.settings.root": "/wwwroot",
-    "python.pythonPath": "/Users/aiying/anaconda/bin/python",
+    "python.pythonPath": "scripts/venv",
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true
 }
