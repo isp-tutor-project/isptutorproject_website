@@ -4,7 +4,7 @@ export const EVT_ON_VAR_CHANGE  = "CPAPI_VARIABLEVALUECHANGED";
 export const EVT_ON_SLIDE_ENTER = "CPAPI_SLIDEENTER";
 export const EVT_ON_SLIDE_EXIT  = "CPAPI_SLIDEEXIT";
 export const EVT_ON_QUES_SUBMIT = "CPAPI_QUESTIONSUBMIT";
-
+export const EVT_ON_INTERACTION_SUBMIT = "CPAPI_INTERACTIVEITEM_SUBMIT";
 
 const INITIAL_STATE = {
     transitions: [],
@@ -43,6 +43,7 @@ export class ISPCaptivateActivity {
         // bind event handlers
         this.onSlideEnter = this.onSlideEnter.bind(this);
         this.onQuestionSubmit = this.onQuestionSubmit.bind(this);
+        this.onInteractiveItemSubmit = this.onInteractiveItemSubmit.bind(this);
         this.onVarChange = this.onVarChange.bind(this);
         // this.onSlideTransition = this.onSlideTransition.bind(this);
         this.cp = document.Captivate;
@@ -135,6 +136,8 @@ export class ISPCaptivateActivity {
         //                                      this.onSlideTransition);
         this.cpEventEmitter.addEventListener(EVT_ON_QUES_SUBMIT,
                                              this.onQuestionSubmit);
+        this.cpEventEmitter.addEventListener(EVT_ON_INTERACTION_SUBMIT,
+                                             this.onInteractiveItemSubmit);
         for (let varName of this.variablesToTrack) {
             this.cpEventEmitter.addEventListener(
                 EVT_ON_VAR_CHANGE, this.onVarChange, varName
@@ -184,6 +187,12 @@ export class ISPCaptivateActivity {
     onQuestionSubmit(evt) {
         let data = Object.assign(evt.cpData, {timestamp: Date.now()});
         this.pushAnswer(data);
+    }
+
+    onInteractiveItemSubmit(evt) {
+        console.log("onInteractiveItemSubmit()")
+        let data = Object.assign(evt.cpData, {timestamp: Date.now()});
+        console.log(data);
     }
 
     onVarChange(evt) {
