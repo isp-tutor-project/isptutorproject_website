@@ -73,6 +73,9 @@ export class ISPCaptivateActivity {
             // setting up event handlers
             this.processFeatures();
             this.restoreCaptivateState();
+            // call hook to do app-specific stuff - primarily for
+            // development, but I suppose it could be useful for other stuff
+            this.appSpecificInit();
             this.setupEventHandlers();
         });
 
@@ -102,6 +105,10 @@ export class ISPCaptivateActivity {
     }
 
     restoreMultiStateObjects() {}
+
+    appSpecificInit() {
+
+    }
 
     showState() {
         console.log(this.state);
