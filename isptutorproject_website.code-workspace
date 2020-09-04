@@ -1,7 +1,7 @@
 {
 	"folders": [
 		{
-			"name": "✨ /home/ckot/projects/work/isptutorproject_website",
+			"name": "✨ isptutorproject_website",
 			"path": "."
 		}
 	],
@@ -10,6 +10,7 @@
 		"monorepoWorkspace.folders.regex.apps": "^apps",
 		"monorepoWorkspace.folders.regex.libs": "^common",
 		"monorepoWorkspace.folders.regex.tools": "^config",
-		"liveServer.settings.multiRootWorkspaceName": "✨ /home/ckot/projects/work/isptutorproject_website"
+		"liveServer.settings.multiRootWorkspaceName": "✨ isptutorproject_website",
+		"python.pythonPath": "scripts/venv"
 	}
 }
