@@ -117,6 +117,15 @@ class HypoWECaptivateActivity extends ISPCaptivateActivity {
             }
         }
     }
+
+    appSpecificInit() {
+        if ("development" == process.env.NODE_ENV) {
+            console.log("appSpecificInit() running in dev mode");
+            this.gotoSlide(129);
+        } else {
+            console.log("appSpecificInit() NOT running in dev mode");
+        }
+    }
 }
 
 
