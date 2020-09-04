@@ -11,18 +11,6 @@
 		{
 			"name": "📦 @isptutorproject/isp-captivate",
 			"path": "common/isp-captivate"
-		},
-		{
-			"name": "📦 @isptutorproject/isp-database",
-			"path": "common/isp-database"
-		},
-		{
-			"name": "📦 @isptutorproject/navbar",
-			"path": "common/navbar"
-		},
-		{
-			"name": "📦 @isptutorproject/build-captivate-app",
-			"path": "common/build-captivate-app"
 		}
 	],
 	"settings": {

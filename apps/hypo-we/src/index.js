@@ -5,7 +5,8 @@ import { NavBar } from "@isptutorproject/navbar";
 
 // lets the iframe log to our console via postMessage()
 window.addEventListener('message', function (response) {
-    // Make sure message is from our iframe, extensions like React dev tools might use the same technique and mess up our logs
+    // Make sure message is from our iframe, extensions like React dev tools
+    // might use the same technique and mess up our logs
     if (response.data && response.data.source === 'iframe') {
         // Do whatever you want here.
         console.log(...response.data.message);
