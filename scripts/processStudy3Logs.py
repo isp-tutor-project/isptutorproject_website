@@ -43,8 +43,6 @@ NA = "N/A"
 MATS_START_SCENE = "SMatsIntro"
 MATS_END_SCENE = "SSceneEnd"
 MATS_NUM_QUES = 14
-RQ_START_SCENE = "SSceneStart"
-RQ_END_SCENE = "SScene11"
 
 def mk_mats_hdr(which_test):
     return ["%sStartTime" % which_test] + ["%sEndTime" % which_test] + [
@@ -55,6 +53,15 @@ def mk_mats_hdr(which_test):
 MATS_PRE_HDR = mk_mats_hdr(MATS_PRE)
 MATS_POST_HDR = mk_mats_hdr(MATS_POST)
 
+RQ_START_SCENE = "SSceneStart"
+RQ_END_SCENE = "SScene11"
+
+HYPO_WE_NUM_SLIDES = 180
+HYPO_WE_QUESTION_IDS = [
+    "hotcold", "hotcold_likert", "incdec", "rel", "rel2", "hypo"
+]
+HYPO_WE_HDR = HYPO_WE_QUESTION_IDS + ["slide%dTime" % i
+                                      for i in range(1, HYPO_WE_NUM_SLIDES + 1)]
 
 def js_ts_2_str(ts):
     return asctime(localtime(int(str(ts)[0:10])))
@@ -117,6 +124,7 @@ def analyze_mats(test_key, data):
     # print(ret_val)
     return ret_val
 
+
 def analyze_rq_bl(data):
     ret_val = {
         "%sStartTime" % RQ_BL: NA,
@@ -146,11 +154,11 @@ def secs_2_hrs_min_secs(seconds):
 
 def analyze_hypo_we(data):
     user = data.userID
-    condition = data.condition
-    num_slides = 180
-    ret_val = {"slide%dTime" % i: NA for i in range(1, num_slides + 1)}
+    ret_val = {"slide%dTime" % i: NA for i in range(1, HYPO_WE_NUM_SLIDES + 1)}
     ret_val["startTime"] = NA
     ret_val["endTime"] = NA
+    for ques_id in HYPO_WE_QUESTION_IDS:
+        ret_val[ques_id] = NA
     # print(ret_val)
     try:
         app_data = data[HYPO_WE]
