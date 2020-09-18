@@ -1,0 +1,8 @@
+{
+  "name": "@isptutorproject/exp-design",
+  "version": "0.1.0",
+  "description": "Experimental Design Module",
+  "main": "src/index.js",
+  "license": "Proprietary",
+  "private": true
+}
