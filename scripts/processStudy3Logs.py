@@ -58,7 +58,7 @@ RQ_END_SCENE = "SScene11"
 
 HYPO_WE_NUM_SLIDES = 180
 HYPO_WE_QUESTION_IDS = [
-    "hotcold", "hotcold_likert", "incdec", "rel", "rel2", "hypo"
+    "hotcold", "hotcold_likert", "incdec", "rel", "rel2", "hypo2"
 ]
 HYPO_WE_HDR = HYPO_WE_QUESTION_IDS + ["slide%dTime" % i
                                       for i in range(1, HYPO_WE_NUM_SLIDES + 1)]
@@ -184,19 +184,28 @@ def analyze_hypo_we(data):
     for answer in answers:
         interaction_id, correct_ans, selected_ans = \
             answer.interactionID, answer.correctAnswer, answer.selectedAnswer
-        _unused1, _unused_2, ques_id, *rest = interaction_id.split("_")
-        is_openended = len(rest) > 0
-        is_likert = len(rest) == 2
-        if is_likert:
-            ques_id += "_likert"
-        is_correct = NA
-        if not is_openended:
-            is_correct = selected_ans == correct_ans
-        print("%s: %s\t\t%s: %s\t\t%s:%s" % (
-              user, interaction_id,
-              ques_id, selected_ans,
-              "%s_correctness" % ques_id, is_correct)
-        )
+        try:
+            _unused1, _unused_2, ques_id, *rest = interaction_id.split("_")
+            is_openended = len(rest) > 0
+            is_likert = len(rest) == 2
+            if is_likert:
+                ques_id += "_likert"
+            is_correct = NA
+            if not is_openended:
+                is_correct = selected_ans == correct_ans
+            print("%s: %s\t\t%s: %s\t\t%s:%s" % (
+                user, interaction_id,
+                ques_id, selected_ans,
+                "%s_correctness" % ques_id, is_correct)
+            )
+        except ValueError:
+            # this *shouldn't* happend for production users, but there was a
+            # brief period in dev where some interactionIDs weren't set, causing
+            # the split to not return enough values for the destrucured assignment
+            # if this happens, we'll catch and ignore, simply leaving the data
+            # for that question as N/A
+            pass
+
     # print(ret_val)
     # print(tot_time/ 60)
     # print(secs_2_hrs_min_secs(tot_time))
