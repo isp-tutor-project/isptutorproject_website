@@ -154,7 +154,8 @@ function homePage(userData) {
             key: "histogramLesson",
             features: ""
         },
-        url: "https://isp-tutor-project.github.io/demo/games/histogram.html",
+        // url: "https://isp-tutor-project.github.io/demo/games/histogram.html",
+        url: "/apps/histogram/index.html",
         implemented: true,
         active: true,
         completed: false
