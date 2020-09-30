@@ -1,4 +1,6 @@
-$my_path: "/apps/di-instr/";
+// $my_path: "/apps/di-instr/";
+
+$my_path: "/";
 
 @use "~@isptutorproject/isp-site-styles" with (
     $app_path: $my_path
@@ -237,19 +239,19 @@ ul.centered {
 .ready-to-answer-btn {
     /* image 209x81 */
     left: calc(100% - 221px);
-    content: url($my_path + "/img/readyToAnswerOrange.png");
+    content: url("/img/di-instr/readyToAnswerOrange.png");
 }
 .ready-to-answer-btn:hover {
-    content: url($my_path + "/img/readyToAnswerYellow.png");
+    content: url("/img/di-instr/readyToAnswerYellow.png");
 }
 
 .back-to-question-btn {
     /* image is 209x81 */
     left: 10px;
-    content: url($my_path + "/img/backToQuestionOrange.png");
+    content: url("/img/di-instr/backToQuestionOrange.png");
 }
 .back-to-question-btn:hover {
-    content: url($my_path + "/img/backToQuestionYellow.png");
+    content: url("/img/di-instr/backToQuestionYellow.png");
 }
 
 .form-wrapper {
