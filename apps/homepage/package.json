@@ -6,8 +6,8 @@
     "license": "UNLICENSED",
     "private": true,
     "scripts": {
-        "build": "npm run setup && rimraf dist && NODE_ENV=production DEBUG=false  webpack --mode=production && eleventy",
-        "watch": "npm run setup && rimraf dist && NODE_ENV=development DEBUG=true webpack --watch --mode=development & eleventy --watch",
+        "build": "rimraf dist && NODE_ENV=production DEBUG=false  webpack --mode=production",
+        "watch": "rimraf dist && NODE_ENV=development DEBUG=true webpack --watch --mode=development",
         "setup": "cd templates/_includes && ln -sfn ../../../../config/eleventy-config/sitewide_includes site && cd ../.. && cd templates/img && mkdir -p site && cp -r ../../../../config/eleventy-config/sitewide_images/* site && cd ../.."
     },
     "dependencies": {
@@ -17,8 +17,6 @@
         "@isptutorproject/snackbar": "0.1.0"
     },
     "devDependencies": {
-        "@11ty/eleventy": "0.11.0",
-        "@isptutorproject/eleventy-config": "0.1.0",
         "@isptutorproject/webpack-config": "0.1.0",
         "rimraf": "^3.0.2",
         "sass": "^1.26.5",
