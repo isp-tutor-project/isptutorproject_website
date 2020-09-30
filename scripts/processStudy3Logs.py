@@ -125,6 +125,17 @@ def analyze_mats(test_key, data):
     return ret_val
 
 
+def analyze_di(di_data):
+
+    start_ts = js_ts_2_str(di_data.events[0].timestamp)
+    end_ts = js_ts_2_str(di_data.events[-1].timestamp)
+
+    prev_ts = None
+    curr_ts = None
+    for evt in events:
+        if "APP_START" == evt.type:
+            curr_ts = evt.timestamp
+
 def analyze_rq_bl(data):
     ret_val = {
         "%sStartTime" % RQ_BL: NA,
@@ -230,6 +241,7 @@ def process_file(path):
     mats_pre_data = analyze_mats(MATS_PRE, data)
     rq_data = analyze_rq_bl(data)
     hypo_data = analyze_hypo_we(data)
+    di_pre_data = analyze_di_pre(data)
     # print(hypo_data)
     mats_post_data = analyze_mats(MATS_POST, data)
     # print(rq_data)
