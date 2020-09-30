@@ -1,38 +1,30 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    {% include "site/stdHead.njk" %}
-    <title>ISP Tutor</title>
-    <link rel="stylesheet" href="homepage.bundle.css">
-   </head>
-  <body>
+---
+title: "ISP Tutor"
+permalink: index.html
+---
+{% extends "base.njk" %}
+
+{% block cssbundle %}
+  <link rel="stylesheet" href="/bundles/homepage.bundle.css">
+{% endblock %}
+
+
+{#
+<body>
     {% include "site/navbar.njk" %}
     <header class="header">
       <img id="title_logo" src="img/site/isptutorlogo_narrow.png" alt="ISP Tutor">
-      {# 
-      <div>
-        <span id="sign_in_text"></span>
-        <span id="sign_out_region">
-          <button class="button btn-md hidden" id="sign_out_button">Sign Out</button>
-        </span>
-      </div> 
-      #}
     </header>
-    
-    <main>
-      {% for page in collections.homePageSections %}
-        <section id="{{page.fileSlug}}" class="page">
-          {{page.templateContent | safe }}
-        </section>
-      {% endfor %}
-    </main>
+  #}
 
-    {% include "site/stdFooter.njk" %}
-    
-    <!-- Snackbar -->
-    <div id="snackbar">Some text some message..</div>
+{% block main %}
+  {% for page in collections.homePageSections %}
+    <section id="{{page.fileSlug}}" class="page">
+      {{page.templateContent | safe }}
+    </section>
+  {% endfor %}
+{% endblock %}
 
-    <!-- Load the JS to control account registration system -->
-    <script src="./homepage.bundle.js"></script>
-   </body>
-</html>
+{% block bundles %}
+  <script src="/bundles/homepage.bundle.js"></script>
+{% endblock %}
