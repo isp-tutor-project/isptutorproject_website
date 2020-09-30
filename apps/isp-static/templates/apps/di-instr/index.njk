@@ -1,27 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        {% include "site/stdHead.njk" %}
-        <title> Data Interpretation Lesson </title>
-        <link rel="stylesheet" href="./di-instr.bundle.css" />
-    </head>
-    <body>
-        {% include "site/navbar.njk" %}
-        <main class="my-main">
-            {% for scene in collections.diInstrScenes | sortBySceneName %}
-                <section id="{{scene.fileSlug}}" class="scene ">
-                    <div class="scene-content">
-                        {{ scene.templateContent | safe }}
-                    </div>
-                </section>
-            {% endfor %}
-            <div id="scene_id_region"></div>
-            <img id="prev_btn" class="nav-btn prev-btn" />
-            <img id="next_btn" class="nav-btn next-btn" />
-            <img id="back_to_question_btn" class="long-arrow-btn back-to-question-btn" />
-            <img id="ready_to_answer_btn" class="long-arrow-btn ready-to-answer-btn" />
-        </main>
-        <div id="snackbar"></div>
-        <script src="./di-instr.bundle.js"></script>
-    </body>
-</html>
+---
+title: "Data Interpretation Lesson"
+permalink: /apps/di-instr/index.html
+---
+{% extends "base.njk" %}
+
+{% block cssbundle %}
+    <link rel="stylesheet" href="/bundles/di-instr.bundle.css" />
+{% endblock %}
+
+{% block main %}
+    {% for scene in collections.diInstrScenes | sortBySceneName %}
+        <section id="{{scene.fileSlug}}" class="scene ">
+            <div class="scene-content">
+                {{ scene.templateContent | safe }}
+            </div>
+        </section>
+    {% endfor %}
+    <div id="scene_id_region"></div>
+    <img id="prev_btn" class="nav-btn prev-btn" />
+    <img id="next_btn" class="nav-btn next-btn" />
+    <img id="back_to_question_btn" class="long-arrow-btn back-to-question-btn" />
+    <img id="ready_to_answer_btn" class="long-arrow-btn ready-to-answer-btn" />
+{% endblock %}
+
+{% block bundles %}
+    <script src="/bundles/di-instr.bundle.js"></script>
+{% endblock %}

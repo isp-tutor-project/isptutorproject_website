@@ -1,17 +1,17 @@
-{% extends "single-column.njk" %}
+{% extends "di-instr/single-column.njk" %}
 
-{% import "forms.njk" as forms %}
+{% import "di-instr/forms.njk" as forms %}
 
 {% block content %}
 
     <h1>Results: weight of crystal growth</h1>
 
-    <img src="img/11_Table_S35-36.png" class="img-centered" />
+    <img src="/img/di-instr/11_Table_S35-36.png" class="img-centered" />
 
     <p class="text-xl">
 
    Now, how sure are you that the independent variable (water temperature)--rather than experimenter errors or other random factors--caused this difference?
-        
+
     </p>
 
     {{ forms.radios_form(page, isVert=false) }}

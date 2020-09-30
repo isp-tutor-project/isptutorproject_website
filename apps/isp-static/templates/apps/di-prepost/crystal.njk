@@ -1,11 +1,11 @@
 ---
 title: "Crystal Growth Data Interpretation"
-permalink: crystal.html
+permalink: /apps/di-prepost/crystal.html
 ---
 {% extends "base.njk" %}
 
 {% block cssbundle %}
-    <link rel="stylesheet" href="dicrystal.bundle.css" >
+    <link rel="stylesheet" href="/bundles/dicrystal.bundle.css" >
 {% endblock %}
 
 {% block main %}
@@ -23,8 +23,11 @@ permalink: crystal.html
             </div>
         </section>
     {% endfor %}
+    <img id="prev_btn" class="nav-btn prev-btn" />
+    <img id="next_btn" class="nav-btn next-btn" />
+
 {% endblock %}
 
 {% block bundles %}
-    <script src="dicrystal.bundle.js"></script>
+    <script src="/bundles/dicrystal.bundle.js"></script>
 {% endblock %}
