@@ -8,15 +8,6 @@ permalink: index.html
   <link rel="stylesheet" href="/bundles/homepage.bundle.css">
 {% endblock %}
 
-
-{#
-<body>
-    {% include "site/navbar.njk" %}
-    <header class="header">
-      <img id="title_logo" src="img/site/isptutorlogo_narrow.png" alt="ISP Tutor">
-    </header>
-  #}
-
 {% block main %}
   {% for page in collections.homePageSections %}
     <section id="{{page.fileSlug}}" class="page">
