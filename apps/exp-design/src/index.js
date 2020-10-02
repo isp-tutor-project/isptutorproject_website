@@ -74,7 +74,7 @@ export const data = {
                 L3: {
                     name: "1/4 container"
                 }
-            }
+            },
             "DVg": "amount of crystal growth on a string in water",
             "DVst": "The weight of the crystal growth on the string after two weeks",
             "DVs": "weight of the crystal growth on the string after two weeks",
