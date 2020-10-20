@@ -32,7 +32,8 @@ export const activities = [
             key: "rqted",
             features: "FTR_WEB:FTR_BASELINE:FTR_NCCRYSTAL"
         },
-        url: "/edforge/rq_bl.html",
+        // url: "/edforge/rq_bl.html",
+        url: "/apps/rq-intro/",
         implemented: true
     },
     {

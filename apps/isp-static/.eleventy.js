@@ -6,6 +6,7 @@ const APPS = {
     "../homepage/dist": ".",
     "../hypo-we/dist": "apps/hypo-we",
     "../histogram/dist": "apps/histogram",
+    "../rq-intro/dist": "apps/rq-intro",
     "../../common/isp-api/dist": "libs",
     "../../edforge": "edforge"
 };
