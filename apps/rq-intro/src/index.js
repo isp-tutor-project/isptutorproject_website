@@ -125,7 +125,7 @@ let activityConfig = getActivityConfiguration();
 const activityData = require("../data/rqIntro.json");
 
 let navbar = new NavBar();
-navbar.displayActivityTitle("Give me a Title");
+navbar.displayActivityTitle("Crystal Growth Experiment Intro");
 navbar.displayUser(activityConfig.userID);
 
 let app = new RQIntroApp(
