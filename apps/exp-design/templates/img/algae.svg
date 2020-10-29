@@ -24,7 +24,7 @@
 	.st17{font-size:3.7335px;}
 	.st18{font-family:'Arial-BoldMT';}
 	.st19{font-size:16.1023px;}
-	/* .st20{display:none;} */
+	.st20{display:none;}
 	.st21{display:inline;}
 	.st22{font-family:'Thonburi-Bold';}
 	.st23{font-size:9.2012px;}
@@ -1577,12 +1577,12 @@
 	</g>
 </g>
 
-<g id="volume__low" transform="matrix( 1.149993896484375, 0, 0, 1.149993896484375, 167.75,318.65) " class="st20">
+<g id="volume__high" transform="matrix( 1.149993896484375, 0, 0, 1.149993896484375, 167.75,318.65) " class="st20">
 	<g class="st21">
 		<text transform="matrix(0.8696 0 0 0.8696 0 8.6502)" class="st12 st22 st23">VOL  65</text>
 	</g>
 </g>
-<g id="volume__high" transform="matrix( 1.149993896484375, 0, 0, 1.149993896484375, 167.75,318.65) ">
+<g id="volume__low" transform="matrix( 1.149993896484375, 0, 0, 1.149993896484375, 167.75,318.65) ">
 	<g>
 		<text transform="matrix(0.8696 0 0 0.8696 0 8.6502)" class="st12 st22 st23">VOL  10</text>
 	</g>
