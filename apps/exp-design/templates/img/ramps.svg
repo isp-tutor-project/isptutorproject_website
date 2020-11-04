@@ -7,7 +7,7 @@
 	.st1{fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
 	.st2{fill:none;stroke:#999999;stroke-linecap:round;stroke-linejoin:round;}
 	.st3{fill:none;stroke:#8F5601;stroke-linecap:round;stroke-linejoin:round;}
-	.st4{display:none;}
+	/* .st4{display:none;} */
 	.st5{display:inline;}
 	.st6{fill:#0099CC;}
 	.st7{fill:none;stroke:#333333;stroke-linecap:round;stroke-linejoin:round;}
@@ -112,6 +112,7 @@
 		</g>
 	</g>
 </g>
+
 <g id="slope__90" transform="matrix( 4.19232177734375, 0.0115814208984375, -0.0160675048828125, 4.55126953125, -876.35,1265.9) " class="st4">
 	<g class="st5">
 		<g id="Layer49_3_FILL">
@@ -125,7 +126,7 @@
 			<path class="st6" d="M377-112l-49.8-46.4C315.1-145.3,309-129.9,309-112L377-112z"/>
 		</g>
 	</g>
-	
+
 		<g transform="matrix( 0.238525390625, -0.0005950927734375, 0.0008392333984375, 0.2197113037109375, 211.05,-278.7) " class="st5">
 		<path id="Layer50_4_1_STROKES" class="st7" d="M309-112c0-17.9,6.1-33.3,18.3-46.4L377-112L309-112z"/>
 	</g>
@@ -146,11 +147,12 @@
 		</g>
 	</g>
 </g>
+
 <g id="glass__meter__90" transform="matrix( 0.9405364990234375, 0.844970703125, -0.92669677734375, 1.0315399169921875, 714.45,467.95) " class="st4">
 	<g transform="matrix( 1, 0, 0, 1, 0,0) " class="st5">
 		<g>
 			<g>
-				
+
 					<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-906.1786" y1="484.9722" x2="-523.0561" y2="484.9722" gradientTransform="matrix(5.8286 -8.3635 -9.1722 -13.69 9683.1123 -968.0212)">
 					<stop  offset="0" style="stop-color:#FFFFFF"/>
 					<stop  offset="0.5608" style="stop-color:#8ED2FF;stop-opacity:0.498"/>
@@ -170,7 +172,7 @@
 	<g transform="matrix( 1, 0, 0, 1, 0,0) " class="st5">
 		<g>
 			<g>
-				
+
 					<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="-573.788" y1="121.6888" x2="-190.6656" y2="121.6888" gradientTransform="matrix(8.1952 0.4883 0.5323 -17.7944 4421.3765 2423.1182)">
 					<stop  offset="0" style="stop-color:#FFFFFF"/>
 					<stop  offset="0.5608" style="stop-color:#8ED2FF;stop-opacity:0.498"/>
@@ -190,7 +192,7 @@
 	<g transform="matrix( 1, 0, 0, 1, 0,0) " class="st5">
 		<g>
 			<g>
-				
+
 					<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="-464.9845" y1="38.6437" x2="-81.862" y2="38.6437" gradientTransform="matrix(5.7367 3.8778 4.4365 -19.5631 2336.9253 2568.3005)">
 					<stop  offset="0" style="stop-color:#FFFFFF"/>
 					<stop  offset="0.5608" style="stop-color:#8ED2FF;stop-opacity:0.498"/>
@@ -210,7 +212,7 @@
 	<g transform="matrix( 1, 0, 0, 1, 0,0) " class="st5">
 		<g>
 			<g>
-				
+
 					<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="-111.1347" y1="81.0969" x2="271.9878" y2="81.0969" gradientTransform="matrix(6.8347 7.1374 7.859 -16.5368 42.2806 2119.3381)">
 					<stop  offset="0" style="stop-color:#FFFFFF"/>
 					<stop  offset="0.5608" style="stop-color:#8ED2FF;stop-opacity:0.498"/>
@@ -226,11 +228,12 @@
 		</g>
 	</g>
 </g>
+
 <g id="glass__half__90" transform="matrix( 0.9405364990234375, 0.844970703125, -0.92669677734375, 1.0315399169921875, 714.45,467.95) " class="st4">
 	<g transform="matrix( 1, 0, 0, 1, 0,0) " class="st5">
 		<g>
 			<g>
-				
+
 					<linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="-905.1911" y1="482.5581" x2="-572.041" y2="482.5581" gradientTransform="matrix(5.8286 -8.3635 -9.1722 -13.69 9683.1123 -968.0212)">
 					<stop  offset="0" style="stop-color:#FFFFFF"/>
 					<stop  offset="0.5608" style="stop-color:#8ED2FF;stop-opacity:0.498"/>
@@ -250,7 +253,7 @@
 	<g transform="matrix( 1, 0, 0, 1, 0,0) " class="st5">
 		<g>
 			<g>
-				
+
 					<linearGradient id="SVGID_6_" gradientUnits="userSpaceOnUse" x1="-567.5425" y1="120.3915" x2="-234.3926" y2="120.3915" gradientTransform="matrix(8.1952 0.4883 0.5323 -17.7944 4421.3765 2423.1182)">
 					<stop  offset="0" style="stop-color:#FFFFFF"/>
 					<stop  offset="0.5608" style="stop-color:#8ED2FF;stop-opacity:0.498"/>
@@ -270,7 +273,7 @@
 	<g transform="matrix( 1, 0, 0, 1, 0,0) " class="st5">
 		<g>
 			<g>
-				
+
 					<linearGradient id="SVGID_7_" gradientUnits="userSpaceOnUse" x1="-458.1017" y1="38.9341" x2="-124.9518" y2="38.9341" gradientTransform="matrix(5.7367 3.8778 4.4365 -19.5631 2336.9253 2568.3005)">
 					<stop  offset="0" style="stop-color:#FFFFFF"/>
 					<stop  offset="0.5608" style="stop-color:#8ED2FF;stop-opacity:0.498"/>
@@ -290,7 +293,7 @@
 	<g transform="matrix( 1, 0, 0, 1, 0,0) " class="st5">
 		<g>
 			<g>
-				
+
 					<linearGradient id="SVGID_8_" gradientUnits="userSpaceOnUse" x1="-106.7216" y1="81.4308" x2="226.4283" y2="81.4308" gradientTransform="matrix(6.8347 7.1374 7.859 -16.5368 42.2806 2119.3381)">
 					<stop  offset="0" style="stop-color:#FFFFFF"/>
 					<stop  offset="0.5608" style="stop-color:#8ED2FF;stop-opacity:0.498"/>
@@ -306,10 +309,11 @@
 		</g>
 	</g>
 </g>
+
 <g id="glass__quarter__90" transform="matrix( 1, 0, 0, 1, 0,0) " class="st4">
 	<g class="st5">
 		<g id="Layer37_0_FILL">
-			
+
 				<linearGradient id="SVGID_9_" gradientUnits="userSpaceOnUse" x1="705.675" y1="2805.8501" x2="721.625" y2="2805.8501" gradientTransform="matrix(1 0 0 -1 0 3348)">
 				<stop  offset="0" style="stop-color:#FFFFFF"/>
 				<stop  offset="0.5608" style="stop-color:#8ED2FF;stop-opacity:0.498"/>
@@ -328,7 +332,7 @@
 	<g transform="matrix( 1, 0, 0, 1, 0,0) " class="st5">
 		<g>
 			<g id="glassramp_0_Layer0_0_FILL">
-				
+
 					<linearGradient id="SVGID_10_" gradientUnits="userSpaceOnUse" x1="-5148" y1="2739.5" x2="-4814.7998" y2="2739.5" gradientTransform="matrix(1 0 0 -1 4981.5 2740.1001)">
 					<stop  offset="0" style="stop-color:#FFFFFF"/>
 					<stop  offset="0.5608" style="stop-color:#8ED2FF;stop-opacity:0.498"/>
@@ -347,7 +351,7 @@
 <g id="glass__quarter__30" transform="matrix( 1, 0, 0, 1, 0,0) " class="st4">
 	<g class="st5">
 		<g id="Layer39_0_FILL">
-			
+
 				<linearGradient id="SVGID_11_" gradientUnits="userSpaceOnUse" x1="315.6" y1="2692.1001" x2="719.4" y2="2692.1001" gradientTransform="matrix(1 0 0 -1 0 3348)">
 				<stop  offset="0" style="stop-color:#FFFFFF"/>
 				<stop  offset="0.5608" style="stop-color:#8ED2FF;stop-opacity:0.498"/>
@@ -365,7 +369,7 @@
 <g id="glass__quarter__15" transform="matrix( 1, 0, 0, 1, 0,0) " class="st4">
 	<g class="st5">
 		<g id="Layer40_0_FILL">
-			
+
 				<linearGradient id="SVGID_12_" gradientUnits="userSpaceOnUse" x1="271" y1="2637.75" x2="717.6" y2="2637.75" gradientTransform="matrix(1 0 0 -1 0 3348)">
 				<stop  offset="0" style="stop-color:#FFFFFF"/>
 				<stop  offset="0.5608" style="stop-color:#8ED2FF;stop-opacity:0.498"/>
@@ -380,6 +384,7 @@
 			c-0.3,0.1-0.6,0.3-0.9,0.4c-1.8,1.1-3,2.7-3.6,4.8s-0.3,4,0.8,5.7c0.8,1.5,2,2.6,3.5,3.3"/>
 	</g>
 </g>
+
 <g id="smooth__meter__90" transform="matrix( 1.197235107421875, 0.0040740966796875, -0.0044708251953125, 1.3183441162109375, 715.05,469.85) " class="st4">
 	<g transform="matrix( 1, 0, 0, 1, 0,0) " class="st5">
 		<g>
@@ -436,6 +441,7 @@
 		</g>
 	</g>
 </g>
+
 <g id="smooth__half__90" transform="matrix( 1.197235107421875, 0.0040740966796875, -0.0044708251953125, 1.3183441162109375, 715.05,469.85) " class="st4">
 	<g transform="matrix( 1, 0, 0, 1, 0,0) " class="st5">
 		<g>
@@ -492,6 +498,7 @@
 		</g>
 	</g>
 </g>
+
 <g id="smooth__quarter__90_1_" transform="matrix( 0.541259765625, 0.8406982421875, -0.8406982421875, 0.541259765625, 713.5,541.85) " class="st4">
 	<g transform="matrix( 1, 0, 0, 1, 0,0) " class="st5">
 		<g>
@@ -560,6 +567,7 @@
 		</g>
 	</g>
 </g>
+
 <g id="sandpaper__meter__90_1_" transform="matrix( 1.197235107421875, 0.0040740966796875, -0.0044708251953125, 1.3183441162109375, 715.05,469.85) " class="st4">
 	<g transform="matrix( 1, 0, 0, 1, 0,0) " class="st5">
 		<g>
@@ -616,6 +624,7 @@
 		</g>
 	</g>
 </g>
+
 <g id="sandpaper__half__90_1_" transform="matrix( 1.197235107421875, 0.0040740966796875, -0.0044708251953125, 1.3183441162109375, 715.05,469.85) " class="st4">
 	<g transform="matrix( 1, 0, 0, 1, 0,0) " class="st5">
 		<g>
@@ -672,6 +681,7 @@
 		</g>
 	</g>
 </g>
+
 <g id="sandpaper__quarter__90" transform="matrix( 1, 0, 0, 1, 713.65,542.15) " class="st4">
 	<g transform="matrix( 1, 0, 0, 1, 0,0) " class="st5">
 		<g>
@@ -728,6 +738,7 @@
 		</g>
 	</g>
 </g>
+
 <g id="rough__meter__90" transform="matrix( -0.0092926025390625, 2.05511474609375, -1.55255126953125, -0.0070343017578125, 717.5,466.95) " class="st4">
 	<g transform="matrix( 1, 0, 0, 1, 0,0) " class="st5">
 		<g>
@@ -1063,6 +1074,7 @@
 		</g>
 	</g>
 </g>
+
 <g id="rough__half__90_1_" transform="matrix( -0.0092926025390625, 2.05511474609375, -1.55255126953125, -0.0070343017578125, 717.5,466.95) " class="st4">
 	<g transform="matrix( 1, 0, 0, 1, 0,0) " class="st5">
 		<g>
@@ -1400,6 +1412,7 @@
 		</g>
 	</g>
 </g>
+
 <g id="rough__quarter__90" transform="matrix( -0.0105438232421875, 1.552490234375, -1.552490234375, -0.0105438232421875, 717.15,546.45) " class="st4">
 	<g transform="matrix( 1, 0, 0, 1, 0,0) " class="st5">
 		<g>
@@ -1733,6 +1746,7 @@
 		</g>
 	</g>
 </g>
+
 <g id="ball_golf_pink" class="st4">
 	<g transform="matrix( 1, 0, 0, 1, 0,0) " class="st5">
 		<g>
@@ -1770,13 +1784,13 @@
 		<g transform="matrix( 1, 0, 0, 1, 0,0) ">
 			<g>
 				<g id="golfballpink_0_Layer0_0_FILL_2_">
-					
+
 						<radialGradient id="SVGID_13_" cx="380.7984" cy="478.7403" r="27.2063" gradientTransform="matrix(0.7898 0.6134 0.6134 -0.7898 -197.4177 481.7133)" gradientUnits="userSpaceOnUse">
 						<stop  offset="0.3294" style="stop-color:#FFFF00"/>
 						<stop  offset="1" style="stop-color:#C1C002"/>
 					</radialGradient>
 					<path class="st37" d="M393.7,311.1L393.7,311.1c1.6-0.2,3.1-0.2,4.6-0.2C396.8,310.9,395.3,310.9,393.7,311.1z"/>
-					
+
 						<radialGradient id="SVGID_14_" cx="348.2297" cy="510.225" r="26.1" gradientTransform="matrix(1 0 0 -1 49.45 847.4)" gradientUnits="userSpaceOnUse">
 						<stop  offset="0" style="stop-color:#EEEEEE"/>
 						<stop  offset="0.7412" style="stop-color:#CD36BD"/>
@@ -2099,13 +2113,13 @@
 		<g transform="matrix( 1, 0, 0, 1, 0,0) ">
 			<g>
 				<g id="golfballpink_0_Layer0_0_FILL_1_">
-					
+
 						<radialGradient id="SVGID_15_" cx="379.5889" cy="479.8901" r="27.2063" gradientTransform="matrix(0.7898 0.6134 0.6134 -0.7898 -197.4177 481.7133)" gradientUnits="userSpaceOnUse">
 						<stop  offset="0.3294" style="stop-color:#FFFF00"/>
 						<stop  offset="1" style="stop-color:#C1C002"/>
 					</radialGradient>
 					<path class="st43" d="M393.5,309.5L393.5,309.5c1.6-0.2,3.1-0.2,4.6-0.2C396.6,309.2,395,309.3,393.5,309.5z"/>
-					
+
 						<radialGradient id="SVGID_16_" cx="347.9797" cy="511.875" r="26.35" gradientTransform="matrix(1 0 0 -1 49.45 847.4)" gradientUnits="userSpaceOnUse">
 						<stop  offset="0" style="stop-color:#EEEEEE"/>
 						<stop  offset="0.7412" style="stop-color:#FFFF00"/>
@@ -2391,18 +2405,19 @@
 		</g>
 	</g>
 </g>
+
 <g id="ball_ping_pink">
 	<g transform="matrix( 1, 0, 0, 1, 49.55,52) ">
 		<g transform="matrix( 1, 0, 0, 1, 0,0) ">
 			<g>
 				<g id="golfballpink_0_Layer0_0_FILL_4_">
-					
+
 						<radialGradient id="SVGID_17_" cx="380.7984" cy="478.7403" r="27.2063" gradientTransform="matrix(0.7898 0.6134 0.6134 -0.7898 -197.4177 481.7133)" gradientUnits="userSpaceOnUse">
 						<stop  offset="0.3294" style="stop-color:#FFFF00"/>
 						<stop  offset="1" style="stop-color:#C1C002"/>
 					</radialGradient>
 					<path class="st45" d="M393.7,311.1L393.7,311.1c1.6-0.2,3.1-0.2,4.6-0.2C396.8,310.9,395.3,310.9,393.7,311.1z"/>
-					
+
 						<radialGradient id="SVGID_18_" cx="348.2297" cy="510.225" r="26.1" gradientTransform="matrix(1 0 0 -1 49.45 847.4)" gradientUnits="userSpaceOnUse">
 						<stop  offset="0" style="stop-color:#EEEEEE"/>
 						<stop  offset="0.7412" style="stop-color:#CD36BD"/>
@@ -2569,13 +2584,13 @@
 		<g transform="matrix( 1, 0, 0, 1, 0,0) ">
 			<g>
 				<g id="golfballpink_0_Layer0_0_FILL_3_">
-					
+
 						<radialGradient id="SVGID_19_" cx="381.429" cy="477.5207" r="27.2063" gradientTransform="matrix(0.7898 0.6134 0.6134 -0.7898 -197.4177 481.7133)" gradientUnits="userSpaceOnUse">
 						<stop  offset="0.3294" style="stop-color:#FFFF00"/>
 						<stop  offset="1" style="stop-color:#C1C002"/>
 					</radialGradient>
 					<path class="st47" d="M393.5,312.5L393.5,312.5c1.6-0.2,3.1-0.2,4.6-0.2C396.6,312.2,395,312.3,393.5,312.5z"/>
-					
+
 						<radialGradient id="SVGID_20_" cx="347.9797" cy="508.875" r="26.35" gradientTransform="matrix(1 0 0 -1 49.45 847.4)" gradientUnits="userSpaceOnUse">
 						<stop  offset="0" style="stop-color:#EEEEEE"/>
 						<stop  offset="0.7412" style="stop-color:#FFFF00"/>
@@ -2737,11 +2752,12 @@
 		</g>
 	</g>
 </g>
+
 <g id="ball__rubber__pink" transform="matrix( 1, 0, 0, 1, 308.9,624.7) " class="st4">
 	<g transform="matrix( 1, 0, 0, 1, 0,0) " class="st5">
 		<g>
 			<g>
-				
+
 					<radialGradient id="SVGID_21_" cx="-27.1049" cy="4767.5557" r="27.2128" gradientTransform="matrix(0.797 -0.604 -0.604 -0.797 3037.4722 3550.8682)" gradientUnits="userSpaceOnUse">
 					<stop  offset="0.3294" style="stop-color:#FFFF00"/>
 					<stop  offset="1" style="stop-color:#C1C002"/>
@@ -2756,13 +2772,13 @@
 					c-0.4,0.3-0.9,0.6-1.2,0.9h-0.1c-0.8,0.6-1.5,1.2-2.2,1.9c-3.9,3.6-6.4,8-7.5,13.2c-0.2,0.7-0.3,1.5-0.4,2.3v0.1l24.9,3.4
 					L136.5-232.6 M157.3-248.4c-4.4-5.7-10.2-9.1-17.4-10.1l-3.4,25.9l1.2,0.2c0.1,0,0.2,0,0.3,0.1c7.9,1,15.8,2.1,23.7,3.2l0.6,0.1
 					C163.3-236.1,161.6-242.6,157.3-248.4z"/>
-				
+
 					<radialGradient id="SVGID_22_" cx="-26.4659" cy="4767.8286" r="29.9604" gradientTransform="matrix(0.7969 -0.6041 -0.6041 -0.7969 3035.6511 3548.2561)" gradientUnits="userSpaceOnUse">
 					<stop  offset="0" style="stop-color:#FF0000"/>
 					<stop  offset="1" style="stop-color:#760101"/>
 				</radialGradient>
 				<path class="st51" d="M136.4-232.5l0.1-0.1l-1.3-0.1L136.4-232.5z"/>
-				
+
 					<radialGradient id="SVGID_23_" cx="-27.1183" cy="4767.5508" r="32.3254" gradientTransform="matrix(0.797 -0.604 -0.604 -0.797 3037.6206 3550.8645)" gradientUnits="userSpaceOnUse">
 					<stop  offset="0.3765" style="stop-color:#FFFFFF"/>
 					<stop  offset="1" style="stop-color:#999999"/>
@@ -2932,12 +2948,12 @@
 	</g>
 </g>
 <g id="ball__rubber__yellow" class="st4">
-	
+
 		<g id="ball__rubber_x5F__x5F_yellow_1_" transform="matrix( 1.218505859375, -0.92352294921875, 0.92352294921875, 1.218505859375, 272.55,618.5) " class="st5">
 		<g transform="matrix( 1, 0, 0, 1, 0,0) ">
 			<g>
 				<g>
-					
+
 						<radialGradient id="SVGID_24_" cx="263.0935" cy="166.0322" r="17.8597" gradientTransform="matrix(36.3868 27.5773 27.5773 -36.3868 -13971.2637 -1262.7698)" gradientUnits="userSpaceOnUse">
 						<stop  offset="0.3294" style="stop-color:#FFFF00"/>
 						<stop  offset="1" style="stop-color:#C1C002"/>
@@ -2954,13 +2970,13 @@
 		<g transform="matrix( 1, 0, 0, 1, 0,0) ">
 			<g>
 				<g>
-					
+
 						<radialGradient id="SVGID_25_" cx="263.0951" cy="166.0317" r="19.6" gradientTransform="matrix(36.3868 27.5773 27.5773 -36.3868 -13971.2139 -1264.9697)" gradientUnits="userSpaceOnUse">
 						<stop  offset="0" style="stop-color:#FF0000"/>
 						<stop  offset="1" style="stop-color:#760101"/>
 					</radialGradient>
 					<path class="st55" d="M180.6-48.7L180.6-48.7l-0.5-0.5L180.6-48.7z"/>
-					
+
 						<radialGradient id="SVGID_26_" cx="263.0951" cy="166.0317" r="21.15" gradientTransform="matrix(36.3868 27.5773 27.5773 -36.3868 -13971.2139 -1262.7197)" gradientUnits="userSpaceOnUse">
 						<stop  offset="0.3765" style="stop-color:#FFFFFF"/>
 						<stop  offset="1" style="stop-color:#999999"/>
@@ -3126,6 +3142,7 @@
 		</g>
 	</g>
 </g>
+
 <g id="quarter__high__30" transform="matrix( 0.999847412109375, -0.0170135498046875, 0.0170135498046875, 0.999847412109375, 353,551.15) " class="st4">
 	<g transform="matrix( 1.346923828125, 0.863525390625, -0.690826416015625, 1.0775146484375, 16.4,22.35) " class="st5">
 		<g transform="matrix( 1, 0, 0, 1, 158.35,-16) ">
@@ -3141,7 +3158,7 @@
 			</g>
 		</g>
 	</g>
-	
+
 		<g id="Sgrab" transform="matrix( -0.83013916015625, 1.2857666015625, -1.28375244140625, -0.82879638671875, 20.55,30.65) " class="st5">
 		<g transform="matrix( 0.6431732177734375, 0, 0, 0.8929290771484375, 1.85,-0.3) ">
 			<g>
@@ -3226,7 +3243,7 @@
 			</g>
 		</g>
 	</g>
-	
+
 		<g id="gear_6_" transform="matrix( -0.83013916015625, 1.2857666015625, -1.28375244140625, -0.82879638671875, 20.55,30.65) " class="st5">
 		<g transform="matrix( 0.6431732177734375, 0, 0, 0.8929290771484375, 1.85,-0.3) ">
 			<g>
@@ -3311,7 +3328,7 @@
 			</g>
 		</g>
 	</g>
-	
+
 		<g id="gear_5_" transform="matrix( -0.83013916015625, 1.2857666015625, -1.28375244140625, -0.82879638671875, 20.55,30.65) " class="st5">
 		<g transform="matrix( 0.6431732177734375, 0, 0, 0.8929290771484375, 1.85,-0.3) ">
 			<g>
@@ -3465,6 +3482,7 @@
 		</g>
 	</g>
 </g>
+
 <g id="quarter__low__30" transform="matrix( 0.999847412109375, -0.0170135498046875, 0.0170135498046875, 0.999847412109375, 375,567.15) " class="st4">
 	<g transform="matrix( 1.346923828125, 0.863525390625, -0.690826416015625, 1.0775146484375, 16.4,22.35) " class="st5">
 		<g transform="matrix( 1, 0, 0, 1, 158.35,-16) ">
@@ -3480,7 +3498,7 @@
 			</g>
 		</g>
 	</g>
-	
+
 		<g id="gear_3_" transform="matrix( -0.83013916015625, 1.2857666015625, -1.28375244140625, -0.82879638671875, 20.55,30.65) " class="st5">
 		<g transform="matrix( 0.6431732177734375, 0, 0, 0.8929290771484375, 1.85,-0.3) ">
 			<g>
@@ -3565,7 +3583,7 @@
 			</g>
 		</g>
 	</g>
-	
+
 		<g id="gear_2_" transform="matrix( -0.83013916015625, 1.2857666015625, -1.28375244140625, -0.82879638671875, 20.55,30.65) " class="st5">
 		<g transform="matrix( 0.6431732177734375, 0, 0, 0.8929290771484375, 1.85,-0.3) ">
 			<g>
@@ -3650,7 +3668,7 @@
 			</g>
 		</g>
 	</g>
-	
+
 		<g id="gear_1_" transform="matrix( -0.83013916015625, 1.2857666015625, -1.28375244140625, -0.82879638671875, 20.55,30.65) " class="st5">
 		<g transform="matrix( 0.6431732177734375, 0, 0, 0.8929290771484375, 1.85,-0.3) ">
 			<g>
@@ -3735,7 +3753,7 @@
 			</g>
 		</g>
 	</g>
-	
+
 		<g id="gear" transform="matrix( -0.83013916015625, 1.2857666015625, -1.28375244140625, -0.82879638671875, 20.55,30.65) " class="st5">
 		<g transform="matrix( 0.6431732177734375, 0, 0, 0.8929290771484375, 1.85,-0.3) ">
 			<g>
@@ -3805,6 +3823,7 @@
 		</g>
 	</g>
 </g>
+
 <g id="half__high__30" transform="matrix( 0.999847412109375, -0.0170135498046875, 0.0170135498046875, 0.999847412109375, 353,551.15) " class="st4">
 	<g transform="matrix( 1.346923828125, 0.863525390625, -0.690826416015625, 1.0775146484375, 16.4,22.35) " class="st5">
 		<g transform="matrix( 1, 0, 0, 1, 158.35,-16) ">
@@ -3820,7 +3839,7 @@
 			</g>
 		</g>
 	</g>
-	
+
 		<g id="Sgrab_1_" transform="matrix( -0.83013916015625, 1.2857666015625, -1.28375244140625, -0.82879638671875, 20.55,30.65) " class="st5">
 		<g transform="matrix( 0.6431732177734375, 0, 0, 0.8929290771484375, 1.85,-0.3) ">
 			<g>
@@ -3906,7 +3925,7 @@
 			</g>
 		</g>
 	</g>
-	
+
 		<g id="gear_13_" transform="matrix( -0.83013916015625, 1.2857666015625, -1.28375244140625, -0.82879638671875, 20.55,30.65) " class="st5">
 		<g transform="matrix( 0.6431732177734375, 0, 0, 0.8929290771484375, 1.85,-0.3) ">
 			<g>
@@ -3991,7 +4010,7 @@
 			</g>
 		</g>
 	</g>
-	
+
 		<g id="gear_12_" transform="matrix( -0.83013916015625, 1.2857666015625, -1.28375244140625, -0.82879638671875, 20.55,30.65) " class="st5">
 		<g transform="matrix( 0.6431732177734375, 0, 0, 0.8929290771484375, 1.85,-0.3) ">
 			<g>
@@ -4076,7 +4095,7 @@
 			</g>
 		</g>
 	</g>
-	
+
 		<g id="gear_11_" transform="matrix( -0.83013916015625, 1.2857666015625, -1.28375244140625, -0.82879638671875, 20.55,30.65) " class="st5">
 		<g transform="matrix( 0.6431732177734375, 0, 0, 0.8929290771484375, 1.85,-0.3) ">
 			<g>
@@ -4146,6 +4165,7 @@
 		</g>
 	</g>
 </g>
+
 <g id="half__low__30" transform="matrix( 0.999847412109375, -0.0170135498046875, 0.0170135498046875, 0.999847412109375, 375,567.15) " class="st4">
 	<g transform="matrix( 1.346923828125, 0.863525390625, -0.690826416015625, 1.0775146484375, 16.4,22.35) " class="st5">
 		<g transform="matrix( 1, 0, 0, 1, 158.35,-16) ">
@@ -4161,7 +4181,7 @@
 			</g>
 		</g>
 	</g>
-	
+
 		<g id="gear_10_" transform="matrix( -0.83013916015625, 1.2857666015625, -1.28375244140625, -0.82879638671875, 20.55,30.65) " class="st5">
 		<g transform="matrix( 0.6431732177734375, 0, 0, 0.8929290771484375, 1.85,-0.3) ">
 			<g>
@@ -4246,7 +4266,7 @@
 			</g>
 		</g>
 	</g>
-	
+
 		<g id="gear_9_" transform="matrix( -0.83013916015625, 1.2857666015625, -1.28375244140625, -0.82879638671875, 20.55,30.65) " class="st5">
 		<g transform="matrix( 0.6431732177734375, 0, 0, 0.8929290771484375, 1.85,-0.3) ">
 			<g>
@@ -4331,7 +4351,7 @@
 			</g>
 		</g>
 	</g>
-	
+
 		<g id="gear_8_" transform="matrix( -0.83013916015625, 1.2857666015625, -1.28375244140625, -0.82879638671875, 20.55,30.65) " class="st5">
 		<g transform="matrix( 0.6431732177734375, 0, 0, 0.8929290771484375, 1.85,-0.3) ">
 			<g>
@@ -4416,7 +4436,7 @@
 			</g>
 		</g>
 	</g>
-	
+
 		<g id="gear_7_" transform="matrix( -0.83013916015625, 1.2857666015625, -1.28375244140625, -0.82879638671875, 20.55,30.65) " class="st5">
 		<g transform="matrix( 0.6431732177734375, 0, 0, 0.8929290771484375, 1.85,-0.3) ">
 			<g>
@@ -4486,6 +4506,7 @@
 		</g>
 	</g>
 </g>
+
 <g id="meter__high__30" transform="matrix( 0.999847412109375, -0.0170135498046875, 0.0170135498046875, 0.999847412109375, 353,551.15) " class="st4">
 	<g transform="matrix( 1.346923828125, 0.863525390625, -0.690826416015625, 1.0775146484375, 16.4,22.35) " class="st5">
 		<g transform="matrix( 1, 0, 0, 1, 158.35,-16) ">
@@ -4501,7 +4522,7 @@
 			</g>
 		</g>
 	</g>
-	
+
 		<g id="Sgrab_2_" transform="matrix( -0.83013916015625, 1.2857666015625, -1.28375244140625, -0.82879638671875, 20.55,30.65) " class="st5">
 		<g transform="matrix( 0.6431732177734375, 0, 0, 0.8929290771484375, 1.85,-0.3) ">
 			<g>
@@ -4587,7 +4608,7 @@
 			</g>
 		</g>
 	</g>
-	
+
 		<g id="gear_20_" transform="matrix( -0.83013916015625, 1.2857666015625, -1.28375244140625, -0.82879638671875, 20.55,30.65) " class="st5">
 		<g transform="matrix( 0.6431732177734375, 0, 0, 0.8929290771484375, 1.85,-0.3) ">
 			<g>
@@ -4671,7 +4692,7 @@
 			</g>
 		</g>
 	</g>
-	
+
 		<g id="gear_19_" transform="matrix( -0.83013916015625, 1.2857666015625, -1.28375244140625, -0.82879638671875, 20.55,30.65) " class="st5">
 		<g transform="matrix( 0.6431732177734375, 0, 0, 0.8929290771484375, 1.85,-0.3) ">
 			<g>
@@ -4756,7 +4777,7 @@
 			</g>
 		</g>
 	</g>
-	
+
 		<g id="gear_18_" transform="matrix( -0.83013916015625, 1.2857666015625, -1.28375244140625, -0.82879638671875, 20.55,30.65) " class="st5">
 		<g transform="matrix( 0.6431732177734375, 0, 0, 0.8929290771484375, 1.85,-0.3) ">
 			<g>
@@ -4826,6 +4847,7 @@
 		</g>
 	</g>
 </g>
+
 <g id="meter__low__30" transform="matrix( 0.999847412109375, -0.0170135498046875, 0.0170135498046875, 0.999847412109375, 375,567.15) " class="st4">
 	<g transform="matrix( 1.346923828125, 0.863525390625, -0.690826416015625, 1.0775146484375, 16.4,22.35) " class="st5">
 		<g transform="matrix( 1, 0, 0, 1, 158.35,-16) ">
@@ -4841,7 +4863,7 @@
 			</g>
 		</g>
 	</g>
-	
+
 		<g id="gear_17_" transform="matrix( -0.83013916015625, 1.2857666015625, -1.28375244140625, -0.82879638671875, 20.55,30.65) " class="st5">
 		<g transform="matrix( 0.6431732177734375, 0, 0, 0.8929290771484375, 1.85,-0.3) ">
 			<g>
@@ -4926,7 +4948,7 @@
 			</g>
 		</g>
 	</g>
-	
+
 		<g id="gear_16_" transform="matrix( -0.83013916015625, 1.2857666015625, -1.28375244140625, -0.82879638671875, 20.55,30.65) " class="st5">
 		<g transform="matrix( 0.6431732177734375, 0, 0, 0.8929290771484375, 1.85,-0.3) ">
 			<g>
@@ -5011,7 +5033,7 @@
 			</g>
 		</g>
 	</g>
-	
+
 		<g id="gear_15_" transform="matrix( -0.83013916015625, 1.2857666015625, -1.28375244140625, -0.82879638671875, 20.55,30.65) " class="st5">
 		<g transform="matrix( 0.6431732177734375, 0, 0, 0.8929290771484375, 1.85,-0.3) ">
 			<g>
@@ -5096,7 +5118,7 @@
 			</g>
 		</g>
 	</g>
-	
+
 		<g id="gear_14_" transform="matrix( -0.83013916015625, 1.2857666015625, -1.28375244140625, -0.82879638671875, 20.55,30.65) " class="st5">
 		<g transform="matrix( 0.6431732177734375, 0, 0, 0.8929290771484375, 1.85,-0.3) ">
 			<g>
@@ -5166,6 +5188,7 @@
 		</g>
 	</g>
 </g>
+
 <g id="all__gear" transform="matrix( 1.027099609375, 1.1346282958984375, -1.1346282958984375, 1.027099609375, 714.45,771.55) ">
 	<g transform="matrix( 1, 0, 0, 1, 0,0) ">
 		<g>
@@ -5182,4 +5205,5 @@
 		</g>
 	</g>
 </g>
+
 </svg>
