@@ -1,0 +1,322 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Algae</title>
+    <style>
+        div.inline {
+            display: inline-block;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="inline" style="width: 33%;">
+    </div>
+    <div class="inline" style="width: 33%">
+        <table>
+            <thead>
+                <tr>
+                    <th>Variable</th>
+                    <th>Condition 1</th>
+                    <th>Condition 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Balloon Color</th>
+                    <td>
+                        <select id="cond1__balloon_color">
+                            <option value="" selected disabled></option>
+                            <option value="gray">Light Gray</option>
+                            <option value="black">Black</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__balloon_color">
+                            <option value="" selected disabled></option>
+                            <option value="gray">Light Gray</option>
+                            <option value="black">Black</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Amount of Sunlight</th>
+                    <td>
+                        <select id="cond1__amt_sunlight">
+                            <option value="" selected disabled></option>
+                            <option value="full_sun">Full Sun</option>
+                            <option value="shade">Shade</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__amt_sunlight">
+                            <option value="" selected disabled></option>
+                            <option value="full_sun">Full Sun</option>
+                            <option value="shade">Shade</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Chair Type</th>
+                    <td>
+                        <select id="cond1__chair_type">
+                            <option value="" selected disabled></option>
+                            <option value="wooden">Wooden</option>
+                            <option value="canvas">Canvas</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__chair_type">
+                            <option value="" selected disabled></option>
+                            <option value="wooden">Wooden</option>
+                            <option value="canvas">Canvas</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Balloon Material</th>
+                    <td>
+                        <select id="cond1__balloon_material">
+                            <option value="" selected disabled></option>
+                            <option value="foil">Foil</option>
+                            <option value="latex">Latex</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__balloon_material">
+                            <option value="" selected disabled></option>
+                            <option value="foil">Foil</option>
+                            <option value="latex">Latex</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Balloon Shape</th>
+                    <td>
+                        <select id="cond1__balloon_shape">
+                            <option value="" selected disabled></option>
+                            <option value="sphere">Sphere</option>
+                            <option value="rectangle">Rectangle</option>
+                            <option value="oval">Oval</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__balloon_shape">
+                            <option value="" selected disabled></option>
+                            <option value="sphere">Sphere</option>
+                            <option value="rectangle">Rectangle</option>
+                            <option value="oval">Oval</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Balloon Size</th>
+                    <td>
+                        <select id="cond1__balloon_size">
+                            <option value="" selected disabled></option>
+                            <option value="sm">small (8 cm)</option>
+                            <option value="med">medium (16 cm)</option>
+                            <option value="lg">large (32 cm)</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__balloon_size">
+                            <option value="" selected disabled></option>
+                            <option value="sm">small (8 cm)</option>
+                            <option value="med">medium (16 cm)</option>
+                            <option value="lg">large (32 cm)</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Type of Gas</th>
+                    <td>
+                        <select id="cond1__gas_type">
+                            <option value="" selected disabled></option>
+                            <option value="helium">Helium</option>
+                            <option value="hydrogen">Hydrogen</option>
+                            <option value="argon">Argon</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__gas_type">
+                            <option value="" selected disabled></option>
+                            <option value="helium">Helium</option>
+                            <option value="hydrogen">Hydrogen</option>
+                            <option value="argon">Argon</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="inline" style="width: 33%">
+    </div>
+    <br>
+    <div class="inline">
+        <object id="cond1_img" width="700" data="./balloon.svg"></object>
+    </div>
+    <div class="inline">
+        <object id="cond2_img" width="700" data="./balloon.svg"></object>
+    </div>
+
+    <script>
+        let allSelectors, cond1, cond2, cond1Img, cond2Img, conds;
+        conds = {};
+
+        let balloon_color = ["gray", "black"];
+        let amt_sunlight = ["full_sun", "shade"];
+        let chair_type = ["wooden", "canvas"];
+        let music_type = ["jazz", "rock"];
+        let balloon_material = ["foil", "latex"];
+        let balloon_shape = ["sphere", "rectangle", "oval"];
+        let balloon_size = ["sm", "med", "lg"];
+        let gas_type = ["helium", "hydrogen", "argon"];
+
+        function getWater(cond) {
+            let water = `${cond.tank_shape}__${cond.amt_water}`
+        }
+
+        function getAllSelectors() {
+            let all = [];
+            amt_sunlight.forEach((val) => all.push(`amt_sunlight__${val}`));
+            chair_type.forEach((val) => all.push(`chair_type__${val}`));
+            gas_type.forEach((val) => all.push(`gas_type__${val}`));
+            for (let bmat of balloon_material) {
+                for (let bsize of balloon_size) {
+                    all.push(`${bmat}__${bsize}`);
+                }
+            }
+            for (let bshape of balloon_shape) {
+                for (let bcolor of balloon_color) {
+                    for (let bsize of balloon_size) {
+                        all.push(`${bshape}__${bcolor}__${bsize}`);
+                    }
+                }
+            }
+            return all;
+        }
+
+        function getSelectorForProp(cond, prop) {
+            return ("undefined" !== typeof(cond[prop])) ? `${prop}__${cond[prop]}` : null;
+        }
+        function getCompoundSelectorFromProps(cond, ...props) {
+            if (props.every((i) => cond[i])) {
+                let vals = props.map((p) => cond[p])
+                return vals.join("__");
+            }
+
+            //     // console.log(prop);
+            //     console.log(prop, cond[prop])
+            // }
+            return null;
+        }
+
+        function getSelectors(cond_name) {
+            let music_type = null;
+            let volume = null;
+            let cond = ("cond1" === cond_name) ? cond1 : cond2;
+            let curr = [];
+            for (let prop of ["amt_sunlight", "chair_type", "gas_type"]) {
+                curr.push(getSelectorForProp(cond, prop));
+            }
+            curr.push(getCompoundSelectorFromProps(cond, "balloon_shape", "balloon_color", "balloon_size"));
+            curr.push(getCompoundSelectorFromProps(cond, "balloon_material", "balloon_size"));
+            // let music_exposure = getSelectorForProp(cond, "music_exposure");
+            // if (music_exposure && "music_exposure__none" !== music_exposure) {
+            //     music_type = getSelectorForProp(cond, "music_type");
+            //     volume = getSelectorForProp(cond, "volume");
+            // }
+            // curr.push(music_exposure);
+            // curr.push(music_type);
+            // curr.push(volume);
+            // let music_type, volume;
+            // let music_exposure = `music_exposure__${cond.music_exposure}`;
+            // console.log(cond, "temp", getSelectorForProp(cond, "temp"))
+            // console.log(curr);
+            let tmp = curr.filter((i) => i !== null);
+            console.log(tmp);
+            return tmp;
+
+        }
+
+        function renderImage(whichImage) {
+            console.log(whichImage);
+            let doc = ("cond1" === whichImage) ? conds.cond1 : conds.cond2;
+            for (let sel of allSelectors) {
+                // console.log(sel);
+                let el = doc.getElementById(sel);
+                console.log(`i will hide ${!!el} => ${whichImage}.${sel}`);
+                // el.classList.add("hidden");
+                el.setAttribute("display", "none");
+                // console.log(el);
+            }
+            let currPropValues = getSelectors(whichImage);
+            for (let sel of currPropValues) {
+                // console.log(`attempting to show ${sel}`);
+                let el = doc.getElementById(sel);
+                el.setAttribute("display", "block");
+                // console.log(el);
+                // el.classList.remove("hidden");
+                // el.style.display = "block";
+                // console.log(el.style);
+            }
+            for (let sel of allSelectors) {
+                let el = doc.getElementById(sel);
+                console.log(el.id, el.getAttribute("display"), el);
+            }
+        }
+
+        function menuChanged(event) {
+            let id = event.target.id;
+            console.log(id);
+            let cond = id.substring(0, 5);
+            let prop = id.substring(7)
+            let val = event.target.value;
+            console.log(`condition: ${cond}  property: ${prop} changed to val: ${val}`);
+            if ("cond1" === cond) {
+                // console.log("BEFORE")
+                // console.log(cond1);
+                cond1[prop] = val;
+                // console.log("AFTER");
+                // console.log[cond1]
+            } else {
+                // console.log("BEFORE");
+                // console.log(cond2);
+                cond2[prop] = val;
+                // console.log("AFTER");
+                // console.log(cond2);
+            }
+            renderImage(cond);
+        }
+
+        window.addEventListener("DOMContentLoaded", () => {
+
+            cond1 = {}; cond2 = {};
+            allSelectors = getAllSelectors();
+            console.log(allSelectors);
+            cond1Img = document.getElementById("cond1_img");
+            cond2Img = document.getElementById("cond2_img");
+
+            cond1Img.addEventListener("load", (e) => {
+                conds.cond1 = cond1Img.contentDocument;
+            });
+            cond2Img.addEventListener("load", (e) => {
+                conds.cond2 = cond2Img.contentDocument;
+            });
+
+            // console.log(allSelectors);
+            // console.log("setting up event listeners...");
+            for (let sel of document.querySelectorAll("select")) {
+                sel.addEventListener("change", menuChanged);
+            }
+            // console.log("finished setting up event listeners");
+            // console.log("cond1", cond1);
+            // console.log("cond2", cond2);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,349 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Algae</title>
+    <style>
+        div.inline {
+            display: inline-block;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="inline" style="width: 20%;">
+    </div>
+    <div class="inline" style="width: 60%">
+        <table>
+            <thead>
+                <tr>
+                    <th>Variable</th>
+                    <th>Condition 1</th>
+                    <th>Condition 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Number of Honeybees in Bee Hive</th>
+                    <td>
+                        <select id="cond1__num_bees">
+                            <option value="" selected disabled></option>
+                            <option value="whole_hive">A whole hive</option>
+                            <option value="none">Zero</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__num_bees">
+                            <option value="" selected disabled></option>
+                            <option value="whole_hive">A whole hive</option>
+                            <option value="none">Zero</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Amt Sunlight</th>
+                    <td>
+                        <select id="cond1__amt_sunlight">
+                            <option value="" selected disabled></option>
+                            <option value="full">Full sunlight</option>
+                            <option value="partial">Partial sunlight</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__amt_sunlight">
+                            <option value="" selected disabled></option>
+                            <option value="full">Full sunlight</option>
+                            <option value="partial">Partial sunlight</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Amount of Fertilizer</th>
+                    <td>
+                        <select id="cond1__amt_fertilizer">
+                            <option value="" selected disabled></option>
+                            <option value="some">Some</option>
+                            <option value="none">None</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__amt_fertilizer">
+                            <option value="" selected disabled></option>
+                            <option value="some">Some</option>
+                            <option value="none">None</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Type of Water</th>
+                    <td>
+                        <select id="cond1__water_type">
+                            <option value="" selected disabled></option>
+                            <option value="rain">Rain water</option>
+                            <option value="tap">Tap water</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__water_type">
+                            <option value="" selected disabled></option>
+                            <option value="rain">Rain water</option>
+                            <option value="tap">Tap water</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Type of Soil</th>
+                    <td>
+                        <select id="cond1__soil_type">
+                            <option value="" selected disabled></option>
+                            <option value="peat_moss">Peat Moss</option>
+                            <option value="potting_soil">Potting soil</option>
+                            <option value="clay">Clay</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__soil_type">
+                            <option value="" selected disabled></option>
+                            <option value="peat_moss">Peat Moss</option>
+                            <option value="potting_soil">Potting soil</option>
+                            <option value="clay">Clay</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Type of Sunflower</th>
+                    <td>
+                        <select id="cond1__sunflower_type">
+                            <option value="" selected disabled></option>
+                            <option value="common">Common</option>
+                            <option value="pacino">Pacino</option>
+                            <option value="sunny_smile">Sunny Smile</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__sunflower_type">
+                            <option value="" selected disabled></option>
+                            <option value="common">Common</option>
+                            <option value="pacino">Pacino</option>
+                            <option value="sunny_smile">Sunny Smile</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Number of seedlings</th>
+                    <td>
+                        <select id="cond1__num_seedlings">
+                            <option value="" selected disabled></option>
+                            <option value="3">3</option>
+                            <option value="6">6</option>
+                            <option value="9">9</option>
+                            <option value="12">12</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__num_seedlings">
+                            <option value="" selected disabled></option>
+                            <option value="3">3</option>
+                            <option value="6">6</option>
+                            <option value="9">9</option>
+                            <option value="12">12</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Amount of Water</th>
+                    <td>
+                        <select id="cond1__amt_water">
+                            <option value="" selected disabled></option>
+                            <option value="1l_per_day">One liter per day</option>
+                            <option value="1l_every_other_day">One liter every other day</option>
+                            <option value="1l_per_week">One liter per week</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__amt_water">
+                            <option value="" selected disabled></option>
+                            <option value="1l_per_day">One liter per day</option>
+                            <option value="1l_every_other_day">One liter every other day</option>
+                            <option value="1l_per_week">One liter per week</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Type of Fertilizer</th>
+                    <td>
+                        <select id="cond1__fertilizer_type">
+                            <option value="" selected disabled></option>
+                            <option value="manure">Cow manure</option>
+                            <option value="wonder_grow">Wonder Grow</option>
+                            <option value="sunflower_fertilizer">Sunflower fertilizer</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__fertilizer_type">
+                            <option value="" selected disabled></option>
+                            <option value="manure">Cow manure</option>
+                            <option value="wonder_grow">Wonder Grow</option>
+                            <option value="sunflower_fertilizer">Sunflower fertilizer</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="inline" style="width: 20%">
+    </div>
+    <br>
+    <div class="inline">
+        <object id="cond1_img" width="500" data="./greenhouse.svg"></object>
+    </div>
+    <div class="inline">
+        <object id="cond2_img" width="500" data="./greenhouse.svg"></object>
+    </div>
+
+    <script>
+        let allSelectors, cond1, cond2, cond1Img, cond2Img, conds;
+        conds = {};
+
+        let num_bees = ["whole_hive", "none"];
+        let amt_sunlight = ["full", "partial"];
+        let amt_fertilizer = ["some", "none"];
+        let water_type = ["tap", "rain"];
+
+        let amt_water = ["1l_per_day", "1l_every_other_day", "1l_per_week"];
+
+        let soil_type = ["peat_moss", "potting_soil", "clay"];
+        let fertilizer_type = ["manure", "wonder_grow", "sunflower_fertilizer"];
+
+        let num_seedlings = ["3", "6", "9", "12"];
+        let sunflower_type = ["common", "pacino", "sunny_smile"];
+
+
+        function getWater(cond) {
+            let water = `${cond.tank_shape}__${cond.amt_water}`
+        }
+
+        function getAllSelectors() {
+            let all = [];
+            num_bees.forEach((val) => all.push(`num_bees__${val}`));
+            amt_sunlight.forEach((val) => all.push(`amt_sunlight__${val}`));
+            amt_fertilizer.forEach((val) => all.push(`amt_fertilizer__${val}`));
+            water_type.forEach((val) => all.push(`water_type__${val}`));
+            soil_type.forEach((val) => all.push(`soil_type__${val}`));
+            fertilizer_type.forEach((val) => all.push(`fertilizer_type__${val}`));
+            amt_water.forEach((val) => all.push(`amt_water__${val}`));
+            for (let st of sunflower_type) {
+                for (let ns of num_seedlings) {
+                    all.push(`${st}__${ns}`);
+                }
+            }
+            return all;
+        }
+
+        function getSelectorForProp(cond, prop) {
+            return ("undefined" !== typeof(cond[prop])) ? `${prop}__${cond[prop]}` : null;
+        }
+
+        function getCompoundSelectorFromProps(cond, ...props) {
+            if (props.every((i) => cond[i])) {
+                let vals = props.map((p) => cond[p])
+                return vals.join("__");
+            }
+            return null;
+        }
+
+        function getSelectors(cond_name) {
+            let cond = ("cond1" === cond_name) ? cond1 : cond2;
+            let curr = [];
+            for (let prop of [
+                "num_bees", "amt_sunlight", "water_type", "soil_type", "amt_water"
+                ]) {
+                curr.push(getSelectorForProp(cond, prop));
+            }
+            curr.push(getCompoundSelectorFromProps(cond, "sunflower_type", "num_seedlings"));
+            if ("some" === cond.amt_fertilizer) {
+                curr.push(getSelectorForProp(cond, "fertilizer_type"));
+            }
+            let tmp = curr.filter((i) => i !== null);
+            console.log(tmp);
+            return tmp;
+        }
+
+        function renderImage(whichImage) {
+            console.log(whichImage);
+            let doc = ("cond1" === whichImage) ? conds.cond1 : conds.cond2;
+            for (let sel of allSelectors) {
+                let el = doc.getElementById(sel);
+                if (!el) {
+                    console.error(`ERROR: unable to hide ${whichImage}.${sel}`);
+                    return;
+                }
+                el.setAttribute("display", "none");
+            }
+            let currPropValues = getSelectors(whichImage);
+            for (let sel of currPropValues) {
+                let el = doc.getElementById(sel);
+                if (!el) {
+                    console.error(`ERROR displaying ${whichImage}.${sel}`);
+                    return;
+                }
+                el.setAttribute("display", "block");
+            }
+            // for (let sel of allSelectors) {
+            //     let el = doc.getElementById(sel);
+            //     console.log(el.id, el.getAttribute("display"), el);
+            // }
+        }
+
+        function menuChanged(event) {
+            let id = event.target.id;
+            console.log(id);
+            let cond = id.substring(0, 5);
+            let prop = id.substring(7)
+            let val = event.target.value;
+            console.log(`condition: ${cond}  property: ${prop} changed to val: ${val}`);
+            if ("cond1" === cond) {
+                // console.log("BEFORE")
+                // console.log(cond1);
+                cond1[prop] = val;
+                // console.log("AFTER");
+                // console.log[cond1]
+            } else {
+                // console.log("BEFORE");
+                // console.log(cond2);
+                cond2[prop] = val;
+                // console.log("AFTER");
+                // console.log(cond2);
+            }
+            renderImage(cond);
+        }
+
+        window.addEventListener("DOMContentLoaded", () => {
+
+            cond1 = {}; cond2 = {};
+            allSelectors = getAllSelectors();
+            console.log(allSelectors);
+            cond1Img = document.getElementById("cond1_img");
+            cond2Img = document.getElementById("cond2_img");
+
+            cond1Img.addEventListener("load", (e) => {
+                conds.cond1 = cond1Img.contentDocument;
+            });
+            cond2Img.addEventListener("load", (e) => {
+                conds.cond2 = cond2Img.contentDocument;
+            });
+
+            // console.log(allSelectors);
+            // console.log("setting up event listeners...");
+            for (let sel of document.querySelectorAll("select")) {
+                sel.addEventListener("change", menuChanged);
+            }
+            // console.log("finished setting up event listeners");
+            // console.log("cond1", cond1);
+            // console.log("cond2", cond2);
+        });
+    </script>
+</body>
+
+</html>
