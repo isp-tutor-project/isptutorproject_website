@@ -624,21 +624,27 @@ export const data = {
         T2: {
             name: "Algae Reproduction",
             V1: {
-                name: "The Temperature of the Water",
+                label: "The Temperature of the Water",
+                value: "temp",
                 L1: {
-                    name: "Room Temperature"
+                    label: "Room Temperature",
+                    value: "cool"
                 },
                 L2: {
-                    name: "Warm"
+                    label: "Warm",
+                    value: "hot"
                 }
             },
             V2: {
-                name: "The Amount of Exposure to Music",
+                label: "The Amount of Exposure to Music",
+                value: "music_exposure",
                 L1: {
-                    name: "Constant Music"
+                    label: "Constant Music",
+                    value: "constant"
                 },
                 L2: {
-                    name: "No Music"
+                    label: "No Music",
+                    value: "none"
                 }
             },
             V3: {

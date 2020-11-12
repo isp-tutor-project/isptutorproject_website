@@ -4,5 +4,29 @@
   "description": "Experimental Design Module",
   "main": "src/index.js",
   "license": "Proprietary",
-  "private": true
+  "private": true,
+  "scripts": {
+    "build": "npm run setup && rimraf dist && node scripts/buildData.js && NODE_ENV=production DEBUG=false webpack --mode=production && eleventy",
+    "watch": "npm run setup && rimraf dist && node scripts/buildData.js && NODE_ENV=development DEBUG=false webpack --watch --mode=development & eleventy --watch",
+    "setup": "cd templates/_includes && ln -sfn ../../../../config/eleventy-config/sitewide_includes site && cd ../.. && cd templates/img && mkdir -p site && cp -r ../../../../config/eleventy-config/sitewide_images/* site && cd ../..",
+    "start": "eleventy --serve"
+  },
+  "dependencies": {
+    "@isptutorproject/activity-config": "0.1.0",
+    "@isptutorproject/isp-database": "0.1.0",
+    "@isptutorproject/isp-site-styles": "0.1.0",
+    "@isptutorproject/navbar": "0.1.0",
+    "@isptutorproject/scene-app-base": "0.1.0",
+    "@isptutorproject/snackbar": "0.1.0"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "0.11.0",
+    "@isptutorproject/eleventy-config": "0.1.0",
+    "@isptutorproject/webpack-config": "0.1.0",
+    "rimraf": "^3.0.2",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "webpack": "4.42.0",
+    "webpack-cli": "3.3.11"
+  }
 }

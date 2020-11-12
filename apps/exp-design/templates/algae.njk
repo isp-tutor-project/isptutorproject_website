@@ -1,20 +1,10 @@
-<!doctype html>
-<html>
+---
+permalink: algae.html
+---
+{% extends "base.njk" %}
 
-<head>
-    <title>Algae</title>
-    <style>
-        div.inline {
-            display: inline-block;
-        }
-
-    </style>
-</head>
-
-<body>
-    <div class="inline" style="width: 33%;">
-    </div>
-    <div class="inline" style="width: 33%">
+{% block content %}
+    <div style="margin: auto; width: fit-content;">
         <table>
             <thead>
                 <tr>
@@ -195,29 +185,28 @@
             </tbody>
         </table>
     </div>
-    <div class="inline" style="width: 33%">
-    </div>
     <br>
     <div class="inline">
-        <object id="cond1_img" width="700" data="./algae.svg"></object>
+        <object id="cond1_img" width="500" data="./img/algae.svg"></object>
     </div>
     <div class="inline">
-        <object id="cond2_img" width="700" data="./algae.svg"></object>
+        <object id="cond2_img" width="500" data="./img/algae.svg"></object>
     </div>
-
+{% endblock %}
+{% block code %}
     <script>
         let allSelectors, cond1, cond2, cond1Img, cond2Img, conds;
         conds = {};
 
-        let amt_co2 = ["a_lot", "none"];
-        let amt_sunlight = ["some", "none"];
-        let music_exposure = ["constant", "none"];
-        let music_type = ["jazz", "rock"];
-        let tank_material = ["acrylic", "glass", "plastic"];
-        let tank_shape = ["bubble", "cylindrical", "spherical", "cubic"]
-        let temp = ["cool", "hot"];
-        let volume = ["high", "low"];
-        let amt_water = ["low", "high", "med"];
+        let amt_co2 = ["a_lot", "none"];  //V3
+        let amt_sunlight = ["some", "none"];  //V4
+        let music_exposure = ["constant", "none"]; //V2
+        let music_type = ["jazz", "rock"];  //V8
+        let tank_material = ["acrylic", "glass", "plastic"]; //v7
+        let tank_shape = ["bubble", "cylindrical", "spherical", "cubic"]; // V5
+        let temp = ["cool", "hot"]; //V1
+        let volume = ["high", "low"]; //v9
+        let amt_water = ["low", "high", "med"]; //V6
 
         function getWater(cond) {
             let water = `${cond.tank_shape}__${cond.amt_water}`
@@ -287,27 +276,28 @@
             console.log(whichImage);
             let doc = ("cond1" === whichImage) ? conds.cond1 : conds.cond2;
             for (let sel of allSelectors) {
-                // console.log(sel);
                 let el = doc.getElementById(sel);
-                // console.log(`i will hide ${!!el} => ${whichImage}.${sel}`);
-                // el.classList.add("hidden");
+                if (!el) {
+                    console.error(`error hiding ${whichImage}.${sel}`);
+                    return;
+                }
                 el.setAttribute("display", "none");
-                // console.log(el);
             }
             let currPropValues = getSelectors(whichImage);
             for (let sel of currPropValues) {
-                // console.log(`attempting to show ${sel}`);
                 let el = doc.getElementById(sel);
+                if (!el) {
+                    console.error(`error showing ${whichImage}.${sel}`);
+                    return;
+                }
                 el.setAttribute("display", "block");
-                // console.log(el);
-                // el.classList.remove("hidden");
-                // el.style.display = "block";
-                // console.log(el.style);
             }
+            /*
             for (let sel of allSelectors) {
                 let el = doc.getElementById(sel);
                 console.log(el.id, el.getAttribute("display"), el);
             }
+            */
         }
 
         function menuChanged(event) {
@@ -357,6 +347,7 @@
             // console.log("cond2", cond2);
         });
     </script>
-</body>
-
-</html>
+{% endblock %}
+{% block bundles %}
+    <script src="./algae.bundle.js"></script>
+{% endblock %}
