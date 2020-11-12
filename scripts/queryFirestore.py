@@ -42,10 +42,9 @@ for doc in snapshot.get():
         data.get("FN"),
         data.get("LN"),
         data.get("MON"),
-        data.get("DAY")
+        data.get("DAY"),
+        data.get("completedAssignments")
     ]
-    matsPre.sceneState.SMatsIntro
-    # print(row)
     ALL_USERS.append(row)
 
 workbook = xlsxwriter.Workbook("all_user_metadata.xlsx")
