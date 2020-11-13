@@ -1,22 +1,9 @@
 ---
 permalink: soda.html
+title: "Experimental Design: Soda"
 ---
-<!doctype html>
-<html>
-
-<head>
-    <title>Algae</title>
-    <style>
-        div.inline {
-            display: inline-block;
-        }
-
-    </style>
-</head>
-
-<body>
-    <div class="inline" style="width: 20%;">
-    </div>
+{% extends "base.njk" %}
+{% block content %}
     <div class="inline" style="width: 60%">
         <table>
             <thead>
@@ -189,16 +176,15 @@ permalink: soda.html
             </tbody>
         </table>
     </div>
-    <div class="inline" style="width: 20%">
-    </div>
     <br>
     <div class="inline">
-        <object id="cond1_img" width="500" data="./soda.svg"></object>
+        <object id="cond1_img" width="500" data="./img/soda.svg"></object>
     </div>
     <div class="inline">
-        <object id="cond2_img" width="500" data="./soda.svg"></object>
+        <object id="cond2_img" width="500" data="./img/soda.svg"></object>
     </div>
-
+{% endblock %}
+{% block code %}
     <script>
         let allSelectors, cond1, cond2, cond1Img, cond2Img, conds;
         conds = {};
@@ -215,7 +201,8 @@ permalink: soda.html
 
         function getAllSelectors() {
             let all = [];
-            bottle_volume.forEach((val) => all.push(`bottle_volume__${val}`));
+            
+            bottle_volume.forEach((val) => all.push(`bottle_volume__${val}`));            
             water_type.forEach((val) => all.push(`water_type__${val}`));
             mint_surface.forEach((val) => all.push(`mint_surface__${val}`));
             amt_sweetener.forEach((val) => all.push(`amt_sweetener__${val}`));
@@ -230,6 +217,7 @@ permalink: soda.html
                     }
                 }
             }
+            
             return all;
         }
 
@@ -331,6 +319,6 @@ permalink: soda.html
             // console.log("cond2", cond2);
         });
     </script>
-</body>
-
-</html>
+{% endblock %}
+{% block bundles %}
+{% endblock}
