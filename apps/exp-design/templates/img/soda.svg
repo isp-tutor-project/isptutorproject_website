@@ -1247,7 +1247,7 @@
 		.st1231{fill:none;stroke:url(#Duplicate_Items_Folder_jarhighlights_0_Layer0_0_4_STROKES_3_);stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;}
 	.st1232{fill:#78D81D;fill-opacity:0.298;}
 </style>
-<g id="low_co2__quarter__1l" transform="matrix( 1, 0, 0, 1, 0,0) " class="st0">
+<g id="low_co2__quarter__1l" transform="matrix( 1, 0, 0, 1, 0,0) " >
 	<g class="st1">
 		<g id="Layer20_0_FILL">
 			<path class="st2" d="M303,404.1c0.1,0,0.2-0.1,0.4-0.1l-0.4-1V404.1 M309.8,292.8l-0.7,1.1c-0.2,0.7-0.4,1.4-0.6,2.1l1.1-2.1
@@ -1714,7 +1714,7 @@
 		</g>
 	</g>
 </g>
-<g id="low_co2__half__1l" class="st0">
+<g id="low_co2__half__1l" >
 	<g transform="matrix( 1, 0, 0, 1, 0,0) " class="st1">
 		<g>
 			<g id="Layer0_0_FILL_2_">
@@ -2925,7 +2925,7 @@
 		</g>
 	</g>
 </g>
-<g id="low_co2__quarter__2l" transform="matrix( 1, 0, 0, 1, 0,0) " class="st0">
+<g id="low_co2__quarter__2l" transform="matrix( 1, 0, 0, 1, 0,0) " >
 	<g class="st1">
 		<g id="Layer14_0_FILL">
 			
@@ -3412,7 +3412,7 @@
 		</g>
 	</g>
 </g>
-<g id="low_co2__half__2l" transform="matrix( 1, 0, 0, 1, 0,0) " class="st0">
+<g id="low_co2__half__2l" transform="matrix( 1, 0, 0, 1, 0,0) " >
 	<g class="st1">
 		<g id="Layer13_0_FILL">
 			
@@ -4032,7 +4032,7 @@
 		c0.2-0.7,0.8-1.3,1.7-0.9c0.7,0.3,1.4,0.5,2.1,0.8c-1.7-0.8-0.2-3.3,1.5-2.6c3.7,1.6,7.5,2.4,11.5,2.7h11.3c5.5-0.3,11-0.9,16.2-1
 		c0.8,0,1.2,0.4,1.4,1h10.4v-13h-179V400.9z"/>
 </g>
-<g id="low_co2__full__2l" class="st0">
+<g id="low_co2__full__2l" >
 	<g id="low_x5F_co2_x5F__x5F_full_x5F__x5F_1l_2_" class="st1">
 		<g transform="matrix( 2.599090576171875, 0, 0, 2.6337890625, 639.75,359.9) ">
 			<g transform="matrix( 0.7623291015625, 0, 0, 0.7623291015625, 0.25,-0.05) ">
@@ -4625,7 +4625,7 @@
 		</g>
 	</g>
 </g>
-<g id="high_co2__quarter__1l" transform="matrix( 1, 0, 0, 1, 0,0) " class="st0">
+<g id="high_co2__quarter__1l" transform="matrix( 1, 0, 0, 1, 0,0) " >
 	<g class="st1">
 		<g id="Layer17_0_FILL">
 			
@@ -5981,7 +5981,7 @@
 		</g>
 	</g>
 </g>
-<g id="high_co2__half__1l" transform="matrix( 1, 0, 0, 1, 0,0) " class="st0">
+<g id="high_co2__half__1l" transform="matrix( 1, 0, 0, 1, 0,0) " >
 	<g class="st1">
 		<g id="Layer16_0_FILL">
 			
@@ -7589,7 +7589,7 @@
 		</g>
 	</g>
 </g>
-<g id="high_co2__full__1l" transform="matrix( 1, 0, 0, 1, 0,0) " class="st0">
+<g id="high_co2__full__1l" transform="matrix( 1, 0, 0, 1, 0,0) " >
 	<g class="st1">
 		<g id="Layer15_0_FILL">
 			
@@ -9185,7 +9185,7 @@
 		</g>
 	</g>
 </g>
-<g id="high_co2__quarter__2l" transform="matrix( 1, 0, 0, 1, 0,0) " class="st0">
+<g id="high_co2__quarter__2l" transform="matrix( 1, 0, 0, 1, 0,0) " >
 	<g class="st1">
 		<g id="Layer11_0_FILL">
 			
@@ -10531,7 +10531,7 @@
 		</g>
 	</g>
 </g>
-<g id="high_co2__half__2l" transform="matrix( 1, 0, 0, 1, 0,0) " class="st0">
+<g id="high_co2__half__2l" transform="matrix( 1, 0, 0, 1, 0,0) " >
 	<g class="st1">
 		<g id="Layer10_0_FILL">
 			
@@ -12146,7 +12146,7 @@
 		</g>
 	</g>
 </g>
-<g id="high_co2__full__2l" transform="matrix( 1, 0, 0, 1, 0,0) " class="st0">
+<g id="high_co2__full__2l" transform="matrix( 1, 0, 0, 1, 0,0) " >
 	<g class="st1">
 		<g id="Layer9_0_FILL">
 			
@@ -13746,7 +13746,7 @@
 		</g>
 	</g>
 </g>
-<g id="bottle_volume__2l" transform="matrix( 1.0416259765625, 0, 0, 1, 373.8,332.95) " class="st0">
+<g id="bottle_volume__2l" transform="matrix( 1.0416259765625, 0, 0, 1, 373.8,332.95) " >
 	<g transform="matrix( 1, 0, 0, 1, 0,0) " class="st1">
 		<g>
 			<g id="test_0_Layer0_0_FILL">
@@ -13803,7 +13803,7 @@
 					V18c29.8,7.7,59.5,7.5,88.7-1l-0.1,2.7C44.9,3.3,43.4-13.2,38.3-29.7z"/>
 			</g>
 		</g>
-		<rect x="-79" y="22.2" class="st0" width="156.4" height="11.2"/>
+		<rect x="-79" y="22.2"  width="156.4" height="11.2"/>
 	</g>
 	<g transform="matrix( 1, 0, 0, 1, -19,-20.6) ">
 		<g>
