@@ -1,7 +1,7 @@
 import { Model } from "./model.js";
 
 const PROPS = [
-    "num_bees", "amt_sunlight", "amt_fertilizer", "water_type", "soil_type", "fertilizer_type", "amt_water",
+    "num_bees", "amt_sunlight", "water_type", "soil_type", "amt_water", "amt_fertilizer", "fertilizer_type",  
     "sunflower_type", "num_seedlings"
 ];
 
@@ -14,11 +14,11 @@ class Greenhouse extends Model {
         this.propAlternatives = {
             num_bees: ["whole_hive", "none"],
             amt_sunlight: ["full", "partial"],
-            amt_fertilizer: ["some", "none"],
             water_type: ["tap", "rain"],
             soil_type: ["peat_moss", "potting_soil", "clay"],
-            fertilizer_type: ["manure", "wonder_grow", "sunflower_fertilizer"],
             amt_water: ["1l_per_day", "1l_every_other_day", "1l_per_week"],
+            amt_fertilizer: ["some", "none"],
+            fertilizer_type: ["manure", "wonder_grow", "sunflower_fertilizer"],
             sunflower_type: ["common", "pacino", "sunny_smile"],
             num_seedlings: ["3", "6", "9", "12"]
         };
@@ -41,9 +41,14 @@ class Greenhouse extends Model {
     getSelectorsForProps() {
         // simple selectors
         let currSelectors = [];
-        for (let prop of PROPS.slice(0, 7)) {
+        // don't list amt_fertilizer or fertilizer_type
+        for (let prop of PROPS.slice(0, 5)) {
             let computed = this.getSelectorForProp(prop);
             currSelectors.push(computed);
+        }
+        // if amt_fertilizer != "none" show fertilizer_type
+        if (this.props.amt_fertilizer && "none" !== this.props.amt_fertilizer) {
+            currSelectors.push(this.getSelectorForProp("fertilizer_type"));
         }
         currSelectors.push(this.getCompoundSelectorFromProps("sunflower_type", "num_seedlings"));
         return currSelectors;
