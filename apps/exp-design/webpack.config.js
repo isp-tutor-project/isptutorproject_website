@@ -14,6 +14,7 @@ let cfg = {
         balloon: "./src/balloon.js",
         crystals: "./src/crystals.js",
         greenhouse: "./src/greenhouse.js",
+        icemelting: "./src/icemelting.js",
         sinking: "./src/sinking.js",
         soda: "./src/soda.js"
     },

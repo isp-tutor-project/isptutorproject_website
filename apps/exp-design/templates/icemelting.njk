@@ -1,23 +1,11 @@
 ---
 permalink: icemelting.html
+title: "Experimental Design: Algae Reproduction"
 ---
-<!doctype html>
-<html>
+{% extends "base.njk" %}
 
-<head>
-    <title>Algae</title>
-    <style>
-        div.inline {
-            display: inline-block;
-        }
-
-    </style>
-</head>
-
-<body>
-    <div class="inline" style="width: 20%;">
-    </div>
-    <div class="inline" style="width: 60%">
+{% block content %}
+    <div style="margin: auto; width: fit-content;">
         <table>
             <thead>
                 <tr>
@@ -174,8 +162,6 @@ permalink: icemelting.html
             </tbody>
         </table>
     </div>
-    <div class="inline" style="width: 20%">
-    </div>
     <br>
     <div class="inline">
         <object id="cond1_img" width="500" data="./img/icemelting.svg"></object>
@@ -183,194 +169,8 @@ permalink: icemelting.html
     <div class="inline">
         <object id="cond2_img" width="500" data="./img/icemelting.svg"></object>
     </div>
+{% endblock %}
 
-    <script>
-        let allSelectors, cond1, cond2, cond1Img, cond2Img, conds;
-        conds = {};
-
-        let ice_temp = ["0", "minus20"];
-        let water_temp = ["cool", "hot"];
-        let glass_pattern = ["striped", "plain"];
-        let glass_shape = ["short", "tall"];
-        let ice_type = ["tap", "distilled", "salt"];
-        let ice_cube_size = ["1cm", "standard", "5cm"];
-        let water_type = ["tap", "distilled", "salt"];
-        let amt_water = ["full", "half", "quarter"];
-
-        function getWater(cond) {
-            let water = `${cond.tank_shape}__${cond.amt_water}`
-        }
-
-        function getAllSelectors() {
-            let all = [];
-            ice_temp.forEach((val) => all.push(`ice_temp__${val}`));
-            glass_shape.forEach((val) => all.push(`glass_shape__${val}`));
-            // ice_type__ice_cube_size
-            for (let it of ice_type) {
-                for (let ics of ice_cube_size) {
-                    all.push(`${it}__${ics}`);
-                }
-            }
-            // glass_shape__amt_water__ice_type__ice_cube_size
-            for (let gs of glass_shape) {
-                for (let aw of amt_water) {
-                    for (let it of ice_type) {
-                        for (let ics of ice_cube_size) {
-                            all.push(`${gs}__${aw}__${it}__${ics}`);
-                        }
-                    }
-                }
-            }
-            // glass_shape__water_type__amt_water
-            for (let gs of glass_shape) {
-                for (let wt of water_type) {
-                    for (let aw of amt_water) {
-                        all.push(`${gs}__${wt}__${aw}`);
-                    }
-                }
-            }
-            // water_temp__glass_shape
-            for (let wt of water_temp) {
-                for (let gs of glass_shape) {
-                    all.push(`${wt}__${gs}`)
-                }
-            }
-            // glass_pattern__glass_shape
-            for (let gp of glass_pattern) {
-                for (let gs of glass_shape) {
-                    all.push(`${gp}__${gs}`);
-                }
-            }
-            return all;
-        }
-
-        function getSelectorForProp(cond, prop) {
-            return ("undefined" !== typeof(cond[prop])) ? `${prop}__${cond[prop]}` : null;
-        }
-        function getCompoundSelectorFromProps(cond, ...props) {
-            if (props.every((i) => cond[i])) {
-                let vals = props.map((p) => cond[p])
-                return vals.join("__");
-            }
-
-            //     // console.log(prop);
-            //     console.log(prop, cond[prop])
-            // }
-            return null;
-        }
-
-        function getSelectors(cond_name) {
-            let cond = ("cond1" === cond_name) ? cond1 : cond2;
-            let curr = [];
-            let bucket_ice_cubes
-            for (let prop of ["glass_shape", "ice_temp"]) {
-                curr.push(getSelectorForProp(cond, prop));
-            }
-            // bucket ice cubes
-            curr.push(getCompoundSelectorFromProps(cond, "ice_type", "ice_cube_size"));
-            // ice cube in glass
-            curr.push(getCompoundSelectorFromProps(cond, "glass_shape", "amt_water", "ice_type", "ice_cube_size"));
-            // water in glass
-            curr.push(getCompoundSelectorFromProps(cond, "glass_shape", "water_type", "amt_water"));
-            // glass water temp
-            curr.push(getCompoundSelectorFromProps(cond, "water_temp", "glass_shape"));
-            // glass pattern
-            curr.push(getCompoundSelectorFromProps(cond, "glass_pattern", "glass_shape"));
-
-            // curr.push(getCompoundSelectorFromProps(cond, "tank_shape", "amt_water"));
-            // let music_exposure = getSelectorForProp(cond, "music_exposure");
-            // if (music_exposure && "music_exposure__none" !== music_exposure) {
-            //     music_type = getSelectorForProp(cond, "music_type");
-            //     volume = getSelectorForProp(cond, "volume");
-            // }
-            // curr.push(music_exposure);
-            // curr.push(music_type);
-            // curr.push(volume);
-            // // let music_type, volume;
-            // // let music_exposure = `music_exposure__${cond.music_exposure}`;
-            // // console.log(cond, "temp", getSelectorForProp(cond, "temp"))
-            // // console.log(curr);
-            let tmp = curr.filter((i) => i !== null);
-            console.log(tmp);
-            return tmp;
-
-        }
-
-        function renderImage(whichImage) {
-            // console.log(whichImage);
-            let doc = ("cond1" === whichImage) ? conds.cond1 : conds.cond2;
-            for (let sel of allSelectors) {
-                let el = doc.getElementById(sel);
-                if (!el) {
-                    console.error(`error accessing ${whichImage}.${sel}`);
-                    break;
-                }
-                el.setAttribute("display", "none");
-            }
-            let currPropValues = getSelectors(whichImage);
-            for (let sel of currPropValues) {
-                let el = doc.getElementById(sel);
-                if (!el) {
-                    console.error(`error accessing ${whichImage}.${sel}`);
-                    break;
-                }
-                el.setAttribute("display", "block");
-
-            }
-            // for (let sel of allSelectors) {
-            //     let el = doc.getElementById(sel);
-            //     console.log(el.id, el.getAttribute("display"), el);
-            // }
-        }
-
-        function menuChanged(event) {
-            let id = event.target.id;
-            // console.log(id);
-            let cond = id.substring(0, 5);
-            let prop = id.substring(7)
-            let val = event.target.value;
-            // console.log(`condition: ${cond}  property: ${prop} changed to val: ${val}`);
-            if ("cond1" === cond) {
-                // console.log("BEFORE")
-                // console.log(cond1);
-                cond1[prop] = val;
-                // console.log("AFTER");
-                // console.log[cond1]
-            } else {
-                // console.log("BEFORE");
-                // console.log(cond2);
-                cond2[prop] = val;
-                // console.log("AFTER");
-                // console.log(cond2);
-            }
-            renderImage(cond);
-        }
-
-        window.addEventListener("DOMContentLoaded", () => {
-
-            cond1 = {}; cond2 = {};
-            allSelectors = getAllSelectors();
-            // console.log(allSelectors);
-            cond1Img = document.getElementById("cond1_img");
-            cond2Img = document.getElementById("cond2_img");
-
-            cond1Img.addEventListener("load", (e) => {
-                conds.cond1 = cond1Img.contentDocument;
-            });
-            cond2Img.addEventListener("load", (e) => {
-                conds.cond2 = cond2Img.contentDocument;
-            });
-
-            // console.log(allSelectors);
-            // console.log("setting up event listeners...");
-            for (let sel of document.querySelectorAll("select")) {
-                sel.addEventListener("change", menuChanged);
-            }
-            // console.log("finished setting up event listeners");
-            // console.log("cond1", cond1);
-            // console.log("cond2", cond2);
-        });
-    </script>
-</body>
-
-</html>
+{% block bundles %}
+    <script src="./icemelting.bundle.js"></script>
+{% endblock %}
