@@ -11,6 +11,9 @@ let cfg = {
     entry: {
         // expDesign: "./src/index.js",
         algae: "./src/algae.js",
+        balloon: "./src/balloon.js",
+        crystals: "./src/crystals.js",
+        greenhouse: "./src/greenhouse.js",
         sinking: "./src/sinking.js",
         soda: "./src/soda.js"
     },

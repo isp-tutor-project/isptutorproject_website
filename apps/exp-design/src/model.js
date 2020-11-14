@@ -49,8 +49,6 @@ export class Model {
     }
 
     getSelectorForProp(prop) {
-        // console.log("getSelectorForProp()", prop, this.props[prop]);
-        // console.log(JSON.stringify(this.props, null, 4));
         return (null === this.props[prop]) ? null : `${prop}__${this.props[prop]}` ;
     }
 
@@ -66,7 +64,7 @@ export class Model {
         for (let sel of this.allSelectors) {
             let el = this.imgDoc.getElementById(sel);
             if (!el) {
-                console.error(`error hiding ${whichImage}.${sel}`);
+                console.error(`error hiding ${this.cond}.${sel}`);
                 return;
             }
             el.setAttribute("display", "none");

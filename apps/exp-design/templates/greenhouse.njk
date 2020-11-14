@@ -1,23 +1,11 @@
 ---
 permalink: greenhouse.html
+title: "Experimental Design: Algae Reproduction"
 ---
-<!doctype html>
-<html>
+{% extends "base.njk" %}
 
-<head>
-    <title>Algae</title>
-    <style>
-        div.inline {
-            display: inline-block;
-        }
-
-    </style>
-</head>
-
-<body>
-    <div class="inline" style="width: 20%;">
-    </div>
-    <div class="inline" style="width: 60%">
+{% block content %}
+    <div style="margin: auto; width: fit-content;">
         <table>
             <thead>
                 <tr>
@@ -195,8 +183,6 @@ permalink: greenhouse.html
             </tbody>
         </table>
     </div>
-    <div class="inline" style="width: 20%">
-    </div>
     <br>
     <div class="inline">
         <object id="cond1_img" width="500" data="./img/greenhouse.svg"></object>
@@ -204,8 +190,10 @@ permalink: greenhouse.html
     <div class="inline">
         <object id="cond2_img" width="500" data="./img/greenhouse.svg"></object>
     </div>
-
+{% endblock %}
+{% block code %}
     <script>
+        /*
         let allSelectors, cond1, cond2, cond1Img, cond2Img, conds;
         conds = {};
 
@@ -346,7 +334,10 @@ permalink: greenhouse.html
             // console.log("cond1", cond1);
             // console.log("cond2", cond2);
         });
+        */
     </script>
-</body>
+{% endblock %}
 
-</html>
+{% block bundles %}
+    <script src="./greenhouse.bundle.js"></script>
+{% endblock %}
