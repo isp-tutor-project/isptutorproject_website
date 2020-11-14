@@ -10,7 +10,9 @@ const common = require("@isptutorproject/webpack-config/webpack.common");
 let cfg = {
     entry: {
         // expDesign: "./src/index.js",
-        algae: "./src/algae.js"
+        algae: "./src/algae.js",
+        sinking: "./src/sinking.js",
+        soda: "./src/soda.js"
     },
     output: {
         path: path.resolve(__dirname, 'dist'),

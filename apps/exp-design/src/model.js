@@ -1,49 +1,84 @@
 
 
 export class Model {
-    constructor(...props) {
+    constructor(cond, props) {
+        this.menuChanged = this.menuChanged.bind(this);
+        this.imageReady = this.imageReady.bind(this);
+        this.props = {};
         for (let prop of props) {
-            console.log(prop);
-            this[prop] = null;
+            // console.log(prop);
+            this.props[prop] = null;
+        }
+        // console.log(JSON.stringify(this.props, null, 4));
+        this.cond = cond;
+        this.area = null;
+        this.topic = null;
+        let imgSel = `${this.cond}_img`;
+        // console.log(imgSel);
+        this.imgEL = document.getElementById(imgSel);
+        // console.log(this.imgEL);
+        this.imgEL.addEventListener("load", this.imageReady);
+        this.imgDoc = null;
+        this.setupMenuListeners();
+    }
+
+    imageReady() {
+        this.allSelectors = this.calcAllSelectors();
+        this.imgDoc = this.imgEL.contentDocument;
+        this.renderImage();
+    }
+
+    setupMenuListeners() {
+        let sel = `select[id^="${this.cond}__"]`;
+        // console.log(sel);
+        for (let el of document.querySelectorAll(sel)) {
+            if (!el) {
+                console.error(`ERROR: can't add menu event listener for non-existant ${sel}`);
+            } else {
+                el.addEventListener("change", this.menuChanged);
+            }
         }
     }
 
-    getAllSelector() {
+    calcAllSelectors() {
         throw new Error("Unimplemented Method");
     }
 
-    getCurrentSelectors() {
+    getSelectorsForProps() {
         throw new Error("Unimplemented Method");
     }
 
-    getSelectorForProp(cond, prop) {
-        return ("undefined" !== typeof (cond[prop])) ? `${prop}__${cond[prop]}` : null;
+    getSelectorForProp(prop) {
+        // console.log("getSelectorForProp()", prop, this.props[prop]);
+        // console.log(JSON.stringify(this.props, null, 4));
+        return (null === this.props[prop]) ? null : `${prop}__${this.props[prop]}` ;
     }
 
-    getCompoundSelectorFromProps(cond, ...props) {
-        if (props.every((i) => cond[i])) {
-            let vals = props.map((p) => cond[p])
+    getCompoundSelectorFromProps(...props) {
+        if (props.every((i) => this.props[i] !== null)) {
+            let vals = props.map((p) => this.props[p]);
             return vals.join("__");
         }
         return null;
     }
 
-    renderImage(whichImage) {
-        console.log(whichImage);
-        let doc = ("cond1" === whichImage) ? conds.cond1 : conds.cond2;
-        for (let sel of allSelectors) {
-            let el = doc.getElementById(sel);
+    renderImage() {
+        for (let sel of this.allSelectors) {
+            let el = this.imgDoc.getElementById(sel);
             if (!el) {
                 console.error(`error hiding ${whichImage}.${sel}`);
                 return;
             }
             el.setAttribute("display", "none");
         }
-        let currPropValues = getSelectors(whichImage);
-        for (let sel of currPropValues) {
-            let el = doc.getElementById(sel);
+        
+        let currSelectors = this.getSelectorsForProps().filter((item) => item !== null);
+        console.log(currSelectors);
+
+        for (let sel of currSelectors) {
+            let el = this.imgDoc.getElementById(sel);
             if (!el) {
-                console.error(`error showing ${whichImage}.${sel}`);
+                console.error(`error showing ${this.cond}.${sel}`);
                 return;
             }
             el.setAttribute("display", "block");
@@ -56,6 +91,7 @@ export class Model {
         */
     }
 
+
     menuChanged(event) {
         let id = event.target.id;
         console.log(id);
@@ -63,21 +99,8 @@ export class Model {
         let prop = id.substring(7)
         let val = event.target.value;
         console.log(`condition: ${cond}  property: ${prop} changed to val: ${val}`);
-        if ("cond1" === cond) {
-            // console.log("BEFORE")
-            // console.log(cond1);
-            cond1[prop] = val;
-            // console.log("AFTER");
-            // console.log[cond1]
-        } else {
-            // console.log("BEFORE");
-            // console.log(cond2);
-            cond2[prop] = val;
-            // console.log("AFTER");
-            // console.log(cond2);
-        }
-        renderImage(cond);
+        this.props[prop] = val;
+        this.renderImage();
     }
-
 
 }
