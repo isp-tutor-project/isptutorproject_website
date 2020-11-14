@@ -7,14 +7,10 @@
 	.st1{fill:url(#SVGID_2_);}
 	.st2{fill:url(#SVGID_3_);}
 	.st3{fill:url(#SVGID_4_);}
-	
-		.st4{fill:none;stroke:url(#CDOJarAssets_jarhighlights_0_Layer0_0_1_STROKES_1_);stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;}
-	
-		.st5{fill:none;stroke:url(#CDOJarAssets_jarhighlights_0_Layer0_0_2_STROKES_1_);stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;}
-	
-		.st6{fill:none;stroke:url(#CDOJarAssets_jarhighlights_0_Layer0_0_3_STROKES_1_);stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;}
-	
-		.st7{fill:none;stroke:url(#CDOJarAssets_jarhighlights_0_Layer0_0_4_STROKES_1_);stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;}
+	.st4{fill:none;stroke:url(#CDOJarAssets_jarhighlights_0_Layer0_0_1_STROKES_1_);stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;}
+	.st5{fill:none;stroke:url(#CDOJarAssets_jarhighlights_0_Layer0_0_2_STROKES_1_);stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;}
+	.st6{fill:none;stroke:url(#CDOJarAssets_jarhighlights_0_Layer0_0_3_STROKES_1_);stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;}
+	.st7{fill:none;stroke:url(#CDOJarAssets_jarhighlights_0_Layer0_0_4_STROKES_1_);stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;}
 	.st8{fill:#FF9999;}
 	.st9{fill:#FFFF99;}
 	.st10{fill:#FDFFC7;}
@@ -248,7 +244,7 @@
 		</g>
 	</g>
 </g>
-<g id="container__glass" transform="matrix( 1, 0, 0, 1, 280.85,377.5) ">
+<g id="container_type__glass" transform="matrix( 1, 0, 0, 1, 280.85,377.5) ">
 	<g transform="matrix( 1, 0, 0, 1, 0,0) ">
 		<g>
 			<g id="glass_0_Layer0_0_FILL">
@@ -286,7 +282,7 @@
 		</g>
 	</g>
 </g>
-<g id="container__jar" transform="matrix( 2, 0, 0, 2, 257.5,386.1) ">
+<g id="container_type__jar" transform="matrix( 2, 0, 0, 2, 257.5,386.1) ">
 	<g transform="matrix( 1, 0, 0, 1, 0,0) ">
 		<g>
 			<g id="CDOJarAssets_jarnew_0_Layer0_0_FILL">
@@ -534,7 +530,7 @@
 		</g>
 	</g>
 </g>
-<g id="container__mug" transform="matrix( 1, 0, 0, 1, 280.85,376.5) ">
+<g id="container_type__mug" transform="matrix( 1, 0, 0, 1, 280.85,376.5) ">
 	<g transform="matrix( 1, 0, 0, 1, 0,0) ">
 		<g>
 			<g>
@@ -1620,7 +1616,7 @@
 		</g>
 	</g>
 </g>
-<g id="water_amt__full" transform="matrix( 2, 0, 0, 2, 280.6,412.4) ">
+<g id="amt_water__full" transform="matrix( 2, 0, 0, 2, 280.6,412.4) ">
 	<g transform="matrix( 0.905517578125, 0, 0, 0.905517578125, -245.15,-215.95) ">
 		<g>
 			<g id="CDOJarAssets_distilledwater_0_Layer0_0_FILL">
@@ -1636,7 +1632,7 @@
 		</g>
 	</g>
 </g>
-<g id="water_amt__half" transform="matrix( 2, 0, 0, 2, 280.6,438.7) ">
+<g id="amt_water__half" transform="matrix( 2, 0, 0, 2, 280.6,438.7) ">
 	<g transform="matrix( 1, 0, 0, 1, 0,0) ">
 		<g transform="matrix( 1, 0, 0, 1, 0,0) ">
 			<g>
@@ -1652,7 +1648,7 @@
 		</g>
 	</g>
 </g>
-<g id="water_amt__quarter" transform="matrix( 1, 0, 0, 1, 0,0) ">
+<g id="amt_water__quarter" transform="matrix( 1, 0, 0, 1, 0,0) ">
 	<g>
 		<g id="Layer12_0_FILL">
 			<path class="st33" d="M174.1,554.1c4.1,3.1,9.3,5.4,15.7,6.7c3,0.7,8.8,1.5,17.5,2.6c3.1,0.3,9.1,1.1,17.9,2.4
