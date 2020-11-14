@@ -1,23 +1,11 @@
 ---
 permalink: ramps.html
+title: "Experimental Design: Algae Reproduction"
 ---
-<!doctype html>
-<html>
+{% extends "base.njk" %}
 
-<head>
-    <title>Algae</title>
-    <style>
-        div.inline {
-            display: inline-block;
-        }
-
-    </style>
-</head>
-
-<body>
-    <div class="inline" style="width: 20%;">
-    </div>
-    <div class="inline" style="width: 60%">
+{% block content %}
+    <div style="margin: auto; width: fit-content;">
         <table>
             <thead>
                 <tr>
@@ -157,8 +145,6 @@ permalink: ramps.html
             </tbody>
         </table>
     </div>
-    <div class="inline" style="width: 20%">
-    </div>
     <br>
     <div class="inline">
         <object id="cond1_img" width="500" data="./img/ramps.svg"></object>
@@ -166,137 +152,8 @@ permalink: ramps.html
     <div class="inline">
         <object id="cond2_img" width="500" data="./img/ramps.svg"></object>
     </div>
+{% endblock %}
 
-    <script>
-        let allSelectors, cond1, cond2, cond1Img, cond2Img, conds;
-        conds = {};
-
-        let slope = ["steep", "not_steep"];
-        let ramp_material = ["carpet", "glass", "plastic", "sandpaper"];
-        let ramp_length = ["meter", "half", "quarter"];
-        let starting_position = ["high", "low"];
-        let ball_type = ["golf_ball", "ping_pong_ball", "rubber_ball"];
-        let ball_color = ["pink", "yellow"];
-
-
-        function getAllSelectors() {
-            let all = [];
-
-            slope.forEach((val) => all.push(`slope__${val}`));
-            for (let rm of ramp_material) {
-                for (let rl of ramp_length) {
-                    for (let sl of slope) {
-                        all.push(`${rm}__${rl}__${sl}`);
-                    }
-                }
-            }
-            for (let bt of ball_type) {
-                for (let bc of ball_color) {
-                    all.push(`${bt}__${bc}`);
-                }
-            }
-            for (let rl of ramp_length) {
-                for (let sp of starting_position) {
-                    for (sl of slope) {
-                        all.push(`${rl}__${sp}__${sl}`);
-                    }
-                }
-            }
-            return all;
-        }
-
-        function getSelectorForProp(cond, prop) {
-            return ("undefined" !== typeof(cond[prop])) ? `${prop}__${cond[prop]}` : null;
-        }
-
-        function getCompoundSelectorFromProps(cond, ...props) {
-            if (props.every((i) => cond[i])) {
-                let vals = props.map((p) => cond[p])
-                return vals.join("__");
-            }
-            return null;
-        }
-
-        function getSelectors(cond_name) {
-            let cond = ("cond1" === cond_name) ? cond1 : cond2;
-            let curr = [];
-
-            for (let prop of ["slope"]) {
-                curr.push(getSelectorForProp(cond, prop));
-            }
-            curr.push(getCompoundSelectorFromProps(cond, "ramp_material", "ramp_length", "slope"));
-            curr.push(getCompoundSelectorFromProps(cond, "ball_type", "ball_color"));
-            curr.push(getCompoundSelectorFromProps(cond, "ramp_length", "starting_position", "slope"));
-            curr.push(getCompoundSelectorFromProps(cond, "sunflower_type", "num_seedlings"));
-            let tmp = curr.filter((i) => i !== null);
-            console.log(tmp);
-            return tmp;
-        }
-
-        function renderImage(whichImage) {
-            console.log(whichImage);
-            let doc = ("cond1" === whichImage) ? conds.cond1 : conds.cond2;
-            for (let sel of allSelectors) {
-                let el = doc.getElementById(sel);
-                if (!el) {
-                    console.error(`ERROR: unable to hide ${whichImage}.${sel}`);
-                    return;
-                }
-                el.setAttribute("display", "none");
-            }
-            let currPropValues = getSelectors(whichImage);
-            for (let sel of currPropValues) {
-                let el = doc.getElementById(sel);
-                if (!el) {
-                    console.error(`ERROR displaying ${whichImage}.${sel}`);
-                    return;
-                }
-                el.setAttribute("display", "block");
-            }
-            // for (let sel of allSelectors) {
-            //     let el = doc.getElementById(sel);
-            //     console.log(el.id, el.getAttribute("display"), el);
-            // }
-        }
-
-        function menuChanged(event) {
-            let id = event.target.id;
-            console.log(id);
-            let cond = id.substring(0, 5);
-            let prop = id.substring(7)
-            let val = event.target.value;
-            console.log(`condition: ${cond}  property: ${prop} changed to val: ${val}`);
-            if ("cond1" === cond) {
-                cond1[prop] = val;
-            } else {
-                cond2[prop] = val;
-            }
-            renderImage(cond);
-        }
-
-        window.addEventListener("DOMContentLoaded", () => {
-
-            cond1 = {}; cond2 = {};
-            allSelectors = getAllSelectors();
-            console.log(allSelectors);
-            cond1Img = document.getElementById("cond1_img");
-            cond2Img = document.getElementById("cond2_img");
-
-            cond1Img.addEventListener("load", (e) => {
-                conds.cond1 = cond1Img.contentDocument;
-            });
-            cond2Img.addEventListener("load", (e) => {
-                conds.cond2 = cond2Img.contentDocument;
-            });
-            // console.log("setting up event listeners...");
-            for (let sel of document.querySelectorAll("select")) {
-                sel.addEventListener("change", menuChanged);
-            }
-            // console.log("finished setting up event listeners");
-            // console.log("cond1", cond1);
-            // console.log("cond2", cond2);
-        });
-    </script>
-</body>
-
-</html>
+{% block bundles %}
+    <script src="./ramps.bundle.js"></script>
+{% endblock %}
