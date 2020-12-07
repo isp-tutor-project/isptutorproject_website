@@ -118,7 +118,7 @@ export class DiTestResultsScene extends DiTestScene {
             type: 'REVEAL_STAT',
             side: side,
             stat: stat,
-            time: Date.now()
+            timestamp: Date.now()
         });
     }
 
@@ -127,7 +127,7 @@ export class DiTestResultsScene extends DiTestScene {
         this.replaceSortBtnWithText();
         this.app.state.events.push({
             type: "DATA_SORTED",
-            time: Date.now()
+            timestamp: Date.now()
         });
         this.updateSceneState({"dataSorted": true});
     }
