@@ -9,10 +9,40 @@ import sys
 import firebase_admin
 from firebase_admin import firestore
 
-from .shared import (
+from shared import (
     META_DATA_FLDS, JSON_FLDS, DEVEL_CLASS_CODES, get_file_path
 )
 
+def fix_di_test_data(dct):
+    # fix event types REVEAL_STAT and DATA_SORTED to use 'timestamp' as name of
+    # ts field rather than 'time'
+    events = dct.pop("events", None)
+    # print(json.dumps(events, indent=4))
+    new_events = []
+    for event in events:
+        if event["type"] in ["REVEAL_STAT", "DATA_SORTED"]:
+            ts = event.pop("time")
+            event["timestamp"] = ts
+        new_events.append(event)
+    dct["events"] = new_events
+    # print(json.dumps(dct, indent=4))
+    # sys.exit(0)
+    return dct
+
+def fix_di_instruction_data(dct):
+    # SUBMIT_ANSWER events are listed as "action_type" rather than type
+    events = dct.pop("events", None)
+    # print(json.dumps(events, indent=4))
+    new_events = []
+    for event in events:
+        if "action_type" in event:
+            at = event.pop("action_type")
+            event["type"] = at
+        new_events.append(event)
+    dct["events"] = new_events
+    # print(json.dumps(dct, indent=4))
+    # sys.exit(0)
+    return dct
 
 out_path = get_file_path()
 exists = os.path.exists(out_path)
@@ -46,6 +76,15 @@ for doc in snapshot.get():
             # double-de-encode
             if isinstance(val, str):
                 val = json.loads(val)
+            #FIXME do munging of val prior to assigning to user_data[fld]
+            # so that it is persisted in .json files and analysis can be done
+            # with fixes already in place
+            # print(fld)
+            if fld in ["diPreTest", "diPostTest", "diCrystalGrowthTest"]:
+                val = fix_di_test_data(val)
+            elif "diInstruction" == fld:
+                val = fix_di_instruction_data(val)
+
             user_data[fld] = val
     file_name = "%s.json" % userid
     file_path = os.path.join(out_path, file_name)
