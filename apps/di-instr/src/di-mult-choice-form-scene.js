@@ -53,7 +53,7 @@ export class DiMultipleChoiceFormScene extends DiInstructionScene {
         let data = this.form.getData();
         let logData = Object.assign(
             {
-                action_type: "SUBMIT_ANSWER",
+                type: "SUBMIT_ANSWER",
                 questionId: `${this.app.activityKey}.${this.id}`
             },
             data
