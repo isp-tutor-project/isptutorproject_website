@@ -72,6 +72,12 @@ module.exports = {
     intro: {
       edges: {
         prev: "start",
+        next: "repetitive"
+      }
+    },
+    repetitive: {
+      edges: {
+        prev: "intro",
         next: "memoryIntro1"
       }
     },

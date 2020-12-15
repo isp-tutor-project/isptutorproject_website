@@ -10,13 +10,15 @@
     ],
     "scripts": {
         "clean": "rimraf wwwroot",
-        "build": "yarn run clean && yarn run build:homepage && yarn run build:di-instr && yarn run build:di-prepost && yarn run build:hypo-we && yarn run build:histogram && yarn run build:isp-api && yarn run build:isp-static",
+        "build": "yarn run clean && yarn run build:homepage && yarn run build:di-instr && yarn run build:di-prepost && yarn run build:hypo-we && yarn run build:histogram && yarn run build:rq-intro && yarn run build:exp-design && yarn run build:isp-api && yarn run build:isp-static",
         "build:homepage": "yarn workspace @isptutorproject/homepage run build",
         "build:di-instr": "yarn workspace @isptutorproject/di-instr run build",
         "build:di-prepost": "yarn workspace @isptutorproject/di-prepost run build",
         "build:hypo-gr": "yarn workspace @isptutorproject/hypo-gr run build",
         "build:hypo-we": "yarn workspace @isptutorproject/hypo-we run build",
         "build:histogram": "yarn workspace @isptutorproject/histogram run build",
+        "build:rq-intro": "yarn workspace @isptutorproject/rq-intro run build",
+        "build:exp-design": "yarn workspace @isptutorproject/exp-design run build",
         "build:isp-api": "yarn workspace @isptutorproject/isp-api run build",
         "build:isp-static": "yarn workspace @isptutorproject/isp-static run build"
     },

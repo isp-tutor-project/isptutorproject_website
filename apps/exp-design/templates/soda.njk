@@ -1,0 +1,190 @@
+---
+permalink: soda.html
+title: "Experimental Design: Soda"
+---
+{% extends "base.njk" %}
+{% block content %}
+    <div class="inline" style="width: 60%">
+        <table>
+            <thead>
+                <tr>
+                    <th>Variable</th>
+                    <th>Condition 1</th>
+                    <th>Condition 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Amount of CO<sub>2</sub></th>
+                    <td>
+                        <select id="cond1__amt_co2">
+                            <option value="" selected disabled></option>
+                            <option value="high_co2">High</option>
+                            <option value="low_co2">Low</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__amt_co2">
+                            <option value="" selected disabled></option>
+                            <option value="high_co2">High</option>
+                            <option value="low_co2">Low</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Type of Sweetener</th>
+                    <td>
+                        <select id="cond1__sweetener_type">
+                            <option value="" selected disabled></option>
+                            <option value="aspartame">Aspartame</option>
+                            <option value="sugar">Sugar</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__sweetener_type">
+                            <option value="" selected disabled></option>
+                            <option value="aspartame">Aspartame</option>
+                            <option value="sugar">Sugar</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Amount of Caffeine</th>
+                    <td>
+                        <select id="cond1__amt_caffeine">
+                            <option value="" selected disabled></option>
+                            <option value="some">Some</option>
+                            <option value="none">None</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__amt_caffeine">
+                            <option value="" selected disabled></option>
+                            <option value="some">Some</option>
+                            <option value="none">None</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Surface Texture of Mint</th>
+                    <td>
+                        <select id="cond1__mint_surface">
+                            <option value="" selected disabled></option>
+                            <option value="rough">Rough</option>
+                            <option value="smooth">Smooth</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__mint_surface">
+                            <option value="" selected disabled></option>
+                            <option value="rough">Rough</option>
+                            <option value="smooth">Smooth</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Bottle Type</th>
+                    <td>
+                        <select id="cond1__bottle_volume">
+                            <option value="" selected disabled></option>
+                            <option value="1l">1 Liter</option>
+                            <option value="2l">2 Liter</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__bottle_volume">
+                            <option value="" selected disabled></option>
+                            <option value="1l">1 Liter</option>
+                            <option value="2l">2 Liter</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Bottle Material</th>
+                    <td>
+                        <select id="cond1__bottle_material">
+                            <option value="" selected disabled></option>
+                            <option value="glass">Glass</option>
+                            <option value="plastic">Plastic</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__bottle_material">
+                            <option value="" selected disabled></option>
+                            <option value="glass">Glass</option>
+                            <option value="plastic">Plastic</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Water Type</th>
+                    <td>
+                        <select id="cond1__water_type">
+                            <option value="" selected disabled></option>
+                            <option value="distilled">Distilled</option>
+                            <option value="salt">Salt</option>
+                            <option value="tap">Tap</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__water_type">
+                            <option value="" selected disabled></option>
+                            <option value="distilled">Distilled</option>
+                            <option value="salt">Salt</option>
+                            <option value="tap">Tap</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Amt Water</th>
+                    <td>
+                        <select id="cond1__amt_water">
+                            <option value="" selected disabled></option>
+                            <option value="full">Full</option>
+                            <option value="half">&frac12; Full</option>
+                            <option value="quarter">&frac14; Full</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__amt_water">
+                            <option value="" selected disabled></option>
+                            <option value="full">Full</option>
+                            <option value="half">&frac12; Full</option>
+                            <option value="quarter">&frac14; Full</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Amount of Sweetener</th>
+                    <td>
+                        <select id="cond1__amt_sweetener">
+                            <option value="" selected disabled></option>
+                            <option value="212">212 mg</option>
+                            <option value="500">500 mg</option>
+                            <option value="990">990 mg</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__amt_sweetener">
+                            <option value="" selected disabled></option>
+                            <option value="212">212 mg</option>
+                            <option value="500">500 mg</option>
+                            <option value="990">990 mg</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div class="inline">
+        <object id="cond1_img" width="500" data="./img/soda.svg"></object>
+    </div>
+    <div class="inline">
+        <object id="cond2_img" width="500" data="./img/soda.svg"></object>
+    </div>
+{% endblock %}
+
+{% block bundles %}
+    <script src="./soda.bundle.js"></script>
+{% endblock %}

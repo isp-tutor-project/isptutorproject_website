@@ -1,0 +1,176 @@
+---
+permalink: icemelting.html
+title: "Experimental Design: Algae Reproduction"
+---
+{% extends "base.njk" %}
+
+{% block content %}
+    <div style="margin: auto; width: fit-content;">
+        <table>
+            <thead>
+                <tr>
+                    <th>Variable</th>
+                    <th>Condition 1</th>
+                    <th>Condition 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Ice Temperature</th>
+                    <td>
+                        <select id="cond1__ice_temp">
+                            <option value="" selected disabled></option>
+                            <option value="0">0 &deg; C</option>
+                            <option value="minus20">-20 &deg; C</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__ice_temp">
+                            <option value="" selected disabled></option>
+                            <option value="0">0 &deg; C</option>
+                            <option value="minus20">-20 &deg; C</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Water Temperature</th>
+                    <td>
+                        <select id="cond1__water_temp">
+                            <option value="" selected disabled></option>
+                            <option value="cool">Room Temperature</option>
+                            <option value="hot">Warm</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__water_temp">
+                            <option value="" selected disabled></option>
+                            <option value="cool">Room Temperature</option>
+                            <option value="hot">Warm</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Pattern on Glass</th>
+                    <td>
+                        <select id="cond1__glass_pattern">
+                            <option value="" selected disabled></option>
+                            <option value="striped">Striped</option>
+                            <option value="plain">Plain</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__glass_pattern">
+                            <option value="" selected disabled></option>
+                            <option value="striped">Striped</option>
+                            <option value="plain">Plain</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Glass Shape</th>
+                    <td>
+                        <select id="cond1__glass_shape">
+                            <option value="" selected disabled></option>
+                            <option value="short">Short</option>
+                            <option value="tall">Tall</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__glass_shape">
+                            <option value="" selected disabled></option>
+                            <option value="short">Short</option>
+                            <option value="tall">Tall</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Type of Water (Ice)</th>
+                    <td>
+                        <select id="cond1__ice_type">
+                            <option value="" selected disabled></option>
+                            <option value="tap">Tap water</option>
+                            <option value="distilled">Distilled water</option>
+                            <option value="salt">Salt water</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__ice_type">
+                            <option value="" selected disabled></option>
+                            <option value="tap">Tap water</option>
+                            <option value="distilled">Distilled water</option>
+                            <option value="salt">Salt water</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Ice Cube Size</th>
+                    <td>
+                        <select id="cond1__ice_cube_size">
+                            <option value="" selected disabled></option>
+                            <option value="1cm">1 cm sides</option>
+                            <option value="standard">2.5 cm sides</option>
+                            <option value="5cm">5 cm sides</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__ice_cube_size">
+                            <option value="" selected disabled></option>
+                            <option value="1cm">1 cm sides</option>
+                            <option value="standard">2.5 cm sides</option>
+                            <option value="5cm">5 cm sides</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Type of Water (glass)</th>
+                    <td>
+                        <select id="cond1__water_type">
+                            <option value="" selected disabled></option>
+                            <option value="tap">Tap water</option>
+                            <option value="distilled">Distilled water</option>
+                            <option value="salt">Salt water</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__water_type">
+                            <option value="" selected disabled></option>
+                            <option value="tap">Tap water</option>
+                            <option value="distilled">Distilled water</option>
+                            <option value="salt">Salt water</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Amt Water</th>
+                    <td>
+                        <select id="cond1__amt_water">
+                            <option value="" selected disabled></option>
+                            <option value="full">Full</option>
+                            <option value="half">Half full</option>
+                            <option value="quarter">Quarter full</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__amt_water">
+                            <option value="" selected disabled></option>
+                            <option value="full">Full</option>
+                            <option value="half">Half full</option>
+                            <option value="quarter">Quarter full</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div class="inline">
+        <object id="cond1_img" width="500" data="./img/icemelting.svg"></object>
+    </div>
+    <div class="inline">
+        <object id="cond2_img" width="500" data="./img/icemelting.svg"></object>
+    </div>
+{% endblock %}
+
+{% block bundles %}
+    <script src="./icemelting.bundle.js"></script>
+{% endblock %}

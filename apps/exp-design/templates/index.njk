@@ -1,0 +1,99 @@
+{% extends "base.njk" %}
+
+{% block content %}
+
+<select id="rq">
+    <option disabled selected value=""> - Select an RQ - </option>
+
+    <option disabled>Physical and Chemical Changes</option>
+    <optgroup label="Crystal Growth">
+        <option value="A1 T1 V1">A1 T1 V1</option>
+        <option value="A1 T1 V2">A1 T1 V2</option>
+        <option value="A1 T1 V3">A1 T1 V3</option>
+        <option value="A1 T1 V4">A1 T1 V4</option>
+    </optgroup>
+    <optgroup label="Soda">
+        <option value="A1 T2 V1">A1 T2 V1</option>
+        <option value="A1 T2 V2">A1 T2 V2</option>
+        <option value="A1 T2 V3">A1 T2 V3</option>
+        <option value="A1 T2 V4">A1 T2 V4</option>
+    </optgroup>
+
+    <option disabled>Heat &amp; Temperaure</option>
+    <optgroup label="Ice Melting">
+        <option value="A2 T1 V1">A2 T1 V1</option>
+        <option value="A2 T1 V2">A2 T1 V2</option>
+        <option value="A2 T1 V3">A2 T1 V3</option>
+        <option value="A2 T1 V4">A2 T1 V4</option>
+    </optgroup>
+    <optgroup label="Balloon">
+        <option value="A2 T2 V1">A2 T2 V1</option>
+        <option value="A2 T2 V2">A2 T2 V2</option>
+        <option value="A2 T2 V3">A2 T2 V3</option>
+        <option value="A2 T2 V4">A2 T2 V4</option>
+    </optgroup>
+
+    <option disabled>Forces &amp; Motion</option>
+    <optgroup label="Ramps">
+        <option value="A3 T1 V1">A3 T1 V1</option>
+        <option value="A3 T1 V2">A3 T1 V2</option>
+        <option value="A3 T1 V3">A3 T1 V3</option>
+        <option value="A3 T1 V4">A3 T1 V4</option>
+    </optgroup>
+    <optgroup label="Sinking">
+        <option value="A3 T2 V1">A3 T2 V1</option>
+        <option value="A3 T2 V2">A3 T2 V2</option>
+        <option value="A3 T2 V3">A3 T2 V3</option>
+        <option value="A3 T2 V4">A3 T2 V4</option>
+    </optgroup>
+
+    <option disabled>Plant Reproduction</option>
+    <optgroup label="Greenhouse">
+        <option value="A4 T1 V1">A4 T1 V1</option>
+        <option value="A4 T1 V2">A4 T1 V2</option>
+        <option value="A4 T1 V3">A4 T1 V3</option>
+        <option value="A4 T1 V4">A4 T1 V4</option>
+    </optgroup>
+    <optgroup label="Algae">
+        <option value="A4 T2 V1">A4 T2 V1</option>
+        <option value="A4 T2 V2">A4 T2 V2</option>
+        <option value="A4 T2 V3">A4 T2 V3</option>
+        <option value="A4 T2 V4">A4 T2 V4</option>
+    </optgroup>
+
+</select>
+{% endblock %}
+
+{% block code %}
+<script>
+    const redirects = {
+        A1: {
+            T1: "crystals",
+            T2: "soda"
+        },
+        A2: {
+            T1: "icemelting",
+            T2: "balloon"
+        },
+        A3: {
+            T1: "ramps",
+            T2: "sinking"
+        },
+        A4: {
+            T1: "greenhouse",
+            T2: "algae"
+        }
+    };
+
+    function setRQ(event) {
+        event.preventDefault();
+        let temp = event.target.value;
+        let [A, T, V] = temp.split(" ");
+        let redirect = redirects[A][T];
+        console.log(redirect);
+        console.log(V);
+        window.location.href += `${redirect}.html`;
+    }
+    document.getElementById("rq").addEventListener("change", setRQ);
+</script>
+{% endblock %}

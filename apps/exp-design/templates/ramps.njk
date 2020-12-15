@@ -1,0 +1,159 @@
+---
+permalink: ramps.html
+title: "Experimental Design: Algae Reproduction"
+---
+{% extends "base.njk" %}
+
+{% block content %}
+    <div style="margin: auto; width: fit-content;">
+        <table>
+            <thead>
+                <tr>
+                    <th>Variable</th>
+                    <th>Condition 1</th>
+                    <th>Condition 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Slope</th>
+                    <td>
+                        <select id="cond1__slope">
+                            <option value="" selected disabled></option>
+                            <option value="steep">Steep</option>
+                            <option value="not_steep">Not Steep</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__slope">
+                            <option value="" selected disabled></option>
+                            <option value="steep">Steep</option>
+                            <option value="not_steep">Not Steep</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Starting Postion</th>
+                    <td>
+                        <select id="cond1__starting_position">
+                            <option value="" selected disabled></option>
+                            <option value="low">Middle</option>
+                            <option value="high">Top</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__starting_position">
+                            <option value="" selected disabled></option>
+                            <option value="low">Middle</option>
+                            <option value="high">Top</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Surface</th>
+                    <td>
+                        <select id="cond1__surface">
+                            <option value="" selected disabled></option>
+                            <option value="rough">Rough</option>
+                            <option value="smooth">Smooth</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__surface">
+                            <option value="" selected disabled></option>
+                            <option value="rough">Rough</option>
+                            <option value="smooth">Smooth</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Ball Color</th>
+                    <td>
+                        <select id="cond1__ball_color">
+                            <option value="" selected disabled></option>
+                            <option value="yellow">Yellow</option>
+                            <option value="pink">Pink</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__ball_color">
+                            <option value="" selected disabled></option>
+                            <option value="yellow">Yellow</option>
+                            <option value="pink">Pink</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Ramp Material</th>
+                    <td>
+                        <select id="cond1__ramp_material">
+                            <option value="" selected disabled></option>
+                            <option value="plastic">Plastic</option>
+                            <option value="glass">Glass</option>
+                            <option value="sandpaper">Sandpaper</option>
+                            <option value="carpet">Carpet</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__ramp_material">
+                            <option value="" selected disabled></option>
+                            <option value="plastic">Plastic</option>
+                            <option value="glass">Glass</option>
+                            <option value="sandpaper">Sandpaper</option>
+                            <option value="carpet">Carpet</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Length of Ramp</th>
+                    <td>
+                        <select id="cond1__ramp_length">
+                            <option value="" selected disabled></option>
+                            <option value="meter">1 meter</option>
+                            <option value="half">&frac12; meter</option>
+                            <option value="quarter">&frac14; meter</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__ramp_length">
+                            <option value="" selected disabled></option>
+                            <option value="meter">1 meter</option>
+                            <option value="half">&frac12; meter</option>
+                            <option value="quarter">&frac14; meter</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Type of Ball</th>
+                    <td>
+                        <select id="cond1__ball_type">
+                            <option value="" selected disabled></option>
+                            <option value="golf_ball">Golf ball</option>
+                            <option value="rubber_ball">Rubber ball</option>
+                            <option value="ping_pong_ball">Ping-Pong ball</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__ball_type">
+                            <option value="" selected disabled></option>
+                            <option value="golf_ball">Golf ball</option>
+                            <option value="rubber_ball">Rubber ball</option>
+                            <option value="ping_pong_ball">Ping-Pong ball</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div class="inline">
+        <object id="cond1_img" width="500" data="./img/ramps.svg"></object>
+    </div>
+    <div class="inline">
+        <object id="cond2_img" width="500" data="./img/ramps.svg"></object>
+    </div>
+{% endblock %}
+
+{% block bundles %}
+    <script src="./ramps.bundle.js"></script>
+{% endblock %}

@@ -1,0 +1,200 @@
+---
+permalink: algae.html
+title: "Experimental Design: Algae Reproduction"
+---
+{% extends "base.njk" %}
+
+{% block content %}
+    <div style="margin: auto; width: fit-content;">
+        <table>
+            <thead>
+                <tr>
+                    <th>Variable</th>
+                    <th>Condition 1</th>
+                    <th>Condition 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Water Temperature</th>
+                    <td>
+                        <select id="cond1__temp">
+                            <option value="" selected disabled></option>
+                            <option value="cool">Room Temperature</option>
+                            <option value="hot">Warm</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__temp">
+                            <option value="" selected disabled></option>
+                            <option value="cool">Room Temperature</option>
+                            <option value="hot">Warm</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Music Exposure</th>
+                    <td>
+                        <select id="cond1__music_exposure">
+                            <option value="" selected disabled></option>
+                            <option value="constant">Constant Music</option>
+                            <option value="none">No Music</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__music_exposure">
+                            <option value="" selected disabled></option>
+                            <option value="constant">Constant Music</option>
+                            <option value="none">No Music</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Amount CO<sub>2</sub></th>
+                    <td>
+                        <select id="cond1__amt_co2">
+                            <option value="" selected disabled></option>
+                            <option value="a_lot">A Lot</option>
+                            <option value="none">None</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__amt_co2">
+                            <option value="" selected disabled></option>
+                            <option value="a_lot">A Lot</option>
+                            <option value="none">None</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Amt Sunlight</th>
+                    <td>
+                        <select id="cond1__amt_sunlight">
+                            <option value="" selected disabled></option>
+                            <option value="some">Some</option>
+                            <option value="none">None</option>
+                        </select>
+
+                    </td>
+                    <td>
+                        <select id="cond2__amt_sunlight">
+                            <option value="" selected disabled></option>
+                            <option value="some">Some</option>
+                            <option value="none">None</option>
+                        </select>
+
+                    </td>
+                </tr>
+                <tr>
+                    <th>Tank Shape</th>
+                    <td>
+                        <select id="cond1__tank_shape">
+                            <option value="" selected disabled></option>
+                            <option value="cubic">Cubic</option>
+                            <option value="cylindrical">Cylindrical</option>
+                            <option value="spherical">Spherical</option>
+                            <option value="bubble">Bubble</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__tank_shape">
+                            <option value="" selected disabled></option>
+                            <option value="cubic">Cubic</option>
+                            <option value="cylindrical">Cylindrical</option>
+                            <option value="spherical">Spherical</option>
+                            <option value="bubble">Bubble</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Amt Water</th>
+                    <td>
+                        <select id="cond1__amt_water">
+                            <option value="" selected disabled></option>
+                            <option value="high">15 liters</option>
+                            <option value="med">10 liters</option>
+                            <option value="low">5 liters</option>
+                        </select>
+
+                    </td>
+                    <td>
+                        <select id="cond2__amt_water">
+                            <option value="" selected disabled></option>
+                            <option value="high">15 liters</option>
+                            <option value="med">10 liters</option>
+                            <option value="low">5 liters</option>
+                        </select>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Tank Material</th>
+                    <td>
+                        <select id="cond1__tank_material">
+                            <option value="" selected disabled></option>
+                            <option value="glass">Glass</option>
+                            <option value="plastic">Plastic</option>
+                            <option value="acrylic">Acrylic</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__tank_material">
+                            <option value="" selected disabled></option>
+                            <option value="glass">Glass</option>
+                            <option value="plastic">Plastic</option>
+                            <option value="acrylic">Acrylic</option>
+                        </select>
+
+                    </td>
+                </tr>
+                <tr>
+                    <th>Music Type</th>
+                    <td>
+                        <select id="cond1__music_type">
+                            <option value="" selected disabled></option>
+                            <option value="jazz">Jazz</option>
+                            <option value="rock">Rock</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__music_type">
+                            <option value="" selected disabled></option>
+                            <option value="jazz">Jazz</option>
+                            <option value="rock">Rock</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Volume</th>
+                    <td>
+                        <select id="cond1__volume">
+                            <option value="" selected disabled></option>
+                            <option value="high">High</option>
+                            <option value="low">Low</option>
+                        </select>
+
+                    </td>
+                    <td>
+                        <select id="cond2__volume">
+                            <option value="" selected disabled></option>
+                            <option value="high">High</option>
+                            <option value="low">Low</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div class="inline">
+        <object id="cond1_img" width="500" data="./img/algae.svg"></object>
+    </div>
+    <div class="inline">
+        <object id="cond2_img" width="500" data="./img/algae.svg"></object>
+    </div>
+{% endblock %}
+
+{% block bundles %}
+    <script src="./algae.bundle.js"></script>
+{% endblock %}

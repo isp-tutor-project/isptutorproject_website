@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% include "site/stdHead.njk" %}
+    <title> Crystal Growth Experiment Intro</title>
+    <link rel="stylesheet" href="rqintro.bundle.css" >
+</head>
+<body>
+    {% include "site/navbar.njk" %}
+    <div id="scene_id_region"></div>
+    <main>
+    {% for scene in collections.rqIntroScenes %}
+        <section id="{{scene.fileSlug}}" class="scene">
+            <div class="scene-content">
+                {{ scene.templateContent | safe }}
+            </div>
+        </section>
+    {% endfor %}
+    </main>
+    <img id="prev_btn" class="nav-btn prev-btn" />
+    <img id="next_btn" class="nav-btn next-btn" />
+    <div id="snackbar"></div>
+
+    <script src="rqintro.bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+---
+permalink: balloon.html
+title: "Experimental Design: Algae Reproduction"
+---
+{% extends "base.njk" %}
+
+{% block content %}
+    <div style="margin: auto; width: fit-content;">
+        <table>
+            <thead>
+                <tr>
+                    <th>Variable</th>
+                    <th>Condition 1</th>
+                    <th>Condition 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Balloon Color</th>
+                    <td>
+                        <select id="cond1__balloon_color">
+                            <option value="" selected disabled></option>
+                            <option value="gray">Light Gray</option>
+                            <option value="black">Black</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__balloon_color">
+                            <option value="" selected disabled></option>
+                            <option value="gray">Light Gray</option>
+                            <option value="black">Black</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Amount of Sunlight</th>
+                    <td>
+                        <select id="cond1__amt_sunlight">
+                            <option value="" selected disabled></option>
+                            <option value="full_sun">Full Sun</option>
+                            <option value="shade">Shade</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__amt_sunlight">
+                            <option value="" selected disabled></option>
+                            <option value="full_sun">Full Sun</option>
+                            <option value="shade">Shade</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Chair Type</th>
+                    <td>
+                        <select id="cond1__chair_type">
+                            <option value="" selected disabled></option>
+                            <option value="wooden">Wooden</option>
+                            <option value="canvas">Canvas</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__chair_type">
+                            <option value="" selected disabled></option>
+                            <option value="wooden">Wooden</option>
+                            <option value="canvas">Canvas</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Balloon Material</th>
+                    <td>
+                        <select id="cond1__balloon_material">
+                            <option value="" selected disabled></option>
+                            <option value="foil">Foil</option>
+                            <option value="latex">Latex</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__balloon_material">
+                            <option value="" selected disabled></option>
+                            <option value="foil">Foil</option>
+                            <option value="latex">Latex</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Balloon Shape</th>
+                    <td>
+                        <select id="cond1__balloon_shape">
+                            <option value="" selected disabled></option>
+                            <option value="sphere">Sphere</option>
+                            <option value="rectangle">Rectangle</option>
+                            <option value="oval">Oval</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__balloon_shape">
+                            <option value="" selected disabled></option>
+                            <option value="sphere">Sphere</option>
+                            <option value="rectangle">Rectangle</option>
+                            <option value="oval">Oval</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Balloon Size</th>
+                    <td>
+                        <select id="cond1__balloon_size">
+                            <option value="" selected disabled></option>
+                            <option value="sm">small (8 cm)</option>
+                            <option value="med">medium (16 cm)</option>
+                            <option value="lg">large (32 cm)</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__balloon_size">
+                            <option value="" selected disabled></option>
+                            <option value="sm">small (8 cm)</option>
+                            <option value="med">medium (16 cm)</option>
+                            <option value="lg">large (32 cm)</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Type of Gas</th>
+                    <td>
+                        <select id="cond1__gas_type">
+                            <option value="" selected disabled></option>
+                            <option value="helium">Helium</option>
+                            <option value="hydrogen">Hydrogen</option>
+                            <option value="argon">Argon</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__gas_type">
+                            <option value="" selected disabled></option>
+                            <option value="helium">Helium</option>
+                            <option value="hydrogen">Hydrogen</option>
+                            <option value="argon">Argon</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <br>
+    <div class="inline">
+        <object id="cond1_img" width="500" data="./img/balloon.svg"></object>
+    </div>
+    <div class="inline">
+        <object id="cond2_img" width="500" data="./img/balloon.svg"></object>
+    </div>
+{% endblock %}
+
+{% block bundles %}
+    <script src="./balloon.bundle.js"></script>
+{% endblock %}

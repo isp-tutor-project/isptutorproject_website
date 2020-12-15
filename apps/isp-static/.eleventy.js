@@ -16,6 +16,8 @@ const APPS = {
     "../homepage/dist": "bundles/",
     "../hypo-we/dist": "bundles/hypo-we",
     "../histogram/dist": "bundles/histogram",
+    "../rq-intro/dist": "bundles/",
+    "../exp-design/dist": "bundles/",
     "../../common/isp-api/dist": "libs",
     "../../edforge": "edforge"
 };
@@ -100,4 +102,3 @@ module.exports = function(eleventyConfig) {
         },
         templateFormats: ["njk"]
     }
-}

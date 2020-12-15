@@ -1,0 +1,197 @@
+---
+permalink: greenhouse.html
+title: "Experimental Design: Plant Reproduction"
+---
+{% extends "base.njk" %}
+
+{% block content %}
+    <div style="margin: auto; width: fit-content;">
+        <table>
+            <thead>
+                <tr>
+                    <th>Variable</th>
+                    <th>Condition 1</th>
+                    <th>Condition 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Number of Honeybees in Bee Hive</th>
+                    <td>
+                        <select id="cond1__num_bees">
+                            <option value="" selected disabled></option>
+                            <option value="whole_hive">A whole hive</option>
+                            <option value="none">Zero</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__num_bees">
+                            <option value="" selected disabled></option>
+                            <option value="whole_hive">A whole hive</option>
+                            <option value="none">Zero</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Amt Sunlight</th>
+                    <td>
+                        <select id="cond1__amt_sunlight">
+                            <option value="" selected disabled></option>
+                            <option value="full">Full sunlight</option>
+                            <option value="partial">Partial sunlight</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__amt_sunlight">
+                            <option value="" selected disabled></option>
+                            <option value="full">Full sunlight</option>
+                            <option value="partial">Partial sunlight</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Amount of Fertilizer</th>
+                    <td>
+                        <select id="cond1__amt_fertilizer">
+                            <option value="" selected disabled></option>
+                            <option value="some">Some</option>
+                            <option value="none">None</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__amt_fertilizer">
+                            <option value="" selected disabled></option>
+                            <option value="some">Some</option>
+                            <option value="none">None</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Type of Water</th>
+                    <td>
+                        <select id="cond1__water_type">
+                            <option value="" selected disabled></option>
+                            <option value="rain">Rain water</option>
+                            <option value="tap">Tap water</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__water_type">
+                            <option value="" selected disabled></option>
+                            <option value="rain">Rain water</option>
+                            <option value="tap">Tap water</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Type of Soil</th>
+                    <td>
+                        <select id="cond1__soil_type">
+                            <option value="" selected disabled></option>
+                            <option value="peat_moss">Peat Moss</option>
+                            <option value="potting_soil">Potting soil</option>
+                            <option value="clay">Clay</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__soil_type">
+                            <option value="" selected disabled></option>
+                            <option value="peat_moss">Peat Moss</option>
+                            <option value="potting_soil">Potting soil</option>
+                            <option value="clay">Clay</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Type of Sunflower</th>
+                    <td>
+                        <select id="cond1__sunflower_type">
+                            <option value="" selected disabled></option>
+                            <option value="common">Common</option>
+                            <option value="pacino">Pacino</option>
+                            <option value="sunny_smile">Sunny Smile</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__sunflower_type">
+                            <option value="" selected disabled></option>
+                            <option value="common">Common</option>
+                            <option value="pacino">Pacino</option>
+                            <option value="sunny_smile">Sunny Smile</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Number of seedlings</th>
+                    <td>
+                        <select id="cond1__num_seedlings">
+                            <option value="" selected disabled></option>
+                            <option value="3">3</option>
+                            <option value="6">6</option>
+                            <option value="9">9</option>
+                            <option value="12">12</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__num_seedlings">
+                            <option value="" selected disabled></option>
+                            <option value="3">3</option>
+                            <option value="6">6</option>
+                            <option value="9">9</option>
+                            <option value="12">12</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Amount of Water</th>
+                    <td>
+                        <select id="cond1__amt_water">
+                            <option value="" selected disabled></option>
+                            <option value="1l_per_day">One liter per day</option>
+                            <option value="1l_every_other_day">One liter every other day</option>
+                            <option value="1l_per_week">One liter per week</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__amt_water">
+                            <option value="" selected disabled></option>
+                            <option value="1l_per_day">One liter per day</option>
+                            <option value="1l_every_other_day">One liter every other day</option>
+                            <option value="1l_per_week">One liter per week</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Type of Fertilizer</th>
+                    <td>
+                        <select id="cond1__fertilizer_type">
+                            <option value="" selected disabled></option>
+                            <option value="manure">Cow manure</option>
+                            <option value="wonder_grow">Wonder Grow</option>
+                            <option value="sunflower_fertilizer">Sunflower fertilizer</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__fertilizer_type">
+                            <option value="" selected disabled></option>
+                            <option value="manure">Cow manure</option>
+                            <option value="wonder_grow">Wonder Grow</option>
+                            <option value="sunflower_fertilizer">Sunflower fertilizer</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div class="inline">
+        <object id="cond1_img" width="500" data="./img/greenhouse.svg"></object>
+    </div>
+    <div class="inline">
+        <object id="cond2_img" width="500" data="./img/greenhouse.svg"></object>
+    </div>
+{% endblock %}
+
+{% block bundles %}
+    <script src="./greenhouse.bundle.js"></script>
+{% endblock %}

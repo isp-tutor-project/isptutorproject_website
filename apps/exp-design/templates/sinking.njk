@@ -1,0 +1,137 @@
+---
+permalink: sinking.html
+title: "Experimental Design: Sinking"
+---
+{% extends "base.njk" %}
+{% block content %}
+    <div style="margin: auto; width: fit-content;">
+        <table>
+            <thead>
+                <tr>
+                    <th>Variable</th>
+                    <th>Condition 1</th>
+                    <th>Condition 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Density of Object</th>
+                    <td>
+                        <select id="cond1__object_density">
+                            <option value="" selected disabled></option>
+                            <option value="lead">Higher</option>
+                            <option value="glass">Lower</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__object_density">
+                            <option value="" selected disabled></option>
+                            <option value="lead">Higher</option>
+                            <option value="glass">Lower</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Shape of Object</th>
+                    <td>
+                        <select id="cond1__shape">
+                            <option value="" selected disabled></option>
+                            <option value="tear">Tear shaped</option>
+                            <option value="sphere">Sphere</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__shape">
+                            <option value="" selected disabled></option>
+                            <option value="tear">Tear shaped</option>
+                            <option value="sphere">Sphere</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Density of Water</th>
+                    <td>
+                        <select id="cond1__water_density">
+                            <option value="" selected disabled></option>
+                            <option value="salt">High</option>
+                            <option value="distilled">Low</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__water_density">
+                            <option value="" selected disabled></option>
+                            <option value="salt">High</option>
+                            <option value="distilled">Low</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Volume of the Object</th>
+                    <td>
+                        <select id="cond1__object_volume">
+                            <option value="" selected disabled></option>
+                            <option value="lg">Larger</option>
+                            <option value="sm">Smaller</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__object_volume">
+                            <option value="" selected disabled></option>
+                            <option value="lg">Larger</option>
+                            <option value="sm">Smaller</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Container Type</th>
+                    <td>
+                        <select id="cond1__container_type">
+                            <option value="" selected disabled></option>
+                            <option value="cylinder_50">50 cm tall graduated Cylinder</option>
+                            <option value="cylinder_10">10 cm tall graduated Cylinder</option>
+                            <option value="jar_10">10 cm tall glass Mason jar</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__container_type">
+                            <option value="" selected disabled></option>
+                            <option value="cylinder_50">50 cm tall graduated Cylinder</option>
+                            <option value="cylinder_10">10 cm tall graduated Cylinder</option>
+                            <option value="jar_10">10 cm tall glass Mason jar</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Amt Water</th>
+                    <td>
+                        <select id="cond1__amt_water">
+                            <option value="" selected disabled></option>
+                            <option value="full">Full</option>
+                            <option value="half">&frac12; Full</option>
+                            <option value="quarter">&frac14; Full</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="cond2__amt_water">
+                            <option value="" selected disabled></option>
+                            <option value="full">Full</option>
+                            <option value="half">&frac12; Full</option>
+                            <option value="quarter">&frac14; Full</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div class="inline">
+        <object id="cond1_img" width="500" data="./img/sinking.svg"></object>
+    </div>
+    <div class="inline">
+        <object id="cond2_img" width="500" data="./img/sinking.svg"></object>
+    </div>
+{% endblock %}
+
+{% block bundles %}
+    <script src="./sinking.bundle.js"></script>
+{% endblock %}
