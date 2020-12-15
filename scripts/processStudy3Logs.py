@@ -104,6 +104,17 @@ MATS = {
 }
 
 
+HYPO_WE_NUM_SLIDES = 180
+HYPO_WE_QUESTION_IDS = [
+    "hotcold", "hotcold_likert", "incdec", "rel", "rel2", "hypo2"
+]
+HYPO_VAR_FLDS = [
+    "hotcold", "hotcold_likert", "incdec", "incdec_correctness", "rel", "rel_correctness", "rel2", "rel2_correctness", "hypo2"
+]
+HYPO_LIKERT = [
+    "I just guessed", "a bit sure", "pretty sure", "very sure", "100% sure"
+]
+
 def mk_mats_hdr():
     hdr = ["userID", "startTime", "endTime"]
     for ques in MATS_QUES:
@@ -115,17 +126,11 @@ def mk_hypo_hdr():
     hdr = ["userID", "startTime", "endTime"]
     for i in range(1, HYPO_WE_NUM_SLIDES + 1):
         hdr.append("slide%dTime" % i)
-    hdr.extend(HYPO_WE_QUESTION_IDS)
+    hdr.extend(HYPO_VAR_FLDS)
     return hdr
 
 RQ_START_SCENE = "SSceneStart"
 RQ_END_SCENE = "SScene11"
-
-HYPO_WE_NUM_SLIDES = 180
-HYPO_WE_QUESTION_IDS = [
-    "hotcold", "hotcold_likert", "incdec", "rel", "rel2", "hypo2"
-]
-
 
 DI_TEST_RESULTS = {
     DI_PRE:  [("memory", 7), ("rockets", 4)],
@@ -373,8 +378,10 @@ def analyze_hypo_we(data):
     }
     for i in range(1, HYPO_WE_NUM_SLIDES + 1):
         ret_val["slide%dTime" % i] = NA
-    for ques_id in HYPO_WE_QUESTION_IDS:
-        ret_val[ques_id] = NA
+    # for ques_id in HYPO_WE_QUESTION_IDS:
+    #     ret_val[ques_id] = NA
+    for fld_name in HYPO_VAR_FLDS:
+        ret_val[fld_name] = NA
     # print(ret_val)
     try:
         app_data = data[HYPO_WE]
@@ -397,6 +404,7 @@ def analyze_hypo_we(data):
             ret_val["slide%dTime" % prev_slide_num] = time_on_prev_slide
         prev_slide_num = curr_slide_num
         prev_slide_start = curr_slide_start
+
     for answer in answers:
         interaction_id, correct_ans, selected_ans = \
             answer.interactionID, answer.correctAnswer, answer.selectedAnswer
@@ -404,16 +412,30 @@ def analyze_hypo_we(data):
             _unused1, _unused_2, ques_id, *rest = interaction_id.split("_")
             is_openended = len(rest) > 0
             is_likert = len(rest) == 2
+            is_correct = NA
+            correctness = ""
             if is_likert:
                 ques_id += "_likert"
-            is_correct = NA
-            if not is_openended:
+                if selected_ans in HYPO_LIKERT:
+                    # convert text to likert score
+                    selected_ans = HYPO_LIKERT.index(selected_ans) + 1
+            elif not is_openended:
+                # fld has correctness, compute the correctness and the
+                # name of the correctness field
                 is_correct = selected_ans == correct_ans
-            print("%s: %s\t\t%s: %s\t\t%s:%s" % (
-                user, interaction_id,
-                ques_id, selected_ans,
-                "%s_correctness" % ques_id, is_correct)
-            )
+                correctness_fld = "%s_correctness" % ques_id
+                ret_val[correctness_fld] = is_correct
+
+            # associatiate selected value with question id
+            ret_val[ques_id] = selected_ans
+            # print("%s: %s\t\t%s: %s\t\t%s:%s" % (
+            #     user, interaction_id,
+            #     ques_id, selected_ans,
+            #     "%s_correctness" % ques_id, is_correct)
+            # )
+            # print("%s\t%s: %s\t\t%s" % (
+            #     user, ques_id, selected_ans, correctness)
+            # )
         except ValueError:
             # this *shouldn't* happend for production users, but there was a
             # brief period in dev where some interactionIDs weren't set, causing
@@ -421,7 +443,10 @@ def analyze_hypo_we(data):
             # if this happens, we'll catch and ignore, simply leaving the data
             # for that question as N/A
             pass
-
+    # print(user,)
+    # for fld in HYPO_VAR_FLDS:
+    #     print("%s:%s " % (fld, ret_val[fld]), )
+    # print()
     # print(ret_val)
     # print(tot_time/ 60)
     # print(secs_2_hrs_min_secs(tot_time))
@@ -509,6 +534,7 @@ def analyze_di_test(which, data):
                         ret_val[fld_name] = likert
     return ret_val
 
+
 def analyze_di_instr(data):
     ret_val = {
         fld: NA
@@ -577,6 +603,7 @@ def analyze_di_instr(data):
     # sys.exit(0)
     return ret_val
 
+
 def dump_simple_worksheet(workbook, ws_name, ws_data):
     worksheet = workbook.add_worksheet(ws_name)
     for row_num, row_data in enumerate(ws_data):
@@ -623,7 +650,6 @@ def process_file(path):
         "diPost": di_post_data,
         "matsPost": mats_post_data
     }
-
 
 
 def process_data(data_path):
