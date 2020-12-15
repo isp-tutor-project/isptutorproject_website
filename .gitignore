@@ -135,3 +135,5 @@ dist
 # sqlite
 db.sqlite3
 
+# generated files
+scripts/study3
