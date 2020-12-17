@@ -1,0 +1,30 @@
+---
+title: Science Fair Pre-Test
+permalink: pretest.html 
+---
+{% extends "base.njk" %}
+
+{% block cssbundle %}
+    <link rel="stylesheet" href="sf-pretest.bundle.css" >
+{% endblock %}
+
+{% block main %}
+    {% for scene in collections.sfAssessmentCommonScenes %}
+        <section id="{{scene.fileSlug}}" class="scene">
+            <div class="scene-content">
+                {{ scene.templateContent | safe }}
+            </div>
+        </section>
+    {% endfor %}
+    {% for scene in collections.sfPreTestScenes %}
+          <section id="{{scene.fileSlug}}" class="scene">
+            <div class="scene-content">
+                {{ scene.templateContent | safe }}
+            </div>
+        </section>
+    {% endfor %}
+{% endblock %}
+
+{% block bundles %}
+    <script src="sf-pretest.bundle.js"></script>
+{% endblock %}
