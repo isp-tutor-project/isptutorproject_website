@@ -8,6 +8,7 @@ const APPS = {
     "../histogram/dist": "apps/histogram",
     "../rq-intro/dist": "apps/rq-intro",
     "../exp-design/dist": "apps/exp-design",
+    "../sf-assessment/dist": "apps/sf-assessment",
     "../../common/isp-api/dist": "libs",
     "../../edforge": "edforge"
 };
