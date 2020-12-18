@@ -157,6 +157,30 @@ export const activities = [
         implemented: true
     },
     {
+        id: "sfPreTest",
+        label: "Science Fair Pre-Test",
+        phase: "pre-training",
+        storageInfo: {
+            id: "sfPreTest",
+            key: "sfPreTest",
+            features: ""
+        },
+        url: "/apps/sf-assessment/pretest.html",
+        implemented: true
+    },
+    {
+        id: "sfPostTest",
+        label: "Science Fair Post-Test",
+        phase: "post-training",
+        storageInfo: {
+            id: "sfPostTest",
+            key: "sfPostTest",
+            features: ""
+        },
+        url: "/apps/sf-assessment/posttest.html",
+        implemented: true
+    },
+    {
         id: "diCrystalGrowthTest",
         label: "Interpret final crystal growth results",
         phase: "post-training",

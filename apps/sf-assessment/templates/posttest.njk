@@ -1,0 +1,30 @@
+---
+title: Science Fair Post-Test
+permalink: posttest.html 
+---
+{% extends "base.njk" %}
+
+{% block cssbundle %}
+    <link rel="stylesheet" href="sf-posttest.bundle.css" >
+{% endblock %}
+
+{% block main %}
+    {% for scene in collections.sfAssessmentCommonScenes %}
+        <section id="{{scene.fileSlug}}" class="scene">
+            <div class="scene-content">
+                {{ scene.templateContent | safe }}
+            </div>
+        </section>
+    {% endfor %}
+    {% for scene in collections.sfPostTestScenes %}
+          <section id="{{scene.fileSlug}}" class="scene">
+            <div class="scene-content">
+                {{ scene.templateContent | safe }}
+            </div>
+        </section>
+    {% endfor %}
+{% endblock %}
+
+{% block bundles %}
+    <script src="sf-posttest.bundle.js"></script>
+{% endblock %}

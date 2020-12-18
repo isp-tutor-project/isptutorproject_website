@@ -18,6 +18,7 @@ const APPS = {
     "../histogram/dist": "bundles/histogram",
     "../rq-intro/dist": "bundles/",
     "../exp-design/dist": "bundles/",
+    "../sf-assessment/dist": "bundles/",
     "../../common/isp-api/dist": "libs",
     "../../edforge": "edforge"
 };

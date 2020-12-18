@@ -1,0 +1,317 @@
+$my_path: "/apps/sf-assessment/";
+
+@use "~@isptutorproject/isp-site-styles" with (
+    $app_path: $my_path
+);
+
+html {
+    font-size: 24px;
+}
+
+/*
+ * start of app-specific css
+ */
+main {
+    height: calc(100% - 36px);
+    width: 100%;
+    margin: 0;
+    background-color: white;
+    // border: solid #d6e9fc 40px;
+}
+
+h1, h2, h3, h4, h5 {
+    text-align: center;
+    margin-block-start: 0.25em;
+    margin-block-end: 1em;
+}
+
+p {
+    /* default to centered. use text-justify if you want to override */
+    text-align: center;
+    margin-block-start: 0.75em;
+    margin-block-end: 0.75em;
+}
+
+.btn-huge {
+    font-size: 3rem;
+    padding: 0.50em 0.50em;
+    border-radius: 0.5em;
+}
+
+.list-wrapper {
+    text-align: center;
+}
+
+input[type="radio"] {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+    transform: scale(1.5);
+    margin-top: 0;
+    margin-left: 10px;
+}
+
+label.vert-radio-label {
+    line-height: 1.5em;
+}
+
+.scene {
+    position: relative;
+    display: none;
+    height: 100%;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.scene.active {
+    display: block;
+}
+
+.scene-content {
+    position: relative;
+    // border: 1px solid hotpink;
+    width: 1300px;
+    height: 714px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: center center;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+}
+
+/* used by vertcenter shortCode, which nests content inside 2 divs:
+   1) div.centered-wrapper (relative positioning)
+   2) div.centered (absolute positining)
+
+   it then specified div.centered::top vai style="top:${fromTopPercent}%;"
+
+*/
+div.centered-wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+div.centered {
+    position: absolute;
+    height: max-content;
+    width: 100%;
+}
+
+
+.heading {
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24pt;
+}
+
+.single-column-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.dual-column-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.centered-column {
+    position: absolute;
+    width: 100%;
+    height: max-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.lhs {
+    float: left;
+    position: relative;
+    // height: 100%;
+    width: 50%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.lhs.with-heading {
+    height: calc(100% - 100px);
+}
+
+.rhs {
+    float: left;
+    position: relative;
+    // height: 100%;
+    width: 50%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.rhs.with-heading {
+    height: calc(100% - 100px);
+}
+
+#scene_id_region {
+    position: absolute;
+    top: calc(100% - 50px);
+    left: calc(50% - 10px);
+}
+
+.img-centered {
+    display: block;
+    /* max-width: 100%; */
+    /* height: auto; */
+    margin-left: auto;
+    margin-right: auto;
+}
+/*
+.centered-form-wrapper {
+    position: relative;
+    width: 60%;
+    left: 40%;
+} */
+
+/* .form-centered { */
+    /* width: max-content; */
+    /* float: right; */
+    /* width: 100%; */
+    /* margin-left: 100px; */
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+/* } */
+
+ol.centered {
+    position: relative;
+    /* left: 10%; */
+    width: max-content;
+    list-style-position: inside;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul.centered {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    /* left: 10%; */
+    width: max-content;
+    list-style-position: outside;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.div-centered {
+    /* display: inline-block; */
+    margin-left: 40%;
+    /* margin-right: auto; */
+}
+
+/* not exactly centered, but looks good */
+.vert-centered {
+    position: relative;
+    top: 30%;
+}
+
+
+
+.long-arrow-btn {
+    position: absolute;
+    margin: 0;
+    z-index: 3;
+    top: calc(100% - 91px);
+}
+
+/* .long-arrow-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+} */
+
+.form-wrapper {
+    // text-align: center;
+    width: 100%;
+    height: fit-content;
+
+}
+
+.form-content {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+// .centered-form {
+//     display: inline-block;
+//     margin-left: auto;
+//     margin-right: auto;
+//     // width: 100%;
+//     // text-align: left;
+// }
+
+.prev-btn {
+    /* img is 130x138px */
+    top: calc(100% - 138px);
+    left: 5px;
+}
+
+.next-btn {
+    /* img is 130x138px */
+    top: calc(100% - 138px);
+    left: calc(100% - 133px);
+    transform: scaleX(-1);
+}
+
+.submit-mc {
+    display: block;
+}
+
+
+table.dogs-table {
+    text-align: center;
+    border: solid black 1px;
+    border-spacing: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+table.dogs-table td {
+    border: solid black 1px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+}
+
+table.dogs-table th {
+    border: solid black 1px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+td.blue-bg {
+    background-color: lightblue;
+}
+td.green-bg {
+    background-color: lightgreen;
+}
+
+// .feedback-region {
+//     min-height: 50px;
+//     max-height: fit-content;
+//     width: 100%;
+// }
+
+
