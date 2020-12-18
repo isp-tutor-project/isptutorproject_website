@@ -7,8 +7,7 @@
     "private": true,
     "scripts": {
         "build": "rimraf dist && NODE_ENV=production DEBUG=false  webpack --mode=production",
-        "watch": "rimraf dist && NODE_ENV=development DEBUG=true webpack --watch --mode=development",
-        "setup": "cd templates/_includes && ln -sfn ../../../../config/eleventy-config/sitewide_includes site && cd ../.. && cd templates/img && mkdir -p site && cp -r ../../../../config/eleventy-config/sitewide_images/* site && cd ../.."
+        "watch": "rimraf dist && NODE_ENV=development DEBUG=true webpack --watch --mode=development"
     },
     "dependencies": {
         "@isptutorproject/isp-database": "0.1.0",
