@@ -1,4 +1,4 @@
-const { surveyOptions } = require("./shared");
+const { surveyOptions } = require("./diShared");
 
 module.exports = {
     questions: {
