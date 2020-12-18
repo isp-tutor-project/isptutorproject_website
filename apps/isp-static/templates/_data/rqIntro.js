@@ -1,3 +1,3 @@
 
-const data = require("../../../rq-intro/data/rqIntro.json");
+const data = require("../../data/rqIntro.json");
 module.exports = data;

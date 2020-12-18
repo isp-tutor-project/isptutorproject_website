@@ -1,2 +1,2 @@
-const data = require("../../../di-prepost/data/diCrystalTest.json");
+const data = require("../../data/diCrystalTest.json");
 module.exports = data;

@@ -1,4 +1,4 @@
 
-const data = require("../../../di-prepost/data/diPostTest.json");
+const data = require("../../data/diPostTest.json");
 module.exports = data;
 
