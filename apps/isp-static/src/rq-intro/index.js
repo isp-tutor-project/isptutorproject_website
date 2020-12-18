@@ -122,7 +122,7 @@ class RQIntroApp extends SceneBasedApp {
 }
 
 let activityConfig = getActivityConfiguration();
-const activityData = require("../data/rqIntro.json");
+const activityData = require("../../data/rqIntro.json");
 
 let navbar = new NavBar();
 navbar.displayActivityTitle("Crystal Growth Experiment Intro");

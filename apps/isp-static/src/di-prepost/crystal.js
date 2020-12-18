@@ -13,7 +13,7 @@ const DEFAULT_APP_INITIAL_STATE = {
 
 
 let activityConfig = getActivityConfiguration();
-const activityData = require("../data/diCrystalTest.json");
+const activityData = require("../../data/diCrystalTest.json");
 
 let navbar = new NavBar();
 navbar.displayActivityTitle("Crystal Growth Data Interpretation");

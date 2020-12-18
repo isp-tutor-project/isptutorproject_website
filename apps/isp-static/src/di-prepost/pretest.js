@@ -13,7 +13,7 @@ const DEFAULT_APP_INITIAL_STATE = {
 
 
 let activityConfig = getActivityConfiguration();
-const activityData = require("../data/diPreTest.json");
+const activityData = require("../../data/diPreTest.json");
 
 let navbar = new NavBar();
 navbar.displayActivityTitle("Data Interpretation Pre-Test");
