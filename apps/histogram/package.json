@@ -6,16 +6,13 @@
   "license": "Proprietary",
   "private": true,
   "scripts": {
-    "build": "npm run setup && rimraf dist && NODE_ENV=production DEBUG=false webpack --mode=development && eleventy ",
-    "watch": "npm run setup && rimraf dist && NODE_ENV=development DEBUG=true webpack --mode=production & eleventy --watch",
-    "setup": "cd templates/_includes && ln -sfn ../../../../config/eleventy-config/sitewide_includes site && cd ../.. && cd templates/img && mkdir -p site && cp -r ../../../../config/eleventy-config/sitewide_images/* site && cd ../.."
+    "build": "rimraf dist && NODE_ENV=production DEBUG=false webpack --mode=development",
+    "watch": "rimraf dist && NODE_ENV=development DEBUG=true webpack --mode=production"
   },
   "dependencies": {
     "@isptutorproject/navbar": "0.1.0"
   },
   "devDependencies": {
-    "@11ty/eleventy": "0.11.0",
-    "@isptutorproject/eleventy-config": "0.1.0",
     "@isptutorproject/webpack-config": "0.1.0",
     "rimraf": "^3.0.2",
     "webpack": "^4.44.2",
