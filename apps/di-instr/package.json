@@ -2,9 +2,13 @@
   "name": "@isptutorproject/di-instr",
   "version": "0.1.0",
   "description": "Data Interpretation Instruction Module",
-  "scripts": {
+  "comment": {
     "build": "rimraf dist && node scripts/buildData.js && NODE_ENV=production DEBUG=false webpack --mode=production ",
     "watch": "rimraf dist && node scripts/buildData.js && NODE_ENV=development DEBUG=true webpack --watch --mode=development"
+  },
+  "scripts": {
+    "build": "echo \"skipping build\"",
+    "watch": "echo \"skipping watch\""
   },
   "author": "Scott Silliman <scott.t.silliman@gmail.com>",
   "license": "Proprietary",

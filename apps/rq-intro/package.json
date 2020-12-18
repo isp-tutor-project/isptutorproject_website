@@ -5,9 +5,13 @@
     "main": "src/index.js",
     "license": "Proprietary",
     "private": true,
-    "scripts": {
+    "comments": {
         "build": "rimraf dist && node scripts/buildData.js && NODE_ENV=production DEBUG=false webpack --mode=production",
         "watch": "rimraf dist && node scripts/buildData.js && NODE_ENV=development DEBUG=false webpack --watch --mode=development"
+    },
+    "scripts": {
+        "build": "echo \"skipping build\"",
+        "watch": "echo \"skipping watch\""
     },
     "dependencies": {
         "@isptutorproject/activity-config": "0.1.0",
