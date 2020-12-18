@@ -1,8 +1,8 @@
 ---
-permalink: soda.html
+permalink: apps/exp-design/soda.html
 title: "Experimental Design: Soda"
 ---
-{% extends "base.njk" %}
+{% extends "exp-design/base.njk" %}
 {% block content %}
     <div class="inline" style="width: 60%">
         <table>
@@ -178,13 +178,13 @@ title: "Experimental Design: Soda"
     </div>
     <br>
     <div class="inline">
-        <object id="cond1_img" width="500" data="./img/soda.svg"></object>
+        <object id="cond1_img" width="500" data="/img/exp-design/soda.svg"></object>
     </div>
     <div class="inline">
-        <object id="cond2_img" width="500" data="./img/soda.svg"></object>
+        <object id="cond2_img" width="500" data="/img/exp-design/soda.svg"></object>
     </div>
 {% endblock %}
 
 {% block bundles %}
-    <script src="./soda.bundle.js"></script>
+    <script src="/bundles/soda.bundle.js"></script>
 {% endblock %}

@@ -1,8 +1,8 @@
 ---
-permalink: sinking.html
+permalink: apps/exp-design/sinking.html
 title: "Experimental Design: Sinking"
 ---
-{% extends "base.njk" %}
+{% extends "exp-design/base.njk" %}
 {% block content %}
     <div style="margin: auto; width: fit-content;">
         <table>
@@ -125,13 +125,13 @@ title: "Experimental Design: Sinking"
     </div>
     <br>
     <div class="inline">
-        <object id="cond1_img" width="500" data="./img/sinking.svg"></object>
+        <object id="cond1_img" width="500" data="/img/exp-design/sinking.svg"></object>
     </div>
     <div class="inline">
-        <object id="cond2_img" width="500" data="./img/sinking.svg"></object>
+        <object id="cond2_img" width="500" data="/img/exp-design/sinking.svg"></object>
     </div>
 {% endblock %}
 
 {% block bundles %}
-    <script src="./sinking.bundle.js"></script>
+    <script src="/bundles/sinking.bundle.js"></script>
 {% endblock %}

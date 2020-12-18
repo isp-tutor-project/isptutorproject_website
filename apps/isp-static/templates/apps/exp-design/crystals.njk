@@ -1,8 +1,8 @@
 ---
-permalink: crystals.html
+permalink: apps/exp-design/crystals.html
 title: "Experimental Design: Crystal Growth"
 ---
-{% extends "base.njk" %}
+{% extends "exp-design/base.njk" %}
 
 {% block content %}
     <div style="margin: auto; width: fit-content;">
@@ -145,10 +145,10 @@ title: "Experimental Design: Crystal Growth"
     </div>
     <br>
     <div class="inline">
-        <object id="cond1_img" width="500" data="./img/crystals.svg"></object>
+        <object id="cond1_img" width="500" data="/img/exp-design/crystals.svg"></object>
     </div>
     <div class="inline">
-        <object id="cond2_img" width="500" data="./img/crystals.svg"></object>
+        <object id="cond2_img" width="500" data="/img/exp-design/crystals.svg"></object>
     </div>
 {% endblock %}
 {% block code %}
@@ -283,5 +283,5 @@ title: "Experimental Design: Crystal Growth"
     </script>
 {% endblock %}
 {% block bundles %}
-    <script src="./crystals.bundle.js"></script>
+    <script src="/bundles/crystals.bundle.js"></script>
 {% endblock %}

@@ -1,8 +1,8 @@
 ---
-permalink: greenhouse.html
+permalink: apps/exp-design/greenhouse.html
 title: "Experimental Design: Plant Reproduction"
 ---
-{% extends "base.njk" %}
+{% extends "exp-design/base.njk" %}
 
 {% block content %}
     <div style="margin: auto; width: fit-content;">
@@ -185,13 +185,13 @@ title: "Experimental Design: Plant Reproduction"
     </div>
     <br>
     <div class="inline">
-        <object id="cond1_img" width="500" data="./img/greenhouse.svg"></object>
+        <object id="cond1_img" width="500" data="/img/exp-design/greenhouse.svg"></object>
     </div>
     <div class="inline">
-        <object id="cond2_img" width="500" data="./img/greenhouse.svg"></object>
+        <object id="cond2_img" width="500" data="/img/exp-design/greenhouse.svg"></object>
     </div>
 {% endblock %}
 
 {% block bundles %}
-    <script src="./greenhouse.bundle.js"></script>
+    <script src="/bundles/greenhouse.bundle.js"></script>
 {% endblock %}

@@ -1,8 +1,8 @@
 ---
-permalink: algae.html
+permalink: apps/exp-design/algae.html
 title: "Experimental Design: Algae Reproduction"
 ---
-{% extends "base.njk" %}
+{% extends "exp-design/base.njk" %}
 
 {% block content %}
     <div style="margin: auto; width: fit-content;">
@@ -188,13 +188,13 @@ title: "Experimental Design: Algae Reproduction"
     </div>
     <br>
     <div class="inline">
-        <object id="cond1_img" width="500" data="./img/algae.svg"></object>
+        <object id="cond1_img" width="500" data="/img/exp-design/algae.svg"></object>
     </div>
     <div class="inline">
-        <object id="cond2_img" width="500" data="./img/algae.svg"></object>
+        <object id="cond2_img" width="500" data="/img/exp-design/algae.svg"></object>
     </div>
 {% endblock %}
 
 {% block bundles %}
-    <script src="./algae.bundle.js"></script>
+    <script src="/bundles/algae.bundle.js"></script>
 {% endblock %}
