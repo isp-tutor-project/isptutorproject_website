@@ -129,12 +129,8 @@ class DiCrystalDataBuilder extends DataBuilder {
     }
 }
 
-
-let builder = new DiPreTestDataBuilder("diPreTest");
-builder.buildData();
-
-let builder2 = new DiPostTestDataBuilder("diPostTest");
-builder2.buildData();
-
-let builder3 = new DiCrystalDataBuilder("diCrystalTest");
-builder3.buildData();
+module.exports = {
+    DiPreTestDataBuilder,
+    DiPostTestDataBuilder,
+    DiCrystalDataBuilder
+};

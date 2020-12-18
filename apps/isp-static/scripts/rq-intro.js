@@ -36,5 +36,6 @@ class RQIntroDataBuilder extends DataBuilder {
     }
 }
 
-let builder = new RQIntroDataBuilder("rqIntro");
-builder.buildData();
+module.exports = {
+    RQIntroDataBuilder
+};
