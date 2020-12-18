@@ -96,6 +96,12 @@ module.exports = function(eleventyConfig) {
         return mergeScenesWithData(scenes, sceneData);
     });
 
+    eleventyConfig.addCollection("rqIntroScenesWithData", function (collection) {
+        let scenes = collection.getFilteredByTag("rqIntroScenes");
+        let sceneData = collection.getAll()[0].data.rqIntro.scenes;
+        return mergeScenesWithData(scenes, sceneData);
+    });
+
     return {
         dir: {
             input: "templates",
