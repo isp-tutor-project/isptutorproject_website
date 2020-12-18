@@ -7,8 +7,9 @@ const {
 
 const { RQIntroDataBuilder } = require("./rq-intro");
 
+const { ExpDesignDataBuilder } = require("./exp-design");
 
-let diInstr, diPre, diPost, diCrystal, rqIntro;
+let diInstr, diPre, diPost, diCrystal, rqIntro, expDesign;
 
 diInstr = new DataBuilder("diInstr");
 diInstr.buildData()
@@ -24,3 +25,6 @@ diCrystal.buildData();
 
 rqIntro = new RQIntroDataBuilder("rqIntro");
 rqIntro.buildData();
+
+expDesign = new ExpDesignDataBuilder("expDesign");
+expDesign.buildData();

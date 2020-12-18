@@ -37,5 +37,6 @@ class ExpDesignDataBuilder extends DataBuilder {
     }
 }
 
-let builder = new ExpDesignDataBuilder("expDesign");
-builder.buildData();
+module.exports = {
+    ExpDesignDataBuilder
+};
