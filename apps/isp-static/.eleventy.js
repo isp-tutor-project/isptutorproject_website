@@ -107,6 +107,6 @@ module.exports = function(eleventyConfig) {
             input: "templates",
             output: "../../wwwroot",
         },
-        templateFormats: ["njk"]
+        templateFormats: ["njk", "svg"]
     }
 }
