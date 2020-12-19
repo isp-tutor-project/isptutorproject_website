@@ -7,8 +7,7 @@
   "scripts": {
     "build:all": "cd ../.. && npm run build",
     "build": "rimraf dist && node scripts/buildData.js && NODE_ENV=production DEBUG=false webpack --mode=production && eleventy",
-    "watch": "eleventy --watch",
-    "start": "eleventy --serve",
+    "watch": "rimraf dist && node scripts/buildData.js && NODE_ENV=development DEBUG=true webpack --watch --mode=development & eleventy --watch",
     "setup": "cd templates/_includes && ln -sf ../../../../config/eleventy-config/sitewide_includes site"
   },
   "dependencies": {
