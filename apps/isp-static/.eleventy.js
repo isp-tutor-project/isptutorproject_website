@@ -11,14 +11,10 @@ const {
 // verticallyCenter,
 
 const APPS = {
-    "../di-instr/dist": "bundles/",
-    "../di-prepost/dist": "bundles/",
+    "dist": "bundles/",
     "../homepage/dist": "bundles/",
-    "../hypo-we/dist": "bundles/hypo-we",
-    "../histogram/dist": "bundles/histogram",
-    "../rq-intro/dist": "bundles/",
-    "../exp-design/dist": "bundles/",
-    "../sf-assessment/dist": "bundles/",
+    "../hypo-we/dist": "apps/hypo-we",
+    "../histogram/dist": "apps/histogram",
     "../../common/isp-api/dist": "libs",
     "../../edforge": "edforge"
 };

@@ -5,12 +5,14 @@
   "main": "src/index.js",
   "license": "UNLICENSED",
   "private": true,
-  "scripts": {
+  "comments": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run setup && rimraf dist && node scripts/buildData.js && NODE_ENV=production DEBUG=false webpack --mode=production && eleventy",
-    "watch": "npm run setup && rimraf dist && node scripts/buildData.js && NODE_ENV=development DEBUG=false webpack --watch --mode=development & eleventy --watch",
-    "setup": "cd templates/_includes && ln -sfn ../../../../config/eleventy-config/sitewide_includes site && cd ../.. && cd templates/img && mkdir -p site && cp -r ../../../../config/eleventy-config/sitewide_images/* site && cd ../..",
-    "start": "eleventy --serve"
+    "build": "rimraf dist && node scripts/buildData.js && NODE_ENV=production DEBUG=false webpack --mode=production && eleventy",
+    "watch": "rimraf dist && node scripts/buildData.js && NODE_ENV=development DEBUG=false webpack --watch --mode=development & eleventy --watch"
+  },
+  "scripts": {
+    "build": "echo \"skipping build\"",
+    "watch": "echo \"skipping watch\""
   },
   "dependencies": {
     "@isptutorproject/isp-database": "0.1.0",

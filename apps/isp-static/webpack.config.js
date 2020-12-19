@@ -14,6 +14,8 @@ let cfg = {
         diposttest: "./src/di-prepost/posttest.js",
         dicrystal: "./src/di-prepost/crystal.js",
         rqintro: "./src/rq-intro/index.js",
+        "sf-pretest":  "./src/sf-assessment/pretest.js",
+        "sf-posttest": "./src/sf-assessment/posttest.js",
         // exp-design dev stuff
         algae:      "./src/exp-design/algae.js",
         balloon:    "./src/exp-design/balloon.js",

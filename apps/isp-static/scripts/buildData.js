@@ -9,7 +9,9 @@ const { RQIntroDataBuilder } = require("./rq-intro");
 
 const { ExpDesignDataBuilder } = require("./exp-design");
 
-let diInstr, diPre, diPost, diCrystal, rqIntro, expDesign;
+const { ScienceFairAssessmentDataBuilder } = require("./sf-assessment");
+
+let diInstr, diPre, diPost, diCrystal, rqIntro, expDesign, sfPre, sfPost;
 
 diInstr = new DataBuilder("diInstr");
 diInstr.buildData()
@@ -28,3 +30,9 @@ rqIntro.buildData();
 
 expDesign = new ExpDesignDataBuilder("expDesign");
 expDesign.buildData();
+
+sfPre = new ScienceFairAssessmentDataBuilder("sfPreTest");
+sfPre.buildData();
+
+sfPost = new ScienceFairAssessmentDataBuilder("sfPostTest");
+sfPost.buildData();

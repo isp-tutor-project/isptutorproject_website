@@ -37,8 +37,6 @@ class ScienceFairAssessmentDataBuilder extends DataBuilder {
     }
 }
 
-let builderPre = new ScienceFairAssessmentDataBuilder("sfPreTest");
-builderPre.buildData();
-
-let builderPost = new ScienceFairAssessmentDataBuilder("sfPostTest");
-builderPost.buildData();
+module.exports = {
+    ScienceFairAssessmentDataBuilder
+};

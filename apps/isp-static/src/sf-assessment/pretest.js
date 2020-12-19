@@ -4,7 +4,7 @@ import { NavBar } from "@isptutorproject/navbar";
 import { getActivityConfiguration } from "@isptutorproject/activity-config";
 import { ScienceFairAssessmentApp } from "./ScienceFairAssessment";
 
-let activityData = require("../data/sfPreTest.json");
+let activityData = require("../../data/sfPreTest.json");
 
 // let activityConfig = getActivityConfiguration();
 // temporary hard-coding for development prior to Teacher Portal
