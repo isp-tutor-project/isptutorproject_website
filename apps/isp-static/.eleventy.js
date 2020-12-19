@@ -98,6 +98,18 @@ module.exports = function(eleventyConfig) {
         return mergeScenesWithData(scenes, sceneData);
     });
 
+    eleventyConfig.addCollection("sfPreTestScenesWithData", function (collection) {
+        let scenes = collection.getFilteredByTag("sfPreTestScenes");
+        let sceneData = collection.getAll()[0].data.sfPreTest.scenes;
+        return mergeScenesWithData(scenes, sceneData);
+    });
+
+    eleventyConfig.addCollection("sfPostTestScenesWithData", function (collection) {
+        let scenes = collection.getFilteredByTag("sfPostTestScenes");
+        let sceneData = collection.getAll()[0].data.sfPostTest.scenes;
+        return mergeScenesWithData(scenes, sceneData);
+    });
+
     return {
         dir: {
             input: "templates",
