@@ -1,32 +1,34 @@
-<!DOCTYPE html>
-<html>
+---
+title: "ISP Tutor Hypothesis Lesson"
+---
+{% extends "base.njk" %}
 
-  <head>
-    {% include "site/stdHead.njk" %}
-    {% include "site/createjs.njk" %}
-    <title>ISP Tutor Hypothesis Lesson</title>
-    <link rel="stylesheet" href="hypo-gr.bundle.css">
-  </head>
+{% block extrajs %}
+   {% include "site/createjs.njk" %}
+{% endblock %}
 
-  <body>
-    {% include "site/navbar.njk" %}
+{% block cssbundle%}
+    <link rel="stylesheet" href="/bundles/hypo-gr.bundle.css">
+{% endblock %}
 
-    <img id="loading_gif" src="img/site/_preloader.gif" class="hidden" />
-    <main>
-      <canvas id="hypo-canvas" width="1200" height="750">
+{% block main %}
+      {# <img id="loading_gif" src="/img/site/_preloader.gif" class="hidden" /> #}
+      {# <canvas id="hypo-canvas" width="1200" height="750">
         Error: HTML5 canvas is not working. Please make sure JavaScript is enabled.
-      </canvas>
+      </canvas> #}
 
-      {% for overlay in collections.overlays %}
-        {{ overlay.templateContent | safe }}
+      {% for scene in collections.hypoGRScenes %}
+        <section id="{{scene.fileSlug}}" class="scene">
+          <div class="scene-content">
+            {{ scene.templateContent | safe }}
+          </div>
+        </section>
       {% endfor %}
-    </main>
+      <img id="prev_btn" class="nav-btn prev-btn" />
+      <img id="next_btn" class="nav-btn next-btn" />
+{% endblock %}
 
 
-    
-    <!-- Snackbar -->
-    <div id="snackbar">Some text some message..</div>
-
-    <script src="hypo-gr.bundle.js"></script>
-  </body>
-</html>
+{% block bundles %}
+    <script src="/bundles/hypo-gr.bundle.js"></script>
+{% endblock %}
