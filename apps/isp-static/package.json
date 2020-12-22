@@ -4,11 +4,19 @@
   "description": "templates for eleventy static-site-generator ",
   "license": "UNLICENSED",
   "private": true,
+  "watch": {
+    "build:data": "data/*.js"
+  },
   "scripts": {
     "build:all": "cd ../.. && npm run build",
-    "build": "rimraf dist && node scripts/buildData.js && NODE_ENV=production DEBUG=false webpack --mode=production && eleventy",
-    "watch": "rimraf dist && node scripts/buildData.js && NODE_ENV=development DEBUG=true webpack --watch --mode=development & eleventy --watch",
-    "setup": "cd templates/_includes && ln -sf ../../../../config/eleventy-config/sitewide_includes site"
+    "build": "rimraf dist && npm run build:data && npm run build:src && npm run build:templates",
+    "build:data": "node scripts/buildData.js",
+    "build:src": "NODE_ENV=production DEBUG=false webpack --mode=production",
+    "build:templates": "eleventy",
+    "watch": "rimraf dist && npm run watch:data & npm run watch:src & npm run watch:templates",
+    "watch:data": "npm-watch",
+    "watch:src": "NODE_ENV=development DEBUG=true webpack --watch --mode=development",
+    "watch:templates": "eleventy --watch"
   },
   "dependencies": {
     "@isptutorproject/activity-config": "0.1.0",
@@ -22,6 +30,7 @@
     "@11ty/eleventy": "0.11.0",
     "@isptutorproject/eleventy-config": "0.1.0",
     "@isptutorproject/webpack-config": "0.1.0",
+    "npm-watch": "^0.7.0",
     "rimraf": "^3.0.2",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
