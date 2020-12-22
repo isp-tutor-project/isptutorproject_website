@@ -1,0 +1,86 @@
+$my_path: "/";
+
+@use "~@isptutorproject/isp-site-styles" with (
+    $app_path: $my_path
+);
+
+html {
+    font-size: 24px;
+}
+
+
+/*
+ * start of app-specific css
+ */
+main {
+    height: calc(100% - 36px);
+    width: 100%;
+    margin: 0;
+    background-color: white;
+    // border: solid #d6e9fc 40px;
+}
+
+h1, h2, h3, h4, h5 {
+    text-align: center;
+    margin-block-start: 0.25em;
+    margin-block-end: 1em;
+}
+
+
+p {
+    /* default to centered. use text-justify if you want to override */
+    text-align: center;
+    margin-block-start: 0.75em;
+    margin-block-end: 0.75em;
+}
+
+.btn-huge {
+    font-size: 3rem;
+    padding: 0.50em 0.50em;
+    border-radius: 0.5em;
+}
+
+.scene {
+    position: relative;
+    display: none;
+    height: 100%;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.scene.active {
+    display: block;
+}
+
+.scene-content {
+    position: relative;
+    // border: 1px solid hotpink;
+    width: 1300px;
+    height: 714px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: center center;
+}
+
+
+.img-centered {
+    display: block;
+    /* max-width: 100%; */
+    /* height: auto; */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.prev-btn {
+    /* img is 130x138px */
+    top: calc(100% - 138px);
+    left: 5px;
+}
+
+.next-btn {
+    /* img is 130x138px */
+    top: calc(100% - 138px);
+    left: calc(100% - 133px);
+    transform: scaleX(-1);
+}
