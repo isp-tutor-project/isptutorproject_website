@@ -11,7 +11,7 @@ const { ExpDesignDataBuilder } = require("./exp-design");
 
 const { ScienceFairAssessmentDataBuilder } = require("./sf-assessment");
 
-let diInstr, diPre, diPost, diCrystal, rqIntro, expDesign, sfPre, sfPost;
+let diInstr, diPre, diPost, diCrystal, rqIntro, expDesign, sfPre, sfPost, hypoGR;
 
 diInstr = new DataBuilder("diInstr");
 diInstr.buildData()
@@ -36,3 +36,6 @@ sfPre.buildData();
 
 sfPost = new ScienceFairAssessmentDataBuilder("sfPostTest");
 sfPost.buildData();
+
+hypoGR = new DataBuilder("hypoGR");
+hypoGR.buildData();
