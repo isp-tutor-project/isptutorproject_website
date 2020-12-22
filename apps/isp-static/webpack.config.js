@@ -24,8 +24,8 @@ let cfg = {
         icemelting: "./src/exp-design/icemelting.js",
         ramps:      "./src/exp-design/ramps.js",
         sinking:    "./src/exp-design/sinking.js",
-        soda:       "./src/exp-design/soda.js"
-
+        soda:       "./src/exp-design/soda.js",
+        "hypo-gr": "./src/hypo-gr/index.js"
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
