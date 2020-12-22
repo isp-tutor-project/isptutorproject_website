@@ -67,6 +67,7 @@ module.exports = function(eleventyConfig) {
     }
 
     eleventyConfig.addPassthroughCopy({"templates/img": "img"});
+    eleventyConfig.addPassthroughCopy({ "templates/media": "media" });
 
     eleventyConfig.addCollection("diInstrScenesWithData", function (collection) {
         let scenes = collection.getFilteredByTag("diInstrScenes");
