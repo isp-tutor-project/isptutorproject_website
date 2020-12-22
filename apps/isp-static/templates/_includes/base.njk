@@ -3,6 +3,7 @@
     <head>
         {% include "site/stdHead.njk" %}
         <title>{{ title }}</title>
+        {% block extrajs %}{% endblock %}
         {% block cssbundle %}{% endblock %}
     </head>
     <body>
