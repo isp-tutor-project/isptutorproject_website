@@ -1,0 +1,48 @@
+{% extends "hypo-gr/base.njk" %}
+{% block content %}
+
+    <p class="text-lg">
+        Direction:
+    </p>
+    <p class="text-lg">
+        Before you make your concept map, please take a few minutes to write
+        a detailed explanation of how you think  <span class="iv lc"></span>
+         affects the <span class="dv lc"></span>. You can use some of the
+        concepts listed below, which you can also use in your concept map.
+    </p>
+    <p class="text-lg">
+        The important thing is that your hypothesis makes sense to you. You can
+        come back to this page later to make improvements to your hypothesis.
+    </p>
+
+    <div id="notepad_rq_header">
+        <button id="toggle_rq_body" class="link-button collapsed" data-target="notepad_rq_body">
+        <div id="rq_toggler" class="toggler collapsed"></div>Your Research Question
+        </button>
+    </div>
+    <div id="notepad_rq_body" class="invisible collapsable-text"></div>
+
+    <div id="notepad_pred_header">
+        <button id="toggle_pred_body" class="link-button collapsed" data-target="notepad_pred_body">
+        <div id="pred_toggler" class="toggler collapsed"></div>Prediction for Your Hypothesis
+        </button>
+    </div>
+    <div id="notepad_pred_body" class="invisible collapsable-text"></div>
+
+    <div id="notepad_concepts_header">
+        <button id="toggle_concepts_body" class="link-button collapsed" data-target="notepad_concepts_body">
+        <div id="concepts_toggler" class="toggler collapsed"></div>Concepts
+        </button>
+    </div>
+    <div id="notepad_concepts_body" class="invisible collapsable-text">
+        <ul id="concepts_list">
+        </ul>
+    </div>
+
+    <div id="paper">
+        <div id="pattern">
+        <div id="notepad_notes" class="notepad-body" contenteditable="true"></div>
+        </div>
+    </div>
+
+{% endblock %}
