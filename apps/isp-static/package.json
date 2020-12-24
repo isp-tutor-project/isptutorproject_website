@@ -5,7 +5,13 @@
   "license": "UNLICENSED",
   "private": true,
   "watch": {
-    "build:data": "data/*.js"
+    "build:data": {
+      "patterns": [
+          "data/*.js"
+      ],
+      "delay": 1000,
+      "quiet": true
+    }
   },
   "scripts": {
     "build:all": "cd ../.. && npm run build",
@@ -15,8 +21,8 @@
     "build:templates": "eleventy",
     "watch": "rimraf dist && npm run watch:data & npm run watch:src & npm run watch:templates",
     "watch:data": "npm-watch",
-    "watch:src": "NODE_ENV=development DEBUG=true webpack --watch --mode=development",
-    "watch:templates": "eleventy --watch"
+    "watch:src": "NODE_ENV=development DEBUG=true webpack --watch --mode=development --quiet",
+    "watch:templates": "eleventy --watch --quiet"
   },
   "dependencies": {
     "@isptutorproject/activity-config": "0.1.0",
