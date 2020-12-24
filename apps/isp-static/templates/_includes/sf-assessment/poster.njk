@@ -1,0 +1,24 @@
+<div class="poster-container">
+    <div class="poster-column {{poster_lhs_class}}">
+        <span class="poster-hdg">Research Question</span>
+        <div class="poster-rq">{% block rq %}{% endblock %}</div>
+        <span class="poster-hdg">Research Summary</span>
+        <div class="poster-rs">{% block research_summary %}{% endblock %}</div>
+        <span class="poster-hdg">Hypothesis</span>
+        <div class="poster-hypo">{% block hypo %}{% endblock %}</div>
+    </div>
+    <div class="poster-column {{poster_center_class}}">
+        <span class="poster-hdg">{{ poster_title | safe }}</span>
+        <hr>
+        <span class="poster-hdg">Materials</span>
+        <div class="poster-materials">{% block materials %}{% endblock %}</div>
+        <span class="poster-hdg">Procedure</span>
+        <div class="poster-procedure">{% block procedure %}{% endblock %}</div>
+    </div>
+    <div class="poster-column {{poster_rhs_class}}">
+        <span class="poster-hdg">Results</span>
+        <div class="poster-results">{% block results %}{% endblock %}</div>
+        <span class="poster-hdg">Conclusion</span>
+        <div class="poster-conclusion">{% block conclusion%}{% endblock%}</div>
+    </div>
+</div>

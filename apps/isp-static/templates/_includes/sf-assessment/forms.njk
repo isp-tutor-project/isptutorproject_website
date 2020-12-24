@@ -1,0 +1,40 @@
+
+{% macro _join(separator, array) %}{{ array | join(separator) }}{% endmacro %}
+
+
+{% macro radio_btn(id, name, value, label, isVert=false) %}
+    <input type="radio"
+           id="{{id}}"
+           name="{{name}}"
+           value="{{value}}" required>
+    <label id="{{id}}_label"
+          class="option-label {% if isVert %}vert-radio-label{% endif %} text-sm"
+          for="{{id}}">
+            {{label | safe}}
+    </label>
+    {% if isVert %} <br/> {% endif %}
+{% endmacro %}
+
+{% macro radio_btns(questionId, options, isVert=false) %}
+    {% for option in options %}
+        {% set radioId = _join('_', [questionId, "option", option.value]) %}
+        {% set name = _join('_', [questionId, "option"]) %}
+        {{ radio_btn(radioId, name, option.value, option.label, isVert=isVert) }}
+    {% endfor %}
+{% endmacro %}
+
+{% macro radios_form(page, isVert=false) %}
+    {# {{ showpage(page) }} #}
+    {% set question = page.data.question %}
+    <div class="form-wrapper">
+        <p class="text-sm">
+            {{ question.text }}
+        </p>
+        <form id="{{question.id}}_radio_form">
+            <div class="form-content">
+                {{ radio_btns(question.id, question.options, isVert=isVert) }}
+                {# {{ submit_btn(sceneId, "radio") }} #}
+            </div>
+        </form>
+    </div>
+{% endmacro %}
