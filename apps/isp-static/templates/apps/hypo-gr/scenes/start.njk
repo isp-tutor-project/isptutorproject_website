@@ -1,9 +1,22 @@
 {% extends "hypo-gr/base.njk" %}
 {% block content %}
+
+    <img src="/img/site/RevisedHeader.jpg" width="1000px" class="img-centered" />
+
     <p class="text-xxl">
         Welcome to the ISP Tutor's Hypothesis module.
     </p>
-    <img src="/img/hypo-gr/slide_intro/TeacherPointing.jpg" />
-    <button class="btn btn-huge btn-primary">Start</button>
+
+    <p class="text-xxl">
+        Click the "Start" button below to begin.
+    </p>
+
+    {# <img src="/img/hypo-gr/slide_intro/TeacherPointing.jpg" /> #}
+    <p>
+        <button class="follow-edge btn btn-huge btn-success"
+                data-edge="next">
+            Start
+        </button>
+    </p>
 
 {% endblock %}
