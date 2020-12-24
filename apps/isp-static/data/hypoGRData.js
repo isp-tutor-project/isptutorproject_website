@@ -3,7 +3,13 @@ module.exports = {
         start: {
             edges: {
                 next: "definition1"
-            }
+            },
+            customEnterActions: [
+                {
+                    name: "hideBtns",
+                    args: ["prev", "next"]
+                }
+            ]
         },
         definition1: {
             edges: {
