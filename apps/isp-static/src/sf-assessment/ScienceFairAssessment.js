@@ -13,6 +13,9 @@ export class ScienceFairAssessmentScene extends Scene {
         };
     }
 
+    // pre_enter() {}
+    // post_enter() {}
+
     performCustomEnterSceneActions() {
         for (let action of this.customEnterActions) {
             let name = action.name;
