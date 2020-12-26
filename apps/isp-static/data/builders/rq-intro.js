@@ -3,7 +3,7 @@ const {
     addCustomExitActionsIfMissing,
     addSceneTypeIfMissing,
     DataBuilder
-} = require("@isptutorproject/isp-data");
+} = require("./data-builder");
 
 
 const VALID_EDGE_NAMES = ["prev", "next"];
