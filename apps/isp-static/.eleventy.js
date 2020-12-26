@@ -11,13 +11,13 @@ const {
 // verticallyCenter,
 
 const APPS = {
-    "dist": "bundles/",
-    "../homepage/dist": "bundles/",
+    "dist/bundles": "bundles/",
     "../hypo-we/dist": "apps/hypo-we",
-    "../histogram/dist": "apps/histogram",
     "../../common/isp-api/dist": "libs",
     "../../edforge": "edforge"
 };
+// "../histogram/dist": "apps/histogram",
+// "../homepage/dist": "bundles/",
 
 // "../hypo-gr/dist": "apps/hypo-gr",
 
