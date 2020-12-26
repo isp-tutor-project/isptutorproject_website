@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"name": "🚀@isptutorproject/isp-static",
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.root": "./wwwroot",
+		"liveServer.settings.CustomBrowser": "chrome:PrivateMode"
+	}
+}
