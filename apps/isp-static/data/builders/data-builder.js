@@ -28,11 +28,15 @@ class DataBuilder {
         // this.inFile = path.resolve(__dirname, `${filePrefix}Data`);
         // this.outFile = path.resolve(__dirname, `${filePrefix}.json`);
         const pwd = process.cwd();
-        this.inFile  = path.join(pwd, "data", `${filePrefix}Data.js`);
-        this.outFile = path.join(pwd, "data", `${filePrefix}.json`);
+        let dirname = path.dirname(filePrefix);
+        let basename = path.basename(filePrefix);
+        this.inFile  = path.join(pwd, "data", dirname, `${basename}Data.js`);
+        let tmp = path.join("dist", "data", `${basename}.json`);
+        this.outFile = path.join(pwd, tmp);
         // console.log("__dirname", __dirname);
         // console.log("infile", this.inFile);
         // console.log("outfile", this.outFile);
+        console.log(`generating: ${tmp}`);
     }
 
     buildData() {
