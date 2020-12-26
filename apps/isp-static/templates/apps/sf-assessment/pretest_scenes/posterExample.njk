@@ -6,14 +6,4 @@
 
 {% block tb_bottom %}
     {{ forms.radios_form(page, isVert=true) }}
-{#
-    <p class="text-sm">
-        {{ page.data.question | jsonify}}
-    </p>
-    <p class="text-sm">
-        <label><input type="radio" name="swallow" value="african"> Would that be of the African</label>
-        <label><input type="radio" name="swallow" value="european"> or European variety?</label>
-        <label><input type="radio" name="swallow" value="42"> 42 </label>
-    </p> #}
-
 {% endblock %}
