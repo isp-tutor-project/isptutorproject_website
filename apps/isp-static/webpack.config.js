@@ -2,33 +2,35 @@ const path = require("path");
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const merge = require("webpack-merge");
+const merge  = require("webpack-merge");
 const dev    = require('@isptutorproject/webpack-config/webpack.dev');
 const prod   = require('@isptutorproject/webpack-config/webpack.prod');
 const common = require("@isptutorproject/webpack-config/webpack.common");
 
 let cfg = {
     entry: {
-        "di-instr": './src/di-instr/index.js',
-        dipretest: "./src/di-prepost/pretest.js",
-        diposttest: "./src/di-prepost/posttest.js",
-        dicrystal: "./src/di-prepost/crystal.js",
-        rqintro: "./src/rq-intro/index.js",
+        homepage:      "./src/homepage/index.js",
+        "di-instr":    "./src/di-instr/index.js",
+        dipretest:     "./src/di-prepost/pretest.js",
+        diposttest:    "./src/di-prepost/posttest.js",
+        dicrystal:     "./src/di-prepost/crystal.js",
+        rqintro:       "./src/rq-intro/index.js",
+        histogram:     "./src/histogram/index.js",
         "sf-pretest":  "./src/sf-assessment/pretest.js",
         "sf-posttest": "./src/sf-assessment/posttest.js",
+        "hypo-gr":     "./src/hypo-gr/index.js",
         // exp-design dev stuff
-        algae:      "./src/exp-design/algae.js",
-        balloon:    "./src/exp-design/balloon.js",
-        crystals:   "./src/exp-design/crystals.js",
-        greenhouse: "./src/exp-design/greenhouse.js",
-        icemelting: "./src/exp-design/icemelting.js",
-        ramps:      "./src/exp-design/ramps.js",
-        sinking:    "./src/exp-design/sinking.js",
-        soda:       "./src/exp-design/soda.js",
-        "hypo-gr": "./src/hypo-gr/index.js"
+        algae:         "./src/exp-design/algae.js",
+        balloon:       "./src/exp-design/balloon.js",
+        crystals:      "./src/exp-design/crystals.js",
+        greenhouse:    "./src/exp-design/greenhouse.js",
+        icemelting:    "./src/exp-design/icemelting.js",
+        ramps:         "./src/exp-design/ramps.js",
+        sinking:       "./src/exp-design/sinking.js",
+        soda:          "./src/exp-design/soda.js",
     },
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'dist', 'bundles'),
         filename: "[name].bundle.js"
     },
     plugins: [
