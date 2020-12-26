@@ -14,13 +14,13 @@
     }
   },
   "scripts": {
+    "watch": "npm run clean && npm-run-all -p watch:*",
+    "build": "npm run clean && npm-run-all build:*",
     "clean": "rimraf dist && mkdirp dist/data && mkdirp dist/bundles",
     "build-all": "cd ../.. && npm run build",
-    "build": "npm run clean && npm-run-all build:*",
     "build:data": "node data/buildData.js",
     "build:src": "NODE_ENV=production DEBUG=false webpack --mode=production",
     "build:templates": "eleventy",
-    "watch": "npm run clean && npm-run-all -p watch:*",
     "watch:data": "npm-watch",
     "watch:src": "sleep 5 && NODE_ENV=development DEBUG=true webpack --watch --mode=development --quiet",
     "watch:templates": "sleep 5 && eleventy --watch --quiet"
