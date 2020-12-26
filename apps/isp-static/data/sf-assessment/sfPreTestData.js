@@ -31,7 +31,7 @@ module.exports = {
 
         SodaMintQ2: {
             edges: {
-                prev: "sodaMintQ1",
+                prev: "SodaMintQ1",
                 next: "completed"
             },
             question: {
