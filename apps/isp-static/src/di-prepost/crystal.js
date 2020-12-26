@@ -3,6 +3,8 @@ import { NavBar } from "@isptutorproject/navbar";
 
 import { getActivityConfiguration } from "@isptutorproject/activity-config";
 
+const activityData = require("../../dist/data/diCrystalTest.json");
+
 
 const DEFAULT_APP_INITIAL_STATE = {
     events: [],
@@ -13,7 +15,6 @@ const DEFAULT_APP_INITIAL_STATE = {
 
 
 let activityConfig = getActivityConfiguration();
-const activityData = require("../../data/diCrystalTest.json");
 
 let navbar = new NavBar();
 navbar.displayActivityTitle("Crystal Growth Data Interpretation");

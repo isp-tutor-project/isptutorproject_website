@@ -3,6 +3,7 @@ import { NavBar } from "@isptutorproject/navbar";
 
 import { getActivityConfiguration } from "@isptutorproject/activity-config";
 
+const activityData = require("../../dist/data/diPreTest.json");
 
 const DEFAULT_APP_INITIAL_STATE = {
     events: [],
@@ -13,7 +14,6 @@ const DEFAULT_APP_INITIAL_STATE = {
 
 
 let activityConfig = getActivityConfiguration();
-const activityData = require("../../data/diPreTest.json");
 
 let navbar = new NavBar();
 navbar.displayActivityTitle("Data Interpretation Pre-Test");

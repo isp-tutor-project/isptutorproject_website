@@ -2,10 +2,10 @@
 import "./index.scss";
 
 import { NavBar } from "@isptutorproject/navbar";
-
 import { SceneBasedApp, Scene } from "@isptutorproject/scene-app-base";
-
 import { getActivityConfiguration } from "@isptutorproject/activity-config"
+
+const activityData = require("../../dist/data/rqIntro.json");
 
 const DEFAULT_APP_INITIAL_STATE = {
     events: [],
@@ -122,7 +122,6 @@ class RQIntroApp extends SceneBasedApp {
 }
 
 let activityConfig = getActivityConfiguration();
-const activityData = require("../../data/rqIntro.json");
 
 let navbar = new NavBar();
 navbar.displayActivityTitle("Crystal Growth Experiment Intro");

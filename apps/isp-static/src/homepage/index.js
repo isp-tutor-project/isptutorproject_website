@@ -3,7 +3,9 @@ import "./styles/index.scss";
 import { NavBar } from "@isptutorproject/navbar";
 import { SnackBar } from "@isptutorproject/snackbar";
 import { getDBConnection } from "@isptutorproject/isp-database";
-import { activities } from "../data/homePageData";
+
+const activities = require("../../dist/data/homePage.json");
+
 
 
 // convenience function so I don't have to constantly type document.getElementById()

@@ -3,6 +3,8 @@ import { NavBar } from "@isptutorproject/navbar";
 
 import { getActivityConfiguration } from "@isptutorproject/activity-config";
 
+const activityData = require("../../dist/data/diPostTest.json");
+
 const DEFAULT_APP_INITIAL_STATE = {
     events: [],
     // mapping of sceneIDs -> scene-type specific data
@@ -12,7 +14,6 @@ const DEFAULT_APP_INITIAL_STATE = {
 
 
 let activityConfig = getActivityConfiguration();
-const activityData = require("../../data/diPostTest.json");
 
 let navbar = new NavBar();
 navbar.displayActivityTitle("Data Interpretation Post-Test");
