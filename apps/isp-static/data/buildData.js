@@ -1,41 +1,47 @@
-const { DataBuilder } = require("@isptutorproject/isp-data");
+const { DataBuilder } = require("./builders/data-builder");
+
+const { HomePageDataBuilder } = require("./builders/homepage");
+
 const {
     DiPreTestDataBuilder,
     DiPostTestDataBuilder,
     DiCrystalDataBuilder
-} = require("./di-prepost");
+} = require("./builders/di-prepost");
 
-const { RQIntroDataBuilder } = require("./rq-intro");
+const { RQIntroDataBuilder } = require("./builders/rq-intro");
 
-const { ExpDesignDataBuilder } = require("./exp-design");
+const { ExpDesignDataBuilder } = require("./builders/exp-design");
 
-const { ScienceFairAssessmentDataBuilder } = require("./sf-assessment");
+const { ScienceFairAssessmentDataBuilder } = require("./builders/sf-assessment");
 
-let diInstr, diPre, diPost, diCrystal, rqIntro, expDesign, sfPre, sfPost, hypoGR;
+let homepage, diInstr, diPre, diPost, diCrystal, rqIntro, expDesign, sfPre, sfPost, hypoGR;
 
-diInstr = new DataBuilder("diInstr");
+homepage = new HomePageDataBuilder("homepage/homePage");
+homepage.buildData();
+
+diInstr = new DataBuilder("di-instr/diInstr");
 diInstr.buildData()
 
-diPre = new DiPreTestDataBuilder("diPreTest");
+diPre = new DiPreTestDataBuilder("di-prepost/diPreTest");
 diPre.buildData();
 
-diPost = new DiPostTestDataBuilder("diPostTest");
+diPost = new DiPostTestDataBuilder("di-prepost/diPostTest");
 diPost.buildData();
 
-diCrystal = new DiCrystalDataBuilder("diCrystalTest");
+diCrystal = new DiCrystalDataBuilder("di-prepost/diCrystalTest");
 diCrystal.buildData();
 
-rqIntro = new RQIntroDataBuilder("rqIntro");
+rqIntro = new RQIntroDataBuilder("rq-intro/rqIntro");
 rqIntro.buildData();
 
-expDesign = new ExpDesignDataBuilder("expDesign");
+expDesign = new ExpDesignDataBuilder("exp-design/expDesign");
 expDesign.buildData();
 
-sfPre = new ScienceFairAssessmentDataBuilder("sfPreTest");
+sfPre = new ScienceFairAssessmentDataBuilder("sf-assessment/sfPreTest");
 sfPre.buildData();
 
-sfPost = new ScienceFairAssessmentDataBuilder("sfPostTest");
+sfPost = new ScienceFairAssessmentDataBuilder("sf-assessment/sfPostTest");
 sfPost.buildData();
 
-hypoGR = new DataBuilder("hypoGR");
+hypoGR = new DataBuilder("hypo-gr/hypoGR");
 hypoGR.buildData();
