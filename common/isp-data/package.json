@@ -1,7 +1,0 @@
-{
-  "name": "@isptutorproject/isp-data",
-  "version": "0.1.0",
-  "description": "shared code to aid in app datafile generation",
-  "license": "UNLICENSED",
-  "private": true
-  }
