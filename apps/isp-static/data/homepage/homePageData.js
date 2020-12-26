@@ -1,4 +1,4 @@
-export const activities = [
+module.exports = [
     {
         id: "matsPreTest",
         label: "\"MATS\" Science Survey (pre)",
