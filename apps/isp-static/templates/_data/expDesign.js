@@ -1,2 +1,2 @@
-const data = require("../../data/expDesign.json");
+const data = require("../../dist/data/expDesign.json");
 module.exports = data;

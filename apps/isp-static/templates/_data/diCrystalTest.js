@@ -1,2 +1,2 @@
-const data = require("../../data/diCrystalTest.json");
+const data = require("../../dist/data/diCrystalTest.json");
 module.exports = data;

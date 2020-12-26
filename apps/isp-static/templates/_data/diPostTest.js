@@ -1,4 +1,4 @@
 
-const data = require("../../data/diPostTest.json");
+const data = require("../../dist/data/diPostTest.json");
 module.exports = data;
 
