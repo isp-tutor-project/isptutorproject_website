@@ -4,7 +4,7 @@ const sfPreTestData = {
     scenes: {
         start: {
             edges: {
-                next: "SodaMintQ1"  //this is one slide
+                next: "intro1"  //this is one slide
             },
             customEnterActions: [
                 {
@@ -12,6 +12,24 @@ const sfPreTestData = {
                     args: ["prev", "next"]
                 }
             ]
+        },
+        intro1: {
+            edges: {
+                prev: "start",
+                next: "intro2"
+            }
+        },
+        intro2: {
+            edges: {
+                prev: "intro1",
+                next: "intro3"
+            }
+        },
+        intro3: {
+            edges: {
+                prev: "intro2",
+                next: "SodaMintQ1"
+            }
         },
         SodaMintQ1: {
             edges: {
