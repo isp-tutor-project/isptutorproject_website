@@ -4,26 +4,15 @@
   "description": "templates for eleventy static-site-generator ",
   "license": "UNLICENSED",
   "private": true,
-  "watch": {
-    "build:data": {
-      "patterns": [
-        "data/*.js"
-      ],
-      "delay": 1000,
-      "quiet": true
-    }
-  },
   "scripts": {
     "watch": "npm run clean && npm-run-all -p watch:*",
     "build": "npm run clean && npm-run-all build:*",
-    "clean": "rimraf dist && mkdirp dist/data && mkdirp dist/bundles",
+    "clean": "rimraf dist && mkdirp dist",
     "build-all": "cd ../.. && npm run build",
-    "build:data": "node data/buildData.js",
     "build:src": "NODE_ENV=production DEBUG=false webpack --mode=production",
     "build:templates": "eleventy",
-    "watch:data": "npm-watch",
-    "watch:src": "sleep 5 && NODE_ENV=development DEBUG=true webpack --watch --mode=development --quiet",
-    "watch:templates": "sleep 5 && eleventy --watch --quiet"
+    "watch:src": "NODE_ENV=development DEBUG=true webpack --watch --mode=development --quiet",
+    "watch:templates": "eleventy --watch --quiet"
   },
   "dependencies": {
     "@isptutorproject/activity-config": "0.1.0",
@@ -37,10 +26,8 @@
     "@11ty/eleventy": "0.11.0",
     "@isptutorproject/eleventy-config": "0.1.0",
     "@isptutorproject/webpack-config": "0.1.0",
-    "cli-sleep": "^1.0.1",
     "mkdirp": "^1.0.4",
     "npm-run-all": "^4.1.5",
-    "npm-watch": "^0.7.0",
     "rimraf": "^3.0.2",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
