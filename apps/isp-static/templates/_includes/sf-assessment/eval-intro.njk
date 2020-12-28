@@ -1,6 +1,16 @@
-<div class="container">
-    <div class="eval-intro-left">
+<div class="container dev">
+    <div class="eval-intro-left dev">
+        {% if teacher == "odd" %}
+            <img width="196" src="/img/sf-assessment/teacherEven.png"  />
+        {% else %}
+            <img width="196" src="/img/sf-assessment/teacherOdd.png"  />
+        {% endif %}
     </div>
-    <div class="eval-intro-right">
+    <div class="eval-intro-right dev">
+        <div class="bubble bubble-md">
+            <div class="bubble-text">
+                {% block textBubble %} {% endblock %}
+            </div>
+        </div>
     </div>
 </div>
