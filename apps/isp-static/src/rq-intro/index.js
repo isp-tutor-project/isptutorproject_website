@@ -5,7 +5,7 @@ import { NavBar } from "@isptutorproject/navbar";
 import { SceneBasedApp, Scene } from "@isptutorproject/scene-app-base";
 import { getActivityConfiguration } from "@isptutorproject/activity-config"
 
-const activityData = require("../../dist/data/rqIntro.json");
+const activityData = require("../../data/rq-intro/rqIntroData");
 
 const DEFAULT_APP_INITIAL_STATE = {
     events: [],

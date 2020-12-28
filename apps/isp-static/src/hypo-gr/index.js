@@ -4,7 +4,7 @@ import { NavBar } from "@isptutorproject/navbar";
 import { getActivityConfiguration } from "@isptutorproject/activity-config";
 import {SceneBasedApp, Scene} from "@isptutorproject/scene-app-base";
 
-const activityData = require("../../dist/data/hypoGR.json");
+const activityData = require("../../data/hypo-gr/hypoGRData");
 
 // let activityConfig = getActivityConfiguration();
 let activityConfig = {

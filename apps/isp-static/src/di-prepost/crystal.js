@@ -3,7 +3,7 @@ import { NavBar } from "@isptutorproject/navbar";
 
 import { getActivityConfiguration } from "@isptutorproject/activity-config";
 
-const activityData = require("../../dist/data/diCrystalTest.json");
+const activityData = require("../../data/di-prepost/diCrystalTestData");
 
 
 const DEFAULT_APP_INITIAL_STATE = {

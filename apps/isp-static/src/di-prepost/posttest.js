@@ -3,7 +3,7 @@ import { NavBar } from "@isptutorproject/navbar";
 
 import { getActivityConfiguration } from "@isptutorproject/activity-config";
 
-const activityData = require("../../dist/data/diPostTest.json");
+const activityData = require("../../data/di-prepost/diPostTestData");
 
 const DEFAULT_APP_INITIAL_STATE = {
     events: [],

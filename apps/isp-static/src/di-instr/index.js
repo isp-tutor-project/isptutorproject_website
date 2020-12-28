@@ -5,7 +5,7 @@ import { getActivityConfiguration } from "@isptutorproject/activity-config";
 import { DiInstructionApp } from "./di-instruction-app";
 
 let activityConfig = getActivityConfiguration();
-let activityData = require("../../dist/data/diInstr.json");
+let activityData = require("../../data/di-instr/diInstrData");
 
 const DEFAULT_INITIAL_APP_STATE = {
     events: [],

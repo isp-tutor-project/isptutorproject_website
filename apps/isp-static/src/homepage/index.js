@@ -4,7 +4,7 @@ import { NavBar } from "@isptutorproject/navbar";
 import { SnackBar } from "@isptutorproject/snackbar";
 import { getDBConnection } from "@isptutorproject/isp-database";
 
-const activities = require("../../dist/data/homePage.json");
+const activities = require("../../data/homepage/homePageData");
 
 
 
