@@ -1,3 +1,3 @@
-const data = require("../../dist/data/sfPreTest.json");
+const data = require("../../data/sf-assessment/sfPreTestData");
 
 module.exports = data;

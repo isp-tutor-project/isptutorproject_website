@@ -1,3 +1,3 @@
-const data = require("../../dist/data/diInstr.json");
+const data = require("../../data/di-instr/diInstrData");
 
 module.exports = data;
