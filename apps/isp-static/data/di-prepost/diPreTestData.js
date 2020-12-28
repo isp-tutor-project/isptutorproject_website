@@ -1,6 +1,7 @@
+const { DiPreTestDataBuilder } = require("./builders");
 const { surveyOptions } = require("./diShared");
 
-module.exports = {
+const diPreTestData = {
   questions: {
     memory: {
       q1: {
@@ -284,3 +285,6 @@ module.exports = {
     }
   }
 };
+
+let bldr = new DiPreTestDataBuilder(diPreTestData);
+module.exports = bldr.buildData();

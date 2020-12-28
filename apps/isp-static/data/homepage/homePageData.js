@@ -1,4 +1,6 @@
-module.exports = [
+const { HomePageDataBuilder } = require("./builder");
+
+const homePageData = [
     {
         id: "matsPreTest",
         label: "\"MATS\" Science Survey (pre)",
@@ -217,3 +219,6 @@ module.exports = [
         implemented: true
     }
 ];
+
+let bldr = new HomePageDataBuilder(homePageData);
+module.exports = bldr.buildData();

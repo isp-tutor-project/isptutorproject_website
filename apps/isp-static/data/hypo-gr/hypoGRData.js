@@ -1,4 +1,6 @@
-module.exports = {
+const { DataBuilder } = require("../data-builder");
+
+const hypoGRData = {
     scenes: {
         start: {
             edges: {
@@ -131,4 +133,7 @@ module.exports = {
             }
         }
     }
-}
+};
+
+let bldr = new DataBuilder(hypoGRData);
+module.exports = bldr.buildData();

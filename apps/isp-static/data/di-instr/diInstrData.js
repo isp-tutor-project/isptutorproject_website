@@ -1,3 +1,4 @@
+const { DataBuilder } = require("../data-builder");
 
 const BACK_TO_QUESTION_SCENE = "scene11";
 const READY_TO_ANSWER_SCENE = "scene26";
@@ -1363,4 +1364,5 @@ const diInstructionData = {
     }
 };
 
-module.exports = diInstructionData;
+let builder = new DataBuilder(diInstructionData);
+module.exports = builder.buildData();

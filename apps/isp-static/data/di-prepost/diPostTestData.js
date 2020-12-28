@@ -1,6 +1,7 @@
+const { DiPostTestDataBuilder } = require("./builders");
 const { surveyOptions } = require("./diShared");
 
-module.exports = {
+const diPostTestData = {
     questions: {
         car: {
             q1: {
@@ -267,4 +268,7 @@ module.exports = {
             }
         }
     }
-}
+};
+
+let bldr = new DiPostTestDataBuilder(diPostTestData);
+module.exports = bldr.buildData();

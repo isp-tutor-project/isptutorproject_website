@@ -1,4 +1,6 @@
-module.exports = {
+const { ScienceFairAssessmentDataBuilder } = require("./builders");
+
+const sfPreTestData = {
     scenes: {
         start: {
             edges: {
@@ -17,7 +19,7 @@ module.exports = {
                 next: "SodaMintQ2"
             },
             question: {
-                id: "sfPreTest.sodaMint.q1",
+                id: "sfPreTest.sodaMint.q2",
                 type: "mc",
                 correctAnswer: "c",
                 text: "Q1) What is the weight of an unladen swallow?",
@@ -28,7 +30,6 @@ module.exports = {
                 ]
             }
         },
-
         SodaMintQ2: {
             edges: {
                 prev: "SodaMintQ1",
@@ -52,4 +53,7 @@ module.exports = {
             }
         }
     }
-}
+};
+
+let bldr = new ScienceFairAssessmentDataBuilder(sfPreTestData);
+module.exports = bldr.buildData();

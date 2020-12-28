@@ -1,4 +1,6 @@
-module.exports = {
+const { RQIntroDataBuilder } = require("./builder");
+
+const rqIntroData = {
     scenes: {
         start: {
             edges: {
@@ -38,3 +40,6 @@ module.exports = {
         }
     }
 };
+
+let bldr = new RQIntroDataBuilder(rqIntroData);
+module.exports = bldr.buildData();

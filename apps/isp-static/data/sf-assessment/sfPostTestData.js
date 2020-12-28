@@ -1,4 +1,6 @@
-module.exports = {
+const { ScienceFairAssessmentDataBuilder } = require("./builders");
+
+const sfPostTestData = {
     scenes: {
         start: {
             edges: {
@@ -23,4 +25,8 @@ module.exports = {
             }
         }
     }
-}
+};
+
+
+let bldr = new ScienceFairAssessmentDataBuilder(sfPostTestData);
+module.exports = bldr.buildData();

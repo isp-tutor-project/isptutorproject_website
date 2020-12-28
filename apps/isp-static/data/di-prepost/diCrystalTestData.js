@@ -1,6 +1,7 @@
+const { DiCrystalDataBuilder } = require("./builders");
 const { surveyOptions } = require("./diShared");
 
-module.exports = {
+const diCrystalGrowthData = {
     questions: {
         crystal: {
             q1: {
@@ -124,3 +125,5 @@ module.exports = {
     }
 };
 
+let bldr = new DiCrystalDataBuilder(diCrystalGrowthData);
+module.exports = bldr.buildData();
