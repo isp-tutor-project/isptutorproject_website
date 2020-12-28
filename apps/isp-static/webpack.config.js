@@ -30,7 +30,7 @@ let cfg = {
         soda:          "./src/exp-design/soda.js",
     },
     output: {
-        path: path.resolve(__dirname, 'dist', 'bundles'),
+        path: path.resolve(__dirname, "dist"),
         filename: "[name].bundle.js"
     },
     plugins: [
