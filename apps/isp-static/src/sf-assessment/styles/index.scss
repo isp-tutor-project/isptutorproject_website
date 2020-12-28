@@ -22,6 +22,16 @@ p.poster-text:first-of-type {
 p.poster-text:last-of-type {
     margin-bottom: 0.5em;
 }
+
+.eval-intro-left {
+    float: left;
+    width: 20%;
+}
+.eval-intro-right {
+    float: left;
+    width: 80%;
+}
+
 // div.content-wrapper {
 //     width: 100%;
 //     height: calc(100vh - 36px);
@@ -39,7 +49,36 @@ p.poster-text:last-of-type {
 /*
  * start of app-specific css
  */
-main {
+
+.bubble {
+  border-color: blue;
+  border-radius: 100%;
+  background-color: blue;
+  width: 90%;
+  margin-left: 0;
+  margin-right: 10%;
+  height: fit-content;
+}
+
+.bubble-lg {
+  padding: 80px 80px;
+ }
+
+.bubble-md {
+  padding: 40px 80px;
+}
+
+.bubble-sm {
+  padding: 30px 80px;
+ }
+
+.bubble-text {
+  color: white;
+  font-size: 18px;
+  width: 100%;
+}
+
+ main {
     // height: calc(100% - 36px);
     // height: calc( ((vw - 280px) / 1.6667) - 36px);
     // float: left;
