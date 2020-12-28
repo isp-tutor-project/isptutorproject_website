@@ -11,7 +11,7 @@ const {
 // verticallyCenter,
 
 const APPS = {
-    "dist/bundles": "bundles/",
+    "dist": "bundles/",
     "../hypo-we/dist": "apps/hypo-we",
     "../../common/isp-api/dist": "libs",
     "../../edforge": "edforge"
