@@ -4,7 +4,7 @@ const sfPreTestData = {
     scenes: {
         start: {
             edges: {
-                next: "intro1"  //this is one slide
+                next: "evalIntro1"  //this is one slide
             },
             customEnterActions: [
                 {
@@ -13,27 +13,51 @@ const sfPreTestData = {
                 }
             ]
         },
-        intro1: {
+        evalIntro1: {
             edges: {
                 prev: "start",
-                next: "intro2"
+                next: "evalIntro2"
             }
         },
-        intro2: {
+        evalIntro2: {
             edges: {
-                prev: "intro1",
-                next: "intro3"
+                prev: "evalIntro1",
+                next: "evalIntro3"
             }
         },
-        intro3: {
+        evalIntro3: {
             edges: {
-                prev: "intro2",
+                prev: "evalIntro2",
+                next: "posterIntro1"
+            }
+        },
+        posterIntro1: {
+            edges: {
+                prev: "evalIntro3",
+                next: "posterIntro2"
+            }
+        },
+        posterIntro2: {
+            edges: {
+                prev: "posterIntro1",
+                next: "posterIntro3"
+            }
+        },
+        posterIntro3: {
+            edges: {
+                prev: "posterIntro2",
+                next: "sodaMintIntro"
+            }
+        },
+        sodaMintIntro: {
+            edges: {
+                prev: "posterIntro3",
                 next: "SodaMintQ1"
             }
         },
         SodaMintQ1: {
             edges: {
-                prev: "start",
+                prev: "posterIntro3",
                 next: "SodaMintQ2"
             },
             question: {
@@ -51,7 +75,7 @@ const sfPreTestData = {
         SodaMintQ2: {
             edges: {
                 prev: "SodaMintQ1",
-                next: "completed"
+                next: "buildBeansIntro"
             },
             question: {
                 id: "sfPreTest.sodaMint.q2",
@@ -64,6 +88,18 @@ const sfPreTestData = {
                     { value: "c", label: "42" }
                 ]
             }
+        },
+        buildBeansIntro: {
+            edges: {
+                prev: "SodaMintQ2",
+                next: "completed"
+            },
+            customEnterActions: [
+                {
+                    name: "hideBtns",
+                    args: ["prev", "next"]
+                }
+            ]
         },
         completed: {
             edges: {
