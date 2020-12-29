@@ -13,71 +13,6 @@ body {
     height: 100vh;
 }
 
-p.poster-text {
-    text-align: left;
-}
-p.poster-text:first-of-type {
-    margin-top: 0.5em;
-}
-p.poster-text:last-of-type {
-    margin-bottom: 0.5em;
-}
-
-.eval-intro-left {
-    float: left;
-    width: 20%;
-}
-.eval-intro-right {
-    float: left;
-    width: 80%;
-}
-
-// div.content-wrapper {
-//     width: 100%;
-//     height: calc(100vh - 36px);
-// }
-
-// nav.left-nav,
-// nav.right-nav {
-//     // height: calc( ((vw - 280px) / 1.6667) - 36px);
-//     float: left;
-//     height: 100%;
-//     width: 140px;
-//     // width: auto;
-// }
-
-/*
- * start of app-specific css
- */
-
-.bubble {
-  border-color: blue;
-  border-radius: 100%;
-  background-color: blue;
-  width: 90%;
-  margin-left: 0;
-  margin-right: 10%;
-  height: fit-content;
-}
-
-.bubble-lg {
-  padding: 80px 80px;
- }
-
-.bubble-md {
-  padding: 40px 80px;
-}
-
-.bubble-sm {
-  padding: 30px 80px;
- }
-
-.bubble-text {
-  color: white;
-  font-size: 18px;
-  width: 100%;
-}
-
  main {
     // height: calc(100% - 36px);
     // height: calc( ((vw - 280px) / 1.6667) - 36px);
@@ -107,6 +42,113 @@ p {
     margin-block-end: 0.75em;
 }
 
+img.dev {
+    border: 1px solid black;
+}
+
+p.poster-text {
+    text-align: left;
+}
+p.poster-text:first-of-type {
+    margin-top: 0.5em;
+}
+p.poster-text:last-of-type {
+    margin-bottom: 0.5em;
+}
+
+.intro-container {
+    width: 100%;
+    height: 100%;
+}
+
+.intro-left {
+    float: left;
+    width: 20%;
+    height: 100%;
+}
+.intro-right {
+    float: left;
+    width: 80%;
+    height: 100%;
+}
+
+// div.content-wrapper {
+//     width: 100%;
+//     height: calc(100vh - 36px);
+// }
+
+// nav.left-nav,
+// nav.right-nav {
+//     // height: calc( ((vw - 280px) / 1.6667) - 36px);
+//     float: left;
+//     height: 100%;
+//     width: 140px;
+//     // width: auto;
+// }
+
+/*
+ * start of app-specific css
+ */
+
+.bubble {
+  border-color: blue;
+//   border-radius: 100%;
+  border-radius: 20px;
+  padding: 5px 10px;
+  background-color: blue;
+  width: 100%;
+//   margin-left: 0;
+//   margin-right: 10%;
+  height: fit-content;
+}
+
+// .bubble-lg {
+//   padding: 80px 80px;
+//  }
+
+// .bubble-md {
+//   padding: 40px 80px;
+// }
+
+// .bubble-sm {
+//   padding: 30px 80px;
+//  }
+
+
+.bubble-text {
+  color: white;
+  font-size: 18px;
+  width: 100%;
+}
+
+.poster-intro-right-top {
+    width: 100%;
+    height: 30%;
+}
+
+.poster-intro-right-bottom {
+    width: 100%;
+    height: 70%;
+}
+
+.background-research {
+    float: left;
+    width: 15%;
+    height: 100%;
+}
+.poster-instructions {
+    float: left;
+    width: 70%;
+    height: 100%;
+    padding: 0px 10px;
+}
+
+.vin-wrapper {
+    float: left;
+    width: 15%;
+    height: 100%;
+}
+
 .btn-huge {
     font-size: 3rem;
     padding: 0.50em 0.50em;
@@ -122,6 +164,26 @@ p {
     float: left;
     width: 79%;
 }
+
+.build-intro-left,
+.build-intro-right {
+    float: left;
+    width: 20%;
+    height: 100%;
+    // background-color: white;
+}
+
+.build-intro-center {
+    float: left;
+    width: 60%;
+}
+
+.build-intro-center-top,
+.build-intro-center-bottom {
+    height: 50%;
+    width: 100%;
+}
+
 
 .tb {
     height: 100%;
