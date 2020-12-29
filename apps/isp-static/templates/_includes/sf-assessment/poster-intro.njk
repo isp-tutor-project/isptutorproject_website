@@ -1,0 +1,23 @@
+<div class="intro-container dev">
+    <div class="intro-left dev">
+        {% if teacher == "odd" %}
+            <img width="190" class="dev" src="/img/sf-assessment/teacherEven.png"  />
+        {% else %}
+            <img width="190" class="dev" src="/img/sf-assessment/teacherOdd.png"  />
+        {% endif %}
+    </div>
+    <div class="intro-right dev">
+        <div class="poster-intro-right-top dev">
+            <div class="bubble">
+                <div class="bubble-text">
+                    {% block textBubble %} {% endblock %}
+                </div>
+            </div>
+        </div>
+        <div class="poster-intro-right-bottom dev">
+            <img src="/img/sf-assessment/SciencePosterTemplate.png"
+                class="img-centered"
+                width="580" />
+        </div>
+    </div>
+</div>
