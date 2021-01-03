@@ -6,7 +6,6 @@
 		}
 	],
 	"settings": {
-		"liveServer.settings.root": "../../wwwroot",
-		"liveServer.settings.CustomBrowser": "chrome:PrivateMode"
+		"liveServer.settings.root": "../../wwwroot"
 	}
 }
