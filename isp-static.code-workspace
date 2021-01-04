@@ -6,6 +6,7 @@
 		}
 	],
 	"settings": {
-		"liveServer.settings.root": "../../wwwroot"
+		"liveServer.settings.root": "../../wwwroot",
+		"liveServer.settings.port": 5502
 	}
 }

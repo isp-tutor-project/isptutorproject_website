@@ -61,10 +61,10 @@ const sfPreTestData = {
                 next: "SodaMintQ2"
             },
             question: {
-                id: "sfPreTest.sodaMint.q2",
+                id: "sfPreTest.sodaMint.q1",
                 type: "mc",
                 correctAnswer: "c",
-                text: "Q1) What is the weight of an unladen swallow?",
+                text: "Q1) What is the MASS of an unladen swallow?",
                 options: [
                     { value: "a", label: "Would that be of the <b>African</b>" },
                     { value: "b", label: "or <b>European</b> variety?" },
