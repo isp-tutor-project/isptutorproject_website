@@ -1,0 +1,75 @@
+{% extends "sf-assessment/poster.njk" %}
+
+{% set poster_lhs_class = "poster-example-lhs" %}
+{% set poster_rhs_class = "poster-example-rhs" %}
+{% set poster_center_class = "poster-example-center" %}
+{% set poster_title = "Ball Color & Speed on a Ramp" %}
+{% block rq %}
+    <p class="poster-text text-xs">
+        Does the color of the ball affect the speed of the ball at the bottom of the ramp?
+    </p>
+{% endblock %}
+
+{% block research_summary %}
+    <p class="poster-text text-xs">
+        Different colors are associated with different frequencies of light waves. Waves with higher frequencies have more energy.
+        However, I could not find anything about an object's color affecting its speed.
+    </p>
+    <p class="poster-text text-xs">
+        ***Complete background research with sources is available in my paper
+    </p>
+{% endblock %}
+
+{% block hypo %}
+    <p class="poster-text text-xs">
+        I predict that the yellow ball will roll faster than the red ball because yellow light has a higher frequency than red light. 
+        So, a yellow ball would have more energy than a red ball and roll faster.
+    </p>
+    
+{% endblock %}
+
+{% block materials %}
+    <img src="/img/sf-assessment/sodaMintMaterials.png"
+         class="img-centered"
+         width="200" />
+{% endblock %}
+
+{% block procedure %}
+    <ol class="poster-procedure text-xs">
+        <li>
+            First, put the red ball on the ramp above the green lever (shown above).
+        </li>
+        <li>
+            Release the lever so the ball rolls.
+        </li>
+        <li>
+            Record the speed of the ball at the bottom of the ramp.
+        </li>
+        <li>
+            Move the lever to the top of the ramp.
+        </li>
+        <li>
+            Place the yellow ball above the lever and release the lever so the ball rolls.
+        </li>
+        <li>
+            Record the speed of the ball at the bottom of the ramp.
+        </li>
+        <li>
+            Repeat this procedure from the beginning two more times (for a total of 3 trials).
+        </li>
+    </ol>
+{% endblock %}
+
+{% block results %}
+    <img width="200"
+         src="/img/sf-assessment/sodaMintResults.png"
+         class="img-centered">
+{% endblock %}
+
+{% block conclusion %}
+    <p class="poster-text text-xs">
+        The results of my experiment were inconsistent with my
+        hypothesis. The color of the ball does affect the speed of the ball at 
+        the bottom of the ramp. 
+    </p>
+{% endblock %}
