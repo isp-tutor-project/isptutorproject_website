@@ -53,20 +53,28 @@ const sfPreTestData = {
         SodaMintQ1: {
             edges: {
                 prev: "sodaMintIntro",
-                next: "SodaMintQ2"
+                next: "SodaMintLookEachSection"
             },
             question: {
                 id: "sfPreTest.sodaMint.q1",
                 type: "mc",
-                correctAnswer: "c",
-                text: "Q1) What is the WEIGHT of an unladen swallow?",
+                correctAnswer: "a",
+                text: "Q1) Do you see any ways to improve this science project?",
                 options: [
-                    { value: "a", label: "Would that be of the <b>African</b>" },
-                    { value: "b", label: "or <b>European</b> variety?" },
-                    { value: "c", label: "42" }
+                    { value: "a", label: "Yes" },
+                    { value: "b", label: "No" },
+                  
                 ]
             }
         },
+
+        SodaMintLookEachSection: {
+            edges: {
+                prev: "SodaMintQ1",
+                next: "SodaMintQ2"
+            }
+        },
+
         SodaMintQ2: {
             edges: {
                 prev: "SodaMintQ1",
