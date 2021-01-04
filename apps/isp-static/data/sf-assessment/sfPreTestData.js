@@ -40,24 +40,19 @@ const sfPreTestData = {
         posterIntro2: {
             edges: {
                 prev: "posterIntro1",
-                next: "posterIntro3"
-            }
-        },
-        posterIntro3: {
-            edges: {
-                prev: "posterIntro2",
                 next: "sodaMintIntro"
             }
         },
+        
         sodaMintIntro: {
             edges: {
-                prev: "posterIntro3",
+                prev: "posterIntro2",
                 next: "SodaMintQ1"
             }
         },
         SodaMintQ1: {
             edges: {
-                prev: "posterIntro3",
+                prev: "sodaMintIntro",
                 next: "SodaMintQ2"
             },
             question: {
