@@ -53,7 +53,7 @@ const sfPreTestData = {
         SodaMintQ1: {
             edges: {
                 prev: "sodaMintIntro",
-                next: "SodaMintLookEachSection"
+                next: "sodaMintLookEachSection"
             },
             question: {
                 id: "sfPreTest.sodaMint.q1",
@@ -68,7 +68,7 @@ const sfPreTestData = {
             }
         },
 
-        SodaMintLookEachSection: {
+        sodaMintLookEachSection: {
             edges: {
                 prev: "SodaMintQ1",
                 next: "SodaMintQ2"
@@ -77,30 +77,54 @@ const sfPreTestData = {
 
         SodaMintQ2: {
             edges: {
-                prev: "SodaMintQ1",
-                next: "buildBeansIntro"
+                prev: "sodaMintLookEachSection",
+                next: "SodaMintQ2y"
             },
             question: {
                 id: "sfPreTest.sodaMint.q2",
                 type: "mc",
-                correctAnswer: "c",
-                text: "Q2) [ENTER]]",
+                correctAnswer: "a",
+                text: "Q2) Do you see any problems with the student's Research Question?",
                 options: [
-                    { value: "a", label: "Would that be of the <b>African</b>" },
-                    { value: "b", label: "or <b>European</b> variety?" },
-                    { value: "c", label: "42" }
+                    { value: "a", label: "Yes" },
+                    { value: "b", label: "No" },
                 ]
             }
         },
-        buildBeansIntro: {
+        
+        
+        SodaMintQ2y: {
             edges: {
                 prev: "SodaMintQ2",
+                next: "buildBeansIntro"
+            },
+            question: {
+                id: "sfPreTest.sodaMint.q2y",
+                type: "mc",
+                correctAnswer: "b",
+                text: "Q2y) What is the biggest problem with Kaya's Research Question?",
+                options: [
+                    { value: "a", label: "Carbon dioxide doesn't affect the reaction." },
+                    { value: "b", label: "At least one variable is not specific enough." },
+                    { value: "c", label: "It doesn't address what she tested in the experiment." },
+                ]
+            }
+        },
+
+
+
+
+        
+        
+        buildBeansIntro: {
+            edges: {
+                prev: "SodaMintQ2y",
                 next: "completed"
             },
             customEnterActions: [
                 {
                     name: "hideBtns",
-                    args: ["prev", "next"]
+                    args: ["next"]
                 }
             ]
         },
