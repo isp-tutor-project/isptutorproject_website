@@ -113,7 +113,7 @@ class HypoGRScene extends Scene {
         if (NO_TRANSITIONS === this.maxTransitions || 0 === this.currentTransition) {
             super.handlePrevButton();
         } else {
-            this.currentTransitions--;
+            this.currentTransition--;
             this.handleTransitions();
         }
     }
