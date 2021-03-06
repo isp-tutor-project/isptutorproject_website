@@ -1,3 +1,7 @@
+# vs code workspace files (due to monorepo workspace constantly manipulating them and
+# everyone would want their own changes
+*.code-workspace
+
 # built dirs
 wwwroot
 
