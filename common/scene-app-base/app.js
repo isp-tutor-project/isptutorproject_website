@@ -74,6 +74,14 @@ export class SceneBasedApp {
     //     this.snackbar = snackbar;
     // }
 
+    selectedQuestionOption(questionId, optionId) {
+        return false;
+    }
+
+    questionAnsweredCorrectly(questionId) {
+        return false;
+    }
+
     showFeedback(feedback) {
         this.snackbar.show(feedback);
     }
@@ -207,6 +215,10 @@ export class SceneBasedApp {
 
     followEdge(edgeName) {
         let newSceneId = this.currentScene.edges[edgeName];
+        console.log(newSceneId, typeof(newSceneId));
+        if ("function" == typeof(newSceneId)) {
+            newSceneId = newSceneId(this)
+        }
         let newScene = this.lookupScene(newSceneId);
         this.switchToScene(newScene);
     }
