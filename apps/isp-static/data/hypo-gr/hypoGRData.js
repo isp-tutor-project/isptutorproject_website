@@ -1,5 +1,14 @@
 const { DataBuilder } = require("../data-builder");
 
+
+function computeNext(app) {
+    return "lessonOverview1"
+}
+
+const FUNCS = {
+    SELECTED_OPTION: "selectedQuestionOption",
+    ANSWER_CORRECT: "questionAnsweredCorrectly"
+}
 const hypoGRData = {
     scenes: {
         start: {
@@ -16,7 +25,15 @@ const hypoGRData = {
         definition1: {
             edges: {
                 prev: "start",
-                next: "lessonOverview1"
+                next: function(app) {
+                    if (app[FUNCS.SELECTED_OPTION]("hypo-gr.q1", "a")) {
+                        return "lessonOverview1"
+                    } else if (app[FUNCS.ANSWER_CORRECT]("hypo-gr.q1")) {
+                        return "lessonOverview2"
+                    } else {
+                        return "lessonOverview1"
+                    }
+                }
             }
         },
         lessonOverview1: {
