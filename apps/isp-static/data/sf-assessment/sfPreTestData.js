@@ -1,5 +1,10 @@
 const { ScienceFairAssessmentDataBuilder } = require("./builders");
 
+const SCENE_TYPES = {
+    standard: "standard",
+    followupQuesIfAnswerY: "standard"
+};
+
 const sfPreTestData = {
     scenes: {
         start: {
@@ -43,7 +48,7 @@ const sfPreTestData = {
                 next: "sodaMintIntro"
             }
         },
-        
+
         sodaMintIntro: {
             edges: {
                 prev: "posterIntro2",
@@ -63,7 +68,7 @@ const sfPreTestData = {
                 options: [
                     { value: "a", label: "Yes" },
                     { value: "b", label: "No" },
-                  
+
                 ]
             }
         },
@@ -91,8 +96,8 @@ const sfPreTestData = {
                 ]
             }
         },
-        
-        
+
+
         SodaMintQ2y: {
             edges: {
                 prev: "SodaMintQ2",
@@ -114,8 +119,8 @@ const sfPreTestData = {
 
 
 
-        
-        
+
+
         buildBeansIntro: {
             edges: {
                 prev: "SodaMintQ2y",
