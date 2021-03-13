@@ -5,6 +5,17 @@ title: "Experimental Design: Algae Reproduction"
 {% extends "exp-design/base.njk" %}
 
 {% block content %}
+    {% for scene in collections.expDesignCommonScenes %}
+        <section id="{{scene.fileSlug}}" class="scene">
+            <div class="scene-content">
+                {{ scene.templateContent | safe }}
+            </div>
+        </section>
+    {% endfor %}
+{% endblock %}
+
+{#
+{% block content %}
     <div style="margin: auto; width: fit-content;">
         <table>
             <thead>
@@ -193,7 +204,7 @@ title: "Experimental Design: Algae Reproduction"
     <div class="inline">
         <object id="cond2_img" width="500" data="/img/exp-design/algae.svg"></object>
     </div>
-{% endblock %}
+{% endblock %} #}
 
 {% block bundles %}
     <script src="/bundles/algae.bundle.js"></script>
