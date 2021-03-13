@@ -1,0 +1,33 @@
+{% macro show_intro_table(page, numRows=0, showHeaderRow2=true) %}
+    <table id="{{page.fileSlug}}_intro_table">
+        <thead class="intro_table_head">
+            <tr class="intro_table_head_row1">
+                <td></td>
+                <th>Condition 1</th>
+                <th>Condition 2</th>
+            </tr>
+            {% if showHeaderRow2 %}
+                <tr class="intro_table_head_row2">
+                    <th>Variable Name</th>
+                    <th>Value</th>
+                    <th>Value</th>
+                </tr>
+            {% endif %}
+        </thead>
+        <tbody class="intro_table_body">
+            {% for row in range(0, numRows) %}
+            <tr>
+                {% if loop.first %}
+                    <td class="cell_var_iv"></td>
+                    <td class="cell_var_iv_cond1_val"></td>
+                    <td class="cell_var_iv_cond2_val"></td>
+                {% else %}
+                    <td class="cell_var{{row}}"></td>
+                    <td class="cell_var{{row}}_cond1_val"></td>
+                    <td class="cell_var{{row}}_cond2_val"></td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endmacro %}
