@@ -1,4 +1,37 @@
+import "./styles/index.scss"
+
+import { ExpDesignApp } from "./expDesign"
+
+import { NavBar } from "@isptutorproject/navbar"
+
+import { getActivityConfiguration } from "@isptutorproject/activity-config"
+
 import { Model } from "./model.js";
+
+const activityData = require("../../data/exp-design/expDesignAlgaeData")
+
+const DEFAULT_APP_INITIAL_STATE = {
+    events: [],
+    sceneState: {},
+    currentScene: "intro10"
+}
+
+// let activityConfig = getActivityConfiguration()
+// temporary hard-coding for development prior to Teacher Portal
+let activityConfig = {
+    userID: localStorage.getItem("userID"),
+    database: localStorage.getItem("database"),
+    homepage: localStorage.getItem("homepage"),
+    activityID: "expDesign",
+    activityKey: "expDesign",
+    activityFeatures: []
+};
+
+
+let navbar = new NavBar()
+navbar.displayActivityTitle("Experimental Design Lesson")
+navbar.displayUser(activityConfig.userID)
+
 
 const PROPS = [
     "temp", "music_exposure", "amt_co2", "amt_sunlight",
@@ -55,5 +88,11 @@ class Algae extends Model {
     }
 }
 
-let cond1 = new Algae("cond1");
-let cond2 = new Algae("cond2");
+// let cond1 = new Algae("cond1");
+// let cond2 = new Algae("cond2");
+
+
+let app = new ExpDesignApp(
+    activityData, activityConfig, DEFAULT_APP_INITIAL_STATE
+)
+app.start()
