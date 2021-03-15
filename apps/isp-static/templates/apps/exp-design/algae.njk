@@ -4,7 +4,7 @@ title: "Experimental Design: Algae Reproduction"
 ---
 {% extends "exp-design/base.njk" %}
 
-{% block content %}
+{% block main %}
     {% for scene in collections.expDesignCommonScenes %}
         <section id="{{scene.fileSlug}}" class="scene">
             <div class="scene-content">
@@ -206,6 +206,9 @@ title: "Experimental Design: Algae Reproduction"
     </div>
 {% endblock %} #}
 
+{% block cssbundles %}
+    <link rel="stylesheet" href="/bundles/algae.bundle.css" >
+{% endblock %}
 {% block bundles %}
     <script src="/bundles/algae.bundle.js"></script>
 {% endblock %}
