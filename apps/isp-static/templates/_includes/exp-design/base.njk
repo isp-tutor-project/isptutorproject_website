@@ -1,25 +1,25 @@
 <!doctype html>
-<html>
+<html lang="en">
     <head>
+        {% include "site/stdHead.njk" %}
         <title>{{title}}</title>
-        <style>
+        {# <style>
         div.inline {
             display: inline-block;
         }
-        </style>
+        </style> #}
         {% block cssbundles %}{% endblock%}
     </head>
     <body>
         {% include "site/navbar.njk" %}
         <div id="scene_id_region"></div>
         <main>
-        {% block content %}{% endblock %}
+        {% block main %}{% endblock %}
         </main>
         <img id="prev_btn" class="nav-btn prev-btn" />
         <img id="next_btn" class="nav-btn next-btn" />
         <div id="snackbar"></div>
-
-        {% block code %} {% endblock %}
+        {# {% block code %} {% endblock %} #}
         {% block bundles %}{% endblock %}
     </body>
 </html>
