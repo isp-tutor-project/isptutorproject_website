@@ -15,19 +15,19 @@
             {% endif %}
         </thead>
         <tbody class="intro_table_body">
-            {% for row in range(0, numRows) %}
+            {%- for row in range(0, numRows) %}
             <tr>
-                {% if loop.first %}
+                {%- if loop.first %}
                     <td class="cell_var_iv"></td>
                     <td class="cell_var_iv_cond1_val"></td>
                     <td class="cell_var_iv_cond2_val"></td>
-                {% else %}
+                {%- else %}
                     <td class="cell_var{{row}}"></td>
                     <td class="cell_var{{row}}_cond1_val"></td>
                     <td class="cell_var{{row}}_cond2_val"></td>
-                {% endif %}
+                {%- endif %}
             </tr>
-            {% endfor %}
+            {%- endfor %}
         </tbody>
     </table>
 {% endmacro %}
