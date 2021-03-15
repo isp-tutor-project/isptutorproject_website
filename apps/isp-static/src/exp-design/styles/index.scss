@@ -1,0 +1,529 @@
+// $my_path: "/apps/exp-design/"
+$my_path: "/";
+
+@use "~@isptutorproject/isp-site-styles" with (
+    $app_path: $my_path
+);
+
+
+html {
+    font-size: 16px;
+}
+
+body {
+    height: 100vh;
+}
+
+main {
+    // height: calc(100% - 36px);
+    // height: calc( ((vw - 280px) / 1.6667) - 36px);
+    // float: left;
+    // width: 100%;
+    min-width: 960px;
+    height: calc(100% - 40px);
+    // width: fit-content;
+    width: auto;
+    // margin: 0;
+    margin-left: 140px;
+    margin-right: 140px;
+    background-color: white;
+    // border: solid #d6e9fc 40px;
+}
+
+h1, h2, h3, h4, h5 {
+    text-align: center;
+    margin-block-start: 0.25em;
+    margin-block-end: 1em;
+}
+
+hr {
+    border-top: 1px dotted lightgray;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+p {
+    /* default to centered. use text-justify if you want to override */
+    text-align: center;
+    margin-block-start: 0.75em;
+    margin-block-end: 0.75em;
+}
+
+img.dev {
+    border: 1px solid black;
+}
+
+p.poster-text {
+    text-align: left;
+}
+p.poster-text:first-of-type {
+    margin-top: 0.5em;
+}
+p.poster-text:last-of-type {
+    margin-bottom: 0.5em;
+}
+
+
+.scene {
+    position: relative;
+    display: none;
+    height: 100%;
+    width: 100%;
+    // padding-left: 20px;
+    // padding-right: 20px;
+}
+.scene.active {
+    display: block;
+}
+
+.scene-content {
+    position: relative;
+    // border: 1px solid hotpink;
+    width: 960px;
+    height: 576px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: center center;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+}
+
+.intro-container {
+    width: 100%;
+    height: 100%;
+}
+
+.intro-left {
+    float: left;
+    width: 20%;
+    height: 100%;
+}
+.intro-right {
+    float: left;
+    width: 80%;
+    height: 100%;
+}
+
+
+.eval-intro-left {
+    float: left;
+    width: 20%;
+}
+
+.eval-intro-right {
+    float: left;
+    width: 79%;
+}
+
+.build-intro-left,
+.build-intro-right {
+    float: left;
+    width: 20%;
+    height: 100%;
+    // background-color: white;
+}
+
+.build-intro-center {
+    float: left;
+    width: 60%;
+}
+
+.build-intro-center-top,
+.build-intro-center-bottom {
+    height: 50%;
+    width: 100%;
+}
+
+// div.content-wrapper {
+//     width: 100%;
+//     height: calc(100vh - 36px);
+// }
+
+// nav.left-nav,
+// nav.right-nav {
+//     // height: calc( ((vw - 280px) / 1.6667) - 36px);
+//     float: left;
+//     height: 100%;
+//     width: 140px;
+//     // width: auto;
+// }
+
+/*
+ * start of app-specific css
+ */
+
+.bubble {
+  border-color: blue;
+//   border-radius: 100%;
+  border-radius: 20px;
+  padding: 5px 10px;
+  background-color: blue;
+  width: 100%;
+//   margin-left: 0;
+//   margin-right: 10%;
+  height: fit-content;
+}
+
+// .bubble-lg {
+//   padding: 80px 80px;
+//  }
+
+// .bubble-md {
+//   padding: 40px 80px;
+// }
+
+// .bubble-sm {
+//   padding: 30px 80px;
+//  }
+
+.bubble-text {
+  color: white;
+  font-size: 18px;
+  width: 100%;
+}
+
+.poster-intro-right-top {
+    width: 100%;
+    height: 30%;
+}
+
+.poster-intro-right-bottom {
+    width: 100%;
+    height: 70%;
+}
+
+.background-research {
+    float: left;
+    width: 15%;
+    height: 100%;
+}
+
+.poster-instructions {
+    float: left;
+    width: 70%;
+    height: 100%;
+    padding: 0px 10px;
+}
+
+.vin-wrapper {
+    float: left;
+    width: 15%;
+    height: 100%;
+}
+
+.btn-huge {
+    font-size: 3rem;
+    padding: 0.50em 0.50em;
+    border-radius: 0.5em;
+}
+
+
+.tb {
+    height: 100%;
+    width: 100%;
+}
+
+.tb-top {
+    height: 69%;
+}
+.tb-bottom {
+    height: 31%;
+}
+
+.poster-hdg {
+    display: block;
+    width: fit-content;
+    font-size: 0.75em;
+    text-align: center;
+    border: 1px solid black;
+    background-color: lightgray;
+    padding: 2px;
+    margin-top: 4px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.poster-container {
+    height: 100%;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.poster-column {
+    float: left;
+    height: 100%;
+    border: 1px solid black;
+    background-color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+.poster-example-center {
+    width: 36%;
+}
+.poster-example-lhs{
+    width: 32%;
+    // margin-left: 7%;
+}
+.poster-example-rhs {
+    width: 32%;
+    // margin-right: 7%;
+}
+
+// @counter-style procedure {
+//     system: extends numeric;
+//     prefix: '#';
+//     suffix: '-';
+
+// }
+
+ol.poster-procedure {
+    padding-left: 10px;
+    // max-width: 95%;
+    list-style: none;
+    // list-style-position: outside;
+    // -type: procedure;
+    counter-reset: poster-procedure-counter;
+}
+
+ol.poster-procedure li {
+    counter-increment: poster-procedure-counter;
+    display: table;
+    // position: relative;
+    // margin-left: 0.5rem;
+}
+
+ol.poster-procedure li::before {
+    content: "#" counter(poster-procedure-counter) "\00a0-\00a0";
+    display: table-cell;
+}
+
+.list-wrapper {
+    text-align: center;
+}
+
+input[type="radio"] {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+    transform: scale(1.5);
+    margin-top: 0;
+    margin-left: 10px;
+}
+
+label.vert-radio-label {
+    line-height: 1.5em;
+}
+
+/* used by vertcenter shortCode, which nests content inside 2 divs:
+   1) div.centered-wrapper (relative positioning)
+   2) div.centered (absolute positining)
+
+   it then specified div.centered::top vai style="top:${fromTopPercent}%;"
+
+*/
+
+div.centered-wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+div.centered {
+    position: absolute;
+    height: max-content;
+    width: 100%;
+}
+
+
+.heading {
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24pt;
+}
+
+.single-column-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.dual-column-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.centered-column {
+    position: absolute;
+    width: 100%;
+    height: max-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.lhs {
+    float: left;
+    position: relative;
+    // height: 100%;
+    width: 50%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.lhs.with-heading {
+    height: calc(100% - 100px);
+}
+
+.rhs {
+    float: left;
+    position: relative;
+    // height: 100%;
+    width: 50%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.rhs.with-heading {
+    height: calc(100% - 100px);
+}
+
+
+.img-centered {
+    display: block;
+    /* max-width: 100%; */
+    /* height: auto; */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*
+.centered-form-wrapper {
+    position: relative;
+    width: 60%;
+    left: 40%;
+} */
+
+/* .form-centered { */
+    /* width: max-content; */
+    /* float: right; */
+    /* width: 100%; */
+    /* margin-left: 100px; */
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+/* } */
+
+ol.centered {
+    position: relative;
+    /* left: 10%; */
+    width: max-content;
+    list-style-position: inside;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul.centered {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    /* left: 10%; */
+    width: max-content;
+    list-style-position: outside;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.div-centered {
+    /* display: inline-block; */
+    margin-left: 40%;
+    /* margin-right: auto; */
+}
+
+/* not exactly centered, but looks good */
+.vert-centered {
+    position: relative;
+    top: 30%;
+}
+
+
+
+.long-arrow-btn {
+    position: absolute;
+    margin: 0;
+    z-index: 3;
+    top: calc(100% - 91px);
+}
+
+/* .long-arrow-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+} */
+
+.form-wrapper {
+    // text-align: center;
+    width: 100%;
+    height: fit-content;
+
+}
+
+.form-content {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+// .centered-form {
+//     display: inline-block;
+//     margin-left: auto;
+//     margin-right: auto;
+//     // width: 100%;
+//     // text-align: left;
+// }
+
+.prev-btn {
+    /* img is 130x138px */
+    position: absolute;
+    // top: calc(100% - 138px);
+    top: calc(100% - 174px);
+    left: 5px;
+}
+
+.next-btn {
+    /* img is 130x138px */
+    position: absolute;
+    // top: calc(100% - 138px);
+    top: calc(100% - 174px);
+
+    left: calc(100% - 133px);
+    transform: scaleX(-1);
+}
+
+.submit-mc {
+    display: block;
+}
+
+
+// .feedback-region {
+//     min-height: 50px;
+//     max-height: fit-content;
+//     width: 100%;
+// }
+
+#scene_id_region {
+    position: absolute;
+    // top: calc(100% - 50px);
+    top: calc(100% - 86px);
+    left: calc(50% - 10px);
+}

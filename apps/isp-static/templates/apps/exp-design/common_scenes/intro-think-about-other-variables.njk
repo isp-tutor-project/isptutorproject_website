@@ -1,0 +1,9 @@
+{% import "exp-design/exp_design_macros.njk" as exp_design_macros %}
+
+<p class="text-lg">
+    Now, let’s think about the other variables
+    that are relevant in this experiment
+    (and how we want to set their values across conditions):
+</p>
+
+{{ exp_design_macros.show_intro_table(page, numRows=1)}}

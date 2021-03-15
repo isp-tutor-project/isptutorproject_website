@@ -1,0 +1,15 @@
+---
+posFb: "Right! You need to make this variable the same. That way, it can’t cause a difference between conditions!"
+negFb: "Actually, you need to make this variable the same. That way, it can’t cause a difference between conditions!"
+---
+{% import "exp-design/exp_design_macros.njk" as exp_design_macros %}
+
+<p class="text-lg">
+    Let’s start with one of the variables given in the [video about how the
+    experiment you’re doing works], [v(not chosen)1]*. Please select the
+    value of this variable that you will use in your experiment for each
+    condition.
+
+</p>
+
+{{ exp_design_macros.show_intro_table(page, numRows=2)}}

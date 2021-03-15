@@ -1,0 +1,15 @@
+---
+posFb: "Right! This is the variable you are testing . This way, you can compare across conditions to see if they make a difference."
+negFb: "Actually, you need to pick different values for the variable you are testing. This way, you can compare across conditions to see if they make a difference."
+---
+
+{% import "exp-design/exp_design_macros.njk" as exp_design_macros %}
+
+<p class="text-lg">
+    We’ll make <span class="IV">{# IV/v(chosen) #}</span> green to remind us that it’s what we’re testing.
+
+    Now, please select the values for <span class="IV">{# IV/v(chosen) #}</span> that you will use in each condition:
+
+</p>
+
+{{ exp_design_macros.show_intro_table(page, numRows=1)}}

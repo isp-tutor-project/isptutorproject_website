@@ -1,0 +1,8 @@
+{% import "exp-design/exp_design_macros.njk" as exp_design_macros %}
+
+<p class="text-lg">
+    We compare across conditions to see if the variable we’re testing (the independent variable) affects the outcome
+    in your experiment (the <span class="DVs">{# [DVs-A2-T2] #}</span>).
+</p>
+
+{{ exp_design_macros.show_intro_table(page, numRows=1)}}

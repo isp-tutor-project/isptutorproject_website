@@ -1,0 +1,12 @@
+---
+posFb: "Right! This is the variable you are testing in your experiment."
+negFB: "Actually, the variable you are testing in your experiment (or your independent variable) is <span class=\"IV\">A2-T2-Vx (or V(chosen)</span>. Please pick that variable."
+errorMsg: "Please correct this in your table"
+---
+{% import "exp-design/exp_design_macros.njk" as exp_design_macros %}
+
+<p class="text-lg">
+    First, please select the independent variable from your research question in the table below:
+</p>
+
+{{ exp_design_macros.show_intro_table(page, numRows=1)}}

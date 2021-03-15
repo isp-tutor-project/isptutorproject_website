@@ -1,0 +1,11 @@
+---
+posFb: "Right! You need to make this variable the same. That way, it can’t cause a difference between conditions!"
+negFb: "Actually, you need to make this variable the same. That way, it can’t cause a difference between conditions!"
+---
+{% import "exp-design/exp_design_macros.njk" as exp_design_macros %}
+
+<p class="text-lg">
+    Now, please select the values for the next given variable for each condition.
+</p>
+
+{{ exp_design_macros.show_intro_table(page, numRows=4)}}
