@@ -231,8 +231,8 @@ const sfPreTestData = {
 
                      SodaMintQ6: {
                         edges: {
-                                prev: "SodaMintQ6",
-                                next: "buildBeansIntro"
+                                prev: "SodaMintQ5y",
+                                next: "SodaMintQ7"
                           },
                           question: {
                               id: "sfPreTest.sodaMint.q6",
@@ -241,7 +241,44 @@ const sfPreTestData = {
                             text: "Q6) What is the best interpretation of the graph?",
                             options: [
                                     { value: "a", label: "The soda with less CO2 made a higher geyser." },
-                                     { value: "b", label: "The soda with less CO2 made a lower geyser. " },                                         { value: "c", label: "The heights of the geysers from the low and high-CO2 geysers were about the same." },
+                                     { value: "b", label: "The soda with less CO2 made a lower geyser. " },                                         
+                                     { value: "c", label: "The heights of the geysers were about the same." },
+                                    ]
+                                }
+                            },
+
+                            SodaMintQ7: {
+                                edges: {
+                                    prev: "SodaMintQ6",
+                                    next: "SodaMintQ7y"
+                                },
+                                question: {
+                                    id: "sfPreTest.sodaMint.q7",
+                                    type: "mc",
+                                    correctAnswer: "a",
+                                    text: "Q7) Do you see any problems with the Conclusion section?",
+                                    options: [
+                                        { value: "a", label: "Yes" },
+                                        { value: "b", label: "No" },
+                                    ]
+                                }
+                            },
+                            
+                            
+                            SodaMintQ7y: {
+                                edges: {
+                                    prev: "SodaMintQ7",
+                                    next: "buildBeansIntro"
+                                },
+                                question: {
+                                    id: "sfPreTest.sodaMint.q7y",
+                                    type: "mc",
+                                    correctAnswer: "c",
+                                    text: "Q7y) What is the biggest problem with Kaya's Conclusion?",
+                                    options: [
+                                        { value: "a", label: "It should say that her hypothesis was right." },
+                                        { value: "b", label: "It should say that her hypothesis was wrong." },
+                                        { value: "c", label: "It should say that her results were consistent with her hypothesis." },
                                     ]
                                 }
                             },
@@ -249,11 +286,9 @@ const sfPreTestData = {
 
 
 
-
-
             buildBeansIntro: {
             edges: {
-                prev: "SodaMintQ6",
+                prev: "SodaMintQ7y",
                 next: "completed"
             },
             customEnterActions: [
