@@ -96,7 +96,7 @@ const sfPreTestData = {
         SodaMintQ2y: {
             edges: {
                 prev: "SodaMintQ2",
-                next: "buildBeansIntro"
+                next: "SodaMintQ3"
             },
             question: {
                 id: "sfPreTest.sodaMint.q2y",
@@ -111,14 +111,49 @@ const sfPreTestData = {
             }
         },
 
-
-
-
         
-        
-        buildBeansIntro: {
+
+       SodaMintQ3: {
             edges: {
                 prev: "SodaMintQ2y",
+                next: "buildBeansIntro"
+            },
+            question: {
+                id: "sfPreTest.sodaMint.q3",
+                type: "mc",
+                correctAnswer: "a",
+                text: "Q3) Do you see any problems with the Hypothesis section?",
+                options: [
+                    { value: "a", label: "Yes" },
+                    { value: "b", label: "No" },
+                ]
+            }
+        },
+
+  /*      SodaMintQ3y: {
+            edges: {
+                prev: "SodaMintQ3",
+                next: "SodaMintQ4"
+            },
+            question: {
+                id: "sfPreTest.sodaMint.q3y",
+                type: "mc",
+                correctAnswer: "c",
+                text: "Q3y) What is the biggest problem with Kaya's Hypothesis?",
+                options: [
+                        { value: "a", label: "The hypothesis is too long." },
+                        { value: "b", label: "It is not directly related to the research question. " },
+                        { value: "c", label: "There is no scientific explanation given." },
+                ]
+            }
+        },
+
+        
+     /*   SodaMintQ4: {     */
+
+            buildBeansIntro: {
+            edges: {
+                prev: "SodaMintQ3",
                 next: "completed"
             },
             customEnterActions: [
@@ -127,10 +162,15 @@ const sfPreTestData = {
                     args: ["next"]
                 }
             ]
-        },
+        }, 
+
+
+
+
+
         completed: {
             edges: {
-                prev: "SodaMintQ2"
+                prev: "buildBeansIntro"
             }
         }
     }
