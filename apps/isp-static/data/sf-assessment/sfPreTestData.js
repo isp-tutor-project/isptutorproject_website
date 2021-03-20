@@ -71,12 +71,10 @@ const sfPreTestData = {
         sodaMintLookEachSection: {
             edges: {
                 prev: "SodaMintQ1",
-                next: "buildBeansIntro"
+                next: "SodaMintQ2"
             }
         },
 
-
-/*
 
         SodaMintQ2: {
             edges: {
@@ -99,7 +97,7 @@ const sfPreTestData = {
         SodaMintQ2y: {
             edges: {
                 prev: "SodaMintQ2",
-                next: "buildBeansIntro"
+                next: "SodaMintQ3"
             },
             question: {
                 id: "sfPreTest.sodaMint.q2y",
@@ -114,12 +112,12 @@ const sfPreTestData = {
             }
         },
 
-      /*
+      
 
        SodaMintQ3: {
             edges: {
                 prev: "SodaMintQ2y",
-                next: "buildBeansIntro"
+                next: "SodaMintQ3y"
             },
             question: {
                 id: "sfPreTest.sodaMint.q3",
@@ -134,12 +132,12 @@ const sfPreTestData = {
         },
 
 
-        /*
+        
 
         SodaMintQ3y: {
             edges: {
                 prev: "SodaMintQ3",
-                next: "buildBeansIntro"
+                next: "SodaMintQ4"
             },
             question: {
                 id: "sfPreTest.sodaMint.q3y",
@@ -154,7 +152,7 @@ const sfPreTestData = {
             }
         },
 
-        /*
+        
         SodaMintQ4: {
             edges: {
                 prev: "SodaMintQ3y",
@@ -164,7 +162,7 @@ const sfPreTestData = {
                 id: "sfPreTest.sodaMint.q4",
                 type: "mc",
                 correctAnswer: "a",
-                text: "Q4) Do you see any problems with the Background Research section?",
+                text: "Q4) Do you see any problems with the Research Summary section?",
                 options: [
                     { value: "a", label: "Yes" },
                     { value: "b", label: "No" },
@@ -177,13 +175,13 @@ const sfPreTestData = {
             SodaMintQ4y: {
                 edges: {
                       prev: "SodaMintQ4",
-                      next: "buildBeansIntro"
+                      next: "SodaMintQ5"
                 },
                 question: {
                     id: "sfPreTest.sodaMint.q4y",
                        type: "mc",
                         correctAnswer: "a",
-                        text: "Q4y) What is the biggest problem with Kaya's Background Research?",
+                        text: "Q4y) What is the biggest problem with Kaya's Research Summary?",
                         options: [
                             { value: "a", label: "It doesn't have information about how sugar and carbon dioxide react." },
                              { value: "b", label: "It should include information from the student's conclusion. " },
@@ -192,11 +190,70 @@ const sfPreTestData = {
                         }
                     },
 
-*/
+
+
+                    SodaMintQ5: {
+                        edges: {
+                            prev: "SodaMintQ4y",
+                            next: "SodaMintQ5y"
+                        },
+                        question: {
+                            id: "sfPreTest.sodaMint.q5",
+                            type: "mc",
+                            correctAnswer: "a",
+                            text: "Q5) Do you see any problems with the Procedure section?",
+                            options: [
+                                { value: "a", label: "Yes" },
+                                { value: "b", label: "No" },
+                            ]
+                        }
+                    },
+            
+            
+            
+                        SodaMintQ5y: {
+                            edges: {
+                                  prev: "SodaMintQ5",
+                                  next: "SodaMintQ6"
+                            },
+                            question: {
+                                id: "sfPreTest.sodaMint.q5y",
+                                   type: "mc",
+                                    correctAnswer: "a",
+                                    text: "Q5y) What is the biggest problem with the Procedure?",
+                                    options: [
+                                        { value: "a", label: "It should have more than just one trial." },
+                                         { value: "b", label: "It won't answer the student's question. " },
+                                         { value: "c", label: "It doesn't compare anything." },
+                                        ]
+                                    }
+                                },
+
+                     SodaMintQ6: {
+                        edges: {
+                                prev: "SodaMintQ6",
+                                next: "buildBeansIntro"
+                          },
+                          question: {
+                              id: "sfPreTest.sodaMint.q6",
+                            type: "mc",
+                            correctAnswer: "b",
+                            text: "Q6) What is the best interpretation of the graph?",
+                            options: [
+                                    { value: "a", label: "The soda with less CO2 made a higher geyser." },
+                                     { value: "b", label: "The soda with less CO2 made a lower geyser. " },                                         { value: "c", label: "The heights of the geysers from the low and high-CO2 geysers were about the same." },
+                                    ]
+                                }
+                            },
+
+
+
+
+
 
             buildBeansIntro: {
             edges: {
-                prev: "sodaMintLookEachSection",
+                prev: "SodaMintQ6",
                 next: "completed"
             },
             customEnterActions: [

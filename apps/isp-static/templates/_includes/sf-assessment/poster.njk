@@ -2,10 +2,10 @@
     <div class="poster-column {{poster_lhs_class}}">
         <span class="poster-hdg">Research Question</span>
         <div class="poster-rq">{% block rq %}{% endblock %}</div>
-        <span class="poster-hdg">Research Summary</span>
-        <div class="poster-rs">{% block research_summary %}{% endblock %}</div>
         <span class="poster-hdg">Hypothesis</span>
         <div class="poster-hypo">{% block hypo %}{% endblock %}</div>
+        <span class="poster-hdg">Research Summary</span>
+        <div class="poster-rs">{% block research_summary %}{% endblock %}</div>
     </div>
     <div class="poster-column {{poster_center_class}}">
         <span class="poster-hdg">{{ poster_title | safe }}</span>
