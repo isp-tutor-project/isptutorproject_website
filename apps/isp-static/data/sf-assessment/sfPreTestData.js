@@ -71,9 +71,12 @@ const sfPreTestData = {
         sodaMintLookEachSection: {
             edges: {
                 prev: "SodaMintQ1",
-                next: "SodaMintQ2"
+                next: "buildBeansIntro"
             }
         },
+
+
+/*
 
         SodaMintQ2: {
             edges: {
@@ -96,7 +99,7 @@ const sfPreTestData = {
         SodaMintQ2y: {
             edges: {
                 prev: "SodaMintQ2",
-                next: "SodaMintQ3"
+                next: "buildBeansIntro"
             },
             question: {
                 id: "sfPreTest.sodaMint.q2y",
@@ -111,7 +114,7 @@ const sfPreTestData = {
             }
         },
 
-        
+      /*
 
        SodaMintQ3: {
             edges: {
@@ -130,10 +133,13 @@ const sfPreTestData = {
             }
         },
 
-  /*      SodaMintQ3y: {
+
+        /*
+
+        SodaMintQ3y: {
             edges: {
                 prev: "SodaMintQ3",
-                next: "SodaMintQ4"
+                next: "buildBeansIntro"
             },
             question: {
                 id: "sfPreTest.sodaMint.q3y",
@@ -148,12 +154,49 @@ const sfPreTestData = {
             }
         },
 
-        
-     /*   SodaMintQ4: {     */
+        /*
+        SodaMintQ4: {
+            edges: {
+                prev: "SodaMintQ3y",
+                next: "SodaMintQ4y"
+            },
+            question: {
+                id: "sfPreTest.sodaMint.q4",
+                type: "mc",
+                correctAnswer: "a",
+                text: "Q4) Do you see any problems with the Background Research section?",
+                options: [
+                    { value: "a", label: "Yes" },
+                    { value: "b", label: "No" },
+                ]
+            }
+        },
+
+
+
+            SodaMintQ4y: {
+                edges: {
+                      prev: "SodaMintQ4",
+                      next: "buildBeansIntro"
+                },
+                question: {
+                    id: "sfPreTest.sodaMint.q4y",
+                       type: "mc",
+                        correctAnswer: "a",
+                        text: "Q4y) What is the biggest problem with Kaya's Background Research?",
+                        options: [
+                            { value: "a", label: "It doesn't have information about how sugar and carbon dioxide react." },
+                             { value: "b", label: "It should include information from the student's conclusion. " },
+                             { value: "c", label: "It should include information about alternative soft drinks." },
+                            ]
+                        }
+                    },
+
+*/
 
             buildBeansIntro: {
             edges: {
-                prev: "SodaMintQ3",
+                prev: "sodaMintLookEachSection",
                 next: "completed"
             },
             customEnterActions: [
@@ -163,10 +206,6 @@ const sfPreTestData = {
                 }
             ]
         }, 
-
-
-
-
 
         completed: {
             edges: {
