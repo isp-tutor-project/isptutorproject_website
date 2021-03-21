@@ -411,7 +411,7 @@ const sfPreTestData = {
                                     id: "sfPreTest.Ramps.q3y",
                                     type: "mc",
                                     correctAnswer: "b",
-                                    text: "Q3y) What is the biggest problem with Tim's Hypothesis section?",
+                                    text: "Q3y) What is the biggest problem with the Hypothesis section?",
                                     options: [
                                         { value: "a", label: "He was wrong; waves with higher frequencies actually DON'T have more energy. " },
                                         { value: "b", label: "He predicted that color affects speed even though he didn't find that in his research." },
@@ -487,15 +487,16 @@ const sfPreTestData = {
                                     id: "sfPreTest.Ramps.q6",
                                     type: "mc",
                                     correctAnswer: "a",
-                                    text: "Q6) For the Results section, the students does not say how the data were summarized. What would be the best way to summarize the data for each color of ball?",
+                                    text: "Q6) For the Results section, Tim does not say how the data were summarized. What would be the best way to summarize the data for each ball color?",
                                     options: [
-                                        { value: "a", label: "Mean" },
-                                        { value: "b", label: "Median" },
-                                        { value: "b", label: "Mode" },
+                                        { value: "a", label: "Mean (or average)" },
+                                        { value: "b", label: "Median (or the middle number)" },
+                                        { value: "b", label: "Mode (or the most common number)" },
                                        
                                     ]
                                 }
                             },
+
 
                             RampsQ7: {
                                 edges: {
@@ -505,15 +506,18 @@ const sfPreTestData = {
                                 question: {
                                     id: "sfPreTest.Ramps.q7",
                                     type: "mc",
-                                    correctAnswer: "b",
-                                    text: "Q7) Do you see any problems with the Conclusion section?",
+                                    correctAnswer: "c",
+                                    text: "Q7) Assume these results are from a good experiment. What is the best interpretation of these results?",
                                     options: [
-                                        { value: "a", label: "Yes" },
-                                        { value: "b", label: "No" },
+                                        { value: "a", label: "The red ball rolls faster." },
+                                        { value: "b", label: "The yellow ball rolls faster." },
+                                        { value: "b", label: "It's not clear if there really is a difference." },
                                        
                                     ]
                                 }
                             },
+
+
 
                             RampsQ8: {
                                 edges: {
@@ -523,12 +527,11 @@ const sfPreTestData = {
                                 question: {
                                     id: "sfPreTest.Ramps.q8",
                                     type: "mc",
-                                    correctAnswer: "c",
-                                    text: "Q8) What is the independent variable in this study?",
+                                    correctAnswer: "b",
+                                    text: "Q8) (Assume the results are from a good experiment.) Do you see any problems with the Conclusion section?",
                                     options: [
-                                        { value: "a", label: "the size of the ball" },
-                                        { value: "b", label: "speed of the ball at the bottom of the ramp" },
-                                        { value: "c", label: "the color the ball" },
+                                        { value: "a", label: "Yes" },
+                                        { value: "b", label: "No" },
                                        
                                     ]
                                 }
@@ -537,16 +540,35 @@ const sfPreTestData = {
                             RampsQ9: {
                                 edges: {
                                     prev: "RampsQ8",
-                                    next: "buildBeansIntro"
+                                    next: "RampsQ10"
                                 },
                                 question: {
                                     id: "sfPreTest.Ramps.q9",
                                     type: "mc",
-                                    correctAnswer: "b",
-                                    text: "Q9) What is the dependent variable in this study?",
+                                    correctAnswer: "c",
+                                    text: "Q9) What is the independent variable in this study?",
                                     options: [
                                         { value: "a", label: "the size of the ball" },
-                                        { value: "b", label: "speed of the ball at the bottom of the ramp" },
+                                        { value: "b", label: "the speed of the ball at the bottom of the ramp" },
+                                        { value: "c", label: "the color the ball" },
+                                       
+                                    ]
+                                }
+                            },
+
+                            RampsQ10: {
+                                edges: {
+                                    prev: "RampsQ9",
+                                    next: "buildBeansIntro"
+                                },
+                                question: {
+                                    id: "sfPreTest.Ramps.q10",
+                                    type: "mc",
+                                    correctAnswer: "b",
+                                    text: "Q10) What is the dependent variable in this study?",
+                                    options: [
+                                        { value: "a", label: "the size of the ball" },
+                                        { value: "b", label: "the speed of the ball at the bottom of the ramp" },
                                         { value: "c", label: "the color the ball" },
                                        
                                     ]
