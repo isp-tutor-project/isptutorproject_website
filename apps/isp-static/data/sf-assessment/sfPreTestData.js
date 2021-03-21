@@ -268,7 +268,7 @@ const sfPreTestData = {
                             SodaMintQ7y: {
                                 edges: {
                                     prev: "SodaMintQ7",
-                                    next: "buildBeansIntro"
+                                    next: "SodaMintQ8"
                                 },
                                 question: {
                                     id: "sfPreTest.sodaMint.q7y",
@@ -283,8 +283,277 @@ const sfPreTestData = {
                                 }
                             },
 
+                            SodaMintQ8: {
+                                edges: {
+                                    prev: "SodaMintQ7y",
+                                    next: "SodaMintQ9"
+                                },
+                                question: {
+                                    id: "sfPreTest.sodaMint.q8",
+                                    type: "mc",
+                                    correctAnswer: "a",
+                                    text: "Q8) What is the independent variable in this study?",
+                                    options: [
+                                        { value: "a", label: "the amount of CO2 in the soda" },
+                                        { value: "b", label: "the amount of sugar in the soda" },
+                                        { value: "c", label: "the height of the geyser" },
+                                    ]
+                                }
+                            },
 
 
+                            SodaMintQ9: {
+                                edges: {
+                                    prev: "SodaMintQ8",
+                                    next: "Ramp_evalIntro3_tryonemore"
+                                },
+                                question: {
+                                    id: "sfPreTest.sodaMint.q9",
+                                    type: "mc",
+                                    correctAnswer: "c",
+                                    text: "Q9) What is the dependent variable in this study?",
+                                    options: [
+                                        { value: "a", label: "the amount of CO2 in the soda" },
+                                        { value: "b", label: "the amount of sugar in the soda" },
+                                        { value: "c", label: "the height of the geyser" },
+                                    ]
+                                }
+                            },
+
+                            Ramp_evalIntro3_tryonemore: {
+                                edges: {
+                                    prev: "SodaMintQ9",
+                                    next: "Ramps_Intro_ThisIsTim"
+                                },
+                                
+                            },
+
+/*     Ramps_Intro_ThisIsTim        */
+
+                            Ramps_Intro_ThisIsTim: {
+                                edges: {
+                                    prev: "Ramp_evalIntro3_tryonemore",
+                                    next: "RampsQ1"
+                                },
+                                
+                            },
+
+                            RampsQ1: {
+                                edges: {
+                                    prev: "Ramps_Intro_ThisIsTim",
+                                    next: "RampsLookEachSection"
+                                },
+                                question: {
+                                    id: "sfPreTest.Ramps.q1",
+                                    type: "mc",
+                                    correctAnswer: "a",
+                                    text: "Q1) Do you see any ways to improve this science project?",
+                                    options: [
+                                        { value: "a", label: "Yes" },
+                                        { value: "b", label: "No" },
+                                      
+                                    ]
+                                }
+                            },
+
+
+                            RampsLookEachSection: {
+                                edges: {
+                                    prev: "RampsQ1",
+                                    next: "RampsQ2"
+                                }
+                            },
+
+
+
+                            RampsQ2: {
+                                edges: {
+                                    prev: "RampsLookEachSection",
+                                    next: "RampsQ3"
+                                },
+                                question: {
+                                    id: "sfPreTest.Ramps.q2",
+                                    type: "mc",
+                                    correctAnswer: "b",
+                                    text: "Q2) Do you see any problems with the student's Research Question?",
+                                    options: [
+                                        { value: "a", label: "Yes" },
+                                        { value: "b", label: "No" },
+                                      
+                                    ]
+                                }
+                            },
+
+                            RampsQ3: {
+                                edges: {
+                                    prev: "RampsQ2",
+                                    next: "RampsQ3y"
+                                },
+                                question: {
+                                    id: "sfPreTest.Ramps.q3",
+                                    type: "mc",
+                                    correctAnswer: "a",
+                                    text: "Q3) Do you see any problems with the Hypothesis section?",
+                                    options: [
+                                        { value: "a", label: "Yes" },
+                                        { value: "b", label: "No" },
+                                      
+                                    ]
+                                }
+                            },
+
+                            RampsQ3y: {
+                                edges: {
+                                    prev: "RampsQ3",
+                                    next: "RampsQ4"
+                                },
+                                question: {
+                                    id: "sfPreTest.Ramps.q3y",
+                                    type: "mc",
+                                    correctAnswer: "b",
+                                    text: "Q3y) What is the biggest problem with Tim's Hypothesis section?",
+                                    options: [
+                                        { value: "a", label: "He was wrong; waves with higher frequencies actually DON'T have more energy. " },
+                                        { value: "b", label: "He predicted that color affects speed even though he didn't find that in his research." },
+                                        { value: "c", label: "His hypothesis was not related to his research question." },
+                                      
+                                    ]
+                                }
+                            },
+
+
+                            RampsQ4: {
+                                edges: {
+                                    prev: "RampsQ3y",
+                                    next: "RampsQ5"
+                                },
+                                question: {
+                                    id: "sfPreTest.Ramps.q4",
+                                    type: "mc",
+                                    correctAnswer: "b",
+                                    text: "Q4) Do you see any problems with the Research Summary section?",
+                                    options: [
+                                        { value: "a", label: "Yes" },
+                                        { value: "b", label: "No" },
+                                      
+                                    ]
+                                }
+                            },
+
+                            RampsQ5: {
+                                edges: {
+                                    prev: "RampsQ4",
+                                    next: "RampsQ5y"
+                                },
+                                question: {
+                                    id: "sfPreTest.Ramps.q5",
+                                    type: "mc",
+                                    correctAnswer: "a",
+                                    text: "Q5) Do you see any problems with the Procedure section?",
+                                    options: [
+                                        { value: "a", label: "Yes" },
+                                        { value: "b", label: "No" },
+                                       
+                                    ]
+                                }
+                            },
+
+
+                            RampsQ5y: {
+                                edges: {
+                                    prev: "RampsQ5",
+                                    next: "RampsQ6"
+                                },
+                                question: {
+                                    id: "sfPreTest.Ramps.q5y",
+                                    type: "mc",
+                                    correctAnswer: "c",
+                                    text: "Q5y) What is  the biggest problem with the Procedure section?",
+                                    options: [
+                                        { value: "a", label: "The student only ran one trial in each condition." },
+                                        { value: "b", label: "The student started the speedometer when the green lever was released." },
+                                        { value: "b", label: "He started the red and yellow balls at different places on the ramp." },
+                                       
+                                    ]
+                                }
+                            }, 
+                            
+                            RampsQ6: {
+                                edges: {
+                                    prev: "RampsQ5y",
+                                    next: "RampsQ7"
+                                },
+                                question: {
+                                    id: "sfPreTest.Ramps.q6",
+                                    type: "mc",
+                                    correctAnswer: "a",
+                                    text: "Q6) For the Results section, the students does not say how the data were summarized. What would be the best way to summarize the data for each color of ball?",
+                                    options: [
+                                        { value: "a", label: "Mean" },
+                                        { value: "b", label: "Median" },
+                                        { value: "b", label: "Mode" },
+                                       
+                                    ]
+                                }
+                            },
+
+                            RampsQ7: {
+                                edges: {
+                                    prev: "RampsQ6",
+                                    next: "RampsQ8"
+                                },
+                                question: {
+                                    id: "sfPreTest.Ramps.q7",
+                                    type: "mc",
+                                    correctAnswer: "b",
+                                    text: "Q7) Do you see any problems with the Conclusion section?",
+                                    options: [
+                                        { value: "a", label: "Yes" },
+                                        { value: "b", label: "No" },
+                                       
+                                    ]
+                                }
+                            },
+
+                            RampsQ8: {
+                                edges: {
+                                    prev: "RampsQ7",
+                                    next: "RampsQ9"
+                                },
+                                question: {
+                                    id: "sfPreTest.Ramps.q8",
+                                    type: "mc",
+                                    correctAnswer: "c",
+                                    text: "Q8) What is the independent variable in this study?",
+                                    options: [
+                                        { value: "a", label: "the size of the ball" },
+                                        { value: "b", label: "speed of the ball at the bottom of the ramp" },
+                                        { value: "c", label: "the color the ball" },
+                                       
+                                    ]
+                                }
+                            },
+
+                            RampsQ9: {
+                                edges: {
+                                    prev: "RampsQ8",
+                                    next: "buildBeansIntro"
+                                },
+                                question: {
+                                    id: "sfPreTest.Ramps.q9",
+                                    type: "mc",
+                                    correctAnswer: "b",
+                                    text: "Q9) What is the dependent variable in this study?",
+                                    options: [
+                                        { value: "a", label: "the size of the ball" },
+                                        { value: "b", label: "speed of the ball at the bottom of the ramp" },
+                                        { value: "c", label: "the color the ball" },
+                                       
+                                    ]
+                                }
+                            },
+
+                       
 
             buildBeansIntro: {
             edges: {
@@ -306,6 +575,11 @@ const sfPreTestData = {
         }
     }
 };
+
+
+
+
+
 
 let bldr = new ScienceFairAssessmentDataBuilder(sfPreTestData);
 module.exports = bldr.buildData();
