@@ -578,17 +578,47 @@ const sfPreTestData = {
                        
 
             buildBeansIntro: {
-            edges: {
-                prev: "SodaMintQ7y",
-                next: "completed"
-            },
-            customEnterActions: [
-                {
-                    name: "hideBtns",
-                    args: ["next"]
-                }
+                edges: {
+                    prev: "RampsQ10",
+                    next: "YBeansLookEachSection"
+                },
+                customEnterActions: [
+                    {
+                        name: "hideBtns",
+                        args: ["next"]
+                    }
             ]
         }, 
+
+
+        YBeansLookEachSection: {
+            edges: {
+                prev: "buildBeansIntro",
+                next: "YBeansQ1"
+            }
+        },
+
+
+        YBeansQ1: {
+            edges: {
+                prev: "YBeansLookEachSection",
+                next: "completed"
+            },
+            question: {
+                id: "sfPreTest.Beans.q1",
+                type: "mc",
+                correctAnswer: "b",
+                text: "Q1) Select the best background research summary for this research question from the choices below.",
+                options: [
+                    { value: "a", label: "I found that lemon juice has citric acid and is high in Vitamin C. Vitamin C is a nutrient that people need to be healthy." },
+                    { value: "b", label: "I found that acid rain removed nutrients that plants need from the soil. Aluminum is one nutrient that acid rain removes. This causes plants to grow less or die." },
+                    { value: "c", label: "I found that citric acid is a part of the molecular structure of living things, including plants. Also, both plant and animal cells have mitochondria and a nucleus." },
+                   
+                ]
+            }
+        },
+
+
 
         completed: {
             edges: {

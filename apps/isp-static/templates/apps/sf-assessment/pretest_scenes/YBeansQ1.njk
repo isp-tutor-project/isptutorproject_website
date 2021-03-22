@@ -1,0 +1,17 @@
+{% extends "sf-assessment/top-bottom.njk" %}
+{% import "sf-assessment/forms.njk" as forms %}
+
+{% block tb_top %}
+    {% include "sf-assessment/Beans-poster.njk" %}
+{% endblock %}
+
+
+{% block tb_bottom %}
+    {{ forms.radios_form(page, isVert=true) }}
+{% endblock %}
+
+
+
+
+
+
