@@ -724,9 +724,119 @@ const sfPreTestData = {
         YBeans7_lastpage: {
             edges: {
                 prev: "YBeansQ6",
-                next: "completed"
+                next: "buildApplesIntro"
             }
         },
+
+
+        buildApplesIntro: {
+            edges: {
+                prev: "YBeans7_lastpage",
+                next: "ZApplesLookEachSection"
+            },
+            customEnterActions: [
+                {
+                    name: "hideBtns",
+                    args: ["next"]
+                }
+        ]
+    }, 
+
+
+    ZApplesLookEachSection: {
+        edges: {
+            prev: "buildApplesIntro",
+            next: "ZApplesQ1"
+        }
+    },
+
+
+    ZApplesQ1: {
+        edges: {
+            prev: "ZApplesLookEachSection",
+            next: "ZApplesQ2"
+        },
+        question: {
+            id: "sfPreTest.Apples.q1",
+            type: "mc",
+            correctAnswer: "c",
+            text: "Q1) Select the best background research summary from the choices below.",
+            options: [
+                { value: "a", label: "Red Delicious apples are red because they reflect low-energy red light and absorb higher-energy light. Therefore, they absorb more energy and grow faster than apples that are other colors." },
+                { value: "b", label: "Red Delicious apples contain high levels of the molecule polyphenol oxidase and turn brown quickly when you cut them open. So, polyphenol oxidase causes apples to turn brown." },
+                { value: "c", label: "Red Delicious apples turn brown due to a chemical reaction between oxygen and a chemical (molecule) called polyphenol oxidase. These chemicals react to form melanin, which is brown." },
+               
+            ]
+        }
+    },
+
+
+    ZApplesQ2: {
+        edges: {
+            prev: "ZApplesQ1",
+            next: "ZApplesQ3"
+        },
+        question: {
+            id: "sfPreTest.Apples.q2",
+            type: "mc",
+            correctAnswer: "c",
+            text: "Q2) Select the best hypothesis from the choices below, starting with 'I predict that...'",
+            options: [
+                { value: "a", label: "...the apple halves given polyphenol oxidase will brown faster because it causes a reaction. As the amount of polyphenol oxidase increases, the time for apples to brown will decrease." },
+                { value: "b", label: "...the apple halves given polyphenol oxidase will brown faster. Apples that naturally have more polyphenol oxidase brown faster than apples with less. so, as the amount of polyphenol oxidase increases, the time for apples to brown will decrease." },
+                { value: "c", label: "...the apple halves given polyphenol oxidase will brown faster because they react with oxygen to make melanin (brown color). As the amount of polyphenol oxidase increases, the time for apples to brown will decrease." },
+               
+            ]
+        }
+    },
+
+
+    ZApplesQ3: {
+        edges: {
+            prev: "ZApplesQ2",
+            next: "ZApplesQ4"
+        },
+        question: {
+            id: "sfPreTest.Apples.q3",
+            type: "mc",
+            correctAnswer: "a",
+            text: "Q3) The first step of the procedure is given above. Select the best next step below.",
+            options: [
+                { value: "a", label: "Add 10 mg of polyphenol oxidase to the top of one of the two apple halves." },
+                { value: "b", label: "Add 10 mg of polyphenol oxidase to the top of one of both of the apple halves." },
+               
+               
+            ]
+        }
+    },
+
+
+    ZApplesQ4: {
+        edges: {
+            prev: "ZApplesQ3",
+            next: "ZApples_CompleteProcedure5"
+        },
+        question: {
+            id: "sfPreTest.Apples.q4",
+            type: "mc",
+            correctAnswer: "a",
+            text: "Q4) Please select the best next step.",
+            options: [
+                { value: "a", label: "Place both apple halves in the refrigerator." },
+                { value: "b", label: "Place one apple half in the refrigerator and the other on the windowsill." },
+               
+               
+            ]
+        }
+    },
+
+
+    ZApples_CompleteProcedure5: {
+        edges: {
+            prev: "ZApplesQ4",
+            next: "completed"
+        }
+    },
 
 
         completed: {

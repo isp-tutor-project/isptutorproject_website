@@ -1,0 +1,99 @@
+{% extends "sf-assessment/posterRS_Hypo.njk" %}
+
+{% set poster_lhs_class = "poster-example-lhs" %}
+{% set poster_rhs_class = "poster-example-rhs" %}
+{% set poster_center_class = "poster-example-center" %}
+{% set poster_title = "Amount of Polyphenol Oxidase and Apple Browning" %}
+
+
+<div class="poster-container">
+    <div class="poster-column {{poster_lhs_class}}">
+        <span class="poster-hdg">Research Question</span>
+        <div class="poster-rq">{% block rq %}
+        
+         <p class="poster-text text-xs">
+        Does the amount of polyphenol oxidase affect the time for apples to turn brown?
+    </p>
+    <br>
+        
+        {% endblock %}</div>
+
+       
+        
+        <span class="poster-hdg">Research Summary</span>
+        <div class="poster-rs">{% block research_summary %}
+        
+        <p class="poster-text text-xs text-align: center">
+
+        <p class="poster-text text-xs text-align: center">
+         <img src="/img/sf-assessment/Completed_new_white.png"
+         class="img-centered"
+         width="150" />
+        </p>
+       
+        </p>
+      
+
+        {% endblock %}</div>
+
+        <span class="poster-hdg">Hypothesis</span>
+        <div class="poster-hypo">
+        
+        {% block hypo %}
+        
+        <p class="poster-text text-xs text-align: center">
+         <img src="/img/sf-assessment/Completed_new_white.png"
+         class="img-centered"
+         width="150" />
+        </p>
+        
+        {% endblock %}</div>
+
+
+    </div>
+    <div class="poster-column {{poster_center_class}}">
+        <span class="poster-hdg">{{ poster_title | safe }}</span>
+        <hr>
+        <span class="poster-hdg">Materials</span>
+        <div class="poster-materials">{% block materials %}
+        
+        <img src="/img/sf-assessment/Apples_Materials.jpg"
+         class="img-centered"
+         width="325" />
+        
+        
+        
+        {% endblock %}</div>
+        <span class="poster-hdg">Procedure</span>
+        <div class="poster-procedure">{% block procedure %}
+        
+        <p class="poster-text text-xs">
+        #1- Cut one apple in half using a clean knife.<br>
+        #2- [Put polyphenol oxidase on apple(s)]<br>
+        #3- [Select best next step]
+    </p>
+
+    {% endblock %}</div>
+    </div>
+    <div class="poster-column {{poster_rhs_class}}">
+        <span class="poster-hdg">Results</span>
+        
+        <div class="poster-results">{% block results %}
+        
+         <p class="poster-text text-xs">
+        [Your results here]
+        </p>
+        <br>
+        
+        {% endblock %}</div>
+
+
+
+        <span class="poster-hdg">Conclusion</span>
+        <div class="poster-conclusion">{% block conclusion%}
+        <p class="poster-text text-xs">
+        [TEXT HERE]
+    </p>
+    {% endblock%}</div>
+    </div>
+</div>
