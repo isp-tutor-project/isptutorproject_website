@@ -602,7 +602,7 @@ const sfPreTestData = {
         YBeansQ1: {
             edges: {
                 prev: "YBeansLookEachSection",
-                next: "completed"
+                next: "YBeansQ2"
             },
             question: {
                 id: "sfPreTest.Beans.q1",
@@ -611,13 +611,122 @@ const sfPreTestData = {
                 text: "Q1) Select the best background research summary for this research question from the choices below.",
                 options: [
                     { value: "a", label: "I found that lemon juice has citric acid and is high in Vitamin C. Vitamin C is a nutrient that people need to be healthy." },
-                    { value: "b", label: "I found that acid rain removed nutrients that plants need from the soil. Aluminum is one nutrient that acid rain removes. This causes plants to grow less or die." },
+                    { value: "b", label: "I found that acid rain removes nutrients that plants need from the soil. Aluminum is one nutrient that acid rain removes. This causes plants to grow less or die." },
                     { value: "c", label: "I found that citric acid is a part of the molecular structure of living things, including plants. Also, both plant and animal cells have mitochondria and a nucleus." },
                    
                 ]
             }
         },
 
+        YBeansQ2: {
+            edges: {
+                prev: "YBeansQ1",
+                next: "YBeansQ3"
+            },
+            question: {
+                id: "sfPreTest.Beans.q2",
+                type: "mc",
+                correctAnswer: "c",
+                text: "Q2) Now select the best hypothesis for this research question from the choices below.",
+                options: [
+                    { value: "a", label: "I predict that the plants that were given plain water will grow faster than the plants given water with citric acid. I made this prediction because high acidity hurts plant growth and citric acid is highly acidic." },
+                    { value: "b", label: "I predict that the plants that were given plain water will grow slower than the plants given water with citric acid. I made this prediction because citric acid is good for plants." },
+                    { value: "c", label: "I predict that the plants that were given plain water will grow faster than the plants given water with citric acid. I made this prediction because acids remove minerals and nutrients that plants need from the soil." },
+                   
+                ]
+            }
+        },
+
+        YBeansQ3: {
+            edges: {
+                prev: "YBeansQ2",
+                next: "YBeansQ4"
+            },
+            question: {
+                id: "sfPreTest.Beans.q3",
+                type: "mc",
+                correctAnswer: "a",
+                text: "Q3) The first step of the procedure is shown above. Now select the best next step of the procedure from the choices below.",
+                options: [
+                    { value: "a", label: "Put both plants on the windowsill." },
+                    { value: "b", label: "Put one plant on the windowsill and the other on the kitchen table." },
+                   
+                ]
+            }
+        },
+
+        YBeansQ4: {
+            edges: {
+                prev: "YBeansQ3",
+                next: "YBeans_CompleteProcedure5"
+            },
+            question: {
+                id: "sfPreTest.Beans.q4",
+                type: "mc",
+                correctAnswer: "a",
+                text: "Q4) Now select the best next step to complete the following sentence: Every day at 8am...",
+                options: [
+                    { value: "a", label: "...add 10 mg of citric acid to 1/2 cups of water and give to one plant. Then give 1/2 cups plain water to the other plant." },
+                    { value: "b", label: "...add 10 mg of lemon juice to 1/2 cups of water and give to one plant. Then give 1/2 cups plain water to the other plant." },
+                    { value: "c", label: "...add 10 mg of citric acid to 1/2 cups of water and give to both plants." },
+                   
+                ]
+            }
+        },
+
+
+        YBeans_CompleteProcedure5: {
+            edges: {
+                prev: "YBeansQ4",
+                next: "YBeansQ5"
+            }
+        },
+
+
+        YBeansQ5: {
+            edges: {
+                prev: "YBeans_CompleteProcedure5",
+                next: "YBeansQ6"
+            },
+            question: {
+                id: "sfPreTest.Beans.q5",
+                type: "mc",
+                correctAnswer: "c",
+                text: "Q5) The results are now shown. What is the best interpretation of the results?",
+                options: [
+                    { value: "a", label: "The plants given plain water did not grow, but the plants given water with citric acid grew to 32 cm." },
+                    { value: "b", label: "The plants given plain water grew to 32 cm, but the plants given water with citric acid only grew a little." },
+                    { value: "c", label: "The plants given plain water grew to 32 cm, but the plants given water with citric acid didn't grow." },
+                   
+                ]
+            }
+        },
+
+        YBeansQ6: {
+            edges: {
+                prev: "YBeansQ5",
+                next: "YBeans7_lastpage"
+            },
+            question: {
+                id: "sfPreTest.Beans.q6",
+                type: "mc",
+                correctAnswer: "c",
+                text: "Q6) Select the best conclusion for this poster based on the given hypothesis (shown on poster) and results.",
+                options: [
+                    { value: "a", label: "The results are consistent with the hypothesis." },
+                    { value: "b", label: "The results are not consistent with the hypothesis." },
+                    { value: "c", label: "The hypothesis was correct." },
+                   
+                ]
+            }
+        },
+
+        YBeans7_lastpage: {
+            edges: {
+                prev: "YBeansQ6",
+                next: "completed"
+            }
+        },
 
 
         completed: {

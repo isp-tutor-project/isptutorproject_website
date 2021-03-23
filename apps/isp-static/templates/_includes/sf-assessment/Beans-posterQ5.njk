@@ -15,6 +15,7 @@
         Does the amount of acid added to water affect the growth of pole bean plants?
     </p>
     <br>
+    
         
         {% endblock %}</div>
 
@@ -24,20 +25,27 @@
         <div class="poster-rs">{% block research_summary %}
         
         <p class="poster-text text-xs text-align: center">
-        [Your research summary here]
+         <img src="/img/sf-assessment/Completed_new_white.png"
+         class="img-centered"
+         width="150" />
         </p>
         <br>
-
+        
         {% endblock %}</div>
 
         <span class="poster-hdg">Hypothesis</span>
         <div class="poster-hypo">
         
         {% block hypo %}
-        
+
         <p class="poster-text text-xs text-align: center">
-        [Your hypothesis here]
+         <img src="/img/sf-assessment/Completed_new_white.png"
+         class="img-centered"
+         width="150" />
         </p>
+        <br>
+        
+        
         
         {% endblock %}</div>
 
@@ -60,20 +68,26 @@
         <div class="poster-procedure">{% block procedure %}
         
         <p class="poster-text text-xs">
-        [Your procedure here]
+        #1- Select two bean sprout plants that are 10 cm tall. <br>
+        #2- [Completed picking plant location(s)] <br>
+        #3- Every day at 8am, [response selected] <br>
+        #4- Measure and record the plant heights every day at noon for 12 days.<br>
+        #5- Repeat this procedure two more times.
+        
     </p>
 
     {% endblock %}</div>
+
     </div>
     <div class="poster-column {{poster_rhs_class}}">
         <span class="poster-hdg">Results</span>
         
         <div class="poster-results">{% block results %}
         
-         <p class="poster-text text-xs">
-        [Your results here]
-        </p>
-        <br>
+        <img src="/img/sf-assessment/BeansResults.png"
+         class="img-centered"
+         width="250" />
+        
         
         {% endblock %}</div>
 
