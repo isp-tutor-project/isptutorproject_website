@@ -814,7 +814,7 @@ const sfPreTestData = {
     ZApplesQ4: {
         edges: {
             prev: "ZApplesQ3",
-            next: "ZApples_CompleteProcedure5"
+            next: "ZApplesQ5"
         },
         question: {
             id: "sfPreTest.Apples.q4",
@@ -834,10 +834,57 @@ const sfPreTestData = {
     ZApples_CompleteProcedure5: {
         edges: {
             prev: "ZApplesQ4",
-            next: "completed"
+            next: "ZApplesQ5"
         }
     },
 
+
+
+    ZApplesQ5: {
+        edges: {
+            prev: "YBeans_CompleteProcedure5",
+            next: "ZApplesQ6"
+        },
+        question: {
+            id: "sfPreTest.Beans.q5",
+            type: "mc",
+            correctAnswer: "b",
+            text: "Q5) The results are now shown. What is the best interpretation of the results?",
+            options: [
+                { value: "a", label: "Apples browned faster when no polyphenol oxidase was added." },
+                { value: "b", label: "Apples browned faster when 10 mg of polyphenol oxidase was added." },
+                { value: "c", label: "Apples browned equally fast when polyphenol oxidase was added or not." },
+               
+            ]
+        }
+    },
+
+
+    ZApplesQ6: {
+        edges: {
+            prev: "ZApplesQ5",
+            next: "ZApples7_lastpage"
+        },
+        question: {
+            id: "sfPreTest.Apples.q6",
+            type: "mc",
+            correctAnswer: "a",
+            text: "Q6) Select the best conclusion for this poster based on the given hypothesis (shown on poster) and results.",
+            options: [
+                { value: "a", label: "The results are consistent with the hypothesis." },
+                { value: "b", label: "The results are not consistent with the hypothesis." },
+                { value: "c", label: "The hypothesis was correct." },
+               
+            ]
+        }
+    },
+
+    ZApples7_lastpage: {
+        edges: {
+            prev: "ZApplesQ6",
+            next: "completed"
+        }
+    },
 
         completed: {
             edges: {
