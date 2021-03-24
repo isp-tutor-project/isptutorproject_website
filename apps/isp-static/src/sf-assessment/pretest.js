@@ -31,6 +31,6 @@ let app = new ScienceFairAssessmentApp(
     activityData, activityConfig, DEFAULT_INITIAL_APP_STATE
 );
 if (process.env.NODE_ENV === "development") {
-    app.setStartScene("intro");
+    app.setStartScene("start");
 }
 app.start();
