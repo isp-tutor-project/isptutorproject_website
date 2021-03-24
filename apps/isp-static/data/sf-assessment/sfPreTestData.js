@@ -56,7 +56,7 @@ const sfPreTestData = {
                 next: "sodaMintLookEachSection"
             },
             question: {
-                id: "sfPreTest.sodaMint.q1",
+                id: "sfPreTest.sodaMint.q1_GeneralPosterOK",
                 type: "mc",
                 correctAnswer: "a",
                 text: "Q1) Do you see any ways to improve this science project?",
@@ -82,7 +82,7 @@ const sfPreTestData = {
                 next: "SodaMintQ2y"
             },
             question: {
-                id: "sfPreTest.sodaMint.q2",
+                id: "sfPreTest.sodaMint.q2_RQ_OK",
                 type: "mc",
                 correctAnswer: "a",
                 text: "Q2) Do you see any problems with the student's Research Question?",
@@ -120,7 +120,7 @@ const sfPreTestData = {
                 next: "SodaMintQ3y"
             },
             question: {
-                id: "sfPreTest.sodaMint.q3",
+                id: "sfPreTest.sodaMint.q3_Hypo_OK",
                 type: "mc",
                 correctAnswer: "a",
                 text: "Q3) Do you see any problems with the Hypothesis section?",
@@ -137,7 +137,7 @@ const sfPreTestData = {
                 next: "SodaMintQ4"
             },
             question: {
-                id: "sfPreTest.sodaMint.q3y",
+                id: "sfPreTest.sodaMint.q3y_Hypo_science_explan",
                 type: "mc",
                 correctAnswer: "c",
                 text: "Q3y) What is the biggest problem with Kaya's Hypothesis?",
@@ -155,7 +155,7 @@ const sfPreTestData = {
                 next: "SodaMintQ4y"
             },
             question: {
-                id: "sfPreTest.sodaMint.q4",
+                id: "sfPreTest.sodaMint.q4_BRS_ok",
                 type: "mc",
                 correctAnswer: "a",
                 text: "Q4) Do you see any problems with the Research Summary section?",
@@ -172,10 +172,10 @@ const sfPreTestData = {
                 next: "SodaMintQ5"
             },
             question: {
-                id: "sfPreTest.sodaMint.q4y",
+                id: "sfPreTest.sodaMint.q4y_BRS_aboutRQ",
                 type: "mc",
                 correctAnswer: "a",
-                text: "Q4y) What is the biggest problem with Kaya's Research Summary?",
+                text: "Q4y) What is the biggest problem with Kaya's background Research Summary?",
                 options: [
                     { value: "a", label: "It doesn't have information about how sugar and carbon dioxide react." },
                     { value: "b", label: "It should include information from the student's conclusion. " },
@@ -190,7 +190,7 @@ const sfPreTestData = {
                 next: "SodaMintQ5y"
             },
             question: {
-                id: "sfPreTest.sodaMint.q5",
+                id: "sfPreTest.sodaMint.q5_Proc_OK",
                 type: "mc",
                 correctAnswer: "a",
                 text: "Q5) Do you see any problems with the Procedure section?",
@@ -207,7 +207,7 @@ const sfPreTestData = {
                 next: "SodaMintQ6"
             },
             question: {
-                id: "sfPreTest.sodaMint.q5y",
+                id: "sfPreTest.sodaMint.q5y_Proc_multi_trials",
                 type: "mc",
                 correctAnswer: "a",
                 text: "Q5y) What is the biggest problem with the Procedure?",
@@ -225,7 +225,7 @@ const sfPreTestData = {
                 next: "SodaMintQ7"
             },
             question: {
-                id: "sfPreTest.sodaMint.q6",
+                id: "sfPreTest.sodaMint.q6_InterpretGraph",
                 type: "mc",
                 correctAnswer: "b",
                 text: "Q6) What is the best interpretation of the graph?",
@@ -243,7 +243,7 @@ const sfPreTestData = {
                 next: "SodaMintQ7y"
             },
             question: {
-                id: "sfPreTest.sodaMint.q7",
+                id: "sfPreTest.sodaMint.q7_Concl_ok",
                 type: "mc",
                 correctAnswer: "a",
                 text: "Q7) Do you see any problems with the Conclusion section?",
@@ -260,7 +260,7 @@ const sfPreTestData = {
                 next: "SodaMintQ8"
             },
             question: {
-                id: "sfPreTest.sodaMint.q7y",
+                id: "sfPreTest.sodaMint.q7y_Conclusion",
                 type: "mc",
                 correctAnswer: "c",
                 text: "Q7y) What is the biggest problem with Kaya's Conclusion?",
@@ -268,6 +268,7 @@ const sfPreTestData = {
                     { value: "a", label: "It should say that her hypothesis was right." },
                     { value: "b", label: "It should say that her hypothesis was wrong." },
                     { value: "c", label: "It should say that her results were consistent with her hypothesis." },
+                    { value: "d", label: "It should say that her results were inconsistent with her hypothesis." },
                 ]
             }
         },
@@ -278,7 +279,7 @@ const sfPreTestData = {
                 next: "SodaMintQ9"
             },
             question: {
-                id: "sfPreTest.sodaMint.q8",
+                id: "sfPreTest.sodaMint.q8_WhatIsIV",
                 type: "mc",
                 correctAnswer: "a",
                 text: "Q8) What is the independent variable in this study?",
@@ -297,7 +298,7 @@ const sfPreTestData = {
                 next: "Ramp_evalIntro3_tryonemore"
             },
             question: {
-                id: "sfPreTest.sodaMint.q9",
+                id: "sfPreTest.sodaMint.q9_WhatIsDV",
                 type: "mc",
                 correctAnswer: "c",
                 text: "Q9) What is the dependent variable in this study?",
@@ -333,7 +334,7 @@ const sfPreTestData = {
                 next: "RampsLookEachSection"
             },
             question: {
-                id: "sfPreTest.Ramps.q1",
+                id: "sfPreTest.Ramps.q1_GeneralPosterOK",
                 type: "mc",
                 correctAnswer: "a",
                 text: "Q1) Do you see any ways to improve this science project?",
@@ -359,7 +360,7 @@ const sfPreTestData = {
                 next: "RampsQ3"
             },
             question: {
-                id: "sfPreTest.Ramps.q2",
+                id: "sfPreTest.Ramps.q2_RQ_OK",
                 type: "mc",
                 correctAnswer: "b",
                 text: "Q2) Do you see any problems with the student's Research Question?",
@@ -377,7 +378,7 @@ const sfPreTestData = {
                 next: "RampsQ3y"
             },
             question: {
-                id: "sfPreTest.Ramps.q3",
+                id: "sfPreTest.Ramps.q3_Hypo_OK",
                 type: "mc",
                 correctAnswer: "a",
                 text: "Q3) Do you see any problems with the Hypothesis section?",
@@ -395,7 +396,7 @@ const sfPreTestData = {
                 next: "RampsQ4"
             },
             question: {
-                id: "sfPreTest.Ramps.q3y",
+                id: "sfPreTest.Ramps.q3y_BackRes_Hypo_coordinate",
                 type: "mc",
                 correctAnswer: "b",
                 text: "Q3y) What is the biggest problem with the Hypothesis section?",
@@ -415,7 +416,7 @@ const sfPreTestData = {
                 next: "RampsQ5"
             },
             question: {
-                id: "sfPreTest.Ramps.q4",
+                id: "sfPreTest.Ramps.q4_BRS_ok",
                 type: "mc",
                 correctAnswer: "b",
                 text: "Q4) Do you see any problems with the Research Summary section?",
@@ -433,7 +434,7 @@ const sfPreTestData = {
                 next: "RampsQ5y"
             },
             question: {
-                id: "sfPreTest.Ramps.q5",
+                id: "sfPreTest.Ramps.q5_Proc_OK",
                 type: "mc",
                 correctAnswer: "a",
                 text: "Q5) Do you see any problems with the Procedure section?",
@@ -452,7 +453,7 @@ const sfPreTestData = {
                 next: "RampsQ6"
             },
             question: {
-                id: "sfPreTest.Ramps.q5y",
+                id: "sfPreTest.Ramps.q5y_Proc_confound",
                 type: "mc",
                 correctAnswer: "c",
                 text: "Q5y) What is  the biggest problem with the Procedure section?",
@@ -509,7 +510,7 @@ const sfPreTestData = {
                 next: "RampsQ9"
             },
             question: {
-                id: "sfPreTest.Ramps.q8",
+                id: "sfPreTest.Ramps.q8_Concl_ok",
                 type: "mc",
                 correctAnswer: "b",
                 text: "Q8) (Assume the results are from a good experiment.) Do you see any problems with the Conclusion section?",
@@ -527,7 +528,7 @@ const sfPreTestData = {
                 next: "RampsQ10"
             },
             question: {
-                id: "sfPreTest.Ramps.q9",
+                id: "sfPreTest.Ramps.q9_WhatIsIV",
                 type: "mc",
                 correctAnswer: "c",
                 text: "Q9) What is the independent variable in this study?",
@@ -546,7 +547,7 @@ const sfPreTestData = {
                 next: "buildBeansIntro"
             },
             question: {
-                id: "sfPreTest.Ramps.q10",
+                id: "sfPreTest.Ramps.q10_WhatIsDV",
                 type: "mc",
                 correctAnswer: "b",
                 text: "Q10) What is the dependent variable in this study?",
@@ -588,7 +589,7 @@ const sfPreTestData = {
                 id: "sfPreTest.Beans.q1",
                 type: "mc",
                 correctAnswer: "b",
-                text: "Q1) Select the best background research summary for this research question from the choices below.",
+                text: "Q1) Select the best background research summary for this research question from the 3 choices below.",
                 options: [
                     { value: "a", label: "I found that lemon juice has citric acid and is high in Vitamin C. Vitamin C is a nutrient that people need to be healthy." },
                     { value: "b", label: "I found that acid rain removes nutrients that plants need from the soil. Aluminum is one nutrient that acid rain removes. This causes plants to grow less or die." },
@@ -607,7 +608,7 @@ const sfPreTestData = {
                 id: "sfPreTest.Beans.q2",
                 type: "mc",
                 correctAnswer: "c",
-                text: "Q2) Now select the best hypothesis for this research question from the choices below.",
+                text: "Q2) Now select the best hypothesis for this research question from the 3 choices below.",
                 options: [
                     { value: "a", label: "I predict that the plants that were given plain water will grow faster than the plants given water with citric acid. I made this prediction because high acidity hurts plant growth and citric acid is highly acidic." },
                     { value: "b", label: "I predict that the plants that were given plain water will grow slower than the plants given water with citric acid. I made this prediction because citric acid is good for plants." },
@@ -667,7 +668,7 @@ const sfPreTestData = {
                 next: "YBeansQ6"
             },
             question: {
-                id: "sfPreTest.Beans.q5",
+                id: "sfPreTest.Beans.q5_Results_InterpretTable",
                 type: "mc",
                 correctAnswer: "c",
                 text: "Q5) The results are now shown. What is the best interpretation of the results?",
@@ -735,7 +736,7 @@ const sfPreTestData = {
                 id: "sfPreTest.Apples.q1",
                 type: "mc",
                 correctAnswer: "c",
-                text: "Q1) Select the best background research summary from the choices below.",
+                text: "Q1) Select the best background research summary from the 3 choices below.",
                 options: [
                     { value: "a", label: "Red Delicious apples are red because they reflect low-energy red light and absorb higher-energy light. Therefore, they absorb more energy and grow faster than apples that are other colors." },
                     { value: "b", label: "Red Delicious apples contain high levels of the molecule polyphenol oxidase and turn brown quickly when you cut them open. So, polyphenol oxidase causes apples to turn brown." },
@@ -754,10 +755,10 @@ const sfPreTestData = {
                 id: "sfPreTest.Apples.q2",
                 type: "mc",
                 correctAnswer: "c",
-                text: "Q2) Select the best hypothesis from the choices below, starting with 'I predict that...'",
+                text: "Q2) Select the best hypothesis from the 3 choices below, starting with 'I predict that...'",
                 options: [
                     { value: "a", label: "...the apple halves given polyphenol oxidase will brown faster because it causes a reaction. As the amount of polyphenol oxidase increases, the time for apples to brown will decrease." },
-                    { value: "b", label: "...the apple halves given polyphenol oxidase will brown faster. Apples that naturally have more polyphenol oxidase brown faster than apples with less. so, as the amount of polyphenol oxidase increases, the time for apples to brown will decrease." },
+                    { value: "b", label: "...the apple halves given polyphenol oxidase will brown faster. Apples that naturally have more polyphenol oxidase brown faster than apples with less. So, as the amount of polyphenol oxidase increases, the time for apples to brown will decrease." },
                     { value: "c", label: "...the apple halves given polyphenol oxidase will brown faster because they react with oxygen to make melanin (brown color). As the amount of polyphenol oxidase increases, the time for apples to brown will decrease." },
 
                 ]
@@ -848,10 +849,31 @@ const sfPreTestData = {
             }
         },
 
+        
         ZApples7_lastpage: {
             edges: {
                 prev: "ZApplesQ6",
+                next: "GoalOfExperiment"
+            }
+        },
+
+        GoalOfExperiment: {
+            edges: {
+                prev: "ZApples7_lastpage",
                 next: "completed"
+            },
+            question: {
+                id: "sfPreTest.qf_GoalExperiment",
+                type: "mc",
+                correctAnswer: "d",
+                text: "Qf) What is the main point of doing an experiment like the ones shown here?",
+                options: [
+                    { value: "a", label: "To make best possible results." },
+                    { value: "b", label: "To compare conditions to see which way is better." },
+                    { value: "c", label: "To prove your hypothesis is right." },
+                    { value: "d", label: "To find out about the variable you're testing." },
+
+                ]
             }
         },
 

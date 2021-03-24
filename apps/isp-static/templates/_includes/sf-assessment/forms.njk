@@ -27,14 +27,23 @@
     {# {{ showpage(page) }} #}
     {% set question = page.data.question %}
     <div class="form-wrapper">
-        <p class="text-sm">
+
+    {#   <p class="text-xs">
             {{ question.text }}
-        </p>
+        </p>  #}
+
+        <p style="font-size:18px">{{ question.text }} </p>
+
         <form id="{{question.id}}_radio_form">
             <div class="form-content">
-                {{ radio_btns(question.id, question.options, isVert=isVert) }}
+                {{ radio_btns(question.id, question.options, isVert=true) }}
                 {# {{ submit_btn(sceneId, "radio") }} #}
             </div>
         </form>
+
+
+
+
+
     </div>
 {% endmacro %}
