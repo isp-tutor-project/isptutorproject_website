@@ -100,7 +100,7 @@ const sfPreTestData = {
                 next: "SodaMintQ3"
             },
             question: {
-                id: "sfPreTest.sodaMint.q2y",
+                id: "sfPreTest.sodaMint.q2y_RQspecific",
                 type: "mc",
                 correctAnswer: "b",
                 text: "Q2y) What is the biggest problem with Kaya's Research Question?",
@@ -472,7 +472,7 @@ const sfPreTestData = {
                 next: "RampsQ7"
             },
             question: {
-                id: "sfPreTest.Ramps.q6",
+                id: "sfPreTest.Ramps.q6_ResultsMean",
                 type: "mc",
                 correctAnswer: "a",
                 text: "Q6) For the Results section, Tim does not say how the data were summarized. What would be the best way to summarize the data for each ball color?",
@@ -491,7 +491,7 @@ const sfPreTestData = {
                 next: "RampsQ8"
             },
             question: {
-                id: "sfPreTest.Ramps.q7",
+                id: "sfPreTest.Ramps.q7_Results_InterpretNull",
                 type: "mc",
                 correctAnswer: "c",
                 text: "Q7) Assume these results are from a good experiment. What is the best interpretation of these results?",
@@ -586,7 +586,7 @@ const sfPreTestData = {
                 next: "YBeansQ2"
             },
             question: {
-                id: "sfPreTest.Beans.q1",
+                id: "sfPreTest.Beans.q1_BRS_causal",
                 type: "mc",
                 correctAnswer: "b",
                 text: "Q1) Select the best background research summary for this research question from the 3 choices below.",
@@ -605,7 +605,7 @@ const sfPreTestData = {
                 next: "YBeansQ3"
             },
             question: {
-                id: "sfPreTest.Beans.q2",
+                id: "sfPreTest.Beans.q2_Hypo_causal",
                 type: "mc",
                 correctAnswer: "c",
                 text: "Q2) Now select the best hypothesis for this research question from the 3 choices below.",
@@ -624,7 +624,7 @@ const sfPreTestData = {
                 next: "YBeansQ4"
             },
             question: {
-                id: "sfPreTest.Beans.q3",
+                id: "sfPreTest.Beans.q3_Proc_control",
                 type: "mc",
                 correctAnswer: "a",
                 text: "Q3) The first step of the procedure is shown above. Now select the best next step of the procedure from the choices below.",
@@ -642,7 +642,7 @@ const sfPreTestData = {
                 next: "YBeans_CompleteProcedure5"
             },
             question: {
-                id: "sfPreTest.Beans.q4",
+                id: "sfPreTest.Beans.q4_VaryIV",
                 type: "mc",
                 correctAnswer: "a",
                 text: "Q4) Now select the best next step to complete the following sentence: Every day at 8am...",
@@ -687,7 +687,7 @@ const sfPreTestData = {
                 next: "YBeans7_lastpage"
             },
             question: {
-                id: "sfPreTest.Beans.q6",
+                id: "sfPreTest.Beans.q6_Conclusion",
                 type: "mc",
                 correctAnswer: "c",
                 text: "Q6) Select the best conclusion for this poster based on the given hypothesis (shown on poster) and results.",
@@ -733,7 +733,7 @@ const sfPreTestData = {
                 next: "ZApplesQ2"
             },
             question: {
-                id: "sfPreTest.Apples.q1",
+                id: "sfPreTest.Apples.q1_BRS_causal",
                 type: "mc",
                 correctAnswer: "c",
                 text: "Q1) Select the best background research summary from the 3 choices below.",
@@ -752,7 +752,7 @@ const sfPreTestData = {
                 next: "ZApplesQ3"
             },
             question: {
-                id: "sfPreTest.Apples.q2",
+                id: "sfPreTest.Apples.q2_Hypo",
                 type: "mc",
                 correctAnswer: "c",
                 text: "Q2) Select the best hypothesis from the 3 choices below, starting with 'I predict that...'",
@@ -771,7 +771,7 @@ const sfPreTestData = {
                 next: "ZApplesQ4"
             },
             question: {
-                id: "sfPreTest.Apples.q3",
+                id: "sfPreTest.Apples.q3_VaryIV",
                 type: "mc",
                 correctAnswer: "a",
                 text: "Q3) The first step of the procedure is given above. Select the best next step below.",
@@ -790,7 +790,7 @@ const sfPreTestData = {
                 next: "ZApplesQ5"
             },
             question: {
-                id: "sfPreTest.Apples.q4",
+                id: "sfPreTest.Apples.q4_control",
                 type: "mc",
                 correctAnswer: "a",
                 text: "Q4) Please select the best next step.",
@@ -817,7 +817,7 @@ const sfPreTestData = {
                 next: "ZApplesQ6"
             },
             question: {
-                id: "sfPreTest.Beans.q5",
+                id: "sfPreTest.Beans.q5_Results_InterpretTable",
                 type: "mc",
                 correctAnswer: "b",
                 text: "Q5) The results are now shown. What is the best interpretation of the results?",
@@ -836,7 +836,7 @@ const sfPreTestData = {
                 next: "ZApples7_lastpage"
             },
             question: {
-                id: "sfPreTest.Apples.q6",
+                id: "sfPreTest.Apples.q6_Conclusion_ResHypo",
                 type: "mc",
                 correctAnswer: "a",
                 text: "Q6) Select the best conclusion for this poster based on the given hypothesis (shown on poster) and results.",
