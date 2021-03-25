@@ -372,16 +372,17 @@ const sfPreTestData = {
             }
         },
 
+
         RampsQ3: {
             edges: {
                 prev: "RampsQ2",
-                next: "RampsQ3y"
+                next: "RampsQ4"
             },
             question: {
-                id: "sfPreTest.Ramps.q3_Hypo_OK",
+                id: "sfPreTest.Ramps.q3_BRS_ok",
                 type: "mc",
-                correctAnswer: "a",
-                text: "Q3) Do you see any problems with the Hypothesis section?",
+                correctAnswer: "b",
+                text: "Q3) Do you see any problems with the Research Summary section?",
                 options: [
                     { value: "a", label: "Yes" },
                     { value: "b", label: "No" },
@@ -390,16 +391,34 @@ const sfPreTestData = {
             }
         },
 
-        RampsQ3y: {
+        RampsQ4: {
             edges: {
                 prev: "RampsQ3",
-                next: "RampsQ4"
+                next: "RampsQ4y"
             },
             question: {
-                id: "sfPreTest.Ramps.q3y_BackRes_Hypo_coordinate",
+                id: "sfPreTest.Ramps.q4_Hypo_OK",
+                type: "mc",
+                correctAnswer: "a",
+                text: "Q4) Do you see any problems with the Hypothesis section?",
+                options: [
+                    { value: "a", label: "Yes" },
+                    { value: "b", label: "No" },
+
+                ]
+            }
+        },
+
+        RampsQ4y: {
+            edges: {
+                prev: "RampsQ4",
+                next: "RampsQ5"
+            },
+            question: {
+                id: "sfPreTest.Ramps.q4y_BackRes_Hypo_coordinate",
                 type: "mc",
                 correctAnswer: "b",
-                text: "Q3y) What is the biggest problem with the Hypothesis section?",
+                text: "Q4y) What is the biggest problem with the Hypothesis section?",
                 options: [
                     { value: "a", label: "He was wrong; waves with higher frequencies actually DON'T have more energy. " },
                     { value: "b", label: "He predicted that color affects speed even though he didn't find that in his research." },
@@ -410,27 +429,11 @@ const sfPreTestData = {
         },
 
 
-        RampsQ4: {
-            edges: {
-                prev: "RampsQ3y",
-                next: "RampsQ5"
-            },
-            question: {
-                id: "sfPreTest.Ramps.q4_BRS_ok",
-                type: "mc",
-                correctAnswer: "b",
-                text: "Q4) Do you see any problems with the Research Summary section?",
-                options: [
-                    { value: "a", label: "Yes" },
-                    { value: "b", label: "No" },
-
-                ]
-            }
-        },
+       
 
         RampsQ5: {
             edges: {
-                prev: "RampsQ4",
+                prev: "RampsQ4y",
                 next: "RampsQ5y"
             },
             question: {
