@@ -1,5 +1,41 @@
 const { ScienceFairAssessmentDataBuilder } = require("./builders");
 
+
+const QUESTIONS = {
+    "sfPreTest.sodaMint.q1_GeneralPosterOK": {
+        id: "sfPreTest.sodaMint.q1_GeneralPosterOK",
+        type: "mc",
+        correctAnswer: "a",
+        text: "Q1) Do you see any ways to improve this science project?",
+        options: [
+            { value: "a", label: "Yes" },
+            { value: "b", label: "No" }
+        ]
+    },
+    "sfPreTest.sodaMint.q2_RQ_OK": {
+        id: "sfPreTest.sodaMint.q2_RQ_OK",
+        type: "mc",
+        correctAnswer: "a",
+        text: "Q2) Do you see any problems with the student's Research Question?",
+        options: [
+            { value: "a", label: "Yes" },
+            { value: "b", label: "No" }
+        ]
+    },
+    "sfPreTest.sodaMint.q2y_RQspecific": {
+        id: "sfPreTest.sodaMint.q2y_RQspecific",
+        type: "mc",
+        correctAnswer: "b",
+        text: "Q2y) What is the biggest problem with Kaya's Research Question?",
+        options: [
+            { value: "a", label: "Carbon dioxide doesn't affect the reaction." },
+            { value: "b", label: "At least one variable is not specific enough." },
+            { value: "c", label: "It doesn't address what she tested in the experiment." }
+        ]
+    },
+
+}
+
 const sfPreTestData = {
     scenes: {
         start: {
@@ -54,16 +90,7 @@ const sfPreTestData = {
                 prev: "sodaMintIntro",
                 next: "sodaMintLookEachSection"
             },
-            question: {
-                id: "sfPreTest.sodaMint.q1_GeneralPosterOK",
-                type: "mc",
-                correctAnswer: "a",
-                text: "Q1) Do you see any ways to improve this science project?",
-                options: [
-                    { value: "a", label: "Yes" },
-                    { value: "b", label: "No" }
-                ]
-            }
+            question: QUESTIONS["sfPreTest.sodaMint.q1_GeneralPosterOK"]
         },
         sodaMintLookEachSection: {
             edges: {
@@ -76,33 +103,14 @@ const sfPreTestData = {
                 prev: "sodaMintLookEachSection",
                 next: "SodaMintQ2y"
             },
-            question: {
-                id: "sfPreTest.sodaMint.q2_RQ_OK",
-                type: "mc",
-                correctAnswer: "a",
-                text: "Q2) Do you see any problems with the student's Research Question?",
-                options: [
-                    { value: "a", label: "Yes" },
-                    { value: "b", label: "No" }
-                ]
-            }
+            question: QUESTIONS["sfPreTest.sodaMint.q2_RQ_OK"]
         },
         SodaMintQ2y: {
             edges: {
                 prev: "SodaMintQ2",
                 next: "SodaMintQ3"
             },
-            question: {
-                id: "sfPreTest.sodaMint.q2y_RQspecific",
-                type: "mc",
-                correctAnswer: "b",
-                text: "Q2y) What is the biggest problem with Kaya's Research Question?",
-                options: [
-                    { value: "a", label: "Carbon dioxide doesn't affect the reaction." },
-                    { value: "b", label: "At least one variable is not specific enough." },
-                    { value: "c", label: "It doesn't address what she tested in the experiment." }
-                ]
-            }
+            question: QUESTIONS["sfPreTest.sodaMint.q2y_RQspecific"]
         },
         SodaMintQ3: {
             edges: {
