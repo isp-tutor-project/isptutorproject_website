@@ -14,22 +14,16 @@ const QUESTIONS = {
     "sfPreTest.sodaMint.q1_GeneralPosterOK": {
         id: "sfPreTest.sodaMint.q1_GeneralPosterOK",
         type: "mc",
-        correctAnswer: "a",
+        correctAnswer: "y",
         text: "Q1) Do you see any ways to improve this science project?",
-        options: [
-            { value: "a", label: "Yes" },
-            { value: "b", label: "No" }
-        ]
+        options: YNQ_OPTIONS
     },
     "sfPreTest.sodaMint.q2_RQ_OK": {
         id: "sfPreTest.sodaMint.q2_RQ_OK",
         type: "mc",
-        correctAnswer: "a",
+        correctAnswer: "y",
         text: "Q2) Do you see any problems with the student's Research Question?",
-        options: [
-            { value: "a", label: "Yes" },
-            { value: "b", label: "No" }
-        ]
+        options: YNQ_OPTIONS
     },
     "sfPreTest.sodaMint.q2y_RQspecific": {
         id: "sfPreTest.sodaMint.q2y_RQspecific",
@@ -99,6 +93,7 @@ const sfPreTestData = {
                 prev: "sodaMintIntro",
                 next: "sodaMintLookEachSection"
             },
+            sceneType: SCENE_TYPES.MC_SCENE,
             question: QUESTIONS["sfPreTest.sodaMint.q1_GeneralPosterOK"]
         },
         sodaMintLookEachSection: {
@@ -110,8 +105,9 @@ const sfPreTestData = {
         SodaMintQ2: {
             edges: {
                 prev: "sodaMintLookEachSection",
-                next: "SodaMintQ2y"
+                next: {y: "SodaMintQ2y", n: "SodaMintQ3"}
             },
+            sceneType: SCENE_TYPES.YN_NAV_SCENE,
             question: QUESTIONS["sfPreTest.sodaMint.q2_RQ_OK"]
         },
         SodaMintQ2y: {
@@ -119,22 +115,21 @@ const sfPreTestData = {
                 prev: "SodaMintQ2",
                 next: "SodaMintQ3"
             },
+            sceneType: SCENE_TYPES.MC_SCENE,
             question: QUESTIONS["sfPreTest.sodaMint.q2y_RQspecific"]
         },
         SodaMintQ3: {
             edges: {
-                prev: "SodaMintQ2y",
-                next: "SodaMintQ3y"
+                prev: "SodaMintQ2",
+                next: {y: "SodaMintQ3y", n: "SodaMintQ4"}
             },
+            sceneType: SCENE_TYPES.YN_NAV_SCENE,
             question: {
                 id: "sfPreTest.sodaMint.q3_Hypo_OK",
                 type: "mc",
-                correctAnswer: "a",
+                correctAnswer: "y",
                 text: "Q3) Do you see any problems with the Hypothesis section?",
-                options: [
-                    { value: "a", label: "Yes" },
-                    { value: "b", label: "No" }
-                ]
+                options: YNQ_OPTIONS
             }
         },
         SodaMintQ3y: {
@@ -142,6 +137,7 @@ const sfPreTestData = {
                 prev: "SodaMintQ3",
                 next: "SodaMintQ4"
             },
+            sceneType: SCENE_TYPES.MC_SCENE,
             question: {
                 id: "sfPreTest.sodaMint.q3y_Hypo_science_explan",
                 type: "mc",
@@ -156,18 +152,16 @@ const sfPreTestData = {
         },
         SodaMintQ4: {
             edges: {
-                prev: "SodaMintQ3y",
-                next: "SodaMintQ4y"
+                prev: "SodaMintQ3",
+                next: {y: "SodaMintQ4y", n: "SodaMintQ5"}
             },
+            sceneType: SCENE_TYPES.YN_NAV_SCENE,
             question: {
                 id: "sfPreTest.sodaMint.q4_BRS_ok",
                 type: "mc",
-                correctAnswer: "a",
+                correctAnswer: "y",
                 text: "Q4) Do you see any problems with the Research Summary section?",
-                options: [
-                    { value: "a", label: "Yes" },
-                    { value: "b", label: "No" }
-                ]
+                options: YNQ_OPTIONS
             }
         },
         SodaMintQ4y: {
@@ -175,6 +169,7 @@ const sfPreTestData = {
                 prev: "SodaMintQ4",
                 next: "SodaMintQ5"
             },
+            sceneType: SCENE_TYPES.MC_SCENE,
             question: {
                 id: "sfPreTest.sodaMint.q4y_BRS_aboutRQ",
                 type: "mc",
@@ -189,18 +184,16 @@ const sfPreTestData = {
         },
         SodaMintQ5: {
             edges: {
-                prev: "SodaMintQ4y",
-                next: "SodaMintQ5y"
+                prev: "SodaMintQ4",
+                next: {y: "SodaMintQ5y", n: "SodaMintQ6"}
             },
+            sceneType: SCENE_TYPES.YN_NAV_SCENE,
             question: {
                 id: "sfPreTest.sodaMint.q5_Proc_OK",
                 type: "mc",
-                correctAnswer: "a",
+                correctAnswer: "y",
                 text: "Q5) Do you see any problems with the Procedure section?",
-                options: [
-                    { value: "a", label: "Yes" },
-                    { value: "b", label: "No" }
-                ]
+                options: YNQ_OPTIONS
             }
         },
         SodaMintQ5y: {
@@ -208,6 +201,7 @@ const sfPreTestData = {
                 prev: "SodaMintQ5",
                 next: "SodaMintQ6"
             },
+            sceneType: SCENE_TYPES.MC_SCENE,
             question: {
                 id: "sfPreTest.sodaMint.q5y_Proc_multi_trials",
                 type: "mc",
@@ -222,9 +216,10 @@ const sfPreTestData = {
         },
         SodaMintQ6: {
             edges: {
-                prev: "SodaMintQ5y",
+                prev: "SodaMintQ5",
                 next: "SodaMintQ7"
             },
+            sceneType: SCENE_TYPES.MC_SCENE,
             question: {
                 id: "sfPreTest.sodaMint.q6_InterpretGraph",
                 type: "mc",
@@ -240,17 +235,15 @@ const sfPreTestData = {
         SodaMintQ7: {
             edges: {
                 prev: "SodaMintQ6",
-                next: "SodaMintQ7y"
+                next: {y: "SodaMintQ7y", n: "SodaMintQ8"}
             },
+            sceneType: SCENE_TYPES.YN_NAV_SCENE,
             question: {
                 id: "sfPreTest.sodaMint.q7_Concl_ok",
                 type: "mc",
-                correctAnswer: "a",
+                correctAnswer: "y",
                 text: "Q7) Do you see any problems with the Conclusion section?",
-                options: [
-                    { value: "a", label: "Yes" },
-                    { value: "b", label: "No" }
-                ]
+                options: YNQ_OPTIONS
             }
         },
         SodaMintQ7y: {
@@ -258,6 +251,7 @@ const sfPreTestData = {
                 prev: "SodaMintQ7",
                 next: "SodaMintQ8"
             },
+            sceneType: SCENE_TYPES.MC_SCENE,
             question: {
                 id: "sfPreTest.sodaMint.q7y_Conclusion",
                 type: "mc",
@@ -273,9 +267,10 @@ const sfPreTestData = {
         },
         SodaMintQ8: {
             edges: {
-                prev: "SodaMintQ7y",
+                prev: "SodaMintQ7",
                 next: "SodaMintQ9"
             },
+            sceneType: SCENE_TYPES.MC_SCENE,
             question: {
                 id: "sfPreTest.sodaMint.q8_WhatIsIV",
                 type: "mc",
@@ -293,6 +288,7 @@ const sfPreTestData = {
                 prev: "SodaMintQ8",
                 next: "Ramp_evalIntro3_tryonemore"
             },
+            sceneType: SCENE_TYPES.MC_SCENE,
             question: {
                 id: "sfPreTest.sodaMint.q9_WhatIsDV",
                 type: "mc",
@@ -311,7 +307,6 @@ const sfPreTestData = {
                 next: "Ramps_Intro_ThisIsTim"
             }
         },
-        /*     Ramps_Intro_ThisIsTim        */
         Ramps_Intro_ThisIsTim: {
             edges: {
                 prev: "Ramp_evalIntro3_tryonemore",
@@ -323,15 +318,13 @@ const sfPreTestData = {
                 prev: "Ramps_Intro_ThisIsTim",
                 next: "RampsLookEachSection"
             },
+            sceneType: SCENE_TYPES.MC_SCENE,
             question: {
                 id: "sfPreTest.Ramps.q1_GeneralPosterOK",
                 type: "mc",
                 correctAnswer: "a",
                 text: "Q1) Do you see any ways to improve this science project?",
-                options: [
-                    { value: "a", label: "Yes" },
-                    { value: "b", label: "No" }
-                ]
+                options: YNQ_OPTIONS
             }
         },
         RampsLookEachSection: {
@@ -345,15 +338,13 @@ const sfPreTestData = {
                 prev: "RampsLookEachSection",
                 next: "RampsQ3"
             },
+            sceneType: SCENE_TYPES.MC_SCENE,
             question: {
                 id: "sfPreTest.Ramps.q2_RQ_OK",
                 type: "mc",
-                correctAnswer: "b",
+                correctAnswer: "n",
                 text: "Q2) Do you see any problems with the student's Research Question?",
-                options: [
-                    { value: "a", label: "Yes" },
-                    { value: "b", label: "No" }
-                ]
+                options: YNQ_OPTIONS
             }
         },
         RampsQ3: {
@@ -361,31 +352,27 @@ const sfPreTestData = {
                 prev: "RampsQ2",
                 next: "RampsQ4"
             },
+            sceneType: SCENE_TYPES.MC_SCENE,
             question: {
                 id: "sfPreTest.Ramps.q3_BRS_ok",
                 type: "mc",
-                correctAnswer: "b",
+                correctAnswer: "n",
                 text: "Q3) Do you see any problems with the Research Summary section?",
-                options: [
-                    { value: "a", label: "Yes" },
-                    { value: "b", label: "No" }
-                ]
+                options: YNQ_OPTIONS
             }
         },
         RampsQ4: {
             edges: {
                 prev: "RampsQ3",
-                next: "RampsQ4y"
+                next: {y: "RampsQ4y", n: "RampsQ5"}
             },
+            sceneType: SCENE_TYPES.YN_NAV_SCENE,
             question: {
                 id: "sfPreTest.Ramps.q4_Hypo_OK",
                 type: "mc",
-                correctAnswer: "a",
+                correctAnswer: "y",
                 text: "Q4) Do you see any problems with the Hypothesis section?",
-                options: [
-                    { value: "a", label: "Yes" },
-                    { value: "b", label: "No" }
-                ]
+                options: YNQ_OPTIONS
             }
         },
         RampsQ4y: {
@@ -393,6 +380,7 @@ const sfPreTestData = {
                 prev: "RampsQ4",
                 next: "RampsQ5"
             },
+            sceneType: SCENE_TYPES.MC_SCENE,
             question: {
                 id: "sfPreTest.Ramps.q4y_BackRes_Hypo_coordinate",
                 type: "mc",
@@ -407,18 +395,16 @@ const sfPreTestData = {
         },
         RampsQ5: {
             edges: {
-                prev: "RampsQ4y",
-                next: "RampsQ5y"
+                prev: "RampsQ4",
+                next: {y: "RampsQ5y", n: "RampsQ6"}
             },
+            sceneType: SCENE_TYPES.YN_NAV_SCENE,
             question: {
                 id: "sfPreTest.Ramps.q5_Proc_OK",
                 type: "mc",
-                correctAnswer: "a",
+                correctAnswer: "y",
                 text: "Q5) Do you see any problems with the Procedure section?",
-                options: [
-                    { value: "a", label: "Yes" },
-                    { value: "b", label: "No" }
-                ]
+                options: YNQ_OPTIONS
             }
         },
         RampsQ5y: {
@@ -426,6 +412,7 @@ const sfPreTestData = {
                 prev: "RampsQ5",
                 next: "RampsQ6"
             },
+            sceneType: SCENE_TYPES.MC_SCENE,
             question: {
                 id: "sfPreTest.Ramps.q5y_Proc_confound",
                 type: "mc",
@@ -440,9 +427,10 @@ const sfPreTestData = {
         },
         RampsQ6: {
             edges: {
-                prev: "RampsQ5y",
+                prev: "RampsQ5",
                 next: "RampsQ7"
             },
+            sceneType: SCENE_TYPES.MC_SCENE,
             question: {
                 id: "sfPreTest.Ramps.q6_ResultsMean",
                 type: "mc",
@@ -460,6 +448,7 @@ const sfPreTestData = {
                 prev: "RampsQ6",
                 next: "RampsQ8"
             },
+            sceneType: SCENE_TYPES.MC_SCENE,
             question: {
                 id: "sfPreTest.Ramps.q7_Results_InterpretNull",
                 type: "mc",
@@ -477,15 +466,13 @@ const sfPreTestData = {
                 prev: "RampsQ7",
                 next: "RampsQ9"
             },
+            sceneType: SCENE_TYPES.MC_SCENE,
             question: {
                 id: "sfPreTest.Ramps.q8_Concl_ok",
                 type: "mc",
-                correctAnswer: "b",
+                correctAnswer: "n",
                 text: "Q8) (Assume the results are from a good experiment.) Do you see any problems with the Conclusion section?",
-                options: [
-                    { value: "a", label: "Yes" },
-                    { value: "b", label: "No" }
-                ]
+                options: YNQ_OPTIONS
             }
         },
         RampsQ9: {
@@ -493,6 +480,7 @@ const sfPreTestData = {
                 prev: "RampsQ8",
                 next: "RampsQ10"
             },
+            sceneType: SCENE_TYPES.MC_SCENE,
             question: {
                 id: "sfPreTest.Ramps.q9_WhatIsIV",
                 type: "mc",
@@ -510,6 +498,7 @@ const sfPreTestData = {
                 prev: "RampsQ9",
                 next: "buildBeansIntro"
             },
+            sceneType: SCENE_TYPES.MC_SCENE,
             question: {
                 id: "sfPreTest.Ramps.q10_WhatIsDV",
                 type: "mc",
@@ -545,6 +534,7 @@ const sfPreTestData = {
                 prev: "YBeansLookEachSection",
                 next: "YBeansQ2"
             },
+            sceneType: SCENE_TYPES.MC_SCENE,
             question: {
                 id: "sfPreTest.Beans.q1_BRS_causal",
                 type: "mc",
@@ -562,6 +552,7 @@ const sfPreTestData = {
                 prev: "YBeansQ1",
                 next: "YBeansQ3"
             },
+            sceneType: SCENE_TYPES.MC_SCENE,
             question: {
                 id: "sfPreTest.Beans.q2_Hypo_causal",
                 type: "mc",
@@ -579,6 +570,7 @@ const sfPreTestData = {
                 prev: "YBeansQ2",
                 next: "YBeansQ4"
             },
+            sceneType: SCENE_TYPES.MC_SCENE,
             question: {
                 id: "sfPreTest.Beans.q3_Proc_control",
                 type: "mc",
@@ -595,6 +587,7 @@ const sfPreTestData = {
                 prev: "YBeansQ3",
                 next: "YBeans_CompleteProcedure5"
             },
+            sceneType: SCENE_TYPES.MC_SCENE,
             question: {
                 id: "sfPreTest.Beans.q4_VaryIV",
                 type: "mc",
@@ -618,6 +611,7 @@ const sfPreTestData = {
                 prev: "YBeans_CompleteProcedure5",
                 next: "YBeansQ6"
             },
+            sceneType: SCENE_TYPES.MC_SCENE,
             question: {
                 id: "sfPreTest.Beans.q5_Results_InterpretTable",
                 type: "mc",
@@ -635,6 +629,7 @@ const sfPreTestData = {
                 prev: "YBeansQ5",
                 next: "YBeans7_lastpage"
             },
+            sceneType: SCENE_TYPES.MC_SCENE,
             question: {
                 id: "sfPreTest.Beans.q6_Conclusion",
                 type: "mc",
@@ -693,6 +688,7 @@ const sfPreTestData = {
                 prev: "ZApplesQ1",
                 next: "ZApplesQ3"
             },
+            sceneType: SCENE_TYPES.MC_SCENE,
             question: {
                 id: "sfPreTest.Apples.q2_Hypo",
                 type: "mc",
@@ -710,6 +706,7 @@ const sfPreTestData = {
                 prev: "ZApplesQ2",
                 next: "ZApplesQ4"
             },
+            sceneType: SCENE_TYPES.MC_SCENE,
             question: {
                 id: "sfPreTest.Apples.q3_VaryIV",
                 type: "mc",
@@ -726,6 +723,7 @@ const sfPreTestData = {
                 prev: "ZApplesQ3",
                 next: "ZApplesQ5"
             },
+            sceneType: SCENE_TYPES.MC_SCENE,
             question: {
                 id: "sfPreTest.Apples.q4_control",
                 type: "mc",
@@ -748,8 +746,9 @@ const sfPreTestData = {
                 prev: "YBeans_CompleteProcedure5",
                 next: "ZApplesQ6"
             },
+            sceneType: SCENE_TYPES.MC_SCENE,
             question: {
-                id: "sfPreTest.Beans.q5_Results_InterpretTable",
+                id: "sfPreTest.Apples.q5_Results_InterpretTable",
                 type: "mc",
                 correctAnswer: "b",
                 text: "Q5) The results are now shown. What is the best interpretation of the results?",
@@ -765,6 +764,7 @@ const sfPreTestData = {
                 prev: "ZApplesQ5",
                 next: "ZApples7_lastpage"
             },
+            sceneType: SCENE_TYPES.MC_SCENE,
             question: {
                 id: "sfPreTest.Apples.q6_Conclusion_ResHypo",
                 type: "mc",
@@ -788,6 +788,7 @@ const sfPreTestData = {
                 prev: "ZApples7_lastpage",
                 next: "completed"
             },
+            sceneType: SCENE_TYPES.MC_SCENE,
             question: {
                 id: "sfPreTest.qf_GoalExperiment",
                 type: "mc",
