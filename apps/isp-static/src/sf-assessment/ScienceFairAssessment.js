@@ -48,6 +48,22 @@ export class ScienceFairAssessmentMultChoiceScene extends ScienceFairAssessmentS
     }
 
 
+    restoreState(value) {
+        if (super.restoreState(value)) {
+            const eleID = `${this.question.id}_option_${value}`
+            const el = document.getElementById(eleID)
+            if (typeof(el) === "undefined") {
+                console.error(`\t\tUnable to Select Radio Button ${eleID}`)
+                return false
+            } else {
+                el.checked = true;
+                console.debug(`\t\tSelected Radio Button ${eleID}`)
+                return true
+            }
+        }
+        return false
+    }
+
     hasForm() {
         return true;
     }
