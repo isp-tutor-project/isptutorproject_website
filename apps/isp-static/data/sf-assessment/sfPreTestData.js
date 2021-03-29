@@ -1,5 +1,9 @@
 const { ScienceFairAssessmentDataBuilder } = require("./builders");
 
+const SCENE_TYPES = {
+    YN_NAV_SCENE: "ynNavigationScene",
+    MC_SCENE: "multipleChoiceScene"
+}
 
 const QUESTIONS = {
     "sfPreTest.sodaMint.q1_GeneralPosterOK": {
