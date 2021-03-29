@@ -317,6 +317,12 @@ input[type="radio"] {
 label.vert-radio-label {
     line-height: 1.5em;
 }
+label.col-radio-label {
+    display: inline-block;
+    line-height: 1.5em;
+    margin-left: 10px;
+    // padding-left: 15px;
+}
 
 /* used by vertcenter shortCode, which nests content inside 2 divs:
    1) div.centered-wrapper (relative positioning)
