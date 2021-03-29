@@ -2,48 +2,53 @@
 {% macro _join(separator, array) %}{{ array | join(separator) }}{% endmacro %}
 
 
-{% macro radio_btn(id, name, value, label, isVert=false) %}
-    <input type="radio"
-           id="{{id}}"
-           name="{{name}}"
-           value="{{value}}" required>
+
+{% macro radio_btn(id, name, value, label, isVert=false, asColumns=false) %}
     <label id="{{id}}_label"
-          class="option-label {% if isVert %}vert-radio-label{% endif %} text-xs"
+          class="option-label {% if isVert %}vert-radio-label{% endif %}{% if asColumns %} col-radio-label {% endif %} text-xs"
           for="{{id}}">
-            {{label | safe}}
+        <input type="radio"
+            id="{{id}}"
+            name="{{name}}"
+            value="{{value}}" required>
+        {{label | safe}}
     </label>
     {% if isVert %} <br/> {% endif %}
 {% endmacro %}
 
-{% macro radio_btns(questionId, options, isVert=false) %}
-    {% for option in options %}
-        {% set radioId = _join('_', [questionId, "option", option.value]) %}
-        {% set name = _join('_', [questionId, "option"]) %}
-        {{ radio_btn(radioId, name, option.value, option.label, isVert=isVert) }}
-    {% endfor %}
+{% macro col_radio_btns(questionId, options) %}
+    <div style="display:flex">
+        {% for option in options %}
+            {% set radioId = _join('_', [questionId, "option", option.value]) %}
+            {% set name = _join('_', [questionId, "option"]) %}
+            <div style="flex:auto;">
+                {{ radio_btn(radioId, name, option.value, option.label, isVert=false, asColumns=true) }}
+            </div>
+        {% endfor %}
+    </div>
 {% endmacro %}
 
-{% macro radios_form(page, isVert=false) %}
+{% macro radio_btns(questionId, options, isVert=false, asColumns=false) %}
+    {% if asColumns %}
+        {{ col_radio_btns(questionId, options) }}
+    {% else %}
+        {% for option in options %}
+            {% set radioId = _join('_', [questionId, "option", option.value]) %}
+            {% set name = _join('_', [questionId, "option"]) %}
+            {{ radio_btn(radioId, name, option.value, option.label, isVert=isVert, asColumns=false) }}
+        {% endfor %}
+    {% endif %}
+{% endmacro %}
+
+{% macro radios_form(page, isVert=false, asColumns=false) %}
     {# {{ showpage(page) }} #}
     {% set question = page.data.question %}
     <div class="form-wrapper">
-
-    {#   <p class="text-xs">
-            {{ question.text }}
-        </p>  #}
-
         <p style="font-size:18px">{{ question.text }} </p>
-
         <form id="{{question.id}}_radio_form">
             <div class="form-content">
-                {{ radio_btns(question.id, question.options, isVert=true) }}
-                {# {{ submit_btn(sceneId, "radio") }} #}
+                {{ radio_btns(question.id, question.options, isVert=isVert, asColumns=asColumns) }}
             </div>
         </form>
-
-
-
-
-
     </div>
 {% endmacro %}
