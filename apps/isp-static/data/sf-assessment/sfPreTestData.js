@@ -5,6 +5,11 @@ const SCENE_TYPES = {
     MC_SCENE: "multipleChoiceScene"
 }
 
+const YNQ_OPTIONS = [
+    { value: "y", label: "Yes" },
+    { value: "n", label: "No" }
+]
+
 const QUESTIONS = {
     "sfPreTest.sodaMint.q1_GeneralPosterOK": {
         id: "sfPreTest.sodaMint.q1_GeneralPosterOK",
