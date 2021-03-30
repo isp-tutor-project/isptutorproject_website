@@ -417,7 +417,7 @@ const sfPreTestData = {
                 id: "sfPreTest.Ramps.q5y_Proc_confound",
                 type: "mc",
                 correctAnswer: "c",
-                text: "Q5y) What is  the biggest problem with the Procedure section?",
+                text: "Q5y) What is the biggest problem with the Procedure section?",
                 options: [
                     { value: "a", label: "The student only ran one trial in each condition." },
                     { value: "b", label: "The student started the speedometer when the green lever was released." },
@@ -464,9 +464,9 @@ const sfPreTestData = {
         RampsQ8: {
             edges: {
                 prev: "RampsQ7",
-                next: "RampsQ9"
+                next: {y: "RampsQ8y", n: "RampsQ9"}
             },
-            sceneType: SCENE_TYPES.MC_SCENE,
+            sceneType: SCENE_TYPES.YN_NAV_SCENE,
             question: {
                 id: "sfPreTest.Ramps.q8_Concl_ok",
                 type: "mc",
@@ -475,6 +475,26 @@ const sfPreTestData = {
                 options: YNQ_OPTIONS
             }
         },
+
+        RampsQ8y: {
+            edges: {
+                prev: "RampsQ8",
+                next: "RampsQ9"
+            },
+            sceneType: SCENE_TYPES.MC_SCENE,
+            question: {
+                id: "sfPreTest.Ramps.q8y_Concl",
+                type: "mc",
+                correctAnswer: "c",
+                text: "Q8y) What do you think is wrong with the Conclusion section?",
+                options: [
+                    { value: "a", label: "It should say that her hypothesis was right." },
+                    { value: "b", label: "It should say that her hypothesis was wrong." },
+                    { value: "c", label: "It should say that her results were consistent with her hypothesis." },
+                ]
+            }    
+        },
+
         RampsQ9: {
             edges: {
                 prev: "RampsQ8",
