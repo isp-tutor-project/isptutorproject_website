@@ -25,17 +25,7 @@ const QUESTIONS = {
         text: "Q2) Do you see any problems with the student's Research Question?",
         options: YNQ_OPTIONS
     },
-    "sfPreTest.sodaMint.q2y_RQspecific": {
-        id: "sfPreTest.sodaMint.q2y_RQspecific",
-        type: "mc",
-        correctAnswer: "b",
-        text: "Q2y) What is the biggest problem with Kaya's Research Question?",
-        options: [
-            { value: "a", label: "Carbon dioxide doesn't affect the reaction." },
-            { value: "b", label: "At least one variable is not specific enough." },
-            { value: "c", label: "It doesn't address what she tested in the experiment." }
-        ]
-    },
+    
 
 }
 
@@ -116,8 +106,18 @@ const sfPreTestData = {
                 next: "SodaMintQ3"
             },
             sceneType: SCENE_TYPES.MC_SCENE,
-            question: QUESTIONS["sfPreTest.sodaMint.q2y_RQspecific"]
-        },
+            question: {
+                id: "sfPreTest.sodaMint.q2y_RQspecific",
+                type: "mc",
+                correctAnswer: "b",
+            text: "Q2y) What is the biggest problem with Kaya's Research Question?",
+            options: [
+                { value: "a", label: "Carbon dioxide doesn't affect the reaction." },
+                { value: "b", label: "At least one variable is not specific enough." },
+                { value: "c", label: "It doesn't address what she tested in the experiment." }
+            ]
+        }
+    },
         SodaMintQ3: {
             edges: {
                 prev: "SodaMintQ2",
@@ -421,7 +421,7 @@ const sfPreTestData = {
                 options: [
                     { value: "a", label: "The student only ran one trial in each condition." },
                     { value: "b", label: "The student started the speedometer when the green lever was released." },
-                    { value: "b", label: "He started the red and yellow balls at different places on the ramp." }
+                    { value: "c", label: "He started the red and yellow balls at different places on the ramp." }
                 ]
             }
         },
@@ -439,7 +439,7 @@ const sfPreTestData = {
                 options: [
                     { value: "a", label: "Mean (or average)" },
                     { value: "b", label: "Median (or the middle number)" },
-                    { value: "b", label: "Mode (or the most common number)" }
+                    { value: "c", label: "Mode (or the most common number)" }
                 ]
             }
         },
@@ -457,7 +457,7 @@ const sfPreTestData = {
                 options: [
                     { value: "a", label: "The red ball rolls faster." },
                     { value: "b", label: "The yellow ball rolls faster." },
-                    { value: "b", label: "It's not clear if there really is a difference." }
+                    { value: "c", label: "It's not clear if there really is a difference." }
                 ]
             }
         },
@@ -633,7 +633,7 @@ const sfPreTestData = {
             question: {
                 id: "sfPreTest.Beans.q6_Conclusion",
                 type: "mc",
-                correctAnswer: "c",
+                correctAnswer: "a",
                 text: "Q6) Select the best conclusion for this poster based on the given hypothesis (shown on poster) and results.",
                 options: [
                     { value: "a", label: "The results are consistent with the hypothesis." },
@@ -714,7 +714,7 @@ const sfPreTestData = {
                 text: "Q3) The first step of the procedure is given above. Select the best next step below.",
                 options: [
                     { value: "a", label: "Add 10 mg of polyphenol oxidase to the top of one of the two apple halves." },
-                    { value: "b", label: "Add 10 mg of polyphenol oxidase to the top of one of both of the apple halves." }
+                    { value: "b", label: "Add 10 mg of polyphenol oxidase to the top of both of the apple halves." }
                 ]
             }
         },
@@ -727,11 +727,12 @@ const sfPreTestData = {
             question: {
                 id: "sfPreTest.Apples.q4_control",
                 type: "mc",
-                correctAnswer: "a",
+                correctAnswer: "c",
                 text: "Q4) Please select the best next step.",
                 options: [
                     { value: "a", label: "Place both apple halves in the refrigerator." },
-                    { value: "b", label: "Place one apple half in the refrigerator and the other on the windowsill." }
+                    { value: "b", label: "Place one apple half in the refrigerator and the other on the kitchen table." },
+                    { value: "c", label: "Place both apple halves on the kitchen table." }
                 ]
             }
         },
