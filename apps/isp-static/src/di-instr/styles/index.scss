@@ -120,7 +120,7 @@ div.centered {
 .dual-column-wrapper {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 95%;
 }
 
 .centered-column {
@@ -199,7 +199,7 @@ ol.centered {
 }
 
 ul.centered {
-    display: inline-block;
+  /*  display: inline-block; this makes extra space before list*/
     position: relative;
     text-align: left;
     /* left: 10%; */
@@ -334,4 +334,16 @@ td.green-bg {
 //     width: 100%;
 // }
 
+//Steph added rest
 
+.tb {
+    height: 100%;
+    width: 100%;
+}
+
+.tb-top {
+    height: 69%;
+}
+.tb-bottom {
+    height: 31%;
+}

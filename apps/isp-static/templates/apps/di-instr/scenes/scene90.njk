@@ -4,16 +4,20 @@
 
 {% block content %}
 
-    <img src="/img/di-instr/37_CDTable_S90-91.png" class="img-centered" />
+    <img src="/img/di-instr/37_CDTable_S90-91.png" class="img-centered" height="375"/>
 
 
+<br>
 
-    <p class="text-xl">
+    <p class="text-l">
         {{ page.data.question.text }}
-    </p>
+    
 
     {{ forms.radios_form(page, isVert=false) }}
 
+    </p>
+
     <br/>
+    <br>
 
 {% endblock %}
