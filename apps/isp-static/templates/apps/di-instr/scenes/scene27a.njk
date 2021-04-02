@@ -1,5 +1,11 @@
 {% extends "di-instr/wgtCrysGrowth.njk" %}
 
+{% block heading %}
+        {% if heading%}
+        <h1> (3) Summarizing data by calculating mean</h1>
+        {% endif %}
+    {% endblock %}
+
 {% block lhs %}
     <img src="/img/di-instr/1a_Table3_S7_nocircle.jpg" class="img-centered", height="300" />
  {% endblock %}
@@ -8,7 +14,8 @@
 {% block rhs %}
 
     <p class="text-lg">
-        But to use means, you first need to make sure that there are no outliers in your data.
+        But to use means, you first need to make sure that there are no outliers in your data. We already did this, so we don't have to worry about 
+        that here.
     </p>
 
     <p class="text-lg">

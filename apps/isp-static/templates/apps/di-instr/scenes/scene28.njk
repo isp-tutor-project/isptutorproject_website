@@ -1,5 +1,11 @@
 {% extends "di-instr/wgtCrysGrowth.njk" %}
 
+{% block heading %}
+        {% if heading%}
+        <h1> (3) Summarizing data by calculating mean</h1>
+        {% endif %}
+    {% endblock %}
+
 {% import "di-instr/forms.njk" as forms %}
 
 {% block lhs %}

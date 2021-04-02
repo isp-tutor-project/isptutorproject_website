@@ -1,5 +1,23 @@
+        
     <div class="single-column-wrapper">
+
+
         <div class="centered-column">
+
+
+{% block heading %}
+
+  {#     {% if heading%}   
+
+
+        <h1>{{heading}}</h1>
+
+       {% endif %}      #}
+    
+    
+    {% endblock %}
+
+        
             {% block content %}{% endblock %}
             {% block tables %}{% endblock %}
         </div>

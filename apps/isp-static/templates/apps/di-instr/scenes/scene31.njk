@@ -1,6 +1,12 @@
 
 {% extends "di-instr/wgtCrysGrowth.njk" %}
 
+{% block heading %}
+        {% if heading%}
+        <h1> (3) Summarizing data by calculating mean</h1>
+        {% endif %}
+    {% endblock %}
+
 {% block lhs %}
     <img src="/img/di-instr/7_Table_S31.jpg" class="img-centered" height="300"/>
 {% endblock %}

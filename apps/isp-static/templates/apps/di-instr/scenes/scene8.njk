@@ -1,5 +1,11 @@
 {% extends "di-instr/wgtCrysGrowth.njk" %}
 
+ {% block heading %}
+        {% if heading%}
+        <h1>(1) Organize your data by Sorting &#129058; (2) Checking data for outliers</h1>
+        {% endif %}
+    {% endblock %}
+
 {% import "di-instr/forms.njk" as forms %}
 
 {% block lhs %}

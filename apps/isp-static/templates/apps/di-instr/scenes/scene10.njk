@@ -1,6 +1,12 @@
 
 {% extends "di-instr/wgtCrysGrowth.njk" %}
 
+{% block heading %}
+        {% if heading%}
+        <h1> (2) Checking data for outliers &#129058; (3) Summarizing data</h1>
+        {% endif %}
+    {% endblock %}
+
 {% block lhs %}
     <img src="/img/di-instr/1a_Table3_S7_nocircle.jpg" class="img-centered", height="300" />
  {% endblock %}

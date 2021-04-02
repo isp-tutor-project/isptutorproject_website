@@ -1,6 +1,12 @@
 
 {% extends "di-instr/wgtCrysGrowth.njk" %}
 
+{% block heading %}
+        {% if heading%}
+        <h1> (3) Summarizing data</h1>
+        {% endif %}
+    {% endblock %}
+
 {% import "di-instr/link.njk" as link %}
 
 {% block lhs %}
