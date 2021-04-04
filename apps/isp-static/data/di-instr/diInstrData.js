@@ -71,9 +71,18 @@ const diInstructionData = {
         intro7: {
             edges: {
                 prev: "intro6",
+                next: "intro7b"
+            }
+        },
+
+
+        intro7b: {
+            edges: {
+                prev: "intro7",
                 next: "intro8"
             }
         },
+
         intro8: {
             edges: {
                 prev: "intro7",
