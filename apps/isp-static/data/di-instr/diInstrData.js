@@ -74,18 +74,15 @@ const diInstructionData = {
                 next: "intro7b"
             }
         },
-
-
         intro7b: {
             edges: {
                 prev: "intro7",
                 next: "intro8"
             }
         },
-
         intro8: {
             edges: {
-                prev: "intro7",
+                prev: "intro7b",
                 next: "intro9"
             }
         },
@@ -143,6 +140,7 @@ const diInstructionData = {
                 next: "scene2"
             }
         },
+       
         scene2: {
             edges: {
                 prev: "scene1",
@@ -598,13 +596,22 @@ const diInstructionData = {
         scene31: {
             edges: {
                 prev: "scene30",
+                next: "scene31b"
+            }
+        },
+
+
+        scene31b: {
+            edges: {
+                prev: "scene31",
                 next: "scene32"
             }
         },
+
         scene32: {
             sceneType: SCENE_TYPES.mc,
             edges: {
-                prev: "scene31",
+                prev: "scene31b",
                 next: "scene32a"
             },
             question: {
@@ -838,15 +845,10 @@ const diInstructionData = {
         scene51: {
             edges: {
                 prev: "scene50a",
-                next: "scene51a"
-            }
-        },
-        scene51a: {
-            edges: {
-                prev: "scene51",
                 next: "scene52"
             }
         },
+       
         scene52: {
             edges: {
                 prev: "scene51",
@@ -982,9 +984,17 @@ const diInstructionData = {
         scene65: {
             edges: {
                 prev: "scene64",
+                next: "scene65b"
+            }
+        },
+
+        scene65b: {
+            edges: {
+                prev: "scene65",
                 next: "scene66"
             }
         },
+
         scene66: {
             sceneType: SCENE_TYPES.mc,
             edges: {
@@ -1062,12 +1072,37 @@ const diInstructionData = {
         scene74: {
             edges: {
                 prev: "scene73",
-                next: "scene75"
+                next: "scene74b"
             }
         },
-        scene75: {
+
+        
+        scene74b: {
+            sceneType: SCENE_TYPES.mc,
             edges: {
                 prev: "scene74",
+                next: "scene75"
+            },
+            question: {
+                type: "mc",
+                text: "Based on the amount of spread in the data, which results do you think are stronger evidence that water temperature affects crystal growth?",
+                correctAnswer: "a",
+                posFb: "Right!",
+                negFb: "Actually, let's think about this some more...",
+                options: [
+                    { value: "a", label: "Results A" },
+                    { value: "b", label: "Results B" },
+                    { value: "c", label: "They are the same." }
+                ]
+            }
+        },
+
+
+
+
+        scene75: {
+            edges: {
+                prev: "scene74b",
                 next: "scene76"
             }
         },
