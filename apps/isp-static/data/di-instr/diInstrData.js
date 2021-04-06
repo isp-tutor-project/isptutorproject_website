@@ -137,13 +137,20 @@ const diInstructionData = {
         scene1: {
             edges: {
                 prev: "intro16",
+                next: "scene1b"
+            }
+        },
+
+        scene1b: {
+            edges: {
+                prev: "scene1",
                 next: "scene2"
             }
         },
        
         scene2: {
             edges: {
-                prev: "scene1",
+                prev: "scene1b",
                 next: "scene5"
             }
         },
@@ -205,7 +212,7 @@ const diInstructionData = {
             },
             question: {
                 type: "mc",
-                text: "Do you see any results that look strange to you?",
+                text: "Do you see any results that look strange (for example, much bigger or smaller than the other numbers)?",
                 correctAnswer: "a",
                 ntlFb: "Thanks",
                 options: [
@@ -218,12 +225,18 @@ const diInstructionData = {
         scene9: {
             edges: {
                 prev: "scene8",
+                next: "scene9b"
+            }
+        },
+        scene9b: {
+            edges: {
+                prev: "scene9",
                 next: "scene10"
             }
         },
         scene10: {
             edges: {
-                prev: "scene9",
+                prev: "scene9b",
                 next: "scene11"
             }
         },
@@ -604,6 +617,20 @@ const diInstructionData = {
         scene31b: {
             edges: {
                 prev: "scene31",
+                next: "scene31c"
+            }
+        },
+
+        scene31c: {
+            edges: {
+                prev: "scene31b",
+                next: "scene31d"
+            }
+        },
+
+        scene31d: {
+            edges: {
+                prev: "scene31c",
                 next: "scene32"
             }
         },
@@ -611,7 +638,7 @@ const diInstructionData = {
         scene32: {
             sceneType: SCENE_TYPES.mc,
             edges: {
-                prev: "scene31b",
+                prev: "scene31d",
                 next: "scene32a"
             },
             question: {
@@ -1385,18 +1412,30 @@ const diInstructionData = {
         scene111: {
             edges: {
                 prev: "scene110",
+                next: "scene111b"
+            }
+        },
+        scene111b: {
+            edges: {
+                prev: "scene111",
                 next: "scene112"
             }
         },
         scene112: {
             edges: {
-                prev: "scene111",
+                prev: "scene111b",
+                next: "scene112b"
+            }
+        },
+        scene112b: {
+            edges: {
+                prev: "scene112",
                 next: "scene113"
             }
         },
         scene113: {
             edges: {
-                prev: "scene112",
+                prev: "scene112b",
                 next: "completed"
             }
         },

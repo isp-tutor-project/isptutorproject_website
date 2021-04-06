@@ -209,6 +209,17 @@ ul.centered {
     margin-right: auto;
 }
 
+
+ul.centeredw {
+    /*  display: inline-block; this makes extra space before list*/
+      position: relative;
+      text-align: left;
+      /* left: 10%; */
+      list-style-position: outside;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
 .div-centered {
     /* display: inline-block; */
     margin-left: 40%;

@@ -1,0 +1,27 @@
+
+{% extends "di-instr/wgtCrysGrowth.njk" %}
+
+{% block heading %}
+        {% if heading%}
+        <h1>(2) Check data for outliers</h1>
+        {% endif %}
+    {% endblock %}
+
+{% block lhs %}
+    <img src="/img/di-instr/HistogramHotCold1.png" class="img-centered", height="400" />
+ {% endblock %}
+
+{% block rhs %}
+
+    <p class="text-lg">
+        It's often a good idea to look at your data in histogram form. This is shown here.
+    </p>
+
+    <p class="text-lg">
+        
+        As you can see, in the Hot Water condition, there is one weight (in the 40-50 mg range) that's a bit larger than the other weights in that condition. 
+        So, you'd need to make sure nothing strange happened in this trial. If not, then you'd include this weight in your analysis.
+
+    </p>
+
+{% endblock %}
