@@ -267,7 +267,7 @@ def mk_di_test_hdr(which):
 
 
 META_HDR = [
-    "userID", "condition", "userInfo", "startTime", "endTime",
+    "userID", "classCode", "condition", "userInfo", "startTime", "endTime",
     *["%s_completed" % ao for ao in ASSIGN_ORDER]
 ]
 MATS_HDR = mk_mats_hdr()
