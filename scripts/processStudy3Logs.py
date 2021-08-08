@@ -350,7 +350,7 @@ def analyze_di(di_data):
 
     prev_ts = None
     curr_ts = None
-    for evt in events:
+    for evt in di_data.events:
         if "APP_START" == evt.type:
             curr_ts = evt.timestamp
 
