@@ -628,6 +628,7 @@ def process_file(path):
         data = Box(json.load(fh))
 
     userID = data.userID
+    classCode = data.classCode
     condition = data.condition
     user_info = "%s_%s_%s_%s" % (data.FN, data.LN, data.MON, data.DAY)
 
