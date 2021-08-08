@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+# pylint: disable=unused-variable
+
 from glob import glob
 import json
 import os
