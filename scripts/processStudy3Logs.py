@@ -649,7 +649,7 @@ def process_file(path):
 
     start_time = mats_pre_data["startTime"]
     end_time = mats_post_data["endTime"]
-    meta_data = [userID, condition, user_info, start_time, end_time, *completed]
+    meta_data = [userID, classCode, condition, user_info, start_time, end_time, *completed]
     return {
         "metaData": meta_data,
         "matsPre": mats_pre_data,
