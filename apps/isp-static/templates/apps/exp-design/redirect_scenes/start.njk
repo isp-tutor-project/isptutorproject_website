@@ -1,0 +1,105 @@
+    <select id="rq">
+        <option disabled selected value=""> - Select an Area of Science and Topic and you will be redirected - </option>
+
+        <optgroup label="Physical and Chemical Changes">
+            <option value="A1 T1">Crystal Growth</option>
+            <option value="A1 T2">Soda</option>
+            {# <optgroup label="&nbsp; &nbsp; Crystal Growth">
+                <option value="A1 T1 V1">&nbsp; &nbsp; A1 T1 V1</option>
+                <option value="A1 T1 V2">&nbsp; &nbsp; A1 T1 V2</option>
+                <option value="A1 T1 V3">&nbsp; &nbsp; A1 T1 V3</option>
+                <option value="A1 T1 V4">&nbsp; &nbsp; A1 T1 V4</option>
+            </optgroup>
+            <optgroup label="&nbsp; &nbsp; Soda">
+                <option value="A1 T2 V1">&nbsp; &nbsp; A1 T2 V1</option>
+                <option value="A1 T2 V2">&nbsp; &nbsp; A1 T2 V2</option>
+                <option value="A1 T2 V3">&nbsp; &nbsp; A1 T2 V3</option>
+                <option value="A1 T2 V4">&nbsp; &nbsp; A1 T2 V4</option>
+            </optgroup> #}
+        </optgroup>
+
+        <optgroup label="Heat &amp; Temperaure">
+            <option value="A2 T1">Ice Melting</option>
+            <option value="A2 T2">Balloon</option>
+            {# <optgroup label="&nbsp; &nbsp; Ice Melting">
+                <option value="A2 T1 V1">&nbsp; &nbsp; A2 T1 V1</option>
+                <option value="A2 T1 V2">&nbsp; &nbsp; A2 T1 V2</option>
+                <option value="A2 T1 V3">&nbsp; &nbsp; A2 T1 V3</option>
+                <option value="A2 T1 V4">&nbsp; &nbsp; A2 T1 V4</option>
+            </optgroup>
+            <optgroup label="&nbsp; &nbsp; Balloon">
+                <option value="A2 T2 V1">&nbsp; &nbsp; A2 T2 V1</option>
+                <option value="A2 T2 V2">&nbsp; &nbsp; A2 T2 V2</option>
+                <option value="A2 T2 V3">&nbsp; &nbsp; A2 T2 V3</option>
+                <option value="A2 T2 V4">&nbsp; &nbsp; A2 T2 V4</option>
+            </optgroup> #}
+        </optgroup>
+
+        <optgroup label="Forces &amp; Motion">
+            <option value="A3 T1">Ramps</option>
+            <option value="A3 T2">Sinking</option>
+            {# <optgroup label="&nbsp; &nbsp; Ramps">
+                <option value="A3 T1 V1">&nbsp; &nbsp; A3 T1 V1</option>
+                <option value="A3 T1 V2">&nbsp; &nbsp; A3 T1 V2</option>
+                <option value="A3 T1 V3">&nbsp; &nbsp; A3 T1 V3</option>
+                <option value="A3 T1 V4">&nbsp; &nbsp; A3 T1 V4</option>
+            </optgroup>
+            <optgroup label="&nbsp; &nbsp; Sinking">
+                <option value="A3 T2 V1">&nbsp; &nbsp; A3 T2 V1</option>
+                <option value="A3 T2 V2">&nbsp; &nbsp; A3 T2 V2</option>
+                <option value="A3 T2 V3">&nbsp; &nbsp; A3 T2 V3</option>
+                <option value="A3 T2 V4">&nbsp; &nbsp; A3 T2 V4</option>
+            </optgroup> #}
+        </optgroup>
+
+        <optgroup label="Plant Reproduction">
+            <option value="A4 T1">Greenhouse</option>
+            <option value="A4 T2">Algae</option>
+            {# <optgroup label="&nbsp; &nbsp; Greenhouse">
+                <option value="A4 T1 V1">&nbsp; &nbsp; A4 T1 V1</option>
+                <option value="A4 T1 V2">&nbsp; &nbsp; A4 T1 V2</option>
+                <option value="A4 T1 V3">&nbsp; &nbsp; A4 T1 V3</option>
+                <option value="A4 T1 V4">&nbsp; &nbsp; A4 T1 V4</option>
+            </optgroup>
+            <optgroup label="&nbsp; &nbsp; Algae">
+                <option value="A4 T2 V1">&nbsp; &nbsp; A4 T2 V1</option>
+                <option value="A4 T2 V2">&nbsp; &nbsp; A4 T2 V2</option>
+                <option value="A4 T2 V3">&nbsp; &nbsp; A4 T2 V3</option>
+                <option value="A4 T2 V4">&nbsp; &nbsp; A4 T2 V4</option>
+            </optgroup> #}
+        </optgroup>
+
+    </select>
+
+        {# <script>
+            const redirects = {
+                A1: {
+                    T1: "crystals",
+                    T2: "soda"
+                },
+                A2: {
+                    T1: "icemelting",
+                    T2: "balloon"
+                },
+                A3: {
+                    T1: "ramps",
+                    T2: "sinking"
+                },
+                A4: {
+                    T1: "greenhouse",
+                    T2: "algae"
+                }
+            };
+
+            function setRQ(event) {
+                event.preventDefault();
+                let temp = event.target.value;
+                //let [A, T, V] = temp.split(" ");
+                let [A, T] = temp.split(" ");
+                let redirect = redirects[A][T];
+                console.log(redirect);
+                //console.log(V);
+                window.location.href = window.location.href.replace("index.html", `${redirect}.html`);
+            }
+            document.getElementById("rq").addEventListener("change", setRQ);
+        </script> #}

@@ -1,5 +1,6 @@
 import {Scene, SceneBasedApp} from "@isptutorproject/scene-app-base"
 
+
 export class ExpDesignScene extends Scene {
     constructor(app, sceneInfo) {
         super(app, sceneInfo)
@@ -38,7 +39,19 @@ export class ExpDesignScene extends Scene {
 export class ExpDesignApp extends SceneBasedApp {
     constructor(appData, activityConfig, defaultInitialState) {
         super(appData, activityConfig, defaultInitialState)
-        console.log(appData);
+        this.db.store.collection("STUDY_3").doc(activityConfig.userID).get()
+        // .then(doc => {
+        //     const userData = doc.data()
+        //     const rqRaw = userData.rqted
+        //     const rqted = JSON.parse(rqRaw)
+        //     console.log(rqted.moduleState)
+        //     const [sa, st, sv] = rqted.moduleState.selectedVariable.ontologyKey
+        //                          .replace("|name", "")
+        //                          .replace("S_", "")
+        //                          .split("_")
+        //     console.log(sa, st, sv)
+        // }).catch(error => console.log(error))
+
     }
 
     createScene(sceneInfo) {
